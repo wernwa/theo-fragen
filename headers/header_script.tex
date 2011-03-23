@@ -1,0 +1,35 @@
+\documentclass[10pt,a4paper,oneside,fleqn]{article}
+\usepackage{geometry}
+\geometry{a4paper,left=20mm,right=20mm,top=1cm,bottom=2cm}
+\usepackage[utf8]{inputenc}
+%\usepackage{ngerman}
+\usepackage{amsmath}                % brauche ich um dir Formel zu umrahmen.
+\usepackage{amsfonts}                % brauche ich für die Mengensymbole
+\usepackage{graphicx}
+\setlength{\parindent}{0px}
+\setlength{\mathindent}{10mm}
+\usepackage{bbold}                    %brauche ich für die doppel Zahlen Darstellung (Einheitsmatrix z.B)
+\usepackage[linktocpage={false}]{hyperref}
+
+
+\usepackage{color}
+\usepackage{titlesec} %sudo apt-get install texlive-latex-extra
+
+\definecolor{darkblue}{rgb}{0.1,0.1,0.55}
+\definecolor{verydarkblue}{rgb}{0.1,0.1,0.35}
+\definecolor{darkred}{rgb}{0.55,0.2,0.2}
+
+\titleformat{\chapter}[display]{\color{darkred}\normalfont\huge\bfseries}{\chaptertitlename\
+\thechapter}{20pt}{\Huge}
+
+\titleformat{\section}{\color{darkblue}\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\color{verydarkblue}\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Notiz Box
+\usepackage{fancybox}
+\newcommand{\notiz}[1]{\vspace{5mm}\ovalbox{\begin{minipage}{1\textwidth}#1\end{minipage}}\vspace{5mm}}
+
+\usepackage{cancel}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
