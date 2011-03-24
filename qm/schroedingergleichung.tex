@@ -1,0 +1,55 @@
+\input{../headers/header_script.tex}
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+
+\begin{document}
+
+\section*{Schrödingergleichung}
+
+
+Suchen Bewegungsgleichung für $\psi(\vec{r},t)$. Forderungen:
+\begin{enumerate}
+\item DGL 1. Ordnung in der Zeit, damit $\psi(\vec{r},t)$ durch die Anfangsverteilung
+  $\psi(\vec{r},t=0)$bestimmt ist.
+\item Sie muss linear in $\psi$ sein, damit Superpositionsprinzip gilt (d.h.
+  Linearkombination von Lösungen stellen wieder Lösungen dar $\rightarrow$ deshalb
+  treten Interferenzeffekte auf wie in der Optik. (Optik: Diese folgen
+  aus der Linearität der Maxwellgleichungen)
+\item Sie muss homogen sein, damit
+  $\int_{-\infty}^{\infty}d^{3}r|\psi(\vec{r},t)|^{2}=1$ für
+  alle Zeiten erfüllt bleibt.
+\item Die ebenen Wellen $\psi(\vec{r},t)=c\cdot
+  e^{\frac{i}{\hbar}(\vec{p}\cdot\vec{r}-\frac{p^{2}}{2m}t)}$ sollen
+  Lösungen der Gleichung sein. \\
+  Für diese ebenen Wellen gilt:
+  \begin{align*}
+    \frac{\partial}{\partial t}\psi(\vec{r},t) &=
+      -\frac{i}{\hbar}\cdot\frac{p^{2}}{2m}\psi(\vec{r},t)\\
+      &=-\frac{i}{\hbar}\cdot\frac{p^{2}}{2m}\psi(\vec{r},t)
+      \cdot \frac{\hbar^2}{\hbar^2}\\
+  &= \frac{i\hbar}{2m}\cdot
+  \underbrace{\frac{(ip)^2}{\hbar^2}\psi(\vec{r},t)}_{\nabla^2\psi(\vec{r},t)}\\
+  &= \frac{i\hbar}{2m}\nabla^2\psi(\vec{r},t)
+\end{align*}
+\end{enumerate}
+
+Aus 1.-4. erhalten wir die zeitabhängige Schrödingergleichung für ein
+freies Teilchen:
+
+  \begin{equation}
+    \label{eq:11}
+    \boxed{i\hbar\frac{\partial}{\partial t}\Psi(\vec{r},t)
+      =-\frac{\hbar^2}{2m}\nabla^2\Psi(\vec{r},t)}
+  \end{equation}
+
+
+Annahme: Teilchen der Masse $m$ unterliegt einem Potential $V(\vec{r},t)$
+\begin{align*}
+  i\hbar\frac{\partial}{\partial t}\Psi(\vec{r},t) 
+  &=-\frac{\hbar^{2}}{2m}\nabla^2\Psi(\vec{r},t)+V(\vec{r},t)\Psi(\vec{r},t)\\
+  &=\left[-\frac{\hbar^{2}}{2m}\nabla^2+V(\vec{r},t)\right]\Psi(\vec{r},t)
+\end{align*}
+
+
+
+
+\end{document}
