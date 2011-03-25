@@ -1,0 +1,50 @@
+\input{../headers/header_script.tex}
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+
+\begin{document}
+
+\section*{Landau Niveaus}
+
+Wir betrachten ein Teilchen im Magnetfeld. Das konstante Magnetfeld zeigt in z-Richtung \(\vec B=(0,0,B_0\). Das Vektorpotential ist nach Landau-Eichung (\(\nabla\cdot\vec A = 0\)) somit \(\vec A = (-yB_0,0,0)\). Der Hamiltonoperator lautet:
+
+\[H=\frac{1}{2m}\left(\vec p - \frac{q}{c}\vec A\right)^2 \]
+
+
+In Quantenmechanischer Schreibweise:
+
+\[H=\frac{1}{2m}\left(\frac{\hbar}{i}\nabla - \frac{q}{c}\vec A\right)^2 \]
+
+Einsetzen des Hamiltonoperators in die Schrödinger-Gleichung:
+
+\[H\psi = E\psi\]
+
+\[ \frac{1}{2m}\left(\frac{\hbar}{i}\nabla - \frac{q}{c}\vec A\right)\left(\frac{\hbar}{i}\nabla - \frac{q}{c}\vec A\right)\psi = E\psi \]
+
+\[ \frac{1}{2m}\left(-\hbar^2\nabla^2 -\frac{\hbar q}{ic}\nabla \vec A -\frac{\hbar q}{ic} \vec A \nabla  + \frac{q^2}{c^2}\vec A^2 \right) \psi = E\psi \]
+
+
+\[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi -\frac{\hbar q}{ic}\underbrace{\nabla \vec A\psi}_{(\nabla \vec A)\psi + \vec A\cdot(\nabla\psi)} -\frac{\hbar q}{ic} \vec A \nabla\psi  + \frac{q^2}{c^2}\vec A^2\psi \right) = E\psi \]
+
+Nach der Landau Eichung ist der Term \((\nabla \vec A)\psi = 0\)
+
+\[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi -\frac{\hbar q}{ic}\vec A\cdot(\nabla\psi) -\frac{\hbar q}{ic} \vec A \nabla\psi  + \frac{q^2}{c^2}\vec A^2\psi \right) = E\psi \]
+
+\[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi - \frac{2 \hbar q}{ic}\vec A\cdot(\nabla\psi) + \frac{q^2}{c^2}\vec A^2\psi \right) = E\psi \]
+
+
+Einsetzen des Vektorfeldes ergibt nur noch eine Ableitung in die x-Richtung:
+
+
+\[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi + \frac{2 \hbar q}{ic} yB_0 \frac{\partial}{\partial x} \psi + \frac{q^2}{c^2}y^2B_0^2\psi \right) = E\psi \]
+
+Mit der Annahme vom \(\psi(x,y,z) = e^{\frac{i}{\hbar}p_0x}\cdot \phi(y)\) können wir erstmal \(\nabla^2\psi\) ausrechnen NR:
+
+\[\nabla\psi = \begin{pmatrix} \frac{ip_0}{\hbar}e^{ip_0x/hbar}\cdot\phi(y)\\ e^{ip_0x/hbar}\cdot\frac{\partial}{\partial y}\phi(y)\\0\end{pmatrix}  \]
+\[\nabla^2\psi =- \frac{p_0^2}{\hbar^2}e^{ip_0x/\hbar}\phi(y) + e^{ip_0x/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)  \]
+
+
+
+
+
+
+\end{document}
