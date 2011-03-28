@@ -5,7 +5,7 @@
 
 \section*{Landau Niveaus}
 
-Wir betrachten ein Teilchen im Magnetfeld. Das konstante Magnetfeld zeigt in z-Richtung \(\vec B=(0,0,B_0\). Das Vektorpotential ist nach Landau-Eichung (\(\nabla\cdot\vec A = 0\)) somit \(\vec A = (-yB_0,0,0)\). Der Hamiltonoperator lautet:
+Wir betrachten ein Teilchen im Magnetfeld. Das konstante Magnetfeld zeigt in z-Richtung \(\vec B=(0,0,B_0)\). Das Vektorpotential ist nach Landau-Eichung (\(\nabla\cdot\vec A = 0\)) somit \(\vec A = (-yB_0,0,0)\). Der Hamiltonoperator lautet:
 
 \[H=\frac{1}{2m}\left(\vec p - \frac{q}{c}\vec A\right)^2 \]
 
@@ -41,6 +41,24 @@ Mit der Annahme vom \(\psi(x,y,z) = e^{\frac{i}{\hbar}p_0x}\cdot \phi(y)\) könn
 
 \[\nabla\psi = \begin{pmatrix} \frac{ip_0}{\hbar}e^{ip_0x/hbar}\cdot\phi(y)\\ e^{ip_0x/hbar}\cdot\frac{\partial}{\partial y}\phi(y)\\0\end{pmatrix}  \]
 \[\nabla^2\psi =- \frac{p_0^2}{\hbar^2}e^{ip_0x/\hbar}\phi(y) + e^{ip_0x/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)  \]
+
+Ebenso die Ableitung nach x NR:
+
+\[\frac{\partial}{\partial x}\psi =\frac{i}{\hbar}p_0 e^{\frac{i}{\hbar}p_0x}\cdot \phi(y) \]
+
+
+Die NR in wieder in die SGL einsetzen:
+
+
+\[ \frac{1}{2m}\left(\hbar^2 \frac{p_0^2}{\hbar^2}e^{ip_0x/\hbar}\phi(y) + e^{ip_0x/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)  + \frac{2 \hbar q}{ic} yB_0\frac{i}{\hbar}p_0 e^{\frac{i}{\hbar}p_0x}\cdot \phi(y)  + \frac{q^2}{c^2}y^2B_0^2\psi \right) = E\psi \qquad | :e^{\frac{i}{\hbar}p_0x} \]
+
+\[ \frac{1}{2m}\left(p_0^2\phi(y) + \frac{\partial^2}{\partial y^2}\phi(y)  + \frac{2 q}{c} yB_0p_0  \phi(y)  + \frac{q^2}{c^2}y^2B_0^2\phi(y) \right) = E \phi(y) \]
+
+
+\[  \frac{1}{2m}\left( \frac{\partial^2}{\partial y^2}\phi(y) +  (p_0^2 + \frac{2 q}{c} yB_0p_0   + \frac{q^2}{c^2}y^2B_0^2)\phi(y) \right) = E \phi(y) \]
+
+
+Vergleiche mit dem Harmonischen Oszillator in y-Richtung: \( H = \frac{p^2_y}{2m} + \frac{m\omega^2}{2}y^2 \)
 
 
 
