@@ -28,7 +28,7 @@ Einsetzen des Hamiltonoperators in die Schrödinger-Gleichung:
 Nach der Landau Eichung ist der Term \((\nabla \vec A)\psi = 0\)
 
 \[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi -\frac{\hbar q}{ic}\vec A\cdot(\nabla\psi) -\frac{\hbar q}{ic} \vec A \nabla\psi  + \frac{q^2}{c^2}\vec A^2\psi \right) = E\psi \]
-a
+
 \[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi - \frac{2 \hbar q}{ic}\vec A\cdot(\nabla\psi) + \frac{q^2}{c^2}\vec A^2\psi \right) = E\psi \]
 
 
@@ -37,21 +37,21 @@ Einsetzen des Vektorfeldes ergibt nur noch eine Ableitung in die x-Richtung:
 
 \[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi + \frac{2 \hbar q}{ic} yB_0 \frac{\partial}{\partial x} \psi + \frac{q^2}{c^2}y^2B_0^2\psi \right) = E\psi \]
 
-Mit der Annahme vom \(\psi(x,y,z) = e^{\frac{i}{\hbar}p_0x}\cdot \phi(y)\cdot e^{\frac{i}{\hbar}p_0z}\) können wir erstmal \(\nabla^2\psi\) ausrechnen NR:
+Mit der Annahme vom \(\psi(x,y,z) = e^{\frac{i}{\hbar}p_xx}\cdot \phi(y)\cdot e^{\frac{i}{\hbar}p_zz}\) können wir erstmal \(\nabla^2\psi\) ausrechnen NR:
 
-\[\nabla\psi = \begin{pmatrix} \frac{ip_0}{\hbar}e^{ip_0x/\hbar}\cdot\phi(y)e^{\frac{i}{\hbar}p_0z} \\ e^{ip_0x/\hbar}\cdot\frac{\partial}{\partial y}\phi(y)e^{\frac{i}{\hbar}p_0z}\\\frac{ip_0}{\hbar}e^{ip_0x/\hbar}\cdot\phi(y)e^{\frac{i}{\hbar}p_0z} \end{pmatrix}  \]
-\[\nabla^2\psi =- \frac{p_0^2}{\hbar^2}e^{ip_0x/\hbar}\phi(y)e^{\frac{i}{\hbar}p_0z} + e^{ip_0x/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)e^{\frac{i}{\hbar}p_0z}  - \frac{p_0^2}{\hbar^2}e^{ip_0x/\hbar}\phi(y)e^{\frac{i}{\hbar}p_0z}\]
+\[\nabla\psi = \begin{pmatrix} \frac{ip_x}{\hbar}e^{ip_xx/\hbar}\cdot\phi(y)e^{\frac{i}{\hbar}p_zz} \\ e^{ip_xx/\hbar}\cdot\frac{\partial}{\partial y}\phi(y)e^{\frac{i}{\hbar}p_zz}\\\frac{ip_z}{\hbar}e^{ip_xx/\hbar}\cdot\phi(y)e^{\frac{i}{\hbar}p_zz} \end{pmatrix}  \]
+\[\nabla^2\psi =- \frac{p_x^2}{\hbar^2}e^{ip_xx/\hbar}\phi(y)e^{\frac{i}{\hbar}p_zz} + e^{ip_xx/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)e^{\frac{i}{\hbar}p_zz}  - \frac{p_z^2}{\hbar^2}e^{ip_xx/\hbar}\phi(y)e^{\frac{i}{\hbar}p_zz}\]
 
 Ebenso die Ableitung nach x NR:
 
-\[\frac{\partial}{\partial x}\psi =\frac{i}{\hbar}p_x e^{\frac{i}{\hbar}p_0x}\cdot \phi(y) e^{\frac{i}{\hbar}p_0z} \]
+\[\frac{\partial}{\partial x}\psi =\frac{i}{\hbar}p_x e^{\frac{i}{\hbar}p_xx}\cdot \phi(y) e^{\frac{i}{\hbar}p_zz} \]
 
 
 Die NR in wieder in die SGL einsetzen:
 
 
-\[\begin{split} \frac{1}{2m}\left(p_0^2e^{ip_0x/\hbar}\phi(y)e^{\frac{i}{\hbar}p_0z} -\hbar^2e^{ip_0x/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)e^{\frac{i}{\hbar}p_0z} + p_0^2e^{ip_0x/\hbar}\phi(y)e^{\frac{i}{\hbar}p_0z}  \right. \\
-\left.  + \frac{2 \hbar q}{ic} yB_0\frac{i}{\hbar}p_0 e^{\frac{i}{\hbar}p_0x}\cdot \phi(y)e^{\frac{i}{\hbar}p_0z}  + \frac{q^2}{c^2}y^2B_0^2\psi \right) = E\psi \end{split} \]
+\[\begin{split} \frac{1}{2m}\left(p_x^2e^{ip_xx/\hbar}\phi(y)e^{\frac{i}{\hbar}p_zz} -\hbar^2e^{ip_xx/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)e^{\frac{i}{\hbar}p_zz} + p_z^2e^{ip_xx/\hbar}\phi(y)e^{\frac{i}{\hbar}p_zz}  \right. \\
+\left.  + \frac{2 \hbar q}{ic} yB_0\frac{i}{\hbar}p_x e^{\frac{i}{\hbar}p_xx}\cdot \phi(y)e^{\frac{i}{\hbar}p_zz}  + \frac{q^2}{c^2}y^2B_0^2\psi \right) = E\psi \end{split} \]
 
 Gleichung durch \( e^{\frac{i}{\hbar}p_0x} e^{\frac{i}{\hbar}p_0z} \) teilen:
 
