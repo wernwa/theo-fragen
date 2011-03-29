@@ -28,7 +28,7 @@ Einsetzen des Hamiltonoperators in die Schrödinger-Gleichung:
 Nach der Landau Eichung ist der Term \((\nabla \vec A)\psi = 0\)
 
 \[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi -\frac{\hbar q}{ic}\vec A\cdot(\nabla\psi) -\frac{\hbar q}{ic} \vec A \nabla\psi  + \frac{q^2}{c^2}\vec A^2\psi \right) = E\psi \]
-
+a
 \[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi - \frac{2 \hbar q}{ic}\vec A\cdot(\nabla\psi) + \frac{q^2}{c^2}\vec A^2\psi \right) = E\psi \]
 
 
@@ -37,42 +37,48 @@ Einsetzen des Vektorfeldes ergibt nur noch eine Ableitung in die x-Richtung:
 
 \[ \frac{1}{2m}\left(-\hbar^2\nabla^2\psi + \frac{2 \hbar q}{ic} yB_0 \frac{\partial}{\partial x} \psi + \frac{q^2}{c^2}y^2B_0^2\psi \right) = E\psi \]
 
-Mit der Annahme vom \(\psi(x,y,z) = e^{\frac{i}{\hbar}p_0x}\cdot \phi(y)\) können wir erstmal \(\nabla^2\psi\) ausrechnen NR:
+Mit der Annahme vom \(\psi(x,y,z) = e^{\frac{i}{\hbar}p_0x}\cdot \phi(y)\cdot e^{\frac{i}{\hbar}p_0z}\) können wir erstmal \(\nabla^2\psi\) ausrechnen NR:
 
-\[\nabla\psi = \begin{pmatrix} \frac{ip_0}{\hbar}e^{ip_0x/hbar}\cdot\phi(y)\\ e^{ip_0x/hbar}\cdot\frac{\partial}{\partial y}\phi(y)\\0\end{pmatrix}  \]
-\[\nabla^2\psi =- \frac{p_0^2}{\hbar^2}e^{ip_0x/\hbar}\phi(y) + e^{ip_0x/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)  \]
+\[\nabla\psi = \begin{pmatrix} \frac{ip_0}{\hbar}e^{ip_0x/\hbar}\cdot\phi(y)e^{\frac{i}{\hbar}p_0z} \\ e^{ip_0x/\hbar}\cdot\frac{\partial}{\partial y}\phi(y)e^{\frac{i}{\hbar}p_0z}\\\frac{ip_0}{\hbar}e^{ip_0x/\hbar}\cdot\phi(y)e^{\frac{i}{\hbar}p_0z} \end{pmatrix}  \]
+\[\nabla^2\psi =- \frac{p_0^2}{\hbar^2}e^{ip_0x/\hbar}\phi(y)e^{\frac{i}{\hbar}p_0z} + e^{ip_0x/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)e^{\frac{i}{\hbar}p_0z}  - \frac{p_0^2}{\hbar^2}e^{ip_0x/\hbar}\phi(y)e^{\frac{i}{\hbar}p_0z}\]
 
 Ebenso die Ableitung nach x NR:
 
-\[\frac{\partial}{\partial x}\psi =\frac{i}{\hbar}p_0 e^{\frac{i}{\hbar}p_0x}\cdot \phi(y) \]
+\[\frac{\partial}{\partial x}\psi =\frac{i}{\hbar}p_x e^{\frac{i}{\hbar}p_0x}\cdot \phi(y) e^{\frac{i}{\hbar}p_0z} \]
 
 
 Die NR in wieder in die SGL einsetzen:
 
 
-\[ \frac{1}{2m}\left(\hbar^2 \frac{p_0^2}{\hbar^2}e^{ip_0x/\hbar}\phi(y) + e^{ip_0x/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)  + \frac{2 \hbar q}{ic} yB_0\frac{i}{\hbar}p_0 e^{\frac{i}{\hbar}p_0x}\cdot \phi(y)  + \frac{q^2}{c^2}y^2B_0^2\psi \right) = E\psi \qquad | :e^{\frac{i}{\hbar}p_0x} \]
+\[\begin{split} \frac{1}{2m}\left(p_0^2e^{ip_0x/\hbar}\phi(y)e^{\frac{i}{\hbar}p_0z} -\hbar^2e^{ip_0x/\hbar}\frac{\partial^2}{\partial y^2}\phi(y)e^{\frac{i}{\hbar}p_0z} + p_0^2e^{ip_0x/\hbar}\phi(y)e^{\frac{i}{\hbar}p_0z}  \right. \\
+\left.  + \frac{2 \hbar q}{ic} yB_0\frac{i}{\hbar}p_0 e^{\frac{i}{\hbar}p_0x}\cdot \phi(y)e^{\frac{i}{\hbar}p_0z}  + \frac{q^2}{c^2}y^2B_0^2\psi \right) = E\psi \end{split} \]
 
-\[ \frac{1}{2m}\left(p_0^2\phi(y) + \frac{\partial^2}{\partial y^2}\phi(y)  + \frac{2 q}{c} yB_0p_0  \phi(y)  + \frac{q^2}{c^2}y^2B_0^2\phi(y) \right) = E \phi(y) \]
+Gleichung durch \( e^{\frac{i}{\hbar}p_0x} e^{\frac{i}{\hbar}p_0z} \) teilen:
 
-
-\[  \frac{1}{2m}\left( \frac{\partial^2}{\partial y^2}\phi(y) +  (p_0^2 + \frac{2 q}{c} yB_0p_0   + \frac{q^2}{c^2}y^2B_0^2)\phi(y) \right) = E \phi(y) \]
-
-\[  \frac{1}{2m}\left( \frac{\partial^2}{\partial y^2}\phi(y) +  (\frac{q}{c}B_0\cdot y +  p_0 )^2\phi(y) \right) = E \phi(y) \]
+\[ \frac{1}{2m}\left(p_x^2\phi(y) - \hbar^2 \frac{\partial^2}{\partial y^2}\phi(y) + p_z^2\phi(y) + \frac{2 q}{c} yB_0p_0  \phi(y)  + \frac{q^2}{c^2}y^2B_0^2\phi(y) \right) = E \phi(y) \]
 
 
-\[  \left(\frac{1}{2m} \frac{\partial^2}{\partial y^2}\phi(y) + \frac{q^2 B_0^2}{2mc^2} (y +  \frac{p_0c}{qB_0} )^2\phi(y) \right) = E \phi(y) \]
+\[  \frac{1}{2m}\left(- \hbar^2\frac{\partial^2}{\partial y^2}\phi(y) +  \underbrace{\left[p_x^2 + \frac{2 q}{c} yB_0p_x   + \frac{q^2}{c^2}y^2B_0^2\right]}_{\text{Binomische Formel}}\phi(y) + p_z^2\phi(y) \right) = E \phi(y) \]
+
+\[  \frac{1}{2m}\left(-\hbar^2 \frac{\partial^2}{\partial y^2}\phi(y) +  (\frac{q}{c}B_0\cdot y +  p_x )^2\phi(y) + p_z^2\phi(y) \right) = E \phi(y) \]
 
 
-Mit der Zyklotronfrequenz \( \omega_c = \frac{qB_0}{cm} \) und \(y_0 = \frac{p_0}{m\omega_c}\)
+\[  \frac{1}{2m} \frac{\partial^2}{\partial y^2}\phi(y) + \frac{q^2 B_0^2}{2mc^2} (y +  \frac{p_xc}{qB_0} )^2\phi(y) +\frac{p_z^2}{2m}\phi(y)  = E \phi(y) \]
 
-\[  \left(\frac{1}{2m} \frac{\partial^2}{\partial y^2} + \frac{m\omega_c^2}{2} (y +  y_0 )^2\right)\phi(y) = E \phi(y) \]
+
+Mit der Zyklotronfrequenz \( \omega_c = \frac{qB_0}{cm} \) und \(y_0 = \frac{p_x}{m\omega_c}\)
+
+\[  \left( \underbrace{ \frac{1}{2m} \frac{\partial^2}{\partial y^2} + \frac{m\omega_c^2}{2} (y +  y_0 )^2}_{\text{Harmonischer Oszillator}} +\underbrace{ \frac{p_z^2}{2m}}_{\text{freies Teilchen}}  \right)\phi(y) = E \phi(y) \]
 
 
 Vergleiche mit dem Harmonischen Oszillator in y-Richtung: \( H = \frac{p^2_y}{2m} + \frac{m\omega^2}{2}y^2 \) Ergeben sich die Eigenwerte dazu:
 
-\[ E_n = \hbar\omega_c(n+\frac{1}{2})\]
-
-
+\begin{equation}
+\label{eq:42}
+ \boxed{E_n^{\text{Landau}} = \hbar\omega_c(n+\frac{1}{2}) + \frac{p_z^2}{2m} }
+\end{equation}
+\\
+Wir haben eine Wellenfunktion die in x und z Richtung eine Ebene Welle ist und in y Richtung die Lösung eines Harmonischen Oszillators darstellt. Die Auszeichnung der y Richtung liegt an der von uns gewählten Eichung bzw. dem gewählten Vektorpotential  \(\vec A = (-yB_0,0,0)\). Wie auch immer man die Eichung wählt, das entscheidende ist, dass das Magneteld die Ausbreitung der freier ebener Wellen nur in Feldrichtung erlaubt. In unserem Fall ist es die z Richtung. Wie man aus der Gleichung \eqref{eq:42} sieht, sind die Energieeigenwerte unendlichfach entartet. Nur die x-y-Ebene ist quantisiert.
 
 
 
