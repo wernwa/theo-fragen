@@ -56,7 +56,34 @@ Zusammengefasst:
 \[ m \frac{d}{dt} \langle x \rangle  = \langle p \rangle \qquad \frac{d}{dt} \langle p \rangle  =  -\langle  \nabla V(x) \rangle \]
 
 
-\[ \Rightarrow m \frac{d^2}{dt^2} \langle x \rangle  =  -\langle  \nabla V(x) \rangle =  \langle F(x) \rangle \]
+\begin{equation} 
+\label{eq:42}
+\Rightarrow m \frac{d^2}{dt^2} \langle x \rangle  =  -\langle  \nabla V(x) \rangle =  \langle F(x) \rangle 
+\end{equation}
+
+Entwickle den Erwartungswert der Kraft \(\langle F(x)\rangle \) nach Taylor um dem Erwartungswert des Ortes \(\langle x\rangle \):
+
+\begin{align}
+ \langle F(x) \rangle = \left\langle  F(\langle x\rangle ) + (x-\langle x\rangle) \frac{\partial }{\partial x} F(\langle x\rangle )+(x-\langle x\rangle)^2 \frac{\partial^2 }{\partial x^2} F(\langle x\rangle )\frac{1}{2!}+\dots \right\rangle 
+\end{align}
+
+
+NR: 
+\begin{align}
+\left\langle(x-\langle x\rangle) \right\rangle = \langle x\rangle -\langle \langle x\rangle \rangle  = \langle x\rangle -\langle x\rangle  = 0
+\end{align}
+Und \( \langle F(\langle x \rangle )\rangle  = F(\langle x \rangle )  \) da \(F(\langle x\rangle )\) eine Zahl ist und Erwartungswert einer Zahl ist wieder die Zahl selbst.
+
+\begin{align}
+ \langle F(x) \rangle =   F(\langle x\rangle ) + \left\langle (x-\langle x\rangle)^2 \frac{\partial^2 }{\partial x^2} F(\langle x\rangle )\frac{1}{2!}+\dots \right\rangle 
+\end{align}
+
+Wir sehen: \(\langle F(x)\rangle = F(\langle x\rangle )\) genau dann, wenn die 2. und höhere Ableitungen der Kraft nach dem Ort verschwinden. Dies ist für Systeme wie dem freien Teilchen, da hier die Kraft überall Null ist und dem Harmonischen Oszillator \(F=-Dx\) wo die Kraft nur linear abhängt, der Fall. In diesen beiden Fällen können wir die Gleichung \eqref{eq:42} auch wie folgt schreiben:
+
+\[ m\frac{d^2}{dt^2} \langle x \rangle  = \langle F(x) \rangle = F(\langle x\rangle )   \]
+
+Was der quasi klassischen Näherung entspricht. Vergleiche mit dem Newtonschen Axiom \(m\frac{d^2}{dt^2} x  = F(x)  \)
+
 
 
 
