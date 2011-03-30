@@ -24,20 +24,20 @@ Nun können wir die Zeitlichen Ableitungen vom Impuls und Ort Erwartungswert ber
  \frac{d}{dt} \langle p \rangle  &= \frac{i}{\hbar} \langle [H,p]\rangle \\
 &= \frac{i}{\hbar} \langle [\frac{p^2}{2m}+V(x),p]\rangle   \\
 &= \frac{i}{\hbar} \langle [V(x),p]\rangle   \\
-&= \frac{i}{\hbar} \langle [V(x),\frac{\hbar}{i}\nabla]\rangle   \\
+&= \frac{i}{\hbar} \langle [V(x),\frac{\hbar}{i}\frac{d}{dx} ]\rangle   \\
 \end{align}
 NR:
  \begin{align}
-[V(x),\frac{\hbar}{i}\nabla]\psi &=\frac{\hbar}{i} V(x)\nabla\psi - \frac{\hbar}{i}\nabla (V(x)\psi)\\
-&= \frac{\hbar}{i} V(x)\nabla\psi -\frac{\hbar}{i}(\psi(x) (\nabla V(x)) + V(x) (\nabla\psi(x))  )  \\
-&= \cancel{\frac{\hbar}{i} V(x)\nabla\psi} -\frac{\hbar}{i}\psi(x) (\nabla V(x))\cancel{ -\frac{\hbar}{i} V(x) (\nabla\psi(x))}   \\
-&=-\frac{\hbar}{i}\psi(x) (\nabla V(x))
+[V(x),\frac{\hbar}{i}\frac{d}{dx} ]\psi &=\frac{\hbar}{i} V(x)\frac{d}{dx} \psi - \frac{\hbar}{i}\frac{d}{dx}  (V(x)\psi)\\
+&= \frac{\hbar}{i} V(x)\frac{d}{dx} \psi -\frac{\hbar}{i}(\psi(x) (\frac{d}{dx}  V(x)) + V(x) (\frac{d}{dx} \psi(x))  )  \\
+&= \cancel{\frac{\hbar}{i} V(x)\frac{d}{dx} \psi} -\frac{\hbar}{i}\psi(x) (\frac{d}{dx}  V(x))\cancel{ -\frac{\hbar}{i} V(x) (\frac{d}{dx} \psi(x))}   \\
+&=-\frac{\hbar}{i}\psi(x) (\frac{d}{dx}  V(x))
 \end{align}
-\[\Rightarrow [V(x),\frac{\hbar}{i}\nabla] = -\frac{\hbar}{i} \nabla V(x) \]
+\[\Rightarrow [V(x),\frac{\hbar}{i}\frac{d}{dx} ] = -\frac{\hbar}{i} \frac{d}{dx}  V(x) \]
 
 
 \begin{align}
-\rightarrow \frac{d}{dt} \langle p \rangle  &=  -\langle  \nabla V(x) \rangle = \langle F(x) \rangle  
+\rightarrow \frac{d}{dt} \langle p \rangle  &=  -\langle  \frac{d}{dx}  V(x) \rangle = \langle F(x) \rangle  
 \end{align}
 
 Und nun für den Ort:
@@ -53,12 +53,12 @@ Und nun für den Ort:
 
 Zusammengefasst:
 
-\[ m \frac{d}{dt} \langle x \rangle  = \langle p \rangle \qquad \frac{d}{dt} \langle p \rangle  =  -\langle  \nabla V(x) \rangle \]
+\[ m \frac{d}{dt} \langle x \rangle  = \langle p \rangle \qquad \frac{d}{dt} \langle p \rangle  =  -\langle  \frac{d}{dx}  V(x) \rangle \]
 
 
 \begin{equation} 
 \label{eq:42}
-\Rightarrow m \frac{d^2}{dt^2} \langle x \rangle  =  -\langle  \nabla V(x) \rangle =  \langle F(x) \rangle 
+\Rightarrow m \frac{d^2}{dt^2} \langle x \rangle  =  -\langle  \frac{d}{dx}  V(x) \rangle =  \langle F(x) \rangle 
 \end{equation}
 
 Entwickle den Erwartungswert der Kraft \(\langle F(x)\rangle \) nach Taylor um dem Erwartungswert des Ortes \(\langle x\rangle \):
