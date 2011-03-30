@@ -1,0 +1,64 @@
+\input{../headers/header_script.tex}
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+
+\begin{document}
+
+\section{Ehrenfest-Theorem}
+
+Das Ehrenfest-Theorem besagt, dass unter bestimmten Bedingungen die klassischen Bewegungsgleichungen für die Mittelwerte der Quantenmechanik gelten.
+
+\subsection{Herleitung}
+
+Betrachte die Heisenberg-Bewegungsgleichung:
+
+\[ \frac{d}{dt} O = \frac{i}{\hbar} [H,O] +\frac{\partial}{\partial t} O \]
+
+Die Erwartungswerte der einzelnen Operatoren durch Mittlung der Gleichung:
+
+\[ \frac{d}{dt} \langle O\rangle  = \frac{i}{\hbar} \langle [H,O]\rangle  + \langle  \frac{\partial}{\partial t}  O\rangle  \]
+
+Nun können wir die Zeitlichen Ableitungen vom Impuls und Ort Erwartungswert berechnen mit der Annhame dass gilt \(\frac{\partial p}{\partial t} = \frac{\partial x}{\partial t} =  0 \)
+
+
+\begin{align}
+ \frac{d}{dt} \langle p \rangle  &= \frac{i}{\hbar} \langle [H,p]\rangle \\
+&= \frac{i}{\hbar} \langle [\frac{p^2}{2m}+V(x),p]\rangle   \\
+&= \frac{i}{\hbar} \langle [V(x),p]\rangle   \\
+&= \frac{i}{\hbar} \langle [V(x),\frac{\hbar}{i}\nabla]\rangle   \\
+\end{align}
+NR:
+ \begin{align}
+[V(x),\frac{\hbar}{i}\nabla]\psi &=\frac{\hbar}{i} V(x)\nabla\psi - \frac{\hbar}{i}\nabla (V(x)\psi)\\
+&= \frac{\hbar}{i} V(x)\nabla\psi -\frac{\hbar}{i}(\psi(x) (\nabla V(x)) + V(x) (\nabla\psi(x))  )  \\
+&= \cancel{\frac{\hbar}{i} V(x)\nabla\psi} -\frac{\hbar}{i}\psi(x) (\nabla V(x))\cancel{ -\frac{\hbar}{i} V(x) (\nabla\psi(x))}   \\
+&=-\frac{\hbar}{i}\psi(x) (\nabla V(x))
+\end{align}
+\[\Rightarrow [V(x),\frac{\hbar}{i}\nabla] = -\frac{\hbar}{i} \nabla V(x) \]
+
+
+\begin{align}
+\rightarrow \frac{d}{dt} \langle p \rangle  &=  -\langle  \nabla V(x) \rangle = \langle F(x) \rangle  
+\end{align}
+
+Und nun für den Ort:
+
+\begin{align}
+ \frac{d}{dt} \langle x \rangle  &= \frac{i}{\hbar} \langle [H,x]\rangle \\
+&= \frac{i}{\hbar} \langle [\frac{p^2}{2m}+V(x),x]\rangle   \\
+&= \frac{i}{\hbar}\frac{1}{2m} \langle [p^2,x]\rangle   \\
+&= \frac{i}{\hbar}\frac{1}{2m} \langle p\underbrace{ [p,x]}_{-i\hbar}+\underbrace{ [p,x]}_{-i\hbar}p\rangle   \\
+&= \frac{i}{\hbar}\frac{1}{2m} \langle -2i\hbar p\rangle   \\
+&= \frac{1}{m} \langle p \rangle   \\
+\end{align}
+
+Zusammengefasst:
+
+\[ m \frac{d}{dt} \langle x \rangle  = \langle p \rangle \qquad \frac{d}{dt} \langle p \rangle  =  -\langle  \nabla V(x) \rangle \]
+
+
+\[ \Rightarrow m \frac{d^2}{dt^2} \langle x \rangle  =  -\langle  \nabla V(x) \rangle =  \langle F(x) \rangle \]
+
+
+
+
+\end{document}
