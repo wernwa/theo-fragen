@@ -1,0 +1,63 @@
+\input{../headers/header_script.tex}
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+
+\begin{document}
+
+\section*{Schrödinger- und Kontinuitätsgleichung}
+
+Mit Hilfe der Schrödingergleichung wollen wir die Kontinuitätsgleichng herleiten, die die Form dann:
+
+\begin{equation}
+  \label{eq:1}
+  \frac{\partial \rho}{\partial t} + \nabla \vec j = 0
+\end{equation}
+
+Die Wahrscheinlichkeitsdichte 
+
+\[ \rho = \psi^*\psi \]
+
+wird nach der Zeit abgeleitet:
+
+\begin{align}
+\frac{\partial \rho}{\partial t} &= \left(\frac{\partial \psi^*}{\partial t}\right)\psi + \psi^*\left(\frac{\partial \psi}{\partial t}\right) \label{eq:2}
+\end{align}
+
+mit Schrödinger Gleichung und deren Komplexkonjugierten:
+
+\[ \frac{\partial \psi}{\partial t} = -\frac{i}{\hbar}H\psi \qquad \frac{\partial \psi^*}{\partial t} = \frac{i}{\hbar}\psi^* H   \]
+
+in die Gleichung \eqref{eq:2} einsetzen:
+
+\begin{align}
+\frac{\partial \rho}{\partial t} &= \left( \frac{i}{\hbar}\psi^* H  \right)\psi + \psi^*\left( -\frac{i}{\hbar}H\psi \right)\\
+&= \psi \left( \frac{i}{\hbar}H\psi^*  \right) + \psi^*\left( -\frac{i}{\hbar}H\psi \right)\\
+\end{align}
+
+Nun wird der Hamilton-Operator \( H = -\frac{\hbar^2}{2m}\nabla^2 + V\):
+
+\begin{align}
+\frac{\partial \rho}{\partial t} &= \psi \left( \frac{i}{\hbar}( -\frac{\hbar^2}{2m}\nabla^2 + V ) \psi^* \right) + \psi^*\left( -\frac{i}{\hbar}(-\frac{\hbar^2}{2m}\nabla^2 + V  )\psi \right)\\
+&=  - \frac{i\hbar}{2m} \psi \nabla^2\psi^* +\cancel{ \frac{i}{\hbar}\psi V \psi^*} + \frac{i\hbar}{2m} \psi^* \nabla^2\psi \cancel{- \frac{i}{\hbar}\psi^* V\psi} \\
+&=  - \frac{i\hbar}{2m} \psi \nabla^2\psi^* + \frac{i\hbar}{2m} \psi^* \nabla^2\psi\\
+&= \frac{i\hbar}{2m} \left(-\psi \nabla^2\psi^* + \psi^* \nabla^2\psi\right) \label{eq:4}
+\end{align}
+
+Nach der Produktregel können wir die Gleichung \eqref{eq:4} wie folgt schreiben:
+
+\begin{align}
+  \label{eq:5}
+\frac{\partial \rho}{\partial t}  &= \frac{i\hbar}{2m} \nabla(-\psi \nabla\psi^* + \psi^* \nabla\psi)
+\end{align}
+
+Die man in Form der Kontinuitätsgleichung schreiben kann:
+
+\[ \boxed{\frac{\partial \rho}{\partial t} + \nabla \underbrace{ \frac{i\hbar}{2m}(\psi \nabla\psi^* - \psi^* \nabla\psi )}_{\vec j} = 0} \]
+
+Die Änderung der Wahrscheinlichkeit dafür, das Teilchen in V anzutreffen, entspricht also genau der Ortsänderung des  Wahrschenilichkeitsstroms.
+Die Kontinuitätsgleichung beschreibt die Erhaltung der Wahrscheinlichkeit eines Teilchens welches innerhalb eines Volumens zu finden ist.
+
+
+
+
+
+\end{document}
