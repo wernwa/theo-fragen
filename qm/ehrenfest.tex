@@ -15,7 +15,38 @@ Betrachte die Heisenberg-Bewegungsgleichung:
 
 Die Erwartungswerte der einzelnen Operatoren durch Mittlung der Gleichung:
 
-\[ \boxed{\frac{d}{dt} \langle O\rangle  = \frac{i}{\hbar} \langle [H,O]\rangle  + \langle  \frac{\partial}{\partial t}  O\rangle } \]
+\begin{equation} 
+\label{eq:41}
+\boxed{\frac{d}{dt} \langle O\rangle  = \frac{i}{\hbar} \langle [H,O]\rangle  + \langle  \frac{\partial}{\partial t}  O\rangle } 
+\end{equation}
+
+Alternative Herleitung der Gleichung \eqref{eq:41} :
+
+\begin{align}
+\frac{d}{dt}\langle  O\rangle  &=  \frac{d}{dt} \int \psi^* O \psi dx \\
+&=  \int \left[\left(\frac{\partial}{\partial t} \psi^*\right) O\psi +  \psi^*  \left(\frac{\partial}{\partial t} O\right) \psi + \psi^* O\left(\frac{\partial}{\partial t} \psi\right)\right]dx\\
+&=  \int \left[\left(\frac{\partial}{\partial t} \psi^*\right) O\psi  + \psi^* O\left(\frac{\partial}{\partial t} \psi\right)\right]dx + \int  \psi^*  \left(\frac{\partial}{\partial t} O\right) \psi dx \\
+&=  \int \left[\left(\frac{\partial}{\partial t} \psi^*\right) O\psi  + \psi^* O\left(\frac{\partial}{\partial t} \psi\right)\right]dx +  \left\langle  \frac{\partial}{\partial t} O\right\rangle \label{eq:40}
+\end{align}
+
+Nun betrachtet man die Schrödinger und die konjugierte Gleichung :
+
+\[ \frac{\partial \psi}{\partial t} = -\frac{i}{\hbar}H\psi \qquad \frac{\partial \psi^*}{\partial t} = \frac{i}{\hbar}\psi^* H   \]
+
+und eingesetzt in die Gleichung \eqref{eq:40} ergibt:
+
+\begin{align}
+\frac{d}{dt}\langle  O\rangle  &=  \int \left[\left(\frac{i}{\hbar} \psi^* H\right) O\psi  + \psi^* O\left(-\frac{i}{\hbar} H\psi\right)\right]dx +  \left\langle  \frac{\partial}{\partial t} O\right\rangle\\
+&=  \frac{i}{\hbar} \int ( \psi^* H O\psi  - \psi^* O H\psi)dx +  \left\langle  \frac{\partial}{\partial t} O\right\rangle\\
+&=  \frac{i}{\hbar} \int \psi^* (  H O  -  O H )\psi dx +  \left\langle  \frac{\partial}{\partial t} O\right\rangle\\
+&=  \frac{i}{\hbar} \int \psi^* [H, O]\psi dx +  \left\langle  \frac{\partial}{\partial t} O\right\rangle\\
+&=  \frac{i}{\hbar} \left\langle [H, O]\right\rangle +  \left\langle  \frac{\partial}{\partial t} O\right\rangle
+\end{align}
+
+
+
+
+
 
 Nun können wir die Zeitlichen Ableitungen vom Impuls und Ort Erwartungswert berechnen mit der Annhame dass gilt \(\frac{\partial p}{\partial t} = \frac{\partial x}{\partial t} =  0 \)
 
