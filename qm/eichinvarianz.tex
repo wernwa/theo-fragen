@@ -1,0 +1,119 @@
+\input{../headers/header_script.tex}
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+
+\begin{document}
+
+\section*{Schrödingergleichung, Eichinvarianz}
+
+Zur Errinerung, das Elektromagnetische Feld kann mit Hilfe eines skalaren Potentials \(\Phi\) und eines Vektorpotentials \(\vec A\) wie folgt beschrieben werden:
+
+\begin{align}
+  \vec B &= \nabla \times \vec A   \label{eq:1}\\
+ \vec E &= -\nabla\Phi - \frac{\partial }{\partial t}\vec A  \label{eq:2}
+\end{align}
+
+Dabei sind die Potentiale \(\vec A\) und \(\Phi\) nicht eindeutig festgelegt. \(\vec E\) und \(\vec B\) sind invariant unter Eichtransfomrationen:
+
+\begin{align}
+  \vec A &\rightarrow \vec A' = \vec A+\nabla\chi  \label{eq:3}\\
+ \Phi &\rightarrow \Phi' = \Phi - \frac{\partial}{\partial t} \chi \label{eq:4}
+\end{align}
+
+Wobei \(\chi\) eine beliebig differenzierbare skalare Funktion seien kann. Eichinvarianz bedeutet, dass \(\vec A'\) und \(\Phi'\) zu den gleichen elektrischen und magnetischen Feldern führen wie die nichtgestrichenen \(\vec A\) und \(\Phi\). Um das zu verdeutlichen setzen wir \eqref{eq:3} in\eqref{eq:1} ein und erhalten:
+
+\begin{align}
+  \vec B &= \nabla \times \vec A' = \nabla \times (\vec A+\nabla\chi   )\\
+&= \nabla \times \vec A + \underbrace{ \nabla \times \nabla \chi }_{=0}\\
+&= \nabla \times \vec A \label{eq:5}
+\end{align}
+
+und setzen wir analog \eqref{eq:3} und \eqref{eq:4} in \eqref{eq:2} ein:
+
+\begin{align}
+ \vec E &= -\nabla\Phi' - \frac{\partial }{\partial t}\vec A' \\
+ &= -\nabla(\Phi - \frac{\partial}{\partial t} \chi ) - \frac{\partial }{\partial t}(  A+\nabla\chi )\\
+&= -\nabla\Phi + \cancel{\nabla\frac{\partial}{\partial t} \chi}  - \frac{\partial }{\partial t}  \vec A \cancel{ - \frac{\partial }{\partial t}\nabla\chi}\\
+&= -\nabla\Phi - \frac{\partial }{\partial t}  \vec A \label{eq:6}
+\end{align}
+
+Man sieht also dass die Gleichungen \eqref{eq:5} und \eqref{eq:6} die gleichen Felder beschreiben wie die Gleichungen \eqref{eq:1} und \eqref{eq:2}. D.h. dass durch die Eichung wurde die Physik nicht verändert \(\Rightarrow \) \textbf{Eichinvarianz}.
+
+
+Nun wollen wir die Eichinvarianz der Schrödinger Gleichung überprüfen. Die SG für ein Teilchen im elektromagnetischen Feld lautet:
+
+\begin{equation}
+\label{eq:7}
+  \left[\frac{1}{2m} (\vec p - \frac{e}{c}\vec A)^2  +\frac{e}{c}\Phi \right]\psi =  i\hbar \frac{\partial}{\partial t}\psi 
+\end{equation}
+
+Es gelten folgende invariante Transformationen für ein Teilchen mit Masse m und Ladung e im elektromagnetischen Feld:
+
+\begin{align}
+  \vec A &\rightarrow \vec A' = \vec A+\nabla\chi  \label{eq:8}\\
+ \Phi &\rightarrow \Phi' = \Phi - \frac{\partial}{\partial t} \chi \label{eq:9}\\
+ \psi &\rightarrow \psi' = \psi\cdot e^{\frac{ie}{c\hbar}\chi}\label{eq:10}
+\end{align}
+
+Wobei auch hier \(\chi\) eine beliebig differenzierbare skalare Funktion ist. Zum Beweiss setzen wir die transformierten Funktionen in die Schrödinger Gleichung (\ref{eq:7}) ein:
+
+\begin{equation}
+  \left[\frac{1}{2m} \left(\vec p - \frac{e}{c}(\vec A +\nabla\chi) \right)^2  +\frac{e}{c}(\Phi-  \frac{\partial}{\partial t} \chi) \right]\psi\cdot e^{\frac{ie}{c\hbar}\chi}\  =  i\hbar \frac{\partial}{\partial t}\psi \cdot e^{\frac{ie}{c\hbar}\chi} \label{eq:10.5}  
+\end{equation}
+
+Laut Korrespondenzprinzip ersetzen wir den Impuls \(p \rightarrow \frac{\hbar}{i}\nabla\). Und zunächst eine Nebenrechnung:
+
+\begin{align}
+  \label{eq:11}  
+\left(\vec p - \frac{e}{c}(\vec A +\nabla\chi) \right)\psi\cdot e^{\frac{ie}{c\hbar}\chi}&= \frac{\hbar}{i}\nabla (\psi\cdot e^{\frac{ie}{c\hbar}\chi} ) - \frac{e}{c}(\vec A +\nabla\chi)\psi\cdot e^{\frac{ie}{c\hbar}\chi}\\ 
+&= \frac{\hbar}{i}\left( e^{\frac{ie}{c\hbar}\chi}(\nabla \psi)+\psi(\nabla e^{\frac{ie}{c\hbar}\chi}) \right) - \frac{e}{c}(\vec A +\nabla\chi)\psi\cdot e^{\frac{ie}{c\hbar}\chi} \\
+ &= \frac{\hbar}{i}\left( e^{\frac{ie}{c\hbar}\chi}(\nabla \psi)+\psi \frac{ie}{c\hbar}(\nabla\chi) e^{\frac{ie}{c\hbar}\chi} \right) - \frac{e}{c}(\vec A +\nabla\chi)\psi\cdot e^{\frac{ie}{c\hbar}\chi} \\
+ &= \frac{\hbar}{i} e^{\frac{ie}{c\hbar}\chi} (\nabla \psi)+ \cancel{\psi \frac{e}{c}(\nabla\chi) e^{\frac{ie}{c\hbar}\chi}}  - \frac{e}{c}\vec A\psi\cdot e^{\frac{ie}{c\hbar}\chi}-\cancel{\frac{e}{c}\vec \nabla\chi \psi\cdot e^{\frac{ie}{c\hbar}\chi}} \\
+ &= \frac{\hbar}{i} e^{\frac{ie}{c\hbar}\chi} (\nabla \psi) - \frac{e}{c}\vec A\psi\cdot e^{\frac{ie}{c\hbar}\chi}\\
+&= e^{\frac{ie}{c\hbar}\chi}\left( \frac{\hbar}{i}\nabla- \frac{e}{c}\vec A \right) \psi
+\end{align}
+
+
+Durch Vergleich gilt auch:
+
+\begin{align}
+  \label{eq:12}
+\left(\vec p - \frac{e}{c}(\vec A +\nabla\chi) \right)\cdot e^{\frac{ie}{c\hbar}\chi} = e^{\frac{ie}{c\hbar}\chi}\left( \frac{\hbar}{i}\nabla- \frac{e}{c}\vec A \right)
+ \end{align}
+
+Also können wir schreiben:
+
+\begin{align}
+  \label{eq:13}
+ \left(\frac{\hbar}{i}\nabla - \frac{e}{c}(\vec A +\nabla\chi) \right)^2 \psi \cdot e^{\frac{ie}{c\hbar}\chi}  &=  \left(\frac{\hbar}{i}\nabla - \frac{e}{c}(\vec A +\nabla\chi) \right)\cdot \underbrace{ \left(\frac{\hbar}{i}\nabla - \frac{e}{c}(\vec A +\nabla\chi) \right)\psi \cdot e^{\frac{ie}{c\hbar}\chi}}_{\eqref{eq:11}} \\
+&=  \underbrace{\left(\frac{\hbar}{i}\nabla - \frac{e}{c}(\vec A +\nabla\chi) \right) \cdot e^{\frac{ie}{c\hbar}\chi}}_{\eqref{eq:12}}\left( \frac{\hbar}{i}\nabla- \frac{e}{c}\vec A \right) \psi \\
+&= e^{\frac{ie}{c\hbar}\chi}\left( \frac{\hbar}{i}\nabla- \frac{e}{c}\vec A \right) \left( \frac{\hbar}{i}\nabla- \frac{e}{c}\vec A \right) \psi\\
+&= e^{\frac{ie}{c\hbar}\chi}\left( \frac{\hbar}{i}\nabla- \frac{e}{c}\vec A \right)^2\psi
+ \end{align}
+
+Betrachten wir nun die rechte Seite der Schrödinger Gleichung:
+
+\begin{align}
+i\hbar \frac{\partial}{\partial t}(\psi \cdot e^{\frac{ie}{c\hbar}\chi}) &=  i\hbar\left(  e^{\frac{ie}{c\hbar}\chi} ( \frac{\partial}{\partial t}\psi ) +\psi (\frac{\partial}{\partial t} e^{\frac{ie}{c\hbar}\chi}) \right)\\
+ &=  i\hbar\left(  e^{\frac{ie}{c\hbar}\chi} ( \frac{\partial}{\partial t}\psi ) +\psi \frac{ie}{c\hbar}( \frac{\partial}{\partial t}  \chi)  e^{\frac{ie}{c\hbar}\chi}) \right)\\
+ &=  i\hbar   e^{\frac{ie}{c\hbar}\chi} ( \frac{\partial}{\partial t}\psi ) -\psi \frac{e}{c}( \frac{\partial}{\partial t}  \chi)  e^{\frac{ie}{c\hbar}\chi})   \label{eq:14}
+ \end{align}
+
+
+Gleichung \eqref{eq:13} und \eqref{eq:14} in die Schrödinger Gleichung \eqref{eq:10.5} einsetzen:
+
+\begin{align}
+  &\left[\frac{1}{2m} \left(\vec p - \frac{e}{c}(\vec A +\nabla\chi) \right)^2  + \frac{e}{c}(\Phi-  \frac{\partial}{\partial t} \chi) \right]\psi\cdot e^{\frac{ie}{c\hbar}\chi}  =   i\hbar   e^{\frac{ie}{c\hbar}\chi} ( \frac{\partial}{\partial t}\psi ) -\psi \frac{e}{c}( \frac{\partial}{\partial t}  \chi)  e^{\frac{ie}{c\hbar}\chi})\\
+&\frac{1}{2m} \underbrace{\left(\vec p - \frac{e}{c}(\vec A +\nabla\chi) \right)^2\psi\cdot e^{\frac{ie}{c\hbar}\chi} }_{\eqref{eq:13}} + \frac{e}{c}(\Phi-  \frac{\partial}{\partial t} \chi) \psi\cdot e^{\frac{ie}{c\hbar}\chi}  =   i\hbar   e^{\frac{ie}{c\hbar}\chi} ( \frac{\partial}{\partial t}\psi ) -\psi \frac{e}{c}( \frac{\partial}{\partial t}  \chi)  e^{\frac{ie}{c\hbar}\chi})\\
+&\frac{1}{2m}e^{\frac{ie}{c\hbar}\chi}\left( \frac{\hbar}{i}\nabla- \frac{e}{c}\vec A \right)^2\psi  + \frac{e}{c}\Phi\psi\cdot e^{\frac{ie}{c\hbar}\chi} - \cancel{\frac{e}{c} \frac{\partial}{\partial t} \chi \psi\cdot e^{\frac{ie}{c\hbar}\chi}}  =   i\hbar   e^{\frac{ie}{c\hbar}\chi} ( \frac{\partial}{\partial t}\psi ) - \cancel{ \psi \frac{e}{c}( \frac{\partial}{\partial t}  \chi)  e^{\frac{ie}{c\hbar}\chi})}\\
+&\frac{1}{2m}e^{\frac{ie}{c\hbar}\chi}\left( \frac{\hbar}{i}\nabla- \frac{e}{c}\vec A \right)^2\psi  + \frac{e}{c}\Phi\psi\cdot e^{\frac{ie}{c\hbar}\chi} =   i\hbar   e^{\frac{ie}{c\hbar}\chi} ( \frac{\partial}{\partial t}\psi )   \qquad |:e^{\frac{ie}{c\hbar}\chi}\\
+&\left[\frac{1}{2m} (\frac{\hbar}{i}\nabla - \frac{e}{c}\vec A)^2  +  \frac{e}{c} \Phi \right]\psi =  i\hbar \frac{\partial}{\partial t}\psi 
+\end{align}
+
+Wie man sieht erhalten wir die ursprüngliche Schrödinger Gleichung \eqref{eq:7}. D.h. die SG ist Eichinvariant bezüglich der eingesetzen 3 Transformationen \eqref{eq:8} bis \eqref{eq:10}. Die umgeeichte Wellefunktion \(\psi \cdot e^{\frac{ie}{c\hbar}\chi}\) liefert die gleiche Wahrscheinlichkeitsdichte wie die ursprüngliche Wellenfunktion:
+
+\[ |\psi'|^2 = \psi'^*\cdot\psi' = e^{-\frac{ie}{c\hbar}\chi}e^{\frac{ie}{c\hbar}\chi} \psi^*\psi = |\psi|^2\]
+
+Also wird die Physik dahinter nicht verändert. 
+
+
+\end{document}
