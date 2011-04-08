@@ -1,0 +1,1418 @@
+\input{../headers/header_script.tex}
+\graphicspath{{sgl_potential_pics/}}% Suchpfad für Graphiken
+
+\begin{document}
+\setcounter{section}{1}
+\section*{Potentialtopf, Potentialbariere und Potentialwall}
+
+
+\subsection{Stufenpotential allgemein}
+
+Die stationäre Schrödingergleichung für eindimensional Probleme lautet:
+\begin{align} 
+  &\left[-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x)\right]\varphi(x)
+  =E\varphi(x)\label{eq:25}\\
+  \Leftrightarrow &\left[\frac{d^2}{dx^2} 
+    +\frac{2m}{\hbar^2}(E-V(x))\right]\varphi(x)=0 
+  \tag{\ref{eq:25}'}\label{eq:25'} 
+\end{align}
+
+Aus der Gleichung \eqref{eq:25'} folgt:
+\begin{subequations}
+  \label{eq:27}
+  \begin{align}
+    E>V: \quad &\left[\frac{d^2}{dx^2}+k^2\right]\varphi(x)=0 
+    \quad \textrm{mit } k=\sqrt{\frac{2m}{\hbar^2}\underbrace{(E-V)}_{>\,0}} \notag \\
+    &\varphi(x)=Ae^{ikx}+Be^{-ikx}  
+    \qquad  A,B \in \mathbb{C} \label{eq:27a} \\[2ex]
+    E<V: \quad &\left[\frac{d^2}{dx^2}-\kappa^2\right]\varphi(x)=0
+    \quad  \textrm{mit } \kappa=\sqrt{\frac{2m}{\hbar^2}\underbrace{(V-E)}_{>\,0}} \notag \\
+    &\varphi(x)=Ce^{\kappa x}+De^{-\kappa x}  
+    \qquad  C,D \in \mathbb{C} \label{eq:27b}\\[2ex]
+    E=V: \quad &\frac{d^2}{dx^2}\varphi(x)=0 \notag \\
+    &\varphi(x)=F+G\cdot x   
+    \qquad  F,G \in \mathbb{C} \label{eq:27c}
+  \end{align}
+\end{subequations}
+
+\subsubsection{Anschlußbedingung.}
+$V(x)$ mit Unstetigkeit bei $x=a$\\
+Sei $V_\delta$ in $[a-\delta, a+\delta] \forall \delta$ beschränkt. In
+(\ref{eq:27a}) eingesetzt und einmal Integriert:
+\begin{equation*}
+  \left. \frac{d\varphi}{dx}\right|_{a+\delta}-\left. \frac{d\varphi}{dx}\right|_{a-\delta} =
+\int_{a-\delta}^{a+\delta} \frac{2m}{\hbar^2}
+\left(V_\delta(x)-E\right)\varphi(x)dx
+\end{equation*}
+$V_\delta$ beschränkt $\rightarrow$ rechte Seite $\rightarrow$ 0 für $\delta$
+$\rightarrow$ 0
+\begin{equation*}
+  \left. \frac{d\varphi}{dx}\right|_{a+\delta} = \left.
+    \frac{d\varphi}{dx}\right|_{a-\delta} \quad
+  \Rightarrow
+ \begin{cases} 
+   \varphi'=\frac{d\varphi}{dx}, \mbox{ ist stetig bei } x=a  \\
+   \varphi \mbox{ ebenfalls stetig bei } x=a 
+ \end{cases}
+\end{equation*}
+
+
+\subsubsection{Reflexion- und Transmissionskoeffizient.}
+
+Trifft ein Teilchen auf ein Potential das größer ist als die Energie des Teilchens, dann kann das Teilchen entweder reflektiert oder transmittiert werden. Die Warscheinlichkeit für die Reflexion bzw. Transmission des Teilchens wird durch den Reflexions bzw. Transmissions Koeffizienten bestimmt. Diese sind folgendermaßen definiert:
+
+\begin{equation}
+  \label{eq:1}
+  R = \frac{\text{Reflektierter Wahrscheinlichkeitsstrom}}{\text{Einfallender Warscheinlichkeitsstrom}}  = \frac{j_{r}}{j_{e}}\qquad \leftarrow  \text{Reflexionskoeffizient}
+\end{equation}
+
+\begin{equation}
+  \label{eq:2}
+  T = \frac{\text{Transmittierter Warscheinlichkeitsstrom}}{\text{Einfallender Warscheinlichkeitsstrom}}  = \frac{j_{t}}{j_{e}}\qquad \leftarrow  \text{Transmissionskoeffizient}
+\end{equation}
+
+
+Für den Wahrscheinlichkeitsstrom gilt (siehe Schrödingergleichung+Kontinuitätsgleichung):
+
+\begin{equation}
+  \label{eq:3}
+  j = \frac{i\hbar}{2m}\left(\psi \frac{\partial}{\partial x} \psi^* - \psi^* \frac{\partial}{\partial x}\psi\right)
+\end{equation}
+
+Aus der Warscheinlichkeitsstromerhaltung folgt:
+
+\begin{equation}
+  \label{eq:4}
+  j_{e} = j_{r} + j_{t}
+\end{equation}
+
+Betrachten wir eine einfallende ebene Welle für die gilt:
+
+\begin{equation}
+  \label{eq:5}
+  \psi_e = Ae^{ikx}
+\end{equation}
+
+Damit erhalten wir folgenden einfallenden Warscheinlichkeitsstrom (siehe \eqref{eq:3}):
+
+\begin{align}
+  \label{eq:6}
+  j_e &= \frac{i\hbar}{2m}\left(\psi_e \frac{\partial}{\partial x} \psi^*_e - \psi^*_e \frac{\partial}{\partial x}\psi_e\right)\\
+&= \frac{i\hbar}{2m}\left(Ae^{ikx} \frac{\partial}{\partial x} A^*e^{-ikx} - A^*e^{-ikx}\frac{\partial}{\partial x}Ae^{ikx}\right)\\
+&= \frac{i\hbar}{2m}\left(|A|^2(-ik)  -|A|^2(ik)\right)\\
+&= \frac{\hbar k}{m}|A|^2
+\end{align}
+
+
+Für die reflektierte Welle gilt:
+
+\begin{equation}
+  \label{eq:7}
+  \psi_r = Be^{-ikx}
+\end{equation}
+
+Wir erhalten wir folgenden reflektierten Warscheinlichkeitsstrom:
+
+\begin{align}
+  \label{eq:8}
+  j_r &= \frac{i\hbar}{2m}\left(\psi_r \frac{\partial}{\partial x} \psi^*_r - \psi^*_r \frac{\partial}{\partial x}\psi_r\right)\\
+&= \frac{i\hbar}{2m}\left(Be^{-ikx} \frac{\partial}{\partial x} B^*e^{ikx} - B^*e^{ikx}\frac{\partial}{\partial x}Be^{-ikx}\right)\\
+&= \frac{i\hbar}{2m}\left(|B|^2(ik)  -|B|^2(-ik)\right)\\
+&= -\frac{\hbar k}{m}|B|^2
+\end{align}
+
+Damit erhalten wir folgenden Reflektionskoeffizienten (siehe \eqref{eq:1}):
+
+\begin{equation}
+  \label{eq:9}
+  R = \frac{j_r}{j_e} = \frac{-\frac{\hbar k}{m}|B|^2 }{\frac{\hbar k}{m}|A|^2} = -\frac{|B|^2}{|A|^2}
+\end{equation}
+
+
+Da die transmitierte Welle in einem anderen Potential ist, ändert sich der Wellenvektor des Teilchens \(k \rightarrow q\). Somit gilt für die Wellenfunktion:
+
+\begin{equation}
+  \label{eq:10}
+    \psi_t = Ce^{iqx}
+\end{equation}
+
+Für den Warschenlichkeitsstrom gilt:
+
+\begin{align}
+  \label{eq:11}
+  j_t &= \frac{i\hbar}{2m}\left(\psi_t \frac{\partial}{\partial x} \psi^*_t - \psi^*_t \frac{\partial}{\partial x}\psi_t\right)\\
+&= \frac{i\hbar}{2m}\left(Ce^{iqx} \frac{\partial}{\partial x} C^*e^{-iqx} - C^*e^{-ikx}\frac{\partial}{\partial x}Ce^{iqx}\right)\\
+&= \frac{i\hbar}{2m}\left(|C|^2(-iq)  -|C|^2(iq)\right)\\
+&= \frac{\hbar q}{m}|C|^2
+\end{align}
+
+
+Damit können wir den Transmissionskoeffizienten bestimmen (siehe \eqref{eq:2}) :
+
+
+\begin{equation}
+  \label{eq:12}
+  T = \frac{j_t}{j_e} = \frac{\frac{\hbar q}{m}|C|^2 }{\frac{\hbar k}{m}|A|^2} = \frac{q}{k} \frac{|C|^2}{|A|^2}
+\end{equation}
+
+Aus der Wahrscheinlichkeitsstromerhaltung \eqref{eq:4}   können wir eine wichtige Beziehung herleiten:
+
+\begin{align}
+  \label{eq:13}
+  \frac{\hbar k}{m} |A|^2 &= -\frac{\hbar k}{m}|B|^2 + \frac{\hbar q}{m} |C|^2 \qquad |:\frac{\hbar k}{m}|A|^2 \\
+1 &= \underbrace{-\frac{ |B|^2}{|A|^2}}_{R} +\underbrace{ \frac{q}{k} \frac{|C|^2}{|A|^2}}_{T}
+\end{align}
+
+\begin{equation}
+  \label{eq:14}
+  \Rightarrow \boxed{ R+T=1 }
+\end{equation}
+
+
+
+
+\subsection{Potentialstufe}
+
+\begin{figure}[htbp]
+  \begin{minipage}[h]{0.4\linewidth}
+    \begin{align*}
+      V(x)&=V_0\cdot\Theta(x) \\
+      &= \begin{cases}
+        V_0 & \mbox{ für }x>0\\
+        0 & \mbox{ für }x\leq0
+      \end{cases}
+    \end{align*}
+    \vspace{1cm}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[h]{0.5\linewidth}
+    \input{sgl_potential_pics/Potentialstufe.pdf_t}
+  \end{minipage}
+  \caption{Potentialstufe.}
+  \label{figu:5}
+\end{figure}
+
+Für $E>V_0$ gilt laut (\ref{eq:27a}):
+\begin{align*}
+    \textbf{Bereich I:} \quad &\left[\frac{d^2}{dx^2}+k_1^2\right]\varphi_{\text{I}}(x)=0 
+    \quad \textrm{mit } k_1=\sqrt{\frac{2m}{\hbar^2}E} \\
+    &\varphi_\textrm{I}(x)=A_1e^{ikx}+A_1'e^{-ikx} \qquad A_1,A_1' \in \mathbb{C} \\[2ex]
+    \textbf{Bereich II:} \quad &\left[\frac{d^2}{dx^2}+k_2^2\right]\varphi_{\text{II}}(x)=0
+    \quad  \textrm{mit } k_2=\sqrt{\frac{2m}{\hbar^2}(E-V_0)} \\
+     &\varphi_\textrm{II}(x)=A_2e^{ikx}+A_2'e^{-ikx} \qquad A_2,A_2' \in \mathbb{C}
+\end{align*}
+
+Teilchen kommt von $-\infty \rightarrow A_2' = 0$\\
+\textbf{Anschlußbedingung:}
+%\localeqncounter
+\begin{align}
+  \varphi_\textrm{I}(0) 
+  = \varphi_\textrm{II}(0) & \Leftrightarrow  A_1 + A_1' 
+  = A_2 + \cancel{A_2'}\label{eq1:Stufe-eq1}\\
+ \varphi'_\textrm{I}(0) 
+ = \varphi'_\textrm{II}(0) & \Leftrightarrow  k_1(A_1 - A_1') 
+ = k_2(A_2 - \cancel{A_2'}) \label{eq2:Stufe-eq2}
+\end{align}
+%\globaleqncounter
+
+\begin{equation*}
+  \Rightarrow \frac{A_1'}{A_1} = \frac{k_1-k_2}{k_1+k_2} \quad
+  \mbox{und} \quad
+  \frac{A_2}{A_1} = \frac{2k_1}{k_1+k_2}
+\end{equation*}
+
+Wähle $A_1 = 1$ somit folgt:
+\begin{equation*}
+  \varphi(x) =
+  \begin{cases}
+    e^{ik_1x}+\frac{k_1-k_2}{k_1+k_2} e^{-ik_1x} & \mbox{ für Bereich I} \\
+    \frac{2k_1}{k_1+k_2} e^{ik_2x} & \mbox{ für Bereich II}
+  \end{cases}
+\end{equation*}
+
+\textbf{Reflektionskoeffizient:}
+%\begin{centereq}
+  \begin{equation}
+    \label{eq:29}
+    R= \left|\frac{A_1'}{A_1}\right|^2 
+    = \left|\frac{k_1-k_2}{k_1+k_2}\right|^2
+  \end{equation}
+%\end{centereq}
+\textbf{Transmissionsskoeffizient:}
+%%\begin{centereq}
+  \begin{equation}
+    \label{eq:30}
+    T= \frac{k_2}{k_1}\left|\frac{A_1'}{A_1}\right|^2 
+    = \frac{4k_1k_2}{k_1+k_2}^2
+  \end{equation}
+%\end{centereq}
+Es gilt:
+%%\begin{centereq}
+  \begin{equation}
+    \label{eq:31}
+    \boxed{R+T=1}
+  \end{equation}
+%\end{centereq}
+
+\bigskip
+Für $E<V_0$ gilt laut (\ref{eq:27a}) und (\ref{eq:27b}):
+\begin{align*}
+    \textbf{Bereich I:} \quad &\left[\frac{d^2}{dx^2}+k_1^2\right]\varphi_\textrm{I}(x)=0 
+    \quad \textrm{mit } k_1=\sqrt{\frac{2m}{\hbar^2}E} \\
+    &\varphi_\textrm{I}(x)=A_1e^{ikx}+A_1'e^{-ikx} \qquad A_1,A_1' \in \mathbb{C} \\[2ex]
+    \textbf{Bereich II:} \quad &\left[\frac{d^2}{dx^2}+\kappa_2^2\right]\varphi_\textrm{II}(x)=0
+    \quad  \textrm{mit } \kappa_2=\sqrt{\frac{2m}{\hbar^2}(V_0-E)} \\
+     &\varphi_\textrm{II}(x)=B_2e^{\kappa x}+B_2'e^{-\kappa x} \qquad B_2,B_2' \in \mathbb{C}
+\end{align*}
+
+\textbf{Randbedingung:} $\varphi_\textrm{II}(x) \rightarrow 0$ für $x \rightarrow \infty$
+daraus folgt $B_2 = 0$ \\
+\begin{equation*}
+  \Rightarrow \frac{A_1'}{A_1} = \frac{k_1-i\kappa}{k_1+i\kappa} \quad
+  \mbox{und} \quad
+  \frac{B'_2}{A_1} = \frac{2k_1}{k_1+i\kappa}
+\end{equation*}
+
+Mit $A_1 = 1$ folgt:
+
+\begin{equation*}
+  \varphi(x) =
+  \begin{cases}
+    e^{ik_1x}+\frac{k_1-i\kappa}{k_1+i\kappa} e^{-ik_1x} & \mbox{ für Bereich I} \\
+    \frac{2k_1}{k_1+i\kappa} e^{-\kappa x} & \mbox{ für Bereich II}
+  \end{cases}
+\end{equation*}
+
+\textbf{Reflexionskoeffizient:}
+%%\begin{centereq}
+  \begin{equation*}
+    R= \left|\frac{A_1'}{A_1}\right|^2 
+    =  \left|\frac{k_1-i\kappa}{k_1+i\kappa}\right|
+    = \left(\frac{k_1-i\kappa}{k_1+i\kappa}\right) 
+    \left(\frac{k_1+i\kappa}{k_1-i\kappa}\right)
+    = 1
+  \end{equation*}
+
+\textbf{Transmissionsskoeffizient:}
+\begin{equation*}
+  T= 1-R = 1-1=0 \Rightarrow \mbox{ Totalreflexion}
+\end{equation*}
+%\end{centereq}
+
+\textbf{Bemerkung:}\\
+Bei einer unendlichhoher Schwelle d.h. $V_0 \rightarrow \infty$ geht $\kappa
+\rightarrow \infty$ daraus folgt $A'_1 \rightarrow -A_1$ und $B'_2 \rightarrow
+0$. Damit gilt für die Wellenfunktion:
+\[ \varphi(x=0)=0 \]
+
+\subsection{Tunneleffekt, Potentialschwelle.}
+\begin{figure}[htbp]
+  \begin{minipage}[h]{0.45\linewidth}
+    \begin{align*}
+      V(x)&=V_0\cdot\Theta(a-|x|) \\
+      &= \begin{cases}
+        V_0 & \mbox{ für }-a<x<a\\
+        0 & \mbox{ sonst}
+      \end{cases}
+    \end{align*}
+    \vspace{1cm}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[h]{0.5\linewidth}
+    \input{sgl_potential_pics/Potentialschwelle.pdf_t}
+  \end{minipage}
+  \caption{Potentialschwelle.}
+  \label{fig:6}
+\end{figure}
+
+Für $E<V_0$ gilt Gl.~\eqref{eq:27a} und \eqref{eq:27b}:
+\begin{equation*}
+  \varphi =
+  \begin{cases}
+    Ae^{ikx}+Be^{-ikx} & \mbox{für Bereich I}\\
+    Ce^{\kappa x}+De^{-\kappa x} & \mbox{für Bereich II}\\
+    Fe^{ikx}+Ge^{-ikx} & \mbox{für Bereich III}
+  \end{cases}
+\end{equation*}
+Mit \(  k = \frac {\sqrt{2 m E}}\hbar  \) und
+\( \kappa=\frac{\sqrt{2 m (V_0 - E)}}\hbar \)\\
+
+Anschlußbedingung bei $x=-a$
+%\localeqncounter
+%\resetlocaleqncounter
+%Lege eine lokalen Zähler für linksgebundene Tags an.
+%\newcounter{potschwellecounter}
+%Mit Null initialisieren.
+%\setcounter{potschwellecounter}{0}
+%Sichere den globalen Zähler.
+%\setcounter{tmpeqnc}{\value{equation}}%
+%Setze den lokalen Zähler als Standardzähler.
+%\setcounter{equation}{\value{potschwellecounter}}%
+%\renewcommand{\theequation}{\arabic{equation}}%
+
+\begin{equation}
+  \varphi_\textrm{I} (-a) = \varphi_\textrm{II}(-a)
+   \Leftrightarrow  
+  Ae^{-ika}+Be^{ika} = Ce^{-\kappa a}+De^{\kappa a} 
+  \label{eq2:potschw1}
+\end{equation}
+\begin{align}
+  \left.\frac{\text{d}\varphi_\textrm{I}}{\text{d}x} \right|_{x=-a} 
+      = \left.\frac{\text{d}\varphi_\textrm{II}}{\text{d}x}\right|_{x=-a}
+  & \Leftrightarrow  
+  ik Ae^{-ika}-ik Be^{ika} = \kappa Ce^{-\kappa a}- \kappa D e^{\kappa a}
+  \label{eq2:potschw2}\\
+  & \Leftrightarrow  
+   Ae^{-ika}-Be^{ika} = \frac{-i\kappa}{k} Ce^{-\kappa a}
+                      +\frac{i\kappa}{k} De^{\kappa a}\notag
+\end{align}
+
+\begin{align}
+  \eqref{eq2:potschw1}+\eqref{eq2:potschw2}
+  \Rightarrow 
+  2Ae^{-ika} &= Ce^{-\kappa a}+De^{\kappa a} 
+              -\frac{i\kappa}{k} Ce^{-\kappa a}
+                +\frac{i\kappa}{k}De^{\kappa a} \label{eq2:potschw3} \\
+             &=  \left(1-\frac{i\kappa}{k}\right)Ce^{-\kappa a}
+                +\left(1+\frac{i\kappa}{k}\right)De^{\kappa a} \notag\\[2ex]
+ \eqref{eq2:potschw1}-\eqref{eq2:potschw2}
+  \Rightarrow 
+  2Be^{ika} &= Ce^{-\kappa a}+De^{\kappa a} 
+              +\frac{i\kappa}{k}Ce^{-\kappa a}
+                -\frac{i\kappa}{k}De^{\kappa a} \label{eq2:potschw4} \\
+             &=  \left(1+\frac{i\kappa}{k}\right)Ce^{-\kappa a}
+                +\left(1-\frac{i\kappa}{k}\right)De^{\kappa a}\notag
+\end{align}
+
+Anschlußbedingung bei $x=a$
+\begin{equation}
+  \label{eq2:potschw5}
+   \varphi_\textrm{II} (a) = \varphi_\textrm{III}(a)
+   \Leftrightarrow  
+  Ce^{\kappa a}+De^{-\kappa a} = Fe^{ika}+Ge^{-ika}
+\end{equation}
+\begin{align}
+  \left.\frac{\text{d}\varphi_\textrm{II}}{\text{d}x}\right|_{x=a}
+  =\left.\frac{\text{d}\varphi_\textrm{III}}{\text{d}x}\right|_{x=a}
+  & \Leftrightarrow  
+ \kappa Ce^{\kappa a}- \kappa D e^{-\kappa a} = ik Fe^{ika}-ik Ge^{-ika}  
+ \label{eq2:potschw6}\\
+  & \Leftrightarrow  
+   Ce^{\kappa a}-De^{-\kappa a} = \frac{ik}{\kappa} Fe^{ika}
+                      -\frac{ik}{\kappa} Ge^{-ika}\notag
+\end{align}
+
+Hier betrachten wir eine von links einlaufende Welle d.h. $G=0$ damit reduzieren
+sich die Gleichungen~\eqref{eq2:potschw5} und \eqref{eq2:potschw6} auf:
+
+\begin{align}
+  &Ce^{\kappa a}+De^{-\kappa a} = Fe^{ika}
+  \tag{\ref{eq2:potschw5}'}\label{eq2:potschw5'} \\[2ex]
+  &Ce^{\kappa a}-De^{-\kappa a} = \frac{ik}{\kappa}
+  Fe^{ika} \tag{\ref{eq2:potschw6}'}\label{eq2:potschw6'}
+\end{align} 
+
+\begin{align}
+  \eqref{eq2:potschw5'} + \eqref{eq2:potschw6'}
+  \Rightarrow 
+   2Ce^{\kappa a} &= Fe^{ika}+ \frac{ik}{\kappa}Fe^{ika}
+   \label{eq2:potschw7}\\ %\hphantom{-}
+                 &= \left(1+\frac{ik}{\kappa}\right)Fe^{ika}
+                      \qquad \qquad 
+                      \left|\quad \cdot \frac{1}{2}e^{-2\kappa a}\right.\notag\\
+  \Leftrightarrow 
+  Ce^{-\kappa a} &= \frac{1}{2}e^{-2\kappa a}
+                     \left(1+\frac{ik}{\kappa}\right)Fe^{ika}\notag
+\end{align}
+\begin{align}
+  \eqref{eq2:potschw5'} - \eqref{eq2:potschw6'}
+  \Rightarrow 
+  2De^{-\kappa a} &= Fe^{ika}- \frac{ik}{\kappa}Fe^{ika}
+  \label{eq2:potschw8} \\
+                  &= \left(1-\frac{ik}{\kappa}\right)Fe^{ika}
+                      \qquad \qquad 
+                      \left|\quad \cdot \frac{1}{2}e^{2\kappa a}\right.\notag\\
+  \Leftrightarrow 
+  De^{\kappa a} &= \frac{1}{2}e^{2\kappa a}
+                    \left(1-\frac{ik}{\kappa}\right)Fe^{ika}\notag
+\end{align}
+%\globaleqncounter
+Setzen wir nun die Gleichungen~\eqref{eq2:potschw7} und \eqref{eq2:potschw8}
+in die Gleichung~\eqref{eq2:potschw3} ein, so erhalten
+wir:
+{\allowdisplaybreaks
+\begin{align}
+   2Ae^{-ika} & = \left(1-\frac{i\kappa}{k}\right)
+                   \frac{1}{2}e^{-2\kappa a}
+                   \left(1+\frac{ik}{\kappa}\right)Fe^{ika}\notag \\
+                 &\qquad \qquad \qquad \qquad
+                 +\left(1+\frac{i\kappa}{k}\right)
+                    \frac{1}{2}e^{2\kappa a}
+                   \left(1-\frac{ik}{\kappa}\right)Fe^{ika} \notag \\
+              & = \frac{1}{2}\left[\left(1-\frac{i\kappa}{k}\right)
+                     \left(1+\frac{ik}{\kappa}\right)
+                     e^{-2\kappa a}
+                     +\left(1+\frac{i\kappa}{k}\right)
+                     \left(1-\frac{ik}{\kappa}\right)
+                     e^{2\kappa a}\right]
+                     Fe^{ika} \notag \\
+                &= \frac{1}{2}\left[
+                     \left(1+\frac{ik}{\kappa}
+                             -\frac{i\kappa}{k}
+                             +\underbrace{\frac{\kappa k}{k \kappa}}_{=1}\right)
+                     e^{-2\kappa a}\right.\notag\\
+                     &\qquad \qquad \qquad \qquad
+                     +\left.\left(1-\frac{ik}{\kappa}
+                     +\frac{i\kappa}{k}
+                     +\underbrace{\frac{\kappa k}{k \kappa}}_{=1}\right)
+                     e^{2\kappa a}\right]
+                     Fe^{ika} 
+                   \notag \\
+              & = \frac{1}{2}\left[
+                     \left(2-i\underbrace{\left(\frac{\kappa}{k}
+                             -\frac{k}{\kappa}\right)}_{\equiv\epsilon}\right)
+                     e^{-2\kappa a}
+                     +\left(2+i\underbrace{\left(\frac{\kappa}{k}
+                             -\frac{k}{\kappa}\right)}_{\equiv\epsilon}\right)
+                     e^{2\kappa a}\right]
+                     Fe^{ika} \notag \\
+              & = \frac{1}{2}\left[
+                     \left(2-i\epsilon\right)
+                     e^{-2\kappa a}
+                     +\left(2+i\epsilon\right)
+                     e^{2\kappa a}\right]
+                     Fe^{ika} \notag \\
+              & = \frac{1}{2}\left[
+                     2 e^{-2\kappa a}-i\epsilon \, e^{-2\kappa a}
+                     +2 e^{2\kappa a}+i\epsilon \, e^{2\kappa a}\right]
+                     Fe^{ika} \notag \\
+              & = \frac{1}{2}\left[
+                     2 
+                     \underbrace{\left(e^{2\kappa a}+e^{-2\kappa a}\right)}
+                     _{2\cosh(2\kappa a)}
+                     +i\epsilon
+                     \underbrace{\left(e^{2\kappa a}-e^{-2\kappa a}\right)}
+                    _{2\sinh(2\kappa a)}\right]
+                     Fe^{ika} \notag \\
+              & = \left[2\cosh(2\kappa a) +i\epsilon\sinh(2\kappa a)\right]
+                     Fe^{ika} \qquad \qquad \left|\quad \cdot
+                       \frac{1}{2}e^{ika}\right.\notag\\[2ex]
+\Leftrightarrow A & = \left[\cosh(2\kappa a) 
+                     +\frac{i\epsilon}{2}\sinh(2\kappa a)\right]Fe^{2ika}
+\end{align}
+}
+
+Setzen wir nun analog die Gleichungen~\eqref{eq2:potschw7} und
+\eqref{eq2:potschw8} in die Gleichung~\eqref{eq2:potschw4} ein, so erhalten wir:
+{\allowdisplaybreaks
+\begin{align}
+   2Be^{ika} & = \left(1+\frac{i\kappa}{k}\right)
+                   \frac{1}{2}e^{-2\kappa a}
+                   \left(1+\frac{ik}{\kappa}\right)Fe^{ika}\notag \\
+                 &\qquad \qquad \qquad \qquad
+                 +\left(1-\frac{i\kappa}{k}\right)
+                    \frac{1}{2}e^{2\kappa a}
+                   \left(1-\frac{ik}{\kappa}\right)Fe^{ika} \notag \\
+              & = \frac{1}{2}\left[\left(1+\frac{i\kappa}{k}\right)
+                     \left(1+\frac{ik}{\kappa}\right)
+                     e^{-2\kappa a}
+                     +\left(1-\frac{i\kappa}{k}\right)
+                     \left(1-\frac{ik}{\kappa}\right)
+                     e^{2\kappa a}\right]
+                     Fe^{ika} \notag \\
+              & = \frac{1}{2}\left[
+                     \left(1+\frac{ik}{\kappa}
+                             +\frac{i\kappa}{k}
+                             -\underbrace{\frac{\kappa k}{k \kappa}}_{=1}\right)
+                     e^{-2\kappa a}\right.\notag\\
+                   &\qquad \qquad \qquad \qquad
+                     +\left.\left(1-\frac{ik}{\kappa}
+                             -\frac{i\kappa}{k}
+                             -\underbrace{\frac{\kappa k}{k \kappa}}_{=1}\right)
+                     e^{2\kappa a}\right]
+                     Fe^{ika} \notag \\
+              & = \frac{1}{2}\left[
+                     i\underbrace{\left(\frac{\kappa}{k}
+                             +\frac{k}{\kappa}\right)}_{\equiv\eta}
+                     e^{-2\kappa a}
+                     -i\underbrace{\left(\frac{\kappa}{k}
+                             +\frac{k}{\kappa}\right)}_{\equiv\eta}
+                     e^{2\kappa a}\right]
+                     Fe^{ika} \notag \\
+              & = -\frac{1}{2} i \eta 
+                     \underbrace {\left[
+                     e^{2\kappa a} - e^{-2\kappa a}\right]}_
+                     {2 \sinh(2 \kappa a)}
+                     Fe^{ika} \notag \\
+              & = -i \eta \sinh(2 \kappa a)
+                     Fe^{ika} \qquad \qquad \left| \quad
+                       \cdot \frac{1}{2}e^{-ika}\right. \notag\\[2ex]
+\Leftrightarrow B & = -i \eta \sinh(2 \kappa a) F
+\end{align}
+}
+
+Für die \textbf{Translationsamplitude} gilt:
+\[ \tau = \frac{F}{A} = \frac{e^{-2 i k a}}
+               {\cosh(2 \kappa a) + \frac{i \epsilon}{2}\sinh(2 \kappa a)} \]
+
+Für den \textbf{Transmissionsskoeffizienten} gilt:
+
+\begin{align*}
+  T &= |\tau|^2 = \tau^*\tau \\
+    &= \frac{e^{2 i k a}}
+          {\cosh(2 \kappa a) - \frac{i \epsilon}{2}\sinh(2 \kappa a)} \cdot
+           \frac{e^{-2 i k a}}
+           {\cosh(2 \kappa a) + \frac{i \epsilon}{2}\sinh(2 \kappa a)}\\
+    &= \frac{1}{\cosh(2 \kappa a)^2
+         + \frac{\epsilon^2}{4}\sinh(2 \kappa a)^2}\\
+    &= \frac{1}{1+\sinh(2 \kappa a)^2
+         + \frac{\epsilon^2}{4}\sinh(2 \kappa a)^2}
+\end{align*}
+
+%%\begin{centereq}
+  \begin{equation}
+    \label{eq:28}
+    \Leftrightarrow T = \frac{1}{1+(1 + 
+      \frac{\epsilon^2}{4})\sinh(2 \kappa a)^2}
+  \end{equation}
+%\end{centereq} 
+
+Mit \(  k = \frac {\sqrt{2 m E}}\hbar  \),
+\( \kappa=\frac{\sqrt{2 m (V_0 - E)}}\hbar \) und 
+\( \epsilon = \frac \kappa k - \frac k \kappa \) erhalten wir:
+{\allowdisplaybreaks
+\begin{align*}
+ T &= \frac{1}{1+\left[1 + \frac{1}{4} \cdot
+           \left(\frac \kappa k - \frac k \kappa\right)^2
+           \right]\sinh(2 \kappa a)^2}\\
+   &= \frac{1}{1+\left[1 + \frac{1}{4} \cdot
+           \left(\frac {\kappa^2}{k^2}
+             -2\cdot \frac \kappa k \frac k \kappa
+             + \frac {k^2}{\kappa^2}
+           \right)
+           \right]\sinh(2 \kappa a)^2}\\
+   &= \frac{1}{1+\left[1 + \frac{1}{4} \cdot
+           \left(\frac {V_0-E}{E}
+             -2
+             + \frac {E}{V_0-E}
+           \right)
+           \right]\sinh\left(2 \frac{\sqrt{2 m (V_0 - E)}}\hbar a\right)^2}\\
+   &= \frac{1}{1+\left[1 + \frac{1}{4} \cdot
+           \left(\frac {(V_0-E)^2-2E(V_0-E)+E^2}{E(V_0-E)}
+           \right)
+           \right]\sinh(\dots)^2} 
+         \qquad \qquad
+           \left|\;\cdot \frac{4 E (V_0-E)}{4 E (V_0-E)} \right. \\
+   &= \frac{4 E (V_0-E)}{4 E (V_0-E)+\left[4 E (V_0-E) 
+           +(V_0-E)^2-2E(V_0-E)+E^2
+           \right]\sinh(\dots)^2}
+\end{align*}
+}
+
+%%\begin{centereq}
+  \begin{equation}
+    \label{eq:32}
+    \Leftrightarrow T = \frac{4 E (V_0-E)}{4 E (V_0-E)+V_0^2 \sinh\left(\frac{2a}\hbar
+        \sqrt{2 m (V_0 - E)} \right)^2}
+  \end{equation}
+%\end{centereq}
+
+Grenzfall: \( \kappa a \gg 1 \) d.h. sehr hohe und sehr breite Schwelle.
+
+\[ T = \exp \left(-\frac {4a}\hbar \sqrt{2m(V_0-E)} \right) \]
+
+Für die \textbf{Reflexionsamplitude} gilt:
+\[ \rho = \frac B A = \frac{-\frac i 2 \eta \sinh(2 \kappa a)
+          \cdot e^{-2 i k a}}
+        {\cosh(2 \kappa a)+\frac{i\epsilon}{2} \sinh(2 \kappa a)} \]
+
+Damit können wir den Reflexionskoeffizienten bestimmen mit:
+\begin{align*}
+  R &= |\rho|^2 = \rho^*\rho \\
+    &= \frac{\frac i 2 \eta \sinh(2 \kappa a)
+          \cdot e^{2 i k a}}
+        {\cosh(2 \kappa a)-\frac{i\epsilon}{2} \sinh(2 \kappa a)} \cdot
+       \frac{-\frac i 2 \eta \sinh(2 \kappa a)
+          \cdot e^{-2 i k a}}
+        {\cosh(2 \kappa a)+\frac{i\epsilon}{2} \sinh(2 \kappa a)}
+\end{align*}
+
+%%\begin{centereq}
+  \begin{equation}
+    \label{eq:32Rkoef}
+    \Leftrightarrow R = \frac{\frac 1 4 \eta^2 \sinh(2 \kappa a)^2}
+    {1+\left(1+\frac {\epsilon^2} 4 \right) \sinh(2 \kappa a)}
+  \end{equation}
+%\end{centereq}
+
+\subsection{Potentialtopf.}
+Wir betrachten einen Potentialtopf mit einem Potential von $-V_0$ in dem
+Bereich von $-a$ bis $a$ sonst Null. Siehe dazu Abb.~\ref{fig:7}
+  
+\begin{figure}[htbp]
+  \begin{minipage}[h]{0.45\linewidth}
+    \begin{align*}
+      V(x)&=-V_0\cdot\Theta\left(a-|x|\right) \\
+      &= \begin{cases}
+        -V_0 & \mbox{ für }-a<x<a\\
+        0 & \mbox{ sonst}
+      \end{cases}
+    \end{align*}
+    \vspace{1cm}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[h]{0.5\linewidth}
+    \input{sgl_potential_pics/Potentialtopf.pdf_t}
+  \end{minipage}
+  \caption{Potentialtopf.}
+  \label{fig:7}
+\end{figure}
+
+Für die Bereiche I und III mit $E < V$ und $V=0$ gilt (\ref{eq:27b}):
+\begin{equation}
+  \left(\frac{d^2}{dx}-\kappa^2\right)\varphi(x)=0
+   \quad\text{mit} \quad
+  \kappa=\sqrt{\frac{2m}{\hbar^2}(V-E)}
+      =\sqrt{\frac{2m}{\hbar^2}(-E)}\label{eq:56}
+\end{equation}
+
+Für den Bereich II mit $E > V$ und $V=-V_0$ gilt (\ref{eq:27a}):
+\begin{equation}
+  \left(\frac{d^2}{dx}+k^2\right)\varphi(x)=0
+  \quad \text{mit} \quad
+  k=\sqrt{\frac{2m}{\hbar^2}(E-V)}
+   =\sqrt{\frac{2m}{\hbar^2}(E+V_0)}\label{eq:57}
+\end{equation}
+
+Damit erhalten wir folgende Lösungen:
+\begin{align*}
+  \varphi_\text{I}(x)&= C_1 e^{\kappa x}+D_1 e^{-\kappa x} \\
+  \varphi_\text{III}(x)&= C_2 e^{\kappa x}+D_2 e^{-\kappa x}\\
+   \varphi_\text{II}(x)&= A e^{i k x}+B e^{-i k x}
+\end{align*}
+
+\textbf{Randbedingungen:}
+\begin{align*}
+  \varphi_\text{I} &= 0 \text{ für } x \rightarrow -\infty \Rightarrow D_1=0&\\
+  \varphi_\text{III} &= 0 \text{ für } x \rightarrow \infty \Rightarrow C_2=0&\\
+\end{align*}
+
+\textbf{Anschlußbedingung} bei $x=-a$ mit:
+\begin{align*}
+   &\varphi_\text{I}(x) = C_1 e^{\kappa x} \equiv C e^{\kappa x} \quad
+   \Leftrightarrow \quad \frac {\text{d}}{\text{d}x} \varphi_\text{I}(x) 
+    = \kappa C e^{\kappa x}\\
+   &\varphi_\text{II}(x) = A e^{i k x}+B e^{-i k x} \quad
+   \Leftrightarrow \quad  \frac {\text{d}}{\text{d}x}\varphi_\text{II}(x) 
+    = ik Ae^{ikx}-ikBe^{-ikx}
+\end{align*}
+%Setze lokale Nummerierung der Gleichungen.
+%\localeqncounter
+%\resetlocaleqncounter %Der Zähler soll von 1 anfangen.
+\begin{align}
+  \varphi_\textrm{I} (-a) &= \varphi_\textrm{II}(-a)
+   \Leftrightarrow  
+  Ce^{-\kappa a} = Ae^{-ika}+Be^{ika} \label{eq3:pottopf1}\\
+  \left.\frac{\text{d}\varphi_{\text{I}}}{\text{d}x}\right|_{x=-a}
+  &=\left.\frac{\text{d}\varphi_{\text{II}}}{\text{d}x}\right|_{x=-a}
+   \Leftrightarrow  
+   \kappa Ce^{-\kappa a} = ik Ae^{-ika}-ik Be^{ika}\label{eq3:pottopf2}
+\end{align}
+Setzen wir nun \eqref{eq3:pottopf1'} mit:
+\begin{equation}
+  \label{eq3:pottopf1'}
+   Be^{ika}=Ce^{-\kappa a} - Ae^{-ika}\tag{\ref{eq3:pottopf1}'}
+\end{equation}
+in Gleichung~ \eqref{eq3:pottopf2} ein, so erhalten wir:
+\begin{align}
+   \kappa Ce^{-\kappa a} 
+   &= ik Ae^{-ika}
+      -ikCe^{-\kappa a} - ikAe^{-ika}\label{eq3:pottopf3}\\
+   &=  2ikAe^{-ika} -ikCe^{-\kappa a}\notag\\
+   \Leftrightarrow  C(\kappa&+ik) e^{-\kappa a}
+   = 2ikAe^{-ika}\notag\\[2ex]
+   \Leftrightarrow A 
+   = &\frac{C(\kappa+ik)e^{-\kappa a}}
+           {2ike^{-ika}}
+    =\frac{C(\kappa+ik)}{2ik}e^{(-\kappa +ik)a}\notag
+\end{align}
+
+Setzen wir nun analog \eqref{eq3:pottopf1''} mit:
+\begin{equation}
+  \label{eq3:pottopf1''}
+   Ae^{-ika}=Ce^{-\kappa a} - Be^{ika}\tag{\ref{eq3:pottopf1}''}
+\end{equation}
+in Gleichung \eqref{eq3:pottopf2} ein, so erhalten wir:
+\begin{align}
+   \kappa Ce^{-\kappa a} 
+   &= ikCe^{-\kappa a} - ikBe^{ika}-ikBe^{ika}\label{eq3:pottopf4}\\
+   &= ikCe^{-\kappa a}-2ikBe^{ika}\notag\\
+   \Leftrightarrow  C(\kappa&-ik) e^{-\kappa a}
+   = -2ikBe^{ika}\notag\\[2ex]
+   \Leftrightarrow B 
+   = &\frac{-C(\kappa-ik)e^{-\kappa a}}
+           {2ike^{ika}}
+    =\frac{-C(\kappa-ik)}{2ik}e^{-(\kappa +ik)a}\notag
+\end{align}
+
+\textbf{Anschlußbedingung} bei $x=a$ mit:
+\begin{align*}
+   &\varphi_\text{II}(x) = A e^{i k x}+B e^{-i k x} \quad
+   \Leftrightarrow \quad  \frac {\text{d}}{\text{d}x}\varphi_\text{II}(x) 
+   = ik Ae^{ikx}-ikBe^{-ikx}\\
+   &\varphi_\text{III}(x) = D_2 e^{-\kappa x} \equiv D e^{-\kappa x} \quad
+   \Leftrightarrow \quad \frac {\text{d}}{\text{d}x} \varphi_\text{III}(x) 
+   = -\kappa D e^{-\kappa x}
+\end{align*}
+
+\begin{align}
+  \varphi_\textrm{II} (a) &= \varphi_\textrm{III}(a)
+   \Leftrightarrow  
+   Ae^{ika}+Be^{-ika}=De^{-\kappa a} \label{eq3:pottopf5} \\
+  \left.\frac{\text{d}\varphi_{\text{II}}}{\text{d}x}\right|_{x=a}
+  &=\left.\frac{\text{d}\varphi_{\text{III}}}{\text{d}x}\right|_{x=a}
+   \Leftrightarrow  
+   ik Ae^{ika}-ik Be^{-ika}=-\kappa D e^{-\kappa a} \label{eq3:pottopf6}
+\end{align}
+
+Setzen wir nun \eqref{eq3:pottopf5'} mit:
+\begin{equation}
+  \label{eq3:pottopf5'}
+   Be^{-ika}=De^{-\kappa a} - Ae^{ika}
+   \tag{\ref{eq3:pottopf5}'}
+\end{equation}
+in Gleichung~\eqref{eq3:pottopf6} ein, so erhalten wir:
+\begin{align}
+  &ikAe^{ika}-ikDe^{-\kappa a}+ikAe^{ika}
+   =-\kappa De^{-\kappa a}\label{eq3:pottopf7}\\
+  \Leftrightarrow &2ikAe^{ika}-ikDe^{-\kappa a}
+   =-\kappa De^{-\kappa a}\notag\\
+   \Leftrightarrow &2ikAe^{ika}
+   =D(ik-\kappa)e^{-\kappa a}\notag\\[2ex]
+   \Leftrightarrow  &A
+   = \frac{D(ik-\kappa) e^{-\kappa a}}
+          {2ike^{ika}}
+   =\frac{D(ik-\kappa)}{2ik}e^{-(\kappa+ik)a}\notag
+\end{align}
+
+Setzen wir nun analog \eqref{eq3:pottopf5''} mit:
+\begin{equation}
+  \label{eq3:pottopf5''}
+   Ae^{ika}=De^{-\kappa a} - Be^{-ika}
+   \tag{\ref{eq3:pottopf5}''}
+\end{equation}
+in Gleichung~\eqref{eq3:pottopf6} ein, so erhalten wir:
+\begin{align}
+   &ikDe^{-\kappa a}-ikBe^{-ika}-ikBe^{-ika}
+   =-\kappa De^{-\kappa a}\label{eq3:pottopf8}\\
+  \Leftrightarrow &ikDe^{-\kappa a}-2ikBe^{-ika}
+   =-\kappa De^{-\kappa a}\notag\\
+   \Leftrightarrow &2ikBe^{-ika}
+   =D(ik+\kappa)e^{-\kappa a}\notag\\[2ex]
+   \Leftrightarrow & B
+   = \frac{D(ik+\kappa) e^{-\kappa a}}
+          {2ike^{-ika}}
+   =\frac{D(ik+\kappa)}{2ik}e^{(-\kappa+ik)a}\notag
+\end{align}
+
+Nun dividieren wir die Gleichung~\eqref{eq3:pottopf3} durch \eqref{eq3:pottopf4}
+und erhalten:
+\begin{align}
+    \Rightarrow
+    \frac{\eqref{eq3:pottopf3}}{\eqref{eq3:pottopf4}} 
+    = \frac A B
+    &=\frac{C(\kappa+ik)e^{(-\kappa +ik)a}}{2ik} \cdot
+    \frac{(-2)ik}{C(\kappa-ik)e^{-(\kappa+ik)a}}\label{eq3:pottopf9}\\
+    &=-\frac{(\kappa+ik)e^{ika}}{(\kappa-ik)e^{-ika}}
+    =-\frac{(\kappa+ik)}{(\kappa-ik)}e^{2ika}\notag
+\end{align}
+
+Analog dividieren wir die Gleichung~\eqref{eq3:pottopf7} durch
+\eqref{eq3:pottopf8} und erhalten:
+\begin{align}
+    \Rightarrow
+    \frac{\eqref{eq3:pottopf7}}{\eqref{eq3:pottopf8}} 
+    = \frac A B
+    &=\frac{D(ik-\kappa)e^{-(\kappa +ik)a}}{2ik} \cdot
+    \frac{2ik}{D(ik+\kappa)e^{(-\kappa+ik)a}}\label{eq3:pottopf10}\\
+    &=\frac{(ik-\kappa)e^{-ika}}{(ik+\kappa)e^{ika}}
+    =\frac{(ik-\kappa)}{(ik+\kappa)}e^{-2ika}\notag
+\end{align}
+Zum Schluss setzen wir die soeben erhaltenen Gleichungen~\eqref{eq3:pottopf9}
+und \eqref{eq3:pottopf10} gleich und bekommen:
+\begin{align*}
+  \eqref{eq3:pottopf9}=\eqref{eq3:pottopf10}
+  &\Leftrightarrow \frac A B = \frac A B\\
+   &\Leftrightarrow -\frac{(\kappa+ik)}{(\kappa-ik)}e^{2ika}
+      = \frac{(ik-\kappa)}{(ik+\kappa)}e^{-2ika}\\
+   &\Leftrightarrow \frac{(\kappa+ik)}{(\kappa-ik)}e^{2ika}
+      = \frac{(\kappa-ik)}{(\kappa+ik)}e^{-2ika}\\
+   &\Leftrightarrow e^{2ika}
+   = \frac{(\kappa-ik)^2}{(\kappa+ik)^2}e^{-2ika}
+   \qquad \left|\;\cdot e^{2ika}\right.\\
+   &\Leftrightarrow e^{4ika}
+   = \frac{(\kappa-ik)^2}{(\kappa+ik)^2}
+\end{align*}
+%Wieder auf den globalen Gleichungszähler zurücksetzen.
+%\globaleqncounter
+Somit erhalten wir schlussendlich folgende Beziehung:
+%%\begin{centereq}
+\begin{equation}
+  \label{eq:33}
+  \frac{(\kappa-ik)^2}{(\kappa+ik)^2}=e^{4ika}
+\end{equation}
+%\end{centereq}
+Ziehen wir in der Gleichung (\ref{eq:33}) auf beiden Seiten die Wurzel so
+erhalten wir zwei Lösungen:
+%%\begin{centereq}
+\begin{equation}
+  \label{eq:34}
+  \boxed{\frac{\kappa-ik}{\kappa+ik}=\pm e^{2ika}}
+\end{equation}
+%\end{centereq}
+
+Wir wollen nun untersuchen welche Symmetrieeigenschaften diese beiden Lösungen
+erfüllen. Wir werden feststellen das der Term $-e^{2ika}$ eine symmetrische Lösung
+und der Term $+e^{2ika}$ eine antisymmertrische Lösung der Wellenfunktion
+darstellt. 
+Um dies zu demonstrieren machen wir eine kleine Rechnung.
+
+Nehmen wir die Gl.~\eqref{eq3:pottopf7} und setzen dort die Lösung:
+\[ \frac{\kappa-ik}{\kappa+ik}=- e^{2ika} \]
+ein. So erhalten wir:
+\begin{equation*}
+  \frac A B =\frac{(ik-\kappa)}{(ik+\kappa)}e^{-2ika}
+      =-\frac{(\kappa-ik)}{(ik+\kappa)}e^{-2ika}
+      = e^{2ika}\cdot e^{-2ika}
+      =1
+\end{equation*}
+\[ \Leftrightarrow A = B \] Setzen wir nun $A$ Gl.~\eqref{eq3:pottopf3} und $B$
+Gl.~\eqref{eq3:pottopf8} in die soeben erhaltene Beziehung zwischen $A$ und $B$
+ein, so können wir eine weitere Beziehung feststellen.
+\begin{align*}
+  A &= B \\
+  \frac{C(\kappa+ik)}{2ik}e^{(-\kappa +ik)a} 
+  &=\frac{D(ik+\kappa)}{2ik}e^{(-\kappa+ik)a}\\
+  C &= D
+\end{align*}
+
+Somit erhielten wir zwei Beziehungen $A=B$ und $C=D$. Setzen wir die nun in
+unsere Wellenfunktion ein, so erhalten wir:
+\begin{align*}
+  \phi(x) &= \begin{cases}
+  Ce^{\kappa x}\\
+  Ae^{ikx}+Be^{-ikx}\\
+  De^{-\kappa x}
+\end{cases}
+= \begin{cases}
+  De^{\kappa x}\\
+  A\left(e^{ikx}+e^{-ikx}\right)\\
+  De^{-\kappa x}
+\end{cases}\\  
+&=\phi(-x) = \begin{cases} 
+ De^{-\kappa x}\\
+  A\left(e^{-ikx}+e^{ikx}\right)\\
+  De^{\kappa x} 
+\end{cases}
+\end{align*}
+Somit gilt $\phi(x)=\phi(-x)$ und damit ist $\phi$ eine symmetrische Funktion.
+
+Nun wollen wir noch den zweiten Fall, den antisymmetrischen Fall betrachten.
+Dazu nehmen wir analog die Gl.~\eqref{eq3:pottopf7} und setzen dort die Lösung:
+\[ \frac{\kappa-ik}{\kappa+ik}= +e^{2ika} \]
+ein. So erhalten wir:
+\begin{equation*}
+  \frac A B =\frac{(ik-\kappa)}{(ik+\kappa)}e^{-2ika}
+      =-\frac{(\kappa-ik)}{(ik+\kappa)}e^{-2ika}
+      = -e^{2ika}\cdot e^{-2ika}
+      =-1
+\end{equation*}
+\[ \Leftrightarrow A = -B \] Analog setzen wir nun $A$ Gl.~\eqref{eq3:pottopf3}
+und $B$ Gl.~\eqref{eq3:pottopf8} in die soeben erhaltene Beziehung zwischen $A$
+und $B$ ein und erhalten eine Beziehung für $C$ und $D$.
+\begin{align*}
+  A &= -B \\
+  \frac{C(\kappa+ik)}{2ik}e^{(-\kappa +ik)a} 
+  &=-\frac{D(ik+\kappa)}{2ik}e^{(-\kappa+ik)a}\\
+  C &= -D
+\end{align*}
+Setzen wir nun die beiden Beziehungen $A=-B$ und $C=-D$ in unsere Wellenfunktion
+eine so erhalten wir:
+\begin{align*}
+  \phi(x) &= \begin{cases}
+  Ce^{\kappa x}\\
+  Ae^{ikx}+Be^{-ikx}\\
+  De^{-\kappa x}
+\end{cases}
+= \begin{cases}
+  -De^{\kappa x}\\
+  A\left(e^{ikx}-e^{-ikx}\right)\\
+  De^{-\kappa x}
+\end{cases}\\  
+&=-\phi(-x) = -\begin{cases} 
+ De^{-\kappa x}\\
+  A\left(e^{ikx}-e^{-ikx}\right)\\
+  -De^{\kappa x} 
+\end{cases}
+\end{align*}
+Somit gilt $\phi(x)=-\phi(-x)$ und damit ist $\phi$ eine antisymmetrische
+Funktion.
+
+Nachdem wir nun die Symmetrieeigenschaften von (\ref{eq:34}) untersucht haben,
+wollen wir versuchen diese Gleichung zu lösen. Leider lässt sich die Gl.
+\eqref{eq:34} nur nummerisch oder graphisch lösen. Wir werden uns hier mit der
+graphischen Lösung begnügen müssen. Wir betrachten nun separat die beiden
+möglichen Lösungen der Gleichung.
+
+\textbf{ Fall 1:} Die symmetrische Lösung.\\
+Wie soeben besprochen liefert uns die Gl. (\ref{eq:34}) mit dem Term $-e^{2ika}$
+eine symmetrische Lösung der Wellenfunktion. Somit gilt es folgende Gleichung zu
+lösen:
+%%\begin{centereq}
+\begin{equation}
+  \label{eq:35}
+  \frac{\kappa-ik}{\kappa+ik}=-e^{2ika}
+\end{equation}
+%\end{centereq}
+Zuerst versuchen wir das Minuszeichen auf der rechten Seite zu eliminieren:
+\begin{equation*}
+  \frac{\kappa-ik}{\kappa+ik}=-e^{2ika}
+  \Leftrightarrow  
+ \frac{-(-\kappa+ik)}{\kappa+ik}=-e^{2ika}
+\end{equation*}
+\begin{equation}
+  \label{eq:36}
+  \Leftrightarrow \frac{-\kappa+ik}{\kappa+ik}=e^{2ika}
+\end{equation}
+
+Als nächstes definieren wir zwei komplexe Zahlen: 
+\begin{align*}
+  &u=-\kappa+ik = \text{Zähler der linken Seite von (\ref{eq:36})}\\
+  &v=\kappa+ik = \text{Nenner der linken Seite von (\ref{eq:36})}
+\end{align*}
+
+Nun wollen wir versuchen die beiden komplexen Zahlen $u$ und $v$ in die Eulerische
+Darstellung zu überführen. So dass sie folgende Form erhalten:
+\begin{subequations}
+\begin{align}
+  u&=|u|e^{i\varphi_u}\label{eq:37a}\\
+  v&=|v|e^{i\varphi_v}\label{eq:37b}
+\end{align}
+\end{subequations}
+
+Dazu betrachten wir die Zahlen in der komplexen Ebene. Siehe dazu
+Abb.~\ref{fig:8}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \input{sgl_potential_pics/Komplexe_Ebene.pdf_t}
+    \caption{$u$ und $v$ in der komplexen Ebene.}
+    \label{fig:8}
+  \end{center}
+\end{figure}
+
+Die Beträge der beiden Zahlen lassen sich relativ leicht bestimmen. Für sie gilt:
+\begin{subequations}
+  \begin{align}
+    |u|&=\sqrt{\text{Re}^2+\text{Im}^2}=\sqrt{\kappa^2+k^2}\label{eq:38a}\\
+    |v|&=\sqrt{\text{Re}^2+\text{Im}^2}=\sqrt{\kappa^2+k^2}\label{eq:38b}   
+  \end{align}
+\end{subequations}
+Um nun die dazugehörende Winkel $\varphi_u$ und $\varphi_v$ zu bestimmen ist es
+günstiger wenn man von der Imaginärachse ausgeht, die bei $\pi/2$ liegt. Es ist
+deshalb günstiger, weil sie die Symmetrieachse zwischen den beiden Zahlen bildet.
+Wir erhalten somit:
+\begin{subequations}
+  \begin{align}
+    \varphi_u=\frac \pi 2 + \arctan \left(\frac \kappa k \right)\label{eq:39a}\\
+    \varphi_v=\frac \pi 2 - \arctan \left(\frac \kappa k \right)\label{eq:39b}
+  \end{align}
+\end{subequations}
+Setzen wir nun die Gleichungen (\ref{eq:38a}) und (\ref{eq:39a}) in
+(\ref{eq:37a}) bzw. die Gleichungen (\ref{eq:38b}) und (\ref{eq:39b}) in
+(\ref{eq:37b}) ein, so erhalten wir:
+\begin{subequations}
+\begin{align}
+  u&=\sqrt{\kappa^2+k^2}\cdot e^
+       {i\left(\frac \pi 2 + \arctan \left(\frac \kappa k \right)\right)}
+       \label{eq:40a}\\
+  v&=\sqrt{\kappa^2+k^2}\cdot e^
+       {i\left(\frac \pi 2 - \arctan \left(\frac \kappa k \right)\right)}
+       \label{eq:40b}
+\end{align}
+\end{subequations}
+Setzen wir nun die beiden frischerhaltenen Gleichungen (\ref{eq:40a}) und
+(\ref{eq:40b}) in die zu lösende Gleichung~(\ref{eq:36}) und formen sie etwas um
+so erhalten wir:
+\begin{align*}
+  e^{2ika} &=\frac{-\kappa+ik}{\kappa+ik} \equiv \frac u v
+  =\frac
+  {\sqrt{\kappa^2+k^2}\cdot e^
+       {i\left(\frac \pi 2 + \arctan \left(\frac \kappa k \right)\right)}}
+  {\sqrt{\kappa^2+k^2}\cdot e^
+       {i\left(\frac \pi 2 - \arctan \left(\frac \kappa k \right)\right)}}\\
+  &=\frac
+  {e^{i\frac \pi 2}\cdot e^{i \arctan \left(\frac \kappa k \right)}}
+  {e^{i\frac \pi 2}\cdot e^{-i \arctan \left(\frac \kappa k \right)}}
+   =e^{2 i \arctan \left(\frac \kappa k \right)}\\
+    \Leftrightarrow &
+   2 i ka= 2 i \arctan \left(\frac \kappa k \right)
+    \Leftrightarrow
+   ka=\arctan \left(\frac \kappa k \right)
+\end{align*}
+\begin{equation}
+  \label{eq:41}
+  \Leftrightarrow \frac \kappa k = \tan(ka)
+\end{equation}
+Um die Gl.~(\ref{eq:41}) grafisch darstellen zu können führen wir ein weitere
+Größe $k_0$ ein, mit:
+\begin{equation}
+  \label{eq:42}
+  k_0=\sqrt{\kappa^2+k^2}
+\end{equation}
+Formen wir (\ref{eq:42}) nach $\kappa$ um und setzen es in die Gl.~(\ref{eq:41})
+ein so erhalten wir:
+\begin{equation*}
+   k_0^2=\kappa^2+k^2 \Leftrightarrow  \kappa^2=k_0^2-k^2
+                      \Leftrightarrow  \kappa=\sqrt{k_0^2-k^2} \text{  in  }
+                                        (\ref{eq:41}) 
+\end{equation*}
+\begin{equation}
+  \label{eq:43}
+  \Leftrightarrow \frac {\sqrt{k_0^2-k^2}} k = \tan(ka)
+\end{equation}
+
+Da $\frac {\sqrt{k_0^2-k^2}} k$ eine positive Größe, ist muss $\tan(ka)$
+ebenfalls positiv sein. D.h. es gibt nur dann eine Lösung, wenn die Bedingung:
+\begin{equation}
+  \label{eq:44}
+  \tan(ka) > 0
+\end{equation}
+erfüllt ist.
+Formen wir die Gleichung~(\ref{eq:43}) etwas um so erhalten wir:
+\begin{align*}
+  \frac {\sqrt{k_0^2-k^2}} k &= \tan(ka)
+   \Leftrightarrow \frac {k_0^2-k^2} {k^2} = \tan(ka)^2\\
+   \Leftrightarrow \frac {k_0^2} {k^2} &=1+\tan(ka)^2
+    =1+\frac {\sin(ka)^2} {\cos(ka)^2}
+    =1+\frac {1-\cos(ka)^2} {\cos(ka)^2}\\
+    &=1+\frac 1 {\cos(ka)^2} - 1 = \frac 1 {\cos(ka)^2}
+\end{align*}
+\begin{equation}
+  \label{eq:45}
+   \Leftrightarrow \frac {k^2} {k_0^2} = \cos(ka)^2
+\end{equation}
+
+Aus der Gleichung~(\ref{eq:45}) erhalten wir eine weitere Bedingung:
+\begin{equation}
+  \label{eq:46}
+   \frac {k} {k_0} = |\cos(ka)|
+\end{equation}
+
+Wir definieren zwei Hilfsfunktionen:
+\begin{align*}
+  f(k) &= |\cos(ka)|\\
+  g(k) &= \frac 1 {k_0} \cdot k
+\end{align*}
+
+Zeichnen wir nun die beide Funktionen $f(k)$ und $g(k)$ in ein Diagramm, dann
+liefern uns die Schnittpunkte der beiden Funktionen mögliche Lösungen für die
+Gl.~(\ref{eq:41}). Warum nur mögliche Lösungen? Weil hier noch die Bedingung
+(\ref{eq:44}) beachtet werden muss. D.h. nur die Schnittpunkte bieten eine
+Lösung, bei denen die Bedingung $\tan(ka)>0$ erfüllt ist. Siehe dazu Abb.~\ref{fig:9}
+
+\begin{figure}[!ht]
+%\begin{figure}[t]
+%\begin{figure}[htbp]
+  \begin{center}
+    \input{sgl_potential_pics/Potentialtopf-lsg-cos.pdf_t}
+    \caption{Graphische Lösung für symmetrische Zustände mit: 
+      Lsg.1 $\approx 0,433\cdot \frac \pi a $,  
+      Lsg.2 $\approx 1,3\cdot \frac \pi a $ und  
+      Lsg.3 $\approx 2,1\cdot \frac \pi a $ }
+    \label{fig:9}
+  \end{center}
+\end{figure}
+
+ \textbf{Fall 2:} Die antisymmetrische Lösung.\\
+Nachdem wir die symmetrischen Lösungen der Gl~(\ref{eq:34}) bzw. 
+Gl.~(\ref{eq:33})  gefunden haben wollen wir jetzt auch noch der
+Vollständigkeits halber die antisymmetrischen Lösungen d.h. Lösungen für
+$+e^{2ika}$ der Gl.~(\ref{eq:34}) finden. Somit gilt es folgende Gleichung zu
+lösen:
+%%\begin{centereq}
+\begin{equation}
+  \label{eq:47}
+  \frac{\kappa-ik}{\kappa+ik}=e^{2ika}
+\end{equation}
+%\end{centereq}
+
+Auch hier bildet der Nenner und der Zähler der linken Seite, der
+Gleichung~(\ref{eq:47}) jeweils eine komplexe Zahl. Wobei wir hier den
+Spezialfall haben, dass der Zähler die konjugiertkomplexe des Nenners ist. Der
+Nenner ist jedoch der gleiche denn wir schon im Fall~1 hatten, den wir mit $v$
+bezeichnet haben. D.h. wir können schreiben:
+\begin{align*}
+  v^*&=\kappa-ik = \text{Zähler der linken Seite von (\ref{eq:47})}\\
+  v&=\kappa+ik = \text{Nenner der linken Seite von (\ref{eq:47})}
+\end{align*}
+
+Nun wollen wir versuchen $v$ in die Eulerische Darstellung zu überführen. So
+dass wir folgende Form erhalten:
+\begin{subequations}
+\begin{align}
+  v^*&=|v|e^{-i\varphi_v}\label{eq:48a}\\
+  v&=|v|e^{i\varphi_v}\label{eq:48b}
+\end{align}
+\end{subequations}
+
+Der Betrag von $v$ bleibt der gleiche wie in Fall 1 Gl.~(\ref{eq:38b})
+
+Für den Winkel $\varphi_v$ gilt laut Abb.~\ref{fig:8}:
+\begin{equation}
+  \label{eq:49}
+  \varphi_v=\arctan\left(\frac k \kappa \right)
+\end{equation}
+
+Einsetzen von (\ref{eq:38b}) und (\ref{eq:49}) in (\ref{eq:48a}) bzw. in
+(\ref{eq:48b}) so erhalten wir:
+\begin{subequations}
+\begin{align}
+  v^*&=\sqrt{\kappa^2+k^2}\cdot e^{-i\arctan\left(\frac k \kappa \right)}\label{eq:50a}\\
+  v&=\sqrt{\kappa^2+k^2}\cdot e^{i\arctan\left(\frac k \kappa \right)}\label{eq:50b}
+\end{align}
+\end{subequations}
+
+Setzen wir nun die beiden frischerhaltenen Gleichungen (\ref{eq:50a}) und
+(\ref{eq:50b}) in die zu lösende Gleichung~(\ref{eq:47}) und formen sie etwas um
+so erhalten wir:
+\begin{align*}
+  e^{2ika} &=\frac{\kappa-ik}{\kappa+ik} \equiv \frac {v^*} v
+  =\frac
+  {\sqrt{\kappa^2+k^2}\cdot e^{-i\arctan \left(\frac k \kappa \right)}}
+  {\sqrt{\kappa^2+k^2}\cdot e^{i\arctan \left(\frac k \kappa \right)}}\\
+  &=\frac
+  {e^{-i \arctan \left(\frac k \kappa \right)}}
+  {e^{i \arctan \left(\frac k \kappa \right)}}
+   =e^{-2 i \arctan \left(\frac k \kappa \right)}\\
+    \Leftrightarrow &
+   2 i ka= -2 i \arctan \left(\frac k \kappa \right)
+    \Leftrightarrow
+   -ka=\arctan \left(\frac k \kappa \right)
+\end{align*}
+\begin{equation}
+  \label{eq:51}
+  \Leftrightarrow \frac k \kappa = \tan(-ka)= -\tan(ka)
+\end{equation}
+
+Auch hier wollen wir die linke Seite der Gl.~(\ref{eq:51}) durch $k_0$
+(\ref{eq:42}) ausdrücken. Wir erhalten:
+\begin{equation*}
+   k_0^2=\kappa^2+k^2 \Leftrightarrow  \kappa^2=k_0^2-k^2
+                      \Leftrightarrow  \kappa=\sqrt{k_0^2-k^2} \text{  in  }
+                                        (\ref{eq:51})
+\end{equation*}
+\begin{equation}
+  \label{eq:52}
+  \Leftrightarrow \frac k {\sqrt{k_0^2-k^2}} = -\tan(ka)
+\end{equation}
+
+Damit erhalten wir eine erste Bedingung. Da $\frac k {\sqrt{k_0^2-k^2}}$ eine
+positive Größe ist, muss $\tan(ka)$ negativ sein. D.h. es muss gelten:
+\begin{equation}
+  \label{eq:53}
+  \tan(ka) < 0
+\end{equation}
+
+Formen wir die Gleichung~(\ref{eq:52}) noch etwas um, so erhalten wir:
+\begin{align*}
+  \frac k {\sqrt{k_0^2-k^2}} &= -\tan(ka) = -\frac {\sin(ka)} {\cos(ka)}
+   \Leftrightarrow \frac {k^2}{k_0^2-k^2} = \frac {\sin(ka)^2} {\cos(ka)^2}\\
+   \Leftrightarrow \frac {k_0^2-k^2} {k^2} &= \frac {\cos(ka)^2}{\sin(ka)^2}
+    \Leftrightarrow \frac {k_0^2}{k^2}-\frac{k^2}{k^2} = \frac {\cos(ka)^2}{\sin(ka)^2}\\
+   \Leftrightarrow \frac {k_0^2} {k^2} &=1+\frac {\cos(ka)^2}{\sin(ka)^2}
+    =1+\frac {1-\sin(ka)^2} {\sin(ka)^2}
+    = \frac 1 {\sin(ka)^2}
+\end{align*}
+\begin{equation}
+  \label{eq:54}
+   \Leftrightarrow \frac {k^2} {k_0^2} = \sin(ka)^2
+\end{equation}
+
+Aus Gleichung~(\ref{eq:54}) erhalten wir eine weitere Bedingung:
+\begin{equation}
+  \label{eq:55}
+  \frac {k} {k_0} = |\sin(ka)|
+\end{equation}
+
+Definieren wir analog zum Fall~1 zwei Hilfsfunktionen:
+\begin{align*}
+  f(k) &= |\sin(ka)|\\
+  g(k) &= \frac 1 {k_0} \cdot k
+\end{align*}
+
+Zeichnen wir nun die beide Funktionen $f(k)$ und $g(k)$ in ein Diagramm, dann
+liefern uns die Schnittpunkte der beiden Funktionen mögliche Lösungen für die
+Gl.~(\ref{eq:55}). Warum nur mögliche Lösungen? Weil hier noch die Bedingung
+(\ref{eq:53}) beachtet werden muss. D.h. nur die Schnittpunkte bieten eine
+Lösung, bei denen die Bedingung $\tan(ka)<0$ erfüllt ist. Siehe dazu Abb.~\ref{fig:10}
+
+\begin{figure}[!ht]
+  \begin{center}
+    \input{sgl_potential_pics/Potentialtopf-lsg-sin.pdf_t}
+    \caption{Graphische Lösung für antisymmetrische Zustände mit:
+      Lsg.1 $\approx 0,866\cdot \frac \pi a $ und  
+      Lsg.2 $\approx 1,733\cdot \frac \pi a $}
+    \label{fig:10}
+  \end{center}
+\end{figure}
+
+Wie aus den Abb.~\ref{fig:9} und Abb.~\ref{fig:10} ersichtlich ist haben wir
+insgesamt fünf Lösungen. Drei davon mit einer symmetrischen Zustandsfunktion und
+zwei mit einer antisymmetrischen Zustandsfunktion. Da zu jeder Zustandsfunktion
+ein Energieeigenwert gehört, haben wir somit auch fünf diskrete
+Energieeigenwerte. Daran sieht man auch schön, dass die Energie in einem
+Potentialtopf quantisiert ist. Dabei entspricht erste Energieeigenwert mit $n=0$
+und somit der niedrigster Energie (Grundzustand) der ersten Lösung aus
+Abb.~\ref{fig:9}, der zweiter Energieeigenwert mit $n=1$ (erster angeregter
+Zustand) der ersten Lösung aus der Abb.~\ref{fig:10}, der nachfolgender
+Energieeigenwert mit $n=2$ (zweiter angeregter Zustand) ist wieder ein
+symmetrischer Zustand d.h. zweite Lösung aus der Abb.~\ref{fig:9} usw...
+
+Wir wollen nun die einzelnen Energieniveaus angeben. Dazu
+stellen wir die Gl.~\eqref{eq:57} nach $E$ um und erhalten:
+\begin{align}
+  &k=\sqrt{\frac{2m}{\hbar^2}(E+V_0)}
+  \Leftrightarrow k^2=\frac{2m}{\hbar^2}(E+V_0)
+  \Leftrightarrow k^2-\frac{2m}{\hbar^2}V_0 = \frac{2m}{\hbar^2} E\notag\\
+  \Leftrightarrow &E=\frac{\hbar^2}{2m}\cdot k^2-V_0\label{eq:37}
+\end{align}
+
+Setzen wir jetzt die Lösungen aus den Abb.~\ref{fig:9} und Abb.~\ref{fig:10} in
+unsere Gl.~\eqref{eq:37} ein, so erhalten wir folgende Energieniveaus:\\
+
+\begin{tabular}{lll}
+\textbf{Energieniveau} & \textbf{Energie} & \textbf{Zustand}\\[2ex] 
+  \( n=0 \) & \(E\approx 0,433^2\cdot\frac{\hbar^2\pi^2}{2ma^2}-V_0\) &
+  symmetrisch.\\[2ex]
+  \( n=1 \) & \(E\approx 0,866^2\cdot\frac{\hbar^2\pi^2}{2ma^2}-V_0\) & 
+  antisymmetrisch.\\[2ex]
+  \( n=2 \) & \(E\approx 1,300^2\cdot\frac{\hbar^2\pi^2}{2ma^2}-V_0\) &
+  symmetrisch.\\[2ex]
+  \( n=3 \) & \(E\approx 1,733^2\cdot\frac{\hbar^2\pi^2}{2ma^2}-V_0\) & 
+  antisymmetrisch.\\[2ex]
+  \( n=4 \) & \(E\approx 2,100^2\cdot\frac{\hbar^2\pi^2}{2ma^2}-V_0\) &
+  symmetrisch.
+\end{tabular}
+\\
+\\
+
+Wie wir ebenfalls aus den Abbildungen~\ref{fig:9} und \ref{fig:10} entnehmen
+können, haben wir um so mehr gebundenen Zustände je größer $k_0$ ist. Doch was ist
+$k_0$? Nehmen wir nochmal die Gl.~\eqref{eq:42} und setzen dort die
+Gl.~\eqref{eq:56} und Gl.~\eqref{eq:57} ein, so erhalten wir:
+\begin{align}
+  k_0&=\sqrt{\kappa^2+k^2}\notag\\
+  &=\sqrt{\frac{2m}{\hbar^2}(-E)+\frac{2m}{\hbar^2}(E+V_0)}
+   = \sqrt{-\frac{2m}{\hbar^2}E+\frac{2m}{\hbar^2}E+\frac{2m}{\hbar^2}V_0}\notag\\
+  \Rightarrow k_0&=\sqrt{\frac{2m}{\hbar^2}\cdot V_0} \label{eq:58}
+\end{align}
+Die Gl.~\eqref{eq:58} besagt dass $k_0$ proportional zum Potential $V_0$ ist.
+D.h. wenn wir ein unendlich tiefen Potentialtopf haben mit $V_0 \rightarrow
+\infty$ dann haben wir auch unendlich viele Lösungen. Dies wollen wir nun
+genauer untersuchen.\\
+
+\textbf{Grenzwertbetrachnung} für $V_0\rightarrow \infty$\\
+Wie wir gerade festgestellt haben ist $k_0$ proportional zu $V_0$ d.h. es gilt:
+\begin{equation}
+  \label{eq:38}
+  k_0 \rightarrow \infty \quad \text{für} \quad V_0 \rightarrow \infty
+  \quad \text{und} \quad \frac k {k_0} \rightarrow 0
+\end{equation}
+Setzen wir die Beziehung \eqref{eq:38} in die Gleichung~\eqref{eq:46} und
+\eqref{eq:55} ein, so erhalten wir:
+\begin{subequations}
+  \begin{align}
+    |\cos(ka)| &= 0\label{eq:41a}\\
+    |\sin(ka)| &= 0\label{eq:41b}
+  \end{align}
+\end{subequations}
+
+Aus der Gleichung~\eqref{eq:41a} erhalten wir eine Beziehung für $k$ bei
+symmetrischen Zuständen:
+\begin{equation}
+  \label{eq:39}
+  ka=(2n+1)\frac \pi 2
+  \Leftrightarrow k = (2n+1)\frac \pi {2a} 
+  \quad \text{mit } n=0,1,2,3\dots
+\end{equation}
+Analog erhalten wir aus Gleichung~\eqref{eq:41b} eine Beziehung für $k$ bei
+antisymmetrischen Zuständen:
+\begin{equation}
+  \label{eq:40}
+  ka=n \cdot \pi \Leftrightarrow k = \frac {n\pi} {a} 
+  \quad \text{mit } n=1,2,3,4\dots
+\end{equation}
+Wir können auch die beiden Folgen aus Gl.~\eqref{eq:39} und \eqref{eq:40} zu
+einer einzigen Folge zusammenfassen:
+\begin{subequations}
+\begin{align}
+  \text{Aus \eqref{eq:39} folgt: }
+  k &= \frac 1 2\frac {\pi} a,\; \frac 3 2 \frac {\pi} a,\; 
+  \frac 5 2\frac {\pi} a,\; \frac 7 2 \frac {\pi} a,\; \dots\label{eq:49a}\\
+  \text{Aus \eqref{eq:40} folgt: }
+  k &= 1 \frac {\pi} a,\; 2 \frac {\pi} a,\; 
+  3\frac {\pi} a,\; 4 \frac {\pi} a,\; \dots\notag\\
+  &= \frac 2 2\frac {\pi} a,\; \frac 4 2 \frac {\pi} a,\; 
+  \frac 6 2\frac {\pi} a,\; \frac 8 2 \frac {\pi} a,\; \dots\label{eq:49b}
+\end{align}
+\end{subequations}
+Die Folgen \eqref{eq:49a} und \eqref{eq:49b} zusammengefasst ergibt:
+\begin{equation*}
+  k =  \frac 1 2\frac {\pi} a,\;  \frac 2 2\frac {\pi} a,\; 
+  \frac 3 2\frac {\pi} a,\;  \frac 4 2\frac {\pi} a,\;
+  \frac 5 2\frac {\pi} a,\;  \frac 6 2\frac {\pi} a,\;
+  \frac 7 2\frac {\pi} a,\;  \frac 8 2\frac {\pi} a,\; \dots
+\end{equation*}
+Dies können wir auch verkürzt schreiben mit:
+\begin{equation}
+  \label{eq:48}
+  k=\frac n 2 \frac \pi a \quad \text{mit } n=1, 2, 3, 4, \dots
+\end{equation}
+
+Setzen wir nun \eqref{eq:48} in die Gl.~\eqref{eq:37} ein, so erhalten wir:
+\begin{equation}
+  \label{eq:50}
+  E=\frac{\hbar^2 \pi^2}{8ma^2}\cdot n^2-V_0  
+\end{equation}
+
+Die erhaltene Gl.~\eqref{eq:50} hat leider einen Schönheitsfehler und zwar
+wenn wir nun für $V_0=-\infty$ einsetzen, was wir ja angenommen haben, dann
+erhalten wir für die Energie im Grundzustand $-\infty$. Dies ist zwar
+mathematische korrekt, denn wir befinden uns ja auf Nullniveau und schauen in
+einen unendlich tiefen Potentialtopf und da die Grundzustandsenergie sich auf
+dem Boden des Potentialtopfs befinden, befindet sie sich bei $-\infty$. Doch
+physikalisch gesehen hat dieser Umstand keine große Aussagekraft. Deswegen ist
+es besser wenn wir uns auf den Boden des Potentialtopfs begeben und von dort aus
+die einzelnen Energieniveaus betrachten. Es gilt siehe Abb.~\ref{fig:7}:
+\begin{equation}
+  \label{eq:59}
+  E_n = E - (-V_0) \Leftrightarrow E_n= E+V_0
+\end{equation}
+Einsetzen von \eqref{eq:50} in \eqref{eq:59} ergibt:
+\begin{flalign*}
+  &E_n=\frac{\hbar^2 \pi^2}{8ma^2}\cdot n^2-V_0+V_0&
+\end{flalign*}
+%%\begin{centereq}
+  \begin{equation}
+    \label{eq:60}
+    \Rightarrow \boxed{E_n = \frac{\hbar^2 \pi^2}{8ma^2}\cdot n^2}
+  \end{equation}
+%%\end{centereq}
+
+Die Gl.~\eqref{eq:60} beschreibt das Spektrum eines eindimensionalen
+Potentialtopfs mit der Breite $2a$ und unendlich hohen Wänden.
+
+
+
+\end{document}
