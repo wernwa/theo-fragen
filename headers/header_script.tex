@@ -9,7 +9,7 @@
 \setlength{\parindent}{0px}
 \setlength{\mathindent}{10mm}
 \usepackage{bbold}                    %brauche ich für die doppel Zahlen Darstellung (Einheitsmatrix z.B)
-\usepackage[linktocpage={false}]{hyperref}
+
 
 
 \usepackage{color}
@@ -18,6 +18,19 @@
 \definecolor{darkblue}{rgb}{0.1,0.1,0.55}
 \definecolor{verydarkblue}{rgb}{0.1,0.1,0.35}
 \definecolor{darkred}{rgb}{0.55,0.2,0.2}
+
+%hyperref Link color
+\usepackage[colorlinks=true,
+        linkcolor=darkblue,
+        citecolor=darkblue,
+        filecolor=darkblue,
+        pagecolor=darkblue,
+        urlcolor=darkblue,
+        bookmarks=true,
+        bookmarksopen=true,
+        bookmarksopenlevel=3,
+        plainpages=false,
+        pdfpagelabels=true]{hyperref}
 
 \titleformat{\chapter}[display]{\color{darkred}\normalfont\huge\bfseries}{\chaptertitlename\
 \thechapter}{20pt}{\Huge}
