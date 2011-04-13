@@ -1,0 +1,58 @@
+\input{../headers/header_script.tex}
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+
+\begin{document}
+
+\section*{Ball - Potentialbarriere}
+
+Was passiert wenn ein Ball auf eine Wand trifft?
+
+De Brougle Wellenlänge
+
+\begin{equation} 
+\label{eq:1}
+\lambda = \frac{h}{p}  
+\end{equation}
+
+und die Beziehung:
+
+\begin{equation} 
+\label{eq:2}
+k=\frac{2\pi}{\lambda}
+\end{equation}
+
+Die Näherungsformel für die Transmissionswahrscheinlichkeit mit der Bedinung \( kl>>1 \), wobei \(l\) die Breite des Potentials ist:
+
+\begin{equation} 
+\label{eq:3}
+T\propto e^{-2l\sqrt{\frac{2m}{\hbar^2}(V_0-E)}} = e^{-2lk} 
+\end{equation}
+
+Betrachten wir ein Ball mit der Masse 1kg und einer Geschwindigkeit \(v=1\frac{m}{s}\) auf die Potentialbarriere trifft. Aus der Gleichung \eqref{eq:1} erhalten wir eine Wellenlänge von:
+
+\begin{equation}
+  \label{eq:4}
+  \lambda = \frac{h}{p} = \frac{h}{mv} \approx h=6,6\cdot 10^{-34} Js
+\end{equation}
+
+Damit ergibt sich die Wellenzahl \(k\) aus \eqref{eq:2} zu:
+
+\begin{equation}
+  \label{eq:5}
+  k=\frac{2\pi}{h}
+\end{equation}
+
+Eingesetzt in die Gleichung \eqref{eq:3}:
+
+\begin{equation} 
+\label{eq:6}
+T\propto e^{-2l\frac{2\pi}{h} }\propto e^{-10^{34}}\rightarrow 0 
+\end{equation}
+
+Somit geht die Transmissionswahrscheinlichkeit in diesem Fall gegen Null.
+
+
+
+
+
+\end{document}
