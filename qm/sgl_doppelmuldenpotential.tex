@@ -1,0 +1,89 @@
+\input{../headers/header_script.tex}
+
+
+\begin{document}
+\setcounter{section}{1}
+\section*{Doppelmuldenpotential}
+
+Allgemeiner Ansatz:
+
+\begin{equation}
+  \label{eq:1}
+  \psi_I = Ae^{ikx}+Be^{-ikx} \qquad \text{mit } k = \sqrt{\frac{2m}{\hbar}E}
+\end{equation}
+
+\begin{equation}
+  \label{eq:2}
+  \psi_{II} = Ce^{q x}+De^{-qx}\qquad \text{mit } q = \sqrt{\frac{2m}{\hbar}(V-E)}
+\end{equation}
+
+\begin{equation}
+  \label{eq:3}
+  \psi_{III} = Fe^{ikx}+Ge^{-ikx}\qquad \text{mit (siehe }\psi_{I}) k = \sqrt{\frac{2m}{\hbar}E}
+\end{equation}
+
+
+Die Randbedingung besagt, dass die Wellenfuktion am Rand des unendlichen  Potentials verschwindet. Das kann man für eine Konkretisierung von Teilbereich I und III ausnutzen:
+
+\begin{align}
+  \label{eq:4}
+  \psi_{I}(-b) &= 0 = Ae^{-ikb}+Be^{ikb} \\
+\Leftrightarrow & A = -Be^{2ikb}\qquad\text{A in }\ref{eq:1}\text{ einsetzen}\\
+\psi_I(x)&=-Be^{2ikb}e^{ikx}+Be^{-ikx} \\
+&=-B(e^{2ikb}e^{ikx}-e^{-ikx})\\
+&=-B e^{ikb}(e^{ikb}e^{ikx}-e^{-ikb}e^{-ikx})\\
+&=\underbrace{-B e^{ikb}2i}_{\alpha}\sin(k(x+b))
+\end{align}
+
+\begin{equation}
+  \label{eq:5}
+  \Rightarrow \psi_I(x)=\alpha\sin(k(x+b))
+\end{equation}
+
+\begin{align}
+  \label{eq:6}
+  \psi_{III}(b) &= 0 = Fe^{ikb}+Ge^{-ikb} \\
+\Leftrightarrow & G = -Fe^{2ikb}\qquad\text{G in }\ref{eq:3}\text{ einsetzen}\\
+\psi_{III}(x)&=Fe^{ikx} -Fe^{2ikb} e^{-ikx} \\
+&=F(e^{ikx}-e^{2ikb}e^{-ikx})\\
+&=Fe^{ikb}(e^{-ikb}e^{ikx}-e^{ikb}e^{-ikx})\\
+&=\underbrace{Fe^{ikb} }_{\beta}\sin(k(x-b))\\
+&=\beta\sin(k(x-b))
+\end{align}
+
+\begin{equation}
+  \label{eq:7}
+  \Rightarrow \psi_{III}(x)=\beta\sin(k(x-b))
+\end{equation}
+
+Für den mittleren Bereich II gilt es die Anschlussbedingungen zu anderen Bereichen zu untersuchen. Anschluss von I an II
+
+
+\begin{align}
+  \label{eq:8}
+  \psi_{I}(-a) &= \psi_{II}(-a) \\
+  \alpha\sin(k(b-a)) &= Ce^{-qa}+De^{qa}
+\end{align}
+\begin{align}
+  \label{eq:9}
+  \frac{d}{dx}\psi_{I}(-a) &=\frac{d}{dx}\psi_{II}(-a) \\
+  k\alpha\cos(k(b-a)) &= qCe^{-qa}-qDe^{qa}
+\end{align}
+\\
+und Anschluss von II an III
+
+\begin{align}
+  \label{eq:10}
+  \psi_{III}(a) &= \psi_{II}(a) \\
+  \beta\sin(k(b+a)) &= Ce^{qa}+De^{-qa}
+\end{align}
+\begin{align}
+  \label{eq:11}
+  \frac{d}{dx}\psi_{III}(a) &=\frac{d}{dx}\psi_{II}(-a) \\
+  k\beta\cos(k(b+a)) &= qCe^{qa}-qDe^{-qa}
+\end{align}
+
+
+
+
+\end{document}
