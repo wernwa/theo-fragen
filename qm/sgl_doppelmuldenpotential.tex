@@ -45,45 +45,128 @@ Die Randbedingung besagt, dass die Wellenfuktion am Rand des unendlichen  Potent
   \psi_{III}(b) &= 0 = Fe^{ikb}+Ge^{-ikb} \\
 \Leftrightarrow & G = -Fe^{2ikb}\qquad\text{G in }\ref{eq:3}\text{ einsetzen}\\
 \psi_{III}(x)&=Fe^{ikx} -Fe^{2ikb} e^{-ikx} \\
-&=F(e^{ikx}-e^{2ikb}e^{-ikx})\\
-&=Fe^{ikb}(e^{-ikb}e^{ikx}-e^{ikb}e^{-ikx})\\
-&=\underbrace{Fe^{ikb} }_{\beta}\sin(k(x-b))\\
-&=\beta\sin(k(x-b))
+&=-F(e^{2ikb}e^{-ikx}-e^{ikx})\\
+&=-Fe^{ikb}(e^{ikb}e^{-ikx}-e^{-ikb}e^{ikx})\\
+&=\underbrace{-Fe^{ikb} }_{\beta}\sin(k(-x+b))\\
+&=\beta\sin(k(-x+b))
 \end{align}
 
 \begin{equation}
   \label{eq:7}
-  \Rightarrow \psi_{III}(x)=\beta\sin(k(x-b))
+  \Rightarrow \psi_{III}(x)=\beta\sin(k(b-x))
 \end{equation}
 
 Für den mittleren Bereich II gilt es die Anschlussbedingungen zu anderen Bereichen zu untersuchen. Anschluss von I an II
 
 
 \begin{align}
-  \label{eq:8}
-  \psi_{I}(-a) &= \psi_{II}(-a) \\
-  \alpha\sin(k(b-a)) &= Ce^{-qa}+De^{qa}
-\end{align}
-\begin{align}
-  \label{eq:9}
-  \frac{d}{dx}\psi_{I}(-a) &=\frac{d}{dx}\psi_{II}(-a) \\
-  k\alpha\cos(k(b-a)) &= qCe^{-qa}-qDe^{qa}
+  \psi_{I}(-a) = \psi_{II}(-a) \quad\rightarrow    \alpha\sin(k(b-a)) &= Ce^{-qa}+De^{qa} \label{eq:8} \\
+\frac{d}{dx}\psi_{I}(-a) =\frac{d}{dx}\psi_{II}(-a) \quad \rightarrow   k\alpha\cos(k(b-a)) &= qCe^{-qa}-qDe^{qa}\label{eq:9}
 \end{align}
 \\
 und Anschluss von II an III
 
 \begin{align}
-  \label{eq:10}
-  \psi_{III}(a) &= \psi_{II}(a) \\
-  \beta\sin(k(b+a)) &= Ce^{qa}+De^{-qa}
+  \psi_{III}(a) = \psi_{II}(a) \quad\rightarrow  \beta\sin(k(b-a)) &= Ce^{qa}+De^{-qa} \label{eq:10} \\
+  \frac{d}{dx}\psi_{III}(a) =\frac{d}{dx}\psi_{II}(-a) \quad\rightarrow   -k\beta\cos(k(b-a)) &= qCe^{qa}-qDe^{-qa} \label{eq:11}
 \end{align}
+
+NR um zu der Beziehung zwischen den Konstanten C und D gelangen:
+\( \eqref{eq:8}-\eqref{eq:10}  \)
+
 \begin{align}
-  \label{eq:11}
-  \frac{d}{dx}\psi_{III}(a) &=\frac{d}{dx}\psi_{II}(-a) \\
-  k\beta\cos(k(b+a)) &= qCe^{qa}-qDe^{-qa}
+  \label{eq:12}
+  (\alpha-\beta)\sin(k(b-a)) &= Ce^{-qa}+De^{qa}- Ce^{qa}-De^{-qa}\\
+&= C(e^{-qa}- e^{qa})+D(e^{qa}-e^{-qa})\\
+&=-2C\sinh(qa)+2D\sinh(qa)\\
+&=2(D-C)sinh(qa)
+\end{align}
+
+\begin{equation}
+  \label{eq:13}
+ \Rightarrow  (\alpha-\beta)\sin(k(b-a))=-2(C-D)sinh(qa)
+\end{equation}
+
+\( \eqref{eq:9}+\eqref{eq:11}  \)
+
+\begin{align}
+  \label{eq:14}
+  k(\alpha-\beta)\cos(k(b-a)) &= qCe^{-qa}-qDe^{qa}+ qCe^{qa}-qDe^{-qa}\\
+&= q(C(e^{-qa}+ e^{qa})-D(e^{qa}+e^{-qa})\\
+&= 2q(C\cosh(qa)-D\cosh(qa)\\
+&=2q(C-D)cosh(qa)
+\end{align}
+
+\begin{equation}
+  \label{eq:15}
+ \Rightarrow  k(\alpha-\beta)\cos(k(b-a))=2q(C-D)\cosh(qa)
+\end{equation}
+
+
+\( \frac{\eqref{eq:15}}{ \eqref{eq:13} } \)
+
+\begin{align}
+  \label{eq:16}
+\frac{k(\alpha-\beta)\cos(k(b-a))}{(\alpha-\beta)\sin(k(b-a)) }&=  \frac{2q(C-D)\cosh(qa)}{-2(C-D)\sinh(qa) }\\
+\frac{k\cos(k(b-a))}{\sin(k(b-a)) }&=  \frac{-q\cosh(qa)}{\sinh(qa) }\\
+k\cot(k(b-a)) &= - q\coth(qa)
 \end{align}
 
 
+\( \eqref{eq:8}+\eqref{eq:10}  \)
+
+\begin{align}
+  \label{eq:17}
+  (\alpha+\beta)\sin(k(b-a)) &= Ce^{-qa}+De^{qa}+ Ce^{qa}+De^{-qa}\\
+&= C(e^{-qa}+ e^{qa})+D(e^{qa}+e^{-qa})\\
+&=-2C\cosh(qa)+2D\cosh(qa)\\
+&=2(C+D)\cosh(qa)
+\end{align}
+
+\begin{equation}
+  \label{eq:18}
+ \Rightarrow  (\alpha+\beta)\sin(k(b-a))=2(C+D)\cosh(qa)
+\end{equation}
+
+\( \eqref{eq:9}-\eqref{eq:11}  \)
+
+\begin{align}
+  \label{eq:19}
+  k(\alpha-\beta)\cos(k(b-a)) &= qCe^{-qa}-qDe^{qa}- qCe^{qa}+qDe^{-qa}\\
+&= q(C(e^{-qa}- e^{qa})-D(e^{qa}-e^{-qa})\\
+&= -2q(C\sinh(qa)-D\sinh(qa)\\
+&=-2q(C+D)\sinh(qa)
+\end{align}
+
+\begin{equation}
+  \label{eq:20}
+ \Rightarrow  k(\alpha-\beta)\cos(k(b-a))=-2q(C+D)\sinh(qa)
+\end{equation}
+
+
+\( \frac{\eqref{eq:20}}{ \eqref{eq:18} } \)
+
+\begin{align}
+  \label{eq:21}
+\frac{k(\alpha-\beta)\cos(k(b-a))}{(\alpha-\beta)\sin(k(b-a)) }&=  \frac{-2q(C+D)\sinh(qa)}{2(C+D)\cosh(qa) }\\
+\frac{k\cos(k(b-a))}{\sin(k(b-a)) }&= \frac{-q\sinh(qa)}{\cosh(qa) }\\
+k\cot(k(b-a)) &= -q \tanh(qa)
+\end{align}
+
+
+Für gerade Parität ergibt sich:
+\(\frac{\eqref{eq:9}}{\eqref{eq:8}}\)
+
+\begin{align}  
+  \frac{k\alpha\cos(k(b-a))}{\alpha\sin(k(b-a))} &= \frac{qCe^{-qa}-qDe^{qa}}{Ce^{-qa}+De^{qa}}\\
+\underbrace{k\cot(k(b-a))}_{\eqref{eq:21}} &= \frac{qCe^{-qa}-qDe^{qa}}{Ce^{-qa}+De^{qa}}\\
+\cancel{-q} \tanh(qa) &=\cancel{ -q} \frac{De^{qa}-Ce^{-qa}}{Ce^{-qa}+De^{qa}}\\
+\frac{\sinh(qa)}{\cosh(qa)} &= \frac{De^{qa}-Ce^{-qa}}{Ce^{-qa}+De^{qa}}\label{eq:22}
+\end{align}
+
+Durch den Vergleich der rechten mit der linken Seite der Gleichung \eqref{eq:22} steht jeweils im Nenner und Zähler die Definition von \(\sinh\) bzw. \(\cosh\) aber nur für den Fall wenn die Konstanten \(C=D\) jeweils gleich sind.
+
+\[\Rightarrow C=D\]
 
 
 \end{document}
