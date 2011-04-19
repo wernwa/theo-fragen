@@ -105,11 +105,10 @@ NR um zu der Beziehung zwischen den Konstanten C und D gelangen:
 
 \( \frac{\eqref{eq:15}}{ \eqref{eq:13} } \)
 
-\begin{align}
-  \label{eq:16}
+\begin{align} 
 \frac{k(\alpha-\beta)\cos(k(b-a))}{(\alpha-\beta)\sin(k(b-a)) }&=  \frac{2q(C-D)\cosh(qa)}{-2(C-D)\sinh(qa) }\\
 \frac{k\cos(k(b-a))}{\sin(k(b-a)) }&=  \frac{-q\cosh(qa)}{\sinh(qa) }\\
-k\cot(k(b-a)) &= - q\coth(qa)
+k\cot(k(b-a)) &= - q\coth(qa) \label{eq:16}
 \end{align}
 
 
@@ -154,7 +153,7 @@ k\cot(k(b-a)) &= -q \tanh(qa)
 \end{align}
 
 
-Für gerade Parität ergibt sich:
+Für \underline{gerade} Parität ergibt sich:
 \(\frac{\eqref{eq:9}}{\eqref{eq:8}}\)
 
 \begin{align}  
@@ -180,5 +179,30 @@ Eins der Konstanten in \eqref{eq:8} und  \eqref{eq:10} einsetzen und die Divisio
   \label{eq:24}
  \Rightarrow  \alpha = \beta
 \end{equation}
+
+Für die \underline{ungerade} Parität wird in den Zusammenhang \(\frac{\eqref{eq:9}}{\eqref{eq:8}}\) die Gleichung \eqref{eq:16} eingesetzt:
+
+\begin{align}  
+  \frac{k\alpha\cos(k(b-a))}{\alpha\sin(k(b-a))} &= \frac{qCe^{-qa}-qDe^{qa}}{Ce^{-qa}+De^{qa}}\\
+\underbrace{k\cot(k(b-a))}_{\eqref{eq:16}} &= \frac{qCe^{-qa}-qDe^{qa}}{Ce^{-qa}+De^{qa}}\\
+\cancel{-q} \coth(qa) &=\cancel{ -q} \frac{De^{qa}-Ce^{-qa}}{Ce^{-qa}+De^{qa}}\\
+\frac{\cosh(qa)}{\sinh(qa)} &= \frac{De^{qa}-Ce^{-qa}}{Ce^{-qa}+De^{qa}}\label{eq:22}
+\end{align}
+
+Hier sieht man wieder durch Vergleich dass die Gleichung nur für \(C=-D\) erfüllt ist. Daraus ergeben sich \(\alpha\) und \(\beta\)  \(\frac{\eqref{eq:8}}{\eqref{eq:10}}\) :
+
+\begin{align}
+  \label{eq:23}
+\frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= \frac{Ce^{-qa}-Ce^{qa}}{Ce^{qa}-Ce^{-qa}}\\
+\frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= -C\frac{e^{qa}-e^{-qa}}{e^{qa}-e^{-qa}}\\
+\frac{\alpha}{\beta} &= -1\\
+\end{align}
+
+\begin{equation}
+  \label{eq:24}
+ \Rightarrow  \alpha = -\beta
+\end{equation}
+
+
 
 \end{document}
