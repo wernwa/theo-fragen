@@ -146,10 +146,9 @@ k\cot(k(b-a)) &= - q\coth(qa) \label{eq:16}
 \( \frac{\eqref{eq:20}}{ \eqref{eq:18} } \)
 
 \begin{align}
-  \label{eq:21}
 \frac{k(\alpha-\beta)\cos(k(b-a))}{(\alpha-\beta)\sin(k(b-a)) }&=  \frac{-2q(C+D)\sinh(qa)}{2(C+D)\cosh(qa) }\\
 \frac{k\cos(k(b-a))}{\sin(k(b-a)) }&= \frac{-q\sinh(qa)}{\cosh(qa) }\\
-k\cot(k(b-a)) &= -q \tanh(qa)
+k\cot(k(b-a)) &= -q \tanh(qa) \label{eq:21}
 \end{align}
 
 
@@ -204,5 +203,118 @@ Hier sieht man wieder durch Vergleich dass die Gleichung nur für \(C=-D\) erfü
 \end{equation}
 
 
+\subsubsection{Zusammenfassung der Zwischenlösung:}
+
+Für die gerade Parität gilt für \(\alpha=\beta\) und \(C=D\) mit der transzendalen Gleichung \eqref{eq:21}:
+
+\begin{equation}
+  \label{eq:25}
+  \boxed{k\cot(k(b-a)) = -q \tanh(qa)}
+\end{equation}
+
+Somit gilt für die Wellengleichung:
+
+\begin{align}
+  \label{eq:26}
+  \psi_{I} &= \alpha \sin(k(x+b))  \qquad \text{mit } k = \sqrt{\frac{2m}{\hbar}E}\\
+  \psi_{II} &= C\cosh(qx) \qquad \text{mit } q = \sqrt{\frac{2m}{\hbar}(V-E)} \\
+ \psi_{III} &= \alpha \sin(k(b-x))
+\end{align}
+
+Für die ungerade Parität gilt für \(\alpha=-\beta\) und \(C=-D\) mit der transzendalen Gleichung \eqref{eq:16}:
+
+\begin{equation}
+  \label{eq:27}
+ \boxed{ k\cot(k(b-a)) = - q\coth(qa)}
+\end{equation}
+
+somit gilt für die Wellengleichung:
+
+\begin{align}
+  \label{eq:28}
+  \psi_{I} &= \alpha \sin(k(x+b))  \qquad \text{mit } k = \sqrt{\frac{2m}{\hbar}E}\\
+  \psi_{II} &= C\sinh(qx) \qquad \text{mit } q = \sqrt{\frac{2m}{\hbar}(V-E)} \\
+ \psi_{III} &= -\alpha \sin(k(b-x))
+\end{align}
+
+\subsection{Näherung für kleine Energien}
+
+Für kleine Energien (d.h. \(E<<V_0\) und \(k<<q\) und möglichst breite Barriere (d.h. \(qa>>1\)) kann man folgende Näherung aufstellen:
+
+\begin{align}
+  \label{eq:29}
+  tanh(qa) &= \frac{e^{qa}-e^{-qa}}{e^{qa}+e^{-qa}} \qquad |\cdot  \frac{e^{-qa}}{e^{-qa}}\\
+&= \frac{1-e^{-2qa}}{1+e^{-2qa}} \qquad |\cdot \frac{1-e^{-2qa}}{1-e^{-2qa}} \\
+&= \frac{(1-e^{-2qa})^2}{1^2+e^{-4qa}} \\
+&= \frac{1-2e^{-2qa}+e^{-4qa}}{1^2+e^{-4qa}}
+\end{align}
+
+Für große  \(qa>>1\) kann der Therm \( e^{-4qa} \) vernachlässigt werden. Für den Tangens Hyperbolicus ergibt sich:
+
+\begin{equation}
+  \label{eq:30}
+   \tanh(qa) \approx 1-2e^{-2qa}
+\end{equation}
+
+und analog für den Cosinus Hyperbolicus:
+
+\begin{equation}
+  \label{eq:31}
+   \cosh(qa) \approx 1+2e^{-2qa}
+\end{equation}
+
+
+Die Transzendenten Gleichungen \eqref{eq:25} und \eqref{eq:26} werden dann zu:
+
+
+\begin{equation}
+  \label{eq:32}
+  \cot(k(b-a)) = - \frac{q}{k} \tanh(qa) =  - \frac{q}{k}\coth(qa)
+\end{equation}
+
+Es ist geschickter mit dem Kehrwert der Gleichung \eqref{eq:32} weiterzumachen:
+
+
+\begin{equation}
+  \label{eq:33}
+  \tan(k(b-a)) = - \frac{k}{q} \coth(qa) =  - \frac{k}{q}\tanh(qa)
+\end{equation}
+
+Nun können die Approximationen \eqref{eq:30} und \eqref{eq:31} eingesetzt werden:
+
+\begin{equation}
+  \label{eq:34}
+  \tan(k(b-a)) \approx - \frac{k}{q} (1+2e^{-2qa}) \approx  - \frac{k}{q}(1-2e^{-2qa})
+\end{equation}
+
+Zusammengefasst lässt sich diese Gleichung \eqref{eq:34} schreiben
+
+\begin{equation}
+  \label{eq:35}
+  \tan(k(b-a)) \approx - \frac{k}{q} \mp \frac{k}{q} 2e^{-2qa}
+\end{equation}
+
+Wobei \(-\) für die gerade Parität und \(+\) für ungerade Parität steht. Im Falle von einer unendlich hohen Barriere gibt es keine Tunnelung und man erhält zwei separate Teilchenpotentiale. Das ist wenn \(\frac{k}{q}\to 0\) oder \(q\) sehr groß wird. Aus der Gleichung \eqref{eq:35} sieht man leicht, dass:
+
+
+\begin{equation}
+  \label{eq:36}
+  \tan(k^{\frac{k}{q}\to 0 }(b-a)) \approx 0
+\end{equation}
+
+Die Einschränkung \eqref{eq:36} bedeutet für den Argument des Tangens, dass es gleich ist einem ganzzahligen vielfachen von \(\pi\) also:
+
+\begin{equation}
+  \label{eq:37}
+  k^{\frac{k}{q}\to 0 }(b-a) \approx n\pi \qquad n\in \mathbb N_0
+\end{equation}
+
+In diesen Fällen kann die Barriere nicht durchtunnelt werden und man erhält das schon bekannte Energiespektrum:
+
+\begin{equation}
+  \label{eq:38}
+  E^{\frac{k}{q}\to 0 } \approx \frac{ \hbar^2 (k^{\frac{k}{q}\to 0 })^2}{2m } = \frac{ \hbar^2\pi^2 }{2m(b-a)^2 }n^2
+\end{equation}
 
 \end{document}
+
