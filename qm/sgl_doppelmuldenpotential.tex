@@ -299,22 +299,95 @@ Wobei \(-\) für die gerade Parität und \(+\) für ungerade Parität steht. Im 
 
 \begin{equation}
   \label{eq:36}
-  \tan(k^{\frac{k}{q}\to 0 }(b-a)) \approx 0
+  \tan(k^{(0)}(b-a)) \approx 0
 \end{equation}
 
 Die Einschränkung \eqref{eq:36} bedeutet für den Argument des Tangens, dass es gleich ist einem ganzzahligen vielfachen von \(\pi\) also:
 
 \begin{equation}
   \label{eq:37}
-  k^{\frac{k}{q}\to 0 }(b-a) \approx n\pi \qquad n\in \mathbb N_0
+  k^{(0)}(b-a) \approx n\pi \qquad n\in \mathbb N_0
 \end{equation}
 
-In diesen Fällen kann die Barriere nicht durchtunnelt werden und man erhält das schon bekannte Energiespektrum:
+In diesen Fällen kann die Barriere nicht durchtunnelt werden und man erhält das schon bekannte Energiespektrum von einem Potentialtopf mit unendlich hohen Wänden. D.h in unseren Fall haben wir zwei Potentialtöpfe ohne WW. Betrachte dies als Störungstherm 0-Ordnung:
 
 \begin{equation}
   \label{eq:38}
-  E^{\frac{k}{q}\to 0 } \approx \frac{ \hbar^2 (k^{\frac{k}{q}\to 0 })^2}{2m } = \frac{ \hbar^2\pi^2 }{2m(b-a)^2 }n^2
+  E^{(0)} \approx \frac{ \hbar^2 (k^{(0)})^2}{2m } = \frac{ \hbar^2\pi^2 }{2m(b-a)^2 }n^2
 \end{equation}
+
+Nun wollen wir eine sehr hohe aber nicht unendliche Potentialbarriere betrachten. Dies würde den Störungsterm 1-Ordnung ensprechen. Dazu stellen wir die Gleichung \eqref{eq:35} nach dem Argument des Tangens um:
+
+\begin{equation}
+  \label{eq:39}
+    k(b-a) \approx \arctan\left( - \frac{k}{q} \mp \frac{k}{q} 2e^{-2qa}\right)
+\end{equation}
+
+Als nächstes entwickeln wir den Arkustanges nach sehr kleinen \(\frac{k}{q}\). Die allgemeine von Arkustangens lautet:
+
+\begin{equation}
+  \label{eq:40}
+  \arctan(x) = x - \frac{x^3}{3} + \frac{x^5}{5}+...\approx x
+\end{equation}
+
+Eingesetzt in die Gleichung \eqref{eq:39}:
+
+\begin{equation}
+  \label{eq:41}
+    k^{(1)}(b-a) \approx - \frac{k}{q} \mp \frac{k}{q} 2e^{-2qa}
+\end{equation}
+
+Nach k umgestellt:
+
+\begin{align}
+  \label{eq:42}
+  k^{(1)} &= - \frac{k}{q(b-a)} \mp \frac{k}{q(b-a)} 2e^{-2qa}\\
+&= \frac{k}{q(b-a)}\left( -1 \mp  2e^{-2qa}\right)
+\end{align}
+
+Das Gesamte \(k_n\) ergibt sich aus der Summe von \(k^{(0)}\) und \(k^{(1)}\):
+
+\begin{align}
+  \label{eq:43}
+  k_n = k^{(0)}+k^{(1)} = \frac{n\pi}{(b-a)} + \frac{k}{q(b-a)}( -1 \mp  2e^{-2qa})
+\end{align}
+
+Als Nebenrechnung wird \(k_n^2\) berechnet:
+
+\begin{align}
+  \label{eq:44}
+  k_n^2 &= (\frac{n\pi}{(b-a)} + \frac{k}{q(b-a)}( -1 \mp  2e^{-2qa}))^2 \\
+&=\frac{n^2\pi^2}{(b-a)^2} + 2\frac{n\pi}{(b-a)} \frac{k}{q(b-a)}( -1 \mp  2e^{-2qa}) + \underbrace{\frac{k^2}{q^2(b-a)^2}( -1 \mp  2e^{-2qa})^2}_{\approx 0 \text{ wegen } \frac{k^2}{q^2} \text{ zu vernachlässigen}}
+\end{align}
+Mit der Näherung \(k \approx k^{(0)}\) folgt:
+
+\begin{equation}
+  \label{eq:45}
+  k_n^2 =\frac{n^2\pi^2}{(b-a)^2} + 2\frac{\pi^2 n^2}{q(b-a)^3}( -1 \mp  2e^{-2qa})
+\end{equation}
+
+Eingesetzt \eqref{eq:45} in die Energie-Eigenwerte:
+
+\begin{align}
+  \label{eq:46}
+  E_{n,\mp} &= \frac{\hbar^2 k_n^2}{2m}\\
+&=  \frac{\hbar^2 n^2\pi^2}{2m(b-a)^2} + 2\frac{\hbar^2 }{2m}\frac{\pi^2 n^2}{q(b-a)^3}( -1 \mp  2e^{-2qa}) \\
+&= E^{(0)}\left[1+\frac{2}{q(b-a)}( -1 \mp  2e^{-2qa})  \right] \\
+&= E^{(0)}\left[1-\frac{2}{q(b-a)} \mp \frac{4}{q(b-a)}e^{-2qa}  \right]
+\end{align}
+
+
+Dadurch dass die Potentialbarriere endlich ist, kann das Teilchen zwischen den beiden Potentialtöpfen hin und her tunneln. Dadurch ergeben sich folgende Korrekturen im Vergleich zu \(E^{(0)}\):
+
+\begin{itemize}
+\item Durch das Tunneln hat das Teilchen mehr Raum zur Verfügung. Dadurch kommt es zu einer Energieniveau Absenkung. Dies wird durch den negativen Term \(-\frac{2}{q(b-a)} \)  deutlich.
+\item Durch den letzten Term \(\mp\frac{4}{q(b-a)}e^{-2qa}   \) kommt es zu einer Energieniveau-Aufspaltung. Diese zwei Niveaus sind sehr nah bei einander, wegen dem exponentiellen Ausdruck.
+\end{itemize}
+
+
+
+
+
 
 \end{document}
 
