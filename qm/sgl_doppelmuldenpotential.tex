@@ -385,8 +385,73 @@ Dadurch dass die Potentialbarriere endlich ist, kann das Teilchen zwischen den b
 \end{itemize}
 
 
+\subsection{Tunneleffekt und Tunnelaufspaltung}
+
+Betrachte die gesamte Funktion für gerade und ungerade Parität (\eqref{eq:26},\eqref{eq:28}):
+
+\begin{align}
+  \label{eq:47}
+\psi_+(x) = \begin{cases}
+  I & \alpha \sin(k(x+b)) \\
+  II & C\cosh(qx) \qquad  \\
+ III & \alpha \sin(k(b-x))
+\end{cases}
+\end{align}
+
+\begin{align}
+  \label{eq:48}
+\psi_-(x) = \begin{cases}
+  I & \alpha \sin(k(x+b)) \\
+  II & C\sinh(qx)  \\
+ III & -\alpha \sin(k(b-x))
+\end{cases}
+\end{align}
+\\
+PIC TODO\\
+\\
+
+Wobei \(\psi_+\) für gerade und \(\psi_-\) für ungerade Parität steht. Möchte man nun, dass das Teilchen sich entweder im linken oder rechten Potentialtopf lokalisiert ist, nutzt man die Linearität der beiden Lösungen aus, sodass links oder rechst die Welle sich gegenseitig auslöscht. Das funktioniert für links mit der Addition und für rechts mit Subtraktion, vergleiche dazu \eqref{47} und \eqref{48}:
+
+\begin{equation}
+  \label{eq:49}
+  \phi_L = \frac{1}{\sqrt{2}}(\psi_+ + \psi_-) \qquad  \phi_R = \frac{1}{\sqrt{2}}(\psi_+ - \psi_-) 
+\end{equation}
+
+Uns interessiert nun die Zeitliche Entwicklung der Wellenfunktion, sei das Teilchen zum Zeitpunkt \(t=0\) in der linkten Hälfte positioniert:
+
+\begin{equation}
+  \label{eq:50}
+  \psi(x,t=0) = \frac{1}{\sqrt{2}}(\psi_+ + \psi_-)
+\end{equation}
+
+Die Anwendung eines unitären Operators \(U=e^{-\frac{i}{\hbar}H}\) auf die Wellenfunktion \eqref{eq:50} macht sie zeitabhängig:
+
+\begin{align}
+  \label{eq:51}
+  \psi(x,t) &= e^{-\frac{i}{\hbar}Ht}\psi(x,t=0)\\
+&= \frac{1}{\sqrt{2}}\left(\psi_+e^{-\frac{i}{\hbar}E_+t} + \psi_-e^{-\frac{i}{\hbar}E_-t}\right) \\
+&= \frac{1}{\sqrt{2}}e^{-\frac{i}{\hbar}E_+t}\left(\psi_+ + \psi_-e^{-\frac{i}{\hbar}(E_--E_+)t}\right) 
+\end{align}
+
+Die Oszillation der ungeraden Permutätsfunktion \(\psi_-\) unterscheidet sich von der geraden Funktion \(\psi_+\) und man kann die Zeit Angeben nach der aus \(\phi_L\) eine \(\phi_R\) wird (vergleiche \eqref{eq:49}). Dazu muss der Exponent gleich \(-1\) werden. Das ist war für \(e^{-\pi} = -1\), also folgt für die Tunnelzeit \(\tau\):
+
+\begin{equation}
+  \label{eq:52}
+  \tau = \frac{\pi\hbar}{E_--E+}
+\end{equation}
 
 
+PIC TODO\\
+\\
+
+Insgesamt tunnelt das Teilchen mit der Periode \(2\tau\) hin und her, d.h die Aufenthaltswahrscheinlichkeit  \(|\psi(x,t)|^2\) ergibt immer den gleichen Wert für eine zeitliche Verschiebung von \(2\tau\).
+
+
+\subsubsection{Referenzen}
+
+\begin{itemize}
+\item %http://www.condmat.uni-oldenburg.de/Skripte/html/qm1_skript_hyper.pdf
+\end{itemize}
 
 
 \end{document}
