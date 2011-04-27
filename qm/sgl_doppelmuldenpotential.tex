@@ -5,6 +5,13 @@
 \setcounter{section}{1}
 \section*{Doppelmuldenpotential}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{./sgl_doppelmuldenpotential_pics/pic01_v.pdf}
+  \caption{Doppelmuldenpotential}
+  \label{fig:fg1}
+\end{figure}
+
 Allgemeiner Ansatz:
 
 \begin{equation}
@@ -185,20 +192,20 @@ Für die \underline{ungerade} Parität wird in den Zusammenhang \(\frac{\eqref{e
   \frac{k\alpha\cos(k(b-a))}{\alpha\sin(k(b-a))} &= \frac{qCe^{-qa}-qDe^{qa}}{Ce^{-qa}+De^{qa}}\\
 \underbrace{k\cot(k(b-a))}_{\eqref{eq:16}} &= \frac{qCe^{-qa}-qDe^{qa}}{Ce^{-qa}+De^{qa}}\\
 \cancel{-q} \coth(qa) &=\cancel{ -q} \frac{De^{qa}-Ce^{-qa}}{Ce^{-qa}+De^{qa}}\\
-\frac{\cosh(qa)}{\sinh(qa)} &= \frac{De^{qa}-Ce^{-qa}}{Ce^{-qa}+De^{qa}}\label{eq:22}
+\frac{\cosh(qa)}{\sinh(qa)} &= \frac{De^{qa}-Ce^{-qa}}{Ce^{-qa}+De^{qa}}\label{eq:24_1}
 \end{align}
 
 Hier sieht man wieder durch Vergleich dass die Gleichung nur für \(C=-D\) erfüllt ist. Daraus ergeben sich \(\alpha\) und \(\beta\)  \(\frac{\eqref{eq:8}}{\eqref{eq:10}}\) :
 
 \begin{align}
-  \label{eq:23}
+  \label{eq:24_2}
 \frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= \frac{Ce^{-qa}-Ce^{qa}}{Ce^{qa}-Ce^{-qa}}\\
 \frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= -C\frac{e^{qa}-e^{-qa}}{e^{qa}-e^{-qa}}\\
 \frac{\alpha}{\beta} &= -1\\
 \end{align}
 
 \begin{equation}
-  \label{eq:24}
+  \label{eq:24_3}
  \Rightarrow  \alpha = -\beta
 \end{equation}
 
@@ -362,11 +369,10 @@ Als Nebenrechnung wird \(k_n^2\) berechnet:
 Mit der Näherung \(k \approx k^{(0)}\) folgt:
 
 \begin{equation}
-  \label{eq:45}
-  k_n^2 =\frac{n^2\pi^2}{(b-a)^2} + 2\frac{\pi^2 n^2}{q(b-a)^3}( -1 \mp  2e^{-2qa})
+  k_n^2 =\frac{n^2\pi^2}{(b-a)^2} + 2\frac{\pi^2 n^2}{q(b-a)^3}( -1 \mp  2e^{-2qa})\label{eq:45}
 \end{equation}
 
-Eingesetzt \eqref{eq:45} in die Energie-Eigenwerte:
+Dies eingesetzt in die Energie-Eigenwerte:
 
 \begin{align}
   \label{eq:46}
@@ -406,9 +412,8 @@ Betrachte die gesamte Funktion für gerade und ungerade Parität (\eqref{eq:26},
  III & -\alpha \sin(k(b-x))
 \end{cases}
 \end{align}
-\\
-PIC TODO\\
-\\
+
+
 
 Wobei \(\psi_+\) für gerade und \(\psi_-\) für ungerade Parität steht. Möchte man nun, dass das Teilchen sich entweder im linken oder rechten Potentialtopf lokalisiert ist, nutzt man die Linearität der beiden Lösungen aus, sodass links oder rechst die Welle sich gegenseitig auslöscht. Das funktioniert für links mit der Addition und für rechts mit Subtraktion, vergleiche dazu \eqref{47} und \eqref{48}:
 
@@ -441,8 +446,13 @@ Die Oszillation der ungeraden Permutätsfunktion \(\psi_-\) unterscheidet sich v
 \end{equation}
 
 
-PIC TODO\\
-\\
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{./sgl_doppelmuldenpotential_pics/pic02_v.pdf}
+  \caption{Symmetrische und Antisymmetrische Funktion.}
+  \label{fig:fg2}
+\end{figure}
+
 
 Insgesamt tunnelt das Teilchen mit der Periode \(2\tau\) hin und her, d.h die Aufenthaltswahrscheinlichkeit  \(|\psi(x,t)|^2\) ergibt immer den gleichen Wert für eine zeitliche Verschiebung von \(2\tau\).
 
@@ -450,7 +460,7 @@ Insgesamt tunnelt das Teilchen mit der Periode \(2\tau\) hin und her, d.h die Au
 \subsubsection{Referenzen}
 
 \begin{itemize}
-\item %http://www.condmat.uni-oldenburg.de/Skripte/html/qm1_skript_hyper.pdf
+\item \url{http://www.condmat.uni-oldenburg.de/Skripte/html/qm1_skript_hyper.pdf}
 \end{itemize}
 
 
