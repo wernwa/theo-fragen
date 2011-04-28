@@ -1,0 +1,241 @@
+\input{../headers/header_script.tex}
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+
+\begin{document}
+
+\section*{Quantenmechanischer Harmonischer Oszillator}
+
+\subsection{Klassische Herleitung}
+
+
+Hooksches Gesetz:
+
+\begin{equation}
+  \label{eq:1}
+  F = -Dx
+\end{equation}
+
+Kombiniert mit dem Newtonschen Axiom:
+
+\begin{align}
+  ma &= -Dx  \\
+  m\ddot x &= -Dx \\
+&\Leftrightarrow \ddot x + \underbrace{\frac{D}{m}}_{\omega^2}x = 0 \\
+\Rightarrow D &= m\omega^2\label{eq:2}
+\end{align}
+
+Die Hamiltonfunktion für dieses System ist die Summe aus kinetischer und potentieller Energie:
+
+\begin{equation}
+  \label{eq:3}
+  H = E_{\text{kin}}+E_{\text{pot}} = \frac{p^2}{2m} + \frac{1}{2}Dx^2
+\end{equation}
+
+Mit D aus \eqref{eq:2} folgt die Hamilton-Funktion für den Harmonischen Oszillator:
+
+\begin{equation}
+  \label{eq:4}
+  \boxed{ H = \frac{p^2}{2m} +  \frac{1}{2}m\omega^2x^2}
+\end{equation}
+
+
+Die Standardmethode der Analysis zur Lösung der Differentialgleichung unter der Nebenbedinuung, dass \(\psi(x)\) quadratintegrabel ist, führt auf Hermite-Polynome. Wir wollen hier jedoch eine algebraische Methode benutzen.
+
+\subsection{Algebraische Methode}
+
+Als erstes definieren wir den nicht hermiteschen Operator \(a\):
+
+\begin{equation}
+  \label{eq:5}
+  a = \frac{\omega m x+ip}{\sqrt{2\omega m\hbar}}  
+\end{equation}
+
+und den dazu komplexkonjgiergten Operator
+
+\begin{equation}
+  \label{eq:6}
+  a^\dagger = \frac{\omega m x-ip}{\sqrt{2\omega m\hbar}}
+\end{equation}
+
+Durch die Addition von \eqref{eq:5} und  \eqref{eq:6} erhalten wir den Ortsoperator:
+
+\begin{equation}
+  \label{eq:7}
+  x = \sqrt{\frac{\hbar}{2\omega m}}(a+a^\dagger)
+\end{equation}
+
+Und durch Subtraktion von \eqref{eq:5} minus \eqref{eq:6} erhalten wir den Impulsoperator:
+
+\begin{equation}
+  \label{eq:8}
+  p = -i\sqrt{\frac{\hbar \omega m}{2}}(a-a^\dagger)
+\end{equation}
+
+Aus dem Kommutator \([x,p]=i\hbar\) erhalten wir eine wichtige Beziehung:
+
+\begin{equation}
+  \label{eq:9}
+  \boxed{[a,a^\dagger]=1}
+\end{equation}
+
+Die von uns erhaltenen Orts- und Impuls-Gleichungen \eqref{eq:7} und \eqref{eq:8} eingesetzt in \eqref{eq:4}:
+
+
+\begin{align}
+  \label{eq:10}
+   H &= \frac{1}{2m}\frac{\hbar \omega m}{2}(a-a^\dagger)^2 +  \frac{1}{2}m\omega^2\frac{\hbar}{2\omega m}(a+a^\dagger)^2 \\
+&= -\frac{\hbar \omega}{4}(a-a^\dagger)^2 +  \omega\frac{\hbar}{4}(a+a^\dagger)^2 \\
+&= \frac{\hbar \omega}{4}\left[-(a-a^\dagger)^2 + (a+a^\dagger)^2\right] \\
+&= \frac{\hbar \omega}{4}\left[\cancel{-a^2-(a^\dagger)^2}+aa^\dagger+a^\dagger a +\cancel{a^2+(a^\dagger)^2}+aa^\dagger+a^\dagger a \right] \\
+&= \frac{\hbar \omega}{4}\left[aa^\dagger+a^\dagger a +aa^\dagger+a^\dagger a \right] \\
+&= \frac{\hbar \omega}{2}\left[aa^\dagger+a^\dagger a \right] \\
+\end{align}
+Mit der Beziehung \eqref{eq:9} \(aa^\dagger = 1 + a^\dagger a \) ergibt sich der Hamilton Operator als Ausdruck des Absolutquadtrats vom Oparator \(a\):
+
+\begin{equation}
+  \label{eq:11}
+  \boxed{ H = \hbar\omega\left(a^\dagger a + \frac{1}{2}\right) }
+\end{equation}
+
+\subsection{Spektrum der Energieeigenwerte}
+
+Als nächstes wollen wir das Enegriespektrum des Harmonischen Oszillators bestimmen. Es reicht dazu die Eigenwerte des 'Zähloperators' zunächst zu betrachten:
+\begin{equation}
+  \label{eq:12}
+  N = a^\dagger a
+\end{equation}
+
+Mit der Eigenwertgleichung:
+
+\begin{equation}
+  \label{eq:13}
+  N|n\rangle  = n|n\rangle 
+\end{equation}
+
+Wendet man den Hamiltonoperator auf die Energieeigenzustände an so ergibt sich:
+
+\begin{align}
+  \label{eq:14}
+  H|n\rangle &=E_n|n\rangle\\
+ \hbar\omega\left(a^\dagger a + \frac{1}{2}\right)|n\rangle &= E_n|n\rangle 
+\end{align}
+
+Damit erhalten wir für die Energieeigenwerte:
+
+\begin{equation}
+  \label{eq:15}
+  \boxed{E_n = \hbar\omega\left(n + \frac{1}{2}\right) }
+\end{equation}
+
+Wir werden später zeigen, dass n eine positive ganze Zahl ist.\\
+\\
+Nun wollen wir die physikalische Bedeutung des eigenführten Operators \(a\) untersuchen. Dazu benötigen wir zwei Relationen:
+
+\begin{align}
+  [a,H] &= [a,\hbar\omega(a^\dagger a +\frac{1}{2})]  \\
+&= \hbar\omega[a,a^\dagger a ]  \\
+&=-\hbar\omega[a^\dagger a,a] \qquad \text{mit }[AB,C]=A[B,C]+[A,C]B \\
+&=-\hbar\omega(\underbrace{a^\dagger[a,a]}_{=0}+\underbrace{[a^\dagger,a]}_{=-1}a)\\
+&=\hbar\omega a \label{eq:16}
+\end{align}
+
+Analog erhält man:
+
+\begin{equation}
+  \label{eq:17}
+  [a^\dagger,H] = -\hbar\omega a^\dagger
+\end{equation}
+
+Nun betrachten wir folgende Eigenwertgleichungen:
+
+\begin{align}
+ \overbrace{\underline{H}(a}^{\eqref{eq:16}}|n\rangle ) &= (aH-\hbar\omega a)|n\rangle  = \underline{(E_n-\hbar\omega)}(a|n\rangle ) \label{eq:18}\\
+  \overbrace{\underline{H}(a^\dagger}^{\eqref{eq:17}}|n\rangle ) &= (a^\dagger H+\hbar\omega a^\dagger)|n\rangle  = \underline{(E_n+\hbar\omega)}(a^\dagger|n\rangle )\label{eq:19}
+\end{align}
+
+
+
+Aus den Gleichungen \eqref{eq:18} und \eqref{eq:19} sieht man dass \((a|n\rangle) \) und \((a^\dagger|n\rangle)\) Eigenzustände von H mit den Eigenwerten \((E_n-\hbar\omega)\) und  \((E_n+ \hbar\omega)\) sind. Die entsprechende Wirkung der Operatoren \(a\) und \(a^\dagger\) auf die Energieeigenzustände \(|n\rangle \) erzeugt ein neuen Energiezustand der sich um \(\hbar\omega\) verringert bzw. erhöht. Deswegen werden die Operatoren \(a\) und \(a^\dagger\) als vernichtungs(absteige) bzw. erzeugungs(aufsteige) Operatoren bezeichnet. 
+
+Als nächstes wollen wir feststellen was passiert wenn wir die Operatoren \(a\) und \(a^\dagger\) auf die Energieeigenzustände anwenden. Dazu benötigen wir zwei weitere Kommutator-Relationen:
+
+\begin{align}
+  [N,a] &= [a^\dagger a,a] \\
+&= a^\dagger\underbrace{[a,a]}_{=0} + \underbrace{[a^\dagger,a]}_{-1}a \\
+&= - a\label{eq:20}
+\end{align}
+
+und analog für \(a^\dagger\) folgt:
+
+\begin{equation}
+  \label{eq:21}
+  [N,a^\dagger] = a^\dagger
+\end{equation}
+
+Nun ähnlich zu den Gleichungen \eqref{eq:18} und \eqref{eq:19} für den Hamiltonoperator betrachten wir  Eigenwertgleichungen für den Operator \(N\):
+
+
+\begin{align}
+ \overbrace{\underline{N}(a}^{\eqref{eq:20}}|n\rangle ) &= a(N-1)|n\rangle  = \underline{(n-1)}(a|n\rangle ) \label{eq:22}\\
+  \overbrace{\underline{N}(a^\dagger}^{\eqref{eq:21}}|n\rangle ) &= a^\dagger(N+1)|n\rangle  = \underline{(n+1)}(a^\dagger|n\rangle )\label{eq:23}
+\end{align}
+
+Aus den beiden Gleichungen \eqref{eq:22} und \eqref{eq:23} folgt  \((a|n\rangle) \) und \((a^\dagger|n\rangle)\) Eigenzustände von \(N\) mit den Eigenwerten \((n-1)\) und  \((n+ 1)\) sind. Das bedeutet, dass \((a|n\rangle) \) und \((a^\dagger|n\rangle)\) angewandt auf die Zustände \(|n\rangle \) erniedrigen bzw. erhöhen jeweils um 1. D.h. dass \(a\) angewand auf \(|n\rangle \) erzeugt einen neuen Zustand mit \(|n-1\rangle \) und \(a^\dagger\) angewand auf \(|n\rangle \) erzeugt einen neuen Zustand mit \(|n+1\rangle \). Damit erhalten wir folgende Beziehung:
+
+\begin{equation}
+  \label{eq:24}
+  a|n\rangle = c_{n}|n-1\rangle 
+\end{equation}
+
+Wobei \(c_n\) eine die noch zu bestimmende Konstante ist. Um \(c_n\) zu bestimmen nutzen wir die Normierungsbedinung für den Zustand \((a|n\rangle )\) aus:
+
+\begin{equation}
+  \label{eq:25}
+  (\langle n| a^\dagger )\cdot(a|n\rangle ) = \langle n| a^\dagger a | n\rangle  = |c_n|^2 \langle n-1|n-1\rangle  = |c_n|^2
+\end{equation}
+
+Desweiteren gilt:
+
+\begin{equation}
+  \label{eq:26}
+   (\langle n| a^\dagger )\cdot(a|n\rangle ) = \langle n| \underbrace{a^\dagger a}_{N} | n\rangle  = n
+\end{equation}
+
+Aus  \eqref{eq:25} und \eqref{eq:26} folgt:
+
+\begin{equation}
+  \label{eq:27}
+  c_n = \sqrt{n}
+\end{equation}
+
+Eingesetzt in die Gleichung \eqref{eq:24}:
+
+\begin{equation}
+  \label{eq:28}
+   \boxed{ a|n\rangle = \sqrt{n}|n-1\rangle }
+\end{equation}
+
+Eine analoge Rechnung für den Aufsteige-Operator ergibt:
+
+\begin{equation}
+  \label{eq:29}
+  \boxed{ a^\dagger|n\rangle = \sqrt{n+1}|n+1\rangle }
+\end{equation}
+
+Wendet man den Absteige-Operator auf den Zustand \(|n\rangle \) sukzessive an, wird der Zustand immer um 1 kleiner bis zum Grundzustand mit \(n=0\). Weitere Anwendung des Operators auf den Null-Zustand \(a|0\rangle \) ergibt Null. Wendet man nun startend vom Grundzustand aus den Aufsteige-Operator an so wird \(n\) immer um eine ganze Zahl erhöht. Daraus folgt dass \(n\) eine positive ganze Zahl sein muss. Somit ist das Spektrum für die Energieeigenwerte gegeben mit:
+
+\begin{equation}
+  \label{eq:30}
+  \boxed{E_n = \hbar\omega\left(n + \frac{1}{2}\right) \qquad n \in \mathbb N_0}
+\end{equation}
+
+Da \(n\) eine positive ganze Zahl ist, ist das Energiespektrum des harmonischen Oszillators quantisiert. Im Gegensatz zum Klassischen Fall gibt es eine nicht verschwindende Nullpunktenergie (Grundzustandsenergie) für \(n=0\):
+
+\begin{equation}
+  \label{eq:31}
+  E_0 = \frac{\hbar\omega }{2}
+\end{equation}
+
+Die Nullpunktenergie darf nach dem Quantenmechanischen Prinzip auch nicht Null werden, da es die Unschärferelation verletzen würde.
+
+\end{document}
