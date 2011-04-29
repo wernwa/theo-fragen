@@ -1,0 +1,88 @@
+\input{../headers/header_script.tex}
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+
+\begin{document}
+
+\section*{Kohärente Zustände des harmonischen Oszillators}
+
+Für den harmonischen Oszillator existiert eine Klasse von Zuständen, die mit gewisser Berechtigung als 'Quasi-klassische' Zustände angesehen werden. Diese kohärenten Zustände sollen hier näher betrachtet werden.
+
+Die Zustände \(|\alpha\rangle \) sind Eigenzustände des Auf- und Absteige-Operators. Es gilt:
+
+\begin{equation}
+  \label{eq:1}
+  a|\alpha\rangle =\alpha|\alpha\rangle \qquad \langle \alpha | \alpha \rangle =1 \qquad \alpha \in \mathbb C
+\end{equation}
+
+
+Nun wollen wir herausfinden wie sich \(|\alpha\rangle\) als Liniarkombination von Energieeigenzuständen darstellen lassen. 
+
+\begin{equation}
+  \label{eq:2}
+  |\alpha\rangle = \mathbb 1 |\alpha\rangle = \sum_{n=0}^{\infty}|n\rangle\underbrace{ \langle n|\alpha\rangle }_{c_n} = \sum_{n=0}^{\infty} c_n|n\rangle 
+\end{equation}
+
+Wenden wir nun den Absteige-Operator auf den Zustand an:
+
+\begin{equation}
+  \label{eq:3}
+  a|\alpha\rangle = \sum_{n=0}^{\infty} c_n a|n\rangle=\sum_{n=1}^{\infty} c_n \sqrt{n}|n-1\rangle
+\end{equation}
+
+Ersetze \(n\) mit \(n+1\)
+
+\begin{equation}
+  \label{eq:4}
+  a|\alpha\rangle = \sum_{n=0}^{\infty} \underline{c_{n+1} \sqrt{n+1}}|n\rangle \stackrel{!}= \underbrace{ \alpha|\alpha\rangle}_{\eqref{eq:1}}  = \underbrace{ \sum_{n=0}^{\infty} \underline{\alpha c_n} |n\rangle }_{\eqref{eq:2} }
+\end{equation}
+
+Durch Vergleich von den beiden unterstrichenen Teilchen der Formel \eqref{eq:4} erhalten wir folgende Rekusionsformel:
+
+\begin{equation}
+  \label{eq:5}
+  c_{n+1}\sqrt{n+1} = \alpha c_n
+\end{equation}
+
+Ersetze \(n\) mit \(n-1\):
+
+\begin{equation}
+  \label{eq:6}
+  c_n\sqrt{n} = \alpha c_{n-1}
+\end{equation}
+
+\begin{align}
+  \label{eq:7}
+  \Rightarrow c_n &= \frac{\alpha}{\sqrt{n}}c_{n-1}\\
+c_1 &=  \frac{\alpha}{\sqrt{1}}c_{0}\\
+c_2 &=  \frac{\alpha}{\sqrt{2}}c_{1} =\frac{\alpha}{\sqrt{2}}\frac{\alpha}{\sqrt{1}}c_{0} \\
+c_3 &=  \frac{\alpha}{\sqrt{3}}c_{2} =  \frac{\alpha}{\sqrt{3}} \frac{\alpha}{\sqrt{2}}\frac{\alpha}{\sqrt{1}}c_{0}\\
+\vdots\\
+c_n &=  \frac{\alpha^n}{\sqrt{n!}}c_{0}
+\end{align}
+
+\(c_n\) in Gleichung \eqref{eq:2} eingesetzt ergibt:
+
+\begin{equation}
+  \label{eq:8}
+  |\alpha\rangle =\sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}}c_0 |n\rangle 
+\end{equation}
+
+Bestimmen des \(c_0\) durch Normierungsbedinung:
+
+\begin{align}
+  \label{eq:9}
+  \langle \alpha | \alpha \rangle  &= \underbrace{\sum_{n=0}^{\infty} \frac{|\alpha|^{2n}}{n!}}_{e^{|\alpha|^2}} |c_0|^2 \underbrace{\langle n|n\rangle}_{=1} \\
+&= e^{|\alpha|^2}|c_0|^2 \stackrel{!}= 1 \\
+ &\Leftrightarrow c_0 = e^{-\frac{|\alpha|^2}{2}} 
+\end{align}
+
+Eingesetzt in \eqref{eq:8}:
+
+\begin{equation}
+  \label{eq:10}
+  \boxed{ |\alpha\rangle =  e^{-\frac{|\alpha|^2}{2}} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} |n\rangle }
+\end{equation}
+
+In Fock-Raum-Schreibweise ergibt sich der kohärente Zustand \(|\alpha\rangle\) als unendliche Linearkombination von Zuständen fester Teilchenzahl (Fock-Zustände) \(|n\rangle\).
+
+\end{document}

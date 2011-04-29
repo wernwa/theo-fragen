@@ -5,7 +5,7 @@
 
 \section*{Quantenmechanischer Harmonischer Oszillator}
 
-\subsection{Klassische Herleitung}
+\subsection*{HO Klassisch}
 
 
 Hooksches Gesetz:
@@ -41,7 +41,7 @@ Mit D aus \eqref{eq:2} folgt die Hamilton-Funktion für den Harmonischen Oszilla
 
 Die Standardmethode der Analysis zur Lösung der Differentialgleichung unter der Nebenbedinuung, dass \(\psi(x)\) quadratintegrabel ist, führt auf Hermite-Polynome. Wir wollen hier jedoch eine algebraische Methode benutzen.
 
-\subsection{Algebraische Methode}
+\subsection*{Algebraische Methode}
 
 Als erstes definieren wir den nicht hermiteschen Operator \(a\):
 
@@ -97,7 +97,7 @@ Mit der Beziehung \eqref{eq:9} \(aa^\dagger = 1 + a^\dagger a \) ergibt sich der
   \boxed{ H = \hbar\omega\left(a^\dagger a + \frac{1}{2}\right) }
 \end{equation}
 
-\subsection{Spektrum der Energieeigenwerte}
+\subsection*{Spektrum der Energieeigenwerte}
 
 Als nächstes wollen wir das Enegriespektrum des Harmonischen Oszillators bestimmen. Es reicht dazu die Eigenwerte des 'Zähloperators' zunächst zu betrachten:
 \begin{equation}
@@ -237,5 +237,138 @@ Da \(n\) eine positive ganze Zahl ist, ist das Energiespektrum des harmonischen 
 \end{equation}
 
 Die Nullpunktenergie darf nach dem Quantenmechanischen Prinzip auch nicht Null werden, da es die Unschärferelation verletzen würde.
+
+
+\subsection*{Eigenzustände, Hermitpolynome}
+
+Wir wollen die Eigenzustände des harmonischen Oszillators bestimmen. Der Grundzustand der Nullpunktenergie lässt sich relativ leicht aus der Bedingung,
+
+\begin{equation}
+  \label{eq:32}
+  a |0 \rangle  = 0
+\end{equation}
+
+herleiten. Mit \eqref{eq:5}
+
+\begin{align}
+  \label{eq:33}
+  a|0\rangle  &= \frac{\omega m x+ip}{\sqrt{2\omega m\hbar}}|0\rangle  \\
+ 0 &= \frac{\omega m x+ip}{\sqrt{2\omega m\hbar}}|0\rangle  \\
+ 0 &= \left(\omega m x+ip\right)|0\rangle  \\
+ 0 &= \left(\omega m x+i \frac{\hbar}{i} \frac{d}{dx}\right)|0\rangle  \\
+ 0 &= \left( \frac{\omega m}{\hbar} x+ \frac{d}{dx}\right)|0\rangle  \\
+ 0 &= \left( \frac{1}{x^2_0} x+ \frac{d}{dx}\right)|0\rangle \qquad \text{mit } x_0^2 = \frac{\hbar}{\omega m} 
+\end{align}
+
+Zur Lösung dieser Differentialgleichung:
+\begin{equation}
+  \label{eq:34}
+ \Rightarrow  \left( \frac{1}{x^2_0} x+ \frac{d}{dx}\right)|0\rangle = 0
+\end{equation}
+verwenden wir den Ansatz:
+
+\begin{equation}
+  \label{eq:35}
+  \langle x |0\rangle = A e^{-\frac{1}{2}\frac{x^2}{x_0^2}}
+\end{equation}
+
+Um den Normierungsfaktor \(A\) zu bestimmen benutzen wir die Normierungsbedingung:
+
+\begin{equation}
+  \label{eq:36}
+\langle 0|0\rangle  = |A|^2 \int_{-\infty}^{\infty} e^{-\frac{x^2}{x_0^2}} = |A|^2 \sqrt{\pi}x_0 \stackrel{!}= 1
+\end{equation}
+
+\begin{equation}
+  \label{eq:37}
+  \Rightarrow A = \frac{1}{\sqrt[4]{\pi}\sqrt{x_0}}
+\end{equation}
+
+Somit erhalten wir die Grundzustandsfunktion:
+\begin{equation}
+  \label{eq:38}
+   \langle x |0\rangle = \frac{1}{\sqrt[4]{\pi}\sqrt{x_0}} e^{-\frac{1}{2}\frac{x^2}{x_0^2}}
+\end{equation}
+
+Wenden man nun den Aufsteige-Operator n mal auf die Grundzustandsfunktion an, so erhält man den n-ten Zustand:
+
+
+\begin{align}
+  \label{eq:39}
+  a^\dagger|0\rangle&=\sqrt 1 |1\rangle \\
+ a^\dagger a^\dagger|1\rangle &= \sqrt 1 a^\dagger|1\rangle = \sqrt 1 \sqrt 2 |2\rangle\\
+ a^\dagger a^\dagger a^\dagger|1\rangle &= \sqrt 1 a^\dagger a^\dagger|1\rangle = \sqrt 1 \sqrt 2  a^\dagger |2\rangle
+                             =\sqrt 1 \sqrt 2  \sqrt 3 |3\rangle\\
+ &\vdots\\
+ (a^\dagger)^n|0\rangle  &= \sqrt{n!}|n\rangle\\
+ \Leftrightarrow |n\rangle &=\frac{1}{\sqrt{n!}}(a^\dagger)^n|0\rangle
+\end{align}
+\begin{equation}
+  \label{eq:40}
+   \Rightarrow \langle x |n\rangle = \frac{1}{\sqrt{n!}\sqrt[4]{\pi}\sqrt{x_0}} (a^\dagger)^n e^{-\frac{1}{2}\frac{x^2}{x_0^2}}
+\end{equation}
+
+Setzen wir den Aufsteige-Operator \eqref{eq:5}
+
+\begin{equation}
+  \label{eq:41}
+  a^\dagger = \frac{1}{\sqrt{2}x_0}\left( x - x_0^2 \frac{d}{dx}\right)
+\end{equation}
+
+ in die Gleichung \eqref{eq:40} ein, so erhalten wir:
+
+ \begin{equation}
+   \label{eq:42}
+    \langle x |n\rangle = \frac{1}{\sqrt{n!}\sqrt[4]{\pi}\sqrt{x_0}} \frac{1}{\sqrt{2^n}x_0^n}\left( x - x_0^2 \frac{d}{dx}\right)^n  e^{-\frac{1}{2}\frac{x^2}{x_0^2}}
+ \end{equation}
+
+ \begin{equation}
+   \label{eq:43}
+  \rightarrow  \boxed{\psi_n(x) =  \langle x |n\rangle = \frac{1}{\sqrt{n!}\sqrt[4]{\pi}} \frac{1}{\sqrt{2^n}x_0^{n+\frac{1}{2}}}\left( x - x_0^2 \frac{d}{dx}\right)^n  e^{-\frac{1}{2}\frac{x^2}{x_0^2}}   }
+ \end{equation}
+
+
+
+Wir wollen die Gleichung \eqref{eq:43} mit Hilfe der Hermitpolynome Ausdrücken. Dafür benötigen wir die bekannte Relation:
+
+\begin{equation}
+  \label{eq:44}
+  H_n(x) = e^{\frac{x^2}{2}} \left( x-\frac{d}{dx}\right)^n e^{-\frac{x^2}{2}}
+\end{equation}
+
+Für x den Wert \(\frac{x}{x_0}\) eingesetzt lautet die Gleichung nun:
+
+\begin{align}
+  H_n\left(\frac{x}{x_0} \right) &= e^{\frac{x^2}{2x_0^2}} \left( \frac{x}{x_0}- x_0\frac{d}{dx}\right)^n e^{-\frac{x^2}{2x_0^2}} \\
+ &= e^{\frac{x^2}{2x_0^2}} \frac{1}{x_0^n} \left( x - x_0^2\frac{d}{dx}\right)^n e^{-\frac{x^2}{2x_0^2}} \\ \label{eq:45}
+\end{align}
+\begin{equation}
+  \label{eq:46}
+  \Leftrightarrow e^{-\frac{x^2}{2x_0^2}}H_n\left(\frac{x}{x_0} \right) = \frac{1}{x_0^n} \left( x - x_0^2\frac{d}{dx}\right)^n e^{-\frac{x^2}{2x_0^2}} 
+\end{equation}
+\\
+Gleichung \eqref{eq:46} in \eqref{eq:43} eingesetzt:
+
+\begin{equation}
+  \label{eq:47}
+   \boxed{\psi_n(x) =  \langle x |n\rangle = \frac{1}{\sqrt{n!}\sqrt[4]{\pi}\sqrt{2^n}\sqrt{x_0}}  e^{-\frac{x^2}{2x_0^2}}H_n\left(\frac{x}{x_0} \right)   }
+\end{equation}
+
+Wobei \(H_n\) die so genannte Hermitpolynome sind für die gilt:
+
+\begin{equation}
+  \label{eq:48}
+  H_n(x) = (-1)^ne^{x^2}\frac{d^n}{dx^n}e^{-x^2}
+\end{equation}
+
+
+
+\subsection*{Referenzen}
+
+\begin{itemize}
+\item Schwabl - Quantenmechanik
+\item Zettili - Quantum Mechanics
+\end{itemize}
+
 
 \end{document}
