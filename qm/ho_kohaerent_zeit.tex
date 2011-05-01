@@ -1,0 +1,55 @@
+\input{../headers/header_script.tex}
+%\includegraphics[width=0.75\textwidth]{thepic.png}
+
+\begin{document}
+\section*{Zeitliche Entwicklung eines kohärenten Zustandes}
+
+Wir wollen nun die kohärenten Zustände eines harmonischen Oszillators \(|\alpha\rangle \) 
+
+\begin{equation}
+  \label{eq:1}
+  |\alpha\rangle =  e^{-\frac{|\alpha|^2}{2}} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} |n\rangle
+\end{equation}
+
+zeitlich entwickeln und zeigen, dass diese kohärent bleiben. 
+
+Aus dem Separationsansatz der zeitabhängigen Schrödinger Gleichung wissen wir:
+
+\begin{align}
+  \label{eq:2}
+  |\alpha (t)\rangle  &= \exp\left( -\frac{i}{\hbar}Ht\right)|\alpha\rangle \\
+ &= \exp\left( -\frac{i}{\hbar}Ht\right)e^{-\frac{|\alpha|^2}{2}} \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} |n\rangle \\
+ &=e^{-\frac{|\alpha|^2}{2}}  \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \exp\left( -\frac{i}{\hbar}Ht\right) |n\rangle \\
+ &=  e^{-\frac{|\alpha|^2}{2}}  \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \exp\left( -\frac{i}{\hbar}E_n t\right)  |n\rangle 
+\end{align}
+
+Mit der allgemeinen Lösung für die Energieeigenwerte des harmonischen Oszillators \(E_n= \hbar\omega(n+\frac{1}{2})\) ergibt sich:
+
+
+\begin{align}
+  |\alpha (t)\rangle  &= e^{-\frac{|\alpha|^2}{2}}  \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \exp\left( -\frac{i}{\hbar}\hbar\omega(n+\frac{1}{2})  t\right)  |n\rangle \\
+&= e^{-\frac{|\alpha|^2}{2}}e^{-i\omega\frac{1}{2}t}  \sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} e^{ -i\omega n t}  |n\rangle \\
+&= e^{-\frac{|\alpha|^2}{2}}e^{-i\omega\frac{1}{2}t}  \sum_{n=0}^{\infty} \frac{\left( \alpha e^{ -i\omega  t}\right)^n }{\sqrt{n!}}   |n\rangle  \label{eq:3}
+\end{align}
+
+
+Da \(|e^{-i\omega t}|=1\) können wir statt \(|\alpha|^2\) auch \(|\alpha e^{-i\omega t}|^2\) schreiben. Damit sieht die Gleichung \eqref{eq:3} wie folgt aus:
+\begin{align}
+  \label{eq:4}
+   |\alpha (t)\rangle &= e^{-\frac{|\alpha e^{-i\omega t} |^2}{2}}e^{-i\omega\frac{1}{2}t}  \sum_{n=0}^{\infty} \frac{\left( \alpha e^{ -i\omega  t}\right)^n }{\sqrt{n!}}   |n\rangle\\
+&=e^{-\frac{1}{2}i\omega t} \underbrace{\left(e^{-\frac{|\alpha e^{-i\omega t} |^2}{2}}  \sum_{n=0}^{\infty} \frac{\left( \alpha e^{ -i\omega  t}\right)^n }{\sqrt{n!}}   |n\rangle\right)}_{\text{vergleiche mit \eqref{eq:1} }}\\
+&=e^{-i\frac{1}{2}\omega t}|\alpha e^{-i\omega t}\rangle
+\end{align}
+
+
+Um zu zeigen dass der Zustand für alle Zeiten kohärent bleibt, wendet man den Absteigeoperator auf \eqref{eq:4} an und erhält den Eigenwert \(\alpha e^{-i\omega t}\):
+
+\begin{equation}
+  \label{eq:5}
+  a |\alpha(t)\rangle = \alpha e^{-i\omega t} |\alpha(t)\rangle
+\end{equation}
+
+
+
+
+\end{document}

@@ -85,4 +85,66 @@ Eingesetzt in \eqref{eq:8}:
 
 In Fock-Raum-Schreibweise ergibt sich der kohärente Zustand \(|\alpha\rangle\) als unendliche Linearkombination von Zuständen fester Teilchenzahl (Fock-Zustände) \(|n\rangle\).
 
+
+\subsection{Minimale Unschärfe der kohärenten Zustände}
+
+Wir wollen zeigen, dass für die kohärente Zustände \(|\alpha\rangle \) minimale Unschärfe für Orts- und Impuls-Operator gilt die mit der Heisenbergschen Unschärferelation verträglich ist. Dazu benötigen wir die Darstellung des  Orts- und Impuls-Operators als Auf- und Absteigeoperatoren:
+
+\begin{align}
+  x &= \sqrt{ \frac{\hbar}{2m\omega}} (a^\dagger+a)\\ \label{eq:11}
+  p &= i\sqrt{ \frac{\hbar m\omega}{2}} (a^\dagger-a) \label{eq:12}
+\end{align}
+
+Zu berechnen ist die Orts- und Impuls Unschärfe:
+
+\begin{align}
+  \Delta x &= \sqrt{ \langle x^2\rangle -\langle x\rangle^2 }\label{eq:13}\\
+   \Delta p &= \sqrt{ \langle p^2\rangle -\langle p\rangle^2 }\label{eq:14}
+\end{align}
+
+
+\begin{align}
+  \label{eq:15}
+  \langle x^2\rangle &= \langle \alpha|x^2|\alpha\rangle \\
+  &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger + a)^2|\alpha\rangle\\
+  &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger)^2 + a^\dagger a+aa^\dagger +a^2|\alpha\rangle \qquad \text{mit } [a,a^\dagger] = 1\\
+   &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger)^2 + a^\dagger a+1+a^\dagger a +a^2|\alpha\rangle\\
+   &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger)^2 + 2 a^\dagger a+1 +a^2|\alpha\rangle\\
+   &= \frac{\hbar}{2m\omega}\left(\langle \alpha|(a^\dagger)^2|\alpha\rangle + 2\langle \alpha| a^\dagger a|\alpha\rangle+ 1 +\langle \alpha| a^2|\alpha\rangle\right)\\
+   &= \frac{\hbar}{2m\omega}\left((\alpha^*)^2 + 2| \alpha|^2 + 1 + \alpha^2\right)\\
+   &= \frac{\hbar}{2m\omega}\left((\alpha^*+\alpha)^2 + 1\right)\\
+\end{align}
+
+\begin{align}
+  \label{eq:16}
+   \langle x\rangle &= \langle \alpha|x|\alpha\rangle \\
+ &= \sqrt{ \frac{\hbar}{2m\omega}}\langle \alpha|(a^\dagger + a)|\alpha\rangle\\
+ &= \sqrt{\frac{\hbar}{2m\omega}}(\langle \alpha|a^\dagger|\alpha\rangle +\langle \alpha| a|\alpha\rangle)\\
+ &= \sqrt{\frac{\hbar}{2m\omega}}(\alpha^* + \alpha)\\
+\end{align}
+
+Die Erwartungswerte \eqref{eq:15} und \eqref{eq:16} in \eqref{eq:13} einsetzen ergibt:
+
+\begin{align}
+  \label{eq:17}
+  \Delta x &= \sqrt{ \langle x^2\rangle -\langle x\rangle^2 }\\
+ &=\sqrt{\frac{\hbar}{2m\omega}[\cancel{( \alpha^*+\alpha)^2} + 1 - \cancel{ (\alpha^* + \alpha)^2}  ]}\\
+ &=\sqrt{\frac{\hbar}{2m\omega}}
+\end{align}
+
+Analoge Rechnung ergibt für die Impulsunschärfe:
+
+\begin{equation}
+  \label{eq:18}
+  \Delta p = \sqrt{\frac{\hbar \omega m}{2}}
+\end{equation}
+
+Daraus folgt für Unschärferelation:
+
+\begin{equation}
+  \label{eq:19}
+  \Delta x\cdot\Delta p = \sqrt{\frac{\hbar}{2m\omega}} \sqrt{\frac{\hbar \omega m}{2}} = \frac{\hbar}{2}
+\end{equation}
+
+
 \end{document}
