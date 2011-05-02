@@ -44,12 +44,48 @@ Da \(|e^{-i\omega t}|=1\) können wir statt \(|\alpha|^2\) auch \(|\alpha e^{-i\
 
 Um zu zeigen dass der Zustand für alle Zeiten kohärent bleibt, wendet man den Absteigeoperator auf \eqref{eq:4} an und erhält den Eigenwert \(\alpha e^{-i\omega t}\):
 
-\begin{equation}
+\begin{align}
   \label{eq:5}
-  a |\alpha(t)\rangle = \alpha e^{-i\omega t} |\alpha(t)\rangle
+  a |\alpha(t)\rangle = \alpha e^{-i\omega t} |\alpha(t)\rangle \\
+\end{align}
+
+\subsection*{Zeitliche Oszillation}
+
+
+\begin{align}
+  \label{eq:6}
+  \langle x \rangle &=  \sqrt{ \frac{\hbar}{2 m\omega}}\langle \alpha(t) |a^\dagger + a|\alpha(t)\rangle \\
+&=  \sqrt{ \frac{\hbar}{2 m\omega}}(\langle \alpha(t) |a^\dagger|\alpha(t)\rangle + \langle \alpha(t)a|\alpha(t)\rangle) \qquad \text{mit }\alpha\in \mathbb R\\
+&=  \sqrt{ \frac{\hbar}{2 m\omega}}(\alpha e^{i\omega t} + \alpha e^{-i\omega t} )\\
+&=  \sqrt{ \frac{\hbar}{2 m\omega}}2\alpha \cos(\omega t)\\
+&=  \sqrt{ \frac{2\hbar}{ m\omega}}\alpha \cos(\omega t)
+\end{align}
+
+
+Der Ortserwartungswert oszilliert mit der Frequenz \(\omega\) zwischen \(- \sqrt{ \frac{2\hbar}{ m\omega}}\alpha\) und \(\sqrt{ \frac{2\hbar}{ m\omega}}\alpha\) hin und her.
+
+Analoge Rechnung für den Impulserwartungswert liefert:
+
+\begin{equation}
+  \label{eq:7}
+\langle p \rangle = -\sqrt{ 2\hbar m\omega}\cdot  \alpha \sin (\omega t)
+\end{equation}
+
+Die Erwartungswerte für Ort und Impuls verhalten sich demnach genauso wie eine klassische harmonische Osillation. Man kann ebenso den Zustammenhang zwischen Orts- und Impuls-Operator wie in der klassischen Mechanik herstellen:
+
+
+\begin{equation}
+  \label{eq:8}
+  m\frac{d\langle x\rangle }{dt} = \sqrt{\frac{2\hbar}{m\omega}} m\alpha \omega(-\sin(\omega t)) = - \sqrt{2\hbar m\omega}\cdot\alpha \sin(\omega t) \equiv \langle p \rangle 
 \end{equation}
 
 
+\subsection*{Referenzen}
+
+\begin{itemize}
+\item \url{www.physik.uni-regensburg.de/forschung/schwarz/QOptik/Wurm.pdf}
+\item \url{http://www2009.ph.tum.de/studium/betrieb/ferienkurse/2009s/qm/diml.pdf}
+\end{itemize}
 
 
 \end{document}
