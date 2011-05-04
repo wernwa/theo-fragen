@@ -154,11 +154,71 @@ Die Lösung \(u(r)\) muss folgende Randbedinungen erfüllen:
 \item  \(u(r \to \infty)=0  \) da das Coulombpotential im Unendlichen verschwindet.
 \end{itemize}
 
+Zu Verdeutlichung eine kleine Umformung:
+
+\begin{equation}
+  \label{eq:22}
+   \left[-\frac{\hbar^2}{2\mu}\frac{d^2}{dr^2} + \underbrace{\frac{l(l+1)\hbar^2}{2\mu r^2}}_{\text{stark gegen }\infty}  \overbrace{- \frac{e^2}{r} - E_r}^{\text{weniger stark gegen }\infty}   \right] u(r)   = 0 
+\end{equation}
+
 Für \(r\to 0\) dominiert das Zentrifugalpotentail, deshalb können wir schreiben:
 
 \begin{equation}
   \label{eq:21}
   r\to 0: \quad\left[-\frac{\hbar^2}{2\mu}\frac{d^2}{dr^2}+ \frac{l(l+1)\hbar^2}{2\mu r^2}\right] u(r) = 0
 \end{equation}
+
+Der Lösungsansatz für diese Art der DGL ist:
+
+\begin{equation}
+  \label{eq:23}
+  u(r) = Ar^{l+1}+Br^{-l}
+\end{equation}
+
+Da \(u(r)\) an der Stelle \(r=0\) verschwinden muss, muss die Konstante \(B=0\) sein. Somit reduziert sich der Ansatz auf:
+
+\begin{equation}
+  \label{eq:24}
+  u(r) = Ar^{l+1}
+\end{equation}
+
+Betrachte nun die Randbedinung \(u(r\to \infty) = 0\).
+
+\begin{equation}
+  \label{eq:25}
+  \left[-\frac{\hbar^2}{2\mu}\frac{d^2}{dr^2} + \underbrace{\frac{l(l+1)\hbar^2}{2\mu r^2}}_{\to 0}  \underbrace{- \frac{e^2}{r} }_{\to 0} - E_r  \right] u(r)   = 0 
+\end{equation}
+
+Somit ergibt sich folgende DGL:
+
+\begin{equation}
+  \label{eq:26}
+  r\to \infty: \quad\left[\frac{d^2}{dr^2} - \kappa^2\right]u(r) = 0 \qquad \text{mit }\kappa = \sqrt{\underbrace{\frac{2\mu}{\hbar^2}(-E)}_{>0}}
+\end{equation}
+
+Mit der Lösung:
+
+\begin{equation}
+  \label{eq:27}
+  u(r) = Ce^{\kappa x}+De^{-\kappa x}
+\end{equation}
+
+Durch die Randbedingung muss \(C=0\) sein somit:
+
+\begin{equation}
+  \label{eq:28}
+    u(r) = De^{-\kappa x}
+\end{equation}
+
+Die Gesamtlösung für \(u(r)\) kann kombiniert werden aus \eqref{eq:24} und \eqref{eq:28}:
+
+\begin{equation}
+  \label{eq:29}
+  u(r) = r^{l+1}f(r)e^{-\kappa x}
+\end{equation}
+
+Wobei \(f(r)\) eine noch zu bestimmende Funktion ist.
+
+
 
 \end{document}
