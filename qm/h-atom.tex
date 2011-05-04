@@ -1,0 +1,164 @@
+\input{../headers/header_script.tex}
+
+\usepackage{amsmath}                % brauche ich um dir Formel zu umrahmen.
+
+\begin{document}
+\section*{Wasserstoffatom}
+
+Das Wasserstoffatom ist das einfachste cheminsche Element. Es besteht aus einem Proton und einem Elektron. Isotope enthalten zusätzlich Neutronen im Kern. Aus quanenmechanischer Sicht ist das H-Atom einzige Element das exakt beschrieben werden kann. 
+
+Der Hamilton-Operator allgemein lautet:
+
+\begin{equation}
+  \label{eq:1}
+  H = -\frac{\hbar^2}{2m_p}\nabla^2_p - \frac{\hbar^2}{2m_{e}}\nabla^2_e - \frac{e^2}{|\vec r_p-\vec r_e|}
+\end{equation}
+
+Wir wollen den Hamilton in Schwerpunktskoordinaten ausdrücken.
+
+\begin{equation}
+  \label{eq:2}
+  \vec R = \frac{m_e\vec r_e + m_p\vec r_p}{m_e+m_p} \qquad \vec r = \vec r_e-\vec r_p
+\end{equation}
+
+Für den Gradienten im Schwerpunkssystem gilt ebenfalls die Impulserhaltung:
+
+\begin{equation}
+  \label{eq:3}
+  \frac{1}{2m_e}\nabla_e^2 + \frac{1}{2m_p}\nabla_p^2 = \frac{1}{2M}\nabla_R^2 + \frac{1}{2\mu}\nabla_r^2
+\end{equation}
+
+Mit
+
+\begin{equation}
+  \label{eq:5}
+  M = m_p+m_e\qquad \mu = \frac{m_em_p}{m_e+m_p}
+\end{equation}
+
+Der Hamilton-Operator \eqref{eq:1} sieht nach Ersetzung wie folgt aus:
+
+\begin{equation}
+  \label{eq:4}
+  H = -\frac{\hbar^2}{2M}\nabla^2_R - \frac{\hbar^2}{2\mu}\nabla^2_r - \frac{e^2}{r}
+\end{equation}
+
+Hamilton-Operator in die Schrödinger-Gleichung eingesetzt:
+
+\begin{align}
+  \label{eq:6}
+  H\Psi(\vec R,\vec r) &= E\Psi(\vec R,\vec r) \\
+\left[-\frac{\hbar^2}{2M}\nabla^2_R - \frac{\hbar^2}{2\mu}\nabla^2_r - \frac{e^2}{r}\right]\Psi(\vec R,\vec r) &= E\Psi(\vec R,\vec r) \\
+\end{align}
+Es ist günstig ein Producktansatz für die beiden Relativkoordinaten \(\vec R,\vec r\) anzusetzen:
+
+\begin{equation}
+  \label{eq:7}
+  \Psi(\vec R,\vec r) = \Phi(\vec R) \cdot \psi(\vec r)
+\end{equation}
+
+Eingesetzt in \eqref{eq:6} erhalten wir die Relativkoordinaten \(\vec R,\vec r\) separiert in zwei Summanten:
+
+\begin{equation}
+  \label{eq:8}
+  \left[-\frac{\hbar^2}{2M}\frac{1}{\Phi(\vec R)}\nabla_R^2\Phi(\vec R)  \right]+\left[-\frac{\hbar^2}{2\mu}\frac{1}{\psi(\vec r)}\nabla_r^2\psi(\vec r) - \frac{e^2}{r} \right] = E_R+E_r
+\end{equation}
+
+Da erste Klammer nur von \(\vec R\) und die zweite Klammer von \(\vec r\) abhängt und beide  \(\vec R,\vec r\) voneinander unabhängige Vektoren sind, müssen beide Klammern unabhängig voneinander einer Konstanten entsprechen. Somit bekommen wir zwei Gleichungen:
+
+\begin{align}
+ -\frac{\hbar^2}{2M}\frac{1}{\Phi(\vec R)}\nabla_R^2\Phi(\vec R)  &= E_R\Phi(\vec R) \label{eq:9} \\
+\left[-\frac{\hbar^2}{2\mu}\nabla_r^2 - \frac{e^2}{r} \right]\psi(\vec r) &= E_r\psi(\vec r) \label{eq:10}
+\end{align}
+
+Aus der Gleichung \eqref{eq:9} sieht man dass der Schwerpunkt sich wie ein freies Teilchen verhält mit der Lösung der Ebenen Wellen:
+
+\begin{equation}
+  \label{eq:11}
+  \Phi(\vec R) = \left( \frac{1}{\sqrt{2\pi}}\right)^3 e^{i\vec k\cdot\vec R}
+\end{equation}
+
+Mit der Zugehörigen Energie
+
+\begin{equation}
+  \label{eq:12}
+  E_R = \frac{\hbar^2k^2}{2M}
+\end{equation}
+
+Da die Gleichung \eqref{eq:10} ein fiktives Teilchen mit der Masse \(\mu\) beschreibt, das sich in einem Zentralen Potential \(-\frac{e^2}{r}\) bewegt wird in den meisten Fällen nur diese Gleichung bei Zentralpotentialproblemen wie dem H-Atom betrachtet.
+
+\subsection*{Lösung der Schröginger-Gleichung für ein Zentralpotential}
+
+Es geht nun darum die Gleichung \eqref{eq:9} zu lösen. Da es sich um ein Zentralsymmetrisches Problem handelt ist es zweckmäßig den Hamilton-Operator in Kugelkoordinaten auszudrücken. Der Laplace Operator in Kugelkoordinaten lautet:
+
+\begin{equation}
+  \label{eq:13}
+  \nabla^2 = \frac{1}{r}\frac{d^2}{dr^2}r + \frac{1}{r^2sin^2\theta}\left( \sin\theta \frac{d}{d\theta}\sin\theta\frac{d}{d\theta}+\frac{d^2}{d\phi^2}\right) 
+\end{equation}
+
+Und der Drehimpulsoperator zum Quadrat sieht wie folgt aus:
+
+\begin{equation}
+  \label{eq:14}
+  \vec L^2 = -\frac{\hbar^2}{\sin^2\theta}\left( \sin\theta \frac{d}{d\theta}\sin\theta\frac{d}{d\theta}+\frac{d^2}{d\phi^2}\right) 
+\end{equation}
+
+Gleichung \eqref{eq:14} in  \eqref{eq:13} eingesetzt:
+
+\begin{equation}
+  \label{eq:15}
+   \nabla^2 = \frac{1}{r}\frac{d^2}{dr^2}r - \frac{L^2}{\hbar^2r^2}
+\end{equation}
+
+Diese Gleichung \eqref{eq:15} in die Schrödinger Gleichung \eqref{eq:10} eingesetzt: 
+
+\begin{equation}
+  \label{eq:16}
+  \left[-\frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r + \frac{L^2}{2\mu r^2}  - \frac{e^2}{r} \right]\psi(\vec r) = E_r\psi(\vec r) 
+\end{equation}
+
+Da wir die Eigenwerte von \(L^2\) kennen, zerlegen wir das Problem in ein Radialanteil und ein Winkelanteil. Der Producktansatz lautet:
+
+\begin{equation}
+  \label{eq:17}
+  \psi(\vec r) = R(r)\cdot Y(\phi,\theta) 
+\end{equation}
+
+Eingesetzt in \eqref{eq:16}:
+
+\begin{align}
+  \left[-\frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r + \frac{L^2}{2\mu r^2}  - \frac{e^2}{r} \right]R(r)\cdot Y(\phi,\theta)  &= E_rR(r)\cdot Y(\phi,\theta) \\
+  - Y\frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r R(r) + R(r)\frac{L^2}{2\mu r^2} Y  -Y \frac{e^2}{r} R(r)   &= E_rR(r)\cdot Y(\phi,\theta) \quad \text{mit } L^2Y = l(l+1)\hbar^2 Y\\
+  - Y\frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r R(r) + R(r)\frac{l(l+1)\hbar^2}{2\mu r^2}Y  -Y \frac{e^2}{r} R(r)   &= E_rR(r)\cdot Y(\phi,\theta) \quad |:Y\\
+  - \frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r R(r) + R(r)\frac{l(l+1)\hbar^2}{2\mu r^2}  - \frac{e^2}{r} R(r)   &= E_rR(r)\\
+  \left[- \frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r + \frac{l(l+1)\hbar^2}{2\mu r^2}  - \frac{e^2}{r}\right] R(r)   &= E_rR(r)  \label{eq:18}
+\end{align}
+
+Wir sind zu einer Eigenwert-Gleichung gelangt die nur vom Radialanteil abhängt. Als weitere Vereinfachung der Gleichung \eqref{eq:18} können wir sie von links mit \(r\) durchmultiplizieren:
+
+\begin{equation}
+  \label{eq:19}
+   - \frac{\hbar^2}{2\mu}\frac{d^2}{dr^2}\underbrace{r R(r)}_{u(r)} + \left[\frac{l(l+1)\hbar^2}{2\mu r^2}  - \frac{e^2}{r}\right] \underbrace{r R(r)}_{u(r)}   = E_r \underbrace{r R(r)}_{u(r)}
+\end{equation}
+
+Nun können wir einen neuen Ansatz Einführen \(u(r) = rR(r)\):
+
+\begin{equation}
+  \label{eq:20}
+    \left[-\frac{\hbar^2}{2\mu}\frac{d^2}{dr^2} + \underbrace{\frac{l(l+1)\hbar^2}{2\mu r^2}}_{\text{Zentrifugalpotential}}  - \frac{e^2}{r}\right] u(r)   = E_r u(r)
+\end{equation}
+
+Die Lösung \(u(r)\) muss folgende Randbedinungen erfüllen:
+
+\begin{itemize}
+\item \(u(r \to 0)=0  \) Für sehr kleine r sollte die Lösung verschwinden und nicht divergierten, da sonst der Hamilton-Operator \(\to\infty\) divergiert.
+\item  \(u(r \to \infty)=0  \) da das Coulombpotential im Unendlichen verschwindet.
+\end{itemize}
+
+Für \(r\to 0\) dominiert das Zentrifugalpotentail, deshalb können wir schreiben:
+
+\begin{equation}
+  \label{eq:21}
+  r\to 0: \quad\left[-\frac{\hbar^2}{2\mu}\frac{d^2}{dr^2}+ \frac{l(l+1)\hbar^2}{2\mu r^2}\right] u(r) = 0
+\end{equation}
+
+\end{document}
