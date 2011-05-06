@@ -168,7 +168,7 @@ Für \(r\to 0\) dominiert das Zentrifugalpotentail, deshalb können wir schreibe
   r\to 0: \quad\left[-\frac{\hbar^2}{2\mu}\frac{d^2}{dr^2}+ \frac{l(l+1)\hbar^2}{2\mu r^2}\right] u(r) = 0
 \end{equation}
 
-Der Lösungsansatz für diese Art der DGL ist:
+Dies ist eine Eulerische DGL 2-er Ordnung. Der Lösungsansatz für diese Art der DGL ist:
 
 \begin{equation}
   \label{eq:23}
@@ -200,24 +200,168 @@ Mit der Lösung:
 
 \begin{equation}
   \label{eq:27}
-  u(r) = Ce^{\kappa x}+De^{-\kappa x}
+  u(r) = Ce^{\kappa r}+De^{-\kappa r}
 \end{equation}
 
 Durch die Randbedingung muss \(C=0\) sein somit:
 
 \begin{equation}
   \label{eq:28}
-    u(r) = De^{-\kappa x}
+    u(r) = De^{-\kappa r}
 \end{equation}
 
 Die Gesamtlösung für \(u(r)\) kann kombiniert werden aus \eqref{eq:24} und \eqref{eq:28}:
 
 \begin{equation}
   \label{eq:29}
-  u(r) = r^{l+1}f(r)e^{-\kappa x}
+  u(r) = r^{l+1}f(r)e^{-\kappa r}
 \end{equation}
 
-Wobei \(f(r)\) eine noch zu bestimmende Funktion ist.
+Wobei \(f(r)\) eine noch zu bestimmende Funktion ist.  
+
+Wir setzen \(u(r)\) in \eqref{eq:22} ein:
+
+\begin{align*}
+  \left[-\frac{\hbar^2}{2\mu}\frac{d^2}{dr^2} + \frac{l(l+1)\hbar^2}{2\mu r^2}- \frac{e^2}{r} + \frac{\hbar^2 \kappa^2}{2\mu}  \right] r^{l+1}f(r)e^{-\kappa r}   &= 0 \\
+\left[\frac{d^2}{dr^2} + \frac{l(l+1)}{r^2}- \frac{2\mu}{\hbar^2}\frac{e^2}{r} + \kappa^2  \right] r^{l+1}f(r)e^{-\kappa r}   &= 0 \\ 
+\frac{d}{dr}\left\{f(r)e^{-\kappa r} \frac{d}{dr}r^{l+1}+ r^{l+1}e^{-\kappa r}\frac{d}{dr} f(r) + r^{l+1} f(r)\frac{d}{dr}e^{-\kappa r}\right\}\\ - \left[\frac{l(l+1)}{r^2}- \frac{2\mu}{\hbar^2}\frac{e^2}{r} + \kappa^2  \right] r^{l+1} f(r)e^{-\kappa r}   &= 0 \\ 
+\frac{d}{dr}\left\{f(r)e^{-\kappa r}(l+1)r^{l}+ r^{l+1}e^{-\kappa r}\frac{d}{dr} f(r) - r^{l+1} f(r)\kappa e^{-\kappa r}\right\} \\- \left[\frac{l(l+1)}{r^2}- \frac{2\mu}{\hbar^2}\frac{e^2}{r} + \kappa^2  \right] r^{l+1} f(r)e^{-\kappa r}   &= 0 \\
+\left\{ e^{-\kappa r}(l+1)r^{l} \frac{d}{dr}f(r) +  f(r)\frac{d}{dr} e^{-\kappa r}(l+1)r^{l}+f(r)  e^{-\kappa r}(l+1)\frac{d}{dr}r^{l} +\right.\qquad&\\
++e^{-\kappa r}\frac{d}{dr} f(r)\frac{d}{dr}r^{l+1} +r^{l+1}\frac{d}{dr} f(r)\frac{d}{dr}e^{-\kappa r}+r^{l+1}e^{-\kappa r}\frac{d^2}{dr^2} f(r)+\qquad&\\
+\left.- f(r)\kappa e^{-\kappa r}\frac{d}{dr}r^{l+1}-r^{l+1}\kappa e^{-\kappa r} \frac{d}{dr}f(r)-r^{l+1} f(r)\kappa \frac{d}{dr}e^{-\kappa r}\right\} \qquad&\\
+- \left[\frac{l(l+1)}{r^2}- \frac{2\mu}{\hbar^2}\frac{e^2}{r} + \kappa^2  \right] r^{l+1} f(r)e^{-\kappa r}   &= 0 \\
+\left\{ e^{-\kappa r}(l+1)r^{l} \frac{d}{dr}f(r) - \kappa f(r) e^{-\kappa r}(l+1)r^{l}+f(r)  e^{-\kappa r}(l+1)lr^{l-1} +\right.\qquad&\\
++e^{-\kappa r}\frac{d}{dr} f(r)(l+1)r^{l} -\kappa r^{l+1}\frac{d}{dr} f(r)e^{-\kappa r}+r^{l+1}e^{-\kappa r}\frac{d^2}{dr^2} f(r)+\qquad&\\
+\left.- f(r)\kappa e^{-\kappa r}(l+1)r^{l}-r^{l+1}\kappa e^{-\kappa r} \frac{d}{dr}f(r)+r^{l+1} f(r)\kappa^2 e^{-\kappa r}\right\} \qquad&\\
+- \left[\frac{l(l+1)}{r^2}- \frac{2\mu}{\hbar^2}\frac{e^2}{r} + \kappa^2  \right] r^{l+1} f(r)e^{-\kappa r}   &= 0 |:r^{l+1}:e^{-\kappa r}\\
+\left\{(l+1)r^{-1} \frac{d}{dr}f(r) - \kappa f(r) (l+1)r^{-1}+f(r)  (l+1)lr^{-2} +\right.\qquad&\\
++\frac{d}{dr} f(r)(l+1)r^{-1} -\kappa \frac{d}{dr} f(r)+\frac{d^2}{dr^2} f(r)+\qquad&\\
+\left.- f(r)\kappa (l+1)r^{-1}-\kappa \frac{d}{dr}f(r)+ f(r)\kappa^2  \right\}\qquad&\\
+- \left[\frac{l(l+1)}{r^2}- \frac{2\mu}{\hbar^2}\frac{e^2}{r} + \kappa^2  \right]f(r)   &= 0\\
+\left\{2(l+1)r^{-1} \frac{d}{dr}f(r) - 2\kappa f(r) (l+1)r^{-1}+f(r)  (l+1)lr^{-2} -2\kappa \frac{d}{dr} f(r)+\right.\qquad& \\ 
+\left. + \frac{d^2}{dr^2} f(r) +  f(r)\kappa^2  \right\}\qquad&\\
+- \left[\frac{l(l+1)}{r^2}- \frac{2\mu}{\hbar^2}\frac{e^2}{r} + \kappa^2  \right]f(r)   &= 0\\
+\left\{\frac{d^2}{dr^2} + 2\left((l+1)r^{-1}-\kappa\right)\frac{d}{dr} - 2\kappa (l+1)r^{-1}+\cancel{(l+1)lr^{-2}} +  \cancel{\kappa^2}  \right\} f(r) \qquad&\\
+- \left[\cancel{ \frac{l(l+1)}{r^2}} - \frac{2\mu}{\hbar^2}\frac{e^2}{r} + \cancel{\kappa^2}  \right]f(r)   &= 0\\
+\left\{\frac{d^2}{dr^2} + 2\left((l+1)r^{-1}-\kappa\right)\frac{d}{dr} - 2\kappa (l+1)r^{-1}+ \frac{2\mu}{\hbar^2}\frac{e^2}{r} \right\}f(r)   &= 0
+\end{align*}
+
+und erhalten schlussendlich:
+
+\begin{align}
+  \label{eq:31}
+  \left[ \frac{d^2}{dr^2} + 2\left(\frac{l+1}{r}-\kappa\right)\frac{d}{dr} + 2 \left(-\kappa (l+1) + \frac{\mu e^2}{\hbar^2}\right) \frac{1}{r}  \right] f(r)&= 0
+\end{align}
+
+Für \(f(r)\) versuchen wir ein Potenzreihen-Ansatz:
+
+\begin{align}
+  \label{eq:32}
+  f(r) = \sum^{\infty}_{k=0} b_k r^k
+\end{align}
+Einsetzen in Gleichung \eqref{eq:31}:
+
+\begin{align*}
+ \sum^{\infty}_{k=0} \left[ k(k-1) b_k r^{k-2} + 2\left(\frac{l+1}{r}-\kappa\right)b_k k r^{k-1} + 2 \left(-\kappa (l+1) + \frac{\mu e^2}{\hbar^2}  \right) \frac{1}{r}  b_k r^k \right]  &= 0 \\
+ \sum^{\infty}_{k=0} \left[ k(k-1) b_k r^{k-2} + 2(l+1)b_k k r^{k-2}-2\kappa b_k k r^{k-1} + 2 \left(-\kappa (l+1) + \frac{\mu e^2}{\hbar^2}  \right)   b_k r^{k-1} \right]  &= 0 \\
+ \sum^{\infty}_{k=0} \left[ (k+2l+1)b_k k r^{k-2}+ 2 \left(-k\kappa-\kappa (l+1) + \frac{\mu e^2}{\hbar^2}  \right)   b_k r^{k-1} \right]  &= 0
+\end{align*}
+
+Somit erhalten wir:
+
+\begin{align}{eq:34}
+  \label{eq:34}
+   \sum^{\infty}_{k=0} \left[ (k+2l+1)b_k k r^{k-2}+ 2 \left(-\kappa(k+l+1) + \frac{\mu e^2}{\hbar^2}  \right)   b_k r^{k-1} \right]  &= 0 
+\end{align}
+
+Aus der Gleichung \eqref{eq:34} ergibt sich folgende Rekursionsformel, indem man im letzten Term \(k\) durch \(k-1\) ersetzt:
+
+\begin{align}
+  \label{eq:35}
+  k(k+2l+1)b_k = 2\left[ \kappa(k+l)-\frac{\mu e^2}{\hbar^2}\right] b_{k-1}
+\end{align}
+
+Nun betrachten wir den Quotient von \(b_k\) und Limes:
+
+\begin{align}
+  \frac{b_k}{b_{k-1}} &= \frac{2[\kappa(k+l)-\frac{\mu e^2}{\hbar^2}]}{ k(k+2l+1)} 
+ = \frac{2k[\kappa(1+\frac{1}{k})-\frac{\mu e^2}{\hbar^2 k}]}{ k(k+2l+1)} 
+ = \frac{2[\kappa(1+\frac{1}{k})-\frac{\mu e^2}{\hbar^2 k}]}{ (k+2l+1)}
+ = \frac{2\kappa+\frac{2\kappa}{k}-\frac{2\mu e^2}{\hbar^2 k}}{ k(1+\frac{2l}{k}+\frac{1}{k})}\notag\\
+ &\xrightarrow{k\to \infty}  \frac{2\kappa+\cancel{\frac{2\kappa}{k}}-\cancel{\frac{2\mu e^2}{\hbar^2 k}}}{ k(1+\cancel{\frac{2l}{k}}+\cancel{\frac{1}{k})}}\notag\\
+&\xrightarrow{k\to \infty}  \frac{2\kappa}{k}\label{eq:36}
+\end{align}
+
+Gleichung \eqref{eq:36} können wir mit Ausnutzung der Rekursion schreiben:
+
+\begin{align}
+  \label{eq:37}
+  b_k &= \frac{2\kappa}{k}\cdot b_{k-1} = \frac{2\kappa}{k}\cdot \frac{2\kappa}{k-1} b_{k-2} = \frac{2\kappa}{k}\cdot \frac{2\kappa}{k-1} \frac{2\kappa}{k-2}\cdots \frac{2\kappa}{1} \cdot b_0 \\
+b_k &=  \frac{2^k\kappa^k}{k!}\cdot b_0
+\end{align}
+
+Eingesetzt in unseren Potenzreihen-Ansatz \eqref{eq:32}
+
+\begin{align}
+  \label{eq:38}
+    f(r) = \sum^{\infty}_{k=0} \frac{2\kappa^k}{k!}\cdot b_0  r^k = b_0 \sum^{\infty}_{k=0} \frac{(2\kappa r)^k}{k!} = b_0 e^{2\kappa r} 
+\end{align}
+
+Unser Ansatz \eqref{eq:29} lautet nun:
+
+\begin{align}
+  \label{eq:39}
+    u(r) = b_0 r^{l+1} e^{\kappa r}
+\end{align}
+
+Für \(r\to\infty\) wird \(u(r)\) ebenfalls unendlich, was der zweiten Randbedinung widerspricht! Das kann vermieden werden, wenn wir die Potentzreihe bei einem festen \(N\) abbricht bzw. alle Therme \(>N\) verschwinden. Damit lautet unsere neue Potenz-Reihen Ansatz:
+
+\begin{align}
+  \label{eq:40}
+ f(r) = \sum^{N}_{k=0} b_kr^k
+\end{align}
+
+Betrachten wir nun erneut unsere Rekursionsformel \eqref{eq:35} mit \(k\to k+1\):
+
+\begin{align}
+  \label{eq:41}
+      k(k+2l+1)b_{k+1} = 2\left[ \kappa(k+l+1)-\frac{\mu e^2}{\hbar^2}\right] b_{k}
+\end{align}
+
+und setzen die maximal Zahl \(N\) ein, welche das Verschwinden der \(b_{N+1}\) Terme fordert:
+
+\begin{align}
+  \label{eq:42}
+    N(N+2l+1)\underbrace{b_{N+1}}_{\stackrel{!}=0} = 2\left[ \kappa(N+l+1)-\frac{\mu e^2}{\hbar^2}\right] b_{N} 
+\end{align}
+
+\begin{align}
+  \label{eq:43}
+  \Rightarrow 0 = 2\left[ \kappa(N+l+1)-\frac{\mu e^2}{\hbar^2}\right] b_{N} \\
+\Leftrightarrow  \kappa \underbrace{(N+l+1)}_{\equiv n} = \frac{\mu e^2}{\hbar^2}\\
+\Leftrightarrow  \kappa= \frac{\mu e^2}{\hbar^2 n}\\
+\end{align}
+Einsetzen in \eqref{eq:26}
+
+\begin{align}
+  \label{eq:44}
+  \frac{\mu e^2}{\hbar^2 n} = \sqrt{\frac{2\mu}{\hbar^2}(-E)} \\
+\Leftrightarrow  E =  - \frac{\mu e^4}{2\hbar^2 n^2} 
+\end{align}
+
+Wir erhalten also die Energienivous für das Wasserstoffatom mit dem Bohr-Radius \(a_0 = \frac{\hbar^2}{\mu e^2}\):
+
+\begin{align}
+  \label{eq:46}
+  \boxed{E_n =  - \frac{\mu e^4}{2\hbar^2 n^2} = -  \frac{e^2}{2a_0}\frac{1}{n^2} }
+\end{align}
+
+Klein \(n\) ist unsere Haupt-Energie-Quantenzahl, und groß \(N\) ist die Radial-Quanten-Zahl und \(l\) ist Drehimpuls-Qaunten-Zahl.
+
+\begin{align}
+  \label{eq:45}
+  n = N+l+1
+\end{align}
 
 
 
