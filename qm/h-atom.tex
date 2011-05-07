@@ -140,7 +140,13 @@ Wir sind zu einer Eigenwert-Gleichung gelangt die nur vom Radialanteil abhängt.
    - \frac{\hbar^2}{2\mu}\frac{d^2}{dr^2}\underbrace{r R(r)}_{u(r)} + \left[\frac{l(l+1)\hbar^2}{2\mu r^2}  - \frac{e^2}{r}\right] \underbrace{r R(r)}_{u(r)}   = E_r \underbrace{r R(r)}_{u(r)}
 \end{equation}
 
-Nun können wir einen neuen Ansatz Einführen \(u(r) = rR(r)\):
+Nun können wir einen neuen Ansatz Einführen:
+
+\begin{align}
+  \label{eq:30}
+  u(r) = rR(r)
+\end{align}
+
 
 \begin{equation}
   \label{eq:20}
@@ -269,7 +275,7 @@ Einsetzen in Gleichung \eqref{eq:31}:
 
 Somit erhalten wir:
 
-\begin{align}{eq:34}
+\begin{align}
   \label{eq:34}
    \sum^{\infty}_{k=0} \left[ (k+2l+1)b_k k r^{k-2}+ 2 \left(-\kappa(k+l+1) + \frac{\mu e^2}{\hbar^2}  \right)   b_k r^{k-1} \right]  &= 0 
 \end{align}
@@ -296,7 +302,7 @@ Gleichung \eqref{eq:36} können wir mit Ausnutzung der Rekursion schreiben:
 
 \begin{align}
   \label{eq:37}
-  b_k &= \frac{2\kappa}{k}\cdot b_{k-1} = \frac{2\kappa}{k}\cdot \frac{2\kappa}{k-1} b_{k-2} = \frac{2\kappa}{k}\cdot \frac{2\kappa}{k-1} \frac{2\kappa}{k-2}\cdots \frac{2\kappa}{1} \cdot b_0 \\
+  b_k &= \frac{2\kappa}{k}\cdot b_{k-1} = \frac{2\kappa}{k}\cdot \frac{2\kappa}{k-1} b_{k-2} = \frac{2\kappa}{k}\cdot \frac{2\kappa}{k-1} \frac{2\kappa}{k-2}\cdots \frac{2\kappa}{3}  \frac{2\kappa}{2}  \frac{2\kappa}{1} \cdot b_0 \\
 b_k &=  \frac{2^k\kappa^k}{k!}\cdot b_0
 \end{align}
 
@@ -314,7 +320,12 @@ Unser Ansatz \eqref{eq:29} lautet nun:
     u(r) = b_0 r^{l+1} e^{\kappa r}
 \end{align}
 
-Für \(r\to\infty\) wird \(u(r)\) ebenfalls unendlich, was der zweiten Randbedinung widerspricht! Das kann vermieden werden, wenn wir die Potentzreihe bei einem festen \(N\) abbricht bzw. alle Therme \(>N\) verschwinden. Damit lautet unsere neue Potenz-Reihen Ansatz:
+Für \(r\to\infty\) wird \(u(r)\) ebenfalls unendlich, was der zweiten Randbedinung widerspricht! 
+
+
+\subsection{Quantisierung der Energie}
+
+Das Problem, das für \(r\to\infty\) \(u(r)\to\infty\)  kann vermieden werden, wenn wir die Potentzreihe bei einem festen \(N\) abbricht bzw. alle Therme \(>N\) verschwinden. Damit lautet unsere neue Potenz-Reihen Ansatz:
 
 \begin{align}
   \label{eq:40}
@@ -363,6 +374,63 @@ Klein \(n\) ist unsere Haupt-Energie-Quantenzahl, und groß \(N\) ist die Radial
   n = N+l+1
 \end{align}
 
+Zu bemerken ist, da \(N=0,1,2,3,\cdots\) die erlaubten Werte von \(n\) sind positive ganzen Zahlen \(n=l+1,l+2,l+3,l+4\cdots\). Daraus folgt, dass für ein gegeben Wert für \(n\), die Orbital-Quanten-Zahl \(l\) kann folgende Werte annehmen \(l=n-1,n-2,n-3,n-4,\dots,2,1,0\).
+
+
+\subsection{Radiale Wellenfunktion}
+
+Nun können wir mit Hilfe der Gleichungen \eqref{eq:30},\eqref{eq:29},\eqref{eq:40} ... die radiale Wellenfunktion zusammensetzen:
+
+\begin{align}
+  \label{eq:33}
+  R(r) &= \frac{1}{r} r^{l+1}e^{-\kappa r}\sum^{N}_{k=0} b_kr^k \\
+&= r^{l}e^{-\kappa r}\sum^{N}_{k=0} b_kr^k \\
+\end{align}
+Um die radiale Wellenfunktion normieren zu können, führen wir noch eine Normierungskonstante \(A_{nl}\). Damit sieht unsere radiale Wellenfunktion wie folgt aus:
+
+\begin{align}
+  \label{eq:47}
+   R_{n,l}(r) = A_{nl}r^{l}e^{-\kappa r}\sum^{N}_{k=0} b_kr^k
+\end{align}
+
+Mit \(\kappa = \frac{1}{a_0 n}\) lautet die Gleichung \eqref{eq:47} wie folgt:
+
+\begin{align}
+  \label{eq:48}
+   \boxed{R_{n,l}(r) = A_{nl}r^{l}e^{-\frac{r}{a_0 n}}\sum^{N}_{k=0} b_kr^k}
+\end{align}
+
+Mit der Gleichung \eqref{eq:48} können wir nun die radiale Wellenfuktion bestimmen, indem wir für \(n,l\) bestimmte Quantenzahlen einsetzen. Z.B. \(n=1\) und \(l=0\). Und mit Hilfe der Gleichung \eqref{eq:45} folgt für \(N=0\). Eingesetzt in \eqref{eq:48}:
+
+\begin{align}
+  \label{eq:49}
+  R_{1,0}(r) &= A_{10}r^{0}e^{-\frac{r}{a_0 \cdot 1}}\sum^{0}_{k=0} b_kr^k\\
+&= A_{10}e^{-\frac{r}{a_0 }}b_0\\
+\end{align}
+Die Konstanten werden durch die Normierungsbedinung bestimmt:
+
+\begin{align}
+  \label{eq:50}
+  1 &= \int_{-\infty}^{\infty} |R_{1,0}(r)|^2d^3r = \int_{0}^{\infty} r^2 |R_{1,0}(r)|^2 dr\\
+&=  |A_{10}b_0|^2 \int_{0}^{\infty} r^2e^{-2\frac{r}{a_0 }}\\
+&=  |A_{10}b_0|^2  \frac{a_0^3}{4}
+\end{align}
+
+Daraus folgt, dass 
+
+\begin{align}
+  \label{eq:51}
+  A_{10}b_0 = \sqrt{ \frac{4}{a_0^3}} = \frac{2}{\sqrt{a_0^3}}
+\end{align}
+
+Die radial Funktion lautet dann:
+
+\begin{align}
+  \label{eq:52}
+  R_{1,0}(r)= \frac{2}{\sqrt{a_0^3}} e^{-\frac{r}{a_0 }}
+\end{align}
+
+So ist es möglich durch einsetzen der Quantenzahlen sukzessive alle radialen Zustände bestimmen.
 
 
 \end{document}
