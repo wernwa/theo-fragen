@@ -347,10 +347,9 @@ und setzen die maximal Zahl \(N\) ein, welche das Verschwinden der \(b_{N+1}\) T
 \end{align}
 
 \begin{align}
-  \label{eq:43}
   \Rightarrow 0 = 2\left[ \kappa(N+l+1)-\frac{\mu e^2}{\hbar^2}\right] b_{N} \\
 \Leftrightarrow  \kappa \underbrace{(N+l+1)}_{\equiv n} = \frac{\mu e^2}{\hbar^2}\\
-\Leftrightarrow  \kappa= \frac{\mu e^2}{\hbar^2 n}\\
+\Leftrightarrow  \kappa= \frac{\mu e^2}{\hbar^2 n}\label{eq:43}
 \end{align}
 Einsetzen in \eqref{eq:26}
 
@@ -431,6 +430,99 @@ Die radial Funktion lautet dann:
 \end{align}
 
 So ist es möglich durch einsetzen der Quantenzahlen sukzessive alle radialen Zustände bestimmen.
+
+
+\subsection*{Laguerre Polynome}
+
+Den Radialanteil kann man auch mittels der zugeordneten Laguerre Polynome ausdrücken. Sie lauten:
+
+\begin{align}
+  \label{eq:53}
+  L_k^N (r) = \frac{d^N}{dr^N}L_k(r) \qquad \text{mit  } L_k(r) = e^r\frac{d^k}{dr^k}(r^k e^{-r})
+\end{align}
+
+Sie lösen folgende Differentialgleichung:
+
+\begin{align}
+  \label{eq:54}
+  r\frac{d^2}{dr^2}L^N_k(r) + (N+1-r)\frac{d}{dr}L^N_k(r) + (k-N)L^N_k(r) = 0
+\end{align}
+
+D.h. wir müssen die Gleichung \eqref{eq:31} in die Form \eqref{eq:54} bringen.
+
+\begin{align}
+  \left[ \frac{d^2}{dr^2} + 2\left(\frac{l+1}{r}-\kappa\right)\frac{d}{dr} + 2 \left(-\kappa (l+1) + \frac{\mu e^2}{\hbar^2}\right) \frac{1}{r}  \right] f(r)&= 0 \qquad | \cdot \frac{r}{2\kappa} \\
+\left[  \frac{r}{2\kappa} \frac{d^2}{dr^2} + ((2l+1)+1-2\kappa r)\frac{1}{2\kappa}\frac{d}{dr} + (-l-1+\frac{\mu e^2}{\hbar^2 \kappa})  \right] f(r)&= 0 \qquad \text{mit \eqref{eq:43} } n = \frac{\mu e^2}{\hbar^2 \kappa} \\
+\left[ \frac{r}{2\kappa} \frac{d^2}{dr^2} + ((2l+1)+1-2\kappa r)\frac{1}{2\kappa}\frac{d}{dr} + (n-l-1)  \right] f(r)&= 0 \\
+\left[ \frac{r}{2\kappa} \frac{d^2}{dr^2} + ((2l+1)+1-2\kappa r)\frac{1}{2\kappa}\frac{d}{dr} + (n-l-1+l-l)  \right] f(r)&= 0 \\
+\left[ \frac{r}{2\kappa} \frac{d^2}{dr^2} + ((2l+1)+1-2\kappa r)\frac{1}{2\kappa}\frac{d}{dr} + [(n+l)-(2l+1)]  \right] f(r)&= 0 \\
+ \label{eq:55}
+\end{align}
+
+Substituiere \(r\) durch eine dimensionslose Variablen \(\rho = 2\kappa r\). Daraus ergeben sich auch Substitutionen für die erste und zweite Ableitung:
+
+\begin{align}
+  \label{eq:56}
+  \rho = 2\kappa r \qquad \Leftrightarrow \qquad r = \frac{\rho}{2\kappa} 
+\end{align}
+
+\begin{align}
+  \label{eq:57}
+  \frac{d}{dr} &= \frac{d}{dr}\frac{d\rho}{d\rho} = \frac{d\rho}{dr}\frac{d}{d\rho} = 2\kappa \frac{d}{d\rho} \\
+  \frac{d^2}{dr^2} &= \frac{d}{dr}\frac{d\rho}{d\rho} \frac{d}{dr}\frac{d\rho}{d\rho}= \frac{d\rho}{dr}\frac{d}{d\rho}\frac{d\rho}{dr}\frac{d}{d\rho} = (2\kappa)^2 \frac{d^2}{d\rho^2}
+\end{align}
+
+Setze nun die Substitutionen \eqref{eq:56} und \eqref{eq:57} in \eqref{eq:55} ein:
+
+\begin{align}
+  \label{eq:58}
+  \left[ \frac{\rho}{\cancel{(2\kappa)^2}}\cancel{(2\kappa)^2} \frac{d^2}{d\rho^2}   + ((2l+1)+1-\rho)\frac{1}{\cancel{2\kappa}}\cancel{2\kappa} \frac{d}{d\rho}  + [(n+l)-(2l+1)]  \right] f(r)&= 0\\
+  \left[ \rho \frac{d^2}{d\rho^2}   + (\underbrace{(2l+1)}_{\equiv N}+1-\rho)\frac{d}{d\rho}  + [\underbrace{(n+l)}_{\equiv k}-\underbrace{(2l+1)}_{\equiv N}]  \right] f(r)&= 0
+\end{align}
+
+Vergleiche mit der Laguerre DGL \eqref{eq:54} ist die Lösung der \eqref{eq:58} folgender Laguerre Polynom:
+
+\begin{align}
+  \label{eq:59}
+  L^{2l+1}_{n+l}\left(\rho\right) = L^{2l+1}_{n+l}\left(2\kappa r \right)
+\end{align}
+
+Damit können wir die Radialgleichung \eqref{eq:48} in Laguerre Polynomen ausdrücken:
+
+
+\begin{align}
+  \label{eq:60}
+  R_{n,l}(r) = A_{nl}r^{l}e^{-\frac{r}{a_0 n}} L^{2l+1}_{n+l}\left(2\kappa r \right)
+\end{align}
+
+bzw.
+
+\begin{align}
+  \label{eq:61}
+   R_{n,l}(r) = N_{nl}\left(\frac{2r}{n a_0}\right)^{l}e^{-\frac{r}{a_0 n}} L^{2l+1}_{n+l}\left(\frac{2r}{n a_0}\right)
+\end{align}
+
+Aus der Normalisierungsbedingung 
+
+\begin{align}
+  \label{eq:62}
+  \int^\infty_0 r^2 R^2_{nl} (r) dr = 1
+\end{align}
+
+ergibt sich :
+
+\begin{align}
+  \label{eq:63}
+  N_{nl} = -\left(\frac{2}{na_0}\right)^{\frac{3}{2}}\sqrt{\frac{(n-l-1)!}{2n[(n+1)!]^3} }
+\end{align}
+
+Die Konstante \eqref{eq:63} eingesetzt in \eqref{eq:61} erhalten wir die Radialwellenfunktion:
+
+\begin{align}
+  \label{eq:64}
+ \boxed{ R_{n,l}(r) = -\left(\frac{2}{na_0}\right)^{\frac{3}{2}}\sqrt{\frac{(n-l-1)!}{2n[(n+1)!]^3} } \left(\frac{2r}{n a_0}\right)^{l}e^{-\frac{r}{a_0 n}} L^{2l+1}_{n+l}\left(\frac{2r}{n a_0}\right)}
+\end{align}
+
 
 
 \end{document}
