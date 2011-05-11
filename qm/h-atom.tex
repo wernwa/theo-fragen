@@ -130,10 +130,19 @@ Eingesetzt in \eqref{eq:16}:
   - Y\frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r R(r) + R(r)\frac{L^2}{2\mu r^2} Y  -Y \frac{e^2}{r} R(r)   &= E_rR(r)\cdot Y(\phi,\theta) \quad \text{mit } L^2Y = l(l+1)\hbar^2 Y\\
   - Y\frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r R(r) + R(r)\frac{l(l+1)\hbar^2}{2\mu r^2}Y  -Y \frac{e^2}{r} R(r)   &= E_rR(r)\cdot Y(\phi,\theta) \quad |:Y\\
   - \frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r R(r) + R(r)\frac{l(l+1)\hbar^2}{2\mu r^2}  - \frac{e^2}{r} R(r)   &= E_rR(r)\\
-  \left[- \frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r + \frac{l(l+1)\hbar^2}{2\mu r^2}  - \frac{e^2}{r}\right] R(r)   &= E_rR(r)  \label{eq:18}
+  \left[- \frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r + \underbrace{\frac{l(l+1)\hbar^2}{2\mu r^2}  - \frac{e^2}{r}}_{\equiv V_{eff}(r)} \right] R(r)   &= E_rR(r)  \label{eq:18}
 \end{align}
 
-Wir sind zu einer Eigenwert-Gleichung gelangt die nur vom Radialanteil abhängt. Als weitere Vereinfachung der Gleichung \eqref{eq:18} können wir sie von links mit \(r\) durchmultiplizieren:
+Wir sind zu einer Eigenwert-Gleichung gelangt die nur vom Radialanteil abhängt. Das effekive Potential ist in der Abbildung \ref{fig:1} dargestellt.
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.33\textwidth]{h-atom_pics/Veff.png}
+	\caption{H-Atom Effektives Potential. Form des effektiven Potentials \(V_{eff}(r)\) für die ersten Werte von l für ein Coulomb-Potential \(V(r) = -\frac{e^2}{r}\). Für \(l=0\) entspricht \(V_{eff}(r)\) einfach dem Coulomb-Potential. Für \(l=1,2,ect.\) erhält man \(V_{eff}(r)\),indem man das Zentrifugalpotential \(\frac{l(l+1)\hbar^2}{2\mu r^2}\), das für \(r\to 0\) wie \(\frac{1}{r^2}\) gegen \(+\infty\) läuft, zu \(V(r)\) addiert. Quelle: Cohen-Tannoudji Band 2 }
+	\label{fig:1}
+\end{figure}
+
+Als weitere Vereinfachung der Gleichung \eqref{eq:18} können wir sie von links mit \(r\) durchmultiplizieren:
 
 \begin{equation}
   \label{eq:19}
@@ -530,6 +539,11 @@ Die Gesamtwellenfunktion \eqref{eq:17} lautet schlussendlich:
   \label{eq:65}
   \psi_{nlm}(r,\theta,\phi) = R_{nl}(r)\cdot Y_{lm}(\theta,\phi)
 \end{align}
+
+
+
+
+
 
 
 
