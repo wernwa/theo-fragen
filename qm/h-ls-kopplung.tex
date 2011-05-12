@@ -1,0 +1,108 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+\begin{document}
+
+\section*{H-Atom; LS-Kopplung}
+
+Betrachte ein Elektron um ein Proton kreisend. Das Elektron bewegt sich mit der Geschwindigkeit \(\vec v=\frac{\vec p}{m_e}\) in dem vom Proton erzeugten elektrostatischen Feld \(\vec E\). Aus der speziellen Relativitätstheorie folgt dann das Auftreten eines magnetischen Feldes \(\vec B\) im Ruhesystem des Elektrons, das zur ersten Ordnung in \(\frac{v}{c}\) gegeben ist durch (Herleitung siehe Eckhard Rebhan Theoretische Physik I Abschn:12.3.2 S.450):
+
+\begin{align}
+  \vec B &= -\frac{1}{c^2}\vec v\times \vec E \qquad \text{ mit } \vec p = m_e\vec v \notag \\
+&= -\frac{1}{c^2 m_e}\vec p\times \vec E \notag \\
+&= \frac{1}{c^2 m_e}\vec E\times \vec p  \label{eq:1}
+\end{align}
+
+Wobei das Minuszeichen dadurch bewirkt wird, dass im Ruhesystem des Elektrons das E-Feld eine Geschwindigkeit \(-\vec v = -\frac{\vec p}{m_e}\) relativ zum Elektron hat. Das Elektrische Feld lässt sich wie folgt darstellen:
+
+\begin{align}
+  \label{eq:2}
+  \vec E &= -\vec\nabla\phi(\vec r) \qquad \text{mit } V(r) = -e\phi(r)  \notag \\
+&= \frac{1}{e} \nabla V(r) \qquad \text{setze }\vec\nabla\text{ in Kugelkoordinaten ein}\notag \\
+ &= \frac{1}{e}\frac{\vec r}{r} \frac{dV(r)}{dr}
+\end{align}
+
+Einsetzen der Gleichung \eqref{eq:2} in \eqref{eq:1}:
+
+\begin{align}
+  \label{eq:3}
+\vec B  &= \frac{1}{c^2 m_e} \frac{1}{e}\frac{1}{r} \frac{dV(r)}{dr}\underbrace{ \vec r \times \vec p}_{\equiv \vec L} \notag\\
+&= \frac{1}{c^2 m_e e}\frac{1}{r} \frac{dV(r)}{dr}\vec L
+\end{align}
+
+
+Mit dem magnetische Moment für das Elektron:
+
+\begin{align}
+  \label{eq:4}
+  \vec \mu = \frac{e\vec S}{m_e}
+\end{align}
+
+Folgt für die Wechselwirkungsterm im Hamiltonoperator:
+
+\begin{align}
+  \label{eq:5}
+  H_{LS} = -\vec\mu\cdot\vec B = \frac{e}{m_e}\vec S\cdot\vec B =  \frac{1}{c^2 m_e^2}\frac{1}{r} \frac{dV(r)}{dr}\vec S\cdot \vec L
+\end{align}
+
+Dieser Term wird erst mit der Thomas Präzession \(\frac{1}{2}\) richtig der sich aus der Dirac Gleichung genau herleiten lässt. D.h. der korrekte Term lautet:
+
+\begin{align}
+  \label{eq:6}
+  \boxed{H_{LS} = \frac{1}{2}\cdot\frac{1}{c^2 m_e^2}\frac{1}{r} \frac{dV(r)}{dr}\vec S\cdot \vec L}
+\end{align}
+
+Das Potential \(V(r)\) vom Wasserstoffatom ist gegeben mit \(V(r) = - \frac{e^2}{r}\) damit ergibt sich der \(H_{LS}\)-Term:
+
+\begin{align}
+  \label{eq:7}
+  H_{LS} =  \frac{e^2}{2\cdot c^2 m_e^2}\frac{1}{r^3} \vec S\cdot \vec L
+\end{align}
+
+Der Hamilton Operator für das Wassersoffatom lautet nun:
+
+\begin{align}
+  \label{eq:8}
+  H &= \frac{p^2}{2m_e} + V(r) + H_{LS}\notag \\
+&= \underbrace{\frac{p^2}{2m_e} -\frac{e^2}{r}}_{H_0} + \underbrace{\frac{e^2}{2\cdot c^2 m_e^2}\frac{1}{r^3} \vec S\cdot \vec L}_{\text{Störungsterm}}
+\end{align}
+Die Lösungen des \(H_0\)-Terms sind bereits aus dem allgemeinen Wasserstoffproblem bekannt:
+
+\begin{align}
+  \label{eq:9}
+  \psi_{nlm}(r,\theta,\phi) = R_{nl}(r)Y_{lm}(\theta,\phi)
+\end{align}
+
+Den \(H_{LS}\)-Term können wir als ein Störungsterm behandeln. Wähle anstelle der \(\vec L^2,\vec L_z,\vec S^2,\vec S_z\)-Basis eine zu den Eigenzuständen \(|nljm\rangle \)  passende \(\vec J^2,\vec J_z,\vec L^2,\vec S^2\)-Basis. 
+
+\begin{align}
+  \label{eq:10}
+  \vec J &= \vec L + \vec S \notag \\
+\vec J^2 &= (\vec L + \vec S)^2 = \vec L^2 + 2\vec L\vec S + \vec S^2\notag \\
+\Leftrightarrow \vec L\vec S &= \frac{1}{2}(\vec J^2-\vec L^2-  \vec S^2)
+\end{align}
+
+Daraus folgt der \(H_{LS}\)-Term
+
+\begin{align}
+  \label{eq:11}
+  H_{LS} =  \frac{e^2}{4  c^2 m_e^2}\frac{1}{r^3}(\vec J^2-\vec L^2-  \vec S^2)
+\end{align}
+
+Für die Energie-Eigenwerte in Störungsrechung bis 1-Ordnung ergibt sich:
+
+\begin{align}
+  \label{eq:12}
+  E_{nlj} = E^{(0)}_n + \langle nljm|H_{LS}|nljm\rangle = -\frac{e^2}{2a_0}\frac{1}{n^2} + E_{LS}^{(1)}
+\end{align}
+
+\subsection*{Referenzen}
+
+
+\begin{itemize}
+\item Claude Cohen-Tannoudji Quantenmechanik Band 2
+\item Zettili Quanten Mehanics
+\item Rollnik Quantentheorie 2
+\end{itemize}
+
+\end{document}
