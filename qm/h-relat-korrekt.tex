@@ -76,7 +76,7 @@ Wobei wir \(\mu=m_e\) angenähert haben. Die Gleichung (\ref{eq:8}) können wir 
 
 \begin{equation}
   \label{eq:9}
-  \frac{u_{nl}''}{u_{nl}} = \frac{l(l+1)}{r^2} - \frac{2m_e e^2}{\hbar}\frac{1}{r}+\frac{m_e^2e^4}{\hbar^4 n^2}
+  \frac{u_{nl}''}{u_{nl}} = \frac{l(l+1)}{r^2} - \frac{2m_e e^2}{\hbar^2}\frac{1}{r}+\frac{m_e^2e^4}{\hbar^4 n^2}
 \end{equation}
 
 
@@ -104,7 +104,85 @@ Für die linke Seite der Gleichung (\ref{eq:11}) gilt:
    \int_0^{\infty}dr u_{nl}^2 \frac{\partial}{\partial l}\frac{u_{nl}''}{u_{nl}} &= \int_0^{\infty}dr u_{nl}^2\left(u_{nl}'' \frac{\partial}{\partial l}\frac{1}{u_{nl}}+ \frac{1}{u_{nl}} \frac{\partial}{\partial l}u_{nl}''  \right) \\
 &= \int_0^{\infty}dr\cdot u_{nl}^2\left(- u_{nl}'' \frac{1}{u_{nl}^2}\frac{\partial}{\partial l} u_{nl}  + \frac{1}{u_{nl}} \frac{\partial}{\partial l}u_{nl}''  \right)\\
 &= \int_0^{\infty}dr \left(- u_{nl}'' \frac{\partial}{\partial l} u_{nl}  + u_{nl} \frac{\partial}{\partial l}u_{nl}''  \right)\\
+&= - \int_0^{\infty}dr\, u_{nl}'' \frac{\partial}{\partial l} u_{nl}  +\int_0^{\infty}dr\,  u_{nl} \frac{\partial}{\partial l}u_{nl}''
 \end{align}
+
+Es lässt sich zeigen, dass das Integral (\ref{eq:12}) gleich Null wird durch partielle Integration des Ersten Summanden. Wir erhalten:
+
+
+\begin{align}
+  \label{eq:13}
+   - \int_0^{\infty}dr\, u_{nl}'' \frac{\partial}{\partial l} u_{nl} &= -\left[  u_{nl}'\frac{\partial}{\partial l} u_{nl}\right]_0^\infty + \int_0^{\infty}dr\, u_{nl}' \frac{\partial}{\partial l} u_{nl}'\\
+ &= \underbrace{-\left[  u_{nl}'\frac{\partial}{\partial l} u_{nl}\right]_0^\infty + \left[  u_{nl}\frac{\partial}{\partial l} u_{nl}'\right]_0^\infty}_{=0 \text{ da } u(0)=u(\infty)\equiv 0} - \int_0^{\infty}dr\, u_{nl} \frac{\partial}{\partial l} u_{nl}''
+\end{align}
+
+Setzen wir die Gleichung (\ref{eq:13}) in die Gleichung (\ref{eq:12}) ein so erhalten wir:
+
+\begin{equation}
+  \label{eq:14}
+   \int_0^{\infty}dr u_{nl}^2 \frac{\partial}{\partial l}\frac{u_{nl}''}{u_{nl}}=  - \int_0^{\infty}dr\, u_{nl} \frac{\partial}{\partial l} u_{nl}''  +\int_0^{\infty}dr\,  u_{nl} \frac{\partial}{\partial l}u_{nl}'' = 0
+\end{equation}
+
+
+
+Damit können wir die Gleichung (\ref{eq:11}) schreiben:
+
+\begin{align}
+  \label{eq:15}
+  0 &=(2l+1)\langle nl|\frac{1}{r^2}|nl\rangle   -\frac{2 m_e^2e^4}{\hbar^4 n^3}
+\end{align}
+
+\begin{equation}
+  \label{eq:16}
+  \boxed{\langle nl|\frac{1}{r^2}|nl\rangle = \frac{2 m_e^2e^4}{(2l+1)\hbar^4 n^3}=\frac{2}{n^3(2l+1)a_0^2} }
+\end{equation}
+
+Mit \(a_0=\frac{\hbar^2}{m_e e^2}\).
+
+Analog verfahren wir für den Erwartungswert \(\langle nl| \frac{1}{r}|nl \rangle \). Da uns hier \(\frac{1}{r}\) Erwartungswert interessiert leiten wir die Gleichung (\ref{eq:9}) nach Ladung \(e\) ab und erhalten:
+
+\begin{equation}
+  \label{eq:17}
+   \frac{\partial}{\partial e}\frac{u_{nl}''}{u_{nl}} = - \frac{4m_e e}{\hbar^2}\frac{1}{r}+\frac{4m_e^2e^3}{\hbar^4 n^2}
+\end{equation}
+
+Bilden wir wieder den Erwartungswert dieser Gleichung (\ref{eq:17}):
+
+\begin{align}
+  \label{eq:18}
+\int_0^\infty dr\, u_{nl}^2\frac{\partial}{\partial e}\frac{u_{nl}''}{u_{nl}} &= -\int_0^\infty dr\, u_{nl}^2 \frac{4m_e e}{\hbar^2}\frac{1}{r}+ \int_0^\infty dr\, u_{nl}^2\frac{4m_e^2e^3}{\hbar^4 n^2} \\
+ &= -\frac{4m_e e}{\hbar^2} \underbrace{\int_0^\infty dr\, u_{nl}^2 \frac{1}{r}}_{\langle nl|\frac{1}{r}|nl\rangle } + \frac{4m_e^2e^3}{\hbar^4 n^2}\underbrace{ \int_0^\infty dr\, u_{nl}^2}_{\langle nl|nl\rangle =1} \\
+ &= -\frac{4m_e e}{\hbar^2} \langle nl|\frac{1}{r}|nl\rangle  + \frac{4m_e^2e^3}{\hbar^4 n^2}
+\end{align}
+
+
+Die Linke Seite wird wieder Null (siehe (\ref{eq:12}) bis (\ref{eq:14}) und wir können schreiben:
+
+\begin{equation}
+  \label{eq:19}
+  \boxed{\langle nl|\frac{1}{r}|nl\rangle = \frac{m_e e^2}{ \hbar^2 n^2} = \frac{1}{a_0 n^2}}
+\end{equation}
+
+Mit diesen Ergebnissen können wir nun den Erwartungswert \(\langle nl | p^4 |nl \rangle \) berechnen. Setzen wir die Gleichungen (\ref{eq:16}) und (\ref{eq:19}) in (\ref{eq:7}) ein:
+
+\begin{align}
+  \label{eq:20}
+   \langle nl|p^4|nl\rangle &= 4m_e^2 \left( E_n^2 + 2E_ne^2\langle nl| \frac{1}{r}|nl\rangle + e^4\langle nl|\frac{1}{r^2}|nl\rangle\right)  \\
+&= 4m_e^2 \left( E_n^2 + \frac{1}{a_0 n^2}2E_ne^2 + e^4 \frac{2}{n^3(2l+1)a_0^2}  \right) \\
+&= (2m_eE_n)^2 \left( 1 + \frac{2e^2}{a_0 n^2E_n} +  \frac{2e^4}{n^3(2l+1)a_0^2E_n^2}  \right) \qquad \text{ mit }E_n=-\frac{e^2}{2a_0n^2} \\
+&= (2m_eE_n)^2 \left( 1 - 4 +  \frac{8n }{2l+1}  \right)
+\end{align}
+
+
+Unser Ziel relativistische Korrekturen für den Hamilton-Operator des Wasserstoffatoms zu berechnen ist damit erreicht. Zusammenfassend nimmt die Energie folgende Form an:
+
+\begin{align}
+  \label{eq:21}
+  E_n^{\text{rel-ges}} &= E_n + E^{(1)}_R\\
+&= E_n - \frac{1}{8m_e^3c^2}(2m_eE_n)^2 \left( 1 - 4 +  \frac{8n }{2l+1}  \right)\qquad \text{ mit }E_n=-\frac{e^2}{2a_0n^2}  \\
+&= -\frac{e^2}{2a_0n^2} - \frac{e^4}{16m_e^2c^2a_0^2n^4 } \left( 1 - 4 +  \frac{8n }{2l+1}  \right) \\
+\end{align}
+
 
 
 
