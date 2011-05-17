@@ -1,0 +1,118 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+\section*{Relativistische Korrekturen zum Energiespektrum des Wasserstoffatoms}
+
+
+Die relativistischen Korrekturen von der Bewegung des Elektrons um das Proton ist ist ein geringer Effekt. Man kann es aber trotzdem mit Hilfe der Spektroskopie sichtbar machen. Die Spektrallinien erfahren eine Aufspaltung. Wir betrachten die relativistische kinetische Energie, die sich zusammensetzt aus der Gesamt-Energie minus der Masse-Ruhe-Energie.
+
+
+\begin{equation}
+  \label{eq:1}
+  T = \sqrt{p^2c^2+m_e^2c^4}-m_ec^2
+\end{equation}
+
+Machen wir eine Taylorentwicklung der Wurzel bis zur 4-er Ordnung, so können wir schreiben:
+
+\begin{equation}
+  \label{eq:2}
+  T \approx \frac{p^2}{2m}-\frac{p^4}{8m_e^3c^2}+\cdots
+\end{equation}
+
+
+Setzen wir nun die Gleichung \eqref{eq:2} in den Hamilton Operator des Wasserstoffatoms ein, so erhalten wir:
+
+
+\begin{equation}
+  \label{eq:3}
+  H = \underbrace{\frac{p^2}{2m}-\frac{e^2}{r}}_{H_0}-\underbrace{\frac{p^4}{8m_e^3c^2}}_{H_R}
+\end{equation}
+
+
+Dabei ist der \(H_0\) der ungestörte Hamilton Operator und \(H_R\) ist die relativistische Korrektur, die wir mit Hilfe der Störungsrechung bis 1-Ordnung behandeln.
+
+\begin{equation}
+  \label{eq:4}
+  E^{(1)}_R = \langle nljm|H_R|nljm\rangle  = - \frac{1}{8m_e^3c^2}\langle nljm|p^4|nljm\rangle
+\end{equation}
+
+Im Folgenden leiten wir den Erwartungswert für \(\langle p^4 \rangle \) her. Da die Eigenfunktio von \(p\) die Radialfunktion ist die die Quantenzahl \(n,l\) hat reduziert sich der Eigenvektor  \(|nljm\rangle \)  zu\(|nl\rangle \). Somit lautet der zu berechnende Erwartungswert:
+
+\begin{equation}
+  \label{eq:5}
+  \langle nl|p^4|nl\rangle
+\end{equation}
+
+Wir versuchen nun den \(p\)Operator durch den Hamilton-Operator auszudrücken, da wir die Eigenwerte bereits kennen. Es hilft folgende Umformung:
+
+
+\begin{align}
+  \label{eq:6}
+  H &= \frac{p^2}{2m_e}-\frac{e^2}{r} \\
+\Leftrightarrow p^2 &= 2m_e\left( H + \frac{e^2}{r} \right) \qquad |^2\\
+\rightarrow p^4 &= 4m_e^2\left( H + \frac{e^2}{r} \right)^2\\
+&= 4m_e^2\left( H^2 + H \frac{e^2}{r}+ \frac{e^2}{r}H +\frac{e^4}{r^2}  \right)\\
+\end{align}
+Setzen wir die Gleichung (\ref{eq:6}) in (\ref{eq:5})
+
+\begin{align}
+  \label{eq:7}
+  \langle nl|p^4|nl\rangle &= 4m_e^2 \langle nl|\left( H^2 + H \frac{e^2}{r}+ \frac{e^2}{r}H +\frac{e^4}{r^2}\right) |nl\rangle \\
+ &= 4m_e^2 \left(  \langle nl| H^2|nl\rangle + \langle nl| H \frac{e^2}{r}|nl\rangle+ \langle nl| \frac{e^2}{r}H|nl\rangle + \langle nl|\frac{e^4}{r^2}|nl\rangle\right)  \\
+ &= 4m_e^2 \left( E_n^2 + 2E_ne^2\langle nl| \frac{1}{r}|nl\rangle + e^4\langle nl|\frac{1}{r^2}|nl\rangle\right)  \\
+\end{align}
+Jetzt wollen wir die Erwartungswerte von \(\frac{1}{r}|nl\rangle\) und \(\frac{1}{r^2}|nl\rangle\) bestimmen. Dazu benötigen wir die Radialgleichung des Wasserstoffatoms:
+
+\begin{equation}
+  \label{eq:8}
+  -\frac{\hbar^2}{2m_e}\frac{d^2u_{nl}}{dr^2} + \left[\frac{l(l+1)\hbar^2}{2m_e r^2}-\frac{e^2}{r}\right]u_{nl} = E_n u_{nl}
+\end{equation}
+
+
+Wobei wir \(\mu=m_e\) angenähert haben. Die Gleichung (\ref{eq:8}) können wir in folgende Form bringen, mit \(u_{nl}'' \equiv\frac{d^2u_{nl}}{dr^2} \):
+
+\begin{equation}
+  \label{eq:9}
+  \frac{u_{nl}''}{u_{nl}} = \frac{l(l+1)}{r^2} - \frac{2m_e e^2}{\hbar}\frac{1}{r}+\frac{m_e^2e^4}{\hbar^4 n^2}
+\end{equation}
+
+
+Da wir den Erwartungswert von \(\frac{1}{r^2}\) berechnen wollen ist es günstig andere Terme in der Gleichung loszuwerden. Das funktioniert wenn man die Gleichung (\ref{eq:9}) nach \(l\) ableitet. Dazu sollte man berücksitchtigen dass \(n=N+l+1\) und die Ableitung \(\frac{\partial}{\partial l}\frac{1}{n^2} = -\frac{2}{n^3} \)
+
+\begin{equation}
+  \label{eq:10}
+  \frac{\partial}{\partial l}\frac{u_{nl}''}{u_{nl}} = \frac{2l+1}{r^2} - \frac{2 m_e^2e^4}{\hbar^4 n^3}
+\end{equation}
+
+
+Da wir den Erwartungswert bestimmen möchten ist es günstig die Gleichung (\ref{eq:10}) mit \(u_{nl}^2\) multipliziert und im gesamten Bereich integriert. D.h. wir bestimmen den Erwartungswert der Gleichung:
+
+\begin{align}
+  \label{eq:11}
+  \int_0^{\infty} u_{nl}^2 \frac{\partial}{\partial l}\frac{u_{nl}''}{u_{nl}} dr &= \int_0^{\infty} u_{nl}^2 \frac{2l+1}{r^2} dr - \int_0^{\infty} u_{nl}^2\frac{2 m_e^2e^4}{\hbar^4 n^3}dr\\
+&=(2l+1) \underbrace{ \int_0^{\infty} u_{nl}^2 \frac{1}{r^2}dr}_{\langle nl|\frac{1}{r^2}|nl\rangle  } -\frac{2 m_e^2e^4}{\hbar^4 n^3}\underbrace{ \int_0^{\infty} u_{nl}^2 dr}_{\equiv\langle nl|nl\rangle = 1 } \\
+&=(2l+1)\langle nl|\frac{1}{r^2}|nl\rangle   -\frac{2 m_e^2e^4}{\hbar^4 n^3}
+\end{align}
+
+Für die linke Seite der Gleichung (\ref{eq:11}) gilt:
+
+\begin{align}
+  \label{eq:12}
+   \int_0^{\infty}dr u_{nl}^2 \frac{\partial}{\partial l}\frac{u_{nl}''}{u_{nl}} &= \int_0^{\infty}dr u_{nl}^2\left(u_{nl}'' \frac{\partial}{\partial l}\frac{1}{u_{nl}}+ \frac{1}{u_{nl}} \frac{\partial}{\partial l}u_{nl}''  \right) \\
+&= \int_0^{\infty}dr\cdot u_{nl}^2\left(- u_{nl}'' \frac{1}{u_{nl}^2}\frac{\partial}{\partial l} u_{nl}  + \frac{1}{u_{nl}} \frac{\partial}{\partial l}u_{nl}''  \right)\\
+&= \int_0^{\infty}dr \left(- u_{nl}'' \frac{\partial}{\partial l} u_{nl}  + u_{nl} \frac{\partial}{\partial l}u_{nl}''  \right)\\
+\end{align}
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item Zettili Quanten Mehanics
+%\item Rollnik Quantentheorie 2
+\end{itemize}
+
+
+\end{document}
