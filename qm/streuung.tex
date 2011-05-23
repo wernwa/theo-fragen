@@ -1,0 +1,47 @@
+\input{../headers/header_script.tex}
+
+
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Streuung}
+
+Wir betrachten die einfallende Stromdichte \(J_{\text{ein}}\) (Anzahl der Teilchen pro Zeiteinheit und Fläche), das an einem Punktteilchen mit einem Zentralpotential, gestreut wird. Ein Detektor misst eine Telmenge des gestreuten Teilchenstroms \(J_{\text{gestr}}\) im dem Raumwinkel \(\theta\) und Abstand \(r\). Die Ströme sind offenbar proportional zu einander:
+
+
+\begin{equation}
+  \label{eq:1}
+  J_{\text{gestr}} \propto J_{\text{ein}}
+\end{equation}
+
+
+und die Proportionalitätskonstante \(\frac{d\sigma}{dA}\) bestimmt die Menge der Teilchen pro Zeit die am Detektor ankommen. 
+
+\begin{align}
+  \label{eq:2}
+  J_{\text{gestr}} &= \frac{d\sigma}{dA} J_{\text{ein}}\\
+\Leftrightarrow \frac{d\sigma}{dA} &= \frac{ J_{\text{gestr}} }{J_{\text{ein}}} \\
+\frac{d\sigma}{d\Omega r^2} &= \frac{ J_{\text{gestr}} }{J_{\text{ein}}} \\
+\end{align}
+Diese Größe ist noch vom Abstand \(r^2\) Abhängig. Multipliziert man die Gleichung (\ref{eq:2}) mit \(r^2\) so erhält man den differenziellen Wirkungsquerschnitt:
+\begin{equation}
+  \label{eq:3}
+  \boxed{ \frac{d\sigma}{d\Omega} = \frac{ J_{\text{gestr}}r^2 }{J_{\text{ein}}} }
+\end{equation}
+
+Um den differenziellen Wirkungsquerschnitt bestimmen zu können müssen wir als nächstes die Zustandsfunktion der einlafenden und  gestreuten Teilchen herleiten. Betrachte das Einfallende Teilchen als ebene Wellen Pakete. 
+
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item Claude Cohen-Tannoudji Quantenmechanik Band 2
+\item Zettili Quanten Mehanics
+\item Rollnik Quantentheorie 2
+\end{itemize}
+
+\end{document}
