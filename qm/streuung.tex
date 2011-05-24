@@ -32,9 +32,55 @@ Diese Größe ist noch vom Abstand \(r^2\) Abhängig. Multipliziert man die Glei
   \boxed{ \frac{d\sigma}{d\Omega} = \frac{ J_{\text{gestr}}r^2 }{J_{\text{ein}}} }
 \end{equation}
 
-Um den differenziellen Wirkungsquerschnitt bestimmen zu können müssen wir als nächstes die Zustandsfunktion der einlafenden und  gestreuten Teilchen herleiten. Betrachte das Einfallende Teilchen als ebene Wellen Pakete. 
+Um den differenziellen Wirkungsquerschnitt bestimmen zu können müssen wir als nächstes die Zustandsfunktion der einlafenden und  gestreuten Teilchen herleiten. Betrachte das Einfallende Teilchen als ebene Wellen Pakete. Die dazugehörige Schrödinger Gleichung lautet:
+
+\begin{equation}
+  \label{eq:4}
+  \left[ - \frac{\hbar^2}{2m_1}\nabla_1^2 - \frac{\hbar^2}{2m_2}\nabla_2^2 +   V(\vec r_1,\vec r_2)\right]\psi = E\psi
+\end{equation}
+
+Die Gleichung können wir auch im Schwerpunkt- und Relativpunkt-System ausdrücken:
+
+\begin{equation}
+  \label{eq:5}
+  \left[ - \frac{\hbar^2}{2M}\nabla_M^2 - \frac{\hbar^2}{2\mu}\nabla_\mu^2 +   V(r)\right]\psi = E\psi
+\end{equation}
+
+Da der Schwerpunkt sich wie ein freies Teilchen verhält, ist der Relativ-Anteil für uns von interesse, damit verkürtzt sich die Gleichung (\ref{eq:5}) zu:
+
+\begin{equation}
+  \label{eq:6}
+  \left[- \frac{\hbar^2}{2\mu}\nabla_\mu^2 +   V(r)\right]\psi = E\psi
+\end{equation}
 
 
+Damit reduziert sich das Problem der Streuung auf die Lösung dieser Gleichung. Wir werden zeigen dass der differenzielle Wirkungsquerschnitt durch asymptotische Lösung bestimmt werden. Das bedeutet, wir betrachten die beiden Fälle wo das Teilchen aus \(-\infty\) kommend und nach der Kollision für sehr große \(r\).
+
+
+Mit der Lösung der Gleichung (\ref{eq:6}) können wir die Wahrscheinlichkeit bestimmen  dass das Teilchen \(\mu\)  pro Raumwinkel \(d\Omega\) und pro Zeiteinheit in ein Raumwinkel \(d\Omega\) in die Richtung \((\theta,\phi)\) gestreut wird. Diese Wahrscheinlichkeit ist durch den differentiellen Wirkungsquerschitt \(\frac{d\sigma}{d\Omega}\) gegeben.
+
+Für die weitere Betrachtung nehmen wir an, dass das Potential \(V(r)\) schnell genug abfällt. So dass es möglich wird eine begrenzende Region \(a\) anzunehmen, wo das Potential ungleich Null ist und außerhalb dieser Region vernachlässigbar ist also \(V(r)=0\). Man nennt es auch die Streu-Region. Nun betrachten wir den Fall dass das einfallende Teilchen sich vor der Kollision noch weit weg befindet. Für diesen Fall \(V(r)=0\), d.h. \(r > a \), reduziert sich die Gleichung (\ref{eq:6}) auf:
+
+\begin{align}
+  \label{eq:7}
+  [ -\frac{\hbar^2}{2\mu}\nabla_\mu^2 - E] \phi_{\text{ein}} &= 0 \qquad |\cdot -\frac{2\mu}{\hbar^2} \\
+  [ \nabla_\mu^2 +\underbrace{\frac{2\mu}{\hbar^2}  E}_{k_0^2} ] \phi_{\text{ein}} &= 0 \\
+  [ \nabla_\mu^2 +k_0^2 ] \phi_{\text{ein}} &= 0
+\end{align}
+
+Aus der Gleichung ist zu entnehmen, dass das Teilchen sich wie ein freies Teilchen verhält und die Lösungen sind die bekannten ebenen Wellen:
+
+\begin{equation}
+  \label{eq:8}
+  \phi_{\text{ein}}(\vec r) = A e^{i\vec k_{0}\vec r}
+\end{equation}
+
+Nach dem das Teilchen mit dem Target kollidiert ist, also nach der Wechselwirkung (Streuung), ensteht eine gestreute Wellenfunktion, die im Falle einer isotropischen Potential sich wie eine Kugelwelle verhält mit der Form \(\frac{e^{i\vec k\vec r}}{r}\) . Im Allgemeinen jedoch ist die gestreute Welle nicht spärisch symmetrisch, ihre Amplitude hängt von dem Richtung \((\theta,\phi)\) ab. Damit gilt:
+
+\begin{equation}
+  \label{eq:9}
+  \phi_{\text{gestr}} = A f(\theta,\phi)\frac{e^{i\vec k\vec r}}{r} 
+\end{equation}
 
 
 \subsection*{Referenzen}
