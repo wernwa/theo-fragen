@@ -9,6 +9,7 @@
 
 \section*{Streuung}
 
+
 Wir betrachten die einfallende Stromdichte \(J_{\text{ein}}\) (Anzahl der Teilchen pro Zeiteinheit und Fläche), das an einem Punktteilchen mit einem Zentralpotential, gestreut wird. Ein Detektor misst eine Telmenge des gestreuten Teilchenstroms \(J_{\text{gestr}}\) im dem Raumwinkel \(\theta\) und Abstand \(r\). Die Ströme sind offenbar proportional zu einander:
 
 
@@ -31,6 +32,9 @@ Diese Größe ist noch vom Abstand \(r^2\) Abhängig. Multipliziert man die Glei
   \label{eq:3}
   \boxed{ \frac{d\sigma}{d\Omega} = \frac{ J_{\text{gestr}}r^2 }{J_{\text{ein}}} }
 \end{equation}
+
+
+\subsection{Differentieller Wirkungsquerschnitt}
 
 Um den differenziellen Wirkungsquerschnitt bestimmen zu können müssen wir als nächstes die Zustandsfunktion der einlafenden und  gestreuten Teilchen herleiten. Betrachte das Einfallende Teilchen als ebene Wellen Pakete. Die dazugehörige Schrödinger Gleichung lautet:
 
@@ -79,8 +83,312 @@ Nach dem das Teilchen mit dem Target kollidiert ist, also nach der Wechselwirkun
 
 \begin{equation}
   \label{eq:9}
-  \phi_{\text{gestr}} = A f(\theta,\phi)\frac{e^{i\vec k\vec r}}{r} 
+  \phi_{\text{gestr}}(\vec r) = A f(\theta,\phi)\frac{e^{i\vec k\vec r}}{r} 
 \end{equation}
+
+
+Die Parameter-Funktion \(f(\theta,\phi)\) heißt Streuamplitude, \(\vec k\) ist der Wellenvektor der gestreuten Welle und \(\theta\) ist der Winkel zwischen \(\vec k_0\) und \(\vec k\). Die gesamte Wellenfunktion ist die Summe der einlaufenden Welle \(\phi_{\text{ein}}\) und der gestreuten Welle \(\phi_{\text{gestr}}\):
+
+\begin{equation}
+  \label{eq:10}
+   \psi = \phi_{\text{ein}}+ \phi_{\text{gestr}} = A e^{i\vec k_{0}\vec r} + A f(\theta,\phi)\frac{e^{i\vec k\vec r}}{r} 
+\end{equation}
+
+
+Nun können wir den differentialen Wirkungsquerschnitt bestimmen indem wir die Stromdichten \(J_{\text{ein}}\) und \(J_{\text{gestr}}\) nach der allgemeinen Formel berechnen:
+
+\begin{equation}
+  \label{eq:11}
+  \vec J = \frac{i\hbar}{2m} (\phi \nabla \phi^* - \phi^*\nabla\phi)
+\end{equation}
+
+Damit erhalten wir:
+
+\begin{align}
+  \label{eq:12}
+  \vec J_{\text{ein}} &= \frac{i\hbar}{2\mu} (\phi_{\text{ein}} \nabla \phi^*_{\text{ein}} - \phi^*_{\text{ein}}\nabla\phi_{\text{ein}})\\
+&= \frac{i\hbar}{2\mu} ( A e^{i\vec k_{0}\vec r} \nabla  A e^{-i\vec k_{0}\vec r} -  A e^{-i\vec k_{0}\vec r}\nabla A e^{i\vec k_{0}\vec r} )\\
+&= \frac{i\hbar|A|^2}{2\mu} (-i\vec k_{0} e^{i\vec k_{0}\vec r} e^{-i\vec k_{0}\vec r} -i\vec k_{0}  e^{-i\vec k_{0}\vec r} e^{i\vec k_{0}\vec r} )\\
+&= \frac{\vec k_{0}\hbar|A|^2}{\mu}
+\end{align}
+
+Da \(r\) groß ist kann man die Ableitungen nach den Winkeln vernachlässigen. Mathematisch gehen die Winkelableitungen mit \(\frac{1}{r^3}\) schneller gegen Null im Vergleich zu Radiusableitung mit \(\frac{1}{r^2}\).
+
+\begin{align}
+  \label{eq:13}
+ \vec J_{\text{gestr}} &= \frac{i\hbar}{2\mu} (\phi_{\text{gestr}} \nabla \phi^*_{\text{gestr}} - \phi^*_{\text{gestr}}\nabla\phi_{\text{gestr}})\\
+&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} ( \frac{e^{i\vec k\vec r}}{r}  \nabla_r \frac{e^{-i\vec k\vec r}}{r}  - \frac{e^{-i\vec k\vec r}}{r} \nabla_r \frac{e^{i\vec k\vec r}}{r}  ) \qquad \text{ausklammern von }f(\theta,\phi)\text{ }  \\
+&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} \left( \frac{e^{i\vec k\vec r}}{r} \left[-i\vec k \frac{1}{r}  e^{-i\vec k\vec r}- e^{-i\vec k\vec r}\frac{1}{r^2}\right]  - \frac{e^{-i\vec k\vec r}}{r} \left[ i\vec k\vec r \frac{1}{r} e^{i\vec k\vec r} -  e^{i\vec k\vec r}\frac{1}{r^2}\right]  \right)\\
+&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} \left(- \frac{e^{i\vec k\vec r}}{r} i\vec k \frac{1}{r}  e^{-i\vec k\vec r}-\cancel{ \frac{e^{i\vec k\vec r}}{r} e^{-i\vec k\vec r}\frac{1}{r^2}}  - \frac{e^{-i\vec k\vec r}}{r} i\vec k\vec r \frac{1}{r} e^{i\vec k\vec r} + \cancel{\frac{e^{-i\vec k\vec r}}{r} e^{i\vec k\vec r}\frac{1}{r^2}}  \right)\\
+&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} \cdot (-1)\frac{ 2i\vec k }{r^2} \\
+&= \frac{\hbar |A|^2 |f(\theta,\phi)|^2 }{\mu} \cdot\frac{\vec k }{r^2}
+\end{align}
+
+
+
+Setzen wir nun die beiden Stromdichten (\ref{eq:12}) (\ref{eq:13}) in  (\ref{eq:3}) ein, so ergibt sich:
+
+\begin{align}
+  \label{eq:14}
+   \frac{d\sigma}{d\Omega} = \frac{ J_{\text{gestr}}r^2 }{J_{\text{ein}}} = \frac{\hbar |A|^2 |f(\theta,\phi)|^2 \vec k r^2\mu }{\mu r^2 \vec k_{0}\hbar|A|^2 } = \frac{  \vec k }{ \vec k_{0} }|f(\theta,\phi)|^2 
+\end{align}
+
+Da wir nur elastische Stöße betrachten gilt Impulserhaltung, d.h. \(\vec k\approx\vec k_0\) und die Gleichung reduziert sich auf:
+
+\begin{equation}
+  \label{eq:15}
+\boxed{  \frac{d\sigma}{d\Omega}= |f(\theta,\phi)|^2 }
+\end{equation}
+
+Aus der Gleichung (\ref{eq:15}) sieht man, dass der differentielle Wirkungsquerschnitt nur von der Streuamplitude abhängig ist. Wenn wir die Streuamplitude wissen, dann wissen wir auch den Wirkungsquerschnitt.
+
+
+
+\subsection{Lösung mit Hilfe der Greenschen Funktion}
+
+
+Es gilt nun die Streuamplitude zu bestimmen. Die können wir durch die Lösung der Schrödinger Gleichung (\ref{eq:6})  erreichen. Dazu bringen wir sie in folgende Form (auch bekannt als die Helmholz-Gleichung):
+
+\begin{equation}
+  \label{eq:16}
+  (\nabla^2 + k^2)\psi = \frac{2\mu}{\hbar}V(r)\psi
+\end{equation}
+
+Dies ist eine Differentialgleichung die wir mit Hilfe der Greenschen Funktion bestimmen können. Die Lösung der Gleichung besteht aus der Lösung der homogenen Gleichung plus die partikuläre Lösung. Für die homogene Lösung gilt:
+
+\begin{equation}
+  \label{eq:17}
+   (\nabla^2 + k^2)\psi = 0
+\end{equation}
+
+Mit der Lösung:
+
+\begin{equation}
+  \label{eq:18}
+  \psi_{\text{homo}} =Ae^{i\vec k \vec r} = \phi_{\text{ein}}
+\end{equation}
+
+Die partikuläre Lösung können wir mit Hilfe folgenden Ansatzes bestimmen:
+
+\begin{equation}
+  \label{eq:19}
+   (\nabla^2 + k^2) G(\vec r,\vec r') = \delta(\vec r-\vec r')
+\end{equation}
+
+Nun multiplizieren wir die Gleichung (\ref{eq:19}) mit der 'Störung' \(\frac{2\mu}{\hbar}V(r')\psi\) und integrieren nach \(\vec r'\):
+
+\begin{align}
+  \label{eq:20}
+   (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar}V(r')\psi &= \delta(\vec r-\vec r')\frac{2\mu}{\hbar}V(r')\psi \\
+\int_{-\infty}^\infty (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar}V(r')\psi d^3 r' &=\int_{-\infty}^\infty \delta(\vec r-\vec r')\frac{2\mu}{\hbar}V(r')\psi d^3 r' \\
+\int_{-\infty}^\infty (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar}V(r')\psi d^3 r' &=\frac{2\mu}{\hbar}V(r)\psi
+\end{align}
+
+Eingesetzt (\ref{eq:20})  in (\ref{eq:16}):
+
+\begin{align}
+  \label{eq:21}
+   \cancel{(\nabla^2 + k^2)}\psi(\vec r) = \int_{-\infty}^\infty \cancel{(\nabla^2 + k^2)} G(\vec r,\vec r')\frac{2\mu}{\hbar}V(r')\psi(\vec r') d^3 r' \\
+\rightarrow  \psi_{\text{part}}(\vec r) = \frac{2\mu}{\hbar} \int_{-\infty}^\infty  G(\vec r,\vec r')V(r')\psi(\vec r') d^3 r' 
+\end{align}
+
+
+Betrachten wir nun die zwei Fourier-Transformationen
+
+\begin{equation}
+  \label{eq:22}
+  G(\vec r ,\vec r') = \frac{1}{(2\pi)^3}\int e^{i\vec \omega (\vec r -\vec r') }\tilde G (\vec \omega)d^3 \omega
+\end{equation}
+
+\begin{equation}
+  \label{eq:23}
+  \delta(\vec r - \vec r') =  \frac{1}{(2\pi)^3}\int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega
+\end{equation}
+
+
+Setze die Beiden Gleichungen (\ref{eq:23}) (\ref{eq:22}) in (\ref{eq:19}):
+
+\begin{align}
+  \label{eq:24}
+   (\nabla^2 + k^2)\frac{1}{(2\pi)^3}\int e^{i\vec \omega (\vec r -\vec r') }\tilde G (\vec \omega)d^3 \omega  &=  \frac{1}{(2\pi)^3}\int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega \\
+\int (\nabla^2 + k^2) e^{i\vec \omega (\vec r -\vec r') }\tilde G (\vec \omega)d^3 \omega  &=  \int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega \\
+\int \left( -\vec \omega^2 e^{i\vec \omega (\vec r -\vec r') }+ k^2 e^{i\vec \omega (\vec r -\vec r') } \right) \tilde G (\vec \omega)d^3 \omega   &=  \int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega \\
+\int \left( -\vec \omega^2 + k^2  \right)e^{i\vec \omega (\vec r -\vec r') } \tilde G (\vec \omega)d^3 \omega   &=  \int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega \qquad | \frac{d}{d^3\omega} \\
+\left( -\vec \omega^2 + k^2  \right)e^{i\vec \omega (\vec r -\vec r') } \tilde G (\vec \omega)   &=  e^{i\vec \omega (\vec r -\vec r') } \\
+\left( -\vec \omega^2 + k^2  \right) \tilde G (\vec \omega)   &=  1 
+\end{align}
+
+Die Fouriertransformierte Greensche Funktion lautet demnach:
+\begin{equation}
+  \label{eq:25}
+  \Leftrightarrow \tilde G = \frac{1}{\vec k^2 -\vec \omega^2 }
+\end{equation}
+
+Setzen wir (\ref{eq:25}) in (\ref{eq:22}) ein:
+
+\begin{equation}
+  \label{eq:26}
+  G(\vec r ,\vec r') = \frac{1}{(2\pi)^3}\int  \frac{ e^{i\vec \omega (\vec r -\vec r') }}{\vec k^2 -\vec \omega^2 }  d^3 \omega
+\end{equation}
+
+
+Nun gilt es die Gleichung zu integrieren. Dazu benutzen wir die Kugelkoordinaten. Wir ersetze \((\vec r-\vec r') = \cos\theta|r-r'|\) (wegen ???). 
+
+\begin{align}
+  \label{eq:27}
+   G(\vec r ,\vec r') &= \frac{1}{(2\pi)^3} \int \frac{ e^{i\omega \cos\theta|r-r'| }}{\vec k^2 -\omega^2 }  \omega^2d\omega \sin\theta d\theta d\phi \\
+&= \frac{1}{(2\pi)^3} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \int_0^\pi e^{i\omega \cos\theta|r-r'| }  \sin\theta d\theta \int_0^{2\pi}d\phi \\
+&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 - \omega^2 }  d\omega  \int_0^\pi e^{i\omega \cos\theta|r-r'| }  \sin\theta d\theta 
+\end{align}
+
+
+Substituiere \(x=\cos\theta\):
+
+\begin{align}
+  \label{eq:28}
+   G(\vec r ,\vec r')&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 - \omega^2 }  d\omega  \int_1^{-1} e^{i\omega x |r-r'| }  \sin\theta \frac{1}{-\sin\theta}  dx \\
+ &= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \int_{-1}^{1} e^{i\omega x |r-r'| }   dx \\
+&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega \left[ \frac{ e^{i\omega x |r-r'| }}{i\omega |r-r'|  }   \right]_{-1}^{1} \\
+&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \frac{1}{i\omega |r-r'|  }  \left( e^{i\omega |r-r'| }- e^{-i\omega |r-r'| } \right) \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }  d\omega   \left( e^{i\omega |r-r'| }- e^{-i\omega |r-r'| } \right) \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega - \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }  e^{-i\omega |r-r'| }d\omega  \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega + \int^0_{\infty} \frac{\omega}{k^2 -\omega^2 }  e^{-i\omega |r-r'| }d\omega  \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega + \int^0_{-\infty} \frac{\omega}{k^2 -\omega^2 }  e^{i\omega |r-r'| }d\omega \qquad \text{inrgendwo - bug}  \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_{-\infty}^{\infty} \frac{\omega e^{i\omega |r-r'| } }{k^2 -\omega^2 }  d\omega  
+\end{align}
+
+
+Das Integral können wir mit Hilfe des Residuen-Satzes berechnen. Es gilt:
+
+\begin{equation}
+  \label{eq:29}
+  \oint f(z) dz = 2\pi i\sum_{k=1}^n Res(f,f_k)
+\end{equation}
+
+Das zu unserem Fall passendes Residuum
+
+\begin{equation}
+  \label{eq:30}
+  Res(f,z_0) = \frac{g(z_0)}{h'(z_0)} \qquad \text{mit } g(z) \text{ Zähler-Funktion und } h(z) \text{ Nenner-Funktion} 
+\end{equation}
+
+Betrachten wir nun die Funktion:
+
+\begin{equation}
+  \label{eq:31}
+  f(\omega) = \frac{\omega e^{i\omega |r-r'| } }{k^2 -\omega^2 }
+\end{equation}
+
+Sie hat zwei Polstellen an der Stelle \(\omega = k\) und  \(\omega = -k\). Da unser Impuls nur in positiver Richtung verläuft, können wir die negative Lösung ignorieren. Das Residuum für  \(\omega = k\) lautet:
+
+\begin{equation}
+  \label{eq:32}
+  Res(f,k) =\left. \frac{\omega e^{i\omega |r-r'| } }{ -2\omega }\right|_{\omega = k} = \frac{k e^{ik |r-r'| } }{ -2 k } =-\frac{1 }{2} e^{ik |r-r'| }
+\end{equation}
+
+Damit wir das Integral (\ref{eq:29}) zu:
+
+\begin{equation}
+  \label{eq:33}
+   \int_{-\infty}^{\infty} \frac{\omega e^{i\omega |r-r'| } }{k^2 -\omega^2 }  d\omega = 2\pi i  Res(f,k) = -\pi i  e^{ik |r-r'| }
+\end{equation}
+
+Eingesetzt in (\ref{eq:28}):
+
+\begin{equation}
+  \label{eq:34}
+   G(\vec r ,\vec r') = - \frac{1}{ 4\pi |r-r'|  }  e^{ik |r-r'| }
+\end{equation}
+
+Setzen wir nun die Greensche Funktion (\ref{eq:34}) in (\ref{eq:21}):
+
+\begin{align}
+  \label{eq:35}
+   \psi_{\text{part}}(\vec r) &= \frac{2\mu}{\hbar} \int_{-\infty}^\infty  G(\vec r,\vec r')V(r')\psi(\vec r') d^3 r' \\
+&=  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r' \\
+\end{align}
+Somit lautet die gesamte Wellenfunktion:
+
+\begin{equation}
+  \label{eq:36}
+  \boxed{ \psi = \psi_{\text{homo}} + \psi_{\text{part}} = Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r' }
+\end{equation}
+
+
+
+\subsection{Bornsche Reihe und Näherung}
+
+Wir betrachten die Gleichung (\ref{eq:36}) um die Bornsche Reihe zu entwickeln. 
+\begin{equation}
+  \label{eq:37}
+  \psi(\vec r) =  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r'
+\end{equation}
+
+Führen wir zu jedem \(\vec r\) ein Strich hinzu, so erhalten wir:
+
+\begin{equation}
+  \label{eq:38}
+  \psi(\vec r') =  Ae^{i\vec k \vec r'}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''
+\end{equation}
+
+Jetzt können wir die Gleichung (\ref{eq:38}) in (\ref{eq:37}) einsetzen und erhalten:
+
+\begin{align}
+  \label{eq:39}
+   \psi(\vec r) &=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\left(  Ae^{i\vec k \vec r'}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''  \right)  d^3 r'\\
+&=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r') Ae^{i\vec k \vec r'}d^3 r' \\
+&\qquad -  \frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')   \frac{\mu}{2\pi\hbar} d^3 r' \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''
+\end{align}
+
+
+Analog können wir in die Gleichung (\ref{eq:39}) zu jedem \(r\) ein Strich hinzufügen und wieder in die Gleichung (\ref{eq:37}) einsetzen. Auf diese Weise können wir Schritt für Schritt die Bornsche Reihe der Streuwellenfunktion konstruieren und eine beliebig genaue Lösung finden. Für Potentiale die schnell abfallen ist jeder folgender Term jeweils kleiner als der vorhergehende.
+
+Für die erste Näherung beschränken wir uns auf die erste Ordnung in \(V\), d.h. venachlässigen des nächsthöheren r-Strich. Somit reduziert sich die Gleichung (\ref{eq:38}) auf:
+
+\begin{equation}
+  \label{eq:40}
+   \psi(\vec r') =  Ae^{i\vec k \vec r'}
+\end{equation}
+
+Eingesetzt in anfängliche Gleichung (\ref{eq:37}):
+
+\begin{equation}
+  \label{eq:41}
+   \psi(\vec r) =  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar}A \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }e^{i\vec k \vec r'}  V(r')   d^3 r'
+\end{equation}
+
+
+Dies ist die Bornsche Näherung in erster Ordnung. 
+
+
+\subsection{Asymtotische Näherung der Wellenfunktion}
+
+Hier wollen wir zeigen dass die Wellenfunktion in (\ref{eq:36}) für große \(\vec r\) sich in die Form von der Gleichung (\ref{eq:10}) bringen lässt. In Streuexperimenten ist die Entfernung von Streupunkt zum Detektor also die Distanz \(\vec r\) viel viel größer als die Größe vom Detektor \(\vec r'\).  Wenn \(r>> r'\) dann gilt:
+
+\begin{align}
+  \label{eq:42}
+  k|\vec r - \vec r'| &= k\sqrt{ r^2-2\vec r\vec r' + r'^2 } \qquad \text{Taylorentwicklung der Wurzel bis 2.Ordnung}\\
+ &\approx k(r-\frac{\vec r}{r}\vec r')
+=kr - \vec k\vec r'
+\end{align}
+
+Weitere Approximation:
+
+
+\begin{align}
+  \label{eq:43}
+  \frac{1}{|\vec r - \vec r'| } &= \frac{1}{r}\frac{1}{|\vec r/r- \vec r'/r\|} = \frac{1}{r}\frac{1}{|1 -  \frac{\vec r'}{r} \frac{\vec r}{\vec r}|} = \frac{1}{r}\frac{1}{|1 -  \frac{\vec r'\vec r}{r^2} |} \approx \frac{1}{r}\left(1+\frac{\vec r\cdot\vec r'}{r^2}\right) \approx \frac{1}{r} 
+\end{align}
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection*{Referenzen}
