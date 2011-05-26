@@ -151,7 +151,7 @@ Es gilt nun die Streuamplitude zu bestimmen. Die können wir durch die Lösung d
 
 \begin{equation}
   \label{eq:16}
-  (\nabla^2 + k^2)\psi = \frac{2\mu}{\hbar}V(r)\psi
+  (\nabla^2 + k^2)\psi = \frac{2\mu}{\hbar^2}V(r)\psi
 \end{equation}
 
 Dies ist eine Differentialgleichung die wir mit Hilfe der Greenschen Funktion bestimmen können. Die Lösung der Gleichung besteht aus der Lösung der homogenen Gleichung plus die partikuläre Lösung. Für die homogene Lösung gilt:
@@ -175,21 +175,21 @@ Die partikuläre Lösung können wir mit Hilfe folgenden Ansatzes bestimmen:
    (\nabla^2 + k^2) G(\vec r,\vec r') = \delta(\vec r-\vec r')
 \end{equation}
 
-Nun multiplizieren wir die Gleichung (\ref{eq:19}) mit der 'Störung' \(\frac{2\mu}{\hbar}V(r')\psi\) und integrieren nach \(\vec r'\):
+Nun multiplizieren wir die Gleichung (\ref{eq:19}) mit der 'Störung' \(\frac{2\mu}{\hbar^2}V(r')\psi\) und integrieren nach \(\vec r'\):
 
 \begin{align}
   \label{eq:20}
-   (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar}V(r')\psi &= \delta(\vec r-\vec r')\frac{2\mu}{\hbar}V(r')\psi \\
-\int_{-\infty}^\infty (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar}V(r')\psi d^3 r' &=\int_{-\infty}^\infty \delta(\vec r-\vec r')\frac{2\mu}{\hbar}V(r')\psi d^3 r' \\
-\int_{-\infty}^\infty (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar}V(r')\psi d^3 r' &=\frac{2\mu}{\hbar}V(r)\psi
+   (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi &= \delta(\vec r-\vec r')\frac{2\mu}{\hbar^2}V(r')\psi \\
+\int_{-\infty}^\infty (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi d^3 r' &=\int_{-\infty}^\infty \delta(\vec r-\vec r')\frac{2\mu}{\hbar^2}V(r')\psi d^3 r' \\
+\int_{-\infty}^\infty (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi d^3 r' &=\frac{2\mu}{\hbar^2}V(r)\psi
 \end{align}
 
 Eingesetzt (\ref{eq:20})  in (\ref{eq:16}):
 
 \begin{align}
   \label{eq:21}
-   \cancel{(\nabla^2 + k^2)}\psi(\vec r) = \int_{-\infty}^\infty \cancel{(\nabla^2 + k^2)} G(\vec r,\vec r')\frac{2\mu}{\hbar}V(r')\psi(\vec r') d^3 r' \\
-\rightarrow  \psi_{\text{part}}(\vec r) = \frac{2\mu}{\hbar} \int_{-\infty}^\infty  G(\vec r,\vec r')V(r')\psi(\vec r') d^3 r' 
+   \cancel{(\nabla^2 + k^2)}\psi(\vec r) = \int_{-\infty}^\infty \cancel{(\nabla^2 + k^2)} G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi(\vec r') d^3 r' \\
+\rightarrow  \psi_{\text{part}}(\vec r) = \frac{2\mu}{\hbar^2} \int_{-\infty}^\infty  G(\vec r,\vec r')V(r')\psi(\vec r') d^3 r' 
 \end{align}
 
 
@@ -232,7 +232,13 @@ Setzen wir (\ref{eq:25}) in (\ref{eq:22}) ein:
 \end{equation}
 
 
-Nun gilt es die Gleichung zu integrieren. Dazu benutzen wir die Kugelkoordinaten. Wir ersetze \((\vec r-\vec r') = \cos\theta|r-r'|\) (wegen ???). 
+Nun gilt es die Gleichung zu integrieren. Dazu benutzen wir die Kugelkoordinaten. 
+Wir ersetzen 
+
+
+\[\vec \omega \underbrace{(\vec r-\vec r')}_{\vec \rho} = \vec\omega\cdot\vec\rho = |\vec \omega|\cdot|\vec \rho| \cos\theta = |\vec \omega|\cdot|\vec r-\vec r' | \cos\theta \]
+
+Nun lautet das Integral:
 
 \begin{align}
   \label{eq:27}
@@ -252,8 +258,8 @@ Substituiere \(x=\cos\theta\):
 &= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \frac{1}{i\omega |r-r'|  }  \left( e^{i\omega |r-r'| }- e^{-i\omega |r-r'| } \right) \\
 &=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }  d\omega   \left( e^{i\omega |r-r'| }- e^{-i\omega |r-r'| } \right) \\
 &=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega - \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }  e^{-i\omega |r-r'| }d\omega  \\
-&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega + \int^0_{\infty} \frac{\omega}{k^2 -\omega^2 }  e^{-i\omega |r-r'| }d\omega  \\
-&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega + \int^0_{-\infty} \frac{\omega}{k^2 -\omega^2 }  e^{i\omega |r-r'| }d\omega \qquad \text{inrgendwo - bug}  \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega - \int^0_{-\infty} \frac{-\omega}{k^2 -\omega^2 }  e^{-i\omega |r-r'| }d\omega  \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega + \int^0_{-\infty} \frac{\omega}{k^2 -\omega^2 }  e^{i\omega |r-r'| }d\omega  \\
 &=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_{-\infty}^{\infty} \frac{\omega e^{i\omega |r-r'| } }{k^2 -\omega^2 }  d\omega  
 \end{align}
 
@@ -304,14 +310,14 @@ Setzen wir nun die Greensche Funktion (\ref{eq:34}) in (\ref{eq:21}):
 
 \begin{align}
   \label{eq:35}
-   \psi_{\text{part}}(\vec r) &= \frac{2\mu}{\hbar} \int_{-\infty}^\infty  G(\vec r,\vec r')V(r')\psi(\vec r') d^3 r' \\
-&=  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r' \\
+   \psi_{\text{part}}(\vec r) &= \frac{2\mu}{\hbar^2} \int_{-\infty}^\infty  G(\vec r,\vec r')V(r')\psi(\vec r') d^3 r' \\
+&=  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r' \\
 \end{align}
 Somit lautet die gesamte Wellenfunktion:
 
 \begin{equation}
   \label{eq:36}
-  \boxed{ \psi = \psi_{\text{homo}} + \psi_{\text{part}} = Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r' }
+  \boxed{ \psi = \psi_{\text{homo}} + \psi_{\text{part}} = Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r' }
 \end{equation}
 
 
@@ -321,23 +327,23 @@ Somit lautet die gesamte Wellenfunktion:
 Wir betrachten die Gleichung (\ref{eq:36}) um die Bornsche Reihe zu entwickeln. 
 \begin{equation}
   \label{eq:37}
-  \psi(\vec r) =  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r'
+  \psi(\vec r) =  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r'
 \end{equation}
 
 Führen wir zu jedem \(\vec r\) ein Strich hinzu, so erhalten wir:
 
 \begin{equation}
   \label{eq:38}
-  \psi(\vec r') =  Ae^{i\vec k \vec r'}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''
+  \psi(\vec r') =  Ae^{i\vec k \vec r'}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''
 \end{equation}
 
 Jetzt können wir die Gleichung (\ref{eq:38}) in (\ref{eq:37}) einsetzen und erhalten:
 
 \begin{align}
   \label{eq:39}
-   \psi(\vec r) &=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\left(  Ae^{i\vec k \vec r'}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''  \right)  d^3 r'\\
-&=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r') Ae^{i\vec k \vec r'}d^3 r' \\
-&\qquad -  \frac{\mu}{2\pi\hbar} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')   \frac{\mu}{2\pi\hbar} d^3 r' \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''
+   \psi(\vec r) &=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\left(  Ae^{i\vec k \vec r'}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''  \right)  d^3 r'\\
+&=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r') Ae^{i\vec k \vec r'}d^3 r' \\
+&\qquad -  \frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')   \frac{\mu}{2\pi\hbar^2} d^3 r' \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''
 \end{align}
 
 
@@ -354,7 +360,7 @@ Eingesetzt in anfängliche Gleichung (\ref{eq:37}):
 
 \begin{equation}
   \label{eq:41}
-   \psi(\vec r) =  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar}A \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }e^{i\vec k \vec r'}  V(r')   d^3 r'
+   \psi(\vec r) =  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2}A \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }e^{i\vec k \vec r'}  V(r')   d^3 r'
 \end{equation}
 
 
@@ -367,10 +373,11 @@ Hier wollen wir zeigen dass die Wellenfunktion in (\ref{eq:36}) für große \(\v
 
 \begin{align}
   \label{eq:42}
-  k|\vec r - \vec r'| &= k\sqrt{ r^2-2\vec r\vec r' + r'^2 } \qquad \text{Taylorentwicklung der Wurzel bis 2.Ordnung}\\
- &\approx k(r-\frac{\vec r}{r}\vec r')
-=kr - \vec k\vec r'
+  k|\vec r - \vec r'| &= k\sqrt{ r^2-2\vec r\vec r' + r'^2 } \\
+ &= kr\sqrt{ 1-2\frac{\hat e_r\vec r'}{r} + \frac{\vec r'^2}{r^2} } \qquad \text{Taylorentwicklung der Wurzel um r=}\infty\text{ bis 2.Ordnung}\\ 
+ &\approx kr(1-\frac{\hat e_r\vec r'}{r}) = kr - k\hat e_r\vec r'= kr- \vec k\vec r'
 \end{align}
+
 
 Weitere Approximation:
 
@@ -380,11 +387,125 @@ Weitere Approximation:
   \frac{1}{|\vec r - \vec r'| } &= \frac{1}{r}\frac{1}{|\vec r/r- \vec r'/r\|} = \frac{1}{r}\frac{1}{|1 -  \frac{\vec r'}{r} \frac{\vec r}{\vec r}|} = \frac{1}{r}\frac{1}{|1 -  \frac{\vec r'\vec r}{r^2} |} \approx \frac{1}{r}\left(1+\frac{\vec r\cdot\vec r'}{r^2}\right) \approx \frac{1}{r} 
 \end{align}
 
+Setzen wir die beiden Näherungen ein die Gleichung (\ref{eq:36}) ein:
+
+
+\begin{align}
+  \label{eq:44}
+   \psi(\vec r) &\stackrel{\vec r\to \infty}=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2}A \int_{-\infty}^\infty \frac{ e^{i kr - i\vec k\vec r'  }}{r} V(r')\psi(\vec r')   d^3 r' \\
+&=  Ae^{i\vec k \vec r}  - A\left[\frac{\mu}{2\pi\hbar^2}\int_{-\infty}^\infty e^{- i\vec k\vec r' }  V(r') \psi(\vec r') d^3 r'\right] \frac{ e^{i kr }}{r} 
+\end{align}
+
+
+Vergleiche mit der Gleichung (\ref{eq:10}) hier nochmals aufgeführt:
+
+\begin{equation}
+  \label{eq:45}
+  \psi = A e^{i\vec k_{0}\vec r} + A f(\theta,\phi)\frac{e^{i\vec k\vec r}}{r} 
+\end{equation}
+
+
+so können wir die Streuamplitude bestimmen. Für \(f(\theta,\phi)\) können wir schreiben:
+
+\begin{equation}
+  \label{eq:46}
+  \boxed{ f(\theta,\phi) = - \frac{\mu}{2\pi\hbar^2}\int_{-\infty}^\infty e^{- i\vec k\vec r' }  V(r') \psi(\vec r') d^3 r' }
+\end{equation}
+
+Mit \(\phi_{\text{ein}}^* =e^{- i\vec k\vec r' } = \langle\phi_{\text{ein}}|\vec r\rangle  \) und \(\psi(\vec r') = \langle \vec r| \psi\rangle \) lässt sich die Gleichung (\ref{eq:46}) nochmals schreiben als:
+
+\begin{equation}
+  \label{eq:47}
+   \boxed{ f(\theta,\phi) = - \frac{\mu}{2\pi\hbar^2} \langle\phi_{\text{ein}}|  V |\psi\rangle }
+\end{equation}
+
+
+Damit lässt sich der Differentielle Wirkungsquerschnitt (\ref{eq:15})  schreiben als:
+
+\begin{equation}
+  \label{eq:48}
+  \boxed{  \frac{d\sigma}{d\Omega}= \frac{\mu^2}{4\pi^2\hbar^4} |\langle\phi_{\text{ein}}|  V |\psi\rangle |^2 = \frac{\mu^2}{4\pi^2\hbar^4} \left| \int_{-\infty}^\infty e^{- i\vec k\vec r' }  V(r') \psi(\vec r') d^3 r' \right|^2  }
+\end{equation}
+
+
+Für Bornsche Näherung in 1.Ordnung mit \(\psi(\vec r') = e^{i\vec k_0\vec r'}\) eingesetzt in (\ref{eq:48}):
+
+\begin{align}
+  \label{eq:49}
+  \frac{d\sigma}{d\Omega} &=  \frac{\mu^2}{4\pi^2\hbar^4} \left| \int_{-\infty}^\infty e^{- i\vec k\vec r' }  V(r')  e^{i\vec k_0\vec r'} d^3 r' \right|^2 \\
+&=  \frac{\mu^2}{4\pi^2\hbar^4} \left| \int_{-\infty}^\infty \exp[i\vec r'\underbrace{(\vec k_0 -\vec k)}_{\vec K} ]  V(r')  d^3 r' \right|^2 
+\end{align}
+
+Dabei ist \(\hbar \vec K = \hbar (\vec k_0 - \vec k)\) die Impulsübetragung. 
+
+Der Differentialwirkungsquerschnitt in Bornscher Näherung 1. Ordnung lautet somit:
+
+\begin{equation}
+  \label{eq:50}
+\boxed{  \frac{d\sigma}{d\Omega}=  \frac{\mu^2}{4\pi^2\hbar^4} \left| \int_{-\infty}^\infty e^{i\vec r'\vec K}  V(r')  d^3 r' \right|^2 }
+\end{equation}
+
+
+Mit Hilfe der Bornschen Näherung und des differentiellen Wirkungsquerschnits, sowie der Streurichtung \((\theta,\phi)\) und einfallender Energie \( \frac{\hbar^2\vec k_0^2}{2\mu} \) lassen sich Rückschlüsse auf das Target-Potentail schließen.
+
+
+Betrachte nun ein \textbf{Spezialfall} \(V(\vec r')\) sei sphärisch symmetrisch. Damit gilt \(V(\vec r) = V(r')\). Damit können wir die Gleichung (\ref{eq:50}) die Streuamplitude folgendermaßen ausdrücken, mit \(\vec r'\vec K = |\vec r'|\cdot|\vec K|\cos\theta\). 
+
+\begin{align}
+  \label{eq:51}
+   f(\theta,\phi) &=  - \frac{\mu}{2\pi\hbar^2} \int_0^\infty r'^2dr' \int_0^\pi \sin(\theta)d\theta \int_0^{2\pi}d\phi e^{ir'K\cos\theta}  V(r') \\
+&= -\frac{\mu}{2\pi\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \int_0^\pi d\theta\,\, \sin(\theta)  e^{ir'K\cos\theta} \int_0^{2\pi}d\phi  \\
+&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \int_0^\pi d\theta\,\, \sin(\theta)  e^{ir'K\cos\theta}  \\
+\end{align}
+Substituiere \(x=\cos\theta\rightarrow d\theta = \frac{1}{-\sin\theta}  dx \)
+
+\begin{align}
+  \label{eq:52}
+   f(\theta) &= - \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \int^1_{-1} dx  e^{ir'K x} \\
+&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \left[ \frac{e^{ir'K x} }{ir'K} \right]^1_{-1}  \\
+&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \left( \frac{e^{ir'K} }{ir'K}- \frac{e^{-ir'K} }{ir'K} \right)  \\
+&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \frac{2i}{ir'K} \sin(r'K)  \\
+&=- \frac{2\mu}{\hbar^2 K} \int_0^\infty dr'\,\, r'  V(r') \sin(r'K) 
+\end{align}
+
+Der differentielle Wirkungsquerschnitt lautet für spärisch symmetrische Potential somit:
+
+\begin{equation}
+  \label{eq:53}
+  \boxed{ \frac{d\sigma}{d\Omega}=  \frac{4\mu^2}{\hbar^4 K^2} \left| \int_0^\infty dr'\,\, r'  V(r') \sin(r'K)   \right|^2 }
+\end{equation}
 
 
 
+\subsection{Beispiel Coulomb-Potential}
 
 
+Zur Veranschaulichung wollen wir den differentiellen Wirkungsquerschnitt für das Coulomb-Potential 
+\begin{equation}
+  \label{eq:54}
+  V(r) = \frac{Z_1Z_2e^2}{r}
+\end{equation}
+
+berechnen. Setzen wir das in unsere Gleichung (\ref{eq:53}) ein:
+
+\begin{align}
+  \label{eq:55}
+  \frac{d\sigma}{d\Omega}&=  \frac{4\mu^2Z_1^2Z_2^2e^4}{\hbar^4 K^2} \left| \int_0^\infty dr'\,\, r'  \frac{1}{r'} \sin(r'K)   \right|^2 \\
+&=  \frac{4\mu^2Z_1^2Z_2^2e^4}{\hbar^4 K^2} \left| \int_0^\infty dr'\,\, \sin(r'K)   \right|^2 \\
+\end{align}
+Nebenrechnung Integral:
+
+\begin{align}
+  \label{eq:56}
+ \int_0^\infty dr'\,\, \sin(r'K) &= \lim_{\lambda \to 0} \int_0^\infty dr'\,\, e^{-\lambda r'}  \sin(r'K) \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0} \int_0^\infty dr'\,\, e^{-\lambda r'}\left( e^{iK r'}- e^{-iK r'} \right)  \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0} \int_0^\infty dr'\,\, \left( e^{-r'(\lambda - iK )}- e^{-r'(\lambda+iK)} \right)  \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0} \int_0^\infty dr'\,\, e^{-r'(\lambda - iK )}- \int_0^\infty dr'\,\, e^{-r'(\lambda+iK)}  \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0}\left( \left[ \frac{e^{-r'(\lambda - iK )} }{-\lambda+iK}  \right]_0^\infty - \left[ \frac{e^{-r'(\lambda + iK )} }{-\lambda-iK}  \right]_0^\infty \right) \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0}\left( 0 - \frac{1}{-\lambda+iK}   -  0  +  \frac{1}{-\lambda-iK}  \right) \\
+&= \frac{1}{2i}  \left( -\frac{1}{iK}   +  \frac{1}{-iK}  \right) \\
+&= - \frac{1}{i} \frac{1}{iK} =  \frac{1}{K} 
+\end{align}
 
 
 
