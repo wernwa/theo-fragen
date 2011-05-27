@@ -515,13 +515,30 @@ Die Lösung des Integralls (\ref{eq:56}) mit \(k_0=k\) folgt \(K = |\vec k_0-\ve
 \end{equation}
 
 
-Es ist möglich den Winkel \(\theta\) über die Massen der Teilchen zu bestimmen. Der Zusammenhang ergibt aus den Winkeln  zu den Massen sich aus dem Labor \(\theta_1\) und dem Schwerpunksystem \(\theta\) (siehe Zettili 11.1.1 S.618)
+Es ist möglich den Winkel \(\theta\) über die Massen der Teilchen zu bestimmen. Der Zusammenhang ergibt aus den Winkeln  zu den Massen sich aus dem Laborsysterm \(\theta_1\) und dem Schwerpunksystem \(\theta\) (siehe Zettili 11.1.1 S.618)
 
 \begin{equation}
   \label{eq:58}
   \tan\theta_1=\frac{\sin\theta}{\cos\theta+\frac{m_1}{m_2}}
 \end{equation}
 
+\subsubsection{Numerisches Beispiel Helium vs. Gold}
+
+Betrachten wir als Beispiel das ein Helium-Atom mit Kernladungszahl \(Z_1=2\) und Nukleonenazahl \(A_1 = 4\) trifft auf ein Goldatom mit Kernladungszahl \(Z_2=79\) und Nukleonenzahl \(A_2 = 197\) und wird im Laborsystem in einem Winkel  \(\theta_1=60^\circ\) gestreut. Die kinetische Energie des einfallenden Teilchens beträgt \(8MeV\). Wie groß ist der differenzielle Wirkungsquerschnitt?
+
+Zunächst berechnen wir den Streuwinkel \(\theta\) im Schwerpunktsystem. Das Massenverhältniss enspricht dem Quotienten der Nukleonenazhal\(\frac{m_1}{m_2}=\frac{A_1}{A_2}=\frac{4}{197} \). Mit Gleichung (\ref{eq:58}) erhalten wir eine transzendente Gleichung. Den Winkel erhält man durch Graphische Lösung der beiden Funktionen:
+
+\begin{equation}
+  \label{eq:59}
+  \tan(60^\circ)\cos\theta+ \tan(60^\circ)\frac{4}{197}  = \sin\theta \qquad\Rightarrow \theta=61^\circ
+\end{equation}
+
+
+
+
+
+
+\input{streuung_pics/maxima.tex}
 
 
 

@@ -1,0 +1,10 @@
+set terminal latex
+set output "maxima.tex"
+set format y "$%g$"
+set format x "$%.2f$"
+set title 'Bestimmung des Streuwinkels $\theta$'
+
+unset key
+set xtics ("0" 0,'$61^\circ$' 1.06,'$90^\circ$' pi/2, '$180^\circ$' 1*pi, '$270^\circ$' 3*pi/2,'$360^\circ$' 2*pi)
+
+plot [0:2*pi] sin(x) with lines 0, sqrt(3)*cos(x)+sqrt(3)*4/197 with lines 3
