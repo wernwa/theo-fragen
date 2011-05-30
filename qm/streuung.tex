@@ -1,6 +1,5 @@
 \input{../headers/header_script.tex}
-
-
+\graphicspath{{./streuung_pics}}% Suchpfad für Graphiken
 \usepackage{amsmath} 
 
 
@@ -12,11 +11,16 @@
 
 Wir betrachten die einfallende Stromdichte \(J_{\text{ein}}\) (Anzahl der Teilchen pro Zeiteinheit und Fläche), das an einem Punktteilchen mit einem Zentralpotential, gestreut wird. Ein Detektor misst eine Telmenge des gestreuten Teilchenstroms \(J_{\text{gestr}}\) im dem Raumwinkel \(\theta\) und Abstand \(r\). Die Ströme sind offenbar proportional zu einander:
 
-
 \begin{equation}
   \label{eq:1}
   J_{\text{gestr}} \propto J_{\text{ein}}
 \end{equation}
+
+
+\begin{figure}
+  \centering
+  \input{streuung_pics/streuung.pdf_t}
+\end{figure}
 
 
 und die Proportionalitätskonstante \(\frac{d\sigma}{dA}\) bestimmt die Menge der Teilchen pro Zeit die am Detektor ankommen. 
@@ -34,7 +38,7 @@ Diese Größe ist noch vom Abstand \(r^2\) Abhängig. Multipliziert man die Glei
 \end{equation}
 
 
-\subsection{Differentieller Wirkungsquerschnitt}
+\subsection*{Differentieller Wirkungsquerschnitt}
 
 Um den differenziellen Wirkungsquerschnitt bestimmen zu können müssen wir als nächstes die Zustandsfunktion der einlafenden und  gestreuten Teilchen herleiten. Betrachte das Einfallende Teilchen als ebene Wellen Pakete. Die dazugehörige Schrödinger Gleichung lautet:
 
@@ -144,7 +148,7 @@ Aus der Gleichung (\ref{eq:15}) sieht man, dass der differentielle Wirkungsquers
 
 
 
-\subsection{Lösung mit Hilfe der Greenschen Funktion}
+\subsection*{Lösung mit Hilfe der Greenschen Funktion}
 
 
 Es gilt nun die Streuamplitude zu bestimmen. Die können wir durch die Lösung der Schrödinger Gleichung (\ref{eq:6})  erreichen. Dazu bringen wir sie in folgende Form (auch bekannt als die Helmholz-Gleichung):
@@ -322,7 +326,7 @@ Somit lautet die gesamte Wellenfunktion:
 
 
 
-\subsection{Bornsche Reihe und Näherung}
+\subsection*{Bornsche Reihe und Näherung}
 
 Wir betrachten die Gleichung (\ref{eq:36}) um die Bornsche Reihe zu entwickeln. 
 \begin{equation}
@@ -367,7 +371,7 @@ Eingesetzt in anfängliche Gleichung (\ref{eq:37}):
 Dies ist die Bornsche Näherung in erster Ordnung. 
 
 
-\subsection{Asymtotische Näherung der Wellenfunktion}
+\subsection*{Asymtotische Näherung der Wellenfunktion}
 
 Hier wollen wir zeigen dass die Wellenfunktion in (\ref{eq:36}) für große \(\vec r\) sich in die Form von der Gleichung (\ref{eq:10}) bringen lässt. In Streuexperimenten ist die Entfernung von Streupunkt zum Detektor also die Distanz \(\vec r\) viel viel größer als die Größe vom Detektor \(\vec r'\).  Wenn \(r>> r'\) dann gilt:
 
@@ -477,7 +481,7 @@ Der differentielle Wirkungsquerschnitt lautet für spärisch symmetrische Potent
 
 
 
-\subsection{Beispiel Coulomb-Potential}
+\subsection*{Beispiel Coulomb-Potential}
 
 
 Zur Veranschaulichung wollen wir den differentiellen Wirkungsquerschnitt für das Coulomb-Potential 
@@ -522,7 +526,7 @@ Es ist möglich den Winkel \(\theta\) über die Massen der Teilchen zu bestimmen
   \tan\theta_1=\frac{\sin\theta}{\cos\theta+\frac{m_1}{m_2}}
 \end{equation}
 
-\subsubsection{Numerisches Beispiel Helium vs. Gold}
+\subsubsection*{Numerisches Beispiel Helium vs. Gold}
 
 Betrachten wir als Beispiel das ein Helium-Atom mit Kernladungszahl \(Z_1=2\) und Nukleonenazahl \(A_1 = 4\) trifft auf ein Goldatom mit Kernladungszahl \(Z_2=79\) und Nukleonenzahl \(A_2 = 197\) und wird im Laborsystem in einem Winkel  \(\theta_1=60^\circ\) gestreut. Die kinetische Energie des einfallenden Teilchens beträgt \(8MeV\). Wie groß ist der differenzielle Wirkungsquerschnitt?
 
@@ -537,8 +541,15 @@ Zunächst berechnen wir den Streuwinkel \(\theta\) im Schwerpunktsystem. Das Mas
 
 
 
+\begin{figure}
+  \centering
+  \input{streuung_pics/maxima.tex}
+  \caption{Graphische Lösung zur Gleichung \eqref{eq:59}, wobei die dünne Linie rechte Seite und die dickere Linie die linke Seite ist.  Der erste Schnittpunkt der beiden Kurven liegt bei \(\theta=61^\circ\) und somit die Lösung bildet}
+  \label{fig:1}
+\end{figure}
 
-\input{streuung_pics/maxima.tex}
+
+Setzt man nun den Winkel \(\theta\) in Gleichung \eqref{eq:57} so ist es möglich den Wirkungsquerschnitt zu bestimmen.
 
 
 
@@ -548,7 +559,7 @@ Zunächst berechnen wir den Streuwinkel \(\theta\) im Schwerpunktsystem. Das Mas
 \begin{itemize}
 \item Claude Cohen-Tannoudji Quantenmechanik Band 2
 \item Zettili Quanten Mehanics
-\item Rollnik Quantentheorie 2
+%\item Rollnik Quantentheorie 2
 \end{itemize}
 
 \end{document}
