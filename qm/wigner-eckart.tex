@@ -8,11 +8,118 @@
 \section*{Wigner-Eckart-Theorem}
 
 
+Betrachte ein \(T^{(k)}_q\) oder irreduziebler Tensor \(k-\)ter Stufe. Dieser verhält sich wie ein Zustandsvektor bei einer Drehung. D.h. dieser Tensor ist proportional zu einem Ket \(T^{(k)}_q \sim \ket{k,q} \). D.h wir können folgende Linearkombination:
 
 
 
+\begin{equation}
+  \label{eq:1}
+  \ket{JM} = \sum_{m_1,m_2}\braket{j_1j_2;m_1m_2}{jm}\ket{j_1j_2;m_1m_2} = \sum_{m_1,m_2}\braket{j_1j_2;m_1m_2}{jm}\ket{j_1m_1} \otimes \ket{j_2m_2}
+\end{equation}
+
+mit dem Tensor  mit Hilfe der Clebsch-Gordan-Koeffizienten als Ket-Vektor ausdrücken:
 
 
+
+\begin{equation}
+  \label{eq:2}
+  \ket{JM} = \sum_{m,q} \braket{jk;mq}{JM} \ket{k,q}\otimes\ket{jm} =  \sum_{m,q} \braket{jk;mq}{JM} T^{(k)}_q  \ket{jm} 
+\end{equation}
+
+
+Da es noch andere Quantenzahlen vorkommen können wie Enegie multiplizieren wir die Gleichung (\ref{eq:2}) mit einem Ket \(\ket{\alpha}\) der symbolisch für andere Quantenzahlen steht.
+
+\begin{align}
+  \label{eq:3}
+  \ket{\alpha}\cdot\ket{JM} &=  \ket{\alpha}\cdot\sum_{m,q} \braket{jk;mq}{JM} \ket{k,q}\otimes\ket{jm} \\
+\Leftrightarrow \ket{\alpha; JM} &=  \sum_{m,q} \braket{jk;mq}{JM} T^{(k)}_q  \ket{\alpha;jm} 
+\end{align}
+
+Wir möchten die Summe und  Clebsch-Gordan-Koeffizienten auf die andere Seite bringen. Dazu möchten wir folgende Relation herleiten:
+
+\begin{align}
+  \label{eq:4}
+ \braket{JM}{JM} &= \bra{JM} \mathbb 1 \ket{JM} \\
+&= \bra{JM} \left( \sum_{mq}\ket{jk;mq}\bra{jk;mq}  \right) \ket{JM} \\
+&=  \sum_{mq}\braket{JM}{jk;mq}\braket{jk;mq}{JM} \\
+&=  \sum_{mq}|\braket{jk;mq}{JM} |^2\\
+&\stackrel{!}= 1
+\end{align}
+
+Die Relation lautet nun:
+
+\begin{equation}
+  \label{eq:5}
+  \sum_{mq}|\braket{jk;mq}{JM} |^2 = 1
+\end{equation}
+
+Unter Ausnutzung der Relation (\ref{eq:5}) folgt für die Gleichung (\ref{eq:3}):
+
+\begin{align}
+  \label{eq:6}
+   \mathbb 1 \ket{\alpha; JM} &=  \sum_{m,q} \braket{jk;mq}{JM} T^{(k)}_q  \ket{\alpha;jm} \\
+ \sum_{JM} \ket{\alpha; JM}\underbr{\braket{\alpha; JM}{\alpha; JM}}_{=1=\sum_{mq}|\braket{jk;mq}{JM} |^2} &=  \sum_{m,q} \braket{jk;mq}{JM} T^{(k)}_q  \ket{\alpha;jm} \\
+\sum_{JM}\ket{\alpha; JM} \cancel{\sum_{mq}}|\braket{jk;mq}{JM} |^{\cancel 2}   &= \cancel{\sum_{m,q} \braket{jk;mq}{JM}} T^{(k)}_q  \ket{\alpha;jm} 
+\end{align}
+
+Damit erhalten wir:
+
+\begin{equation}
+  \label{eq:7}
+   T^{(k)}_q  \ket{\alpha;jm} = \sum_{JM}\ket{\alpha; JM} \braket{jk;mq}{JM}
+\end{equation}
+
+Multiplizieren wir mit \(\bra{\alpha;jm}\):
+
+\begin{equation}
+  \label{eq:8}
+  \bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} = \sum_{JM} \underbr{\braket{\alpha;jm}{\alpha; JM}}_{\delta_{jJ}\delta_{mM}} \braket{jk;mq}{JM}
+\end{equation}
+
+Wegen der Orthogonalitätsbegingung bleibt von der Summe nur ein Summand übrig, bei dem gilt \(j=J\) und \(m=M\). Gleichung (\ref{eq:8}) können wir nun schreiben:
+
+\begin{equation}
+  \label{eq:9}
+   \bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} = \underbr{\braket{\alpha;jm}{\alpha; jm}}_{\text{reduziertes Matrixelement}}  \braket{jk;mq}{jm}
+\end{equation}
+
+
+Als nächstes wollen wir beweisen, dass das reduzierte Matrixelement von der Quantenzahl \(m\) unabhängig ist. Dies lässt sich duch Anwenden des Schiebeoperators \(J_{\pm}\) zeigen. Zur Errinerung die Eigenwertgleichung lautet:
+
+\begin{equation}
+  \label{eq:11}
+  J_{\pm}\ket{\alpha; jm} = \sqrt{j(j+1)-m(m\pm 1)} \ket{\alpha; jm\pm 1}
+\end{equation}
+
+Durch einsetzen von \(J_{\pm}\) und durch ausgleichen von einem Vorfaktor lässt sich das reduzierte Matrixelement schreiben:
+
+
+\begin{align}
+  \label{eq:10}
+  \braket{\alpha;jm}{\alpha; jm} = \frac{1}{\sqrt{j(j+1)-m(m\mp 1)}}  \bra{\alpha;jm}J_{\pm} \ket{\alpha; jm\mp 1}
+\end{align}
+
+Lässt man nun \(J_{\pm}\) einmal auf links wirken, dabei wird \((J_{\pm})^\dagger = J_{\mp}\):
+
+\begin{align}
+  \label{eq:12}
+  \braket{\alpha;jm}{\alpha; jm} &= \frac{\sqrt{j(j+1)-m(m\mp 1)}}{\sqrt{j(j+1)-m(m\mp 1)}}  \braket{\alpha;jm\mp 1 }{\alpha; jm\mp 1} \\
+&= \braket{\alpha;jm\mp 1 }{\alpha; jm\mp 1}
+\end{align}
+
+Aus der Gleichung (\ref{eq:12}) sieht man dass das reduzierte Matrixelement nicht von \(m\) abhängig ist. Wir können Die Gleichung (\ref{eq:9}) schreiben
+
+\begin{equation}
+  \label{eq:14}
+   \bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} =  \underbr{\braket{\alpha;j}{\alpha; j}}_{\text{reduziertes Matrixelement}}   \braket{jk;mq}{jm}
+\end{equation}
+
+Schlussendlich erhalten wir das Wigner-Eckart-Theorem:
+
+\begin{equation}
+  \label{eq:15}
+\boxed{\bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} =  \braket{jk;mq}{jm} \langle \alpha;j || T^{(q)}_k || \alpha; j \rangle }
+\end{equation}
 
 
 \subsection*{Referenzen}
