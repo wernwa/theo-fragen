@@ -27,20 +27,20 @@ Da es noch andere Quantenzahlen vorkommen können wie Enegie multiplizieren wir 
 
 \begin{align}
   \label{eq:3}
-  \ket{\alpha}\cdot\ket{JM} &=  \ket{\alpha}\cdot\sum_{m,q} \braket{jk;mq}{JM} \ket{k,q}\otimes\ket{jm} \\
+  \ket{\alpha}\cdot\ket{JM} &=  \ket{\alpha}\cdot\sum_{m,q} \braket{jk;mq}{JM} \ket{k,q}\otimes\ket{jm}\notag \\
 \Leftrightarrow \ket{\alpha; JM} &=  \sum_{m,q} \braket{jk;mq}{JM} T^{(k)}_q  \ket{\alpha;jm} 
 \end{align}
 
 Wir möchten die Summe und  Clebsch-Gordan-Koeffizienten auf die andere Seite bringen. Dazu möchten wir folgende Relation herleiten:
 
-\begin{align}
+\begin{align*}
   \label{eq:4}
  \braket{JM}{JM} &= \bra{JM} \mathbb 1 \ket{JM} \\
 &= \bra{JM} \left( \sum_{mq}\ket{jk;mq}\bra{jk;mq}  \right) \ket{JM} \\
 &=  \sum_{mq}\braket{JM}{jk;mq}\braket{jk;mq}{JM} \\
 &=  \sum_{mq}|\braket{jk;mq}{JM} |^2\\
 &\stackrel{!}= 1
-\end{align}
+\end{align*}
 
 Die Relation lautet nun:
 
@@ -51,12 +51,12 @@ Die Relation lautet nun:
 
 Unter Ausnutzung der Relation (\ref{eq:5}) folgt für die Gleichung (\ref{eq:3}):
 
-\begin{align}
+\begin{align*}
   \label{eq:6}
    \mathbb 1 \ket{\alpha; JM} &=  \sum_{m,q} \braket{jk;mq}{JM} T^{(k)}_q  \ket{\alpha;jm} \\
  \sum_{JM} \ket{\alpha; JM}\underbr{\braket{\alpha; JM}{\alpha; JM}}_{=1=\sum_{mq}|\braket{jk;mq}{JM} |^2} &=  \sum_{m,q} \braket{jk;mq}{JM} T^{(k)}_q  \ket{\alpha;jm} \\
 \sum_{JM}\ket{\alpha; JM} \cancel{\sum_{mq}}|\braket{jk;mq}{JM} |^{\cancel 2}   &= \cancel{\sum_{m,q} \braket{jk;mq}{JM}} T^{(k)}_q  \ket{\alpha;jm} 
-\end{align}
+\end{align*}
 
 Damit erhalten wir:
 
@@ -192,7 +192,7 @@ Lässt man nun \(J_{\pm}\) einmal auf links wirken, dabei wird \((J_{\pm})^\dagg
 
 \begin{align}
   \label{eq:12}
-  \braket{\alpha;jm}{\alpha; jm} &= \frac{\sqrt{j(j+1)-m(m\mp 1)}}{\sqrt{j(j+1)-m(m\mp 1)}}  \braket{\alpha;jm\mp 1 }{\alpha; jm\mp 1} \\
+  \braket{\alpha;jm}{\alpha; jm} &= \frac{\sqrt{j(j+1)-m(m\mp 1)}}{\sqrt{j(j+1)-m(m\mp 1)}}  \braket{\alpha;jm\mp 1 }{\alpha; jm\mp 1} \notag \\
 &= \braket{\alpha;jm\mp 1 }{\alpha; jm\mp 1}
 \end{align}
 
