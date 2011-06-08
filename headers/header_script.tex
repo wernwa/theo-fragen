@@ -133,12 +133,14 @@
 %% \ket{x}  ->    | x >
 %% \braket{x}{y} ->   < x | y >
 
+
+
 \newcommand\bra[1]{\left\langle #1 \right|}
 \newcommand\ket[1]{\left| #1 \right\rangle}
 \newcommand\braket[2]{%
-  \left\langle #1\vphantom{#2} \right.%
-  \left|\vphantom{#1#2}\right.%
-  \left. \vphantom{#1}#2 \right\rangle}%
+ \left\langle \vphantom{#2} #1%
+   \middle|%
+   \vphantom{#1} #2\right\rangle}%
 
 %-------------------------------------------------------------------------------
 %%Aus dem Buch:

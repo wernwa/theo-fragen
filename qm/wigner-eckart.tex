@@ -8,18 +8,14 @@
 \section*{Wigner-Eckart-Theorem}
 
 
-Betrachte ein \(T^{(k)}_q\) oder irreduziebler Tensor \(k-\)ter Stufe. Dieser verhält sich wie ein Zustandsvektor bei einer Drehung. D.h. dieser Tensor ist proportional zu einem Ket \(T^{(k)}_q \sim \ket{k,q} \). D.h wir können folgende Linearkombination:
-
-
+Betrachte ein \(T^{(k)}_q\) einen irreduziebler Tensor \(k-\)ter Stufe. Dieser verhält sich wie ein Zustandsvektor bei einer Drehung. Dieser Tensor ist proportional zu einem Ket \(T^{(k)}_q \sim \ket{k,q} \) (Beweis siehe \ref{sec:1}). D.h wir können folgende Linearkombination
 
 \begin{equation}
   \label{eq:1}
   \ket{JM} = \sum_{m_1,m_2}\braket{j_1j_2;m_1m_2}{jm}\ket{j_1j_2;m_1m_2} = \sum_{m_1,m_2}\braket{j_1j_2;m_1m_2}{jm}\ket{j_1m_1} \otimes \ket{j_2m_2}
 \end{equation}
 
-mit dem Tensor  mit Hilfe der Clebsch-Gordan-Koeffizienten als Ket-Vektor ausdrücken:
-
-
+dem Tensor  mit Hilfe der Clebsch-Gordan-Koeffizienten als Ket-Vektor ausdrücken
 
 \begin{equation}
   \label{eq:2}
@@ -69,7 +65,7 @@ Damit erhalten wir:
    T^{(k)}_q  \ket{\alpha;jm} = \sum_{JM}\ket{\alpha; JM} \braket{jk;mq}{JM}
 \end{equation}
 
-Multiplizieren wir mit \(\bra{\alpha;jm}\):
+Multiplizieren wir mit \(\bra{\alpha;jm}\)
 
 \begin{equation}
   \label{eq:8}
@@ -83,15 +79,108 @@ Wegen der Orthogonalitätsbegingung bleibt von der Summe nur ein Summand übrig,
    \bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} = \underbr{\braket{\alpha;jm}{\alpha; jm}}_{\text{reduziertes Matrixelement}}  \braket{jk;mq}{jm}
 \end{equation}
 
+Dabei ist das reduzierte Matrixelement unabhängig von der Quantenzahl \(m\). Das wird im Anschluss \ref{sec:2} bewiesen. Wir erhalten das Wigner-Eckart-Theorem
 
-Als nächstes wollen wir beweisen, dass das reduzierte Matrixelement von der Quantenzahl \(m\) unabhängig ist. Dies lässt sich duch Anwenden des Schiebeoperators \(J_{\pm}\) zeigen. Zur Errinerung die Eigenwertgleichung lautet:
+\begin{equation}
+  \label{eq:15}
+\boxed{\bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} =  \braket{jk;mq}{jm} \langle \alpha;j || T^{(q)}_k || \alpha; j \rangle }
+\end{equation}
+
+
+Das reduzierte Matrixelement hat den Vorteil, dass man es für ein gegebene \(\alpha,j\) nur einmal berechnen muss. Die restlichen Matrixelemente des Tensors die von \(m\) abhängig sind bekommt man von den Clebsch-Gordan-Koeffizienten, die man nachschlägt oder ebenso berechnen kann. Man findet in der Literatur das Theorem mit unterschiedlichen Vorfaktoren wie beispielsweise \(\frac{1}{\sqrt{2j+1}}\), dieser ist aber Konvenstion (Tiefgründige Bedeutung ist uns nicht bekannt).
+
+
+\subsection*{Behandlung des Tensors als Zustandsvektor}
+\label{sec:1}
+
+Wir wollen zeigen dass sich ein irreduziebler Tensor \(k-\)ter Stufe wie ein Zustandsvektor unter Rotation transformiert. Für die Transformation eines Zustandsvektors \(\ket{JM}\) gilt mit \( U(\alpha, \beta,\gamma) = e^{-\frac{i}{\hbar}\alpha J_z}  e^{-\frac{i}{\hbar}\beta J_y} e^{-\frac{i}{\hbar}\gamma J_z}\)
+
+\begin{align} 
+\label{eq:13}
+U(R)|J,M\rangle &= \mathbb 1 \cdot U(R)|J,M\rangle \qquad U(R)\equiv U(\alpha, \beta,\gamma)\notag \\
+&= \sum_{M'=-J}^J |J,M'\rangle\langle J,M'| U(R)|J,M\rangle \notag \\
+&= \sum_{M'=-J}^J \underbr{ \langle J,M'|  U(R)|J,M\rangle}_{D^{(J)}_{M'M}(R)} |J,M'\rangle \\
+&= \sum_{M'=-J}^J D^{(J)}_{M'M}(R) |J,M'\rangle \notag
+\end{align}
+
+Anderrerseits gilt
+
+\begin{equation}
+  \label{eq:21}
+  U(R)|J,M\rangle = \sum_{m_1 m_2} \braket{j_1j_2;m_1m_2}{JM}U\ket{j_1m_1}\ket{j_2m_2}
+\end{equation}
+
+Setzen wir die Gleichungen (\ref{eq:13})  und (\ref{eq:21}) gleich
+
+
+\begin{align}
+  \label{eq:22}
+  &\sum_{M'=-J}^J \langle J,M'|  U|J,M\rangle |J,M'\rangle = \sum_{m_1 m_2} \braket{j_1j_2;m_1m_2}{JM}U\ket{j_1m_1}\ket{j_2m_2}\notag \\
+&\sum_{M'=-J}^J \sum_{m'_1m'_2}\cancel{\sum_{m_1m_2}}\braket{JM'}{m'_2m'_1;j_2j_1}\bra{j_1j_2;m'_1m'_2}  U(R) \cancel{\braket{j_1j_2;m_1m_2}{JM}}\ket{j_1j_2;m_1m_2}  |J,M'\rangle\notag \\
+& \qquad = \cancel{\sum_{m_1 m_2}}\cancel{\braket{j_1j_2;m_1m_2}{JM}}U\ket{j_1m_1}\ket{j_2m_2}\notag \\
+&\sum_{M'=-J}^J \sum_{m'_1m'_2}\braket{JM'}{m'_2m'_1;j_2j_1} \underbr{ \bra{j_1j_2;m'_1m'_2}  U \ket{j_1j_2;m_1m_2} }_{  \bra{j_1m'_1}  U(R_1) \ket{j_1m_1} \cdot  \bra{j_2m'_2}  U(R_2) \ket{j_2m_2}  } |J,M'\rangle  = U\ket{j_1m_1}\ket{j_2m_2} \notag\\
+&\sum_{M'=-J}^J \sum_{m'_1m'_2}\braket{JM'}{m'_2m'_1;j_2j_1} \underbr{ \bra{j_1m'_1}  U(R_1) \ket{j_1m_1}}_{D^{(j_1)}_{m'_1m_1}} \cdot \underbr{\bra{j_2m'_2}  U(R_2) \ket{j_2m_2} }_{D^{(j_2)}_{m'_2m_2} }  |J,M'\rangle  = U\ket{j_1m_1}\ket{j_2m_2}\notag \\
+&\sum_{M'=-J}^J \sum_{m'_1m'_2}\braket{JM'}{m'_2m'_1;j_2j_1} D^{(j_1)}_{m'_1m_1} \cdot D^{(j_2)}_{m'_2m_2}   |J,M'\rangle  = U\ket{j_1m_1}\ket{j_2m_2}\notag \\
+&\sum_{M'=-J}^J \sum_{m'_1m'_2}\braket{JM'}{m'_2m'_1;j_2j_1} D^{(j_1)}_{m'_1m_1} \cdot D^{(j_2)}_{m'_2m_2}  \sum_{m'_1,m'_2}\braket{j_1j_2;m'_1m'_2}{JM'}\ket{j_1j_2;m'_1m'_2}  = U\ket{j_1m_1}\ket{j_2m_2}\notag \\
+&\sum_{M'=-J}^J \underbr{\sum_{m'_1m'_2} \sum_{m'_1,m'_2} \braket{JM'}{m'_2m'_1;j_2j_1}\braket{j_1j_2;m'_1m'_2}{JM'}}_{=1 (\ref{eq:5})} D^{(j_1)}_{m'_1m_1} \cdot D^{(j_2)}_{m'_2m_2} \ket{j_1j_2;m'_1m'_2}  = U\ket{j_1m_1}\ket{j_2m_2}\notag \\
+&\sum_{M'=-J}^J  D^{(j_1)}_{m'_1m_1} \cdot D^{(j_2)}_{m'_2m_2} \ket{j_1j_2;m'_1m'_2}  = U\ket{j_1m_1}\ket{j_2m_2}
+\end{align}
+
+
+Daraus folgt
+
+\begin{equation}
+  \label{eq:23}
+   U\ket{j_1m_1}\ket{j_2m_2} = \sum_{M'=-J}^J  D^{(j_1)}_{m'_1m_1} \cdot D^{(j_2)}_{m'_2m_2} \ket{j_1m'_1}\ket{j_2m'_2}
+\end{equation}
+
+
+
+Für die Rotation eines Tensors gilt
+\begin{equation}
+  \label{eq:16}
+  U^{-1}(R) T^{(k)}_q U(R) = \sum_{q'=-k}^{k}T^{(k)}_{q'} D^{(k)}_{qq'}(R^{-1}) 
+\end{equation}
+
+Ersetze \(R\) mit \(R^{-1}\) und \(R^{-1}\) mit \(R\)
+\begin{equation}
+  \label{eq:17}
+  U^{-1}(R^{-1}) T^{(k)}_q U(R^{-1}) = \sum_{q'=-k}^{k}T^{(k)}_{q'} D^{(k)}_{qq'}(R)
+\end{equation}
+
+Es gilt \(U(R^{-1})=U^{-1}(R)\) somit erhalten wir
+
+\begin{align}
+  \label{eq:18}
+  (U^{-1})^{-1}(R) T^{(k)}_q U^{-1}(R) &= \sum_{q'=-k}^{k}T^{(k)}_{q'} D^{(k)}_{qq'}(R) \notag\\
+U(R) T^{(k)}_q U^{-1}(R) &= \sum_{q'=-k}^{k}T^{(k)}_{q'} D^{(k)}_{qq'}(R)
+\end{align}
+
+Nun wenden wir den Unitären Operator \(U(R)\) auf ein Produkt-Zustand aus \(T^{(k)}_q\) und \(\ket{jm}\). Verkürze \(U(R)\) auf \(U\)
+
+\begin{align}
+  \label{eq:19}
+  U T^{(k)}_q\ket{jm} &= U T^{(k)}_q\mathbb 1 \ket{jm} \notag\\
+&=\underbr{ U T^{(k)}_q U^{-1}}_{=~(\ref{eq:18})} \underbr{ U \ket{jm}}_{~(\ref{eq:13})}\notag \\
+&= \sum_{q'=-k}^{k}T^{(k)}_{q'} D^{(k)}_{qq'} \sum_{m'=-j}^j D^{(j)}_{m'm} |j,m'\rangle \notag \\
+&= \sum_{q'=-k}^{k}\sum_{m'=-j}^j D^{(k)}_{qq'}  D^{(j)}_{m'm}\,\, T^{(k)}_{q'} |j,m'\rangle  
+\end{align}
+
+Im Vergleich zur Gleichung (\ref{eq:23}) Transformiert sich der Produkt-Zustand \( T^{(k)}_q\ket{jm}\) wie ein Produkt aus zwei Zustandsvektoren \(\ket{kq}\ket{jm}\). 
+
+
+
+\subsection*{Reduziertes Matrixelement unabhängig von m}
+\label{sec:2}
+
+Als nächstes wollen wir beweisen, dass das reduzierte Matrixelement von der Quantenzahl \(m\) unabhängig ist. Dies lässt sich duch Anwenden des Schiebeoperators \(J_{\pm}\) zeigen. Zur Errinerung die Eigenwertgleichung lautet
 
 \begin{equation}
   \label{eq:11}
   J_{\pm}\ket{\alpha; jm} = \sqrt{j(j+1)-m(m\pm 1)} \ket{\alpha; jm\pm 1}
 \end{equation}
 
-Durch einsetzen von \(J_{\pm}\) und durch ausgleichen von einem Vorfaktor lässt sich das reduzierte Matrixelement schreiben:
+Durch einsetzen von \(J_{\pm}\) und durch ausgleichen von einem Vorfaktor lässt sich das reduzierte Matrixelement schreiben
 
 
 \begin{align}
@@ -99,7 +188,7 @@ Durch einsetzen von \(J_{\pm}\) und durch ausgleichen von einem Vorfaktor lässt
   \braket{\alpha;jm}{\alpha; jm} = \frac{1}{\sqrt{j(j+1)-m(m\mp 1)}}  \bra{\alpha;jm}J_{\pm} \ket{\alpha; jm\mp 1}
 \end{align}
 
-Lässt man nun \(J_{\pm}\) einmal auf links wirken, dabei wird \((J_{\pm})^\dagger = J_{\mp}\):
+Lässt man nun \(J_{\pm}\) einmal auf links wirken, dabei wird \((J_{\pm})^\dagger = J_{\mp}\)
 
 \begin{align}
   \label{eq:12}
@@ -114,12 +203,8 @@ Aus der Gleichung (\ref{eq:12}) sieht man dass das reduzierte Matrixelement nich
    \bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} =  \underbr{\braket{\alpha;j}{\alpha; j}}_{\text{reduziertes Matrixelement}}   \braket{jk;mq}{jm}
 \end{equation}
 
-Schlussendlich erhalten wir das Wigner-Eckart-Theorem:
 
-\begin{equation}
-  \label{eq:15}
-\boxed{\bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} =  \braket{jk;mq}{jm} \langle \alpha;j || T^{(q)}_k || \alpha; j \rangle }
-\end{equation}
+
 
 
 \subsection*{Referenzen}
