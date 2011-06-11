@@ -1,11 +1,218 @@
 \input{../headers/header_script.tex}
-\usepackage{amsmath} 
 
 
 
 \begin{document}
 
-\section*{Clebsch-Gordan-Koeffizienten}
+
+
+\section*{Addition von Drehimpulsen, Clebsch-Gordan Koeffizienten}
+\label{sec:addit-von-dreh}
+
+Wir betrachte zwei von einander unabhängige Drehimpulse \(\vec J_1\) und \(\vec
+J_2\), die jeweils einen eigenen Hilbertraum mit der Basis \(\{\ket{j_1,m_1}\}\)
+für \(\vec J_1\) und \(\{\ket{j_2,m_2}\}\) für \(\vec J_2\) bilden. Zusammen
+spannen sie einen \((2j_1+1) \times (2j_2+1)\) dimensionalen Hilbertraum
+\(\mathcal H = \mathcal H_1 \otimes \mathcal H_2\) auf, mit der Basis
+\(\{\ket{j_1,m_1} \otimes \ket{j_2,m_2}\} \equiv \{\ket{j_1,j_2;m_1,m_2}\}\).
+Nun wollen wir die einzelne Drehimpulse in eine gemeinsame Basis überführen, so
+dass wir einen Gesamtdrehimpuls \(\vec J=\vec J_1+\vec J_2\) mit der neuen Basis
+\(\{\ket{J,M}\}\) erhalten. Dies erreichen wir, in dem wir die Orthonormalität
+der alten Basis ausnutzen und den Einheitsoperator \(\mathds 1\) vor die neue
+Basis einschieben:
+\begin{align}
+  \label{eq:1}
+  \ket{J,M}&=\underbrace{\left(
+      \sum_{m_1,m_2}\ket{j_1,j_2;m_1,m_2}\bra{j_1,j_2;m_1,m_2}
+    \right)}_{= \mathds 1}
+  \ket{J,M}\notag\\
+   \ket{J,M}&= \sum_{m_1,m_2} 
+   \underbrace{\braket{j_1,j_2;m_1,m_2}{J,M}}_
+   {\text{\textbf{Glebsch-Gordan Koef.}}}
+   \ket{j_1,j_2;m_1,m_2}
+\end{align}
+
+Da sowohl die alte Basis \( \{\ket{j_1,j_2;m_1,m_2}\}\) als auch die neue Basis
+\(\{\ket{J,M}\}\) orthonormiert sind, handelt es sich bei (\ref{eq:1}) um eine
+unitäre Transformation. Zu bemerken ist dass bei dem von uns eingefügten
+Einheitsoperator nur über die Magnetquantenzahlen \(m_1\) und \(m_2\) summiert
+wird. D.h. man hält die Drehimpulsquantenzahlen \(j_1\) und \(j_2\) fest und
+entwickelt nur nach den Magnetquantenzahlen, für die gilt \(m_1 = -j_1,\; -j_1+1,
+\;-j_1+2, \dots j_1\) und \(m_2 = -j_2, \;-j_2+1,\;-j_2+2, \dots j_2\).\\
+Die Koeffizienten \( \braket{j_1,j_2;m_1,m_2}{J,M} \) die die beiden Basen verbinden
+heißen \emph{Clebsch-Gordan Koeffizienten}. D.h. das Problem der Addition zweier
+Drehimpulse reduziert sich auf das Bestimmen der Glebsch-Gordan Koeffizienten.
+
+Für die Erwartungswerte \(J\) in der neuen Basis gilt:
+\begin{equation}
+  \label{eq:8}
+  \boxed{|j_1-j_2|\leq J\leq j_1+j_2}
+\end{equation}
+
+Dies wird durch die Vektoraddition \(\vec J = \vec J_1+\vec J_2\) deutlich.
+
+Den Erwartungswert \(M\) können wir mit Hilfe des \(J_z=J_{z_1}+J_{z_2}\)
+Operators und folgenden Eigenwertgleichungen bestimmen:
+
+\begin{subequations}
+  \begin{align}
+    J_Z\ket{J,M}&= M \ket{J,M} \label{eq:9a}\\
+    J_{z_1}\ket{j_1,j_2;m_1,m_2}&=m_1\ket{j_1,j_2;m_1,m_2} \label{eq:9b}\\
+    J_{z_2}\ket{j_1,j_2;m_1,m_2}&=m_2\ket{j_1,j_2;m_1,m_2} \label{eq:9c}
+  \end{align}
+\end{subequations}
+
+Es gilt:
+\begin{align}
+  \label{eq:10}
+  J_z-J_{z_1}-J_{z_2}&=0\notag\\
+  \bra{j_1,j_2;m_1,m_2} J_z-J_{z_1}-J_{z_2} \ket{J,M} &=0\notag\\
+  \underbrace{\bra{j_1,j_2;m_1,m_2} J_z\ket{J,M}}_{~\eqref{eq:9a}}
+  -\underbrace{\bra{j_1,j_2;m_1,m_2}J_{z_1}\ket{J,M}}_{~\eqref{eq:9b}}\notag\\
+  -\underbrace{\bra{j_1,j_2;m_1,m_2}J_{z_2} \ket{J,M}}_{~\eqref{eq:9c}}&=0\notag\\
+  M\braket{j_1,j_2;m_1,m_2}{J,M}
+  -m_1\braket{j_1,j_2;m_1,m_2}{J,M}\notag\\
+  -m_2\braket{j_1,j_2;m_1,m_2}{J,M}&=0\notag\\
+  (M-m_1-m_2)\braket{j_1,j_2;m_1,m_2}{J,M}&=0
+\end{align}
+
+Aus der Gleichung \eqref{eq:10} folgt das entweder
+\(\braket{j_1,j_2;m_1,m_2}{J,M}=0\) oder\\ 
+\((M-m_1-m_2)=0\) was zur der wichtigen Beziehung führt:
+\begin{equation}
+  \label{eq:9}
+  \boxed{M=m_1+m_2}
+\end{equation}
+
+Dies ist deswegen so wichtig weil dadurch die Entwicklung \eqref{eq:1} nur
+auf die Clebsch-Gordan Koeffizienten beschränkt wird, bei denen die Bedingung
+\eqref{eq:9} zutrifft. Alle anderen sind \underline{Null}. 
+
+Der Erwartungswert für die Gesamtmagnetquantenzahl \(M\) zwischen:
+\begin{equation}
+  \label{eq:11}
+  -j_1-j_2\leq M \leq j_1+j_2=-(j_1+j_2)\leq M \leq j_1+j_2
+  =-J\leq M \leq J
+\end{equation}
+
+
+
+
+\subsection{Eigenschaften der Clebsch-Gordan Koeffizienten}
+\label{sec:eigensch-der-clebsch}
+
+Die Clebsch-Gordan-Koeffizienten sind konventionsgemäß \emph{reell}:
+\begin{equation}
+  \label{eq:2}
+  \braket{j_1,j_2;m_1,m_2}{J,M} \in \mathbb R
+\end{equation}
+D.h. es gilt:
+\begin{equation}
+  \label{eq:3}
+  \braket{j_1,j_2;m_1,m_2}{J,M} = \braket{J,M}{j_1,j_2;m_1,m_2}^*=
+  \braket{J,M}{j_1,j_2;m_1,m_2}
+\end{equation}
+
+Die Clebsch-Gordan-Koeffizienten sind \emph{orthonormiert}:
+\begin{align}
+  \label{eq:4}
+  \braket{J',M'}{J,M}&=\delta_{J',J}\delta_{J',J}\notag\\
+  \bra{J',M'}\underbrace{\left(
+      \sum_{m_1,m_2}\ket{j_1,j_2;m_1m_2}\bra{j_1,j_2;m_1m_2}\right)
+  }_{=\mathds 1}
+  \ket{J,M}&=\delta_{J',J}\delta_{J',J}\notag\\
+  \Rightarrow\sum_{m_1,m_2}\braket{J',M'}{j_1,j_2;m_1m_2}
+  \braket{j_1,j_2;m_1m_2}{J,M}&=\delta_{J',J}\delta_{J',J}
+\end{align}
+
+Aus Gl.~(\ref{eq:3}) und der Gl.~(\ref{eq:4}) erhalten wir eine wichtige Beziehung:
+\begin{equation}
+  \label{eq:5}
+  \sum_{m_1,m_2}\braket{j_1,j_2;m_1m_2}{J',M'}
+  \braket{j_1,j_2;m_1m_2}{J,M}=\delta_{J',J}\delta_{J',J}
+\end{equation}
+
+Bzw. mit \(J'=J\) und \(M'=M\) folgt:
+\begin{equation}
+  \label{eq:6}
+  \boxed{\sum_{m_1,m_2}\braket{j_1,j_2;m_1m_2}{J,M}^2=1}
+\end{equation}
+
+Analog kann man auch folgende Beziehung herleiten:
+\begin{equation}
+  \label{eq:7}
+  \boxed{\sum_{J}\sum_{M}\braket{j_1,j_2;m_1m_2}{J,M}^2=1}
+\end{equation}
+
+\subsection{Bestimmung der Clebsch-Gordan Koeffizienten}
+\label{sec:best-der-clebsch}
+
+Wir wollen nun einige Beziehungen herleiten um die Clebsch-Gordan Koeffizienten
+bestimmen zu können.
+
+Eine wichtige Beziehung können wir direkt aus \eqref{eq:10} übernehmen:
+\begin{equation}
+  \label{eq:12}
+  \boxed{\braket{j_1,j_2;m_1m_2}{J,M}=0 \quad \text{für} \quad m_1+m_2\neq M}
+\end{equation}
+
+Eine weitere Beziehung finden wir aus den Extremalstellen für \(J\) und \(M\)
+d.h. wenn gilt:
+\begin{equation}
+  \label{eq:13}
+  J=j_1+j_2 \quad \text{und} \quad M=J=j_1+j_2=m_1+m_2
+\end{equation}
+
+Setzen wir \eqref{eq:13} in die Gl.~\eqref{eq:1} ein, so erhalten wir:
+\begin{align}
+  \label{eq:14}
+   \ket{J,J}&=\sum_{m_1=j_1}^{j_1}\sum_{m_2=j_2}^{j_2} 
+   \braket{j_1,j_2;m_1,m_2}{J,J}
+   \ket{j_1,j_2;m_1,m_2}\notag\\
+   &= \braket{j_1,j_2;j_1,j_2}{J,J}
+   \ket{j_1,j_2;j_1,j_2}
+\end{align}
+
+Mit der Normierungsbedingung \(\braket{J,J}{J,J}\stackrel{!}=1\) folgt:
+\begin{align}
+  \label{eq:15}
+  &\braket{J,J}{J,J}=1\notag\\
+  &\bra{j_1,j_2;j_1,j_2} \braket{J,J}{j_1,j_2;j_1,j_2}
+  \braket{j_1,j_2;j_1,j_2}{J,J}\ket{j_1,j_2;j_1,j_2}=1\notag\\
+  &\bra{j_1,j_2;j_1,j_2} \braket{j_1,j_2;j_1,j_2}{J,J}
+  \braket{j_1,j_2;j_1,j_2}{J,J}\ket{j_1,j_2;j_1,j_2}=1\notag\\
+  &\braket{j_1,j_2;j_1,j_2}{J,J}^2
+  \underbrace{\braket{j_1,j_2;j_1,j_2}{j_1,j_2;j_1,j_2}}_{=1}=1\notag\\
+  &\braket{j_1,j_2;j_1,j_2}{J,J}^2=1
+\end{align}
+
+Aus \eqref{eq:15} folgt also:
+\begin{equation}
+  \label{eq:16}
+  \braket{j_1,j_2;j_1,j_2}{J,J}=\pm 1
+\end{equation}
+
+Um nun zu bestimmen ob das Ergebnis in \eqref{eq:16} positive oder negative ist
+d.h. ob \(+1\) oder \(-1\), wurde die sog. \emph{Condon-Shortley
+  Phasenkonvention} eingeführt. Sie besagt, dass der Clebsch-Gordan Koeffizient
+von der Form:\\
+\(\braket{j_1,j_2;j_1,(J-j_1)}{J,J}\) \underline{reell} und \underline{positive}
+sein muss. D.h. in unserem Fall \eqref{eq:13} mit \(J=j_1+j_2 \Leftrightarrow
+J-j_1=j_2\) folgt:
+\begin{equation}
+  \label{eq:17}
+  \braket{j_1,j_2;j_1,j_2}{J,J}=\underbr{\braket{j_1,j_2;j_1,(J-j_1)}{J,J}}
+  _{\text{Konvention: \textbf{positve}}}=1
+\end{equation}
+
+D.h.im Spezialfall \eqref{eq:13} ist der Clebsch-Gordan Koeffizient gleich 1. Es
+gilt:
+\begin{equation}
+  \label{eq:18}
+  \boxed{\braket{j_1,j_2;j_1,j_2}{J,J}=1 \quad \text{mit}\quad J=j_1+j_2}
+\end{equation}
+
+
 
 
 \subsection*{Beispiel}
@@ -18,8 +225,6 @@ Addition Zweier Drehimpulse anhand eines einfachen Beispiels von Teilchen mit Sp
 \[|1,0\rangle =  \underbrace{\langle \frac{1}{2}   \frac{1}{2}; \frac{1}{2} - \frac{1}{2}|10\rangle  }_{\frac{1}{\sqrt{2}}}|\frac{1}{2}   \frac{1}{2}; \frac{1}{2} - \frac{1}{2}\rangle  +  \underbrace{\langle \frac{1}{2}   \frac{1}{2}; -\frac{1}{2} \frac{1}{2}|10\rangle  }_{\frac{1}{\sqrt{2}}} |\frac{1}{2}   \frac{1}{2}; -\frac{1}{2} \frac{1}{2} \rangle \equiv  \frac{1}{\sqrt{2}} (|+-\rangle +  |-+\rangle )   \]
 \[|1,1\rangle = =\underbrace{ \langle \frac{1}{2}\frac{1}{2};\frac{1}{2}\frac{1}{2}|11\rangle }_{=1}  | \frac{1}{2}\frac{1}{2};  \frac{1}{2} \frac{1}{2} \rangle   \equiv |++\rangle   \]
 \[|0,0\rangle = \underbrace{\langle \frac{1}{2}   \frac{1}{2}; \frac{1}{2} - \frac{1}{2}|00\rangle  }_{\frac{1}{\sqrt{2}}}|\frac{1}{2}   \frac{1}{2}; \frac{1}{2} - \frac{1}{2}\rangle  +  \underbrace{\langle \frac{1}{2}   \frac{1}{2}; -\frac{1}{2} \frac{1}{2}|00\rangle  }_{-\frac{1}{\sqrt{2}}} |\frac{1}{2}   \frac{1}{2}; -\frac{1}{2} \frac{1}{2} \rangle \equiv  \frac{1}{\sqrt{2}} (|+-\rangle -  |-+\rangle ) \]
-
-
 
 
 
