@@ -210,7 +210,9 @@ gilt:
 \begin{equation}
   \label{eq:18}
   \boxed{\braket{j_1,j_2;j_1,j_2}{J,J}=1 \quad \text{mit}\quad J=j_1+j_2}
-\end{equation}\section*{Addition von Drehimpulsen,\\
+\end{equation}
+
+\section*{Addition von Drehimpulsen,\\
   Clebsch-Gordan Koeffizienten}
 \label{sec:addit-von-dreh}
 
@@ -311,7 +313,7 @@ Der Erwartungswert für die Gesamtmagnetquantenzahl \(M\) liegt zwischen:
 
 
 
-\subsection{Eigenschaften der Clebsch-Gordan Koeffizienten}
+\subsection*{Eigenschaften der Clebsch-Gordan Koeffizienten}
 \label{sec:eigensch-der-clebsch}
 
 Die Clebsch-Gordan-Koeffizienten sind konventionsgemäß \emph{reell}:
@@ -357,7 +359,7 @@ Analog kann man auch folgende Beziehung herleiten:
   \boxed{\sum_{J}\sum_{M}\braket{j_1,j_2;m_1m_2}{J,M}^2=1}
 \end{equation}
 
-\subsection{Bestimmung der Clebsch-Gordan Koeffizienten}
+\subsection*{Bestimmung der Clebsch-Gordan Koeffizienten}
 \label{sec:best-der-clebsch}
 
 Wir wollen nun einige Beziehungen herleiten um die Clebsch-Gordan Koeffizienten
@@ -559,15 +561,105 @@ kürzen auf beiden Seiten durch \(\hbar\), so erhalten wir folgende
 
 
 \subsection*{Beispiel}
-Addition Zweier Drehimpulse anhand eines einfachen Beispiels von Teilchen mit Spin \(\frac{1}{2}\).
+
+Addition Zweier Drehimpulse anhand eines einfachen Beispiels von Teilchen mit Spin \(\frac{1}{2}\). Die Koeffizienten nehmen folgenden Werte an:
+
+\begin{equation}
+  \label{eq:31}
+  j_1 = \frac{1}{2}\quad j_2 = \frac{1}{2}\qquad m_1 = -\frac{1}{2},\frac{1}{2}\quad m_2=-\frac{1}{2},\frac{1}{2}
+\end{equation}
+
+\begin{equation}
+  \label{eq:32}
+  0 \leq J \leq 1\qquad M = -1,0,1
+\end{equation}
 
 
-\[|S,M\rangle = \sum_{m_1}\sum_{m_2}\langle s_i,s_2;m_1,m_2|S,M\rangle |s_1,s_2;m_1,m_2\rangle \]
+Allgemein die Basis \(\ket{J,M}\) in der Clebsch-Gordan Basis \(\ket{j_1,j_2,m_1,m_2}\) ausgedrückt lautet:
 
-\[|1,-1\rangle =\underbrace{ \langle \frac{1}{2}\frac{1}{2};-\frac{1}{2}-\frac{1}{2}|11\rangle }_{=1}  | \frac{1}{2}\frac{1}{2};  -\frac{1}{2} -\frac{1}{2} \rangle   \equiv |--\rangle   \]
-\[|1,0\rangle =  \underbrace{\langle \frac{1}{2}   \frac{1}{2}; \frac{1}{2} - \frac{1}{2}|10\rangle  }_{\frac{1}{\sqrt{2}}}|\frac{1}{2}   \frac{1}{2}; \frac{1}{2} - \frac{1}{2}\rangle  +  \underbrace{\langle \frac{1}{2}   \frac{1}{2}; -\frac{1}{2} \frac{1}{2}|10\rangle  }_{\frac{1}{\sqrt{2}}} |\frac{1}{2}   \frac{1}{2}; -\frac{1}{2} \frac{1}{2} \rangle \equiv  \frac{1}{\sqrt{2}} (|+-\rangle +  |-+\rangle )   \]
-\[|1,1\rangle = =\underbrace{ \langle \frac{1}{2}\frac{1}{2};\frac{1}{2}\frac{1}{2}|11\rangle }_{=1}  | \frac{1}{2}\frac{1}{2};  \frac{1}{2} \frac{1}{2} \rangle   \equiv |++\rangle   \]
-\[|0,0\rangle = \underbrace{\langle \frac{1}{2}   \frac{1}{2}; \frac{1}{2} - \frac{1}{2}|00\rangle  }_{\frac{1}{\sqrt{2}}}|\frac{1}{2}   \frac{1}{2}; \frac{1}{2} - \frac{1}{2}\rangle  +  \underbrace{\langle \frac{1}{2}   \frac{1}{2}; -\frac{1}{2} \frac{1}{2}|00\rangle  }_{-\frac{1}{\sqrt{2}}} |\frac{1}{2}   \frac{1}{2}; -\frac{1}{2} \frac{1}{2} \rangle \equiv  \frac{1}{\sqrt{2}} (|+-\rangle -  |-+\rangle ) \]
+
+\begin{equation}
+  \label{eq:33}
+  |J,M\rangle = \sum_{m_1}\sum_{m_2}\langle j_1,j_2;m_1,m_2|J,M\rangle |j_1,j_2;m_1,m_2\rangle
+\end{equation}
+
+
+Betrachte das 'größste' und das 'kleinste' Element \(\ket{1,1}\) und \(\ket{1,-1}\) weil es nur ein möglichen CGK aus der Summation übrigbleibt
+
+
+\begin{equation}
+  \label{eq:35}
+  \ket{1,1} =\underbrace{ \braket{ \frac{1}{2}\frac{1}{2};\frac{1}{2}\frac{1}{2} }{11} }_{=1} \ket{ \frac{1}{2}\frac{1}{2};  \frac{1}{2} \frac{1}{2}}
+\end{equation}
+
+\begin{equation}
+  \label{eq:36}
+    \ket{1,-1} =\underbrace{ \braket{ \frac{1}{2}\frac{1}{2};-\frac{1}{2}-\frac{1}{2} }{1-1} }_{=1} \ket{ \frac{1}{2}\frac{1}{2};  -\frac{1}{2} -\frac{1}{2}}
+\end{equation}
+
+
+
+Nach der Beziehung (\ref{eq:6}) muss die Quadratische Summe aller Koeffizienten 1 ergeben. Da es nur ein möglicher CGK in beiden Fällen da ist, steht das Ergebnis gleich fest. 
+
+Es bleiben noch zwei weniger einfache Fälle \(\ket{1,0}\) und \(\ket{0,0}\). Verwende hierfür die Rekursionsformel (\ref{eq:30}). In den meisten Fällen gelingt eine Lösung in dem man die einzelnen Faktoren so wält, dass auf der Linken Seite der gesuchte CGK steht. Auf der linken Seite stehen dann entweder schon bekannte oder unbekannte CGK's. Wir versuchen das für \(\ket{1,0}\). Wähle \(m_1=\frac{1}{2}\), \(m_1=-\frac{1}{2}\), \(J=1\) und \(M=1\)
+
+\begin{align}
+  \label{eq:34}
+  \sqrt{2}\braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},-\frac{1}{2}}{10}= \underbr{ \braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},\frac{1}{2}}{11}}_{=1 \qquad (\ref{eq:35})}  \\
+\rightarrow \braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},-\frac{1}{2}}{10}=\frac{1}{\sqrt{2}}
+\end{align}
+
+Wähle nun \(m_1=-\frac{1}{2}\), \(m_1=\frac{1}{2}\), \(J=1\) und \(M=1\)
+
+
+
+
+\begin{align}
+  \label{eq:37}
+  \sqrt{2}\braket{\frac{1}{2},\frac{1}{2};-\frac{1}{2},\frac{1}{2}}{10}= \underbr{ \braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},\frac{1}{2}}{11}}_{=1 \qquad (\ref{eq:35})}  \\
+\rightarrow \braket{\frac{1}{2},\frac{1}{2};-\frac{1}{2},\frac{1}{2}}{10}=\frac{1}{\sqrt{2}}
+\end{align}
+
+
+Somit können wir für \(\ket{1,0}\) das Ergebnis schreiben
+
+\begin{equation}
+  \label{eq:38}
+  \ket{1,0} = \underbr{\braket{\frac{1}{2},\frac{1}{2};\frac{1}{2}-\frac{1}{2}}{10}}_{\frac{1}{\sqrt{2}}}\ket{ \frac{1}{2},\frac{1}{2};\frac{1}{2}-\frac{1}{2} }  +\underbr{\braket{\frac{1}{2},\frac{1}{2};-\frac{1}{2}\frac{1}{2}}{10}}_{\frac{1}{\sqrt{2}}}\ket{\frac{1}{2},\frac{1}{2};-\frac{1}{2}\frac{1}{2}} 
+\end{equation}
+
+
+Für den Zustand \(\ket{0,0}\) erzeugen wir jetzt anstelle auf der linken Seite zuerst auf der rechten Seite den gesuchten CGK. Wähle die Werte  \(m_1=-\frac{1}{2}\), \(m_1=-\frac{1}{2}\), \(J=0\) und \(M=0\)
+
+\begin{align}
+  \label{eq:39}
+  0 = \braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},-\frac{1}{2}}{00} +  \braket{\frac{1}{2},\frac{1}{2};-\frac{1}{2},\frac{1}{2}}{00}\\
+\Leftrightarrow \underbr{\braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},-\frac{1}{2}}{00}}_{\text{positiv}} = -\braket{\frac{1}{2},\frac{1}{2};-\frac{1}{2},\frac{1}{2}}{00}
+\end{align}
+
+Der CGK \(\braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},-\frac{1}{2}}{00} \) ist nach der Condon-Shortley
+  Phasenkonvention \eqref{eq:17} eine positive Größe. Also ergibt sich für den übrigbleibenden CGK in der Gleichung (\ref{eq:39}) etwas negatives. Aufrund der Normierungsbedingung \(\braket{0,0}{0,0}=1\) ist es möglich beide CGK's herauszufinden. Wir nehmen an dass beide vom Betrag her gleich sind und nur vom Vorzeichen sich unterscheiden also dass gilt:
+  \begin{equation}
+    \label{eq:40}
+    C_1 = -C_2
+  \end{equation}
+
+Aus der Normierungsbedinung ergibt sich
+
+\begin{align}
+  \label{eq:41}
+  |C_1|^2 + |C_2|^2 =  |C_1|^2 + |-C_1|^2 = 1 \\
+\Leftrightarrow C_1 = \frac{1}{\sqrt{2}}, \quad C_2 = -\frac{1}{\sqrt{2}}
+\end{align}
+
+Mit \(C_1 =\braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},-\frac{1}{2}}{00} \) und  \(C_2 =\braket{\frac{1}{2},\frac{1}{2};-\frac{1}{2},\frac{1}{2}}{00} \) folgt für den Zustand \(\ket{0,0}\)
+
+\begin{equation}
+  \label{eq:42}
+   \ket{0,0} = \underbr{\braket{\frac{1}{2},\frac{1}{2};\frac{1}{2}-\frac{1}{2}}{00}}_{\frac{1}{\sqrt{2}}}\ket{ \frac{1}{2},\frac{1}{2};\frac{1}{2}-\frac{1}{2} }  +\underbr{\braket{\frac{1}{2},\frac{1}{2};-\frac{1}{2}\frac{1}{2}}{00}}_{-\frac{1}{\sqrt{2}}}\ket{\frac{1}{2},\frac{1}{2};-\frac{1}{2}\frac{1}{2}} 
+\end{equation}
+
+
 
 
 
