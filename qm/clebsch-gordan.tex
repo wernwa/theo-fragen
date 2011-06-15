@@ -28,7 +28,7 @@ Basis einschieben:
   \ket{J,M}\notag\\
    \ket{J,M}&= \sum_{m_1,m_2} 
    \underbrace{\braket{j_1,j_2;m_1,m_2}{J,M}}_
-   {\text{\textbf{Glebsch-Gordan Koef.}}}
+   {\text{\textbf{Clebsch-Gordan Koef.}}}
    \ket{j_1,j_2;m_1,m_2}
 \end{align}
 
@@ -659,7 +659,402 @@ Mit \(C_1 =\braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},-\frac{1}{2}}{00} \) und 
    \ket{0,0} = \underbr{\braket{\frac{1}{2},\frac{1}{2};\frac{1}{2}-\frac{1}{2}}{00}}_{\frac{1}{\sqrt{2}}}\ket{ \frac{1}{2},\frac{1}{2};\frac{1}{2}-\frac{1}{2} }  +\underbr{\braket{\frac{1}{2},\frac{1}{2};-\frac{1}{2}\frac{1}{2}}{00}}_{-\frac{1}{\sqrt{2}}}\ket{\frac{1}{2},\frac{1}{2};-\frac{1}{2}\frac{1}{2}} 
 \end{equation}
 
+\subsection{Beispiel 2}
+\label{sec:beispiel-2}
+In diesem Beispiel betrachten wir ein Teilchen mit dem Bahndrehimpuls \(L=1\)
+und einem Spin \(S=\frac 1 2\). Auch hier wollen wir die Basis
+\(\{\ket{L,M}\otimes\ket{S,M}\}\equiv\{\ket{j_1,m_1}\otimes\ket{j_2,m_2}\}
+\equiv\{\ket{j_1,j_2;m_1,m_2}\}\) in eine gemeinsame Drehimpulsbasis
+\(\{\ket{J,M}\}\) überführen.
 
+Es gilt:
+\begin{subequations}
+  \begin{align}
+    &L \equiv j_1 = 1 \Rightarrow m_1=-1,\, 0,\, 1 \label{eq:43}\\
+    &S\equiv j_2 = \frac 1 2 \Rightarrow m_2=-\frac 1 2,\, 
+    \frac 1 2 \label{eq:44}\\
+    &|j_1-j_2|\leq J\leq j_1+j_2  \Rightarrow J= \frac 1 2,\,\frac 3 2
+    \label{eq:45}\\
+    &M=-J,\dots J\label{eq:46}
+  \end{align}
+\end{subequations}
+
+\subsubsection{Vorgehensweise zu Bestimmung der gesuchten Zustände}
+\label{sec:vorgehensweise}
+
+\begin{itemize}
+\item[\textbf{Schritt 1}:] Wähle den größten Basiszustand \(\ket{J,J}\) mit \(J=j_1+j_2\), der
+  Clebsch-Gordan Koeffizient in diesem Zustand ist konventionsgemäß 1. Siehe
+auch \eqref{eq:18}. In unserem Fall ist es der Zustand \(\ket{\frac 3 2, \frac 3
+2}\)
+\item[\textbf{Schritt 2}:] Berechne den nächst kleineren Zustand \(\ket{J, J-1}\) in
+  unserem Fall ist es der \(\ket{\frac 3 2, \frac 1 2}\). Um die Clebsch-Gordan
+  Koeffizienten in diesem Zustand zu bestimmen benutze die untere Zeile der
+  Rekursionsformel \eqref{eq:30} die da lautet:
+  \begin{equation}
+    \label{eq:47}
+    \boxed{
+    \begin{split}
+      &\sqrt{(J+ M)
+        (J- M+1)}\braket{j_1,j_2;m_1,m_2}{J,M- 1}\\
+      &\qquad
+      = \sqrt{(j_1- m_1)(j_1+m_1+1)}
+      \braket{j_1,j_2;,m_1+ 1,m_2}{J,M}\\
+      &\qquad\qquad
+      +\sqrt{(j_2- m_2)(j_2+ m_2+1)}
+      \braket{j_1,j_2;m_1,m_2+ 1}{J,M}
+    \end{split}}
+  \end{equation}
+Wähle dazu die Parameter \(m_1,\, m_2,\, M\) so, dass die Rekursionsformel
+\eqref{eq:47} auf der linken Seite den gesuchten CGK. enthält. Auf der rechten
+Seite wird dann der schon aus dem vorhergehenden Schritt bekannter CGK. stehen.
+Bemerkung: die Rekursionsformel \eqref{eq:47} ist nichts Anderes als das
+Anwenden des Absteigeoperators \(J_-\).
+\item[\textbf{Schritt 3}:] Wiederhole \emph{Schritt 2} bis der Zustand
+  \(\ket{J,-J}\) erreicht ist. In unserem Fall ist es der Zustand \(\ket{\frac 3
+  2, -\frac 3 2}\) Der Clebsch-Gordan Koeffizient in diesem Zustand
+  ist ebenfalls 1. Siehe dazu auch \eqref{eq:24}.
+\item[\textbf{Schritt 4}:] Erniedrige \(J\) um Eins und berechne den dafür
+  größtmöglichen Zustand d.h. den Zustand \(\ket{J-1,J-1}\), in unserem Fall
+  \(\ket{\frac 1 2, \frac 1 2}\). Die unbekannten CGK. in diesem Zustand können
+  bestimmt werden in dem man das Skalarprodukt zwischen dem schon aus der
+  vorhergegangenen Rechnung bekannten Zustand \(\ket{J,J-1}\) in unserem Fall
+  \(\ket{\frac 3 2, \frac 1 2}\) und dem gesuchten  Zustand \(\ket{J-1,J-1}\)
+  bildet. Wegen der Orthogonalitätsbedingung muss gelten:
+  \begin{equation}
+    \label{eq:48}
+    \braket{J,J-1}{J-1,J-1}\stackrel{!}=0
+  \end{equation}
+  Da die CGK. in dem Zustand \(\ket{J,J-1}\) bekannt sind kann man mit deren Hilfe,
+  der Normalitätsbedingung und der \emph{Condon-Shortley Phasenkonvention} die
+  unbekannten CGK. im Zustand \(\ket{J-1,J-1}\) bestimmen.
+\item[\textbf{Schritt 5}:] Wiederhole die \emph{Schritte 2-4} bis alle Zustände
+  bestimmt sind. D.h. in unserem Fall \(\left\{\ket{\frac 3 2, \frac 3 2},\,\ket{\frac 3 2,
+    \frac 1 2},\,\ket{\frac 3 2, -\frac 1 2},\, \ket{\frac 3 2, -\frac 3
+    2},\,\ket{\frac 1 2, \frac 1 2},\,\ket{\frac 1 2, -\frac 1 2} \right\}\)
+\end{itemize}
+
+\subsubsection{Berechnung der gesuchten Zustände}
+\label{sec:berechn-der-gesucht}
+
+Für den größtmöglichen Zustand gilt Gl.~\eqref{eq:1}:
+\begin{align}
+  \label{eq:49}
+  \ket{\frac 3 2,\frac 3 2} &= \sum_{m_1=-1}^1 \sum_{m_2=-\frac 1 2}^{\frac 1 2}
+  \braket{1,\frac 1 2;m_1,m_2}{\frac 3 2,\frac 3 2}\ket{1,\frac 1 2;m_1,m_2}
+  \notag\\
+  &= \sum_{m_1=-1}^1\braket{1,\frac 1 2;m_1,-\frac 1 2}{\frac 3 2,\frac 3 2}
+  \ket{1,\frac 1 2;m_1,-\frac 1 2}\notag\\
+  &\qquad\qquad\qquad
+  + \braket{1,\frac 1 2;m_1,\frac 1 2}{\frac 3 2,\frac 3 2}
+  \ket{1,\frac 1 2;m_1,\frac 1 2}\notag\\
+   &= \underbrace{\braket{1,\frac 1 2;-1,-\frac 1 2}{\frac 3 2,\frac 3 2}}
+   _{=0 \text{ da \(m_1+m_2\neq M\)}}
+  \ket{1,\frac 1 2;-1,-\frac 1 2}\notag\\
+  &\qquad\qquad
+  + \underbrace{\braket{1,\frac 1 2;-1,\frac 1 2}{\frac 3 2,\frac 3 2}}_{=0}
+  \ket{1,\frac 1 2;-1,\frac 1 2}\notag\\
+   &\qquad\qquad
+  +\underbrace{\braket{1,\frac 1 2;0,-\frac 1 2}{\frac 3 2,\frac 3 2}}_{=0}
+  \ket{1,\frac 1 2;0,-\frac 1 2}\notag\\
+  &\qquad\qquad
+  + \underbrace{\braket{1,\frac 1 2;0,\frac 1 2}{\frac 3 2,\frac 3 2}}_{=0}
+  \ket{1,\frac 1 2;0,\frac 1 2}\notag\\
+  &\qquad\qquad
+  +\underbrace{\braket{1,\frac 1 2;1,-\frac 1 2}{\frac 3 2,\frac 3 2}}_{=0}
+  \ket{1,\frac 1 2;1,-\frac 1 2}\notag\\
+  &\qquad\qquad\qquad
+  + \braket{1,\frac 1 2;1,\frac 1 2}{\frac 3 2,\frac 3 2}
+  \ket{1,\frac 1 2;1,\frac 1 2}
+\end{align}
+
+In der Gleichung \eqref{eq:49} erfüllt nur eine CGK. die Bedingung \(m_1+m_2=M\)
+somit lautet der Zustand:
+\begin{align}
+  \label{eq:50}
+  \ket{\frac 3 2,\frac 3 2} &= \underbrace{
+    \braket{1,\frac 1 2;1,\frac 1 2}{\frac 3 2,\frac 3 2}}
+  _{=1 \text{ Siehe Gl.~\eqref{eq:18} }}
+  \ket{1,\frac 1 2;1,\frac 1 2}\notag\\
+  &=1\cdot\ket{1,\frac 1 2;1,\frac 1 2}
+\end{align}
+
+\emph{Bemerkung}: Im Folgenden werde die CGK. die Bedingung \(m_1+m_1=M\) nicht erfüllen
+bei der Summation gleich weggelassen.
+
+Der nächste zu bestimmende Zustand ist:
+\begin{equation}
+  \label{eq:51}
+  \ket{\frac 3 2, \frac 1 2}=
+  \braket{1, \frac 1 2; 1, -\frac 1 2}{\frac 3 2, \frac 1 2}
+  \ket{1, \frac 1 2; 1, -\frac 1 2}
+  +\braket{1, \frac 1 2; 0, \frac 1 2}{\frac 3 2, \frac 1 2}
+  \ket{1, \frac 1 2; 0, \frac 1 2}
+\end{equation}
+
+Um den ersten unbekannten CGK. \(\braket{1, \frac 1 2; 1, -\frac 1 2}{\frac 3 2,
+  \frac 1 2}\) in der Gl.~\eqref{eq:51} zu bestimmen, setzen wir \(m_1=1,
+\;m_2=-\frac 1 2\) und \( M=\frac 3 2\) in die Rekursionsgleichung \eqref{eq:47}
+ein, so dass auf der linken Seite der Gleichung der unbekannte CGK. \(\braket{1,
+\frac 1 2; 1, -\frac 1 2}{\frac 3 2, \frac 1 2}\) steht. Wir erhalten:
+\begin{align}
+  \label{eq:52}
+  &\sqrt 3 \braket{1, \frac 1 2; 1, -\frac 1 2}{\frac 3 2,\frac 1 2}
+  = \underbrace{
+    \braket{1, \frac 1 2; 1, \frac 1 2}{\frac 3 2,\frac 3 2}}
+  _{=1 \text{ Siehe Gl. \eqref{eq:18}}}\notag\\
+ \Leftrightarrow &\braket{1, \frac 1 2; 1, -\frac 1 2}{\frac 3 2,\frac 1 2}
+ = \frac 1 {\sqrt 3} 
+\end{align}
+
+Um den zweiten unbekannten CGK. aus der Gl.~\eqref{eq:51} zu bestimmen, setzen
+wir \(m_1=0, \;m_2=\frac 1 2\) und \( M=\frac 3 2\) ebenfalls in die
+Rekursionsgleichung \eqref{eq:47} ein so dass wir wieder auf der linken Seite
+der Gl.~\eqref{eq:47} den gesuchten CGK. \(\braket{1, \frac 1 2; 0, \frac 1
+2}{\frac 3 2,\frac 1 2}\) erhalten. Wir erhalten:
+\begin{align}
+  \label{eq:53}
+  &\sqrt 3 \braket{1, \frac 1 2; 0, \frac 1 2}{\frac 3 2,\frac 1 2}
+  = \sqrt 2 \underbrace{
+    \braket{1, \frac 1 2; 1, \frac 1 2}{\frac 3 2,\frac 3 2}}
+  _{=1 \text{ Siehe Gl. \eqref{eq:18}}}\notag\\
+ \Leftrightarrow &\braket{1, \frac 1 2; 0, \frac 1 2}{\frac 3 2,\frac 1 2}
+ = \sqrt {\frac 2  3} 
+\end{align}
+
+Zusammen mit Gl.~\eqref{eq:52} und \eqref{eq:53} lautet also der Zustand
+\eqref{eq:51}:
+\begin{equation}
+  \label{eq:54}
+  \ket{\frac 3 2, \frac 1 2}=
+  \frac 1 {\sqrt 3}
+  \ket{1, \frac 1 2; 1, -\frac 1 2}
+  +\sqrt {\frac 2 3} 
+  \ket{1, \frac 1 2; 0, \frac 1 2}
+\end{equation}
+
+Der nächste zu bestimmende Zustand lautet:
+\begin{multline}
+  \label{eq:55}
+    \ket{\frac 3 2, -\frac 1 2}=
+  \braket{1, \frac 1 2; 0, -\frac 1 2}{\frac 3 2, -\frac 1 2}
+  \ket{1, \frac 1 2; 0, -\frac 1 2}\\
+  +\braket{1, \frac 1 2; -1, \frac 1 2}{\frac 3 2, -\frac 1 2}
+  \ket{1, \frac 1 2; -1, \frac 1 2}
+\end{multline}
+
+Setzen wir auch hier analog \(m_1=0,\;m_2=-\frac 1 2\) und \(M=\frac 1 2\) in
+die Rekursionsgleichung ein, so erhalten wir:
+\begin{align}
+  \label{eq:56}
+   &2 \braket{1, \frac 1 2; 0, -\frac 1 2}{\frac 3 2,-\frac 1 2}
+  = \sqrt 2 \underbrace{
+    \braket{1, \frac 1 2; 1, -\frac 1 2}{\frac 3 2,\frac 1 2}}
+  _{=\frac 1 {\sqrt 3} \text{ Siehe Gl. \eqref{eq:52}}}
+  +\underbrace{
+    \braket{1, \frac 1 2; 0, \frac 1 2}{\frac 3 2,\frac 1 2}}
+  _{=\sqrt{\frac 2 3} \text{ Siehe Gl. \eqref{eq:53}}}\notag\\
+ \Leftrightarrow &\braket{1, \frac 1 2; 0, -\frac 1 2}{\frac 3 2,-\frac 1 2}
+ = \sqrt {\frac 2  3} 
+\end{align}
+
+Setzen wir wiederum \(m_1=-1,\;m_2=\frac 1 2\) und \(M=\frac 1 2\) in
+die Rekursionsgleichung ein, so erhalten wir:
+\begin{align}
+  \label{eq:57}
+   &2 \braket{1, \frac 1 2; -1, \frac 1 2}{\frac 3 2,-\frac 1 2}
+  = \sqrt 2 \underbrace{
+    \braket{1, \frac 1 2; 0, \frac 1 2}{\frac 3 2,\frac 1 2}}
+  _{=\sqrt{\frac 2  3} \text{ Siehe Gl. \eqref{eq:53}}}\notag\\
+  \Leftrightarrow &\braket{1, \frac 1 2; -1, \frac 1 2}{\frac 3 2,-\frac 1 2}
+ = \frac 1 {\sqrt 3} 
+\end{align}
+
+Mit Gl. \eqref{eq:56} und \eqref{eq:57} in \eqref{eq:55} folgt für den gesuchten
+Zustand:
+\begin{equation}
+  \label{eq:58}
+   \ket{\frac 3 2, -\frac 1 2}=
+  \sqrt{\frac 2 3}
+  \ket{1, \frac 1 2; 0, -\frac 1 2}
+  +\frac 1 {\sqrt 3}
+  \ket{1, \frac 1 2; -1, \frac 1 2}
+\end{equation}
+
+Als nächstes wollen wir noch den niedrigsten Zustand \(\ket{\frac 3 2, -\frac 3
+  2}\) bestimmen. Für den CGK. in diesem Zustand gilt laut \eqref{eq:24} \(
+ \braket{1,\frac 1 2;-1,-\frac 1 2}{\frac 3 2,-\frac 3 2}=1\). Dies wollen wir
+ nun durch explizite Rechnung beweisen. Es gilt also folgenden Zustand zu
+ bestimmen:
+ \begin{equation}
+   \label{eq:59}
+   \ket{\frac 3 2, -\frac 3 2}= \braket{1,\frac 1 2;-1,-\frac 1 2}
+   {\frac 3 2,-\frac 3 2}\ket{1,\frac 1 2;-1,-\frac 1 2}
+ \end{equation}
+
+Setzen wir \(m_1=-1,\;m_2=-\frac 1 2\) und \(M=-\frac 1 2\) in die
+Rekursionsgleichung ein, so erhalten wir:
+\begin{align}
+  \label{eq:60}
+     &\sqrt 3 \braket{1, \frac 1 2; -1, -\frac 1 2}{\frac 3 2,-\frac 3 2}
+  = \sqrt 2 \underbrace{
+    \braket{1, \frac 1 2; 0, -\frac 1 2}{\frac 3 2,-\frac 1 2}}
+  _{=\sqrt{\frac 2 3} \text{ Siehe Gl. \eqref{eq:56}}}\notag\\
+  &\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+\underbrace{
+    \braket{1, \frac 1 2; -1, \frac 1 2}{\frac 3 2,-\frac 1 2}}
+  _{=\frac 1 {\sqrt 3} \text{ Siehe Gl. \eqref{eq:57}}}\notag\\
+ \Leftrightarrow &\braket{1, \frac 1 2; -1, -\frac 1 2}{\frac 3 2,-\frac 3 2}
+ = \frac 3  3 = 1 
+\end{align}
+
+Damit wurde die Gleichung \eqref{eq:24} nochmal bestätigt. Der Zustand lautete
+somit:
+\begin{equation}
+  \label{eq:61}
+  \ket{\frac 3 2, -\frac 3 2}= 1\cdot\ket{1,\frac 1 2;-1,-\frac 1 2}
+\end{equation}
+
+Wir sind nun beim \emph{Schritt 4} im Abschnitt \ref{sec:vorgehensweise}
+angelangt. D.h. wir müssen jetzt \(J\) um Eins erniedrigen und den dafür
+größtmöglichen Zustand bestimmen. Der da lautet:
+\begin{multline}
+  \label{eq:62}
+   \ket{\frac 1 2, \frac 1 2}= \braket{1,\frac 1 2;1,-\frac 1 2}
+   {\frac 1 2,\frac 1 2}\ket{1,\frac 1 2;1,-\frac 1 2}\\
+   +\braket{1,\frac 1 2;0,\frac 1 2}
+   {\frac 1 2,\frac 1 2}\ket{1,\frac 1 2;0,\frac 1 2}
+\end{multline}
+
+Wie in der Beschreibung steht bilden wir jetzt ein Skalarprodukt mit dem schon
+berechneten Zustand \(\ket{\frac 3 2, \frac 1 2}\) Gl:~\eqref{eq:54} und erhalten:
+\begin{multline}
+  \label{eq:63}
+  \braket{\frac 3 2,\frac 1 2}{\frac 1 2, \frac 1 2}
+  = \left(
+    \frac 1 {\sqrt 3}\bra{1,\frac 1 2; 1,-\frac 1 2}
+    +\sqrt{\frac 2 3}\bra{1, \frac 1 2; 0, \frac 1 2}\right)\\
+  \times\left(
+    \braket{1,\frac 1 2;1,-\frac 1 2}{\frac 1 2,\frac 1 2}
+    \ket{1,\frac 1 2;1,-\frac 1 2}
+    +\braket{1,\frac 1 2;0,\frac 1 2}{\frac 1 2,\frac 1 2}
+    \ket{1,\frac 1 2;0,\frac 1 2}\right)
+\end{multline}
+
+Die Gl.~\eqref{eq:63} ausmultiplizieren und anwenden der Orthogonalität:
+
+\begin{align}
+  \label{eq:65}
+  &\braket{1,\frac 1 2; 1,-\frac 1 2}{1,\frac 1 2; 1,-\frac 1 2}
+  =\braket{1, \frac 1 2; 0, \frac 1 2}{1, \frac 1 2; 0, \frac 1 2}=1\\
+  &\braket{1,\frac 1 2; 1,-\frac 1 2}{1,\frac 1 2;0,\frac 1 2}
+  =\braket{1,\frac 1 2;0,\frac 1 2}{1,\frac 1 2; 1,-\frac 1 2}=0
+\end{align}
+
+Führt zu:
+\begin{equation}
+  \label{eq:64}
+  \braket{\frac 3 2,\frac 1 2}{\frac 1 2, \frac 1 2}
+  = \frac 1 {\sqrt 3}\braket{1,\frac 1 2;1,-\frac 1 2}{\frac 1 2,\frac 1 2}
+  +\sqrt{\frac 2 3}\braket{1,\frac 1 2;0,\frac 1 2}{\frac 1 2,\frac 1 2}
+  \stackrel{!}=0
+\end{equation}
+
+In der Gl.~\eqref{eq:64} wurde die Orthogonalitätsbedingung \(\braket{\frac 3
+2,\frac 1 2}{\frac 1 2, \frac 1 2} \stackrel{!}=0\) ausgenutzt.
+
+Die Gl.~\eqref{eq:64} umgestellt ergibt:
+\begin{equation}
+  \label{eq:66}
+  \braket{1,\frac 1 2;0,\frac 1 2}{\frac 1 2,\frac 1 2}
+  = -\frac 1 {\sqrt 2}\braket{1,\frac 1 2;1,-\frac 1 2}{\frac 1 2,\frac 1 2}
+\end{equation}
+
+Aus der Normierungsbedingung Gl.~\eqref{eq:6} folgt:
+\begin{equation}
+  \label{eq:67}
+  \braket{1,\frac 1 2;1,-\frac 1 2}{\frac 1 2,\frac 1 2}^2+
+  \underbrace{\braket{1,\frac 1 2;0,\frac 1 2}{\frac 1 2,\frac 1 2}^2}
+  _{\eqref{eq:66}} =1
+\end{equation}
+
+Die Gl.~\eqref{eq:66} in \eqref{eq:67} ergibt:
+\begin{align}
+  \label{eq:68}
+   &\braket{1,\frac 1 2;1,-\frac 1 2}{\frac 1 2,\frac 1 2}^2
+   +\frac 1 2 \braket{1,\frac 1 2;1,-\frac 1 2}{\frac 1 2,\frac 1 2}^2=1
+   \notag\\
+   \Leftrightarrow 
+   &\frac 3 2 \braket{1,\frac 1 2;1,-\frac 1 2}{\frac 1 2,\frac 1 2}^2=1
+   \notag\\
+   \Leftrightarrow&\underbrace{ 
+    \braket{1,\frac 1 2;1,-\frac 1 2}{\frac 1 2,\frac 1 2}}
+  _{\text{Konvention: \textbf{positiv}}}=\sqrt{\frac 2 3}
+\end{align}
+
+Die Gl.~\eqref{eq:68} in die Gl.~\eqref{eq:66} eingesetzt ergibt für den zweiten
+gesuchten CGK.:
+\begin{equation}
+  \label{eq:69}
+  \braket{1,\frac 1 2;0,\frac 1 2}{\frac 1 2,\frac 1 2}=-\frac 1 {\sqrt 3}
+\end{equation}
+
+Mit den Gleichungen \eqref{eq:68} und \eqref{eq:69} bekommen wir schlussendlich
+für den gesuchten Zustand Gl.~\eqref{eq:62}:
+\begin{equation}
+  \label{eq:70}
+    \ket{\frac 1 2, \frac 1 2}=\sqrt{\frac 2 3}\ket{1,\frac 1 2;1,-\frac 1 2}
+   -\frac 1 {\sqrt 3}\ket{1,\frac 1 2;0,\frac 1 2}
+\end{equation}
+
+Zum Schluss wollen wir noch den letzten verbliebenen Zustand bestimmen:
+\begin{equation}
+  \label{eq:71}
+  \ket{\frac 1 2,-\frac 1 2}=\braket{1,\frac 1 2;0,-\frac 1 2}
+  {\frac 1 2,-\frac 1 2 }\ket{1,\frac 1 2;0,-\frac 1 2}
+\end{equation}
+
+Dazu benutzen wir wieder unsere Rekursionsformel Gl.~\eqref{eq:47}. Mit
+\(m_1=0,\; m_2=-\frac 1 2\) und \(M=\frac 1 2\) erhalten wir:
+\begin{align}
+  \label{eq:72}
+  &\braket{1,\frac 1 2;0,-\frac 1 2}{\frac 1 2,-\frac 1 2 }
+ =\sqrt 2 \underbrace{
+    \braket{1, \frac 1 2; 1, -\frac 1 2}{\frac 1 2,-\frac 1 2}}
+  _{=\sqrt{\frac 2 3} \text{ Siehe Gl. \eqref{eq:68}}}\notag\\
+  &\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+\underbrace{
+    \braket{1, \frac 1 2; 0, \frac 1 2}{\frac 1 2,-\frac 1 2}}
+  _{=-\frac 1 {\sqrt 3} \text{ Siehe Gl. \eqref{eq:69}}}\notag\\
+ \Leftrightarrow &\braket{1, \frac 1 2; 0, -\frac 1 2}{\frac 1 2,-\frac 1 2}
+ = \frac 1  {\sqrt 3} 
+\end{align}
+
+Die Gleichung \eqref{eq:72} in die Gl.~\eqref{eq:71} eingesetzt ergibt:
+\begin{equation}
+  \label{eq:73}
+   \ket{\frac 1 2,-\frac 1 2}=\frac 1  {\sqrt 3} \ket{1,\frac 1 2;0,-\frac 1 2}
+\end{equation}
+
+Damit haben wir also alle Zustände der Gesamtdrehimpulsbasis bestimt. Hier
+nochmal zusammengefasst:
+
+\[\boxed{
+\begin{aligned}
+  \ket{\frac 3 2,\frac 3 2}&=1\cdot\ket{1,\frac 1 2;1,\frac 1 2}\\
+  \ket{\frac 3 2, \frac 1 2}&= 
+     \frac 1 {\sqrt 3}
+     \ket{1, \frac 1 2; 1, -\frac 1 2}
+     +\sqrt {\frac 2 3} 
+     \ket{1, \frac 1 2; 0, \frac 1 2}\\
+  \ket{\frac 3 2, -\frac 1 2}&=
+     \sqrt{\frac 2 3}
+     \ket{1, \frac 1 2; 0, -\frac 1 2}
+     +\frac 1 {\sqrt 3}
+     \ket{1, \frac 1 2; -1, \frac 1 2}\\
+  \ket{\frac 3 2, -\frac 3 2}&= 1\cdot\ket{1,\frac 1 2;-1,-\frac 1 2}\\
+  \ket{\frac 1 2, \frac 1 2}&=\sqrt{\frac 2 3}\ket{1,\frac 1 2;1,-\frac 1 2}
+   -\frac 1 {\sqrt 3}\ket{1,\frac 1 2;0,\frac 1 2}\\
+  \ket{\frac 1 2,-\frac 1 2}&=\frac 1  {\sqrt 3} \ket{1,\frac 1 2;0,-\frac 1 2}
+\end{aligned}}\]
 
 
 
@@ -667,9 +1062,9 @@ Mit \(C_1 =\braket{\frac{1}{2},\frac{1}{2};\frac{1}{2},-\frac{1}{2}}{00} \) und 
 
 \subsection*{Referenzen}
 \begin{itemize}
-\item Claude Cohen-Tannoudji Quantenmechanik Band 2
+%\item Claude Cohen-Tannoudji Quantenmechanik Band 2
 \item Zettili Quanten Mehanics
-\item Rollnik Quantentheorie 2
+%\item Rollnik Quantentheorie 2
 \end{itemize}
 
 \end{document}
