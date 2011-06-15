@@ -1,0 +1,26 @@
+/*
+Berechnet die linke und die rechte Seite der Rekursionsformel zur Berechnung
+der Clebsch-Gordan Koeffizienten.
+
+Aus dem Buch:
+   Autor: Nouredine Zettili
+   Titel: Quantum Mechanics, Concepts and Applications, Secound Edititon
+   Seite: 410
+   Gleichung: (7.150)
+
+Benutzung:
+
+cgk_rek1(j_1,j_2,m_1,m_2,J,M) für die obere Zeile der Gleichung.
+cgk_rek2(j_1,j_2,m_1,m_2,J,M) für die untere Zeile der Gleichung.
+*/
+
+
+cgk_rek1(j_1,j_2,m_1,m_2,J,M):=block(
+  print(sqrt((J-M)*(J+M+1))," * <",j_1,",",j_2,",",m_1,",",m_2,"|",J,",",M+1,">",
+    "=",sqrt((j_1+m_1)*(j_1-m_1+1))," * <",j_1,",",j_2,",",m_1-1,",",m_2,"|",J,",",M,">",
+    "+",sqrt((j_2+m_2)*(j_2-m_2+1))," * <",j_1,",",j_2,",",m_1,",",m_2-1,"|",J,",",M,">"),done)$
+
+cgk_rek2(j_1,j_2,m_1,m_2,J,M):=block(
+  print(sqrt((J+M)*(J-M+1))," * <",j_1,",",j_2,",",m_1,",",m_2,"|",J,",",M-1,">",
+    "=",sqrt((j_1-m_1)*(j_1+m_1+1))," * <",j_1,",",j_2,",",m_1+1,",",m_2,"|",J,",",M,">",
+    "+",sqrt((j_2-m_2)*(j_2+m_2+1))," * <",j_1,",",j_2,",",m_1,",",m_2+1,"|",J,",",M,">"),done)$
