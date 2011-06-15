@@ -1010,7 +1010,8 @@ Zum Schluss wollen wir noch den letzten verbliebenen Zustand bestimmen:
 \begin{equation}
   \label{eq:71}
   \ket{\frac 1 2,-\frac 1 2}=\braket{1,\frac 1 2;0,-\frac 1 2}
-  {\frac 1 2,-\frac 1 2 }\ket{1,\frac 1 2;0,-\frac 1 2}
+  {\frac 1 2,-\frac 1 2 }\ket{1,\frac 1 2;0,-\frac 1 2} + \braket{1,\frac 1 2;-1,\frac 1 2}
+  {\frac 1 2, -\frac 1 2 }\ket{1,\frac 1 2;-1,\frac 1 2}
 \end{equation}
 
 Dazu benutzen wir wieder unsere Rekursionsformel Gl.~\eqref{eq:47}. Mit
@@ -1028,14 +1029,31 @@ Dazu benutzen wir wieder unsere Rekursionsformel Gl.~\eqref{eq:47}. Mit
  = \frac 1  {\sqrt 3} 
 \end{align}
 
-Die Gleichung \eqref{eq:72} in die Gl.~\eqref{eq:71} eingesetzt ergibt:
+Um den zweiten CGK zu bestimmen, setzen wir \(m_1=-1\), \(m_2=\frac{1}{2}\) und \(M=\frac{1}{2}\)
+
+
+\begin{align}
+  \label{eq:74}
+  &\braket{1,\frac 1 2;-1,\frac 1 2}{\frac 1 2,-\frac 1 2 }
+ =\sqrt 2 \underbrace{
+    \braket{1, \frac 1 2; 0, \frac 1 2}{\frac 1 2,\frac 1 2}}
+  _{=-\frac{1}{ \sqrt{3}} \text{ Siehe Gl. \eqref{eq:69}}}\notag\\ 
+ \Leftrightarrow &\braket{1, \frac 1 2; -1, \frac 1 2}{\frac 1 2,-\frac 1 2}
+ = - \sqrt{ \frac 2  3 } 
+\end{align}
+
+
+
+
+Die Gleichung \eqref{eq:72} und \eqref{eq:74}  in die Gl.~\eqref{eq:71} eingesetzt ergibt:
 \begin{equation}
   \label{eq:73}
-   \ket{\frac 1 2,-\frac 1 2}=\frac 1  {\sqrt 3} \ket{1,\frac 1 2;0,-\frac 1 2}
+   \ket{\frac 1 2,-\frac 1 2}=\frac 1  {\sqrt 3} \ket{1,\frac 1 2;0,-\frac 1 2} - \sqrt{ \frac 2  3 } \ket{1,\frac 1 2;-1,\frac 1 2}  
 \end{equation}
 
 Damit haben wir also alle Zustände der Gesamtdrehimpulsbasis bestimt. Hier
 nochmal zusammengefasst:
+
 
 \[\boxed{
 \begin{aligned}
@@ -1053,7 +1071,7 @@ nochmal zusammengefasst:
   \ket{\frac 3 2, -\frac 3 2}&= 1\cdot\ket{1,\frac 1 2;-1,-\frac 1 2}\\
   \ket{\frac 1 2, \frac 1 2}&=\sqrt{\frac 2 3}\ket{1,\frac 1 2;1,-\frac 1 2}
    -\frac 1 {\sqrt 3}\ket{1,\frac 1 2;0,\frac 1 2}\\
-  \ket{\frac 1 2,-\frac 1 2}&=\frac 1  {\sqrt 3} \ket{1,\frac 1 2;0,-\frac 1 2}
+  \ket{\frac 1 2,-\frac 1 2}&=\frac 1  {\sqrt 3} \ket{1,\frac 1 2;0,-\frac 1 2} - \sqrt{ \frac 2  3 } \ket{1,\frac 1 2;-1,\frac 1 2} 
 \end{aligned}}\]
 
 
