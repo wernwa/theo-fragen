@@ -1,0 +1,210 @@
+\input{../headers/header_script.tex}
+ 
+
+\begin{document}
+
+\section*{Klein-Gordon-Gleichung}
+
+
+Die Klein-Gordon-Gleichung ist eine relativistische Gleichung und beschreibt Teilchen mit Spin 0 z.B: \(\pi\)-Mesonen und \(K^0\)-Mesonen. Sie folgt aus dem Korrespondenzprinzip (klassisch)
+\begin{equation}
+  \label{eq:1}
+  \vec p \rightarrow \frac{\hbar}{i}\vec\nabla 
+\end{equation}
+
+bzw. kovarianter Schreibweise (relativistisch)
+\begin{equation}
+  \label{eq:2}
+  p_\mu \rightarrow i\hbar \partial_\mu
+\end{equation}
+
+Betrachten wir folgende Gleichung
+
+\[p^2 = p_\mu p^\mu = (p_0,-\vec p) (p_0,\vec p) =  p_0^2 -\vec p^2\]
+
+mit \(p_0 = \frac{E}{c}\) 
+\begin{equation}
+  \label{eq:3}
+  p_\mu p^\mu =  \left( \frac{E}{c}\right)^2 -\vec p^2
+\end{equation}
+
+
+Die Energie für ein Teilchen in seinem Ruhesystem ist \(E=mc^2\) und \(\vec p = 0\) setzen wir die Gleichung in (\ref{eq:3}) ein so erhalten wir
+\begin{equation}
+  \label{eq:5}
+   p_\mu p^\mu = m^2c^2
+\end{equation}
+
+Setzt man nun die beiden Gleichungen (\ref{eq:3}) und (\ref{eq:4}) gleich und stellt sie nach \(E\) um somit folgt
+\begin{align}
+  \label{eq:4}
+  \left( \frac{E}{c}\right)^2 -\vec p^2  = m^2c^2 \\
+\Leftrightarrow E = \pm \sqrt{\vec p^2c^2 + m^2c^4}
+\end{align}
+
+Die negative Energien in Gleichung (\ref{eq:4}) führt zu der Annahme von Antiteilchen.
+
+Zurück zu Gleichung (\ref{eq:5}). Eine Umformung und einsetzen von des Korrespondenzprinzips für den Impuls (\ref{eq:2}) liefert
+
+\begin{align}
+  \label{eq:6}
+   p_\mu p^\mu - m^2c^2 &= 0 \\
+(i\hbar)^2\partial_\mu\partial^\mu -  m^2c^2 &= 0 \\
+-\hbar^2\left[\partial_\mu\partial^\mu + \left(\frac{mc}{\hbar}\right)^2  \right] &= 0 \\
+\partial_\mu\partial^\mu + \left(\frac{mc}{\hbar}\right)^2  &= 0
+\end{align}
+
+Führen wir den \textbf{d'Alembert-Operator} ein \(\square \equiv \partial_\mu\partial^\mu = \frac{1}{c^2}\pdiff^2_t - \triangle \) und multiplizieren wir die Gleichung (\ref{eq:6}) mit der Wellenfunktion \(\psi\) von rechts, so ergibt das die \textbf{Klein-Gordon-Gleichung}
+
+\begin{equation}
+  \label{eq:7}
+ \boxed{\left[  \square + \left(\frac{mc}{\hbar}\right)^2\right]\psi  = 0 }
+\end{equation}
+
+
+Die Klein-Gordon-Gleichung erfüllt die Gesetze der speziellen Relativitätstheorie, erhält aber zwei fundamentale Probleme. Ohne deren Beweltigung die Gleichung physikalisch unhaltbar ist. 
+
+Das \textbf{erste Problem} ist, dass die Lösung der Klein-Gordon-Gleichung auch negative Energieen zulässt. Dies wollen wir näher untersuchen.
+
+Die Lösungen der  Klein-Gordon-Gleichung sind ebene Wellen mit der Form
+
+\begin{equation}
+  \label{eq:8}
+\psi(x) = Ne^{-ipx/\hbar}  
+\end{equation}
+
+mit \(p\cdot x = p^\mu x_mu = Et - \vec p\vec x\), eingesetzt in (\ref{eq:8})
+
+\begin{equation}
+  \label{eq:9}
+  \psi(x) = Ne^{\frac{i}{\hbar}(Et - \vec p\vec x)}
+\end{equation}
+
+Setzen wir nun die ebene Welle in die Klein-Gordon-Gleichung (\ref{eq:7})  ein
+
+\begin{align}
+  \label{eq:10}
+  \left[  \square + \left(\frac{mc}{\hbar}\right)^2\right] Ne^{\frac{i}{\hbar}(Et - \vec p\vec x)}   &= 0 \\
+  \left(\frac{1}{c^2}\pdiff^2_t - \triangle \right) e^{\frac{i}{\hbar}(Et - \vec p\vec x)}  + \left(\frac{mc}{\hbar}\right)^2e^{\frac{i}{\hbar}(Et - \vec p\vec x)}   &= 0 \\
+ \frac{1}{c^2}\pdiff^2_t e^{\frac{i}{\hbar}(Et - \vec p\vec x)}  - \nabla^2  e^{\frac{i}{\hbar}(Et - \vec p\vec x)}  + \left(\frac{mc}{\hbar}\right)^2e^{\frac{i}{\hbar}(Et - \vec p\vec x)}   &= 0 \\
+ -\frac{E^2}{c^2\hbar^2} \cancel{ e^{\frac{i}{\hbar}(Et - \vec p\vec x)}}  +\frac{1}{\hbar^2}  p^2\cancel{ e^{\frac{i}{\hbar}(Et - \vec p\vec x)}}  + \left(\frac{mc}{\hbar}\right)^2 \cancel{ e^{\frac{i}{\hbar}(Et - \vec p\vec x)}}   &= 0 \\
+ -\frac{E^2}{c^2} +  p^2  + m^2c^2 = 0 \\
+\Leftrightarrow  E^2 =  p^2c^2  + m^2c^4
+\end{align}
+
+Durch ziehen der Wurzel auf beiden Seiten erhält man 
+\begin{equation}
+  \label{eq:11}
+  E =\pm \sqrt{ p^2c^2  + m^2c^4 }
+\end{equation}
+
+Die selbe Energie wie Gleichung (\ref{eq:4}). Lösungen der negativer Energie des Energiespektrums ist nach unten nicht beschränkt. Formal liegt das darin begründet, dass die Klein-Gordon-Gleichung eine DGL 2-Ordnung nach der Zeit ist. Es stellt sich also das Problem der Intepretation der negativen Energie. Was später mit Antiteilchen begründet wird.
+
+Das \textbf{zweite Problem} der Klein-Gordon-Gleichung ist dass sie negative Wahrscheinlichkeitsdichten hervorbringt. Dies wollen wir nun näher untersuchen.
+
+Zur Herleitung einer Kontinuitätsgleichung multipliziert man die Klein-Gordon-Gleichung von links mit \(\psi^*\)
+
+\begin{equation}
+  \label{eq:12}
+  \psi^*\left[  \square + \left(\frac{mc}{\hbar}\right)^2\right]\psi  = 0
+\end{equation}
+
+und zieht davon die komplex konjugierte Gleichung
+
+\begin{equation}
+  \label{eq:13}
+  \psi \left[  \square + \left(\frac{mc}{\hbar}\right)^2\right]\psi^*  = 0
+\end{equation}
+
+ab. Somit folgt
+
+\begin{align}
+  \label{eq:14}
+   \psi^*\left[  \square + \left(\frac{mc}{\hbar}\right)^2\right]\psi - \psi \left[  \square + \left(\frac{mc}{\hbar}\right)^2\right]\psi^* &= 0 \\
+   \psi^* \square \psi  +  \cancel{\left(\frac{mc}{\hbar}\right)^2 |\psi|^2} - \psi \square\psi^* - \cancel{ \left(\frac{mc}{\hbar}\right)^2|\psi|^2 }  &= 0 \\
+   \psi^* \square \psi  - \psi \square\psi^*  &= 0 \\
+\end{align}
+Mit \(\square \equiv \partial_\mu\partial^\mu \) eingesetzt mit 
+
+
+\begin{align}
+  \label{eq:15}
+     \psi^* \partial_\mu\partial^\mu  \psi  - \psi \partial_\mu\partial^\mu\psi^*  &= 0 \\
+   \partial_\mu(  \psi^* \partial^\mu  \psi  - \psi \partial^\mu\psi^* ) &= 0 \qquad \text{Produktregel ?}\\
+\end{align}
+Multipliziert die Gleichung (\ref{eq:15}) mit
+
+
+\begin{equation}
+  \label{eq:17}
+  \partial_\mu = \left(\frac{1}{c}\pdiff_t,\vec \nabla\right), \qquad  \partial^\mu = \left(\frac{1}{c}\pdiff_t,-\vec \nabla\right)
+\end{equation}
+
+ergibt
+
+\begin{align}
+  \label{eq:16}
+   \partial_0(  \psi^* \partial^0  \psi  - \psi \partial^0\psi^* ) + \vec \nabla ( - \psi^* \vec \nabla  \psi  + \psi \vec \nabla \psi^* )  &= 0 \\
+ \frac{1}{c^2}\pdiff_t (  \psi^* \pdiff_t \psi  - \psi \pdiff_t\psi^* ) + \vec \nabla ( - \psi^* \vec \nabla  \psi  + \psi \vec \nabla \psi^* )  &= 0 \quad |\cdot -1 \\
+- \frac{1}{c^2}\pdiff_t (  \psi^* \pdiff_t \psi  - \psi \pdiff_t\psi^* ) + \vec \nabla ( \psi^* \vec \nabla  \psi  - \psi \vec \nabla \psi^* )  &= 0 \\
+\end{align}
+Multipliziert man die Gleichung (\ref{eq:16}) mit \(\frac{\hbar}{2mi}\) somit folgt eine ähnliche Form für die Kontinuitätsgleichung in nicht relativistischen Fall
+
+\begin{equation}
+  \label{eq:18}
+  \pdiff_t \underbr{ \left[ \frac{i\hbar}{2mc^2}\left( \psi^* \pdiff_t \psi  -  \psi \pdiff_t\psi^*\right) \right]}_{\rho} + \vec \nabla \underbr{\frac{\hbar}{2mi} \left( \psi^* \vec \nabla  \psi  - \psi \vec \nabla \psi^* \right)}_{\vec j}  = 0 \\
+\end{equation}
+Vergleichen wir die Gleichung (\ref{eq:18}) mit der Kontinuitätsgleichung 
+
+\begin{equation}
+  \label{eq:19}
+  \pdiff_t \rho + \vec\nabla\vec j = 0
+\end{equation}
+
+
+So erhalten wir für die Wahrscheinlichkeitsdichte \(\rho\)
+
+\begin{equation}
+  \label{eq:20}
+  \rho = \left[ \frac{i\hbar}{2mc^2}\left( \psi^* \pdiff_t \psi  -  \psi \pdiff_t\psi^*\right) \right]
+\end{equation}
+
+Und für die Wahrscheinlichkeitsstromdichte
+
+\begin{equation}
+  \label{eq:21}
+  \vec j = \frac{\hbar}{2mi} \left( \psi^* \vec \nabla  \psi  - \psi \vec \nabla \psi^* \right)
+\end{equation}
+
+
+Um zu sehen dass die Wahrscheinlichkeitsdichte \(\rho\) auch negativ werden kann, betrachte zunächst die Schrödinger Gleichung sowie die komlexkonjugierte davon
+
+\begin{align}
+  \label{eq:22}
+  \pdiff_t \psi &= - \frac{i}{\hbar} H\psi = -  \frac{i}{\hbar} E\psi\\
+\pdiff_t \psi^* &= \frac{i}{\hbar} E\psi^*
+\end{align}
+
+
+Eingesetzt in (\ref{eq:20})
+
+\begin{align}
+  \label{eq:23}
+   \rho &=  \frac{i\hbar}{2mc^2}\left( - \frac{i}{\hbar} E \psi^*\psi   -\frac{i}{\hbar} E  \psi\psi^*   \right) \\
+&= \frac{i\hbar}{2mc^2}\left( - \frac{i2}{\hbar} E |\psi|^2   \right)  \\
+&= \frac{E}{mc^2}|\psi|^2    \\
+\end{align}
+Da wir wissen das \(E<0\) werden kann folgt daraus dass die Wahrscheinlichkeitsstromdichte\(\rho<0\) ebenfalls kleiner Null wird. Daraus folgt \(\rho\) kann \textbf{nicht} die Bedeutung einer Wahrscheinlichkeitsdichte haben, sondern eventuell einer Ladungsdichte. Zur Begründung dass \(\rho\) eine mögliche Ladungsdichte ist betrachten wir die Zustande mit \(E>0\) z.B. \(\pi^+\) und \(E<0\) z.B. \(\pi^-\) (Antiteilchen von \(\pi^+\). Im Fall \(\rho>0\) dominieren die \(\pi^+\)Teilchen. Also ist die Ladungsdichte positiv. Im Fall \(\rho<0\) dominieren \(\pi^-\)Teilchen, also die die Ladungsdichte negativ. Somit ist \(\rho\) proportional zu elektrischen Ladungsdichte.
+
+Die klein-Gordon-Gleichung ist eine Differentialgleichung zweiter Ordnung in t, deshalb können die Anfangswerte von \(\psi\) und \(\pdiff_t\psi\) unabhängig vorgegeben werden, so dass \(\rho\) als Funktion von \(\vec x\) sowohl positiv wie auch negativ sein kann. 
+
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item Schwabel 2
+\item Rollnik Quantentheorie 2
+\end{itemize}
+
+\end{document}
