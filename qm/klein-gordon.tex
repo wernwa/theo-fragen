@@ -38,7 +38,7 @@ Die Energie für ein Teilchen in seinem Ruhesystem ist \(E=mc^2\) und \(\vec p =
 Setzt man nun die beiden Gleichungen (\ref{eq:3}) und (\ref{eq:4}) gleich und stellt sie nach \(E\) um somit folgt
 \begin{align}
   \label{eq:4}
-  \left( \frac{E}{c}\right)^2 -\vec p^2  = m^2c^2 \\
+  \left( \frac{E}{c}\right)^2 -\vec p^2  = m^2c^2 \notag \\
 \Leftrightarrow E = \pm \sqrt{\vec p^2c^2 + m^2c^4}
 \end{align}
 
@@ -48,9 +48,9 @@ Zurück zu Gleichung (\ref{eq:5}). Eine Umformung und einsetzen von des Korrespo
 
 \begin{align}
   \label{eq:6}
-   p_\mu p^\mu - m^2c^2 &= 0 \\
-(i\hbar)^2\partial_\mu\partial^\mu -  m^2c^2 &= 0 \\
--\hbar^2\left[\partial_\mu\partial^\mu + \left(\frac{mc}{\hbar}\right)^2  \right] &= 0 \\
+   p_\mu p^\mu - m^2c^2 &= 0 \notag \\
+(i\hbar)^2\partial_\mu\partial^\mu -  m^2c^2 &= 0  \notag \\
+-\hbar^2\left[\partial_\mu\partial^\mu + \left(\frac{mc}{\hbar}\right)^2  \right] &= 0 \notag \\
 \partial_\mu\partial^\mu + \left(\frac{mc}{\hbar}\right)^2  &= 0
 \end{align}
 
@@ -62,18 +62,17 @@ Führen wir den \textbf{d'Alembert-Operator} ein \(\square \equiv \partial_\mu\p
 \end{equation}
 
 
-Die Klein-Gordon-Gleichung erfüllt die Gesetze der speziellen Relativitätstheorie, erhält aber zwei fundamentale Probleme. Ohne deren Beweltigung die Gleichung physikalisch unhaltbar ist. 
-
-Das \textbf{erste Problem} ist, dass die Lösung der Klein-Gordon-Gleichung auch negative Energieen zulässt. Dies wollen wir näher untersuchen.
-
+Die Klein-Gordon-Gleichung erfüllt die Gesetze der speziellen Relativitätstheorie, erhält aber zwei fundamentale Probleme. Ohne deren Bewältigung die Gleichung physikalisch unhaltbar ist. \\
+\\
+Das \textbf{erste Problem} ist, dass die Lösung der Klein-Gordon-Gleichung auch negative Energieen zulässt. Dies wollen wir näher untersuchen.\\
+\\
 Die Lösungen der  Klein-Gordon-Gleichung sind ebene Wellen mit der Form
-
 \begin{equation}
   \label{eq:8}
 \psi(x) = Ne^{-ipx/\hbar}  
 \end{equation}
 
-mit \(p\cdot x = p^\mu x_mu = Et - \vec p\vec x\), eingesetzt in (\ref{eq:8})
+mit \(p\cdot x = p^\mu x_\mu = Et - \vec p\vec x\), eingesetzt in (\ref{eq:8})
 
 \begin{equation}
   \label{eq:9}
@@ -129,18 +128,18 @@ Mit \(\square \equiv \partial_\mu\partial^\mu \) eingesetzt mit
 
 \begin{align}
   \label{eq:15}
-     \psi^* \partial_\mu\partial^\mu  \psi  - \psi \partial_\mu\partial^\mu\psi^*  &= 0 \\
-   \partial_\mu(  \psi^* \partial^\mu  \psi  - \psi \partial^\mu\psi^* ) &= 0 \qquad \text{Produktregel ?}\\
+     \psi^* \partial_\mu\partial^\mu  \psi  - \psi \partial_\mu\partial^\mu\psi^*  &= 0 \notag \\
+   \partial_\mu(  \psi^* \partial^\mu  \psi  - \psi \partial^\mu\psi^* ) &= 0 \qquad \text{Produktregel ?}
 \end{align}
-Multipliziert die Gleichung (\ref{eq:15}) mit
 
+Setzt man in die Gleichung (\ref{eq:15}) die Entsprechung für die partielle Ableitungen ein
 
 \begin{equation}
   \label{eq:17}
   \partial_\mu = \left(\frac{1}{c}\pdiff_t,\vec \nabla\right), \qquad  \partial^\mu = \left(\frac{1}{c}\pdiff_t,-\vec \nabla\right)
 \end{equation}
 
-ergibt
+so ergibt das
 
 \begin{align}
   \label{eq:16}
@@ -194,7 +193,7 @@ Eingesetzt in (\ref{eq:20})
 &= \frac{i\hbar}{2mc^2}\left( - \frac{i2}{\hbar} E |\psi|^2   \right)  \\
 &= \frac{E}{mc^2}|\psi|^2    \\
 \end{align}
-Da wir wissen das \(E<0\) werden kann folgt daraus dass die Wahrscheinlichkeitsstromdichte\(\rho<0\) ebenfalls kleiner Null wird. Daraus folgt \(\rho\) kann \textbf{nicht} die Bedeutung einer Wahrscheinlichkeitsdichte haben, sondern eventuell einer Ladungsdichte. Zur Begründung dass \(\rho\) eine mögliche Ladungsdichte ist betrachten wir die Zustande mit \(E>0\) z.B. \(\pi^+\) und \(E<0\) z.B. \(\pi^-\) (Antiteilchen von \(\pi^+\). Im Fall \(\rho>0\) dominieren die \(\pi^+\)Teilchen. Also ist die Ladungsdichte positiv. Im Fall \(\rho<0\) dominieren \(\pi^-\)Teilchen, also die die Ladungsdichte negativ. Somit ist \(\rho\) proportional zu elektrischen Ladungsdichte.
+Da wir wissen das \(E<0\) werden kann folgt daraus dass die Wahrscheinlichkeitsstromdichte \(\rho<0\) ebenfalls kleiner Null wird. Daraus folgt \(\rho\) kann \textbf{nicht} die Bedeutung einer Wahrscheinlichkeitsdichte haben, sondern eventuell einer Ladungsdichte. Zur Begründung dass \(\rho\) eine mögliche Ladungsdichte ist betrachten wir die Zustande mit \(E>0\) z.B. \(\pi^+\) und \(E<0\) z.B. \(\pi^-\) (Antiteilchen von \(\pi^+\). Im Fall \(\rho>0\) dominieren die \(\pi^+\)Teilchen. Also ist die Ladungsdichte positiv. Im Fall \(\rho<0\) dominieren \(\pi^-\)Teilchen, also die die Ladungsdichte negativ. Somit ist \(\rho\) proportional zu elektrischen Ladungsdichte.
 
 Die klein-Gordon-Gleichung ist eine Differentialgleichung zweiter Ordnung in t, deshalb können die Anfangswerte von \(\psi\) und \(\pdiff_t\psi\) unabhängig vorgegeben werden, so dass \(\rho\) als Funktion von \(\vec x\) sowohl positiv wie auch negativ sein kann. 
 
@@ -203,7 +202,7 @@ Die klein-Gordon-Gleichung ist eine Differentialgleichung zweiter Ordnung in t, 
 
 \subsection*{Referenzen}
 \begin{itemize}
-\item Schwabel 2
+\item Schwabl QMII
 \item Rollnik Quantentheorie 2
 \end{itemize}
 
