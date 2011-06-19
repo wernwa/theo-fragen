@@ -1,0 +1,96 @@
+\input{../headers/header_script.tex}
+ 
+
+
+
+\begin{document}
+
+\section*{Die Dirac Gleichung}
+
+ Die Möglichkeit \(\rho=\psi^*\psi\) für die Wahrscheinlichkeitsdichte zu schreiben folgt aus der Tatsache, dass die Zeitableitung in der nicht relativistische Schrödinger-Gleichung nur in 1-Ordnung auftritt. Im Vergleich nimmt \(\rho\) in der Klein-Gordon Gleichung auch negative Werte an, dort ist die Zeitlichte Ableitung von 2-Ordnung.\\
+\\
+Es gilt nun eine Differential Gleichung 1-Ordung in der Zeit der Form
+
+\begin{align}
+  \label{eq:1}
+  i\hbar \pdiff_t \psi = H \psi
+\end{align}
+
+die relativistische Enegie-Impuls-Beziehung
+
+\begin{align}
+  \label{eq:2}
+  p_\mu p^\mu = \frac{E^2}{c^2} - \vec p^2 = (mc)^2
+\end{align}
+
+für ein freies Teilchen erfüllt. Die Betrachtungen im Zusammenhang mit der Klein-Gordon-Gleichung haben gezeigt, dass man dieses Problem für eine einfache skalare Wellenfunktion \(\psi\) nicht lösen kann. Diracs Idee war eine mehrdimensionale Wellenfunktion einzuführen
+.
+\begin{align}
+  \label{eq:3}
+  \psi(x) = \begin{pmatrix}\psi_1(x)\\\psi_2(x)\\\vdots\\ \psi_n(x)\\ \end{pmatrix}
+\end{align}
+
+Des weiteren muss die Gleichung \eqref{eq:1} folgende Forderungen erfüllen:
+
+\begin{itemize}
+\item Die Komponenten von \(\psi\) müssen die Klein-Gordon-Gleichung erfüllen, so dass ebene Wellend ie relativistische Beziehung \(E^2 = p^2c^2+m^2c^4\) erfüllen.
+\item Es existiert ein erhaltener Viererstrom, dessen nullte Komponente eine positive Dichte ist.
+\item Die Gleichung muss Lorentz-kovariant sein. Das bedeutet, dass sie unter Transformation ihre Form behält. Bezugssystem unabhängig. Damit dies erfüllt ist muss gelten: Da die zeitliche Ableitung nur in 1-Ordnung auftritt, muss auch die räumliche Ableitung in 1-Ordnung auftreten. 
+\end{itemize}
+
+Der Ansatz für den Hamiltonoperator \(H\) sollte so sein dass
+
+\begin{align}
+  \label{eq:4}
+  H^2 = E^2 = p^2c^2+ m^2c^4
+\end{align}
+
+das Quadrat der relativistischen Energie im Quadrat gleich ist. Folgender allgemeiner Ansatz erfüllt diese Bedingung
+
+\begin{align}
+  \label{eq:5}
+  H = c (\alpha_x p_x + \alpha_y p_y + \alpha_z p_z) + \beta m^2c^4 = c\sum_{i=1}^3\alpha_i p_i   + \beta m^2c^4
+\end{align}
+Die unbekannten Koeffizienten \(\alpha_i,\beta\) können nicht einfach Zahlen sein, da sonst die Gleichung nicht einmal forminvariant gegenüber räumlichen Drehungen ist (D.h. form der Gleichung ändert sich je nachdem das Koordinatensystem wählt). \(\alpha_i,\beta\) müssen hermitische Matritzen sein damit \(H\) hermitesch ist. Daraus folgt  \(\alpha_i,\beta\) müssen \(N\times N\) Matrizen sein.
+
+Um die unbekannten Matritzen  \(\alpha_i,\beta\) zu bestimmen gehen wir von der Klein-Gordon Gleichung aus
+
+\begin{align}
+  \label{eq:6}
+  -\hbar^2 \pdiff^2_t \psi(x) &= \underbrace{c^2(\vec p^2 + m^2c^2)}_{H^2}\psi(x)\\
+ &\stackrel{!}= \left(  c\sum_{i=1}^3\alpha_i p_i   + \beta m^2c^4 \right)^2\psi(x)\\
+&=[c \sum_{j=1}^3 \alpha_jp_j+\beta mc^2] \cdot [c \sum_{i=1}^3 \alpha_ip_i+\beta mc^2]\psi(p) \\
+&=c^2 [ \sum_{j=1}^3 \alpha_jp_j+\beta mc] \cdot [ \sum_{i=1}^3 \alpha_ip_i+\beta mc]\psi(p) \\
+&=c^2 \left( \sum_{j=1}^3 \alpha_jp_j\sum_{i=1}^3 \alpha_ip_i  +   \sum_{j=1}^3 \alpha_jp_j \beta mc  + \beta mc \sum_{i=1}^3 \alpha_ip_i+ \beta^2 m^2c^2\right)\psi(p) \\
+&= c^2\left(\sum_{i,j=1}^3\alpha_i\alpha_j p_ip_j+\sum_{i=1}^3(\alpha_i\beta+\beta\alpha_i)p_i mc +  \beta^2m^2c^2\right)\psi(p)
+\end{align}
+
+Der Koeffizientenverleich zwischen \(c^2(\vec p^2 + m^2c^2)\) und \( c^2\left(\sum_{i,j=1}^3\alpha_i\alpha_j p_ip_j+\sum_{i=1}^3(\alpha_i\beta+\beta\alpha_i)p_i mc +  \beta^2m^2c^2\right)\) liefert
+
+\begin{itemize}
+\item  \(\boxed{\beta^2=1}\)
+\item Antikommutator: \(\boxed{\{\alpha_i,\beta\}=0}\) damit der Mischterm \((\alpha_i\beta+\beta\alpha_i)p_i mc\)  verschwindet 
+\item \(i\neq j\): z.B:  \(\{\alpha_i,\alpha_j\}=0\) damit die unterschiedlichen Terme \(p_ip_j = \delta_{ij}\) verschwinden
+\item \(i=j\): \(\alpha_x^2p_x^2+\alpha_y^2p_y^2+\alpha_z^2p_z^2=\vec p^2 \Rightarrow \alpha_i^2 = 1\)
+\[\Rightarrow \boxed{\{\alpha_i,\alpha_j\}=2\delta_{ij}}\]
+\item \(\hat p_i,\hat H\) hermitesch \(\Rightarrow \vec\alpha,\beta\) hermitesch
+\item \(\alpha_i^2=1,\beta^2=1 \Rightarrow \) Eigenwerte von \(\alpha_i,\beta\) sind \(\pm 1\)
+\item \(\alpha_i\beta + \beta\alpha_i=0\qquad |\cdot \beta\)
+\[\Rightarrow \alpha_i=-\beta\alpha_i\beta \Rightarrow Tr[\alpha_i] = -Tr[\beta\alpha_i\beta]=-Tr[\alpha_i\beta^2]=-Tr[\alpha_i]\]
+\end{itemize}
+
+
+
+
+
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item Wachter Relativistische Quantenmechanik
+\item Schwabl Quantenmechanik für Fortgeschrittene
+\item Rollnik Quantentheorie 2
+\end{itemize}
+
+\end{document}
