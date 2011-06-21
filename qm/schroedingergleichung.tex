@@ -1,12 +1,16 @@
 \input{../headers/header_script.tex}
-%\includegraphics[width=0.75\textwidth]{thepic.png}
+
 
 \begin{document}
 
 \section*{Schrödingergleichung}
 
+Die Schrödignergleichung beschreibt die zeitliche Entwicklung des Zustands eines quantenmechanischen-Systems. Die Schrödingergleichung besagt, dass die zeitliche Veränderung des Zustands von der Energie Bestimmt ist.
 
-Suchen Bewegungsgleichung für $\psi(\vec{r},t)$. Forderungen:
+Der Zutsand ist eine Funktion aus dem Hilbertraum. Und die Energie wird durch einen Quantenmechanischen Operator den Hamiltonoperator repräsentiert.
+
+
+Folgende Forderungen muss die Bewegungsgleichung erfüllen:
 \begin{enumerate}
 \item DGL 1. Ordnung in der Zeit, damit $\psi(\vec{r},t)$ durch die Anfangsverteilung
   $\psi(\vec{r},t=0)$bestimmt ist.
@@ -17,7 +21,54 @@ Suchen Bewegungsgleichung für $\psi(\vec{r},t)$. Forderungen:
 \item Sie muss homogen sein, damit
   $\int_{-\infty}^{\infty}d^{3}r|\psi(\vec{r},t)|^{2}=1$ für
   alle Zeiten erfüllt bleibt.
-\item Die ebenen Wellen \(\psi(\vec{r},t)=c\cdot  e^{\frac{i}{\hbar}\vec{p}\cdot\vec{r}-i\omega t}\) sollen  Lösungen der Gleichung sein. Wobei die Energie für Photonen \(E=hf=\frac{h}{2\pi}\omega=\hbar\omega\) und somit nach \(\omega\) umgeformt und kinetische Energie eingesetzt \(\omega = \frac{p^2}{2m\hbar}\)  \\
+\item Die ebenen Wellen \(\psi(\vec{r},t)=c\cdot  e^{i\vec{k}\cdot\vec{r}-i\omega t}\) sollen  Lösungen der Gleichung sein. 
+\end{enumerate}
+
+Für die Aufstellung der Gleichung spielen zwei Beziehungen eine fundamentale Rolle. Die eine ist ein Zusammenhang zwischen Impuls \(p\) und Wellenlänge \(\lambda\) eines Quantenobjekts von \textbf{Louise de Broglie}
+
+\begin{equation}
+  \label{eq:3}
+  p = \frac{h}{\lambda} = \frac{h}{2\pi}\frac{2\pi}{\lambda} = \hbar k
+\end{equation}
+
+Und die andere ist eine Verknüpfung der Energie \(E\) mit der Frequenz \(\nu\) von \textbf{Max Planck}
+\begin{equation}
+  \label{eq:2}
+  E=h\nu=h\frac{\omega}{2\pi} =\hbar \omega
+\end{equation}
+
+Ableitung der Ebenen Wellen nach der Zeit ergibt
+
+\begin{align}
+  \label{eq:4}
+   \frac{\partial}{\partial t}\psi(\vec{r},t) &= -i \omega \psi(\vec{r},t) \qquad \text{mit } \omega=\frac{E}{\hbar} (\ref{eq:2}) \\
+&= -i \frac{E}{\hbar} \psi(\vec{r},t) \\
+\end{align}
+
+Unter Annahme für ein freies Teilchen gilt setzen wir die Energie unter Berücksichtigung der de Broglie Impulsbeziehung (\ref{eq:3})
+
+\begin{equation}
+  \label{eq:6}
+  E=\frac{p^2}{2m}=\frac{\hbar^2k^2}{2m}
+\end{equation}
+
+
+lautet die Gleichung (\ref{eq:4}) nun
+
+\begin{align}
+  \label{eq:7}
+  \frac{\partial}{\partial t}\psi(\vec{r},t) &=-\frac{i\hbar k^2}{2m}  \psi(\vec{r},t) \\
+ &=-\frac{\hbar}{i2m} i^2k^2 \psi(\vec{r},t)
+\end{align}
+
+
+
+
+
+alternative Herleitung mit \(\vec p\)
+Die ebenen Wellen \(\psi(\vec{r},t)=c\cdot  e^{\frac{i}{\hbar}\vec{p}\cdot\vec{r}-i\omega t}\) sollen  Lösungen der Gleichung sein. 
+
+Wobei die Energie für Photonen \(E=hf=\frac{h}{2\pi}\omega=\hbar\omega\) und somit nach \(\omega\) umgeformt und kinetische Energie eingesetzt \(\omega = \frac{p^2}{2m\hbar}\)  \\
 
   \begin{equation}
     \label{eq:1}
@@ -33,7 +84,7 @@ Suchen Bewegungsgleichung für $\psi(\vec{r},t)$. Forderungen:
   &= \frac{i\hbar}{2m}\cdot  \underbrace{\frac{(ip)^2}{\hbar^2}\psi(\vec{r},t)}_{\nabla^2\psi(\vec{r},t)}\\
   &= \frac{i\hbar}{2m}\nabla^2\psi(\vec{r},t)
 \end{align*}
-\end{enumerate}
+
 
 Aus 1.-4. erhalten wir die zeitabhängige Schrödingergleichung für ein
 freies Teilchen:
