@@ -7,7 +7,7 @@
 
 Die Schrödignergleichung beschreibt die zeitliche Entwicklung eines Zustands eines quantenmechanischen-Systems. Sie besagt, dass die zeitliche Veränderung des Zustands von der Energie bestimmt ist.\\
 \\
-Der Zutsand ist eine Funktion aus dem Hilbertraum. Und die Energie wird durch einen Quantenmechanischen Operator den Hamiltonoperator repräsentiert.\\
+Der Zutsand ist eine Funktion aus dem Hilbertraums. Und die Energie wird durch einen Quantenmechanischen Operator den Hamiltonoperator repräsentiert.\\
 \\
 Folgende Forderungen muss die Bewegungsgleichung erfüllen:
 \begin{enumerate}
@@ -56,53 +56,46 @@ lautet die Gleichung (\ref{eq:4}) nun
 
 \begin{align}
   \label{eq:7}
-  \frac{\partial}{\partial t}\psi(\vec{r},t) &=-\frac{i\hbar k^2}{2m}  \psi(\vec{r},t) \\
- &=-\frac{\hbar}{i2m} \underbr{i^2k^2}_{\nabla^2} \psi(\vec{r},t) \qquad |\cdot i\hbar\\
-\Leftrightarrow i\hbar  \frac{\partial}{\partial t}\psi(\vec{r},t) &= -\frac{\hbar^2}{2m} \nabla^2\psi(\vec{r},t)
+  \frac{\partial}{\partial t}\psi(\vec{r},t) &=-\frac{i\hbar k^2}{2m}  \psi(\vec{r},t) \notag \\
+ &=-\frac{\hbar}{i2m} \underbr{i^2k^2}_{\nabla^2} \psi(\vec{r},t) \qquad |\cdot i\hbar
 \end{align}
 
-
-
-
-%alternative Herleitung mit \(\vec p\)
-%Die ebenen Wellen \(\psi(\vec{r},t)=c\cdot  e^{\frac{i}{\hbar}\vec{p}\cdot\vec{r}-i\omega t}\) sollen  Lösungen der Gleichung sein. 
-
-%Wobei die Energie für Photonen \(E=hf=\frac{h}{2\pi}\omega=\hbar\omega\) und somit nach \(\omega\) umgeformt und kinetische Energie eingesetzt \(\omega = \frac{p^2}{2m\hbar}\)  \\
-
- % \begin{equation}
- %  \label{eq:1}
- %   \psi(\vec{r},t)=c\cdot  e^{\frac{i}{\hbar}(\vec{p}\cdot\vec{r}-\frac{p^{2}}{2m}t)}
- % \end{equation}
-
- % Für diese ebenen Wellen gilt:
- % \begin{align*}
- %  \frac{\partial}{\partial t}\psi(\vec{r},t) &=
- %     -\frac{i}{\hbar}\cdot\frac{p^{2}}{2m}\psi(\vec{r},t)\\
- %     &=-\frac{i}{\hbar}\cdot\frac{p^{2}}{2m}\psi(\vec{r},t)
- %     \cdot \frac{\hbar^2}{\hbar^2}\\
- % &= \frac{i\hbar}{2m}\cdot  \underbrace{\frac{(ip)^2}{\hbar^2}\psi(\vec{r},t)}_{\nabla^2\psi(\vec{r},t)}\\
- % &= \frac{i\hbar}{2m}\nabla^2\psi(\vec{r},t)
-%\end{align*}
-
-
-Somit erhalten wir die zeitabhängige Schrödingergleichung in der bekannten Form für ein
-freies Teilchen:
+Dass \(i^2k^2\equiv \nabla^2\) wird ersichtlich, wenn man die Wellenfunktion 2 mal nach Ort Ableitet. Somit erhalten wir aus (\ref{eq:7}) die zeitabhängige Schrödingergleichung in der uns bekannten Form für ein freies Teilchen
 
   \begin{equation}
     \label{eq:11}
-    \boxed{i\hbar\frac{\partial}{\partial t}\Psi(\vec{r},t)
-      =-\frac{\hbar^2}{2m}\nabla^2\Psi(\vec{r},t)}
+    \boxed{i\hbar\frac{\partial}{\partial t}\psi(\vec{r},t)
+      =-\frac{\hbar^2}{2m}\nabla^2\psi(\vec{r},t)}
   \end{equation}
 
 
 Annahme: Teilchen der Masse $m$ unterliegt einem Potential $V(\vec{r},t)$
 \begin{align*}
-  i\hbar\frac{\partial}{\partial t}\Psi(\vec{r},t) 
-  &=-\frac{\hbar^{2}}{2m}\nabla^2\Psi(\vec{r},t)+V(\vec{r},t)\Psi(\vec{r},t)\\
-  &=\left[-\frac{\hbar^{2}}{2m}\nabla^2+V(\vec{r},t)\right]\Psi(\vec{r},t)
+  i\hbar\frac{\partial}{\partial t}\psi(\vec{r},t) 
+  &=-\frac{\hbar^{2}}{2m}\nabla^2\psi(\vec{r},t)+V(\vec{r},t)\psi(\vec{r},t)\\
+  &=\left[-\frac{\hbar^{2}}{2m}\nabla^2+V(\vec{r},t)\right]\psi(\vec{r},t)
 \end{align*}
+\newpage
 
+Alternative Herleitung mit \(\vec p\)
+Die ebenen Wellen \(\psi(\vec{r},t)=c\cdot  e^{\frac{i}{\hbar}\vec{p}\cdot\vec{r}-i\omega t}\) sollen  Lösungen der Gleichung sein. 
 
+Wobei die Energie für Photonen \(E=hf=\frac{h}{2\pi}\omega=\hbar\omega\) und somit nach \(\omega\) umgeformt und kinetische Energie eingesetzt \(\omega = \frac{p^2}{2m\hbar}\)  \\
+
+  \begin{equation}
+   \label{eq:1}
+    \psi(\vec{r},t)=c\cdot  e^{\frac{i}{\hbar}(\vec{p}\cdot\vec{r}-\frac{p^{2}}{2m}t)}
+  \end{equation}
+
+  Für diese ebenen Wellen gilt:
+  \begin{align*}
+   \frac{\partial}{\partial t}\psi(\vec{r},t) &=
+      -\frac{i}{\hbar}\cdot\frac{p^{2}}{2m}\psi(\vec{r},t)\\
+      &=-\frac{i}{\hbar}\cdot\frac{p^{2}}{2m}\psi(\vec{r},t)
+      \cdot \frac{\hbar^2}{\hbar^2}\\
+  &= \frac{i\hbar}{2m}\cdot  \underbrace{\frac{(ip)^2}{\hbar^2}\psi(\vec{r},t)}_{\nabla^2\psi(\vec{r},t)}\\
+  &= \frac{i\hbar}{2m}\nabla^2\psi(\vec{r},t)
+\end{align*}
 
 
 \end{document}
