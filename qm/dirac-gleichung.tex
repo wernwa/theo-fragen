@@ -33,7 +33,7 @@ für ein freies Teilchen erfüllt. Die Betrachtungen im Zusammenhang mit der Kle
 Des weiteren muss die Gleichung \eqref{eq:1} folgende Forderungen erfüllen:
 
 \begin{itemize}
-\item Die Komponenten von \(\psi\) müssen die Klein-Gordon-Gleichung erfüllen, so dass ebene Wellend ie relativistische Beziehung \(E^2 = p^2c^2+m^2c^4\) erfüllen.
+\item Die Komponenten von \(\psi\) müssen die Klein-Gordon-Gleichung erfüllen, so dass der Hamilton-Operator die relativistische Beziehung \(E^2 = p^2c^2+m^2c^4\) erfüllt.
 \item Es existiert ein erhaltener Viererstrom, dessen nullte Komponente eine positive Dichte ist.
 \item Die Gleichung muss Lorentz-kovariant sein. Das bedeutet, dass sie unter Transformation ihre Form behält. Bezugssystem unabhängig. Damit dies erfüllt ist muss gelten: Da die zeitliche Ableitung nur in 1-Ordnung auftritt, muss auch die räumliche Ableitung in 1-Ordnung auftreten. 
 \end{itemize}
@@ -51,7 +51,7 @@ das Quadrat der relativistischen Energie im Quadrat gleich ist. Folgender allgem
   \label{eq:5}
   H = c (\alpha_x p_x + \alpha_y p_y + \alpha_z p_z) + \beta m^2c^4 = c\sum_{i=1}^3\alpha_i p_i   + \beta m^2c^4
 \end{align}
-Die unbekannten Koeffizienten \(\alpha_i,\beta\) können nicht einfach Zahlen sein, da sonst die Gleichung nicht einmal forminvariant gegenüber räumlichen Drehungen ist (D.h. form der Gleichung ändert sich je nachdem das Koordinatensystem wählt). \(\alpha_i,\beta\) müssen hermitische Matritzen sein damit \(H\) hermitesch ist. Daraus folgt  \(\alpha_i,\beta\) müssen \(N\times N\) Matrizen sein.
+Die unbekannten Koeffizienten \(\alpha_i,\beta\) können nicht einfach Zahlen sein, da sonst die Gleichung nicht einmal forminvariant gegenüber räumlichen Drehungen ist (D.h. die Form der Gleichung ändert sich je nachdem wie man das Koordinatensystem wählt). \(\alpha_i,\beta\) müssen hermitische Matritzen sein damit \(H\) hermitesch ist. Daraus folgt  \(\alpha_i,\beta\) müssen \(N\times N\) Matrizen sein.
 
 Um die unbekannten Matritzen  \(\alpha_i,\beta\) zu bestimmen gehen wir von der Klein-Gordon Gleichung aus
 
@@ -69,10 +69,21 @@ Der Koeffizientenverleich zwischen \(c^2(\vec p^2 + m^2c^2)\) und \( c^2\left(\s
 
 \begin{itemize}
 \item  \(\boxed{\beta^2=1}\)
-\item Antikommutator: \(\boxed{\{\alpha_i,\beta\}=0}\) damit der Mischterm \((\alpha_i\beta+\beta\alpha_i)p_i mc\)  verschwindet 
+\item Antikommutator: 
+  \begin{equation}
+    \label{eq:8}
+    \boxed{\{\alpha_i,\beta\}=0}
+  \end{equation}
+Damit der Mischterm \((\alpha_i\beta+\beta\alpha_i)p_i mc\)  verschwindet 
+
 \item \(i\neq j\): z.B:  \(\{\alpha_i,\alpha_j\}=0\) damit die unterschiedlichen Terme \(p_ip_j = \delta_{ij}\) verschwinden
 \item \(i=j\): \(\alpha_x^2p_x^2+\alpha_y^2p_y^2+\alpha_z^2p_z^2=\vec p^2 \Rightarrow \alpha_i^2 = 1\)
-\[\Rightarrow \boxed{\{\alpha_i,\alpha_j\}=2\delta_{ij}}\]
+
+\begin{equation}
+  \label{eq:7}
+  \Rightarrow \boxed{\{\alpha_i,\alpha_j\}=2\delta_{ij}}
+\end{equation}
+
 \item \(\hat p_i,\hat H\) hermitesch \(\Rightarrow \vec\alpha,\beta\) hermitesch
 \item \(\alpha_i^2=1,\beta^2=1 \Rightarrow \) Eigenwerte von \(\alpha_i,\beta\) sind \(\pm 1\)
 \item \(\alpha_i\beta + \beta\alpha_i=0\qquad |\cdot \beta\)
@@ -80,8 +91,84 @@ Der Koeffizientenverleich zwischen \(c^2(\vec p^2 + m^2c^2)\) und \( c^2\left(\s
 \end{itemize}
 
 
+Die Eigenwerte von \(\alpha_i\) und \(\beta\) wie oben schon erwähnt \(\pm 1\). D.h. wir haben für \(+1\) genau so viele Eigenwerte wie für \(-1\). Es kommen also nur Matritzen in den Dimensionen \(N=2,4,6...\) in Frage. Für den Fall \(N=2\) können die Paulimatritzen \(\sigma_i\) mit den Eigenwerten \(\pm 1\) benutzt werden. Sie erlauben jedoch nur 6 Antikommutator Beziehungen zu beschreiben. Benötigt werden aber 9, nämlich 6x~(\ref{eq:7}) und 3x (\ref{eq:8}). Welche durch 4 dimensionale Matritzen (4x4=16) ausreichend beschrieben werden.
 
 
+\(\beta\) diagonal mit den Eigenwerten \(\pm 1\) also wähle 
+\begin{equation}
+  \label{eq:9}
+  \beta= \begin{pmatrix}\mathbb 1&0\\ 0&-\mathbb 1\end{pmatrix} = \begin{pmatrix}1&0&0&0\\ 0&1&0&0\\ 0&0&-1&0\\0&0&0&-1\end{pmatrix}
+\end{equation}
+
+Um die \(\alpha_i\) zu bestimmen, nutzen wir, dass \(\alpha_i\) hermitesch ist und der Antikommutator (\ref{eq:8}) zwischen \(\alpha_i\) und \(\beta\) gleich Null ist. Allgemeiner Ansatz für \(\alpha\)
+
+
+\begin{equation}
+  \label{eq:10}
+  \alpha_i =\begin{pmatrix}A&B\\ C&D\end{pmatrix}
+\end{equation}
+
+Mit der Beziehung dass die Spur von \(\alpha_i\) gleich Null seien muss
+
+\begin{align}
+   \label{eq:11}
+   &\{\alpha_i,\beta\} =  \alpha_i\beta + \beta\alpha_i=0 \notag\\
+   \Leftrightarrow &\alpha_i\beta =-\beta\alpha_i \quad |\cdot \beta\notag\\
+   &\alpha_i\underbrace{\beta^2}_{=1}=-\beta\alpha_i\beta
+\end{align}
+
+Die Spur von (\ref{eq:11}) ergibt
+
+\begin{align}
+  \label{eq:12}
+  &\text{Tr}(\alpha_i)=-\text{Tr}(\beta\alpha_i\beta)=-\text{Tr}(\alpha_i\beta^2)
+  =-\text{Tr}(\alpha_i)\notag\\
+  \Leftrightarrow&\text{Tr}\;\alpha_i = -\text{Tr}\;\alpha_i\notag\\ 
+  \Rightarrow &\text{Tr}\;\alpha_i=0
+\end{align}
+
+Für hermitesche 2D Matrix gilt \(C=B^\dagger\)  und aus Spurenfreiheit folgt \(A=D=0\). 
+\begin{equation}
+  \label{eq:13}
+  \Rightarrow \alpha_i =\begin{pmatrix}0&B\\ B^\dagger&0\end{pmatrix}
+\end{equation}
+
+
+Setze für \(B=\tau_i\). Aus (\ref{eq:7})
+\begin{equation}
+  \label{eq:14}
+  \{\alpha_i,\alpha_j\}=2\delta_{ij} \Leftrightarrow \tau_i\tau_j^\dagger+\tau_j\tau_i^\dagger = 2\delta_{ij}
+\end{equation}
+
+
+Lösung \(\tau_i=\sigma_i=\) Pauli Matrizen
+
+\begin{equation}
+  \label{eq:15}
+  \Rightarrow \boxed{ \beta= \begin{pmatrix}\mathbb 1&0\\ 0&-\mathbb 1\end{pmatrix};\qquad \alpha_i=\begin{pmatrix} 0&\sigma_i\\ \sigma_i&0\end{pmatrix} }
+\end{equation}
+
+Die Dirac Gleichung lässt sich nun schreiben
+
+\begin{equation}
+  \label{eq:16}
+  i\hbar \frac{\partial}{\partial t}\psi(x) = c(\vec \alpha\cdot\frac{\hbar}{i}\vec \nabla + \beta mc)\psi(x) \qquad |\cdot \frac{\beta}{\hbar c}
+\end{equation}
+
+
+Alternativ gibt es sie in kovarianter Form
+
+\[\Rightarrow i\beta \underbrace{\frac{i}{c}\frac{\partial}{\partial t}}_{\frac{\partial}{\partial x^0}}\psi+i\underbrace{\beta\vec \alpha_i}_{\gamma^i}\cdot\underbrace{\vec\nabla_i}_{\frac{\partial}{\partial x^i} }\psi-\frac{mc}{\hbar}\psi=0\]
+
+\[\Rightarrow (i\gamma^\mu\frac{\partial}{\partial x^\mu} - \frac{mc}{\hbar})\psi = 0 \]
+
+\begin{equation}
+  \label{eq:17}
+  \boxed{\left(i\gamma^\mu\partial_\mu - \frac{mc}{\hbar}\right)\psi=0}
+\end{equation}
+
+
+Wobei die \(\gamma^\mu\) die Gamma-Matrizen sind für die gilt \(\gamma^0 = \beta\); \(\gamma^i = \beta\alpha_i\)
 
 
 
