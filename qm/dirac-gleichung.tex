@@ -130,37 +130,58 @@ Die Spur von (\ref{eq:11}) ergibt
 Für hermitesche 2D Matrix gilt \(C=B^\dagger\)  und aus Spurenfreiheit folgt \(A=D=0\). 
 \begin{equation}
   \label{eq:13}
-  \Rightarrow \alpha_i =\begin{pmatrix}0&B\\ B^\dagger&0\end{pmatrix}
+  \Rightarrow \alpha_i =\begin{pmatrix}0&B_i\\ B^\dagger_i&0\end{pmatrix}
 \end{equation}
 
 
 Setze für \(B=\tau_i\). Aus (\ref{eq:7})
-\begin{equation}
-  \label{eq:14}
-  \{\alpha_i,\alpha_j\}=2\delta_{ij} \Leftrightarrow \tau_i\tau_j^\dagger+\tau_j\tau_i^\dagger = 2\delta_{ij}
-\end{equation}
 
 
-Lösung \(\tau_i=\sigma_i=\) Pauli Matrizen
+\begin{align}
+  \label{eq:18}
+  \{\alpha_i,\alpha_j\}&=\begin{pmatrix}0&B_i\\ B^\dagger_i&0\end{pmatrix}\begin{pmatrix}0&B_j\\ B^\dagger_j&0\end{pmatrix} + \begin{pmatrix}0&B_j\\ B^\dagger_j&0\end{pmatrix}\begin{pmatrix}0&B_i\\ B^\dagger_i&0\end{pmatrix}\\
+&=  \begin{pmatrix}B_iB_j^\dagger&0\\ 0&B^\dagger_iB_j\end{pmatrix}+\begin{pmatrix}B_j B_i^\dagger &0\\ 0&B^\dagger_j B_i\end{pmatrix}   \\  
+&=  \begin{pmatrix}B_iB_j^\dagger +B_j B_i^\dagger &0\\ 0&B^\dagger_iB_j+B^\dagger_j B_i\end{pmatrix}\\
+\end{align}
+
+Versuchen wir für \(B_i\) die Paulimatritzen einzusetzen
+
+
+\begin{align}
+  \label{eq:19}
+  \{\alpha_i,\alpha_j\} &= \begin{pmatrix}\sigma_i\sigma_j^\dagger +\sigma_j \sigma_i^\dagger &0\\ 0&\sigma^\dagger_i\sigma_j+\sigma^\dagger_j \sigma_i\end{pmatrix} \qquad \text{ Paulimatritzen hermitesch } \sigma_i^\dagger = \sigma_i \\
+&= \begin{pmatrix}\sigma_i\sigma_j +\sigma_j \sigma_i &0\\ 0&\sigma_i\sigma_j+\sigma_j \sigma_i\end{pmatrix} \qquad \text{mit } \{\sigma_i,\sigma_j\}=2\delta_{ij}\mathds 1 \\ 
+&=  \begin{pmatrix}2\delta_{ij}\mathds 1 &0\\ 0&2\delta_{ij}\mathds 1 \end{pmatrix}\\
+&=2\delta_{ij}\mathds 1
+\end{align}
+
+Damit erfüllen die Paulimatrizen die Antikommutator-Beziehung  \(\{\alpha_i,\alpha_j\} =2\delta_{ij} \). Somit können wir für \(B_i\) die Paulimatrizen nutzen. Zusammenfassend lässt sich schreiben
 
 \begin{equation}
   \label{eq:15}
   \Rightarrow \boxed{ \beta= \begin{pmatrix}\mathbb 1&0\\ 0&-\mathbb 1\end{pmatrix};\qquad \alpha_i=\begin{pmatrix} 0&\sigma_i\\ \sigma_i&0\end{pmatrix} }
 \end{equation}
 
-Die Dirac Gleichung lässt sich nun schreiben
+
+Die Dirac Gleichung (\ref{eq:1}) lässt sich mit den Hamiltonoperator (\ref{eq:5}) und den gefundenen Matritzen \(\alpha_i\) und \(\beta\) nun wie folgt schreiben
 
 \begin{equation}
   \label{eq:16}
-  i\hbar \frac{\partial}{\partial t}\psi(x) = c(\vec \alpha\cdot\frac{\hbar}{i}\vec \nabla + \beta mc)\psi(x) \qquad |\cdot \frac{\beta}{\hbar c}
+  \boxed{i\hbar \frac{\partial}{\partial t}\psi(x) = c\left(\vec \alpha\cdot\frac{\hbar}{i}\vec \nabla + \beta mc\right)\psi(x)}
 \end{equation}
 
 
-Alternativ gibt es sie in kovarianter Form
+Alternativ gibt es die Dirac-Gleichung in kovarianter Form, dazu bringen wir alle Terme auf eine Seite
 
-\[\Rightarrow i\beta \underbrace{\frac{i}{c}\frac{\partial}{\partial t}}_{\frac{\partial}{\partial x^0}}\psi+i\underbrace{\beta\vec \alpha_i}_{\gamma^i}\cdot\underbrace{\vec\nabla_i}_{\frac{\partial}{\partial x^i} }\psi-\frac{mc}{\hbar}\psi=0\]
 
-\[\Rightarrow (i\gamma^\mu\frac{\partial}{\partial x^\mu} - \frac{mc}{\hbar})\psi = 0 \]
+\begin{align}
+  \label{eq:20}
+  &\left( i\hbar \frac{\partial}{\partial t} - c \vec \alpha\cdot\frac{\hbar}{i}\vec \nabla - \beta mc^2 \right)\psi(x) = 0 \qquad |\cdot \frac{\beta}{\hbar c} \notag \\
+ &\left( \beta\frac{i}{c} \frac{\partial}{\partial t} - \vec\alpha\cdot\beta\frac{1}{i}\vec \nabla  - \underbr{\beta^2}_{\mathds 1} \frac{mc}{\hbar } \right)\psi(x) = 0 \notag\\
+ &\left( i \underbr{ \beta}_{\gamma^0}  \underbr{ \frac{1}{c} \frac{\partial}{\partial t}}_{\partial_0} + i\underbr{ \beta \vec \alpha }_{\vec \gamma}\vec \nabla -  \frac{mc}{\hbar } \right)\psi(x) = 0 \notag\\
+ &\left( i \underbr{(\gamma^0  \partial_0 + \vec \gamma \vec \nabla)}_{\gamma^\mu\partial_\mu} -  \frac{mc}{\hbar } \right)\psi(x) = 0 \notag\\
+\end{align}
+Damit erhalten wir die Dirac-Gleichung in kovarianter Form
 
 \begin{equation}
   \label{eq:17}
