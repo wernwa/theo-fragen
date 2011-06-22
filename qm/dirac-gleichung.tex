@@ -176,8 +176,8 @@ Alternativ gibt es die Dirac-Gleichung in kovarianter Form, dazu bringen wir all
 
 \begin{align}
   \label{eq:20}
-  &\left( i\hbar \frac{\partial}{\partial t} - c \vec \alpha\cdot\frac{\hbar}{i}\vec \nabla - \beta mc^2 \right)\psi(x) = 0 \qquad |\cdot \frac{\beta}{\hbar c} \notag \\
- &\left( \beta\frac{i}{c} \frac{\partial}{\partial t} - \vec\alpha\cdot\beta\frac{1}{i}\vec \nabla  - \underbr{\beta^2}_{\mathds 1} \frac{mc}{\hbar } \right)\psi(x) = 0 \notag\\
+ \frac{\beta}{\hbar c} \cdot| \qquad  &\left( i\hbar \frac{\partial}{\partial t} - c \vec \alpha\cdot\frac{\hbar}{i}\vec \nabla - \beta mc^2 \right)\psi(x) = 0  \notag \\
+ &\left( \beta\frac{i}{c} \frac{\partial}{\partial t} - \beta\vec\alpha\frac{1}{i}\vec \nabla  - \underbr{\beta^2}_{\mathds 1} \frac{mc}{\hbar } \right)\psi(x) = 0 \notag\\
  &\left( i \underbr{ \beta}_{\gamma^0}  \underbr{ \frac{1}{c} \frac{\partial}{\partial t}}_{\partial_0} + i\underbr{ \beta \vec \alpha }_{\vec \gamma}\vec \nabla -  \frac{mc}{\hbar } \right)\psi(x) = 0 \notag\\
  &\left( i \underbr{(\gamma^0  \partial_0 + \vec \gamma \vec \nabla)}_{\gamma^\mu\partial_\mu} -  \frac{mc}{\hbar } \right)\psi(x) = 0 \notag\\
 \end{align}
@@ -189,8 +189,84 @@ Damit erhalten wir die Dirac-Gleichung in kovarianter Form
 \end{equation}
 
 
-Wobei die \(\gamma^\mu\) die Gamma-Matrizen sind für die gilt \(\gamma^0 = \beta\); \(\gamma^i = \beta\alpha_i\)
+Wobei die \(\gamma^\mu\) die Gamma-Matrizen sind für die gilt
 
+\begin{equation}
+  \label{eq:24}
+  \boxed{
+  \begin{aligned}
+    \gamma^0 &= \beta \\
+    \gamma^i &= \beta\alpha_i \\
+    \{\gamma^\mu, \gamma^\nu\}&=2g^{\mu\nu}\\
+    \{\gamma^i, \gamma^j\}&=-2\delta_{ij}
+  \end{aligned}}
+\end{equation}
+
+Mit
+\begin{equation}
+  \label{eq:25}
+  \{\gamma^i, \gamma^j\}=\beta\underbr{\alpha_i\beta}_{-\beta\alpha_i}\alpha_j
+  +\beta\underbr{\alpha_j\beta}_{-\beta\alpha_j}\alpha_i=-\{\alpha_i, \alpha_j\}=-2\delta_{ij}
+\end{equation}
+
+
+
+
+\subsection*{Kontinuitätsgleichung aus der Dirac-Gleichung}
+
+Das Problem der Klein-Gordon Gleichung war, dass die Wahrscheinlichkeitsdichte negativ werden konnte. Das hat Dirac dazu veranlasst eine Gleichung zu finden, die einen Positiven Wahrscheinlichkeitsstrom liefert. Dies wollen wir näher untersuchen, indem wir die Kontinuitätsgleichung aufstellen. Wir gehen von der Gleichung (\ref{eq:16}) aus und multiplizieren sie von der linken Seite mit \(\psi^\dagger\)
+
+
+\begin{equation}
+  \label{eq:26}
+  \psi^\dagger\cdot|\qquad i\hbar \frac{\partial \psi}{\partial t} = \frac{\hbar c}{i}\vec \alpha\cdot\vec\nabla\psi+\beta mc^2\psi
+\end{equation}
+
+Und analog mit \(\psi\) die adjungierte Dirac Gleichung von der rechten Seite
+
+\begin{equation}
+  \label{eq:14}
+  -i\hbar \frac{\partial \psi^\dagger}{\partial t} = -\frac{\hbar c}{i}(\vec\nabla\psi^\dagger)\vec \alpha+\beta mc^2\psi^\dagger \qquad |\cdot \psi
+\end{equation}
+
+
+Differenz der beiden Gleichungen \(\ref{eq:26}-\ref{eq:14}\):
+
+\begin{equation}
+  \label{eq:21}
+  \underbrace{ i\hbar(\frac{\partial}{\partial t} \psi^\dagger)\psi+i\hbar\psi^\dagger (\frac{\partial}{\partial t} \psi)}_{\text{Produktregel} \quad = i\hbar\frac{\partial}{\partial t} (\psi^\dagger\psi) } =\underbrace{\frac{\hbar c}{i}(\psi^\dagger \vec \alpha\cdot\vec\nabla\psi+(\vec\nabla\psi^\dagger)\vec\alpha \psi)}_{\text{Produktregel} \quad = -c\vec\nabla(\psi^\dagger\vec\alpha\psi)}
+\end{equation}
+
+
+\[\Rightarrow \frac{\partial}{\partial t}(\psi^\dagger\psi) = -c\vec\nabla(\psi^\dagger\vec\alpha\psi)\]
+
+Damit sieht die Kontinuitätsgleichung wie folgt aus
+
+
+\begin{equation}
+  \label{eq:22}
+  \boxed{ \frac{\partial}{\partial t}\underbrace{(\psi^\dagger\psi) }_{\rho}+\vec\nabla\cdot(\underbrace{c\psi^\dagger\vec\alpha\psi }_{\vec j})=0 }
+\end{equation}
+
+Mit der positiven Wahrscheinlichkeitsdichte
+
+
+\begin{equation}
+  \label{eq:23}
+  \rho =\psi^\dagger\psi = \sum_i|\psi_i|^2\geq 0
+\end{equation}
+
+Und dem Warhscheinlichkeits-Strom in kovarianter Form
+
+\begin{align}
+j^\mu &= (c\rho ,\vec j )\\
+&= (c\underbrace{\psi^\dagger\psi}_{\equiv \rho} ,c\psi^\dagger\beta\beta\vec\alpha\psi )\\
+&= (c\psi^\dagger\underbrace{\beta\gamma^0}_{\mathbb 1}\psi ,c\psi^\dagger\beta\vec\gamma\psi )\\
+&= c\psi^\dagger \beta\gamma^\mu \psi\\
+&= c\overline \psi\gamma^\mu \psi
+\end{align}
+
+wobei \(\overline \psi = \psi^\dagger\beta=\psi^\dagger\gamma^0\) der Pauli adungierte Spinor ist.
 
 
 
