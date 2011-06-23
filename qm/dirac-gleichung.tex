@@ -269,12 +269,38 @@ j^\mu &= (c\rho ,\vec j )\\
 wobei \(\overline \psi = \psi^\dagger\beta=\psi^\dagger\gamma^0\) der Pauli adungierte Spinor ist.
 
 
+\subsection*{16 Bilinearformen}
+
+Die vier Matirzen \(\gamma^\nu\) sind linear unabhängige Matzritzen, bilden aber keine vollständige Basis in dem 4x4=16 dimensionalen Raum. Durch einfache Matrizxmultiplikation der \(\gamma\) Matritzen  ist es möglich alle linear unabhängige Basis Elemente des zugehörigen 16-dimensionalen Raumes zu finden so dass man folgende Basis erhält \(\Gamma = \{\Gamma^S, \Gamma^V, \Gamma^T, \Gamma^A, \Gamma^P\}\) (mit S:Skalar, V:Vektor, T:Tensor, A:Axialvektor, P:Pseudoskalar, wobei die Bezeichnung vom Transformationsverhalten unter Lorenz-Transformation herrührt). 
+
+\begin{table}[h]
+  \centering
+ 
+\begin{tabular}{ccccc}
+ \(\Gamma^{(n)}\)        &Bezeichnung& Anzahl    & \((\Gamma^{(n)})^2=+ 1\)&\((\Gamma^{(n)})^2=- 1\)\\
+\hline 
+ \(\Gamma^{S}\)&\(\mathds 1_4\)&1          &\(\mathds 1_4\)& \\
+  \(\Gamma^{V}\)&\(\gamma^\mu\) &4          & \(\gamma^0\)& \(\gamma^1,\gamma^2,\gamma^3\) \\
+ \(\Gamma^{T}\)&\(\gamma^\mu\gamma^\nu\) mit \(\mu<\nu\)  &6          & \(\gamma^0\gamma^1,\gamma^0\gamma^2,\gamma^0\gamma^3\)& \(\gamma^1\gamma^2,\gamma^1\gamma^3,\gamma^2\gamma^3\) \\
+ \(\Gamma^{A}\)&\(\gamma^\mu\gamma^5\)   &4          & \(i\gamma^0\gamma^2\gamma^3,i\gamma^0,\gamma^3\gamma^1,i\gamma^0,\gamma^1\gamma^2 \)& \(i\gamma^1\gamma^2\gamma^3\) \\
+\(\Gamma^{P}\)&\(\gamma^5\)   &1          & \(i\gamma^0\gamma^1\gamma^2\gamma^3 \)&  \\
+\end{tabular}
+\caption{Basiselemente des 16-dimensionalen Raumes}
+\end{table}
+
+\textbf{Bilineare Form} Als Bilinearform bezeichnet man in der linearen Algebra eine Funktion, welche zwei Vektoren einen Skalarwert zuordnet und die linear in ihren beiden Argumenten ist.
+
+
+
+
 
 \subsection*{Referenzen}
 \begin{itemize}
 \item Wachter Relativistische Quantenmechanik
 \item Schwabl Quantenmechanik für Fortgeschrittene
 \item Rollnik Quantentheorie 2
+\item http://de.wikipedia.org/wiki/Bilinearform
 \end{itemize}
+
 
 \end{document}
