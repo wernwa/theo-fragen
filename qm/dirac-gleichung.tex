@@ -67,6 +67,7 @@ Um die unbekannten Matritzen  \(\alpha_i,\beta\) zu bestimmen gehen wir von der 
 
 Der Koeffizientenverleich zwischen \(c^2(\vec p^2 + m^2c^2)\) und \( c^2\left(\sum_{i,j=1}^3\alpha_i\alpha_j p_ip_j+\sum_{i=1}^3(\alpha_i\beta+\beta\alpha_i)p_i mc +  \beta^2m^2c^2\right)\) liefert
 
+
 \begin{itemize}
 \item  \(\boxed{\beta^2=1}\)
 \item Antikommutator: 
@@ -97,7 +98,7 @@ Die Eigenwerte von \(\alpha_i\) und \(\beta\) wie oben schon erwähnt \(\pm 1\).
 \(\beta\) diagonal mit den Eigenwerten \(\pm 1\) also wähle 
 \begin{equation}
   \label{eq:9}
-  \beta= \begin{pmatrix}\mathbb 1&0\\ 0&-\mathbb 1\end{pmatrix} = \begin{pmatrix}1&0&0&0\\ 0&1&0&0\\ 0&0&-1&0\\0&0&0&-1\end{pmatrix}
+  \beta= \begin{pmatrix}\mathbb 1_2&0\\ 0&-\mathbb 1_2\end{pmatrix} = \begin{pmatrix}1&0&0&0\\ 0&1&0&0\\ 0&0&-1&0\\0&0&0&-1\end{pmatrix}
 \end{equation}
 
 Um die \(\alpha_i\) zu bestimmen, nutzen wir, dass \(\alpha_i\) hermitesch ist und der Antikommutator (\ref{eq:8}) zwischen \(\alpha_i\) und \(\beta\) gleich Null ist. Allgemeiner Ansatz für \(\alpha\)
@@ -150,16 +151,16 @@ Versuchen wir für \(B_i\) die Paulimatritzen einzusetzen
 \begin{align}
   \label{eq:19}
   \{\alpha_i,\alpha_j\} &= \begin{pmatrix}\sigma_i\sigma_j^\dagger +\sigma_j \sigma_i^\dagger &0\\ 0&\sigma^\dagger_i\sigma_j+\sigma^\dagger_j \sigma_i\end{pmatrix} \qquad \text{ Paulimatritzen hermitesch } \sigma_i^\dagger = \sigma_i \\
-&= \begin{pmatrix}\sigma_i\sigma_j +\sigma_j \sigma_i &0\\ 0&\sigma_i\sigma_j+\sigma_j \sigma_i\end{pmatrix} \qquad \text{mit } \{\sigma_i,\sigma_j\}=2\delta_{ij}\mathds 1 \\ 
-&=  \begin{pmatrix}2\delta_{ij}\mathds 1 &0\\ 0&2\delta_{ij}\mathds 1 \end{pmatrix}\\
-&=2\delta_{ij}\mathds 1
+&= \begin{pmatrix}\sigma_i\sigma_j +\sigma_j \sigma_i &0\\ 0&\sigma_i\sigma_j+\sigma_j \sigma_i\end{pmatrix} \qquad \text{mit } \{\sigma_i,\sigma_j\}=2\delta_{ij}\mathds 1_2 \\ 
+&=  \begin{pmatrix}2\delta_{ij}\mathds 1_2 &0\\ 0&2\delta_{ij}\mathds 1_2 \end{pmatrix}\\
+&=2\delta_{ij}\mathds 1_4
 \end{align}
 
 Damit erfüllen die Paulimatrizen die Antikommutator-Beziehung  \(\{\alpha_i,\alpha_j\} =2\delta_{ij} \). Somit können wir für \(B_i\) die Paulimatrizen nutzen. Zusammenfassend lässt sich schreiben
 
 \begin{equation}
   \label{eq:15}
-  \Rightarrow \boxed{ \beta= \begin{pmatrix}\mathbb 1&0\\ 0&-\mathbb 1\end{pmatrix};\qquad \alpha_i=\begin{pmatrix} 0&\sigma_i\\ \sigma_i&0\end{pmatrix} }
+  \Rightarrow \boxed{ \beta= \begin{pmatrix}\mathbb 1_2&0\\ 0&-\mathbb 1_2\end{pmatrix};\qquad \alpha_i=\begin{pmatrix} 0&\sigma_i\\ \sigma_i&0\end{pmatrix} }
 \end{equation}
 
 
@@ -290,7 +291,13 @@ Die vier Matirzen \(\gamma^\nu\) sind linear unabhängige Matzritzen, bilden abe
 
 \textbf{Bilineare Form} Als Bilinearform bezeichnet man in der linearen Algebra eine Funktion, welche zwei Vektoren einen Skalarwert zuordnet und die linear in ihren beiden Argumenten ist.
 
-
+\begin{itemize}
+\item Skalare Bilinearform, ist gegeben durch \(\bar \psi\mathds 1\psi\) (mit \(\bar \psi = \psi^\dagger\beta = \psi^\dagger\gamma^0\)) und transformiert sich wie ein Lorenz-Skalar.
+\item Vektorielle Bilinearform, ist durch \(\bar \psi\gamma^\mu\psi \) gegeben, und transformiert sich wie ein kontravarianter Vektor.
+\item Tensorielle Bilinearform, hat die Form \(\bar \psi\gamma^\mu\gamma^\nu \psi \), und transformiert sich wie ein kontravarianter Tensor 2-er Stufe.
+\item Pseudoskalare Bilinearform, kommt als \(\bar \psi\gamma^5 \psi \) daher, und transformiert sich wie ein skalar mit dem zusätzlichen Faktor (siehe wiki Pseudoskalar).
+\item Axialvektorielle Bilinearform, ist gegeben durch \( \bar \psi\gamma^\mu\gamma^5\psi \), und transformiert sich wie ein Vektor bis auf ein zusätzlichen Faktor (Pseudoskalar).
+\end{itemize}
 
 
 
