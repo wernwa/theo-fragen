@@ -1,0 +1,87 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Loretz-Transformation von Vierervektoren}
+
+
+Wir Betrachten einen linearen vierdimensionalen Vektoren, den sogenannten  \textbf{Minkowski-Raum}. Er besteht aus 4 komponentigen Koordinatenvektoren bzw. Vierervektoren
+
+\begin{align}
+  \label{eq:1}
+  x^\mu = \begin{pmatrix}x^0\\x^1\\ x^2\\x^3 \end{pmatrix} = \begin{pmatrix}ct \\\vec x \end{pmatrix}, \qquad x^0=ct
+\end{align}
+
+bzw. in kovarianter Schreibweise
+
+\begin{align}
+  \label{eq:2}
+  x_\mu = (x^0,-x^1,-x^2,-x^3) = (ct,-\vec x)
+\end{align}
+
+Um zwischen den ko- und kontra-varianten Vektoren zu wechseln, benötigt man den metrischen Tensor
+
+\begin{align}
+  \label{eq:3}
+  g^{\mu\nu} = g_{\mu\nu} = \begin{pmatrix} 1&0&0&0 \\  0&-1&0&0 \\ 0&0&-1&0 \\ 0&0&0&-1  \end{pmatrix}
+\end{align}
+
+
+Damit gilt
+
+\begin{align}
+  \label{eq:4}
+  x_{\mu} = g_{\mu\nu}x^\nu, \qquad x^\nu = g^{\nu\mu}x_\mu
+\end{align}
+
+weitere wichtige Relation
+
+\begin{align}
+  \label{eq:5}
+  x^\nu = g^{\nu\mu}\underbr{x_\mu}_{\eqref{eq:4}} = g^{\nu\mu}  g_{\mu\alpha}x^\alpha = g^\nu_{\,\,\alpha}x^{\alpha}
+\end{align}
+
+Aus der Gleichung (\ref{eq:5}) folgt
+
+\begin{align}
+  \label{eq:6}
+  g^\nu_{\,\,\alpha} = \begin{Bmatrix} 1,& \nu = \alpha\\ 0,&\nu\neq\alpha \end{Bmatrix} = \delta^\nu_{\alpha}
+\end{align}
+
+
+
+
+\(x' = \Lambda x\)  mit \(x^{'\mu}=\Lambda^\mu_{\,\, \nu}x^\nu\)
+
+Bsp: Boost in z-Richtung: \(z' = \gamma(z-vt)\), \(t' = \gamma(t-\frac{v}{c^2}z)\), \(x' = x\), \(y'=y\) mit \(\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\)
+
+Lorenztranformation erhält relative Länge:
+
+\[x'\cdot x' = g_{\mu\nu}x^{'\mu}x^{'\nu} = \underbrace{\Lambda^\mu_{\,\, \rho}  \Lambda^\nu_{\,\, \sigma}g_{\mu\nu}}_{g_{\rho\sigma}}x^\rho x^\sigma = x\cdot x = x^\rho x^\sigma g_{\sigma\rho}\]
+
+Def. Eigenschaft einer Lorenztransformation
+
+\[\Lambda_\mu^{\,\, \rho}\Lambda^\mu_{\,\,\sigma} = g^\rho_{\,\,\sigma} = \delta^\rho_{\,\, \sigma}  \]
+
+oder \((\Lambda^{-1})^\rho_{\,\,\mu} = \Lambda_\mu^{\,\,\rho}\)
+
+\(\Rightarrow det\Lambda = \pm 1\) (Verallgemeinerung von orthogonalen Transformation)
+
+
+
+
+
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item Claude Cohen-Tannoudji Quantenmechanik Band 2
+\item Zettili Quanten Mehanics
+\item Rollnik Quantentheorie 2
+\end{itemize}
+
+\end{document}
