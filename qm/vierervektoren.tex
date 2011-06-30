@@ -22,6 +22,35 @@ bzw. in kovarianter Schreibweise
   x_\mu = (x^0,-x^1,-x^2,-x^3) = (ct,-\vec x)
 \end{align}
 
+Aus dem Viererortsvektor lässt sich mit Hilfe des Eigenzeitdifferentials
+
+\begin{align}
+  \label{eq:7}
+  d\tau = dg\sqrt{1-\frac{1}{c^2}\left(\frac{dx}{dt}\right)^2}
+\end{align}
+
+herleiten. Die Vierergeschwindigkeit \(u^\mu\) als Ableitung vom Ort nach der Eigenzeit
+
+\begin{align}
+  \label{eq:8}
+  u^\mu = \frac{dx^\mu}{d\tau} = \frac{dt}{d\tau}\frac{dx^\mu}{dt}=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\begin{pmatrix}c\\\vec v \end{pmatrix}
+\end{align}
+
+der Viererimpuls \(p^\mu\) aus dem Produkt aus der Ruhemasse \(m_0\) und der Vierergeschwindigkeit
+
+\begin{align}
+  \label{eq:9}
+  p^\mu = m_0u^\mu = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}\begin{pmatrix}c\\\vec v \end{pmatrix} =\begin{pmatrix}mc\\\vec p \end{pmatrix}\qquad \text{mit }m= \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align}
+
+Sowie der Viererkraft \(F^\mu\) als Ableitung des Viererimpuls nach der Eigenzeit
+
+\begin{align}
+  \label{eq:10}
+  F^\mu = \frac{dp^\mu}{d\tau} = \frac{dt}{d\tau}\frac{dp^\mu}{dt} = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\frac{dp^\mu}{dt} = \begin{pmatrix}c \frac{dm}{dt}\\\vec F \end{pmatrix}.
+\end{align}
+
+
 Um zwischen den ko- und kontra-varianten Vektoren zu wechseln, benötigt man den metrischen Tensor
 
 \begin{align}
