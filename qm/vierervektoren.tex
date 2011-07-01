@@ -81,25 +81,101 @@ Aus der Gleichung (\ref{eq:5}) folgt
 \end{align}
 
 
+Wir betrachten zwei Inertialsysteme. Um von einem Intertialsystem IE in ein anderes IE' zu wechseln benötigt man die Loretz-Transfomation mit
+
+\begin{align}
+  \label{eq:11}
+  x^{'\mu}=\Lambda^\mu_{\,\, \nu}x^\nu
+\end{align}
+
+Hier bezeichnet \(x'^\mu\) ein Vierervektor im IE' Intertialsystem und \(x^\mu\) im IE Intertialsystem . Die \(\Lambda^\mu_{\,\, \nu}\) sind 4x4 Matrizen die den Zusammenhang zwischen den Inertialsystemen herstellen. Betrachten wir eine Drehung um die z-Achse, d.h IE' ist um ein Winkel \(\theta\) zu IE gedreht, dann gilt
+
+\begin{align}
+  \label{eq:12}
+  \Lambda^\mu_{\,\, \nu} =
+  \begin{pmatrix}
+    1&0&0&0\\
+0&\cos\theta&\sin\theta&0\\
+0&-\sin\theta&\cos\theta&0\\
+    0&0&0&1
+  \end{pmatrix}
+\end{align}
+
+Ein anderer Fall wäre wenn die zwei Intertialsysteme mit einer Geschwindigkeit \(v\) zu einander bewegen. Dies bezeichnet man als \textbf{Boosts}. Eine Transformation für ein Boost in die z-Richtung
+
+\begin{align}
+  \label{eq:13}
+  \Lambda^\mu_{\,\, \nu} =
+  \begin{pmatrix}
+    \gamma&0&0&-\beta\gamma\\
+0&1&0&0\\
+0&0&1&0\\
+    -\beta\gamma&0&0&\gamma
+  \end{pmatrix}
+\end{align}
+
+mit den Abkürzungen
+
+\begin{align}
+  \label{eq:14}
+  \beta = \frac{v}{c} ,\qquad \gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align}
 
 
-\(x' = \Lambda x\)  mit \(x^{'\mu}=\Lambda^\mu_{\,\, \nu}x^\nu\)
+Für dieses Beispiel angewandt ergibt sich im IE' für die einzelnen Komponenten \(x'^\mu\)
 
-Bsp: Boost in z-Richtung: \(z' = \gamma(z-vt)\), \(t' = \gamma(t-\frac{v}{c^2}z)\), \(x' = x\), \(y'=y\) mit \(\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\)
+\begin{align}
+  \label{eq:15}
+  x'^\mu =
+  \begin{pmatrix}
+     \gamma(x^0-\beta x^3)\\
+     x^1\\
+     x^2\\
+ \gamma(x^3-vt)
+  \end{pmatrix}
+\end{align}
 
-Lorenztranformation erhält relative Länge:
+Eine Lorentztransformation ist eine Transformation die die Länge \(x^2\)  des Vektors \(x^\mu\) unverändert lässt. Zum Beweis
 
-\[x'\cdot x' = g_{\mu\nu}x^{'\mu}x^{'\nu} = \underbrace{\Lambda^\mu_{\,\, \rho}  \Lambda^\nu_{\,\, \sigma}g_{\mu\nu}}_{g_{\rho\sigma}}x^\rho x^\sigma = x\cdot x = x^\rho x^\sigma g_{\sigma\rho}\]
+\begin{align}
+  \label{eq:16}
+  (x')^2 &= x'_\nu x'^\nu = \underbr{ g_{\mu\nu}x^{'\mu}}_{~(\ref{eq:4})}x^{'\nu} \notag \\
+&=  g_{\mu\nu}\underbr{ x^{'\mu}}_{\Lambda^\mu_{\,\, \rho}x^\rho}\cdot \underbr{ x^{'\nu}}_{\Lambda^\nu_{\,\, \sigma}x^\sigma} \notag \\
+ &= \underbrace{\Lambda^\mu_{\,\, \rho}  \Lambda^\nu_{\,\, \sigma}g_{\mu\nu}}_{g_{\rho\sigma}}x^\rho x^\sigma\notag \\
+&= g_{\sigma\rho} x^\rho x^\sigma  = x_\sigma x^\sigma = x^2
+\end{align}
 
-Def. Eigenschaft einer Lorenztransformation
+Aus der Gleichung (\ref{eq:16})  folgt  \((x')^2 = x^2\) und d.h. dass die relative Länge in beiden Inertialsystemen erhalten ist. \(x^2\) ist Lorentz-Invariant. 
 
-\[\Lambda_\mu^{\,\, \rho}\Lambda^\mu_{\,\,\sigma} = g^\rho_{\,\,\sigma} = \delta^\rho_{\,\, \sigma}  \]
 
-oder \((\Lambda^{-1})^\rho_{\,\,\mu} = \Lambda_\mu^{\,\,\rho}\)
+Da die Lorenztransformation eine unitäre Transformation ist, gilt die allgemeine Eigenschaft \(\Lambda^{-1}\Lambda=\mathds 1_4\)  . In der Tensorschreibweise sieht das folgendermaßen aus
+
+\begin{align}
+  \label{eq:17}
+  \Lambda_\mu^{\,\, \rho}\Lambda^\mu_{\,\,\sigma} = g^\rho_{\,\,\sigma} = \delta^\rho_{\,\, \sigma} 
+\end{align}
+
+mit
+
+
+\begin{align}
+  \label{eq:18}
+ \boxed{(\Lambda^{-1})^\rho_{\,\,\mu} = \Lambda_\mu^{\,\,\rho}}
+\end{align}
+
+ergibt sich
+
+\begin{align}
+  \label{eq:19}
+  &(\Lambda^{-1})^\rho_{\,\,\mu}\Lambda^\mu_{\,\,\sigma} =  \delta^\rho_{\,\, \sigma}  
+\end{align}
+
+
 
 \(\Rightarrow det\Lambda = \pm 1\) (Verallgemeinerung von orthogonalen Transformation)
 
 
+TODO: qms9 S.481
 
 
 
@@ -108,9 +184,8 @@ oder \((\Lambda^{-1})^\rho_{\,\,\mu} = \Lambda_\mu^{\,\,\rho}\)
 
 \subsection*{Referenzen}
 \begin{itemize}
-\item Claude Cohen-Tannoudji Quantenmechanik Band 2
-\item Zettili Quanten Mehanics
-\item Rollnik Quantentheorie 2
+\item Wachter: Relativistische Quantenmechanik
+\item www.tphys.physik.uni-tuebingen.de/muether/quanten/qms9.ps
 \end{itemize}
 
 \end{document}
