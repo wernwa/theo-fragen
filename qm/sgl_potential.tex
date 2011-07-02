@@ -7,13 +7,13 @@
 
 \subsection*{Vorgehensweise}
 
-Um die Lösung für ein Potentialproblem zu finden, macht man sich an einer Zeichung klar, wo und welche Form das Potential hat. Dann kann für die verschiedenen Bereiche jeweils eine Ansatzfunktion mit allgemeinen Paramtern aufgestellt werden. Diese Funktion sollte Lösung der Schrödinger-Gleichung sein. Um die Parameter bestimmen müssen die einzelnen Ansatzfunktionen an den Rändern Anschlussbegingungen erfüllen. Damit die Gesamtlösung \textbf{stetig} ist (Vorausgesetzt das Potential ist auch stetig) sollten die Ansatzfunktionen an den Anschlusspunkten gleich sein sowie deren erste Ortsableitungen. Für ein eindimensionales Beispiel, mit zwei Ansatzfunktionen \(\psi_I(x)\) und \(\psi_{II}(x)\) und den Bereichen mit unterschiedlichen Potentialen I und II, sollte gelten
+Um die Lösung für ein Potentialproblem zu finden, macht man sich an einer Zeichung klar, wo und welche Form das Potential hat. Dann kann für die verschiedenen Bereiche jeweils eine Ansatzfunktion mit allgemeinen Paramtern aufgestellt werden. Diese Funktion sollte Lösung der Schrödinger-Gleichung sein. Um die Parameter zu bestimmen müssen die einzelnen Ansatzfunktionen an den Rändern Anschlussbegingungen erfüllen. Damit die Gesamtlösung \textbf{stetig} ist sollten die Ansatzfunktionen an den Anschlusspunkten gleich sein sowie deren erste Ortsableitungen. Für ein eindimensionales Beispiel, mit zwei Ansatzfunktionen \(\psi_I(x)\) und \(\psi_{II}(x)\) und den Bereichen mit unterschiedlichen Potentialen I und II, sollte gelten
 \begin{equation}
   \label{eq:15}
   \psi_I(a) = \psi_{II}(a)\qquad  \pdiff_x \psi_I(a) = \pdiff_x \psi_{II}(a)
 \end{equation}
 
-Mit \(x=a\) die Stelle an dem Bereich I endet und Bereich II beginnt. Die Notwendigkeit der Gleichheit ersten Ableitungen der Funktionen an den Anschlusspunkten begründet sich aus der Wahrscheinnlichkeitsstromerhaltung \(j_I+j_{II}=j_{\text{ges}}\)für die gesamte Lösung. Damit diese erfüllt ist, verlangt die Definition des quantenmechanischen Stromes
+Mit \(x=a\) die Stelle an dem Bereich I endet und Bereich II beginnt. Die Notwendigkeit der Gleichheit ersten Ableitungen der Funktionen an den Anschlusspunkten begründet sich aus der Wahrscheinnlichkeitsstromerhaltung \(j_I+j_{II}=j_{\text{ges}}\) für die gesamte Lösung. Damit diese erfüllt ist, verlangt die Definition des quantenmechanischen Stromes
 \begin{equation}
   \label{eq:17}
   j = \frac{i\hbar}{2m}\left(\psi \frac{\partial}{\partial x} \psi^* - \psi^* \frac{\partial}{\partial x}\psi\right)
@@ -23,7 +23,9 @@ nach einer Ortsableitung.
 
 \subsection*{Verschiedene Arten von Potentialen}
 
-TODO: Gebundene, Freie (Streu) Zustände
+Bewegt sich ein Teilchen frei im Raum und trifft auf eine Potentialstufe, so kann das Teilchen je nach Höhe und Breite tunneln, reflektieren oder streuen. Die Energiewerte des Teilchens sind dabei kontinuierlich. Man spricht i.a. von \textbf{Streuzuständen}
+
+Ist dagegen das Teilchen von Potentialwänden umgeben und kann nicht entweichen, weil die eigen Energie kleiner ist. Die Lösung für die Energieeigenwerte ergibt dann diskrete Zustände. Hierbei handelt es sich um \textbf{gebundene Zustände}.
 
 \subsection{Stufenpotential allgemein}
 
