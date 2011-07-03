@@ -80,15 +80,35 @@ Aus der Gleichung (\ref{eq:5}) folgt
   g^\nu_{\,\,\alpha} = \begin{Bmatrix} 1,& \nu = \alpha\\ 0,&\nu\neq\alpha \end{Bmatrix} = \delta^\nu_{\alpha}
 \end{align}
 
+\subsubsection*{Wie kann man sich am besten die Ko- und Kontravarianten Vektoren vorstellen?} 
 
-Wir betrachten zwei Inertialsysteme. Um von einem Intertialsystem IE in ein anderes IE' zu wechseln benötigt man die Loretz-Transfomation mit
+Es gibt viele unterschiedliche Vorstellungsmodelle die versuchen sich die Ko- und Kontravarianten Vektoren bildlich zu machen. Eine davon geht davon aus, dass ein kontravarianter Vektor wie ein '\textit{Stock}' ist der eine Richtung und eine Länge hat. Wobei die Länge die Größe des Vektors angibt. Einen kovarianten Vektor stellt man sich wie eine '\textit{Lasagne}' vor. Dabei ist die Größe des Vektors proportional zu der Dichte der Schichten (Lasagneplatten) in der Lasagne. D.h. je dichter die einzelnen Schichten beieinander sind desto größer ist der Wert des Vektors. Das innere Produkt zwischen den beiden Vektoren kann man sich nun bildlich vorstellen als in der Lasagne steckender Stock, dabei ist das innere Produkt proportional zu der Anzahl der Schichten die vom Stock durchstochen wurden. Wählt man bei der Lasagne eine geeignete Metrik so kann man sie in einen Stock umwandeln. Genau diese Umwandlung erledigt der Metriktensor. 
+
+\subsubsection*{Warum macht man in karthesischen Koordinatensystemen kein Unterschied zwischen Ko- und Kontravarianten Vektoren? }
+
+In Kartesischen Koordinatensystem ist der Metriktensor eine Einheitsmatrix d.h es gilt
+
+\begin{align}
+  \label{eq:20}
+  v^i &= g^{ij}v_j \qquad\text{mit } g^{ij}=\mathds 1 \notag \\
+\rightarrow v^i &= v_j 
+\end{align}
+
+Hieraus folgt dass die Unterscheidung der Hoch- und Tief- gestellten Indizies im kartesischen Koordinatensystem überflüssig ist. 
+
+Bei der Speziellen Relativitätstheorie ist der Metriktensor immer eine kosnstante Matrix (siehe Gleichung \eqref{eq:3}. Bei der allgemeinen Relativitätstheorie ist der Metriktensor nicht mehr konstant, sondern hängt von Energie und Masse ab.
+
+
+\subsection*{Lorenztransformation}
+
+Wir betrachten zwei Inertialsysteme. Um von einem Intertialsystem IS in ein anderes IS' zu wechseln benötigt man die Loretz-Transfomations-Matritzen \(\Lambda\) mit
 
 \begin{align}
   \label{eq:11}
-  x^{'\mu}=\Lambda^\mu_{\,\, \nu}x^\nu
+  x^{'\mu}=\Lambda^\mu_{\hphantom\mu \nu}x^\nu
 \end{align}
 
-Hier bezeichnet \(x'^\mu\) ein Vierervektor im IE' Intertialsystem und \(x^\mu\) im IE Intertialsystem . Die \(\Lambda^\mu_{\,\, \nu}\) sind 4x4 Matrizen die den Zusammenhang zwischen den Inertialsystemen herstellen. Betrachten wir eine Drehung um die z-Achse, d.h IE' ist um ein Winkel \(\theta\) zu IE gedreht, dann gilt
+Hier bezeichnet \(x'^\mu\) ein Vierervektor im IS' Intertialsystem und \(x^\mu\) im IS Intertialsystem . Die \(\Lambda^\mu_{\,\, \nu}\) sind 4x4 Matrizen die den Zusammenhang zwischen den Inertialsystemen herstellen. Betrachten wir eine Drehung um die z-Achse, d.h IS' ist um ein Winkel \(\theta\) zu IS gedreht, dann gilt
 
 \begin{align}
   \label{eq:12}
@@ -101,7 +121,7 @@ Hier bezeichnet \(x'^\mu\) ein Vierervektor im IE' Intertialsystem und \(x^\mu\)
   \end{pmatrix}
 \end{align}
 
-Ein anderer Fall wäre wenn die zwei Intertialsysteme mit einer Geschwindigkeit \(v\) zu einander bewegen. Dies bezeichnet man als \textbf{Boosts}. Eine Transformation für ein Boost in die z-Richtung
+Ein anderer Fall wäre wenn die zwei Intertialsysteme mit einer Geschwindigkeit \(v\) zu einander sich bewegen. Dies bezeichnet man als \textbf{Boosts}. Eine Transformation für ein Boost in die z-Richtung lautet
 
 \begin{align}
   \label{eq:13}
@@ -122,7 +142,7 @@ mit den Abkürzungen
 \end{align}
 
 
-Für dieses Beispiel angewandt ergibt sich im IE' für die einzelnen Komponenten \(x'^\mu\)
+Für dieses Beispiel angewandt ergibt sich im IS' für die einzelnen Komponenten \(x'^\mu\)
 
 \begin{align}
   \label{eq:15}
@@ -148,34 +168,79 @@ Eine Lorentztransformation ist eine Transformation die die Länge \(x^2\)  des V
 Aus der Gleichung (\ref{eq:16})  folgt  \((x')^2 = x^2\) und d.h. dass die relative Länge in beiden Inertialsystemen erhalten ist. \(x^2\) ist Lorentz-Invariant. 
 
 
-Da die Lorenztransformation eine unitäre Transformation ist, gilt die allgemeine Eigenschaft \(\Lambda^{-1}\Lambda=\mathds 1_4\)  . In der Tensorschreibweise sieht das folgendermaßen aus
+Da die Lorenztransformation die Länge eines Vektors unverändert lässt, also eine unitäre Transformation ist, gilt die allgemeine Eigenschaft
+
+
+\begin{align}
+  \label{eq:22}
+  \Lambda^{-1}\Lambda=\mathds 1_4
+\end{align}
+
+Wir möchten nun die Umkehrmatrix  \(\Lambda^{-1}\) berechnen. Wir gehen von Gleichung \eqref{eq:11} aus die nochmal lautet
+
+\begin{align}
+  \label{eq:21}
+ \Lambda^{-1}\cdot|\qquad   x^{'\nu} &= \Lambda^{\nu}_{\hphantom \nu \mu}x^\mu \\
+ \Lambda^{-1}  x^{'\nu} &= \underbrace{ \Lambda^{-1}\Lambda^{\nu}_{\hphantom \nu \mu}}_{\mathds 1}x^\mu 
+\end{align}
+
+Aufgrund der Beziehung \eqref{eq:22} formen wir diese Gleichung um ohne zunächst zu wissen, was das Objekt \(\Lambda^{-1}\) in der Indexschreibweise bedeutet
+
+\begin{align}
+  \label{eq:23}
+  x^{\mu} = \Lambda^{-1}x^{'\nu}
+\end{align}
+
+Desweiteren gehen wir davon aus, dass das Skalarprodukt in allen Inertialsystemen erhalten ist. Somit gilt
+
+\begin{align}
+  \label{eq:24}
+  x^\nu x_\nu &= x'^{\mu}x'_{\mu} \qquad\text{mit }\eqref{eq:23}\notag\\
+\Lambda^{-1}x^{'\mu} x_\nu &= x'^{\mu}x'_{\mu}
+\end{align}
+
+Nun möchten wir herausfinden wie sich der kovariante Vektor \(x'_{\mu}\) transformiert
+
+\begin{align}
+  \label{eq:25}
+  x'_{\mu} = g_{\mu\alpha} x'^\alpha =  g_{\mu\alpha}\underbrace{ \Lambda^{\alpha}_{\hphantom\alpha \beta}x^\beta}_{\eqref{eq:11}} =\underbrace{ g_{\mu\alpha}\Lambda^{\alpha}_{\hphantom\alpha \beta}g^{\beta\nu}}_{\Lambda^{\hphantom \mu \nu}_{\mu}}x_{\nu}
+\end{align}
+Somit Transformiert sich ein kovarianter Vektor
+
+\begin{align}
+  \label{eq:26}
+   x'_{\mu} = \Lambda^{\hphantom \mu \nu}_{\mu}x_{\nu}
+\end{align}
+
+mit 
+
+\begin{align}
+  \label{eq:27}
+  \Lambda^{\hphantom \mu \nu}_{\mu} = g_{\mu\alpha}\Lambda^{\alpha}_{\hphantom\alpha \beta}g^{\beta\nu}
+\end{align}
+
+Setzen wir nun die Gleichung \eqref{eq:26} in \eqref{eq:24} ein so folgt
+
+\begin{align}
+  \label{eq:28}
+  \Lambda^{-1}x^{'\mu} x_\nu &= x'^{\mu}x'_{\mu} \notag \\
+ \Lambda^{-1}\cancel{x^{'\mu}}\cancel{ x_\nu} &= \cancel{x'^{\mu}}\Lambda^{\hphantom \mu \nu}_{\mu}\cancel{x_{\nu}} \notag \\
+\end{align}
+Aus dem folgt dass die Inverse Matrix von \(\Lambda\) sich ergibt aus
+
+\begin{align}
+  \label{eq:29}
+   \boxed{ \Lambda^{-1} = \Lambda^{\hphantom \mu \nu}_{\mu} = g_{\mu\alpha}\Lambda^{\alpha}_{\hphantom\alpha \beta}g^{\beta\nu} }
+\end{align}
+
+
+Für unitäre Matrizen könen wir die Beziehung  \eqref{eq:22} nun in der Tensorschreibweise ausdrücken
 
 \begin{align}
   \label{eq:17}
-  \Lambda_\mu^{\,\, \rho}\Lambda^\mu_{\,\,\sigma} = g^\rho_{\,\,\sigma} = \delta^\rho_{\,\, \sigma} 
+ \boxed{ \Lambda_\mu^{\,\, \rho}\Lambda^\mu_{\,\,\sigma} = g^\rho_{\,\,\sigma} = \delta^\rho_{\,\, \sigma} }
 \end{align}
 
-mit
-
-
-\begin{align}
-  \label{eq:18}
- \boxed{(\Lambda^{-1})^\rho_{\,\,\mu} = \Lambda_\mu^{\,\,\rho}}
-\end{align}
-
-ergibt sich
-
-\begin{align}
-  \label{eq:19}
-  &(\Lambda^{-1})^\rho_{\,\,\mu}\Lambda^\mu_{\,\,\sigma} =  \delta^\rho_{\,\, \sigma}  
-\end{align}
-
-
-
-\(\Rightarrow det\Lambda = \pm 1\) (Verallgemeinerung von orthogonalen Transformation)
-
-
-TODO: qms9 S.481
 
 
 
@@ -185,7 +250,8 @@ TODO: qms9 S.481
 \subsection*{Referenzen}
 \begin{itemize}
 \item Wachter: Relativistische Quantenmechanik
-\item www.tphys.physik.uni-tuebingen.de/muether/quanten/qms9.ps
+\item \url{http://www.tphys.physik.uni-tuebingen.de/muether/quanten/qms9.ps}
+\item \url{http://www.rpi.edu/dept/phys/Courses/PHYS4210/S10/NotesOnVectors.pdf}
 \end{itemize}
 
 \end{document}
