@@ -180,53 +180,59 @@ Wir möchten nun die Umkehrmatrix  \(\Lambda^{-1}\) berechnen. Wir gehen von Gle
 
 \begin{align}
   \label{eq:21}
- \Lambda^{-1}\cdot|\qquad   x^{'\nu} &= \Lambda^{\nu}_{\hphantom \nu \mu}x^\mu \\
- \Lambda^{-1}  x^{'\nu} &= \underbrace{ \Lambda^{-1}\Lambda^{\nu}_{\hphantom \nu \mu}}_{\mathds 1}x^\mu 
+ \Lambda^{-1}\cdot|\qquad   x'^{\mu} &= \Lambda^{\mu}_{\hphantom \mu \nu}x^\nu \notag\\
+ \Lambda^{-1}  x'^{\mu} &= \underbrace{ \Lambda^{-1}\Lambda^{\mu}_{\hphantom \mu \nu}}_{\mathds 1}x^\nu 
 \end{align}
 
 Aufgrund der Beziehung \eqref{eq:22} formen wir diese Gleichung um ohne zunächst zu wissen, was das Objekt \(\Lambda^{-1}\) in der Indexschreibweise bedeutet
 
 \begin{align}
   \label{eq:23}
-  x^{\mu} = \Lambda^{-1}x^{'\nu}
+  x^{\nu} = \Lambda^{-1}x'^{\mu}
 \end{align}
 
 Desweiteren gehen wir davon aus, dass das Skalarprodukt in allen Inertialsystemen erhalten ist. Somit gilt
 
 \begin{align}
   \label{eq:24}
-  x^\nu x_\nu &= x'^{\mu}x'_{\mu} \qquad\text{mit }\eqref{eq:23}\notag\\
-\Lambda^{-1}x^{'\mu} x_\nu &= x'^{\mu}x'_{\mu}
+  x^\nu x_\nu &= x'^{\mu}x'_{\mu} \qquad\text{mit } x^{\nu} = \Lambda^{-1}x'^{\mu}\notag\\
+\Lambda^{-1}x'^{\mu} x_\nu &= x'^{\mu}x'_{\mu}
 \end{align}
 
 Nun möchten wir herausfinden wie sich der kovariante Vektor \(x'_{\mu}\) transformiert
 
 \begin{align}
   \label{eq:25}
-  x'_{\mu} = g_{\mu\alpha} x'^\alpha =  g_{\mu\alpha}\underbrace{ \Lambda^{\alpha}_{\hphantom\alpha \beta}x^\beta}_{\eqref{eq:11}} =\underbrace{ g_{\mu\alpha}\Lambda^{\alpha}_{\hphantom\alpha \beta}g^{\beta\nu}}_{\Lambda^{\hphantom \mu \nu}_{\mu}}x_{\nu}
+  x'_{\mu} = g_{\mu\alpha} x'^\alpha 
+  = g_{\mu\alpha}\underbrace{ \Lambda^{\alpha}_{\hphantom\alpha \beta}
+    \,x^\beta}_{\eqref{eq:11}} 
+  =\underbrace{ g_{\mu\alpha}\Lambda^{\alpha}_{\hphantom\alpha\beta}\,
+    g^{\beta\nu}}_{\Lambda^{\hphantom \mu \nu}_{\mu}}x_{\nu}
 \end{align}
 Somit Transformiert sich ein kovarianter Vektor
 
 \begin{align}
   \label{eq:26}
-   x'_{\mu} = \Lambda^{\hphantom \mu \nu}_{\mu}x_{\nu}
+   \boxed{x'_{\mu} = \Lambda^{\hphantom \mu \nu}_{\mu}x_{\nu}}
 \end{align}
 
 mit 
-
 \begin{align}
   \label{eq:27}
-  \Lambda^{\hphantom \mu \nu}_{\mu} = g_{\mu\alpha}\Lambda^{\alpha}_{\hphantom\alpha \beta}g^{\beta\nu}
+  \Lambda^{\hphantom \mu \nu}_{\mu} 
+  = g_{\mu\alpha}\Lambda^{\alpha}_{\hphantom\alpha \beta}\,g^{\beta\nu}
 \end{align}
 
 Setzen wir nun die Gleichung \eqref{eq:26} in \eqref{eq:24} ein so folgt
 
 \begin{align}
   \label{eq:28}
-  \Lambda^{-1}x^{'\mu} x_\nu &= x'^{\mu}x'_{\mu} \notag \\
+  \Lambda^{-1}x'^{\mu} x_\nu &= x'^{\mu}x'_{\mu} 
+  \qquad\text{mit } x'_{\mu} = \Lambda^{\hphantom \mu \nu}_{\mu}x_{\nu} \notag \\
  \Lambda^{-1}\cancel{x^{'\mu}}\cancel{ x_\nu} &= \cancel{x'^{\mu}}\Lambda^{\hphantom \mu \nu}_{\mu}\cancel{x_{\nu}} \notag \\
 \end{align}
-Aus dem folgt dass die Inverse Matrix von \(\Lambda\) sich ergibt aus
+
+Aus \eqref{eq:28} folgt dass die Inverse Matrix von \(\Lambda\) mit
 
 \begin{align}
   \label{eq:29}
@@ -238,13 +244,138 @@ Für unitäre Matrizen könen wir die Beziehung  \eqref{eq:22} nun in der Tensor
 
 \begin{align}
   \label{eq:17}
- \boxed{ \Lambda_\mu^{\,\, \rho}\Lambda^\mu_{\,\,\sigma} = g^\rho_{\,\,\sigma} = \delta^\rho_{\,\, \sigma} }
+ \boxed{ \Lambda_\mu^{\,\, \rho}\Lambda^\mu_{\,\,\sigma} = g^\rho_{\,\,\sigma} =
+   \delta^\rho_{\,\, \sigma} }
 \end{align}
 
+Wir wollen noch die Umkehrmatrix \(\Lambda^{-1}\) für die Transformationmatrix
+\eqref{eq:13} bestimmen. Die Matrix lautet
 
+\begin{equation}
+  \label{eq:18}
+    \Lambda^\mu_{\hphantom\mu \nu} =
+  \begin{pmatrix}
+    \gamma&0&0&-\beta\gamma\\
+    0&1&0&0\\
+    0&0&1&0\\
+    -\beta\gamma&0&0&\gamma
+  \end{pmatrix}
+\end{equation}
 
+Dabei steht der \emph{linke Index} von \(\Lambda\) für die \emph{Zeilen} und
+der \emph{rechte Index} für die \emph{Spalten} also wie auch bei einer
+``gewöhnlichen'' Matrix. Es spielt keine Rolle ob der linke Index Oben oder
+Unten ist, er steht immer für Zeilen. Genauso spielt es keine Rolle ob der rechte
+Index Oben oder Unten steht, er steht immer für Spalten.
 
+Um nun die Umkehrmatrix von \eqref{eq:18} zu bestimmen (siehe \eqref{eq:29})
+müssen wir den Zeilenindex der in \eqref{eq:18} kontravariant ist, in eine
+kovariante Form bringen, d.h. wir müssen die Zeilenvektoren in \eqref{eq:18} von
+der kontravarianter Form in die kovariante Form bringen. Dies erreichen wir in
+dem wir die einzelnen Zeilenvektoren mit dem Metriktensor \(g_{\mu \alpha}\)
+multiplizieren. D.h. die erste Komponente der einzelnen Zeilenvektoren
+übernehmen und alle weiteren mit \(-1\) multiplizieren. Dies sieht dann wie
+folgt aus
+\begin{equation}
+  \label{eq:19}
+     g_{\mu\alpha}\Lambda^\alpha_{\hphantom\alpha \nu} =
+     \Lambda_{\mu \nu} =
+  \begin{pmatrix}
+    \gamma&0&0&\beta\gamma\\
+    0&-1&0&0\\
+    0&0&-1&0\\
+    -\beta\gamma&0&0&-\gamma
+  \end{pmatrix}
+\end{equation}
 
+Als nächstes müssen wir den Spaltenindex der in \eqref{eq:19} bzw. \eqref{eq:19} kovariant ist, in
+eine kontravariante Form bringen. Dazu multiplizieren wir \eqref{eq:19} mit dem
+Metriktensor \(g^{\beta\nu}\) d.h. wir übernehmen bei den Spaltenvektoren in
+\eqref{eq:19} die erste Komponente und multiplizieren alle weitere Komponente
+mit \(-1\). Wir erhalten:
+\begin{equation}
+  \label{eq:30}
+   \Lambda_{\mu \beta}\,g^{\beta\nu} =  \Lambda_{\mu}^{\hphantom \mu \nu}=
+  \begin{pmatrix}
+    \gamma&0&0&\beta\gamma\\
+    0&1&0&0\\
+    0&0&1&0\\
+    \beta\gamma&0&0&\gamma
+  \end{pmatrix}
+\end{equation}
+
+Aus \eqref{eq:30} folgt direkt die Umkehrmatrix von \eqref{eq:18} mit
+
+\begin{equation}
+  \label{eq:31}
+   \left(\Lambda^\mu_{\hphantom\mu \nu}\right)^{-1} 
+   = \Lambda_{\mu}^{\hphantom \mu \nu}=
+  \begin{pmatrix}
+    \gamma&0&0&\beta\gamma\\
+    0&1&0&0\\
+    0&0&1&0\\
+    \beta\gamma&0&0&\gamma
+  \end{pmatrix}
+\end{equation}
+
+Eine weitere Möglichkeit die Umkehrmatrix von \eqref{eq:18} zu bestimmen ist
+wenn wir folgende Bedingung betrachten:
+\begin{equation}
+  \label{eq:32}
+  \Lambda(-v) = \Lambda(v)^{-1}
+\end{equation}
+
+D.h. ``grob gesagt'' dass das gestrichelte System jetzt das nicht gestrichelte
+ist und dass das nicht gestrichelte jetzt das gestrichelte ist. Mit \(\Lambda\)
+aus \eqref{eq:18}
+
+\begin{align}
+  \label{eq:33}
+   \Lambda(v) &=
+  \begin{pmatrix}
+    \gamma&0&0&-\beta\gamma\\
+    0&1&0&0\\
+    0&0&1&0\\
+    -\beta\gamma&0&0&\gamma
+  \end{pmatrix}
+  \quad\text{mit }
+  \beta = \frac{v}{c}\quad\text{und }
+  \gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}\notag\\
+   &=
+  \begin{pmatrix}
+    \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}&0&0&-\frac{v}{c\sqrt{1-\frac{v^2}{c^2}}}\\
+    0&1&0&0\\
+    0&0&1&0\\
+    -\frac{v}{c\sqrt{1-\frac{v^2}{c^2}}}&0&0&\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+  \end{pmatrix}
+\end{align}
+
+Substituieren wir nun in \eqref{eq:33} \(v\) durch \(-v\), so erhalten wir:
+\begin{equation}
+  \label{eq:34}
+  \Lambda(-v)=
+   \begin{pmatrix}
+    \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}&0&0&\frac{v}{c\sqrt{1-\frac{v^2}{c^2}}}\\
+    0&1&0&0\\
+    0&0&1&0\\
+    \frac{v}{c\sqrt{1-\frac{v^2}{c^2}}}&0&0&\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+  \end{pmatrix}
+\end{equation}
+
+Drücken wir \eqref{eq:34} wieder durch \(\beta\) und \(\gamma\) aus, so folgt:
+\begin{equation}
+  \label{eq:35} 
+   \Lambda(-v)=
+  \begin{pmatrix}
+    \gamma&0&0&\beta\gamma\\
+    0&1&0&0\\
+    0&0&1&0\\
+    \beta\gamma&0&0&\gamma
+  \end{pmatrix}\stackrel{\eqref{eq:32}}=\Lambda(v)^{-1}
+\end{equation}
+
+In \eqref{eq:35} erhalten wir also die gleiche Umkehrmatrix wie schon in
+\eqref{eq:31}. D.h. beide Vorgehensweisen sind äquivalent.
 
 
 \subsection*{Referenzen}
