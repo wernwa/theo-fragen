@@ -1,0 +1,115 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Lorentz-Transformation der Dirac-Gleichung}
+
+Wir wollen nun die Lorantz-Transformation der Dirac-Gleichung betrachten. Dabei errinern wir uns dass die 4-Dimensionale Vektoren sich wie folgt transformieren
+
+
+\begin{align}
+  \label{eq:1}
+  x'^{\mu} = \Lambda^{\mu}_{\hphantom\mu \nu}x^{\nu}
+\end{align}
+
+Und die vierer-Ableitung transfomiert sich wie ein kovarianter Vektor. Beweis
+
+\begin{align}
+  \label{eq:2}
+ \partial'_\mu =  \frac{\partial}{\partial x'^\mu} = \frac{\partial x^\nu}{\partial x^\nu } \frac{\partial}{\partial x'^\mu} = \frac{\partial x^\nu}{\partial x'^\mu } \frac{\partial}{\partial x^\nu} = \frac{\partial x^\nu}{\partial x'^\mu }\partial_\nu
+\end{align}
+
+Wir multiplizieren Gleichung (\ref{eq:1}) mit \(\Lambda^{-1}\)
+
+\begin{align}
+  \label{eq:3}
+  x^{\nu} = \Lambda_{\mu}^{\hphantom\mu \nu}x'^\mu
+\end{align}
+Diese Gleichung (\ref{eq:3}) in Gleichung (\ref{eq:2}) eingesetzt
+
+\begin{align}
+  \label{eq:4}
+   \partial'_\mu &= \frac{\partial x^\nu}{\partial x'^\mu } \partial_\nu \notag \\
+&= \frac{\partial (\Lambda_{\mu}^{\hphantom\mu \nu}x'^\mu) }{\partial x'^\mu } \partial_\nu \notag \\
+&= \Lambda_{\mu}^{\hphantom\mu \nu}\frac{\partial (x'^\mu) }{\partial x'^\mu } \partial_\nu  \notag\\
+&= \Lambda_{\mu}^{\hphantom\mu \nu}\partial_\nu
+\end{align}
+
+Wie man in der Gleichung (\ref{eq:4}) sieht transformiert sich die vierer-Ableitung kovariant. Als nebenprodukt dieser Rechung ergibt sich folgende nützliche Relation
+
+\begin{align}
+  \label{eq:5}
+  \Lambda_{\mu}^{\hphantom\mu \nu} = \frac{\partial x^\nu}{\partial x'^\mu }
+\end{align}
+
+
+Betrachten wir die zwei Intertialsysteme IS und IS' so gilt für die einzelten komponenten
+
+\begin{table}[h]
+  \centering
+
+\begin{tabular}{c|c}
+  IS&IS'\\
+\(x^\mu\)& \(x^{'\mu}=\Lambda^\mu_{\hphantom\mu \nu} x^\nu\)\\
+\(\partial_\mu \)&\(\partial'_\mu = \Lambda_{\mu}^{\hphantom\mu\nu}\partial_\nu \)\\
+\(\psi(x)\)& ???\\
+\((i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar})\psi(x) = 0\)&\((i\gamma^\mu\frac{\partial}{\partial x^{'\mu}}-\frac{mc}{\hbar})\psi'(x') = 0\)
+\end{tabular}
+
+  \caption{Lorentz-Transformation der einzelnen Komponenten der Dirac-Gleichung}
+  \label{tab:1}
+\end{table}
+
+Wie man ersehen kann, fehlt die Transformation für die vierkomponentiger Dirac-Spinor Funktion \(\psi(x)\) (die vier Komponenten nicht mit den 4 Dimensionen der Raumzeit zu verwechseln!)  Dies wollen wir nun näher ergründen indem wir versuchen in der Tabelle \ref{tab:1} aus der linken Dirac-Gleichung auf die rechte zu kommen.
+
+Das wollen wir zeigen dadurch dass es zu jeder Lorentz-Transformation eine lineare Abbildung \(S(\Lambda)\) des Spinoren gibt, so das gilt
+
+\begin{align}
+  \label{eq:6}
+  \psi'(x) = S(\Lambda)\psi(x) = S(\Lambda)\psi(\Lambda^{-1} x')
+\end{align}
+
+Die Menge \(\{S(\Lambda)\}\) bilden die Darstellung der Lorentz-Gruppe mit der allgemeinen Gruppeneigenschaften
+
+\begin{align}
+  \label{eq:7}
+  \boxed{S(\Lambda_1\Lambda_2) = S(\Lambda_1)S(\Lambda_2) \Rightarrow S(\mathbb 1) = \mathbb 1, \quad S(\Lambda^{-1})=(S(\Lambda))^{-1}}
+\end{align}
+
+Ersetze \(\psi\) mit \(\psi'\) aus (\ref{eq:6}) und multipliziere die Dirac-Gleichung mit \(S(\Lambda)\) von links so ergibt sich
+
+\begin{align}
+  \label{eq:8}
+  S(\Lambda)  \left(i\gamma^\mu\frac{\partial}{\partial x^\mu}-\frac{mc}{\hbar}\right)S(\Lambda^{-1}) \psi'(x') &= 0 \notag \\
+\left(iS(\Lambda) \gamma^\mu  \frac{\partial}{\partial x^\mu}S(\Lambda^{-1}) - \frac{mc}{\hbar}\underbr{S(\Lambda)S(\Lambda^{-1})}_{\mathds 1}\right)\psi'(x') &= 0 \notag \\
+\left(iS(\Lambda) \gamma^\mu S(\Lambda^{-1}) \underbrace{\frac{\partial}{\partial x^\mu}}_{\Lambda^\nu_{\,\,\mu}\frac{\partial}{\partial x^{'\nu}}} - \frac{mc}{\hbar}\right)\psi'(x') &= 0 \notag \\
+\left(i\underbr{S(\Lambda) \gamma^\mu S(\Lambda^{-1}) \Lambda^\nu_{\,\,\mu}}_{\gamma^\mu}\frac{\partial}{\partial x^{'\nu}} - \frac{mc}{\hbar}\right)\psi'(x') &= 0 \\
+\end{align}
+\(S(\Lambda^{-1})\) vertauscht offensichtlich mit \(\frac{\partial}{\partial x^\mu}\) (wieso?). Vergleicht man nun aus Tabelle \ref{tab:1} die Gestrichelte Dirac-Funktion, so stellt man fest, dass die Größe \( S(\Lambda) \gamma^\mu S(\Lambda^{-1}) \Lambda^\nu_{\,\,\mu}\) die Matritze \(\gamma^\mu\) ergeben muss, also
+
+\begin{align}
+  \label{eq:9}
+  \gamma^\mu &= S(\Lambda) \gamma^\mu S(\Lambda^{-1}) \Lambda^\nu_{\,\,\mu} \qquad |\cdot\Lambda^{\hphantom\nu \mu}_{\nu} \notag \\
+ \gamma^\mu\Lambda^{\hphantom\nu \mu}_{\nu} &= S(\Lambda) \gamma^\mu S(\Lambda^{-1})
+\end{align}
+
+Subsituiere \(\Lambda\) mit \(\Lambda^{-1}\) bzw. \( \Lambda^\nu_{\,\,\mu}\) mit \(\Lambda^{\hphantom\nu \mu}_{\nu} \)
+
+\begin{align}
+  \label{eq:10}
+  \Lambda^\nu_{\,\,\mu}\gamma^\mu = S(\Lambda^{-1})\gamma^\nu S(\Lambda)
+\end{align}
+
+
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item Rollnik Quantentheorie 2
+\end{itemize}
+
+\end{document}
