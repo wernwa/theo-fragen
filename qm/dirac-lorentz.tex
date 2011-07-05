@@ -92,18 +92,21 @@ Ersetze \(\psi\) mit \(\psi'\) aus (\ref{eq:6}) und multipliziere die Dirac-Glei
 
 \begin{align}
   \label{eq:9}
-  \gamma^\mu &= S(\Lambda) \gamma^\mu S(\Lambda^{-1}) \Lambda^\nu_{\,\,\mu} \qquad |\cdot\Lambda^{\hphantom\nu \mu}_{\nu} \notag \\
- \gamma^\mu\Lambda^{\hphantom\nu \mu}_{\nu} &= S(\Lambda) \gamma^\mu S(\Lambda^{-1})
+  \gamma^\mu &= S(\Lambda) \gamma^\mu S(\Lambda^{-1}) \Lambda^\nu_{\,\,\mu} \\
 \end{align}
 
-Subsituiere \(\Lambda\) mit \(\Lambda^{-1}\) bzw. \( \Lambda^\nu_{\,\,\mu}\) mit \(\Lambda^{\hphantom\nu \mu}_{\nu} \)
+Multipliziere die Gleichung (\ref{eq:9}) mit \(S(\Lambda^{-1})\)  und mit \(S(\Lambda)\) von rechts
+
 
 \begin{align}
   \label{eq:10}
-  \Lambda^\nu_{\,\,\mu}\gamma^\mu = S(\Lambda^{-1})\gamma^\nu S(\Lambda)
+ S(\Lambda^{-1})\cdot|\qquad \qquad  \gamma^\mu &= S(\Lambda) \gamma^\mu S(\Lambda^{-1}) \Lambda^\nu_{\,\,\mu} \qquad \qquad |\cdot S(\Lambda) \notag \\
+ S(\Lambda^{-1}) \gamma^\mu S(\Lambda) &=\underbr{S(\Lambda^{-1}) S(\Lambda)}_{\mathds 1} \gamma^\mu S(\Lambda^{-1}) \Lambda^\nu_{\,\,\mu} S(\Lambda) \notag \\
+ S(\Lambda^{-1}) \gamma^\mu S(\Lambda) &= \gamma^\mu\underbr{ S(\Lambda^{-1})S(\Lambda)}_{\mathds 1} \Lambda^\nu_{\,\,\mu}  \notag \\
+\Leftrightarrow   \Lambda^\nu_{\,\,\mu}\gamma^\mu &= S(\Lambda^{-1})\gamma^\nu S(\Lambda) 
 \end{align}
 
-
+Hier wurde vorausgesetzt das \(\Lambda^\nu_{\,\,\mu}\) und \( S(\Lambda)\) vertauschen. 
 
 
 
