@@ -5,6 +5,7 @@
 \setcounter{section}{1}
 \section*{Doppelmuldenpotential}
 
+
 \begin{figure}[htbp]
   \centering
   \includegraphics{./sgl_doppelmuldenpotential_pics/pic01_v.pdf}
@@ -12,7 +13,12 @@
   \label{fig:fg1}
 \end{figure}
 
-Allgemeiner Ansatz:
+Beim Doppelmuldenpotential interessiert uns vorwiegend ein Teilchen welches eine Energie kleiner als der mittlere Potentialkasten hat. Wie man später aus der Rechnung ersieht, gibt es zwei mögliche Lösungen (positive/negative Parität) für das Problem. Da Superposition der beiden Lösungen wieder eine ergibt, stellt man fest, dass nach Summieren der beiden Lösungen die Wellenfunktion vollständig nur im Bereich I existiert. Zieht man dagegen die beiden Lösungen voneinander ab, so ist die Welle nur in Bereich III vorzufinden. Dieses Verhalten wird als \textbf{tunneln} des Teilchens interpretiert.\\
+\\
+Wir werden die supperpositionierte Lösung auch zeitentwickeln und eine \textbf{Tunnelzeit} feststellen. Ein Beispiel für dieses Phänomen ist das Ammoniakmolekül. Hierbei tunnelt das Stickstoffatom durch die Ebene dreier Wasserstoffatome. Seine Schwinungsfrequenz beträgt (laut wiki) 23,786 GHz.
+
+
+\section*{Allgemeiner Ansatz}
 
 \begin{equation}
   \label{eq:1}
@@ -34,11 +40,11 @@ Die Randbedingung besagt, dass die Wellenfuktion am Rand des unendlichen  Potent
 
 \begin{align}
   \label{eq:4}
-  \psi_{I}(-b) &= 0 = Ae^{-ikb}+Be^{ikb} \\
-\Leftrightarrow & A = -Be^{2ikb}\qquad\text{A in }\ref{eq:1}\text{ einsetzen}\\
-\psi_I(x)&=-Be^{2ikb}e^{ikx}+Be^{-ikx} \\
-&=-B(e^{2ikb}e^{ikx}-e^{-ikx})\\
-&=-B e^{ikb}(e^{ikb}e^{ikx}-e^{-ikb}e^{-ikx})\\
+  \psi_{I}(-b) &= 0 = Ae^{-ikb}+Be^{ikb} \notag \\
+\Leftrightarrow & A = -Be^{2ikb}\qquad\text{A in }\ref{eq:1}\text{ einsetzen} \notag\\
+\psi_I(x)&=-Be^{2ikb}e^{ikx}+Be^{-ikx} \notag \\
+&=-B(e^{2ikb}e^{ikx}-e^{-ikx}) \notag\\
+&=-B e^{ikb}(e^{ikb}e^{ikx}-e^{-ikb}e^{-ikx}) \notag\\
 &=\underbrace{-B e^{ikb}2i}_{\alpha}\sin(k(x+b))
 \end{align}
 
@@ -49,12 +55,12 @@ Die Randbedingung besagt, dass die Wellenfuktion am Rand des unendlichen  Potent
 
 \begin{align}
   \label{eq:6}
-  \psi_{III}(b) &= 0 = Fe^{ikb}+Ge^{-ikb} \\
-\Leftrightarrow & G = -Fe^{2ikb}\qquad\text{G in }\ref{eq:3}\text{ einsetzen}\\
-\psi_{III}(x)&=Fe^{ikx} -Fe^{2ikb} e^{-ikx} \\
-&=-F(e^{2ikb}e^{-ikx}-e^{ikx})\\
-&=-Fe^{ikb}(e^{ikb}e^{-ikx}-e^{-ikb}e^{ikx})\\
-&=\underbrace{-Fe^{ikb} }_{\beta}\sin(k(-x+b))\\
+  \psi_{III}(b) &= 0 = Fe^{ikb}+Ge^{-ikb} \notag \\
+\Leftrightarrow & G = -Fe^{2ikb}\qquad\text{G in }\ref{eq:3}\text{ einsetzen} \notag\\
+\psi_{III}(x)&=Fe^{ikx} -Fe^{2ikb} e^{-ikx} \notag \\
+&=-F(e^{2ikb}e^{-ikx}-e^{ikx}) \notag\\
+&=-Fe^{ikb}(e^{ikb}e^{-ikx}-e^{-ikb}e^{ikx}) \notag\\
+&=\underbrace{-Fe^{ikb} }_{\beta}\sin(k(-x+b)) \notag\\
 &=\beta\sin(k(-x+b))
 \end{align}
 
@@ -83,9 +89,9 @@ NR um zu der Beziehung zwischen den Konstanten C und D gelangen:
 
 \begin{align}
   \label{eq:12}
-  (\alpha-\beta)\sin(k(b-a)) &= Ce^{-qa}+De^{qa}- Ce^{qa}-De^{-qa}\\
-&= C(e^{-qa}- e^{qa})+D(e^{qa}-e^{-qa})\\
-&=-2C\sinh(qa)+2D\sinh(qa)\\
+  (\alpha-\beta)\sin(k(b-a)) &= Ce^{-qa}+De^{qa}- Ce^{qa}-De^{-qa} \notag \\
+&= C(e^{-qa}- e^{qa})+D(e^{qa}-e^{-qa}) \notag\\
+&=-2C\sinh(qa)+2D\sinh(qa) \notag\\
 &=2(D-C)sinh(qa)
 \end{align}
 
@@ -98,9 +104,9 @@ NR um zu der Beziehung zwischen den Konstanten C und D gelangen:
 
 \begin{align}
   \label{eq:14}
-  k(\alpha-\beta)\cos(k(b-a)) &= qCe^{-qa}-qDe^{qa}+ qCe^{qa}-qDe^{-qa}\\
-&= q(C(e^{-qa}+ e^{qa})-D(e^{qa}+e^{-qa})\\
-&= 2q(C\cosh(qa)-D\cosh(qa)\\
+  k(\alpha-\beta)\cos(k(b-a)) &= qCe^{-qa}-qDe^{qa}+ qCe^{qa}-qDe^{-qa}  \notag\\
+&= q(C(e^{-qa}+ e^{qa})-D(e^{qa}+e^{-qa}) \notag\\
+&= 2q(C\cosh(qa)-D\cosh(qa) \notag\\
 &=2q(C-D)cosh(qa)
 \end{align}
 
@@ -113,8 +119,8 @@ NR um zu der Beziehung zwischen den Konstanten C und D gelangen:
 \( \frac{\eqref{eq:15}}{ \eqref{eq:13} } \)
 
 \begin{align} 
-\frac{k(\alpha-\beta)\cos(k(b-a))}{(\alpha-\beta)\sin(k(b-a)) }&=  \frac{2q(C-D)\cosh(qa)}{-2(C-D)\sinh(qa) }\\
-\frac{k\cos(k(b-a))}{\sin(k(b-a)) }&=  \frac{-q\cosh(qa)}{\sinh(qa) }\\
+\frac{k(\alpha-\beta)\cos(k(b-a))}{(\alpha-\beta)\sin(k(b-a)) }&=  \frac{2q(C-D)\cosh(qa)}{-2(C-D)\sinh(qa) } \notag \\
+\frac{k\cos(k(b-a))}{\sin(k(b-a)) }&=  \frac{-q\cosh(qa)}{\sinh(qa) } \notag \\
 k\cot(k(b-a)) &= - q\coth(qa) \label{eq:16}
 \end{align}
 
@@ -123,9 +129,9 @@ k\cot(k(b-a)) &= - q\coth(qa) \label{eq:16}
 
 \begin{align}
   \label{eq:17}
-  (\alpha+\beta)\sin(k(b-a)) &= Ce^{-qa}+De^{qa}+ Ce^{qa}+De^{-qa}\\
-&= C(e^{-qa}+ e^{qa})+D(e^{qa}+e^{-qa})\\
-&=-2C\cosh(qa)+2D\cosh(qa)\\
+  (\alpha+\beta)\sin(k(b-a)) &= Ce^{-qa}+De^{qa}+ Ce^{qa}+De^{-qa}  \notag\\
+&= C(e^{-qa}+ e^{qa})+D(e^{qa}+e^{-qa}) \notag \\
+&=-2C\cosh(qa)+2D\cosh(qa) \notag \\
 &=2(C+D)\cosh(qa)
 \end{align}
 
@@ -138,9 +144,9 @@ k\cot(k(b-a)) &= - q\coth(qa) \label{eq:16}
 
 \begin{align}
   \label{eq:19}
-  k(\alpha-\beta)\cos(k(b-a)) &= qCe^{-qa}-qDe^{qa}- qCe^{qa}+qDe^{-qa}\\
-&= q(C(e^{-qa}- e^{qa})-D(e^{qa}-e^{-qa})\\
-&= -2q(C\sinh(qa)-D\sinh(qa)\\
+  k(\alpha-\beta)\cos(k(b-a)) &= qCe^{-qa}-qDe^{qa}- qCe^{qa}+qDe^{-qa} \notag \\
+&= q(C(e^{-qa}- e^{qa})-D(e^{qa}-e^{-qa})  \notag\\
+&= -2q(C\sinh(qa)-D\sinh(qa)  \notag\\
 &=-2q(C+D)\sinh(qa)
 \end{align}
 
@@ -153,8 +159,8 @@ k\cot(k(b-a)) &= - q\coth(qa) \label{eq:16}
 \( \frac{\eqref{eq:20}}{ \eqref{eq:18} } \)
 
 \begin{align}
-\frac{k(\alpha-\beta)\cos(k(b-a))}{(\alpha-\beta)\sin(k(b-a)) }&=  \frac{-2q(C+D)\sinh(qa)}{2(C+D)\cosh(qa) }\\
-\frac{k\cos(k(b-a))}{\sin(k(b-a)) }&= \frac{-q\sinh(qa)}{\cosh(qa) }\\
+\frac{k(\alpha-\beta)\cos(k(b-a))}{(\alpha-\beta)\sin(k(b-a)) }&=  \frac{-2q(C+D)\sinh(qa)}{2(C+D)\cosh(qa) }  \notag\\
+\frac{k\cos(k(b-a))}{\sin(k(b-a)) }&= \frac{-q\sinh(qa)}{\cosh(qa) } \notag \\
 k\cot(k(b-a)) &= -q \tanh(qa) \label{eq:21}
 \end{align}
 
@@ -177,8 +183,8 @@ Eins der Konstanten in \eqref{eq:8} und  \eqref{eq:10} einsetzen und die Divisio
 
 \begin{align}
   \label{eq:23}
-\frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= \frac{Ce^{-qa}+Ce^{qa}}{ Ce^{qa}+Ce^{-qa}}\\
-\frac{\alpha}{\beta} &= 1\\
+\frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= \frac{Ce^{-qa}+Ce^{qa}}{ Ce^{qa}+Ce^{-qa}}  \notag\\
+\frac{\alpha}{\beta} &= 1 
 \end{align}
 
 \begin{equation}
@@ -199,9 +205,9 @@ Hier sieht man wieder durch Vergleich dass die Gleichung nur für \(C=-D\) erfü
 
 \begin{align}
   \label{eq:24_2}
-\frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= \frac{Ce^{-qa}-Ce^{qa}}{Ce^{qa}-Ce^{-qa}}\\
-\frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= -C\frac{e^{qa}-e^{-qa}}{e^{qa}-e^{-qa}}\\
-\frac{\alpha}{\beta} &= -1\\
+\frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= \frac{Ce^{-qa}-Ce^{qa}}{Ce^{qa}-Ce^{-qa}}  \notag\\
+\frac{\alpha\sin(k(b-a))}{\beta\sin(k(b-a))} &= -C\frac{e^{qa}-e^{-qa}}{e^{qa}-e^{-qa}} \notag \\
+\frac{\alpha}{\beta} &= -1
 \end{align}
 
 \begin{equation}
@@ -210,7 +216,7 @@ Hier sieht man wieder durch Vergleich dass die Gleichung nur für \(C=-D\) erfü
 \end{equation}
 
 
-\subsubsection{Zusammenfassung der Zwischenlösung:}
+\subsubsection{Zusammenfassung der Zwischenlösung}
 
 Für die gerade Parität gilt für \(\alpha=\beta\) und \(C=D\) mit der transzendalen Gleichung \eqref{eq:21}:
 
@@ -250,9 +256,9 @@ Für kleine Energien (d.h. \(E<<V_0\) und \(k<<q\) und möglichst breite Barrier
 
 \begin{align}
   \label{eq:29}
-  tanh(qa) &= \frac{e^{qa}-e^{-qa}}{e^{qa}+e^{-qa}} \qquad |\cdot  \frac{e^{-qa}}{e^{-qa}}\\
-&= \frac{1-e^{-2qa}}{1+e^{-2qa}} \qquad |\cdot \frac{1-e^{-2qa}}{1-e^{-2qa}} \\
-&= \frac{(1-e^{-2qa})^2}{1^2+e^{-4qa}} \\
+  tanh(qa) &= \frac{e^{qa}-e^{-qa}}{e^{qa}+e^{-qa}} \qquad |\cdot  \frac{e^{-qa}}{e^{-qa}}  \notag\\
+&= \frac{1-e^{-2qa}}{1+e^{-2qa}} \qquad |\cdot \frac{1-e^{-2qa}}{1-e^{-2qa}}  \notag\\
+&= \frac{(1-e^{-2qa})^2}{1^2+e^{-4qa}} \notag \\
 &= \frac{1-2e^{-2qa}+e^{-4qa}}{1^2+e^{-4qa}}
 \end{align}
 
@@ -348,7 +354,7 @@ Nach k umgestellt:
 
 \begin{align}
   \label{eq:42}
-  k^{(1)} &= - \frac{k}{q(b-a)} \mp \frac{k}{q(b-a)} 2e^{-2qa}\\
+  k^{(1)} &= - \frac{k}{q(b-a)} \mp \frac{k}{q(b-a)} 2e^{-2qa} \notag \\
 &= \frac{k}{q(b-a)}\left( -1 \mp  2e^{-2qa}\right)
 \end{align}
 
@@ -363,7 +369,7 @@ Als Nebenrechnung wird \(k_n^2\) berechnet:
 
 \begin{align}
   \label{eq:44}
-  k_n^2 &= (\frac{n\pi}{(b-a)} + \frac{k}{q(b-a)}( -1 \mp  2e^{-2qa}))^2 \\
+  k_n^2 &= (\frac{n\pi}{(b-a)} + \frac{k}{q(b-a)}( -1 \mp  2e^{-2qa}))^2  \notag\\
 &=\frac{n^2\pi^2}{(b-a)^2} + 2\frac{n\pi}{(b-a)} \frac{k}{q(b-a)}( -1 \mp  2e^{-2qa}) + \underbrace{\frac{k^2}{q^2(b-a)^2}( -1 \mp  2e^{-2qa})^2}_{\approx 0 \text{ wegen } \frac{k^2}{q^2} \text{ zu vernachlässigen}}
 \end{align}
 Mit der Näherung \(k \approx k^{(0)}\) folgt:
@@ -376,9 +382,9 @@ Dies eingesetzt in die Energie-Eigenwerte:
 
 \begin{align}
   \label{eq:46}
-  E_{n,\mp} &= \frac{\hbar^2 k_n^2}{2m}\\
-&=  \frac{\hbar^2 n^2\pi^2}{2m(b-a)^2} + 2\frac{\hbar^2 }{2m}\frac{\pi^2 n^2}{q(b-a)^3}( -1 \mp  2e^{-2qa}) \\
-&= E^{(0)}\left[1+\frac{2}{q(b-a)}( -1 \mp  2e^{-2qa})  \right] \\
+  E_{n,\mp} &= \frac{\hbar^2 k_n^2}{2m} \notag\\
+&=  \frac{\hbar^2 n^2\pi^2}{2m(b-a)^2} + 2\frac{\hbar^2 }{2m}\frac{\pi^2 n^2}{q(b-a)^3}( -1 \mp  2e^{-2qa})  \notag\\
+&= E^{(0)}\left[1+\frac{2}{q(b-a)}( -1 \mp  2e^{-2qa})  \right] \notag \\
 &= E^{(0)}\left[1-\frac{2}{q(b-a)} \mp \frac{4}{q(b-a)}e^{-2qa}  \right]
 \end{align}
 
@@ -433,16 +439,16 @@ Die Anwendung eines unitären Operators \(U=e^{-\frac{i}{\hbar}H}\) auf die Well
 
 \begin{align}
   \label{eq:51}
-  \psi(x,t) &= e^{-\frac{i}{\hbar}Ht}\psi(x,t=0)\\
-&= \frac{1}{\sqrt{2}}\left(\psi_+e^{-\frac{i}{\hbar}E_+t} + \psi_-e^{-\frac{i}{\hbar}E_-t}\right) \\
+  \psi(x,t) &= e^{-\frac{i}{\hbar}Ht}\psi(x,t=0) \notag \\
+&= \frac{1}{\sqrt{2}}\left(\psi_+e^{-\frac{i}{\hbar}E_+t} + \psi_-e^{-\frac{i}{\hbar}E_-t}\right)  \notag\\
 &= \frac{1}{\sqrt{2}}e^{-\frac{i}{\hbar}E_+t}\left(\psi_+ + \psi_-e^{-\frac{i}{\hbar}(E_--E_+)t}\right) 
 \end{align}
 
-Die Oszillation der ungeraden Permutätsfunktion \(\psi_-\) unterscheidet sich von der geraden Funktion \(\psi_+\) und man kann die Zeit Angeben nach der aus \(\phi_L\) eine \(\phi_R\) wird (vergleiche \eqref{eq:49}). Dazu muss der Exponent gleich \(-1\) werden. Das ist war für \(e^{-\pi} = -1\), also folgt für die Tunnelzeit \(\tau\):
+Die Oszillation der ungeraden Permutätsfunktion \(\psi_-\) unterscheidet sich von der geraden Funktion \(\psi_+\) und man kann die Zeit Angeben nach der aus \(\phi_L\) eine \(\phi_R\) wird (vergleiche \eqref{eq:49}). Dazu muss der Exponent gleich \(-1\) werden. Das ist war für \(e^{-i\pi} = -1\), also folgt für die Tunnelzeit \(\tau\):
 
 \begin{equation}
   \label{eq:52}
-  \tau = \frac{\pi\hbar}{E_--E+}
+  \tau = \frac{\pi\hbar}{E_+-E_-}
 \end{equation}
 
 
