@@ -27,10 +27,11 @@ und die Proportionalitätskonstante \(\frac{d\sigma}{dA}\) bestimmt die Menge de
 
 \begin{align}
   \label{eq:2}
-  J_{\text{gestr}} &= \frac{d\sigma}{dA} J_{\text{ein}}\\
-\Leftrightarrow \frac{d\sigma}{dA} &= \frac{ J_{\text{gestr}} }{J_{\text{ein}}} \\
-\frac{d\sigma}{d\Omega r^2} &= \frac{ J_{\text{gestr}} }{J_{\text{ein}}} \\
+  J_{\text{gestr}} &= \frac{d\sigma}{dA} J_{\text{ein}}\notag\\
+\Leftrightarrow \frac{d\sigma}{dA} &= \frac{ J_{\text{gestr}} }{J_{\text{ein}}} \qquad \text{mit }dA=r^2d\Omega\notag\\
+\frac{d\sigma}{d\Omega r^2} &= \frac{ J_{\text{gestr}} }{J_{\text{ein}}} 
 \end{align}
+
 Diese Größe ist noch vom Abstand \(r^2\) Abhängig. Multipliziert man die Gleichung (\ref{eq:2}) mit \(r^2\) so erhält man den differenziellen Wirkungsquerschnitt:
 \begin{equation}
   \label{eq:3}
@@ -62,7 +63,7 @@ Da der Schwerpunkt sich wie ein freies Teilchen verhält, ist der Relativ-Anteil
 \end{equation}
 
 
-Damit reduziert sich das Problem der Streuung auf die Lösung dieser Gleichung. Wir werden zeigen dass der differenzielle Wirkungsquerschnitt durch asymptotische Lösung bestimmt werden. Das bedeutet, wir betrachten die beiden Fälle wo das Teilchen aus \(-\infty\) kommend und nach der Kollision für sehr große \(r\).
+Damit reduziert sich das Problem der Streuung auf die Lösung dieser Gleichung. Wir werden zeigen dass der differenzielle Wirkungsquerschnitt durch asymptotische Lösung bestimmt wird. Das bedeutet, wir betrachten die beiden Fälle wo das Teilchen aus \(-\infty\) kommend und nach der Kollision für sehr große \(r\).
 
 
 Mit der Lösung der Gleichung (\ref{eq:6}) können wir die Wahrscheinlichkeit bestimmen  dass das Teilchen \(\mu\)  pro Raumwinkel \(d\Omega\) und pro Zeiteinheit in ein Raumwinkel \(d\Omega\) in die Richtung \((\theta,\phi)\) gestreut wird. Diese Wahrscheinlichkeit ist durch den differentiellen Wirkungsquerschitt \(\frac{d\sigma}{d\Omega}\) gegeben.
@@ -71,36 +72,30 @@ Für die weitere Betrachtung nehmen wir an, dass das Potential \(V(r)\) schnell 
 
 \begin{align}
   \label{eq:7}
-  [ -\frac{\hbar^2}{2\mu}\nabla_\mu^2 - E] \phi_{\text{ein}} &= 0 \qquad |\cdot -\frac{2\mu}{\hbar^2} \\
-  [ \nabla_\mu^2 +\underbrace{\frac{2\mu}{\hbar^2}  E}_{k_0^2} ] \phi_{\text{ein}} &= 0 \\
+  [ -\frac{\hbar^2}{2\mu}\nabla_\mu^2 - E] \phi_{\text{ein}} &= 0 \qquad |\cdot -\frac{2\mu}{\hbar^2} \notag \\
+  [ \nabla_\mu^2 +\underbrace{\frac{2\mu}{\hbar^2}  E}_{k_0^2} ] \phi_{\text{ein}} &= 0 \notag\\
   [ \nabla_\mu^2 +k_0^2 ] \phi_{\text{ein}} &= 0
 \end{align}
 
 Aus der Gleichung ist zu entnehmen, dass das Teilchen sich wie ein freies Teilchen verhält und die Lösungen sind die bekannten ebenen Wellen:
-
 \begin{equation}
   \label{eq:8}
   \phi_{\text{ein}}(\vec r) = A e^{i\vec k_{0}\vec r}
 \end{equation}
 
-Nach dem das Teilchen mit dem Target kollidiert ist, also nach der Wechselwirkung (Streuung), ensteht eine gestreute Wellenfunktion, die im Falle einer isotropischen Potential sich wie eine Kugelwelle verhält mit der Form \(\frac{e^{i\vec k\vec r}}{r}\) . Im Allgemeinen jedoch ist die gestreute Welle nicht spärisch symmetrisch, ihre Amplitude hängt von dem Richtung \((\theta,\phi)\) ab. Damit gilt:
-
+Nach dem das Teilchen mit dem Target kollidiert ist, also nach der Wechselwirkung (Streuung), ensteht eine gestreute Wellenfunktion, die im Falle einer isotropischen Potential sich wie eine Kugelwelle verhält mit der Form \(\frac{e^{i\vec k\vec r}}{r}\) . Im Allgemeinen jedoch ist die gestreute Welle nicht sphärisch symmetrisch, ihre Amplitude hängt von der Richtung \((\theta,\phi)\) ab. Damit gilt:
 \begin{equation}
   \label{eq:9}
   \phi_{\text{gestr}}(\vec r) = A f(\theta,\phi)\frac{e^{i\vec k\vec r}}{r} 
 \end{equation}
 
-
-Die Parameter-Funktion \(f(\theta,\phi)\) heißt Streuamplitude, \(\vec k\) ist der Wellenvektor der gestreuten Welle und \(\theta\) ist der Winkel zwischen \(\vec k_0\) und \(\vec k\). Die gesamte Wellenfunktion ist die Summe der einlaufenden Welle \(\phi_{\text{ein}}\) und der gestreuten Welle \(\phi_{\text{gestr}}\):
-
+Die Parameter-Funktion \(f(\theta,\phi)\) heißt Streuamplitude, \(\vec k\) ist der Wellenvektor der gestreuten Welle und \(\theta\) ist der Winkel zwischen \(\vec k_0\) und \(\vec k\). Die gesamte Wellenfunktion ist die Summe der einlaufenden Welle \(\phi_{\text{ein}}\) und der gestreuten Welle \(\phi_{\text{gestr}}\)
 \begin{equation}
   \label{eq:10}
    \psi = \phi_{\text{ein}}+ \phi_{\text{gestr}} = A e^{i\vec k_{0}\vec r} + A f(\theta,\phi)\frac{e^{i\vec k\vec r}}{r} 
 \end{equation}
 
-
 Nun können wir den differentialen Wirkungsquerschnitt bestimmen indem wir die Stromdichten \(J_{\text{ein}}\) und \(J_{\text{gestr}}\) nach der allgemeinen Formel berechnen:
-
 \begin{equation}
   \label{eq:11}
   \vec J = \frac{i\hbar}{2m} (\phi \nabla \phi^* - \phi^*\nabla\phi)
@@ -110,9 +105,9 @@ Damit erhalten wir:
 
 \begin{align}
   \label{eq:12}
-  \vec J_{\text{ein}} &= \frac{i\hbar}{2\mu} (\phi_{\text{ein}} \nabla \phi^*_{\text{ein}} - \phi^*_{\text{ein}}\nabla\phi_{\text{ein}})\\
-&= \frac{i\hbar}{2\mu} ( A e^{i\vec k_{0}\vec r} \nabla  A e^{-i\vec k_{0}\vec r} -  A e^{-i\vec k_{0}\vec r}\nabla A e^{i\vec k_{0}\vec r} )\\
-&= \frac{i\hbar|A|^2}{2\mu} (-i\vec k_{0} e^{i\vec k_{0}\vec r} e^{-i\vec k_{0}\vec r} -i\vec k_{0}  e^{-i\vec k_{0}\vec r} e^{i\vec k_{0}\vec r} )\\
+  \vec J_{\text{ein}} &= \frac{i\hbar}{2\mu} (\phi_{\text{ein}} \nabla \phi^*_{\text{ein}} - \phi^*_{\text{ein}}\nabla\phi_{\text{ein}})\notag\\
+&= \frac{i\hbar}{2\mu} ( A e^{i\vec k_{0}\vec r} \nabla  A e^{-i\vec k_{0}\vec r} -  A e^{-i\vec k_{0}\vec r}\nabla A e^{i\vec k_{0}\vec r} )\notag\\
+&= \frac{i\hbar|A|^2}{2\mu} (-i\vec k_{0} e^{i\vec k_{0}\vec r} e^{-i\vec k_{0}\vec r} -i\vec k_{0}  e^{-i\vec k_{0}\vec r} e^{i\vec k_{0}\vec r} )\notag\\
 &= \frac{\vec k_{0}\hbar|A|^2}{\mu}
 \end{align}
 
@@ -120,14 +115,13 @@ Da \(r\) groß ist kann man die Ableitungen nach den Winkeln vernachlässigen. M
 
 \begin{align}
   \label{eq:13}
- \vec J_{\text{gestr}} &= \frac{i\hbar}{2\mu} (\phi_{\text{gestr}} \nabla \phi^*_{\text{gestr}} - \phi^*_{\text{gestr}}\nabla\phi_{\text{gestr}})\\
-&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} ( \frac{e^{i\vec k\vec r}}{r}  \nabla_r \frac{e^{-i\vec k\vec r}}{r}  - \frac{e^{-i\vec k\vec r}}{r} \nabla_r \frac{e^{i\vec k\vec r}}{r}  ) \qquad \text{ausklammern von }f(\theta,\phi)\text{ }  \\
-&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} \left( \frac{e^{i\vec k\vec r}}{r} \left[-i\vec k \frac{1}{r}  e^{-i\vec k\vec r}- e^{-i\vec k\vec r}\frac{1}{r^2}\right]  - \frac{e^{-i\vec k\vec r}}{r} \left[ i\vec k\vec r \frac{1}{r} e^{i\vec k\vec r} -  e^{i\vec k\vec r}\frac{1}{r^2}\right]  \right)\\
-&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} \left(- \frac{e^{i\vec k\vec r}}{r} i\vec k \frac{1}{r}  e^{-i\vec k\vec r}-\cancel{ \frac{e^{i\vec k\vec r}}{r} e^{-i\vec k\vec r}\frac{1}{r^2}}  - \frac{e^{-i\vec k\vec r}}{r} i\vec k\vec r \frac{1}{r} e^{i\vec k\vec r} + \cancel{\frac{e^{-i\vec k\vec r}}{r} e^{i\vec k\vec r}\frac{1}{r^2}}  \right)\\
-&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} \cdot (-1)\frac{ 2i\vec k }{r^2} \\
+ \vec J_{\text{gestr}} &= \frac{i\hbar}{2\mu} (\phi_{\text{gestr}} \nabla \phi^*_{\text{gestr}} - \phi^*_{\text{gestr}}\nabla\phi_{\text{gestr}})\notag\\
+&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} ( \frac{e^{i\vec k\vec r}}{r}  \nabla_r \frac{e^{-i\vec k\vec r}}{r}  - \frac{e^{-i\vec k\vec r}}{r} \nabla_r \frac{e^{i\vec k\vec r}}{r}  ) \qquad \text{ausklammern von }f(\theta,\phi)\text{ } \notag \\
+&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} \left( \frac{e^{i\vec k\vec r}}{r} \left[-i\vec k \frac{1}{r}  e^{-i\vec k\vec r}- e^{-i\vec k\vec r}\frac{1}{r^2}\right]  - \frac{e^{-i\vec k\vec r}}{r} \left[ i\vec k\vec r \frac{1}{r} e^{i\vec k\vec r} -  e^{i\vec k\vec r}\frac{1}{r^2}\right]  \right)\notag\\
+&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} \left(- \frac{e^{i\vec k\vec r}}{r} i\vec k \frac{1}{r}  e^{-i\vec k\vec r}-\cancel{ \frac{e^{i\vec k\vec r}}{r} e^{-i\vec k\vec r}\frac{1}{r^2}}  - \frac{e^{-i\vec k\vec r}}{r} i\vec k\vec r \frac{1}{r} e^{i\vec k\vec r} + \cancel{\frac{e^{-i\vec k\vec r}}{r} e^{i\vec k\vec r}\frac{1}{r^2}}  \right)\notag\\
+&= \frac{i\hbar |A|^2 |f(\theta,\phi)|^2 }{2\mu} \cdot (-1)\frac{ 2i\vec k }{r^2} \notag\\
 &= \frac{\hbar |A|^2 |f(\theta,\phi)|^2 }{\mu} \cdot\frac{\vec k }{r^2}
 \end{align}
-
 
 
 Setzen wir nun die beiden Stromdichten (\ref{eq:12}) (\ref{eq:13}) in  (\ref{eq:3}) ein, so ergibt sich:
@@ -144,7 +138,7 @@ Da wir nur elastische Stöße betrachten gilt Impulserhaltung, d.h. \(\vec k\app
 \boxed{  \frac{d\sigma}{d\Omega}= |f(\theta,\phi)|^2 }
 \end{equation}
 
-Aus der Gleichung (\ref{eq:15}) sieht man, dass der differentielle Wirkungsquerschnitt nur von der Streuamplitude abhängig ist. Wenn wir die Streuamplitude wissen, dann wissen wir auch den Wirkungsquerschnitt.
+Aus der Gleichung (\ref{eq:15}) sieht man, dass der differentielle Wirkungsquerschnitt nur von der Streuamplitude abhängig ist. Wenn wir um die Streuamplitude wissen, dann wissen wir auch den Wirkungsquerschnitt.
 
 
 
@@ -183,8 +177,8 @@ Nun multiplizieren wir die Gleichung (\ref{eq:19}) mit der 'Störung' \(\frac{2\
 
 \begin{align}
   \label{eq:20}
-   (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi &= \delta(\vec r-\vec r')\frac{2\mu}{\hbar^2}V(r')\psi \\
-\int_{-\infty}^\infty (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi d^3 r' &=\int_{-\infty}^\infty \delta(\vec r-\vec r')\frac{2\mu}{\hbar^2}V(r')\psi d^3 r' \\
+   (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi &= \delta(\vec r-\vec r')\frac{2\mu}{\hbar^2}V(r')\psi \notag\\
+\int_{-\infty}^\infty (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi d^3 r' &=\int_{-\infty}^\infty \delta(\vec r-\vec r')\frac{2\mu}{\hbar^2}V(r')\psi d^3 r'\notag \\
 \int_{-\infty}^\infty (\nabla^2 + k^2) G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi d^3 r' &=\frac{2\mu}{\hbar^2}V(r)\psi
 \end{align}
 
@@ -192,7 +186,7 @@ Eingesetzt (\ref{eq:20})  in (\ref{eq:16}):
 
 \begin{align}
   \label{eq:21}
-   \cancel{(\nabla^2 + k^2)}\psi(\vec r) = \int_{-\infty}^\infty \cancel{(\nabla^2 + k^2)} G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi(\vec r') d^3 r' \\
+   \cancel{(\nabla^2 + k^2)}\psi(\vec r) = \int_{-\infty}^\infty \cancel{(\nabla^2 + k^2)} G(\vec r,\vec r')\frac{2\mu}{\hbar^2}V(r')\psi(\vec r') d^3 r'\notag \\
 \rightarrow  \psi_{\text{part}}(\vec r) = \frac{2\mu}{\hbar^2} \int_{-\infty}^\infty  G(\vec r,\vec r')V(r')\psi(\vec r') d^3 r' 
 \end{align}
 
@@ -214,11 +208,11 @@ Setze die Beiden Gleichungen (\ref{eq:23}) (\ref{eq:22}) in (\ref{eq:19}):
 
 \begin{align}
   \label{eq:24}
-   (\nabla^2 + k^2)\frac{1}{(2\pi)^3}\int e^{i\vec \omega (\vec r -\vec r') }\tilde G (\vec \omega)d^3 \omega  &=  \frac{1}{(2\pi)^3}\int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega \\
-\int (\nabla^2 + k^2) e^{i\vec \omega (\vec r -\vec r') }\tilde G (\vec \omega)d^3 \omega  &=  \int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega \\
-\int \left( -\vec \omega^2 e^{i\vec \omega (\vec r -\vec r') }+ k^2 e^{i\vec \omega (\vec r -\vec r') } \right) \tilde G (\vec \omega)d^3 \omega   &=  \int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega \\
-\int \left( -\vec \omega^2 + k^2  \right)e^{i\vec \omega (\vec r -\vec r') } \tilde G (\vec \omega)d^3 \omega   &=  \int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega \qquad | \frac{d}{d^3\omega} \\
-\left( -\vec \omega^2 + k^2  \right)e^{i\vec \omega (\vec r -\vec r') } \tilde G (\vec \omega)   &=  e^{i\vec \omega (\vec r -\vec r') } \\
+   (\nabla^2 + k^2)\frac{1}{(2\pi)^3}\int e^{i\vec \omega (\vec r -\vec r') }\tilde G (\vec \omega)d^3 \omega  &=  \frac{1}{(2\pi)^3}\int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega\notag \\
+\int (\nabla^2 + k^2) e^{i\vec \omega (\vec r -\vec r') }\tilde G (\vec \omega)d^3 \omega  &=  \int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega\notag \\
+\int \left( -\vec \omega^2 e^{i\vec \omega (\vec r -\vec r') }+ k^2 e^{i\vec \omega (\vec r -\vec r') } \right) \tilde G (\vec \omega)d^3 \omega   &=  \int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega\notag \\
+\int \left( -\vec \omega^2 + k^2  \right)e^{i\vec \omega (\vec r -\vec r') } \tilde G (\vec \omega)d^3 \omega   &=  \int e^{i\vec \omega (\vec r -\vec r') }\cdot 1\cdot d^3 \omega \qquad | \frac{d}{d^3\omega}\notag \\
+\left( -\vec \omega^2 + k^2  \right)e^{i\vec \omega (\vec r -\vec r') } \tilde G (\vec \omega)   &=  e^{i\vec \omega (\vec r -\vec r') }\notag \\
 \left( -\vec \omega^2 + k^2  \right) \tilde G (\vec \omega)   &=  1 
 \end{align}
 
@@ -246,8 +240,8 @@ Nun lautet das Integral:
 
 \begin{align}
   \label{eq:27}
-   G(\vec r ,\vec r') &= \frac{1}{(2\pi)^3} \int \frac{ e^{i\omega \cos\theta|r-r'| }}{\vec k^2 -\omega^2 }  \omega^2d\omega \sin\theta d\theta d\phi \\
-&= \frac{1}{(2\pi)^3} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \int_0^\pi e^{i\omega \cos\theta|r-r'| }  \sin\theta d\theta \int_0^{2\pi}d\phi \\
+   G(\vec r ,\vec r') &= \frac{1}{(2\pi)^3} \int \frac{ e^{i\omega \cos\theta|r-r'| }}{\vec k^2 -\omega^2 }  \omega^2d\omega \sin\theta d\theta d\phi \notag\\
+&= \frac{1}{(2\pi)^3} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \int_0^\pi e^{i\omega \cos\theta|r-r'| }  \sin\theta d\theta \int_0^{2\pi}d\phi\notag \\
 &= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 - \omega^2 }  d\omega  \int_0^\pi e^{i\omega \cos\theta|r-r'| }  \sin\theta d\theta 
 \end{align}
 
@@ -256,14 +250,14 @@ Substituiere \(x=\cos\theta\):
 
 \begin{align}
   \label{eq:28}
-   G(\vec r ,\vec r')&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 - \omega^2 }  d\omega  \int_1^{-1} e^{i\omega x |r-r'| }  \sin\theta \frac{1}{-\sin\theta}  dx \\
- &= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \int_{-1}^{1} e^{i\omega x |r-r'| }   dx \\
-&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega \left[ \frac{ e^{i\omega x |r-r'| }}{i\omega |r-r'|  }   \right]_{-1}^{1} \\
-&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \frac{1}{i\omega |r-r'|  }  \left( e^{i\omega |r-r'| }- e^{-i\omega |r-r'| } \right) \\
-&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }  d\omega   \left( e^{i\omega |r-r'| }- e^{-i\omega |r-r'| } \right) \\
-&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega - \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }  e^{-i\omega |r-r'| }d\omega  \\
-&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega - \int^0_{-\infty} \frac{-\omega}{k^2 -\omega^2 }  e^{-i\omega |r-r'| }d\omega  \\
-&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega + \int^0_{-\infty} \frac{\omega}{k^2 -\omega^2 }  e^{i\omega |r-r'| }d\omega  \\
+   G(\vec r ,\vec r')&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 - \omega^2 }  d\omega  \int_1^{-1} e^{i\omega x |r-r'| }  \sin\theta \frac{1}{-\sin\theta}  dx \notag\\
+ &= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \int_{-1}^{1} e^{i\omega x |r-r'| }   dx \notag\\
+&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega \left[ \frac{ e^{i\omega x |r-r'| }}{i\omega |r-r'|  }   \right]_{-1}^{1}\notag \\
+&= \frac{1}{(2\pi)^2} \int_0^{\infty} \frac{\omega^2}{k^2 -\omega^2 }  d\omega  \frac{1}{i\omega |r-r'|  }  \left( e^{i\omega |r-r'| }- e^{-i\omega |r-r'| } \right)\notag \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }  d\omega   \left( e^{i\omega |r-r'| }- e^{-i\omega |r-r'| } \right)\notag \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega - \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }  e^{-i\omega |r-r'| }d\omega  \notag\\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega - \int^0_{-\infty} \frac{-\omega}{k^2 -\omega^2 }  e^{-i\omega |r-r'| }d\omega \notag \\
+&=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_0^{\infty} \frac{\omega}{k^2 -\omega^2 }   e^{i\omega |r-r'| } d\omega + \int^0_{-\infty} \frac{\omega}{k^2 -\omega^2 }  e^{i\omega |r-r'| }d\omega \notag \\
 &=  \frac{1}{i (2\pi)^2 |r-r'|  } \int_{-\infty}^{\infty} \frac{\omega e^{i\omega |r-r'| } }{k^2 -\omega^2 }  d\omega  
 \end{align}
 
@@ -314,7 +308,7 @@ Setzen wir nun die Greensche Funktion (\ref{eq:34}) in (\ref{eq:21}):
 
 \begin{align}
   \label{eq:35}
-   \psi_{\text{part}}(\vec r) &= \frac{2\mu}{\hbar^2} \int_{-\infty}^\infty  G(\vec r,\vec r')V(r')\psi(\vec r') d^3 r' \\
+   \psi_{\text{part}}(\vec r) &= \frac{2\mu}{\hbar^2} \int_{-\infty}^\infty  G(\vec r,\vec r')V(r')\psi(\vec r') d^3 r' \notag\\
 &=  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\psi(\vec r') d^3 r' \\
 \end{align}
 Somit lautet die gesamte Wellenfunktion:
@@ -345,8 +339,8 @@ Jetzt können wir die Gleichung (\ref{eq:38}) in (\ref{eq:37}) einsetzen und erh
 
 \begin{align}
   \label{eq:39}
-   \psi(\vec r) &=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\left(  Ae^{i\vec k \vec r'}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''  \right)  d^3 r'\\
-&=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r') Ae^{i\vec k \vec r'}d^3 r' \\
+   \psi(\vec r) &=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')\left(  Ae^{i\vec k \vec r'}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''  \right)  d^3 r'\notag\\
+&=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r') Ae^{i\vec k \vec r'}d^3 r' \notag\\
 &\qquad -  \frac{\mu}{2\pi\hbar^2} \int_{-\infty}^\infty \frac{ e^{ik |r-r'| }}{|r-r'|  }  V(r')   \frac{\mu}{2\pi\hbar^2} d^3 r' \int_{-\infty}^\infty \frac{ e^{ik |r'-r''| }}{|r'-r''|  }  V(r'')\psi(\vec r'') d^3 r''
 \end{align}
 
@@ -377,8 +371,8 @@ Hier wollen wir zeigen dass die Wellenfunktion in (\ref{eq:36}) für große \(\v
 
 \begin{align}
   \label{eq:42}
-  k|\vec r - \vec r'| &= k\sqrt{ r^2-2\vec r\vec r' + r'^2 } \\
- &= kr\sqrt{ 1-2\frac{\hat e_r\vec r'}{r} + \frac{\vec r'^2}{r^2} } \qquad \text{Taylorentwicklung der Wurzel um r=}\infty\text{ bis 2.Ordnung}\\ 
+  k|\vec r - \vec r'| &= k\sqrt{ r^2-2\vec r\vec r' + r'^2 }\notag \\
+ &= kr\sqrt{ 1-2\frac{\hat e_r\vec r'}{r} + \frac{\vec r'^2}{r^2} } \qquad \text{Taylorentwicklung der Wurzel um r=}\infty\text{ bis 2.Ordnung}\notag\\ 
  &\approx kr(1-\frac{\hat e_r\vec r'}{r}) = kr - k\hat e_r\vec r'= kr- \vec k\vec r'
 \end{align}
 
@@ -396,7 +390,7 @@ Setzen wir die beiden Näherungen ein die Gleichung (\ref{eq:36}) ein:
 
 \begin{align}
   \label{eq:44}
-   \psi(\vec r) &\stackrel{\vec r\to \infty}=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2}A \int_{-\infty}^\infty \frac{ e^{i kr - i\vec k\vec r'  }}{r} V(r')\psi(\vec r')   d^3 r' \\
+   \psi(\vec r) &\stackrel{\vec r\to \infty}=  Ae^{i\vec k \vec r}  -\frac{\mu}{2\pi\hbar^2}A \int_{-\infty}^\infty \frac{ e^{i kr - i\vec k\vec r'  }}{r} V(r')\psi(\vec r')   d^3 r'\notag \\
 &=  Ae^{i\vec k \vec r}  - A\left[\frac{\mu}{2\pi\hbar^2}\int_{-\infty}^\infty e^{- i\vec k\vec r' }  V(r') \psi(\vec r') d^3 r'\right] \frac{ e^{i kr }}{r} 
 \end{align}
 
@@ -436,7 +430,7 @@ Für Bornsche Näherung in 1.Ordnung mit \(\psi(\vec r') = e^{i\vec k_0\vec r'}\
 
 \begin{align}
   \label{eq:49}
-  \frac{d\sigma}{d\Omega} &=  \frac{\mu^2}{4\pi^2\hbar^4} \left| \int_{-\infty}^\infty e^{- i\vec k\vec r' }  V(r')  e^{i\vec k_0\vec r'} d^3 r' \right|^2 \\
+  \frac{d\sigma}{d\Omega} &=  \frac{\mu^2}{4\pi^2\hbar^4} \left| \int_{-\infty}^\infty e^{- i\vec k\vec r' }  V(r')  e^{i\vec k_0\vec r'} d^3 r' \right|^2 \notag\\
 &=  \frac{\mu^2}{4\pi^2\hbar^4} \left| \int_{-\infty}^\infty \exp[i\vec r'\underbrace{(\vec k_0 -\vec k)}_{\vec K} ]  V(r')  d^3 r' \right|^2 
 \end{align}
 
@@ -457,18 +451,18 @@ Betrachte nun ein \textbf{Spezialfall} \(V(\vec r')\) sei sphärisch symmetrisch
 
 \begin{align}
   \label{eq:51}
-   f(\theta,\phi) &=  - \frac{\mu}{2\pi\hbar^2} \int_0^\infty r'^2dr' \int_0^\pi \sin(\theta)d\theta \int_0^{2\pi}d\phi e^{ir'K\cos\theta}  V(r') \\
-&= -\frac{\mu}{2\pi\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \int_0^\pi d\theta\,\, \sin(\theta)  e^{ir'K\cos\theta} \int_0^{2\pi}d\phi  \\
-&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \int_0^\pi d\theta\,\, \sin(\theta)  e^{ir'K\cos\theta}  \\
+   f(\theta,\phi) &=  - \frac{\mu}{2\pi\hbar^2} \int_0^\infty r'^2dr' \int_0^\pi \sin(\theta)d\theta \int_0^{2\pi}d\phi e^{ir'K\cos\theta}  V(r')\notag \\
+&= -\frac{\mu}{2\pi\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \int_0^\pi d\theta\,\, \sin(\theta)  e^{ir'K\cos\theta} \int_0^{2\pi}d\phi \notag \\
+&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \int_0^\pi d\theta\,\, \sin(\theta)  e^{ir'K\cos\theta}  
 \end{align}
 Substituiere \(x=\cos\theta\rightarrow d\theta = \frac{1}{-\sin\theta}  dx \)
 
 \begin{align}
   \label{eq:52}
-   f(\theta) &= - \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \int^1_{-1} dx  e^{ir'K x} \\
-&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \left[ \frac{e^{ir'K x} }{ir'K} \right]^1_{-1}  \\
-&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \left( \frac{e^{ir'K} }{ir'K}- \frac{e^{-ir'K} }{ir'K} \right)  \\
-&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \frac{2i}{ir'K} \sin(r'K)  \\
+   f(\theta) &= - \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \int^1_{-1} dx  e^{ir'K x} \notag\\
+&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \left[ \frac{e^{ir'K x} }{ir'K} \right]^1_{-1} \notag \\
+&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \left( \frac{e^{ir'K} }{ir'K}- \frac{e^{-ir'K} }{ir'K} \right) \notag \\
+&=- \frac{\mu}{\hbar^2} \int_0^\infty dr'\,\, r'^2  V(r') \frac{2i}{ir'K} \sin(r'K) \notag \\
 &=- \frac{2\mu}{\hbar^2 K} \int_0^\infty dr'\,\, r'  V(r') \sin(r'K) 
 \end{align}
 
@@ -494,20 +488,20 @@ berechnen. Setzen wir das in unsere Gleichung (\ref{eq:53}) ein:
 
 \begin{align}
   \label{eq:55}
-  \frac{d\sigma}{d\Omega}&=  \frac{4\mu^2Z_1^2Z_2^2e^4}{\hbar^4 K^2} \left| \int_0^\infty dr'\,\, r'  \frac{1}{r'} \sin(r'K)   \right|^2 \\
-&=  \frac{4\mu^2Z_1^2Z_2^2e^4}{\hbar^4 K^2} \left| \int_0^\infty dr'\,\, \sin(r'K)   \right|^2 \\
+  \frac{d\sigma}{d\Omega}&=  \frac{4\mu^2Z_1^2Z_2^2e^4}{\hbar^4 K^2} \left| \int_0^\infty dr'\,\, r'  \frac{1}{r'} \sin(r'K)   \right|^2 \notag\\
+&=  \frac{4\mu^2Z_1^2Z_2^2e^4}{\hbar^4 K^2} \left| \int_0^\infty dr'\,\, \sin(r'K)   \right|^2 
 \end{align}
 Nebenrechnung Integral:
 
 \begin{align}
   \label{eq:56}
- \int_0^\infty dr'\,\, \sin(r'K) &= \lim_{\lambda \to 0} \int_0^\infty dr'\,\, e^{-\lambda r'}  \sin(r'K) \\
-&= \frac{1}{2i}  \lim_{\lambda \to 0} \int_0^\infty dr'\,\, e^{-\lambda r'}\left( e^{iK r'}- e^{-iK r'} \right)  \\
-&= \frac{1}{2i}  \lim_{\lambda \to 0} \int_0^\infty dr'\,\, \left( e^{-r'(\lambda - iK )}- e^{-r'(\lambda+iK)} \right)  \\
-&= \frac{1}{2i}  \lim_{\lambda \to 0} \int_0^\infty dr'\,\, e^{-r'(\lambda - iK )}- \int_0^\infty dr'\,\, e^{-r'(\lambda+iK)}  \\
-&= \frac{1}{2i}  \lim_{\lambda \to 0}\left( \left[ \frac{e^{-r'(\lambda - iK )} }{-\lambda+iK}  \right]_0^\infty - \left[ \frac{e^{-r'(\lambda + iK )} }{-\lambda-iK}  \right]_0^\infty \right) \\
-&= \frac{1}{2i}  \lim_{\lambda \to 0}\left( 0 - \frac{1}{-\lambda+iK}   -  0  +  \frac{1}{-\lambda-iK}  \right) \\
-&= \frac{1}{2i}  \left( -\frac{1}{iK}   +  \frac{1}{-iK}  \right) \\
+ \int_0^\infty dr'\,\, \sin(r'K) &= \lim_{\lambda \to 0} \int_0^\infty dr'\,\, e^{-\lambda r'}  \sin(r'K)\notag \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0} \int_0^\infty dr'\,\, e^{-\lambda r'}\left( e^{iK r'}- e^{-iK r'} \right) \notag \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0} \int_0^\infty dr'\,\, \left( e^{-r'(\lambda - iK )}- e^{-r'(\lambda+iK)} \right) \notag \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0} \int_0^\infty dr'\,\, e^{-r'(\lambda - iK )}- \int_0^\infty dr'\,\, e^{-r'(\lambda+iK)} \notag \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0}\left( \left[ \frac{e^{-r'(\lambda - iK )} }{-\lambda+iK}  \right]_0^\infty - \left[ \frac{e^{-r'(\lambda + iK )} }{-\lambda-iK}  \right]_0^\infty \right)\notag \\
+&= \frac{1}{2i}  \lim_{\lambda \to 0}\left( 0 - \frac{1}{-\lambda+iK}   -  0  +  \frac{1}{-\lambda-iK}  \right) \notag\\
+&= \frac{1}{2i}  \left( -\frac{1}{iK}   +  \frac{1}{-iK}  \right)\notag \\
 &= - \frac{1}{i} \frac{1}{iK} =  \frac{1}{K} 
 \end{align}
 
