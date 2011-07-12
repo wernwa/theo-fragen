@@ -109,6 +109,137 @@ Multipliziere die Gleichung (\ref{eq:9}) mit \(S(\Lambda^{-1})\)  von links  und
 die Bedingung für die Transformationsmatrix \(S(\Lambda)\). Hier wurde vorausgesetzt das \(\Lambda^\nu_{\,\,\mu}\) und \( S(\Lambda)\) vertauschen.  
 
 
+\subsection*{Konstruktion der S Matrix}
+
+Wir wollen die Transformationsmatrix \(S(\Lambda)\) bestimmen. Dazu betrachten wir die infinitesimale Lorenztransformationen. Für eine Lorenztransformation setzen wir an
+
+\begin{align}
+  \label{eq:11}
+  \Lambda^{\mu}_{\hphantom\mu \nu} = e^{\omega^\mu_{\hphantom\mu \nu}}
+\end{align}
+
+Jetzt entwickeln wir die \(e\)-Funktion bis zu 1-ter Ordnung
+
+\begin{align}
+  \label{eq:12}
+  \Lambda^{\mu}_{\hphantom\mu \nu} = \mathds 1 + \omega^\mu_{\hphantom\mu \nu} + \mathcal O\left((\omega^\mu_{\hphantom\mu \nu})^2\right)
+\end{align}
+
+Betrachten wir nun die infinitesimale Transformationen, d.h \(\omega \rightarrow \delta\omega\) und vernachlässige Terme höherer Ordnung \(\delta\omega^2\dots\)
+
+\begin{align}
+  \label{eq:13}
+  \Lambda^{\mu}_{\hphantom\mu \nu} = \mathds 1 + \delta\omega^\mu_{\hphantom\mu \nu}
+\end{align}
+
+Analog setzen wir für die Spinor-Transformationsmatrix \(S(\Lambda)\)
+
+\begin{align}
+  \label{eq:14}
+  S(\Lambda) = e^{\tau} 
+\end{align}
+
+Die gleiche Rechnung wie (\ref{eq:11}) bis (\ref{eq:13}) führt auf
+
+\begin{align}
+  \label{eq:15}
+  S(\Lambda) = \mathds 1 + \delta\tau
+\end{align}
+
+Die Kehrwertmatrix von \(S(\Lambda)\) ist
+
+\begin{align}
+  \label{eq:16}
+  S(\Lambda^{-1}) = S^{-1}(\Lambda) = e^{-\tau}
+\end{align}
+
+Die infinitisimale Rechnung von (\ref{eq:16}) liefert
+
+\begin{align}
+  \label{eq:17}
+   S(\Lambda^{-1}) = \mathds 1 - \delta\tau
+\end{align}
+
+Setzen wir die Gleichungen (\ref{eq:13}), (\ref{eq:15}) und (\ref{eq:17}) in (\ref{eq:10}) ein, so ergibt sich eine Beziehung für die infinitesimale Größen
+
+\begin{align}
+  \label{eq:18}
+ (\mathds 1 + \delta\omega^\mu_{\hphantom\mu \nu}) \gamma^\mu &= (\mathds 1 - \delta\tau)\gamma^\nu( \mathds 1 + \delta\tau)\notag \\
+ \gamma^\mu + \delta\omega^\mu_{\hphantom\mu \nu} \gamma^\mu &= (\gamma^\nu - \delta\tau\gamma^\nu)( \mathds 1 + \delta\tau)\notag \\
+ \cancel{\gamma^\mu} + \delta\omega^\mu_{\hphantom\mu \nu} \gamma^\mu &= \cancel{\gamma^\nu} + \gamma^\nu\delta\tau - \delta\tau\gamma^\nu - \underbr{\delta\tau^2\gamma^\nu}_{\approx 0}\notag \\
+ \delta\omega^\mu_{\hphantom\mu \nu} \gamma^\mu &= [\gamma^\nu,\delta\tau]
+\end{align}
+
+
+Mit der Beziehung 
+
+\begin{align}
+  \label{eq:19}
+  \delta\omega^\mu_{\hphantom\mu \nu} = - \delta\omega^{\hphantom\nu \mu}_\nu
+\end{align}
+
+Läst sich die Gleichung (\ref{eq:18}) schreiben
+
+\begin{align}
+  \label{eq:20}
+  \boxed{[\delta\tau,\gamma^\nu] = \gamma^\mu \delta\omega^{\hphantom\nu \mu}_\nu}
+\end{align}
+
+Desweiteren gilt dass die Norm von \(\psi\) bei Lorenz-Transformation invariant seien soll, d.h. \(\psi'=S\psi\). Das bedeutet die Länge von \(\psi'\) und \(\psi\) muss gleich sein. Das  heißt für die Transformationsmatrix
+
+\begin{align}
+  \label{eq:21}
+  \det S = \pm 1
+\end{align}
+
+Wir betrachten nur die eigentliche Transformationen \(\det S = 1\) und lassen die Spiegelungen \(\det S = -1\) weg. Mit \(\det e^{A} = e^{\text{tr} A}\)
+
+\begin{align}
+  \label{eq:22}
+  1 = \det S = e^{\text{tr}\,\tau} =   1 + \text{tr}\tau + \mathcal O(\tau^2)
+\end{align}
+
+Betrachte wieder den infinitesimalen Fall
+
+\begin{align}
+  \label{eq:23}
+  1 =  1 + \text{tr}\,\delta\tau 
+\end{align}
+Aus dieser Gleichung folgt dass
+
+\begin{align}
+  \label{eq:24}
+  \text{tr}\,\delta\tau = 0
+\end{align}
+
+seien muss. Die Lösung der Gleichung (\ref{eq:20}) und (\ref{eq:24}) lautet (TODO)
+
+\begin{align}
+  \label{eq:25}
+  \delta\tau = -\frac{i}{4}\sigma_{\mu\nu}\delta\omega^{\mu\nu}
+\end{align}
+
+mit
+
+\begin{align}
+  \label{eq:26}
+  \sigma_{\mu\nu} = \frac{i}{2}[\gamma_\mu,\gamma_\nu]
+\end{align}
+
+Für den nicht infinitesimalen Fall lautet die Gleichung (\ref{eq:25})
+
+\begin{align}
+  \label{eq:28}
+  \tau = -\frac{i}{4}\sigma_{\mu\nu}\omega^{\mu\nu}
+\end{align}
+
+Setzt man diese in unseren Ansatz (\ref{eq:14}) ein so lautet die Transformations-Matrix \(S(\Lambda)\)
+
+\begin{align}
+  \label{eq:27}
+  S(\Lambda) = e^{-\frac{i}{4}\sigma_{\mu\nu}\omega^{\mu\nu}}
+\end{align}
+
 
 \subsection*{Referenzen}
 \begin{itemize}
