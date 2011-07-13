@@ -223,7 +223,7 @@ mit
 
 \begin{align}
   \label{eq:26}
-  \sigma_{\mu\nu} = \frac{i}{2}[\gamma_\mu,\gamma_\nu]
+ \boxed{ \sigma_{\mu\nu} = \frac{i}{2}[\gamma_\mu,\gamma_\nu] }
 \end{align}
 
 Für den nicht infinitesimalen Fall lautet die Gleichung (\ref{eq:25})
@@ -237,7 +237,146 @@ Setzt man diese in unseren Ansatz (\ref{eq:14}) ein so lautet die Transformation
 
 \begin{align}
   \label{eq:27}
-  S(\Lambda) = e^{-\frac{i}{4}\sigma_{\mu\nu}\omega^{\mu\nu}}
+ \boxed{ S(\Lambda) = e^{-\frac{i}{4}\sigma_{\mu\nu}\omega^{\mu\nu}} }
+\end{align}
+
+
+\subsection*{Die Bedeutung der Omega-Matrix}
+
+
+Betrachten wir nochmal den infinitesimalen Fall aus der Gleichung (\ref{eq:13}), so können wir schreiben
+
+\begin{align}
+  \label{eq:30}
+  \Lambda^{\mu}_{\hphantom\mu \nu} = \mathds 1 + \delta\omega^\mu_{\hphantom\mu \nu}
+\end{align}
+
+Nutzen wir die allgemeine Bedingung dass \(\Lambda^{-1}\Lambda = \mathds 1\) so folgt
+
+
+\begin{align}
+  \label{eq:31}
+  \Lambda^{-1}\Lambda &=\Lambda_{\mu}^{\hphantom \mu \rho}\Lambda^{\mu}_{\hphantom\mu \sigma}= ( \mathds 1 + \delta\omega^{\hphantom\mu \rho}_\mu)( \mathds 1 + \delta\omega^\mu_{\hphantom\mu \sigma} ) \notag \\
+&= \mathds 1 + \delta\omega^\mu_{\hphantom\mu \sigma} + \delta\omega^{\hphantom\mu \rho}_\mu + \underbr{ \delta\omega^{\hphantom\mu \rho}_\mu\delta\omega^\mu_{\hphantom\mu \sigma} }_{\approx 0}\notag\\
+&= \mathds 1 + \underbr{\delta\omega^\mu_{\hphantom\mu \sigma} + \delta\omega^{\hphantom\mu \rho}_\mu }_{=0}\stackrel{!}=\mathds 1 
+\end{align}
+Aus dieser Gleichung folgt die Beziehung für den infinitesimalen Fall \(\delta\omega\)
+
+\begin{align}
+  \label{eq:32}
+  \delta\omega^\mu_{\hphantom\mu \sigma} &= -\delta\omega^{\hphantom\mu \rho}_\mu 
+\end{align}
+
+Betrachte nun den nicht infinitesimalten Fall so folgt
+
+\begin{align}
+  \label{eq:33}
+   g^{\mu\alpha} \omega_{\alpha \sigma}  &= -\omega_{\mu\alpha}g^{\alpha\rho} \qquad \notag \\
+\omega_{\alpha \sigma}  &= -\omega_{\mu\alpha}
+\end{align}
+
+Setzen wir nun die Indezes \(\sigma=\mu = \rho\) so folgt
+
+\begin{align}
+  \label{eq:34}
+  \boxed{ \omega_{\alpha \rho} = -\omega_{\rho\alpha} }
+\end{align}
+
+Damit müsste die \(\omega\)-Matrix folgende Gestalt haben 
+
+
+\begin{align}
+  \label{eq:29}
+   \omega = \begin{pmatrix}0&\omega_{01}&\omega_{02}&\omega_{03}\\ \omega_{10}&0&\omega_{12}&\omega_{13}\\\omega_{20}&\omega_{21}&0&\omega_{23}\\ \omega_{30}&\omega_{31}&\omega_{32}&0\end{pmatrix} =
+  \omega = \begin{pmatrix}0&\omega_{01}&\omega_{02}&\omega_{03}\\ -\omega_{01}&0&\omega_{12}&\omega_{13}\\-\omega_{02}&-\omega_{12}&0&\omega_{23}\\ -\omega_{03}&-\omega_{13}&-\omega_{23}&0\end{pmatrix}
+\end{align}
+
+
+Das heißt es gibt insgesamt 6 reelle (warum reell?) freie Parameter  \(\Rightarrow \) 6 Generatoren\\
+\\
+\(\vec J\) (Drehungen) 3 \(\omega_{ij}\)\\
+\(\vec K\) (Boosts) 3 \(\omega_{0i}\)\\
+\\
+
+
+Betrachten wir nun eine Drehung um die z-Achse. Dann sieht die Lorenz-Transformationsmatrix folgendermaßen aus
+
+\begin{align}
+  \label{eq:35}
+  \Lambda =  \begin{pmatrix}
+1&0&0&0\\
+0&\cos\omega&\sin\omega&0\\
+0&-\sin\omega&\cos\omega&0\\
+0&0&0&1
+\end{pmatrix} 
+\end{align}
+
+Machen wir nun eine Näherung für kleine \(\omega\), d.h. \(\sin\omega\approx \omega\) und \(\cos\omega\approx1\) so ergibt sich für \(\Lambda\)
+
+\begin{align}
+  \label{eq:36}
+   \Lambda =  \begin{pmatrix}
+1&0&0&0\\
+0&1&\omega&0\\
+0&-\omega&1&0\\
+0&0&0&1
+\end{pmatrix} = \mathds 1 + \omega=\mathds 1+
+  \begin{pmatrix}0&\omega_{01}&\omega_{02}&\omega_{03}\\ \omega_{10}&0&\omega_{12}&\omega_{13}\\\omega_{20}&\omega_{21}&0&\omega_{23}\\ \omega_{30}&\omega_{31}&\omega_{32}&0\end{pmatrix} 
+\end{align}
+
+Setzen wir \(\omega\) aus der Gleiching (\ref{eq:29}) in die Gl. (\ref{eq:36}) ein
+\begin{align}
+  \label{eq:37}
+  \begin{pmatrix}
+1&0&0&0\\
+0&1&\omega&0\\
+0&-\omega&1&0\\
+0&0&0&1
+\end{pmatrix} &= \mathds 1 + \omega\notag\\
+&=\mathds 1+
+  \begin{pmatrix}0&\omega_{01}&\omega_{02}&\omega_{03}\\ \omega_{10}&0&\omega_{12}&\omega_{13}\\\omega_{20}&\omega_{21}&0&\omega_{23}\\ \omega_{30}&\omega_{31}&\omega_{32}&0\end{pmatrix}\notag\\
+&= \begin{pmatrix}1&\omega_{01}&\omega_{02}&\omega_{03}\\ \omega_{10}&1&\omega_{12}&\omega_{13}\\\omega_{20}&\omega_{21}&1&\omega_{23}\\ \omega_{30}&\omega_{31}&\omega_{32}&1\end{pmatrix} 
+\end{align}
+Durch Vergleich der beiden Matrizen in Gl.~(\ref{eq:37}) stellen wir fest
+\begin{align}
+  \label{eq:38}
+  \omega_{12}&=\omega\notag\\
+  \omega_{21}&=-\omega=-\omega_{12}
+\end{align}
+D.h. alle Elemente der \(\omega\)-Matrix außer \(\omega_{12}\) und \(\omega_{21}\) Null sind. Somit müssen wir reduziert sich die Gleichung (\ref{eq:27}) auf
+
+\begin{align}
+  \label{eq:39}
+   S(\Lambda) &= e^{-\frac{i}{4}\sigma_{\mu\nu}\omega^{\mu\nu}} \notag \\
+&= \exp\{-\frac{i}{4}(\sigma_{12}\omega^{12}+\sigma_{21}\omega^{21})\}\notag \\
+&= \exp\{-\frac{i}{4}(\sigma_{12}\omega-\sigma_{21}\omega)\}\notag \qquad \text{mit } \sigma_{\mu\nu}=\frac{1}{2}[\gamma_\mu,\gamma_\nu]=- \frac{1}{2}[\gamma_\nu,\gamma_\mu] = -\sigma_{\nu\mu} \\
+&= \exp\{-\frac{i}{4}(\sigma_{12}\omega+\sigma_{12}\omega)\}\notag \\
+&= \exp\{-\frac{i}{2}(\sigma_{12}\omega)\}\notag \\
+&= \exp\{-\frac{i}{2}  \begin{pmatrix}1&0&0&0\\ 0&-1&0&0\\0&0&1&0\\0&0&0&-1 \end{pmatrix}  \omega\}\notag \\
+&= \exp\{-\frac{i}{2}  \begin{pmatrix}\sigma_3&0\\ 0&\sigma_3 \end{pmatrix}  \omega\}\notag \\
+&= \exp\{-\frac{i}{2} \sigma_3 \begin{pmatrix}\mathds 1_2&0\\ 0&\mathds 1_2 \end{pmatrix}  \omega\}\qquad \text{mit }S_z = \frac{\hbar}{2}\sigma_3\notag \\
+&= \exp\{-\frac{i}{\hbar}\omega S_z \}
+\end{align}
+
+Wir wollen nun die Exponentialfunktion auf die Matrix anwenden. Damit das gelingt starten wir mit folgender Form
+
+\begin{align}
+  \label{eq:40}
+   S(\Lambda) &= \exp\{\underbr{ -\frac{i}{2}}_{\tilde\omega} \omega \sigma_3 \mathds 1_2 \} = \exp\{ \tilde\omega \cdot \sigma_3\mathds 1_2 \} \\
+ &=\exp\left\{ \tilde\omega \cdot \underbr{ \begin{pmatrix}1&0&0&0\\0&-1&0&0\\ 0&0&1&0\\0&0&0&-1 \end{pmatrix} }_{I} \right\} 
+\end{align}
+
+Die Matrix \(I\) weist periodisches Verhalten beim potenzieren
+
+\begin{align}
+  \label{eq:41}
+  I^2= I^4=\dots= \begin{pmatrix}1&0&0&0\\0&1&0&0\\ 0&0&1&0\\0&0&0&1 \end{pmatrix}=\mathds 1 \qquad 
+ I^1= I^3=\dots= \begin{pmatrix}1&0&0&0\\0&-1&0&0\\ 0&0&1&0\\0&0&0&-1 \end{pmatrix}=I 
+\end{align}
+Dies wird bei der Entwicklung der Exponentielfunktion benötigt
+\begin{align}
+  \label{eq:42}
+   S(\Lambda) &= \exp\{ \tilde\omega \cdot I \} = \cosh(I\tilde\omega) + \sinh(I\tilde\omega) \notag\\
 \end{align}
 
 
