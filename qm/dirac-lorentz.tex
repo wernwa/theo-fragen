@@ -348,22 +348,22 @@ D.h. alle Elemente der \(\omega\)-Matrix außer \(\omega_{12}\) und \(\omega_{21
 \begin{align}
   \label{eq:39}
    S(\Lambda) &= e^{-\frac{i}{4}\sigma_{\mu\nu}\omega^{\mu\nu}} \notag \\
-&= \exp\{-\frac{i}{4}(\sigma_{12}\omega^{12}+\sigma_{21}\omega^{21})\}\notag \\
-&= \exp\{-\frac{i}{4}(\sigma_{12}\omega-\sigma_{21}\omega)\}\notag \qquad \text{mit } \sigma_{\mu\nu}=\frac{1}{2}[\gamma_\mu,\gamma_\nu]=- \frac{1}{2}[\gamma_\nu,\gamma_\mu] = -\sigma_{\nu\mu} \\
-&= \exp\{-\frac{i}{4}(\sigma_{12}\omega+\sigma_{12}\omega)\}\notag \\
-&= \exp\{-\frac{i}{2}(\sigma_{12}\omega)\}\notag \\
-&= \exp\{-\frac{i}{2}  \begin{pmatrix}1&0&0&0\\ 0&-1&0&0\\0&0&1&0\\0&0&0&-1 \end{pmatrix}  \omega\}\notag \\
-&= \exp\{-\frac{i}{2}  \begin{pmatrix}\sigma_3&0\\ 0&\sigma_3 \end{pmatrix}  \omega\}\notag \\
-&= \exp\{-\frac{i}{2} \sigma_3 \begin{pmatrix}\mathds 1_2&0\\ 0&\mathds 1_2 \end{pmatrix}  \omega\}\qquad \text{mit }S_z = \frac{\hbar}{2}\sigma_3\notag \\
-&= \exp\{-\frac{i}{\hbar}\omega S_z \}
+&= \exp\left\{-\frac{i}{4}(\sigma_{12}\omega^{12}+\sigma_{21}\omega^{21})\right\}\notag \\
+&= \exp\left\{-\frac{i}{4}(\sigma_{12}\omega-\sigma_{21}\omega)\right\}\notag \qquad \text{mit } \sigma_{\mu\nu}=\frac{1}{2}[\gamma_\mu,\gamma_\nu]=- \frac{1}{2}[\gamma_\nu,\gamma_\mu] = -\sigma_{\nu\mu} \\
+&= \exp\left\{-\frac{i}{4}(\sigma_{12}\omega+\sigma_{12}\omega)\right\}\notag \\
+&= \exp\left\{-\frac{i}{2}(\sigma_{12}\omega)\right\}\notag \\
+&= \exp\left\{-\frac{i}{2}  \begin{pmatrix}1&0&0&0\\ 0&-1&0&0\\0&0&1&0\\0&0&0&-1 \end{pmatrix}  \omega\right\}\notag \\
+&= \exp\left\{-\frac{i}{2}  \begin{pmatrix}\sigma_3&0\\ 0&\sigma_3 \end{pmatrix}  \omega\right\}\notag \\
+&= \exp\left\{-\frac{i}{2} \sigma_3 \begin{pmatrix}\mathds 1_2&0\\ 0&\mathds 1_2 \end{pmatrix}  \omega\right\}\qquad \text{mit }S_z = \frac{\hbar}{2}\sigma_3\notag \\
+&= \exp\left\{-\frac{i}{\hbar}\omega S_z \right\}
 \end{align}
 
 Wir wollen nun die Exponentialfunktion auf die Matrix anwenden. Damit das gelingt starten wir mit folgender Form
 
 \begin{align}
   \label{eq:40}
-   S(\Lambda) &= \exp\{\underbr{ -\frac{i}{2}}_{\tilde\omega} \omega \sigma_3 \mathds 1_2 \} = \exp\{ \tilde\omega \cdot \sigma_3\mathds 1_2 \} \\
- &=\exp\left\{ \tilde\omega \cdot \underbr{ \begin{pmatrix}1&0&0&0\\0&-1&0&0\\ 0&0&1&0\\0&0&0&-1 \end{pmatrix} }_{I} \right\} 
+   S(\Lambda) &= \exp\left\{i\underbr{-\frac{1}{2}\omega}_{\tilde\omega}  \sigma_3 \mathds 1_2 \right\} = \exp\left\{i \tilde\omega \cdot \sigma_3\mathds 1_2 \right\} \\
+ &=\exp\left\{i \tilde\omega \cdot \underbr{ \begin{pmatrix}1&0&0&0\\0&-1&0&0\\ 0&0&1&0\\0&0&0&-1 \end{pmatrix} }_{I} \right\} 
 \end{align}
 
 Die Matrix \(I\) weist periodisches Verhalten beim potenzieren
@@ -376,13 +376,73 @@ Die Matrix \(I\) weist periodisches Verhalten beim potenzieren
 Dies wird bei der Entwicklung der Exponentielfunktion benötigt
 \begin{align}
   \label{eq:42}
-   S(\Lambda) &= \exp\{ \tilde\omega \cdot I \} = \cosh(I\tilde\omega) + \sinh(I\tilde\omega) \notag\\
+   S(\Lambda) &= \exp\{ i\tilde\omega \cdot I \} = \cos(I\tilde\omega) + i\sin(I\tilde\omega)
+\end{align}
+Setzen wir die Entwicklungen für \(\cos(x)=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}\) und \(\sin(x)=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}\) in die Gleichung (\ref{eq:42}) ein
+
+\begin{align}
+  \label{eq:43}
+  S(\Lambda) &= \sum_{n=0}^{\infty}(-1)^n\frac{(I\tilde\omega)^{2n}}{(2n)!} + i\sum_{n=0}^{\infty}(-1)^n\frac{(I\tilde\omega)^{2n+1}}{(2n+1)!} \notag \\
+&= I^0\tilde\omega^0 +  \sum_{n=1}^{\infty}(-1)^n\frac{(I\tilde\omega)^{2n}}{(2n)!} + i\sum_{n=0}^{\infty}(-1)^n\frac{(I\tilde\omega)^{2n+1}}{(2n+1)!} \notag \\
+&= \underbr{ I^0\tilde\omega^0}_{\mathds 1_4} +  \underbr{I^2}_{\mathds 1_4}\sum_{n=1}^{\infty}(-1)^n\frac{(\tilde\omega)^{2n}}{(2n)!} + iI\sum_{n=0}^{\infty}(-1)^n\frac{(\tilde\omega)^{2n+1}}{(2n+1)!} \notag \\
+&= \mathds 1_4 +  \mathds 1_4 \left(-\frac{\tilde\omega^0}{0!} + \frac{\tilde\omega^0}{0!} + \sum_{n=1}^{\infty}(-1)^n\frac{(\tilde\omega)^{2n}}{(2n)!} \right) + iI\sum_{n=0}^{\infty}(-1)^n\frac{(\tilde\omega)^{2n+1}}{(2n+1)!} \notag \\
+&=\mathds 1_4  +  \mathds 1_4 \left(\underbr{-\frac{\tilde\omega^0}{0!}}_{-1} + \underbr{\sum_{n=0}^{\infty}(-1)^n\frac{(\tilde\omega)^{2n}}{(2n)!}}_{\cos(\tilde\omega)} \right) + iI \underbr{ \sum_{n=0}^{\infty}(-1)^n\frac{(\tilde\omega)^{2n+1}}{(2n+1)!}}_{\sin(\tilde\omega)} \notag \\
+&= \mathds 1_4 +  \mathds 1_4 \left(-1 + \cos(\tilde\omega) \right) + iI \sin(\tilde\omega) \notag \\
+&= \begin{pmatrix}1&0&0&0\\0&1&0&0\\ 0&0&1&0\\0&0&0&1 \end{pmatrix} + 
+\begin{pmatrix}-1+\cos(\tilde\omega)&0&0&0\\0&-1+\cos(\tilde\omega)&0&0\\ 0&0&-1+\cos(\tilde\omega)&0\\0&0&0&-1+\cos(\tilde\omega) \end{pmatrix} +\notag \\
+&\qquad\qquad + \begin{pmatrix}i\sin(\tilde\omega) &0&0&0\\0&-i\sin(\tilde\omega)&0&0\\ 0&0&i\sin(\tilde\omega)&0\\0&0&0&-i\sin(\tilde\omega) \end{pmatrix}\notag \\
+ &= \begin{pmatrix}\cos(\tilde\omega)+i\sin(\tilde\omega) &0&0&0\\
+   0&\cos(\tilde\omega)-i\sin(\tilde\omega) &0&0\\ 
+   0&0&\cos(\tilde\omega)+i\sin(\tilde\omega) &0\\
+   0&0&0& \cos(\tilde\omega)-i\sin(\tilde\omega) 
+ \end{pmatrix}\notag \\
+  &= \begin{pmatrix}e^{i\tilde\omega} &0&0&0\\
+   0& e^{-i\tilde\omega} &0&0\\ 
+   0&0& e^{i\tilde\omega} &0\\
+   0&0&0& e^{-i\tilde\omega} 
+ \end{pmatrix}
 \end{align}
 
+Setzen wir nun für \(\tilde\omega=-\frac{1}{2}\omega \) ein, so folgt
+
+\begin{align}
+  \label{eq:44}
+  S(\Lambda)&= \begin{pmatrix}e^{- \frac{i}{2} \omega} &0&0&0\\
+   0& e^{\frac{i}{2} \omega} &0&0\\ 
+   0&0& e^{-\frac{i}{2}\omega} &0\\
+   0&0&0& e^{\frac{i}{2}\omega} 
+ \end{pmatrix} 
+\end{align}
+
+Führt man die gleiche Rechnung für \(\Lambda^{-1}\) (dass heißt der Drehwinkel ändert sein Vorzeichen) durch, so ergibt sich dass \(\tilde\omega=+\frac{1}{2}\omega\). Setzt man \(\tilde\omega\) in die Gleichung (\ref{eq:43}) 
+
+\begin{align}
+  \label{eq:45}
+   S(\Lambda^{-1})&= \begin{pmatrix}e^{ \frac{i}{2} \omega} &0&0&0\\
+   0& e^{-\frac{i}{2} \omega} &0&0\\ 
+   0&0& e^{\frac{i}{2}\omega} &0\\
+   0&0&0& e^{-\frac{i}{2}\omega} 
+ \end{pmatrix} = S^{-1}(\Lambda)
+\end{align}
+
+Das ist gerade die Kehrwertmatrix und beide erfüllen die Bedinung (\ref{eq:7}) für die Lorentz-Gruppe.\\
+\\
+\underline{Bemerkung}: Die Gleichung (\ref{eq:44}) findet man in der Literatur auch in folgender Form:
+
+\begin{align}
+  \label{eq:46}
+   S(\Lambda)&= \cos\frac{\omega}{2}+i  \begin{pmatrix}\sigma_3&0\\0&\sigma_3\end{pmatrix}\sin\frac{\omega}{2}
+\end{align}
+Bzw. eine Drehung um eine Beliebige Achse \(\vec n\)
+
+\begin{align}
+  \label{eq:47}
+   \boxed{S(\Lambda) = \cos\frac{\omega}{2}+i\, \vec n\cdot\vec\sigma\,\begin{pmatrix}\mathds 1_2&0\\0&\mathds 1_2\end{pmatrix}\sin\frac{\omega}{2}}
+\end{align}
 
 \subsection*{Referenzen}
 \begin{itemize}
-\item Rollnik Quantentheorie 2
+\item \url{ http://itp.tugraz.at/LV/evertz/QM-2/qm2.pdf }
 \end{itemize}
 
 \end{document}
