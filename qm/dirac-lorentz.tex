@@ -431,14 +431,23 @@ Das ist gerade die Kehrwertmatrix und beide erfüllen die Bedinung (\ref{eq:7}) 
 
 \begin{align}
   \label{eq:46}
-   S(\Lambda)&= \cos\frac{\omega}{2}+i  \begin{pmatrix}\sigma_3&0\\0&\sigma_3\end{pmatrix}\sin\frac{\omega}{2}
+   S(\Lambda)&= \cos\frac{\omega}{2}-i  \begin{pmatrix}\sigma_3&0\\0&\sigma_3\end{pmatrix}\sin\frac{\omega}{2}
 \end{align}
 Bzw. eine Drehung um eine Beliebige Achse \(\vec n\)
 
 \begin{align}
   \label{eq:47}
-   \boxed{S(\Lambda) = \cos\frac{\omega}{2}+i\, \vec n\cdot\vec\sigma\,\begin{pmatrix}\mathds 1_2&0\\0&\mathds 1_2\end{pmatrix}\sin\frac{\omega}{2}}
+   \boxed{S(\Lambda) = \cos\frac{\omega}{2}-i\, \vec n\cdot\vec\sigma\,\begin{pmatrix}\mathds 1_2&0\\0&\mathds 1_2\end{pmatrix}\sin\frac{\omega}{2}}
 \end{align}
+
+Vergleiche das mit der Transformation eines Paulispinors
+
+\begin{align}
+  \label{eq:48}
+  R(\vec n,\omega) = \cos\frac{\omega}{2}-i\, \vec n\cdot\vec\sigma\,\sin\frac{\omega}{2}
+\end{align}
+Man sieht dass sich der Dirac-Spinor genauso transformiert wie ein zweikomponentiger Spinor eines Spin \(\frac{1}{2}\) Teilchens in der nicht relativistischen Quantenmechanik.
+
 
 \subsection*{Referenzen}
 \begin{itemize}
