@@ -1,0 +1,135 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Ebene Wellen Lösung der Dirac-Gleichung}
+
+Für ein freies Teilchen sind Ebene Wellen die Lösung der Dirac-Gleichung. Sie haben folgende Form
+
+\begin{align}
+  \label{eq:1}
+  \psi(x) = e^{-\frac{i}{\hbar}p\cdot x}w_r(\vec p) \qquad r=1,2,3,4
+ \end{align}
+Wobei \(x_\mu=(ct,-\vec x)\) der Vierer-Orts-Verktor und \(p^{\mu}=(\frac{E}{c},\vec p)\) der Vierer-Impuls-Vektor und \(w(p)\) die Impulsabhängige Spinor-Komponente ist. Zunäst betrachten wir ein Spezialfall indem wir das Teilchen in seinem Ruhesystem betrachten. 
+
+
+Setzen wir den Ansatz \eqref{eq:1} in die Dirac-Gleichung ein
+
+\begin{align}
+  \label{eq:3}
+  \left(i \gamma^\mu \partial_\mu-\frac{mc}{\hbar}  \right)\psi(x) &= 0 \qquad\text{ mit} \eqref{eq:1}   \notag \\
+ i \gamma^\mu \partial_\mu  e^{-\frac{i}{\hbar}p\cdot x}w_r(\vec p) -\frac{mc}{\hbar} e^{-\frac{i}{\hbar}p\cdot x}w_r(\vec p)  &= 0  \notag \\
+ i \gamma^\mu (-\frac{ip_\mu}{\hbar}) e^{-\frac{i}{\hbar}p\cdot x}w_r(\vec p) -\frac{mc}{\hbar} e^{-\frac{i}{\hbar}p\cdot x}w_r(\vec p)  &= 0  \notag \\
+ \left(i \gamma^\mu (-\frac{ip_\mu}{\hbar}) -\frac{mc}{\hbar}\right) e^{-\frac{i}{\hbar}p\cdot x}w_r(\vec p)  &= 0  \notag \\
+ \left(\underbr{ \gamma^\mu p_\mu}_{\cancel p} - mc\right)\underbr{ e^{-\frac{i}{\hbar}p\cdot x}w_r(\vec p)}_{\psi(x)}  &= 0 
+\end{align}
+
+Damit erhält man die Dirac-Gleichung in einer verkürtzen Schreibweise
+
+\begin{align}
+  \label{eq:4}
+ \boxed{ \left(\cancel p - mc\right)\psi(x) = 0 }\qquad \text{mit der Notation: }\cancel p = \gamma^\mu p_\mu
+\end{align}
+
+
+Wir betrachten zuerst das Teilchen in seinem Ruhesystem. Für ein Teilchen in Ruhe gilt \(\vec p=0\). Dann Sieht die Lösung \eqref{eq:1} folgendermaßen aus
+
+\begin{align}
+  \label{eq:2}
+  \psi(x) =  e^{-\frac{i}{\hbar}p^0\cdot x_0}w_r(0) = e^{-\frac{i}{\hbar}\frac{E}{c}ct  }w_r(0) =e^{-\frac{i}{\hbar}Et  }w_r(0)
+\end{align}
+Und die Dirac-Gleichung vereinfacht sich zu
+
+\begin{align}
+  \label{eq:5}
+  \left(\gamma^0p_0 - mc\right) \cancel{e^{-\frac{i}{\hbar}Et  }} w_r(0)  &= 0 \notag\\
+ \left(\gamma^0p_0 - mc\right) w_r(0)  &= 0 
+\end{align}
+
+Die Matrix \(\gamma^0\) ist
+
+\begin{align}
+  \label{eq:6}
+  \gamma^0 = \beta =
+  \begin{pmatrix}
+    1&0&0&0\\
+    0&1&0&0\\ 
+    0&0&-1&0\\
+    0&0&0&-1\\
+  \end{pmatrix}
+\end{align}
+
+Und \(p_0=\frac{E}{c}\) eingesetzt in Gleichung \eqref{eq:5}
+
+\begin{align}
+  \label{eq:7}
+   \left( 
+  \begin{pmatrix}
+    1&0&0&0\\
+    0&1&0&0\\ 
+    0&0&-1&0\\
+    0&0&0&-1
+  \end{pmatrix}\frac{E}{c} 
+-  \begin{pmatrix}
+    1&0&0&0\\
+    0&1&0&0\\ 
+    0&0&1&0\\
+    0&0&0&1
+  \end{pmatrix}
+  mc\right) w_r(0)  &= 0 \notag \\
+ \begin{pmatrix}
+    \frac{E}{c} - mc&0&0&0\\
+    0&\frac{E}{c} - mc&0&0\\ 
+    0&0&-\frac{E}{c} - mc&0\\
+    0&0&0&-\frac{E}{c} - mc
+  \end{pmatrix} w_r(0) &=0
+\end{align}
+
+Die Gleichung hat 4 Lösungen zu 2 Eigenwerten mit \(E=\pm mc^2\). Die Lösungen Lauten für den Eigenwert \(E=+mc^2\)
+
+\begin{align}
+  \label{eq:8}
+  w_1(0) =
+  \begin{pmatrix}
+    1\\0\\0\\0
+  \end{pmatrix}\quad \text{für ein \textit{Teilchen} Spin mit } \uparrow
+\qquad 
+ w_2(0) =
+  \begin{pmatrix}
+    0\\1\\0\\0
+  \end{pmatrix}\quad \text{für ein \textit{Teilchen} Spin mit } \downarrow
+\end{align}
+
+und für den Eigenwert \(E=-mc^2\)
+
+\begin{align}
+  \label{eq:9}
+   w_3(0) =
+  \begin{pmatrix}
+    0\\0\\1\\0
+  \end{pmatrix}\quad \text{für ein \textit{\underline{Anti}-Teilchen} Spin mit } \uparrow
+\qquad 
+ w_4(0) =
+  \begin{pmatrix}
+    0\\0\\0\\1
+  \end{pmatrix}\quad \text{für ein \textit{\underline{Anti}-Teilchen} Spin mit } \downarrow
+\end{align}
+Die Lösung für negative Energien spricht für die Existenz von Antiteilchen. Damit ist die Allgemeine Lösung für ein Elektron mit Spin \(\uparrow\) in seinem Ruhesystem
+
+\begin{align}
+  \label{eq:10}
+  \psi(x) = e^{-\frac{i}{\hbar}Et  }w_1(0)
+\end{align}
+
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item TODO
+\end{itemize}
+
+\end{document}
