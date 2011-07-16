@@ -88,19 +88,19 @@ Und \(p_0=\frac{E}{c}\) eingesetzt in Gleichung \eqref{eq:5}
   \end{pmatrix} w_r(0) &=0
 \end{align}
 
-Die Gleichung hat 4 Lösungen zu 2 Eigenwerten mit \(E=\pm mc^2\). Die Lösungen Lauten für den Eigenwert \(E=+mc^2\)
+Die Gleichung hat 4 Lösungen zu 2 Eigenwerten mit \(E=\pm mc^2\). Die Lösungen für den Eigenwert \(E=+mc^2\) lauten
 
 \begin{align}
   \label{eq:8}
   w_1(0) =
   \begin{pmatrix}
     1\\0\\0\\0
-  \end{pmatrix}\quad \text{für ein \textit{Teilchen} Spin mit } \uparrow
+  \end{pmatrix}\quad \text{für ein \textit{Teilchen} mit Spin } \uparrow
 \qquad 
  w_2(0) =
   \begin{pmatrix}
     0\\1\\0\\0
-  \end{pmatrix}\quad \text{für ein \textit{Teilchen} Spin mit } \downarrow
+  \end{pmatrix}\quad \text{für ein \textit{Teilchen} mit Spin } \downarrow
 \end{align}
 
 und für den Eigenwert \(E=-mc^2\)
@@ -110,18 +110,149 @@ und für den Eigenwert \(E=-mc^2\)
    w_3(0) =
   \begin{pmatrix}
     0\\0\\1\\0
-  \end{pmatrix}\quad \text{für ein \textit{\underline{Anti}-Teilchen} Spin mit } \uparrow
+  \end{pmatrix}\quad \text{für ein \textit{\underline{Anti}-Teilchen} mit Spin } \uparrow
 \qquad 
  w_4(0) =
   \begin{pmatrix}
     0\\0\\0\\1
-  \end{pmatrix}\quad \text{für ein \textit{\underline{Anti}-Teilchen} Spin mit } \downarrow
+  \end{pmatrix}\quad \text{für ein \textit{\underline{Anti}-Teilchen} mit Spin } \downarrow
 \end{align}
-Die Lösung für negative Energien spricht für die Existenz von Antiteilchen. Damit ist die Allgemeine Lösung für ein Elektron mit Spin \(\uparrow\) in seinem Ruhesystem
+Die Lösung für negative Energien spricht für die Existenz von Antiteilchen. Eine Allgemeine Lösung für ein Elektron mit Spin \(\uparrow\) in seinem Ruhesystem lautet beispielsweise
 
 \begin{align}
   \label{eq:10}
   \psi(x) = e^{-\frac{i}{\hbar}Et  }w_1(0)
+\end{align}
+
+Nun möchten wir die Wellenfunktion in das Intertialsystem mit \(\vec p\ne 0\) transformieren. Dazu benötigen wir die Lorenz-Dirac-Spinor-Transformation 
+
+\begin{align}
+  \label{eq:11}
+  \psi'(x) = S(\Lambda)\psi(x)
+\end{align}
+
+Es gilt also die \(S(\Lambda)\)-Matrix zu bestimmen. Die \(S(\Lambda)\)-Matrix ist allgemein wie folgt definiert
+
+\begin{align}
+  \label{eq:12}
+  S(\Lambda) = e^{-\frac{i}{4}\omega^{\mu\nu}\sigma_{\mu\nu}}
+\end{align}
+Die \(\omega\)-Matix für ein Boost in eine beliebige Richtung wie folgt aussieht
+
+\begin{align}
+  \label{eq:13}
+  \omega^{\mu\nu} = \omega
+  \begin{pmatrix}
+    0&n_1&n_2&n_3\\
+    -n_1&0&0&0\\ 
+    -n_2&0&0&0\\
+    -n_3&0&0&0
+  \end{pmatrix} \qquad \text{mit }\omega=|\vec v| ?
+\end{align}
+Wobei \(\vec n = (n_1,n_2,n_3)\) ein Einheitsvektor in Richtung des Boosts ist mit \(n^2=1\). Machen wir nun eine Nebenrechnung
+
+\begin{align}
+  \label{eq:14}
+  \omega^{\mu\nu}\sigma_{\mu\nu} =& \omega^{0\mu}\sigma_{0\mu} + \omega^{1\mu}\sigma_{1\mu}+\omega^{2\mu}\sigma_{2\mu}+\omega^{3\mu}\sigma_{3\mu}\notag \\
+=&\underbr{\omega^{00}\sigma_{00}}_{=0} +  \omega^{01}\sigma_{01} +  \omega^{02}\sigma_{02} +  \omega^{03}\sigma_{03} \notag\\
++& \omega^{10}\sigma_{10}+\underbr{ \omega^{11}\sigma_{11}+ \omega^{12}\sigma_{12}+ \omega^{13}\sigma_{13}}_{=0}\notag\\
++&\omega^{20}\sigma_{20}+\underbr{\omega^{21}\sigma_{21}+\omega^{22}\sigma_{22}+\omega^{23}\sigma_{23}}_{=0}\notag\\
++&\omega^{30}\sigma_{30}+\underbr{\omega^{31}\sigma_{31}+\omega^{32}\sigma_{32}+\omega^{33}\sigma_{33}}_{=0}
+\end{align}
+Nach Anwenden der einsteinischen Summenkonvention sieht man in der Gleichung (\ref{eq:14}) die Matrixstruktur aus der Gleichung (\ref{eq:13}). Lässt man die Null-Elemente weg verkürtzt sich die Gleichung auf
+
+\begin{align}
+  \label{eq:15}
+  \omega^{\mu\nu}\sigma_{\mu\nu} &= \omega^{01}\sigma_{01} +  \omega^{02}\sigma_{02} +  \omega^{03}\sigma_{03}+\omega^{10}\sigma_{10}+\omega^{20}\sigma_{20}+\omega^{30}\sigma_{30} \notag\\
+&= \sum_{i=1}^3 \omega^{0i}\sigma_{0i} + \sum_{j=1}^3 \omega^{j0}\sigma_{j0} \qquad \text{mit }\omega^{j0}=-\omega^{0j} \notag\\
+&= \sum_{i=1}^3 \omega^{0i}\sigma_{0i} - \sum_{j=1}^3 \omega^{0j}\sigma_{j0} \qquad \text{mit }\sigma_{j0}=-\sigma_{0j} \notag\\
+&= \sum_{i=1}^3 \omega^{0i}\sigma_{0i} + \sum_{j=1}^3 \omega^{0j}\sigma_{0j} \notag\\
+&= 2\sum_{i=1}^3 \omega^{0i}\sigma_{0i}
+\end{align}
+
+Als eine weitere Nebenrechnung wollen wir \(\sigma_{0i}\) bestimmen. Allgemein gilt
+
+\begin{align}
+  \label{eq:16}
+  \sigma_{\mu\nu}=\frac{i}{2}[\gamma_\mu,\gamma_\nu] 
+\end{align}
+
+In unserem Fall benötigen wir für \(\mu\) nur die Nullte Komponente und für \(\nu\) zählen wir nur von 1 bis 3. D.h. wir können schreiben
+
+\begin{align}
+  \label{eq:17}
+  \sigma_{0i}= \frac{i}{2}[\gamma_0,\gamma_i]
+\end{align}
+
+Die Gamma Matrix in kovarianter Form lautet
+
+\begin{align}
+  \label{eq:18}
+  \gamma_\mu = g_{\mu\nu}\gamma^{\nu} = (\beta,-\beta\vec \alpha)
+\end{align}
+Dies eingesetzt in (\ref{eq:17}) ergibt
+
+\begin{align}
+  \label{eq:19}
+   \sigma_{0i} &= \frac{i}{2}[\beta,-\beta\alpha_i] \notag\\
+&= -\frac{i}{2} ( \beta\beta\alpha_i -\beta\alpha_i\beta  ) \qquad \text{mit }\{\beta,\alpha_i\}=0\rightarrow \alpha_i\beta=-\beta\alpha_i  \notag\\
+&= -\frac{i}{2} ( \underbr{\beta\beta}_{\mathds 1}\alpha_i + \underbr{\beta\beta}_{\mathds 1}\alpha_i) \qquad \text{mit }\beta^2 = \mathds 1_4 \notag\\
+&= - i \alpha_i
+\end{align}
+
+Setzen wir diese Gleichung (\ref{eq:19}) in die Gleichung (\ref{eq:15}) ein und ersetzen \(\omega^{0i}\) mit \(\omega n_i\) so können wir die Summe \(\sum_{i=1}^3 \omega^{0i}\sigma_{0i}\) als ein Skalarprodukt schreiben
+
+\begin{align}
+  \label{eq:21}
+  \omega^{\mu\nu}\sigma_{\mu\nu} &= -i2\omega\,\vec n\cdot\vec \alpha
+\end{align}
+
+Nun können wir endlich die \(S(\Lambda)\)-Matrix berechnen indem wir die Gleichung (\ref{eq:21}) in (\ref{eq:12}) einsetzen
+
+\begin{align}
+  \label{eq:22}
+  S(\Lambda) &= e^{-\frac{i}{4}\omega^{\mu\nu}\sigma_{\mu\nu}} \notag \\
+&=e^{-\frac{1}{2}\omega\,\vec n\cdot\vec \alpha  }
+\end{align}
+Das Teilchen bewegt sich mit dem Impuls \(\vec p\) in einem Inertialsystem. Der Boost zeigt dabei in die entgegengesetze Richtung \(-\vec p\). Desweiteren gilt \(\vec n = - \hat v = - \hat p \). Diese Bedinung eigesetzt in die Gleichung (\ref{eq:22})
+
+\begin{align}
+  \label{eq:23}
+  S(\Lambda) &=e^{\frac{1}{2}\omega\,\hat p\cdot\vec \alpha  } \notag \\
+&= \cosh\left(\frac{1}{2}\omega\,\hat p\cdot\vec \alpha\right) + \sinh\left(\frac{1}{2}\omega\,\hat p\cdot\vec \alpha \right)
+\end{align}
+Mit der Entwicklung für \(\cosh(x) = \sum_{n=0}^{\infty}\frac{x^{2n}}{(2n)!}\) und  \(\sinh(x) = \sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!}\) lautet die Gleichung weiterhin
+
+\begin{align}
+  \label{eq:24}
+  S(\Lambda) &=\sum_{n=0}^{\infty}\frac{\left(\frac{1}{2}\omega\,\hat p\cdot\vec \alpha\right)^{2n}}{(2n)!} + \sum_{n=0}^{\infty}\frac{\left(\frac{1}{2}\omega\,\hat p\cdot\vec \alpha\right)^{2n+1}}{(2n+1)!}
+\end{align}
+
+Nun wollen wir herausfinden wie sich das Skalarprodukt von \(\hat p\cdot\vec \alpha\) bei verschiedenen Potenzen verhält. Für ungerade Potenzen gilt
+
+\begin{align}
+  \label{eq:25}
+  \hat p\cdot\vec \alpha =
+  \begin{pmatrix}
+    0&\hat p\cdot\vec \sigma\\
+    \hat p\cdot\vec \sigma&0
+  \end{pmatrix} = (\hat p\cdot\vec \alpha)^3 =(\hat p\cdot\vec \alpha)^5 = (\hat p\cdot\vec \alpha)^{2n+1}
+\end{align}
+Für gerade Potenzen
+
+\begin{align}
+  \label{eq:26}
+  (\hat p\cdot\vec \alpha)^2 =\hat p^2\cdot\vec \alpha^2 = \underbr{\hat p^2}_{=1}\cdot
+  \begin{pmatrix}
+    \vec \sigma^2&0\\
+    0&\vec \sigma^2
+  \end{pmatrix} = \mathds 1 = (\hat p\cdot\vec \alpha)^4 =(\hat p\cdot\vec \alpha)^6 = (\hat p\cdot\vec \alpha)^{2n}
+\end{align}
+Damit können wir die Matritzen aus den Entwicklungen von \(\cosh\) und \(\sinh\) ausklammern
+
+\begin{align}
+  \label{eq:27}
+   S(\Lambda) &= \mathds 1 \cosh\left(\frac{1}{2}\omega\right) + \hat p\cdot\vec \alpha \sinh\left(\frac{1}{2}\omega \right)
 \end{align}
 
 
