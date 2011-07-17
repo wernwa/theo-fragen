@@ -252,15 +252,172 @@ Damit können wir die Matritzen aus den Entwicklungen von \(\cosh\) und \(\sinh\
 
 \begin{align}
   \label{eq:27}
-   S(\Lambda) &= \mathds 1 \cosh\left(\frac{1}{2}\omega\right) + \hat p\cdot\vec \alpha \sinh\left(\frac{1}{2}\omega \right)
+   S(\Lambda)  &=\sum_{n=0}^{\infty}\frac{(\frac{\omega}{2})^{2n}}{(2n)!}\underbr{(\hat p\cdot\vec \alpha)^{2n}}_{\mathds 1} +
+   \sum_{n=0}^{\infty}\frac{(\frac{\omega}{2})^{2n+1}}{(2n+1)!}\underbr{(\hat p\cdot\vec \alpha)^{2n+1}}_{\hat p\cdot\vec\alpha}\notag\\
+ &=\mathds 1\cdot \sum_{n=0}^{\infty}\frac{ (\frac{\omega}{2})^{2n}}{(2n)!} +
+  \hat p\cdot\vec\alpha \sum_{n=0}^{\infty}\frac{(\frac{\omega}{2})^{2n+1} }{(2n+1)!}\notag\\
+&= \mathds 1 \cosh\left(\frac{\omega}{2}\right) + \hat p\cdot\vec \alpha \sinh\left(\frac{\omega}{2} \right)
 \end{align}
 
+Um \(\cosh\) und \(\sinh\) durch messbare Größen auszudrücken, führen wir den Begriff der \textbf{Rapidität} ein. Sie ist Definiert
 
+\begin{align}
+  \label{eq:20}
+  \boxed{ \omega = \text{arctanh}\, \frac{v}{c} = \text{arctanh}\,\beta }
+\end{align}
+Die Rapidität ist ein alternatives Maß für Geschwindigkeit und hat den Vorteil, dass zwei Rapiditäten einfach addiert werden können, während man bei Geschwindigkeiten das relativistische Additionstheorem verwenden muss. Damit können wir schreiben
 
+\begin{align}
+  \label{eq:28}
+  \tanh\omega = \beta
+\end{align}
+Desweiteren gilt
 
+\begin{align}
+  \label{eq:29}
+  \cosh^2 \omega - \sinh^2\omega = 1
+\end{align}
+
+Mit \(\tanh\omega = \frac{\sinh\omega}{\cosh\omega}\) eingesetzt in \eqref{eq:29} folgt
+
+\begin{align}
+  \label{eq:30}
+  \cosh^2\omega - \tanh^2\omega\cosh^2\omega = 1 \notag\\
+  \cosh^2\omega(1- \tanh^2\omega) = 1\notag\\
+\Leftrightarrow \cosh\omega = \frac{1}{\sqrt{1-\tanh^2\omega}}
+\end{align}
+Setze die Gleichung \eqref{eq:28} in \eqref{eq:30} folgt
+
+\begin{align}
+  \label{eq:31}
+   \boxed{\cosh\omega = \frac{1}{\sqrt{1-\beta^2}} = \gamma }
+\end{align}
+Aus der Beziehung
+
+\begin{align}
+  \label{eq:32}
+  \sinh\omega = \tanh\omega\cosh\omega
+\end{align}
+Die Gleichung \eqref{eq:28} und \eqref{eq:31} in \eqref{eq:32} eingesetzt ergibt
+
+\begin{align}
+  \label{eq:33}
+  \boxed{\sinh\omega = \beta\gamma}
+\end{align}
+
+Nun möchten wir zunächst den \(\cosh\) in der Gleichung \eqref{eq:27} durch die Energie ausdrücken
+
+\begin{align}
+  \label{eq:34}
+  \cosh\frac{\omega}{2} = \sqrt{\frac{1+\cosh\omega}{2}} = \sqrt{\frac{1+\gamma}{2}} 
+\end{align}
+
+Aus der Beziehung
+
+\begin{align}
+  \label{eq:35}
+  E=\gamma mc^2 \Leftrightarrow \gamma = \frac{E}{mc^2}
+\end{align}
+
+in Gleichung \eqref{eq:34} eingesetzt
+
+\begin{align}
+  \label{eq:36}
+   \cosh\frac{\omega}{2} = \sqrt{\frac{E + mc^2}{2mc^2}} 
+\end{align}
+Für den \(\sinh\)-Term gilt
+
+\begin{align}
+  \label{eq:37}
+  \sinh\frac{\omega}{2} &=  \sqrt{\underbr{ \cosh^2\frac{\omega}{2}}_{~\eqref{eq:36}} - 1} =  \sqrt{\frac{E + mc^2}{2mc^2}  -1} =   \sqrt{\frac{E + mc^2}{2mc^2}  -\frac{2mc^2}{2mc^2}} =  \sqrt{\frac{E - mc^2}{2mc^2} } \notag \\
+&=  \sqrt{\frac{E - mc^2}{2mc^2} \frac{E+mc^2}{E+mc^2}} =  \sqrt{\frac{E^2 - m^2c^4}{2mc^2(E+mc^2)} }
+\end{align}
+Mit \(E^2=p^2c^2+m^2c^4 \leftrightarrow E^2-m^2c^4 = p^2c^2\) in \eqref{eq:37} eingesetzt
+
+\begin{align}
+  \label{eq:38}
+   \sinh\frac{\omega}{2} &=  \sqrt{\frac{p^2c^2}{2mc^2(E+mc^2)} \frac{E+mc^2}{E+mc^2} } = \sqrt{\frac{E+mc^2}{2mc^2}}\cdot \frac{pc}{E+mc^2}
+\end{align}
+
+Nun können wir endlich die \(S(\Lambda)\)-Matrix hinschreiben, indem wir die Gleichungen \eqref{eq:36} und \eqref{eq:38} in \eqref{eq:27} einsetzen
+
+\begin{align}
+  \label{eq:39}
+   S(\Lambda) &= \mathds 1 \cosh\left(\frac{\omega}{2}\right) + \hat p\cdot\vec \alpha \sinh\left(\frac{\omega}{2} \right) \notag \\
+&= \mathds 1 \sqrt{\frac{E + mc^2}{2mc^2}} +  \hat p\cdot\vec \alpha \sqrt{\frac{E+mc^2}{2mc^2}}\cdot \frac{pc}{E+mc^2} \notag \\
+&=  \sqrt{\frac{E + mc^2}{2mc^2}}\left(\mathds 1 +  \frac{c}{E+mc^2}\vec p\cdot\vec\alpha\right)  \notag \\
+&=  \sqrt{\frac{E + mc^2}{2mc^2}}\left(\mathds 1 +  \frac{c}{E+mc^2}( p_x\alpha_1+p_y\alpha_2+p_z\alpha_3) \right)  \notag \\
+\end{align}
+Mit den \(\alpha\)-Matritzen
+
+\begin{align}
+  \label{eq:40}
+  \alpha_1 = \begin{pmatrix}
+   0&0&0&1\\
+   0&0&1&0\\
+ 0&1&0&0\\
+ 1&0&0&0
+  \end{pmatrix}\quad
+ \alpha_2 = \begin{pmatrix}
+   0&0&0&-i\\
+   0&0&i&0\\
+ 0&-i&0&0\\
+ i&0&0&0
+  \end{pmatrix}\quad
+ \alpha_3 = \begin{pmatrix}
+   0&0&1&0\\
+   0&0&0&-1\\
+ 1&0&0&0\\
+ 0&-1&0&0
+  \end{pmatrix}
+\end{align}
+
+folgt für den Ausdruck
+
+\begin{align}
+  \label{eq:41}
+  p_x\alpha_1+p_y\alpha_2+p_z\alpha_3 &=
+  \begin{pmatrix}
+     0&0&0&p_x\\
+   0&0&p_x&0\\
+ 0&p_x&0&0\\
+ p_x&0&0&0
+  \end{pmatrix}+ \begin{pmatrix}
+   0&0&0&-ip_y\\
+   0&0&ip_y&0\\
+ 0&-ip_y&0&0\\
+ ip_y&0&0&0
+  \end{pmatrix}+
+ \begin{pmatrix}
+   0&0&p_z&0\\
+   0&0&0&-p_z\\
+ p_z&0&0&0\\
+ 0&-p_z&0&0
+  \end{pmatrix}\notag\\
+&=  \begin{pmatrix}
+     0&0&p_z&p_x-ip_y\\
+   0&0&p_x+ip_y&-p_z\\
+ p_z&p_x-ip_y&0&0\\
+ p_x+ip_y&-p_z&0&0
+  \end{pmatrix}
+\end{align}
+
+Wieder eingesetzt in \eqref{eq:39} folgt nun schlußendlich Transformationsmatrix
+
+\begin{align}
+  \label{eq:42}
+\boxed{
+  S(\Lambda)=\sqrt{\frac{E + mc^2}{2mc^2}}
+  \begin{pmatrix}
+    1&0&\frac{cp_z}{E+mc^2}&\frac{c(p_x-ip_y)}{E+mc^2}\\
+    0&1&\frac{c(p_x+ip_y)}{E+mc^2}&\frac{-cp_z}{E+mc^2}\\
+    \frac{cp_z}{E+mc^2}&\frac{c(p_x-ip_y)}{E+mc^2}&1&0\\
+    \frac{c(p_x+ip_y)}{E+mc^2}&\frac{-cp_z}{E+mc^2}&0&1
+  \end{pmatrix}}
+\end{align}
 \subsection*{Referenzen}
 \begin{itemize}
 \item TODO
 \end{itemize}
-
+  
 \end{document}
