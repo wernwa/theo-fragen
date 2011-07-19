@@ -13,7 +13,7 @@ Für ein freies Teilchen sind Ebene Wellen die Lösung der Dirac-Gleichung. Sie 
   \label{eq:1}
   \psi(x) = e^{-\frac{i}{\hbar}p\cdot x}w_r(\vec p) \qquad r=1,2,3,4
  \end{align}
-Wobei \(x_\mu=(ct,-\vec x)\) der Vierer-Orts-Verktor und \(p^{\mu}=(\frac{E}{c},\vec p)\) der Vierer-Impuls-Vektor und \(w(p)\) die Impulsabhängige Spinor-Komponente ist. Zunäst betrachten wir ein Spezialfall indem wir das Teilchen in seinem Ruhesystem betrachten. 
+Wobei \(x_\mu=(ct,-\vec x)\) der Vierer-Orts-Verktor und \(p^{\mu}=(\frac{E}{c},\vec p)\) der Vierer-Impuls-Vektor und \(w(p)\) die Impulsabhängige Spinor-Komponente ist.  Es ist zu erwähnen, dass das Skalarprodukt zwischen \(p^\mu x_\mu\) in jedem Inertialsystem erhalten ist. Auf diese Bedingung werden wir später zurückkommen.
 
 
 Setzen wir den Ansatz \eqref{eq:1} in die Dirac-Gleichung ein
@@ -121,14 +121,14 @@ Die Lösung für negative Energien spricht für die Existenz von Antiteilchen. E
 
 \begin{align}
   \label{eq:10}
-  \psi(x) = e^{-\frac{i}{\hbar}Et  }w_1(0)
+  \psi(x) = e^{-\frac{i}{\hbar}  p\cdot x}w_1(0) = e^{-\frac{i}{\hbar}Et  }w_1(0)
 \end{align}
 
 Nun möchten wir die Wellenfunktion in das Intertialsystem mit \(\vec p\ne 0\) transformieren. Dazu benötigen wir die Lorenz-Dirac-Spinor-Transformation 
 
 \begin{align}
   \label{eq:11}
-  \psi'(x) = S(\Lambda)\psi(x)
+  \psi'(x') = S(\Lambda)\psi(x)
 \end{align}
 
 Es gilt also die \(S(\Lambda)\)-Matrix zu bestimmen. Die \(S(\Lambda)\)-Matrix ist allgemein wie folgt definiert
@@ -214,7 +214,11 @@ Nun können wir endlich die \(S(\Lambda)\)-Matrix berechnen indem wir die Gleich
   S(\Lambda) &= e^{-\frac{i}{4}\omega^{\mu\nu}\sigma_{\mu\nu}} \notag \\
 &=e^{-\frac{1}{2}\omega\,\vec n\cdot\vec \alpha  }
 \end{align}
-Das Teilchen bewegt sich mit dem Impuls \(\vec p\) in einem Inertialsystem. Der Boost zeigt dabei in die entgegengesetze Richtung \(-\vec p\). Desweiteren gilt \(\vec n = - \hat v = - \hat p \). Diese Bedinung eigesetzt in die Gleichung (\ref{eq:22})
+Das Teilchen bewegt sich mit dem Impuls \(\vec p\) in einem Inertialsystem also IS' oder Laborsystem.\\
+\\
+\underline{Bemerkung:} Normalerweise sollten wir bei dem Impuls \(\hat p\) im Inertialsysetm IS' einen Strich machen damit man ihn zu diesen Inertialsystem zuordnen kann. Da aber der Impuls im nichtgeschrichelten Inertialsysem fast immer als Null angenommen wird, lassen wir den Strich beim \(\hat p\) der einfachheitshalber weg.\\
+\\
+Der Boost zeigt dabei in die entgegengesetze Richtung \(-\vec p\). Desweiteren gilt \(\vec n = - \hat v = - \hat p \). Diese Bedinung eigesetzt in die Gleichung (\ref{eq:22})
 
 \begin{align}
   \label{eq:23}
@@ -408,13 +412,84 @@ Wieder eingesetzt in \eqref{eq:39} folgt nun schlußendlich Transformationsmatri
   \label{eq:42}
 \boxed{
   S(\Lambda)=\sqrt{\frac{E + mc^2}{2mc^2}}
+  {
+    \Large
   \begin{pmatrix}
-    1&0&\frac{cp_z}{E+mc^2}&\frac{c(p_x-ip_y)}{E+mc^2}\\
-    0&1&\frac{c(p_x+ip_y)}{E+mc^2}&\frac{-cp_z}{E+mc^2}\\
-    \frac{cp_z}{E+mc^2}&\frac{c(p_x-ip_y)}{E+mc^2}&1&0\\
+    1&0&\frac{cp_z}{E+mc^2}&\frac{c(p_x-ip_y)}{E+mc^2}\\[2ex]
+    0&1&\frac{c(p_x+ip_y)}{E+mc^2}&\frac{-cp_z}{E+mc^2}\\[2ex]
+    \frac{cp_z}{E+mc^2}&\frac{c(p_x-ip_y)}{E+mc^2}&1&0\\[2ex]
     \frac{c(p_x+ip_y)}{E+mc^2}&\frac{-cp_z}{E+mc^2}&0&1
-  \end{pmatrix}}
+  \end{pmatrix}
+  }
+}
 \end{align}
+Damit lässt sich ein Dirac-Spinor wie folgt trasformieren
+
+\begin{align}
+  \label{eq:43}
+  \psi'(x') = S(\Lambda)\psi(x)
+\end{align}
+
+
+\subsection*{Beispiel Boost in z-Richtung}
+
+Wir betrachten unser Elektron mit Spin \(\uparrow\) und einem Boost in z-Richtung. Seine Wellenfunktion in seinem Ruhesystem lautet wie schon vorher berechnet (\ref{eq:10})
+
+\begin{align}
+  \label{eq:44}
+    \psi(x) = e^{-\frac{i}{\hbar}p\cdot x }w_1(0) = e^{-\frac{i}{\hbar}p\cdot x  }
+    \begin{pmatrix}
+      1\\0\\0\\0
+    \end{pmatrix}
+\end{align}
+
+ Die Transformations-Matrix für ein Boost in z-Richtung lautet (siehe (\ref{eq:42}))
+
+ \begin{align}
+   \label{eq:45}
+    S(\Lambda)=\sqrt{\frac{E + mc^2}{2mc^2}}
+  %{
+   % \Large
+  \begin{pmatrix}
+    1&0&\frac{cp_z}{E+mc^2}&0\\[2ex]
+    0&1&0&\frac{-cp_z}{E+mc^2}\\[2ex]
+    \frac{cp_z}{E+mc^2}&0&1&0\\[2ex]
+    0&\frac{-cp_z}{E+mc^2}&0&1
+  \end{pmatrix}
+  %}
+ \end{align}
+
+Damit berechnet sich die Wellenfunktion in dem Laborsystem (\(p_z\ne 0\)) wie folgt
+
+\begin{align}
+  \label{eq:46}
+  \psi'(x') &=\sqrt{\frac{E + mc^2}{2mc^2}}e^{-\frac{i}{\hbar}p\cdot x  }
+  \begin{pmatrix}
+    1&0&\frac{cp_z}{E+mc^2}&0\\
+    0&1&0&\frac{-cp_z}{E+mc^2}\\
+    \frac{cp_z}{E+mc^2}&0&1&0\\
+    0&\frac{-cp_z}{E+mc^2}&0&1
+  \end{pmatrix}
+    \begin{pmatrix}
+      1\\0\\0\\0
+    \end{pmatrix}\notag\\
+&=\sqrt{\frac{E + mc^2}{2mc^2}}e^{-\frac{i}{\hbar}p\cdot x  }
+   \begin{pmatrix}
+      1\\0\\\frac{cp_z}{E+mc^2}\\0
+    \end{pmatrix}
+\end{align}
+
+In den Ruhesystem des Teilchens ist das Skalarproduckt \(p^{\mu}x_{\mu}=Et\) (mit \(p^{\mu} = (\frac{E}{c},0\)) und im Laborsystem ist lautet das Skalarproduckt \(p^{'\mu}x'_{\mu}=E't'-p'_zz'\) (mit \(p'^{\mu}=(\frac{E'}{c},0,0,p'_z)\)). Wie oben bereits erwähnt ist das Skalarprodukt in beiden Inertialsystemen gleich.Somit kann die Gleichung (\ref{eq:46}) auch in geschrichelten Größen ausgedrückt werden
+
+\begin{align}
+  \label{eq:47}
+  \psi'(x') &=\sqrt{\frac{E + mc^2}{2mc^2}}e^{-\frac{i}{\hbar}(Et-p_z z) }
+   \begin{pmatrix}
+      1\\0\\\frac{cp_z}{E+mc^2}\\0
+    \end{pmatrix}
+\end{align}
+
+
 \subsection*{Referenzen}
 \begin{itemize}
 \item TODO
