@@ -11,7 +11,7 @@ Die nicht relativistische (also klassische) Näherung der Dirac-Gleichung ergibt
 
 \begin{align}
   \label{eq:1}
-  i\hbar\pdiff_t \psi(x) = c\left(\vec \alpha \vec p +\beta mc  \right)
+  i\hbar\pdiff_t \psi(x) = c\left(\vec \alpha \vec p +\beta mc  \right)\psi(x)
 \end{align}
 
 Nun betrachten ein Teilchen in einem elektromagnetischen Feld. Dazu führen wir den veralgemeinerten Impuls ein
@@ -20,21 +20,193 @@ Nun betrachten ein Teilchen in einem elektromagnetischen Feld. Dazu führen wir 
   \label{eq:2}
   \vec p \rightarrow \vec p - \frac{e}{c}\vec A
 \end{align}
-Und das Skalarpotential \(\Phi=cA^{0}\). Somit erhalten wir die Dirac-Gleichung in einenm elektromagnetischen Potential
+Und das Skalarpotential \(\Phi=cA^{0}\). Somit erhalten wir die Dirac-Gleichung in einem elektromagnetischen Potential
 
 \begin{align}
   \label{eq:3}
-  i\hbar\pdiff_t \psi(x) = c\left(\vec \alpha (\vec p - \frac{e}{c}\vec A) + e\Phi   +\beta mc  \right)
+  i\hbar\pdiff_t \psi(x) = c\left(\vec \alpha (\vec p - \frac{e}{c}\vec A) + \frac{e}{c}\Phi   +\beta mc  \right)\psi(x)
 \end{align}
 
+Um diese Gleichung zu lösen machen wir folgenden Ansatz
 
+\begin{align}
+  \label{eq:4}
+  \psi(x) = e^{-\frac{i}{\hbar}mc^2 t} \begin{pmatrix}  \phi\\\chi \end{pmatrix}
+\end{align}
+Eingesetzt in die Gleichung (\ref{eq:3}) mit dem verallgemeinen Impuls \(\vec\pi = \vec p - \frac{e}{c}\vec A \) ergibt
+
+\begin{align}
+  \label{eq:5}
+   i\hbar\pdiff_t\left[ e^{-\frac{i}{\hbar}mc^2 t} \begin{pmatrix}  \phi\\\chi \end{pmatrix}\right] &= c\left(\vec \alpha \vec\pi + \frac{e}{c}\Phi   +\beta mc  \right)e^{-\frac{i}{\hbar}mc^2 t} \begin{pmatrix}  \phi\\\chi \end{pmatrix} \notag\\
+%
+ mc^2  \cancel{e^{-\frac{i}{\hbar}mc^2 t}} \begin{pmatrix}  \phi\\\chi \end{pmatrix} + \cancel{e^{-\frac{i}{\hbar}mc^2 t}} i\hbar\begin{pmatrix}  \dot \phi\\ \dot \chi \end{pmatrix} &= c\left(
+   \begin{pmatrix}
+     0&\vec \sigma\vec\pi\\
+     \vec \sigma\vec\pi&0
+   \end{pmatrix}
+ + \frac{e}{c}\Phi    +
+ \begin{pmatrix}
+   \mathds 1_2&0\\
+   0&-\mathds 1_2
+ \end{pmatrix}
+mc  \right)\cancel{e^{-\frac{i}{\hbar}mc^2 t}} \begin{pmatrix}  \phi\\\chi \end{pmatrix} \notag \\
+%
+ mc^2   \begin{pmatrix}  \phi\\\chi \end{pmatrix} +  i\hbar\begin{pmatrix}  \dot \phi\\ \dot \chi \end{pmatrix} &= c\left(
+   \begin{pmatrix}
+     0&\vec \sigma\vec\pi\\
+     \vec \sigma\vec\pi&0
+   \end{pmatrix}
+ + \frac{e}{c}\Phi    +
+ \begin{pmatrix}
+   \mathds 1_2&0\\
+   0&-\mathds 1_2
+ \end{pmatrix}
+mc  \right)\begin{pmatrix}  \phi\\\chi \end{pmatrix}  \notag\\
+%
+ mc^2   \begin{pmatrix}  \phi\\\chi \end{pmatrix} +  i\hbar\begin{pmatrix}  \dot \phi\\ \dot \chi \end{pmatrix} &= c
+   \begin{pmatrix}
+     0&\vec \sigma\vec\pi\\
+     \vec \sigma\vec\pi&0
+   \end{pmatrix}\begin{pmatrix}  \phi\\\chi \end{pmatrix} 
+ + e\Phi\begin{pmatrix}  \phi\\\chi \end{pmatrix}     +
+ \begin{pmatrix}
+   \mathds 1_2&0\\
+   0&-\mathds 1_2
+ \end{pmatrix}
+mc^2  \begin{pmatrix}  \phi\\\chi \end{pmatrix}  \notag\\
+%
+ mc^2   \begin{pmatrix}  \phi\\\chi \end{pmatrix} +  i\hbar\begin{pmatrix}  \dot \phi\\ \dot \chi \end{pmatrix} &= c
+ \begin{pmatrix} \vec \sigma\vec\pi \chi\\\vec \sigma\vec\pi\phi \end{pmatrix} 
+ + e\Phi\begin{pmatrix}  \phi\\\chi \end{pmatrix}     +
+mc^2  \begin{pmatrix}  \phi\\-\chi \end{pmatrix} \qquad |-mc^2   \begin{pmatrix}  \phi\\\chi \end{pmatrix} \notag\\
+%
+ i\hbar\begin{pmatrix}  \dot \phi\\ \dot \chi \end{pmatrix} &= c
+ \begin{pmatrix} \vec \sigma\vec\pi \chi\\\vec \sigma\vec\pi\phi \end{pmatrix} 
+ + e\Phi\begin{pmatrix}  \phi\\\chi \end{pmatrix}     +
+2mc^2  \begin{pmatrix}  0\\-\chi \end{pmatrix} 
+\end{align}
+
+Hieraus ergeben sich zwei gekoppelte Differentialgleichungen
+
+\begin{align}
+  i\hbar\dot\phi &= c\vec\sigma\vec\pi\chi + e\Phi\phi  \label{eq:6.1}\\
+i\hbar\dot\chi &= c\vec\sigma\vec\pi\phi +  e\Phi\chi - 2mc^2\chi  \label{eq:6.2}
+\end{align}
+
+Nun wollen wir die Gleichung (\ref{eq:6.2}) untersuchen
+
+\begin{align}
+  \label{eq:6}
+ \underbr{ i\hbar\pdiff_t}_{E_s}\chi &= c\vec\sigma\vec\pi\phi + e\Phi \chi - 2mc^2\chi \notag\\
+ (2mc^2+E_s-e\Phi )\chi &= c\vec\sigma\vec\pi\phi  \notag\\
+\Leftrightarrow \chi&= \frac{c\vec\sigma\vec\pi\phi}{2mc^2+E_s-e\Phi}
+\end{align}
+
+Bei nicht relativistischen Grenzfall ist die Ruhe-Energie \(mc^2\) die Größte Energie im Vergleich zu \(E_s\) und \(-e\Phi\). Zum Beispiel für ein Elektron gilt \(2mc^2 \approx 10MeV\) und Schrödigner-Energie \(E_s\approx 13eV \) und für die potentielle Energie \(e\Phi=\frac{e^3}{a_0} \approx 1\cdot10^{-27}eV\). Also können wir die zwei Energieen \(E_s\) und \(e\Phi\)  in Gleichung (\ref{eq:6})  vernachlässigen und erhalten folgenden Näherung
+
+\begin{align}
+  \label{eq:7}
+  \chi \approx \frac{c\vec\sigma\vec\pi}{2mc^2}\phi = \frac{\vec\sigma\vec\pi}{2mc}\phi
+\end{align}
+
+Die  Spinor-Komponente \(\chi\) nennt man auch die \textbf{kleine} und \(\phi\) als \textbf{große} Komponente des Dirac-Spinors. Zum Beweis machen wir folgende Abschätzung
+
+\begin{align}
+  \label{eq:9}
+  \chi = \frac{\vec\sigma\vec\pi}{2mc}\phi \approx \frac{\vec p}{2mc}\phi = \frac{m \vec v}{2mc}\phi =  \frac{ \vec v}{2c}\phi
+\end{align}
+D.h. \(\chi\) ist um den Proportionalitätsfaktor \(\frac{v}{c}\) kleiner als \(\phi\). Mit Sicherheit ist \(|\frac{v}{c}| \ll 1\). 
+
+Die Näherung (\ref{eq:7}) für die kleine Komponente setzen wir in die erste Differentialgleichung (\ref{eq:6.1})  ein und erhalten eine Differentialgleichung die nur noch von \(\phi\) abhängig ist
+
+\begin{align}
+  \label{eq:8}
+   i\hbar\dot\phi &= c\vec\sigma\vec\pi \frac{\vec\sigma\vec\pi}{2mc}\phi  + e\Phi\phi  \notag \\
+ &= \frac{(\vec\sigma\vec\pi)^2}{2m}\phi  + e\Phi\phi
+\end{align}
+
+Wir möchten nun den Term \((\vec\sigma\vec\pi)^2\) berechnen
+
+\begin{align}
+  \label{eq:10}
+  (\vec\sigma\vec\pi)^2 = \sum_{i,j}\sigma_i\sigma_j\pi_i\pi_j
+\end{align}
+Mit der Relation der Pauli-Matrizen
+
+\begin{align}
+  \label{eq:11}
+  \sigma_i\sigma_j &= \frac{1}{2}\sigma_i\sigma_j + \frac{1}{2}\sigma_i\sigma_j \notag\\
+ &= \frac{1}{2}\sigma_i\sigma_j - \frac{1}{2}\sigma_j\sigma_i  + \frac{1}{2}\sigma_i\sigma_j + \frac{1}{2}\sigma_j\sigma_i  \notag\\
+&= \frac{1}{2}\underbr{[\sigma_i,\sigma_j]}_{2i\epsilon_{ijk}\sigma_k} + \frac{1}{2}\underbr{\{\sigma_i,\sigma_j\}}_{2\delta_{ij}} \notag\\
+&= \delta_{ij} + i\epsilon_{ijk}\sigma_k 
+\end{align}
+eingesetzt in die Gleichung (\ref{eq:10})
+
+\begin{align}
+  \label{eq:12}
+  (\vec\sigma\vec\pi)^2 &= \sum_{i,j}(\delta_{ij} + i\epsilon_{ijk}\sigma_k )\pi_i\pi_j \notag\\
+ &= \sum_{i,j}\delta_{ij}\pi_i\pi_j + i \sum_{i,j}\epsilon_{ijk}\sigma_k \pi_i\pi_j \notag\\
+&= (\vec\pi)^2 + i\sigma_k \sum_{i,j}\epsilon_{ijk} \pi_i\pi_j 
+\end{align}
+
+Mit einer Nebenrechnung und der Bedienung fürs Vorzeichenwechseln beim antizyklischen Vertauscchen des Epsilontensors \( \epsilon_{ijk} \pi_i\pi_j = \epsilon_{jik} \pi_j\pi_i= - \epsilon_{ijk} \pi_j\pi_i  \) 
+
+\begin{align}
+  \label{eq:13}
+  \epsilon_{ijk}\pi_i\pi_j  &= \frac{1}{2}(  \epsilon_{ijk}\pi_i\pi_j + \underbr{ \epsilon_{ijk} \pi_i\pi_j}_{-\epsilon_{ijk} \pi_j\pi_i} )\notag\\
+&= \frac{1}{2} \epsilon_{ijk}[\pi_i,\pi_j] \notag\\
+&= \frac{1}{2} \epsilon_{ijk}[(\frac{\hbar}{i}\nabla_i-\frac{e}{c}A_i),(\frac{\hbar}{i}\nabla_j-\frac{e}{c}A_j) ] \notag\\
+&= \frac{1}{2} \epsilon_{ijk}\left(\underbr{[\frac{\hbar}{i}\nabla_i,\frac{\hbar}{i}\nabla_j]}_{=0}-[\frac{\hbar}{i}\nabla_i, \frac{e}{c}A_j]- [\frac{e}{c}A_i,\frac{\hbar}{i}\nabla_j]+ \underbr{[\frac{e}{c}A_i,\frac{e}{c}A_j]}_{=0}\right) \notag\\
+&= -\frac{1}{2} \epsilon_{ijk}\frac{\hbar e}{ic} \left( [\nabla_i, A_j] + [A_i,\nabla_j]\right) \notag\\
+&= -\frac{1}{2} \epsilon_{ijk}\frac{\hbar e}{ic} \left( \nabla_i A_j-A_j\nabla_i + A_i\nabla_j-\nabla_jA_i\right)
+\end{align}
+
+Um die Klammer zu vereinfachen wenden wir sie auf eine stetig differenzierbare Funktion \(\psi\) an
+
+\begin{align}
+  \label{eq:14}
+  &\nabla_i (A_j\psi) -A_j\nabla_i(\psi) + A_i\nabla_j(\psi)-\nabla_j(A_i\psi)= \notag\\
+  =&\nabla_i (A_j)\psi + \cancel{A_j\nabla_i(\psi)} -\cancel{A_j\nabla_i(\psi)} + \cancel{A_i\nabla_j(\psi)} - \nabla_j(A_i)\psi - \cancel{A_i\nabla_j(\psi)} \notag\\
+  =&\nabla_i (A_j)\psi  - \nabla_j(A_i)\psi 
+\end{align}
+Eingesetzt in (\ref{eq:13})
+
+\begin{align}
+  \label{eq:15}
+  \epsilon_{ijk}\pi_i\pi_j  &= -\frac{1}{2} \epsilon_{ijk}\frac{\hbar e}{ic} \left( \underbr{\nabla_i A_j-A_j\nabla_i + A_i\nabla_j-\nabla_jA_i}_{\nabla_i A_j  - \nabla_j A_i}\right) \notag\\
+  \epsilon_{ijk}\pi_i\pi_j  &= -\frac{1}{2} \frac{\hbar e}{ic}  \epsilon_{ijk}\left( \nabla_i A_j  - \nabla_j A_i\right) \notag\\
+\end{align}
+Setzen wir die Gleichung aus der Nebenrechnung (\ref{eq:15}) in die Gleichung (\ref{eq:12}) nun ein
+
+\begin{align}
+  \label{eq:16}
+   (\vec\sigma\vec\pi)^2 &= \vec\pi^2 - i\frac{1}{2} \frac{\hbar e}{ic} \sigma_k \sum_{i,j} \epsilon_{ijk}\left( \nabla_i A_j  - \nabla_j A_i\right) \notag\\
+&= \vec\pi^2 - \frac{1}{2} \frac{\hbar e}{c} \sigma_k \left( \sum_{i,j} \epsilon_{ijk}\nabla_i A_j  - \sum_{i,j} \epsilon_{ijk}\nabla_j A_i\right) \qquad\text{mit }\epsilon_{ijk}\nabla_j A_i=-\epsilon_{ijk}\nabla_i A_j \notag\\
+&= \vec\pi^2 -  \frac{\hbar e}{c} \sigma_k  \underbr{\sum_{i,j} \epsilon_{ijk}\nabla_i A_j}_{(\vec\nabla \times \vec A)_k }  \notag\\
+&= \vec\pi^2 -  \frac{\hbar e}{c}\, \vec \sigma\cdot \underbr{ (\vec\nabla \times \vec A)}_{\vec B}   \notag\\
+&= \vec\pi^2 -  \frac{\hbar e}{c}\, \vec \sigma\cdot\vec B 
+\end{align}
+
+Die Gleichung (\ref{eq:16}) setzen wir in unsere ursprüngliche erste Differetialgleichung (\ref{eq:8}) ein
+
+\begin{align}
+  \label{eq:17}
+   i\hbar\pdiff_t\phi &= \left(\frac{(\vec\sigma\vec\pi)^2}{2m}  + e\Phi \right)\phi \notag \\
+ &=  \left(\frac{\vec\pi^2}{2m} -  \frac{\hbar e}{2mc}\, \vec \sigma\cdot\vec B   + e\Phi\right) \phi 
+\end{align}
+Setzen wir für \(\vec\pi = \vec p - \frac{e}{c}\vec A\) in die Gleichung (\ref{eq:17}) ein so erhalten wir die schon aus der nicht relativistischen Quantenmechanik bekannte \textbf{Pauli-Gleichung}
+
+\begin{align}
+  \label{eq:18}
+\boxed{   i\hbar\pdiff_t\phi =  \left[\frac{1}{2m}\left( \vec p - \frac{e}{c}\vec A\right)^2  -  \frac{\hbar e}{2mc}\, \vec \sigma\cdot\vec B   + e\Phi\right] \phi  }
+\end{align}
 
 
 
 
 \subsection*{Referenzen}
 \begin{itemize}
-\item TODO
+\item Schwabl
 \end{itemize}
 
 \end{document}
