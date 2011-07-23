@@ -137,28 +137,28 @@ Mit der Relation der Pauli-Matrizen
   \label{eq:11}
   \sigma_i\sigma_j &= \frac{1}{2}\sigma_i\sigma_j + \frac{1}{2}\sigma_i\sigma_j \notag\\
  &= \frac{1}{2}\sigma_i\sigma_j - \frac{1}{2}\sigma_j\sigma_i  + \frac{1}{2}\sigma_i\sigma_j + \frac{1}{2}\sigma_j\sigma_i  \notag\\
-&= \frac{1}{2}\underbr{[\sigma_i,\sigma_j]}_{2i\epsilon_{ijk}\sigma_k} + \frac{1}{2}\underbr{\{\sigma_i,\sigma_j\}}_{2\delta_{ij}} \notag\\
-&= \delta_{ij} + i\epsilon_{ijk}\sigma_k 
+&= \frac{1}{2}\underbr{[\sigma_i,\sigma_j]}_{2i\epsilon_{ijk}\sigma_k} + \frac{1}{2}\underbr{\{\sigma_i,\sigma_j\}}_{2\delta_{ij}}
 \end{align}
 eingesetzt in die Gleichung (\ref{eq:10})
 
 \begin{align}
   \label{eq:12}
-  (\vec\sigma\vec\pi)^2 &= \sum_{i,j}(\delta_{ij} + i\epsilon_{ijk}\sigma_k )\pi_i\pi_j \notag\\
- &= \sum_{i,j}\delta_{ij}\pi_i\pi_j + i \sum_{i,j}\epsilon_{ijk}\sigma_k \pi_i\pi_j \notag\\
-&= (\vec\pi)^2 + i\sigma_k \sum_{i,j}\epsilon_{ijk} \pi_i\pi_j 
+  (\vec\sigma\vec\pi)^2 &= \sum_{i,j}(\delta_{ij} +  \frac{1}{2}[\sigma_i,\sigma_j] )\pi_i\pi_j \notag\\
+ &= \sum_{i,j}\delta_{ij}\pi_i\pi_j +  \frac{1}{2}\sum_{i,j}[\sigma_i,\sigma_j] \pi_i\pi_j \notag\\
+&= \vec\pi^2 + \frac{1}{2} \sum_{i,j}[\sigma_i,\sigma_j] \pi_i\pi_j 
 \end{align}
 
-Mit einer Nebenrechnung und der Bedienung fürs Vorzeichenwechseln beim antizyklischen Vertauscchen des Epsilontensors \( \epsilon_{ijk} \pi_i\pi_j = \epsilon_{jik} \pi_j\pi_i= - \epsilon_{ijk} \pi_j\pi_i  \) 
+Mit einer Nebenrechnung und der Bedienung fürs Vorzeichenwechseln beim antizyklischen Vertauscchen des Epsilontensors \( [\sigma_i,\sigma_j] \pi_i\pi_j \stackrel{i\leftrightarrow j}= [\sigma_j,\sigma_i] \pi_j\pi_i = - [\sigma_i,\sigma_j] \pi_j\pi_i  \) 
 
 \begin{align}
   \label{eq:13}
-  \epsilon_{ijk}\pi_i\pi_j  &= \frac{1}{2}(  \epsilon_{ijk}\pi_i\pi_j + \underbr{ \epsilon_{ijk} \pi_i\pi_j}_{-\epsilon_{ijk} \pi_j\pi_i} )\notag\\
-&= \frac{1}{2} \epsilon_{ijk}[\pi_i,\pi_j] \notag\\
-&= \frac{1}{2} \epsilon_{ijk}[(\frac{\hbar}{i}\nabla_i-\frac{e}{c}A_i),(\frac{\hbar}{i}\nabla_j-\frac{e}{c}A_j) ] \notag\\
-&= \frac{1}{2} \epsilon_{ijk}\left(\underbr{[\frac{\hbar}{i}\nabla_i,\frac{\hbar}{i}\nabla_j]}_{=0}-[\frac{\hbar}{i}\nabla_i, \frac{e}{c}A_j]- [\frac{e}{c}A_i,\frac{\hbar}{i}\nabla_j]+ \underbr{[\frac{e}{c}A_i,\frac{e}{c}A_j]}_{=0}\right) \notag\\
-&= -\frac{1}{2} \epsilon_{ijk}\frac{\hbar e}{ic} \left( [\nabla_i, A_j] + [A_i,\nabla_j]\right) \notag\\
-&= -\frac{1}{2} \epsilon_{ijk}\frac{\hbar e}{ic} \left( \nabla_i A_j-A_j\nabla_i + A_i\nabla_j-\nabla_jA_i\right)
+  [\sigma_i,\sigma_j]\cdot \pi_i\pi_j  &= \frac{1}{2}(  [\sigma_i,\sigma_j]\cdot \pi_i\pi_j + \underbr{  [\sigma_i,\sigma_j]\cdot  \pi_i\pi_j}_{-[\sigma_i,\sigma_j]\cdot \pi_j\pi_i} )\notag\\
+ &=\frac{1}{2} [\sigma_i,\sigma_j] (\pi_i\pi_j-\pi_j\pi_i)\notag\\
+&= \frac{1}{2} [\sigma_i,\sigma_j]\cdot [\pi_i,\pi_j] \notag\\
+&= \frac{1}{2}[\sigma_i,\sigma_j]\cdot[(\frac{\hbar}{i}\nabla_i-\frac{e}{c}A_i),(\frac{\hbar}{i}\nabla_j-\frac{e}{c}A_j) ] \notag\\
+&= \frac{1}{2} [\sigma_i,\sigma_j]\cdot\left(\underbr{[\frac{\hbar}{i}\nabla_i,\frac{\hbar}{i}\nabla_j]}_{=0}-[\frac{\hbar}{i}\nabla_i, \frac{e}{c}A_j]- [\frac{e}{c}A_i,\frac{\hbar}{i}\nabla_j]+ \underbr{[\frac{e}{c}A_i,\frac{e}{c}A_j]}_{=0}\right) \notag\\
+&= -\frac{1}{2} [\sigma_i,\sigma_j]\cdot\frac{\hbar e}{ic} \left( [\nabla_i, A_j] + [A_i,\nabla_j]\right) \notag\\
+&= -\frac{1}{2} [\sigma_i,\sigma_j]\cdot\frac{\hbar e}{ic} \left( \nabla_i A_j-A_j\nabla_i + A_i\nabla_j-\nabla_jA_i\right)
 \end{align}
 
 Um die Klammer zu vereinfachen wenden wir sie auf eine stetig differenzierbare Funktion \(\psi\) an
@@ -171,19 +171,39 @@ Um die Klammer zu vereinfachen wenden wir sie auf eine stetig differenzierbare F
 \end{align}
 Eingesetzt in (\ref{eq:13})
 
+
 \begin{align}
   \label{eq:15}
-  \epsilon_{ijk}\pi_i\pi_j  &= -\frac{1}{2} \epsilon_{ijk}\frac{\hbar e}{ic} \left( \underbr{\nabla_i A_j-A_j\nabla_i + A_i\nabla_j-\nabla_jA_i}_{\nabla_i A_j  - \nabla_j A_i}\right) \notag\\
-  \epsilon_{ijk}\pi_i\pi_j  &= -\frac{1}{2} \frac{\hbar e}{ic}  \epsilon_{ijk}\left( \nabla_i A_j  - \nabla_j A_i\right) \notag\\
+ [\sigma_i,\sigma_j]\cdot\pi_i\pi_j  &= -\frac{1}{2} [\sigma_i,\sigma_j]\cdot\frac{\hbar e}{ic} \left( \underbr{\nabla_i A_j-A_j\nabla_i + A_i\nabla_j-\nabla_jA_i}_{\nabla_i A_j  - \nabla_j A_i}\right) \notag\\
+  [\sigma_i,\sigma_j]\cdot\pi_i\pi_j  &= -\frac{1}{2} \frac{\hbar e}{ic} [\sigma_i,\sigma_j]\cdot\left( \nabla_i A_j  - \nabla_j A_i\right) \notag\\
 \end{align}
 Setzen wir die Gleichung aus der Nebenrechnung (\ref{eq:15}) in die Gleichung (\ref{eq:12}) nun ein
 
 \begin{align}
   \label{eq:16}
-   (\vec\sigma\vec\pi)^2 &= \vec\pi^2 - i\frac{1}{2} \frac{\hbar e}{ic} \sigma_k \sum_{i,j} \epsilon_{ijk}\left( \nabla_i A_j  - \nabla_j A_i\right) \notag\\
-&= \vec\pi^2 - \frac{1}{2} \frac{\hbar e}{c} \sigma_k \left( \sum_{i,j} \epsilon_{ijk}\nabla_i A_j  - \sum_{i,j} \epsilon_{ijk}\nabla_j A_i\right) \qquad\text{mit }\epsilon_{ijk}\nabla_j A_i=-\epsilon_{ijk}\nabla_i A_j \notag\\
-&= \vec\pi^2 -  \frac{\hbar e}{c} \sigma_k  \underbr{\sum_{i,j} \epsilon_{ijk}\nabla_i A_j}_{(\vec\nabla \times \vec A)_k }  \notag\\
-&= \vec\pi^2 -  \frac{\hbar e}{c}\, \vec \sigma\cdot \underbr{ (\vec\nabla \times \vec A)}_{\vec B}   \notag\\
+   (\vec\sigma\vec\pi)^2 &= \vec\pi^2 - \frac{1}{2} \frac{\hbar e}{2ic} \sum_{i,j} [\sigma_i,\sigma_j]\cdot\left( \nabla_i A_j  - \nabla_j A_i\right) \notag\\
+&= \vec\pi^2 - \frac{1}{2} \frac{\hbar e}{2ci} \left( \sum_{i,j} [\sigma_i,\sigma_j]\cdot \nabla_i A_j  - \sum_{i,j} [\sigma_i,\sigma_j]\cdot\nabla_j A_i\right) \qquad\text{mit }[\sigma_i,\sigma_j]\cdot\nabla_j A_i=-[\sigma_i,\sigma_j]\cdot\nabla_i A_j \notag\\
+&= \vec\pi^2 -  \frac{\hbar e}{2ci} \sum_{i,j} [\sigma_i,\sigma_j]\cdot\nabla_i A_j
+\end{align}
+
+Mit einer weiteren Nebenreichung für die Summe
+
+\begin{align}
+  \label{eq:19}
+  \sum_{i,j} [\sigma_i,\sigma_j]\cdot\nabla_i A_j &= \sum_i\left( [\sigma_i,\sigma_1]\cdot\nabla_i A_1+[\sigma_i,\sigma_2]\cdot\nabla_i A_2+[\sigma_i,\sigma_3]\cdot\nabla_i A_3\right) \notag\\  
+&=  \cancel{[\sigma_1,\sigma_1]}\cdot\nabla_1 A_1+[\sigma_1,\sigma_2]\cdot\nabla_1 A_2+[\sigma_1,\sigma_3]\cdot\nabla_1 A_3 \notag\\ 
+ &\quad+[\sigma_2,\sigma_1]\cdot\nabla_2 A_1+\cancel{[\sigma_2,\sigma_2]}\cdot\nabla_2 A_2+[\sigma_2,\sigma_3]\cdot\nabla_2 A_3 \notag\\ 
+ &\quad+ [\sigma_3,\sigma_1]\cdot\nabla_3 A_1+[\sigma_3,\sigma_2]\cdot\nabla_3 A_2+\cancel{[\sigma_3,\sigma_3]}\cdot\nabla_3 A_3 \quad \text{mit }[\sigma_i,\sigma_j] = 2i\epsilon_{ijk}\sigma_k \notag\\
+&= 2i\left( \sigma_3\cdot\nabla_1 A_2 - \sigma_2\nabla_1 A_3 -\sigma_3\cdot\nabla_2 A_1+ \sigma_1\cdot\nabla_2 A_3 + \sigma_2\cdot\nabla_3 A_1-\sigma_1\cdot\nabla_3 A_2 \right)\notag\\
+&= 2i\left(\sigma_1\underbr{(\nabla_2 A_3-\nabla_3 A_2)}_{B_1} + \sigma_2\underbr{(\nabla_3 A_1- \nabla_1 A_3)}_{B_2} +  \sigma_3\underbr{(\nabla_1 A_2-\nabla_2 A_1)}_{B_3}\right)\notag\\
+&= 2i\vec\sigma\cdot(\vec\nabla\times\vec A)\notag\\
+&=2i\vec\sigma\cdot\vec B
+\end{align}
+Die Nebenrechung (\ref{eq:19}) in (\ref{eq:16})
+
+\begin{align}
+  \label{eq:16.1}
+(\vec\sigma\vec\pi)^2  &= \vec\pi^2 -  \frac{\hbar e}{2ic} 2i\vec\sigma\cdot\vec B \notag\\
 &= \vec\pi^2 -  \frac{\hbar e}{c}\, \vec \sigma\cdot\vec B 
 \end{align}
 
@@ -201,7 +221,103 @@ Setzen wir für \(\vec\pi = \vec p - \frac{e}{c}\vec A\) in die Gleichung (\ref{
 \boxed{   i\hbar\pdiff_t\phi =  \left[\frac{1}{2m}\left( \vec p - \frac{e}{c}\vec A\right)^2  -  \frac{\hbar e}{2mc}\, \vec \sigma\cdot\vec B   + e\Phi\right] \phi  }
 \end{align}
 
+Zitat wiki: Die Pauli-Gleichung geht auf den österreichischen Physiker Wolfgang Pauli zurück. Sie beschreibt die zeitliche Entwicklung eines geladenen Spin-1/2-Teilchens, etwa eines Elektrons, das sich so langsam im elektromagnetischen Feld bewegt, dass die Feldenergie und die kinetische Energie klein gegen die Ruheenergie ist.
 
+Aus diesem Grund ist es gerechtfertigt dass wir in der Näherung (\ref{eq:7}) die Terme \(E_s\) und \(-e\Phi\) vernachlässigt haben.\\
+\\
+In der Gleichung ist der gyromagnetisches Verhältniss \(g=2\) für das Elektron automatisch richtig herausgekommen. Um dies zu sehen betrachte folgende Rechnung. Mit folgenden Relationen
+
+\begin{align}
+  \label{eq:20}
+  \vec B = \vec \nabla\times\vec A,\qquad \vec A = \frac{1}{2}\vec B\times \vec x,\qquad L=\vec x\times\vec p,\qquad \vec S = \frac{\hbar}{2}\vec \sigma
+\end{align}
+
+Quadriere den ersten Term in der Pauli-Gleichung (\ref{eq:20})
+
+\begin{align}
+  \label{eq:21}
+   i\hbar\pdiff_t\phi =  \left[\frac{1}{2m}\vec p^2 + \frac{e^2}{2mc^2}\vec A^2-\frac{e}{mc}\vec p\cdot \vec A -  \frac{\hbar e}{2mc}\, \vec \sigma\cdot\vec B   + e\Phi\right] \phi
+\end{align}
+Mit einer kleinen Nebenrechnung
+
+\begin{align}
+  \label{eq:22}
+  \vec p\cdot\vec A = \frac{1}{2}\vec p(\vec B\times\vec x) = \frac{1}{2}\vec B\underbr{ (\vec x\times\vec p)}_{\vec L} = \frac{1}{2}\vec B\cdot\vec L
+\end{align}
+Wieder eingesetzt in Gleichung (\ref{eq:21})
+
+\begin{align}
+  \label{eq:23}
+   i\hbar\pdiff_t\phi &=  \left[\frac{1}{2m}\vec p^2 + \frac{e^2}{2mc^2}\vec A^2-\frac{e}{2mc}\vec B\cdot\vec L   -  \frac{\hbar e}{2mc}\, \vec \sigma\cdot\vec B   + e\Phi\right] \phi \quad \text{mit }\vec \sigma = \frac{2}{\hbar}\vec S \notag\\
+   i\hbar\pdiff_t\phi &=  \left[\frac{1}{2m}\vec p^2 + \frac{e^2}{2mc^2}\vec A^2-\frac{e}{2mc}\vec B\cdot\vec L   -  \frac{2e}{2mc}\, \vec S \cdot\vec B   + e\Phi\right] \phi \notag\\
+   i\hbar\pdiff_t\phi &=  \left[\frac{1}{2m}\vec p^2 + \frac{e^2}{2mc^2}\vec A^2- \frac{e}{2mc}\left(\vec L   +  \underbr{2}_{g} \vec S \right)\vec B   + e\Phi\right] \phi
+\end{align}
+
+Man sieht hier deutlich dass der Spin 2-mal stärker an das Magnetfeld koppelt als das gleichgroßer Bahndrehimpuls, was dem richtigen gyromagnetischen Faktor \(g\) für ein Spin \(\frac{1}{2}\) Teilchen entspricht.
+
+
+\subsection*{Taylorentwicklung des kleinen Komponente des Spinors}
+
+In der Dirac-Gleichung steckt noch mehr Information als in der Pauli-Gleichung. Dadurch ist es möglich weitere Korektur-Terme für das Spektrum zu bestimmen. Wir entwickeln dazu die kleine Komponente des Dirac-Spinors (\ref{eq:6}) nach Taylor
+
+\begin{align}
+  \label{eq:24}
+  \chi&= \frac{c\vec\sigma\vec\pi\phi}{2mc^2+E_s-e\Phi} \notag\\
+&= \frac{1}{2mc^2}\left( \frac{1}{1+ \frac{E_s-e\Phi}{2mc^2}}\right)c\vec\sigma\vec\pi\phi \notag\\
+&= \frac{1}{2mc}\left(1 - \frac{E_s-e\Phi}{2mc^2} + \dots\right)\vec\sigma\vec\pi\phi
+\end{align}
+
+Setzen wir die Gleichung (\ref{eq:24}) in die große Komponente des Dirac-Spinors (\ref{eq:6.1})
+
+
+\begin{align}
+  \label{eq:25}
+  \underbr{ i\hbar\pdiff_t}_{E_s}\phi &= c\vec\sigma\vec\pi\chi + e\Phi\phi \notag\\
+ E_s\phi &= \frac{c\vec\sigma\vec\pi }{2mc}\left(1 - \frac{E_s-e\Phi}{2mc^2} \right)\vec\sigma\vec\pi\phi  + e\Phi\phi \qquad |-e\Phi\phi  \notag\\
+ (E_s-e\Phi)\phi &= \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{\vec\sigma^2\vec\pi }{4m^2c^2} (E_s-e\Phi) \vec\pi\phi 
+\end{align}
+
+Es geht nun darum die Gleichung (\ref{eq:25}) zu vereinfachen. Dazu muss beachtet werden dass \(\vec \pi\) nicht dem Potential \(e\Phi(x)\) vertauscht. Wir machen folgende Nebenrechnung
+
+\begin{align}
+  \label{eq:26}
+  (E_s-e\Phi)\vec\pi &= (E_s-e\Phi)\vec\pi + \vec\pi(E_s-e\Phi) - \vec\pi(E_s-e\Phi) \notag\\
+&= \vec\pi(E_s-e\Phi) + [(E_s-e\Phi),\vec\pi ] \notag\\
+&= \vec\pi(E_s-e\Phi) + \underbr{[E_s,\vec\pi ]}_{=0}-[e\Phi,\vec\pi ] \notag\\
+&=\vec\pi(E_s-e\Phi) -[e\Phi,(\vec p -\frac{e}{c}\vec A) ]  \notag\\
+&=\vec\pi(E_s-e\Phi) -[e\Phi,\vec p  ]  + \underbr{[e\Phi,\frac{e}{c}\vec A ]}_{=0}  \notag\\
+&=\vec\pi(E_s-e\Phi) -[e\Phi,\vec p  ] 
+\end{align}
+Als weitere Nebenrechnung wollen wir den Kommutator \([e\Phi,\vec p  ] \) noch bestimmen
+
+\begin{align}
+  \label{eq:27}
+  [e\Phi,\frac{\hbar}{i}\vec \nabla ]\phi &= \frac{\hbar e}{i}\left(\Phi\vec\nabla\phi -\vec\nabla( \Phi \phi)   \right) \notag\\
+&= \frac{\hbar e}{i}\left(\cancel{\Phi\vec\nabla\phi} - \vec\nabla( \Phi) \phi - \cancel{\Phi\vec\nabla\phi}  \right) \notag\\
+&= - \frac{\hbar e}{i}\vec\nabla( \Phi) \phi
+\end{align}
+Eingesetzt in (\ref{eq:26})
+
+\begin{align}
+  \label{eq:28}
+  (E_s-e\Phi)\vec\pi &=\vec\pi(E_s-e\Phi) + \frac{\hbar}{i}\vec\nabla(e\Phi)
+\end{align}
+Fahren wir fort indem wir diese Gleichung (\ref{eq:28}) nun in die Master-Gleichung (\ref{eq:25}) einsetzen
+
+\begin{align}
+  \label{eq:29}
+  \underline{(E_s-e\Phi)\phi} &= \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\left(\vec\pi(E_s-e\Phi) + \frac{\hbar}{i}\vec\nabla(e\Phi)\right)  \phi \notag\\
+&= \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{(\vec\sigma\vec\pi)^2 }{4m^2c^2}\underline{(E_s-e\Phi)\phi}- \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\frac{\hbar}{i}\vec\nabla(e\Phi) \phi 
+\end{align}
+
+Die Gleichung (\ref{eq:29}) stellt eine Rekursive Gleichung dar. Setzt man für den Term \((E_s-e\Phi)\phi\) wieder die Gleichung (\ref{eq:29}) ein, so kann man den Wert für \((E_s-e\Phi)\phi\) beliebig genau bestimmen. Da aber die Nachfolgenden Terme nur eine kleine Korrektur darstellen setzen wir \((E_s-e\Phi)\phi = \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi \) ein
+
+\begin{align}
+  \label{eq:30}
+  (E_s-e\Phi)\phi &= \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{(\vec\sigma\vec\pi)^2 }{4m^2c^2} \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\frac{\hbar}{i}\vec\nabla(e\Phi) \phi  \notag\\
+&= \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{(\vec\sigma\vec\pi)^4 }{8m^3c^2}\phi - \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\frac{\hbar}{i}\vec\nabla(e\Phi) \phi  \notag\\
+\end{align}
+Für den Spezialfall \(\vec A = 0\) und betrachte sphärisch symmetrische Koordinaten \( \vec\nabla(e\Phi)\)
 
 
 \subsection*{Referenzen}
