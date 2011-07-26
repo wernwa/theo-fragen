@@ -315,9 +315,129 @@ Die Gleichung (\ref{eq:29}) stellt eine Rekursive Gleichung dar. Setzt man für 
 \begin{align}
   \label{eq:30}
   (E_s-e\Phi)\phi &= \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{(\vec\sigma\vec\pi)^2 }{4m^2c^2} \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\frac{\hbar}{i}\vec\nabla(e\Phi) \phi  \notag\\
-&= \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{(\vec\sigma\vec\pi)^4 }{8m^3c^2}\phi - \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\frac{\hbar}{i}\vec\nabla(e\Phi) \phi  \notag\\
+&= \frac{(\vec\sigma\vec\pi)^2 }{2m}\phi - \frac{(\vec\sigma\vec\pi)^4 }{8m^3c^2}\phi - \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\frac{\hbar}{i}\vec\nabla(e\Phi) \phi
 \end{align}
-Für den Spezialfall \(\vec A = 0\) und betrachte sphärisch symmetrische Koordinaten \( \vec\nabla(e\Phi)\)
+
+Aus dieser Gleichung folgt die erweiterte Pauligleichung
+
+\begin{align}
+  \label{eq:31}
+  i\hbar \pdiff_t \phi &=  \left[\frac{(\vec\sigma\vec\pi)^2 }{2m} - \frac{(\vec\sigma\vec\pi)^4 }{8m^3c^2} - \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\frac{\hbar}{i}\vec\nabla(e\Phi)  +e\Phi\right]\phi\quad\text{mit }(\vec\sigma\vec\pi)^2 = \vec \pi^2 - \frac{\hbar e}{c}\vec\sigma\cdot\vec B  \notag\\
+ &=  \left[\frac{\vec \pi^2}{2m} - \frac{\hbar e}{c}\frac{\vec\sigma\cdot\vec B}{2m} - \frac{(\vec\sigma\vec\pi)^4 }{8m^3c^2} - \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\frac{\hbar}{i}\vec\nabla(e\Phi)  +e\Phi\right]\phi
+\end{align}
+
+Vergleiche mit der Pauligleichung (\ref{eq:18})
+
+\begin{align}
+  \label{eq:32}
+ i\hbar \pdiff_t \phi &= \left[\frac{\vec \pi^2}{2m} - \frac{\hbar e}{c}\frac{\vec\sigma\cdot\vec B}{2m} +e\Phi\right]\phi
+\end{align}
+
+so sieht man, dass die beiden Terme \( - \frac{(\vec\sigma\vec\pi)^4 }{8m^3c^2} - \frac{\vec\sigma^2\vec\pi }{4m^2c^2}\frac{\hbar}{i}\vec\nabla(e\Phi)\) hinzugekommen sind.
+
+Mit Hilfe der erweiterten Pauli-Gleichung kann man alle Korrekturterme für ein Wasserstoff-Spektrum bestimmen. Dazu betrachten wir den Spezialfall. 
+
+\begin{itemize}
+\item das Potential \(e\Phi = V(r)\) ist sphärisch symmetrisch \(\Rightarrow \vec\nabla(e\Phi)= \vec\nabla V=\frac{\vec r}{r}\frac{d}{dr}V \)
+\item \(\vec A=0 \Rightarrow \vec \pi = \vec p = \frac{\hbar}{i}\vec \nabla\) und  mit Gleichung (\ref{eq:16.1}) \((\vec\sigma\vec \pi)^2=(\vec p)^2\)
+\end{itemize}
+
+Mit diesen Bedingungen lautet die erweiterte Pauligleichung (\ref{eq:30}) wie folgt
+
+\begin{align}
+  \label{eq:33}
+   i\hbar \pdiff_t \phi &= \left[\underbr{\frac{\vec p^2}{2m}  +e\Phi}_{H_0} - \frac{(\vec p)^4 }{8m^3c^2} -\frac{\hbar}{i} \frac{\vec\sigma^2\vec p }{4m^2c^2}\frac{\vec r}{r}\frac{d}{dr}V \right]\phi
+\end{align}
+Mit einer kleinen Nebenrechnung für \(\sigma^2\vec p\cdot\vec r\)
+
+\begin{align}
+  \label{eq:34}
+  \sigma^2\vec p\cdot\vec r &= \sum_{i,j}\sigma_i\sigma_j p_i r_j  \quad\text{mit }~(\ref{eq:11})\notag\\
+ &= \sum_{i,j}(\frac{1}{2}[\sigma_i,\sigma_j]+\frac{1}{2}\{\sigma_i,\sigma_j\})  p_i r_j \notag\\
+ &=  \sum_{i,j} \delta_{ij} p_i r_j + \frac{1}{2} \underbr{\sum_{i,j}[\sigma_i,\sigma_j] p_i r_j}_{2i\vec\sigma\cdot(\vec p\times\vec r)}  \quad\text{vergleiche Nebenrechnung (\ref{eq:19})} \notag \\
+&=\vec p\cdot\vec r + i\vec\sigma\cdot(\vec p\times\vec r) \notag \\
+&=\vec p\cdot\vec r - i\vec\sigma\cdot(\vec r\times\vec p) 
+\end{align}
+
+Eingesetzt in (\ref{eq:33}) ergibt
+
+\begin{align}
+  \label{eq:35}
+   i\hbar \pdiff_t \phi &= \left[\frac{\vec p^2}{2m}  +e\Phi - \frac{(\vec p)^4 }{8m^3c^2} -\frac{\hbar }{i4m^2c^2r}(\vec p\cdot\vec r - i\vec\sigma\cdot(\vec r\times\vec p)) \frac{d}{dr}V \right]\phi \notag\\
+%
+ i\hbar \pdiff_t \phi &= \left[\frac{\vec p^2}{2m}  +e\Phi - \frac{(\vec p)^4 }{8m^3c^2} -\frac{\hbar }{i4m^2c^2}\vec p\cdot\underbr{\frac{\vec r}{r}\frac{d}{dr}V}_{\vec\nabla V} + \frac{1 }{2m^2c^2r}\underbr{\frac{\hbar}{2}\vec\sigma}_{\vec S}\cdot\underbr{ (\vec r\times\vec p)}_{\vec L} \frac{d}{dr}V \right]\phi \notag\\
+%
+ i\hbar \pdiff_t \phi &= \left[\frac{\vec p^2}{2m}  +e\Phi - \frac{(\vec p)^4 }{8m^3c^2}+ \frac{1 }{2m^2c^2}\vec L\cdot\vec S \frac{1}{r}\frac{d}{dr}V -\frac{\hbar }{i4m^2c^2}\vec p\cdot\vec\nabla V \right]\phi \notag\\
+%
+ i\hbar \pdiff_t \phi &= \left[\underbr{\frac{\vec p^2}{2m}  +e\Phi}_{H_0}\underbr{ - \frac{(\vec p)^4 }{8m^3c^2}}_{H_r}+\underbr{ \frac{1 }{2m^2c^2}\vec L\cdot\vec S \frac{1}{r}\frac{d}{dr}V}_{H_{LS}} + \underbr{\frac{\hbar^2 }{4m^2c^2}\vec \nabla\cdot(\vec\nabla V)}_{\tilde H_D} \right]\phi 
+\end{align}
+
+In der Gleichung (\ref{eq:35}) sehen wir die schon gewohnten Korrekturterme
+
+\begin{itemize}
+\item \(H_r\) relativistische Beitrag zur Kinetischer Energie
+\item \(H_{LS}\) Spin-Bahn-Kopplung inklusive den korrekten Faktor für die Thomas-Präzession \(\frac{1}{2}\)
+\item \(\tilde H_D\) Soll den Darvinterm darstellen. Allerdings er nicht hermitesch, was man durch Anwenden der Produktregel ersieht. 
+  \begin{align}
+    \label{eq:36}
+    \tilde H_D\phi &= \frac{\hbar^2 }{4m^2c^2}\vec \nabla\cdot[(\vec\nabla V)\phi] = \frac{\hbar^2 }{4m^2c^2}\left[(\vec \nabla^2V)\phi + (\vec\nabla V)(\vec\nabla\phi)  \right] \notag \\
+&= \frac{\hbar^2 }{4m^2c^2}\left[(\vec \nabla^2V) + \underbrace{(\vec\nabla V)\vec\nabla}_{\text{nicht Selbst adjungierend}}  \right]\phi 
+  \end{align}
+\end{itemize}
+
+Da der letzte Term \((\vec\nabla V)\vec\nabla\) nicht hermitesch ist gibt es Probleme mit der Wahrscheinlichkeitsdichte. Denn es gilt
+
+\begin{align}
+  \label{eq:37}
+  \rho = \psi^\dagger\psi = |\phi|^2+|\chi|^2
+\end{align}
+
+Mit \(\chi\) aus der Näherung (\ref{eq:7}) und \(\vec A=0\)
+
+\begin{align}
+  \label{eq:38}
+   \chi \approx \frac{\vec p}{2mc}\phi
+\end{align}
+
+in die Gleichung (\ref{eq:37}) eingesetzt
+
+\begin{align}
+  \label{eq:39}
+  \rho &= |\phi|^2+|\chi|^2  = \phi^\dagger\phi + \chi^\dagger\chi =  \phi^\dagger\phi + \phi^\dagger \frac{\vec p^2}{4m^2c^2}\phi = \phi^\dagger\left(1 + \frac{\vec p^2}{4m^2c^2} \right) \phi\notag\\
+&= \phi^\dagger\left(1 + \frac{\vec p^2}{4m^2c^2} + \left(\frac{\vec p^2}{8m^2c^2}\right)^2 -\left(\frac{\vec p^2}{8m^2c^2}\right)^2   \right) \phi\notag\\
+&= \phi^\dagger\left( \left(1 + \frac{\vec p^2}{8m^2c^2}\right)^2 -\underbr{\left(\frac{\vec p^2}{8m^2c^2}\right)^2}_{\approx 0 wegen ??}   \right) \phi\notag\\
+&\approx \phi^\dagger \left(1 + \frac{\vec p^2}{8m^2c^2}\right)^2 \phi\notag\\
+&= \left| \underbr{\left(1 + \frac{\vec p^2}{8m^2c^2}\right) \phi}_{\varphi} \right|^2
+\end{align}
+
+
+Wir führen ein neues Spinor \(\varphi\) ein für den gilt
+
+\begin{align}
+  \label{eq:40}
+  \varphi = \Omega\phi = \left(1 + \frac{\vec p^2}{8m^2c^2} + \dots \right) \phi \quad\text{mit }\rho = |\varphi|^2
+\end{align}
+Nun wollen wir den Hamilton-Operator so transformieren damit \(\varphi\) die Lösung darstellt. Dies bezeichnet man als \textbf{Foldy-Wouthuysen} Transformation. Dabei ist unser gesamt Hamilton-Operator
+
+\begin{align}
+  \label{eq:42}
+  H_\phi = \underbr{\frac{\vec p^2}{2m}  +e\Phi}_{H_0}\underbr{ - \frac{(\vec p)^4 }{8m^3c^2}}_{H_r}+\underbr{ \frac{1 }{2m^2c^2}\vec L\cdot\vec S \frac{1}{r}\frac{d}{dr}V}_{H_{LS}} + \underbr{\frac{\hbar^2 }{4m^2c^2}\vec \nabla\cdot(\vec\nabla V)}_{\tilde H_D}
+\end{align}
+
+\begin{align}
+  \label{eq:41}
+  \Omega\cdot|\qquad E_S \phi &= H_\phi \phi \notag\\
+\Omega E_S \phi &= \Omega H_\phi \mathds 1 \phi \notag\\
+E_S  \underbr{\Omega  \phi}_{\varphi} &= \underbr{\Omega H_\phi \Omega^\dagger}_{H} \underbr{\Omega  \phi}_{\varphi} \notag\\
+i\hbar\pdiff_t \varphi &= H\varphi
+\end{align}
+
+Um den neuen Hamilton-Operator zu bestimmen, folgt eine kleine Nebenrechnung
+
+\begin{align}
+  \label{eq:43}
+  H = \left(1 + \frac{\vec p^2}{8m^2c^2} \right) H_\phi \left(1 - \frac{\vec p^2}{8m^2c^2} \right) \notag\\
+\end{align}
 
 
 \subsection*{Referenzen}
