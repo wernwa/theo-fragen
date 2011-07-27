@@ -421,7 +421,7 @@ Nun wollen wir den Hamilton-Operator so transformieren damit \(\varphi\) die Lö
 
 \begin{align}
   \label{eq:42}
-  H_\phi = \underbr{\frac{\vec p^2}{2m}  +e\Phi}_{H_0}\underbr{ - \frac{(\vec p)^4 }{8m^3c^2}}_{H_r}+\underbr{ \frac{1 }{2m^2c^2}\vec L\cdot\vec S \frac{1}{r}\frac{d}{dr}V}_{H_{LS}} + \underbr{\frac{\hbar^2 }{4m^2c^2}\vec \nabla\cdot(\vec\nabla V)}_{\tilde H_D}
+  H_\phi = \underbr{\frac{\vec p^2}{2m}  +V}_{H_0}\underbr{ - \frac{(\vec p)^4 }{8m^3c^2}}_{H_r}+\underbr{ \frac{1 }{2m^2c^2}\vec L\cdot\vec S \frac{1}{r}\frac{d}{dr}V}_{H_{LS}} + \underbr{\frac{\hbar^2 }{4m^2c^2}\vec \nabla\cdot(\vec\nabla V)}_{\tilde H_D}
 \end{align}
 
 \begin{align}
@@ -432,13 +432,65 @@ E_S  \underbr{\Omega  \phi}_{\varphi} &= \underbr{\Omega H_\phi \Omega^\dagger}_
 i\hbar\pdiff_t \varphi &= H\varphi
 \end{align}
 
-Um den neuen Hamilton-Operator zu bestimmen, folgt eine kleine Nebenrechnung
+Um den neuen Hamilton-Operator zu bestimmen, folgt eine kleine Nebenrechnung (?betrachte? \(\Omega\) als eine infinitesimale unitäre Matrix mit \(\Omega=e^{iS}\) und \(S=\frac{\vec p^2}{8m^2c^2}\))
 
 \begin{align}
   \label{eq:43}
-  H = \left(1 + \frac{\vec p^2}{8m^2c^2} \right) H_\phi \left(1 - \frac{\vec p^2}{8m^2c^2} \right) \notag\\
+  H &= \left(1 + \frac{\vec p^2}{8m^2c^2} \right) H_\phi \left(1 - \frac{\vec p^2}{8m^2c^2} \right) \notag\\
+&= \left(H_\phi + \frac{\vec p^2}{8m^2c^2}H_\phi\right) \left(1 - \frac{\vec p^2}{8m^2c^2} \right) \notag\\
+&=H_\phi - H_\phi\frac{\vec p^2}{8m^2c^2}+\frac{\vec p^2}{8m^2c^2}H_\phi-\frac{\vec p^2}{8m^2c^2}H_\phi\frac{\vec p^2}{8m^2c^2}  \notag\\
+&=H_\phi + \frac{1}{8m^2c^2}[p^2,H_\phi] -\frac{\vec p^2}{8m^2c^2}H_\phi\frac{\vec p^2}{8m^2c^2}  \notag\\
+&\approx H_\phi + \frac{1}{8m^2c^2}\frac{\hbar^2}{i^2}[\nabla^2,H_\phi]
 \end{align}
 
+Berechnen wir nun den Kommutator
+
+\begin{align}
+  \label{eq:44}
+  [\nabla^2,H_\phi] &= [\nabla^2,V] = [\nabla\nabla,V] \notag\\
+&=\nabla[\nabla,V]+[\nabla,V]\nabla
+\end{align}
+Nebenrechnung
+
+\begin{align}
+  \label{eq:45}
+  [\nabla,V]\phi &= \nabla(V\phi) - V\nabla(\phi)\notag\\ 
+&= \nabla(V)\phi + \cancel{V\nabla(\phi)}- \cancel{V\nabla(\phi)}\notag\\ 
+&=\nabla(V)\phi 
+\end{align}
+Diese Nebenrechnung eingesetzt in die Kommutator-Beziehung (\ref{eq:44})
+
+\begin{align}
+  \label{eq:46}
+  [\nabla^2,H_\phi]\phi &= \nabla(\nabla V\phi)+\nabla V \nabla\phi \notag\\
+&= \nabla^2 (V)\phi + \nabla V\nabla\phi +\nabla V \nabla\phi \notag\\
+&=\nabla^2 (V)\phi + 2\nabla V\nabla\phi
+\end{align}
+Den Kommutator \([\nabla^2,H_\phi]\) wieder in die Hamilton-Operator Gleichung (\ref{eq:43}) eingesetzt
+
+\begin{align}
+  \label{eq:47}
+  H &= H_\phi + \frac{1}{8m^2c^2}\frac{\hbar^2}{i^2} (\nabla^2V+2\nabla V \nabla) \notag\\
+&= H_\phi - \frac{1}{8m^2c^2}\hbar^2 \nabla^2V  - \frac{1}{4m^2c^2}\hbar^2\nabla V \nabla
+\end{align}
+
+Nun setzen wir \(H_\phi\) (\ref{eq:42}) in die Gleichung (\ref{eq:47}) ein
+
+\begin{align}
+  \label{eq:48}
+  H &=  \frac{\vec p^2}{2m}  +V - \frac{(\vec p)^4 }{8m^3c^2}+ \frac{1 }{2m^2c^2}\vec L\cdot\vec S \frac{1}{r}\frac{d}{dr}V +  \frac{\hbar^2 }{4m^2c^2}\underbr{ \vec \nabla\cdot(\vec\nabla V)}_{(\vec \nabla^2V) + \cancel{(\vec\nabla V)\vec\nabla}} - \frac{1}{8m^2c^2}\hbar^2 \nabla^2V  - \frac{\hbar^2}{4m^2c^2}\cancel{\nabla V \nabla} \notag\\
+&=  \frac{\vec p^2}{2m}  +V - \frac{(\vec p)^4 }{8m^3c^2}+ \frac{1 }{2m^2c^2}\vec L\cdot\vec S \frac{1}{r}\frac{d}{dr}V +  \frac{\hbar^2 }{4m^2c^2}\vec \nabla^2V - \frac{\hbar^2}{8m^2c^2} \nabla^2V  \notag\\
+&=  \frac{\vec p^2}{2m}  +V - \frac{(\vec p)^4 }{8m^3c^2}+ \frac{1 }{2m^2c^2}\vec L\cdot\vec S \frac{1}{r}\frac{d}{dr}V + \underbr{ \frac{\hbar^2 }{8m^2c^2}\vec \nabla^2V }_{H_D} 
+\end{align}
+
+Somit haben wir einen hermiteschen Darwinterm \(H_D\) bekommen, damit ist auch der gesamte  Foldy-Wouthuysen transformierte Hamilton-Operator \(H\) ebenfalls hermitesch.
+
+
+Um weitere (höhere) relativistische Korrekturen zu erhalten, wendet man die allgemeine  Foldy-Wouthuysen Transformation auf die Dirac-Gleichung an. Im Grunde ist das Verfahren ein Versuch den Hamiltonoperator zu diagonalisieren und nicht-diagonale Terme höherer Ordnung zu vernachlässigen.
+
+
+
+ 
 
 \subsection*{Referenzen}
 \begin{itemize}
