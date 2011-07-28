@@ -1,0 +1,84 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{adjungierter Pauli-Spinor}
+
+
+Um den Adjungierten Pauli-Spinor zu bestimmen wollen wir die adjungierte Dirac-Gleichung herleiten. Dazu gehen wir von der nicht adjungierten freien Dirac-Gleichung aus
+
+\begin{align}
+  \label{eq:1}
+  i\gamma^\mu\partial_\mu\psi - \frac{mc}{\hbar}\psi = 0
+\end{align}
+
+Nun adjungieren wir diese Gleichung
+
+\begin{align}
+  \label{eq:2}
+   (i\gamma^\mu\partial_\mu\psi)^\dagger - \frac{mc}{\hbar}\psi^\dagger &= 0 \notag\\
+ -i(\partial_\mu\psi)^\dagger(\gamma^\mu)^\dagger - \frac{mc}{\hbar}\psi^\dagger &= 0
+\end{align}
+
+Nun machen wir eine kleine Nebenrechnung
+
+\begin{align}
+  \label{eq:3}
+  (\gamma^\mu)^\dagger &= (\beta,\beta\alpha_1,\beta\alpha_2,\beta\alpha_3)^\dagger \notag \\
+&= (\beta^\dagger,(\beta\alpha_1)^\dagger,(\beta\alpha_2)^\dagger,(\beta\alpha_3)^\dagger) \notag \\
+&= (\beta^\dagger,(\alpha_1)^\dagger(\beta)^\dagger,(\alpha_2)^\dagger(\beta)^\dagger,(\alpha_3)^\dagger(\beta)^\dagger)\quad \text{mit }\beta^\dagger=\beta \text{ und }(\alpha_i)^\dagger=\alpha_i \notag \\
+&= (\mathds 1\cdot \beta,\mathds 1\cdot \alpha_1\beta,\mathds 1\cdot\alpha_2\beta,\mathds 1\cdot\alpha_3\beta)   \notag \\
+&= (\beta\cdot\beta\cdot \beta,\beta\cdot\beta\cdot \alpha_1\beta,\beta\cdot\beta\cdot\alpha_2\beta,\beta\cdot\beta\cdot\alpha_3\beta)   \notag \\
+&= \beta\cdot\underbr{(\beta,\beta\cdot \alpha_1,\beta\cdot\alpha_2,\beta\cdot\alpha_3)}_{\gamma^\mu} \cdot\beta 
+\end{align}
+Wir bekommen aus der Gleichung (\ref{eq:3}) eine wichtige Relation mit \(\beta=\gamma^0\)
+
+\begin{align}
+  \label{eq:4}
+  \boxed{ (\gamma^\mu)^\dagger = \gamma^0\gamma^\mu\gamma^0  }
+\end{align}
+
+Setzen wir nun diese Relation in die Gleichung (\ref{eq:2}) ein und multiplizieren von rechts mit \(\gamma^0\)
+
+\begin{align}
+  \label{eq:5}
+  -i(\partial_\mu\psi)^\dagger\gamma^0\gamma^\mu\gamma^0   - \frac{mc}{\hbar}\psi^\dagger &= 0 \qquad |\cdot\gamma^0 \notag\\
+-i(\partial_\mu\underbr{\psi^\dagger\gamma^0}_{\overline \psi})\gamma^\mu\mathds 1  - \frac{mc}{\hbar}\underbr{\psi^\dagger\gamma^0}_{\overline \psi} &= 0 
+\end{align}
+Damit sieht unsere adjungierte Dirac-Gleichung wie folgt aus
+
+\begin{align}
+  \label{eq:6}
+  -i(\partial_\mu\overline \psi)\gamma^\mu  - \frac{mc}{\hbar}\overline \psi &= 0 
+\end{align}
+Mit dem \textbf{adjungierten Paulispinor} 
+
+\begin{align}
+  \label{eq:7}
+  \boxed{\overline \psi = \psi^\dagger\gamma^0}
+\end{align}
+
+Unter Lorenztranformation verhält sich der adjungierte Paulispinor \(\overline \psi\)  invers zu dem Dirac-Spinor \(\psi\)
+
+\begin{align}
+  \label{eq:8}
+  \overline \psi'= \psi^{'\dagger}\gamma^0  = (S(\Lambda)\psi)^\dagger\gamma^0 = \psi^\dagger S(\Lambda)^\dagger \gamma^0 = \psi^\dagger\mathds 1 S(\Lambda)^\dagger \gamma^0 = \underbr{\psi^\dagger \gamma^0}_{\overline\psi}\gamma^0 S(\Lambda)^\dagger \gamma^0  =  \overline\psi \gamma^0 S(\Lambda)^\dagger \gamma^0 
+\end{align}
+
+
+
+
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item Claude Cohen-Tannoudji Quantenmechanik Band 2
+\item Zettili Quanten Mehanics
+\item Rollnik Quantentheorie 2
+\end{itemize}
+
+\end{document}
