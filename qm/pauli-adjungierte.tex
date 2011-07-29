@@ -67,18 +67,99 @@ Unter Lorenztranformation verhält sich der adjungierte Paulispinor \(\overline 
   \label{eq:8}
   \overline \psi'= \psi^{'\dagger}\gamma^0  = (S(\Lambda)\psi)^\dagger\gamma^0 = \psi^\dagger S(\Lambda)^\dagger \gamma^0 = \psi^\dagger\mathds 1 S(\Lambda)^\dagger \gamma^0 = \underbr{\psi^\dagger \gamma^0}_{\overline\psi}\gamma^0 S(\Lambda)^\dagger \gamma^0  =  \overline\psi \gamma^0 S(\Lambda)^\dagger \gamma^0 
 \end{align}
+Machen wir eine kleine Nebenrechnung. Mit Hilfe der schon bekannten Beziehung, die sich aus der lorenztranformierten Dirac-Gleichung ergibt
 
+\begin{align}
+  \label{eq:9}
+  \Lambda^{\mu}_{\hphantom \mu \nu} \gamma^\nu = S^{-1}(\Lambda)\gamma^\mu  S(\Lambda)
+\end{align}
+Die adjungierte dieser Gleichung lautet
 
+\begin{align}
+  \label{eq:10}
+   \Lambda^{\mu}_{\hphantom \mu \nu} (\gamma^\nu)^\dagger = S^\dagger(\Lambda)(\gamma^\mu)^\dagger S(\Lambda)^{-1\dagger}
+\end{align}
 
+Mit Hilfe der Beziehung (\ref{eq:4}) in die Gleichung (\ref{eq:10}) ein und mit \(\gamma^0\) von links und rechts multipliziert ergibt
 
+\begin{align}
+  \label{eq:11}
+  \gamma^0\Lambda^{\mu}_{\hphantom \mu \nu}\gamma^0\gamma^\nu \gamma^0\gamma^0   &= \gamma^0 S^\dagger(\Lambda) \gamma^0\gamma^\nu \gamma^0  S(\Lambda)^{-1\dagger}\gamma^0\notag \\
+%
+\underbr{ \gamma^0\gamma^0}_{\mathds 1}\Lambda^{\mu}_{\hphantom \mu \nu}\gamma^\nu \underbr{\gamma^0\gamma^0}_{\mathds 1}   &= \gamma^0 S^\dagger(\Lambda) \gamma^0\gamma^\nu \gamma^0  S(\Lambda)^{-1\dagger}\gamma^0\notag \\
+%
+\Lambda^{\mu}_{\hphantom \mu \nu}\gamma^\nu  &= \gamma^0 S^\dagger(\Lambda) \gamma^0\gamma^\nu \gamma^0  S(\Lambda)^{-1\dagger}\gamma^0 \stackrel{~(\ref{eq:9}) }= S^{-1}(\Lambda)\gamma^\mu  S(\Lambda)  
+\end{align}
 
+Mit der Beziehung \((\gamma^0)^{-1} = \gamma^0\) folgt aus der Gleichung (\ref{eq:11})
+
+\begin{align}
+  \label{eq:12}
+  \gamma^0 S^\dagger(\Lambda) \gamma^0\gamma^\nu (\gamma^0 S(\Lambda)^{\dagger}\gamma^0)^{-1} &=  S^{-1}(\Lambda)\gamma^\mu  S(\Lambda) 
+\end{align}
+ mit \(S(\Lambda)\) von rechts und \(S^{-1}(\Lambda)\) von links multipliziert folgt
+
+ \begin{align}
+   \label{eq:13}
+  S(\Lambda)  \gamma^0 S^\dagger(\Lambda) \gamma^0\gamma^\nu (\gamma^0 S(\Lambda)^{\dagger}\gamma^0)^{-1}S^{-1}(\Lambda) &= \underbr{S(\Lambda)  S^{-1}(\Lambda)}_{\mathds 1}\gamma^\mu \underbr{ S(\Lambda) S^{-1}(\Lambda)}_{\mathds 1} \notag \\
+ \Big(S(\Lambda)  \gamma^0 S^\dagger(\Lambda) \gamma^0\Big)\gamma^\nu \Big(S(\Lambda) \gamma^0 S(\Lambda)^{\dagger}\gamma^0\Big)^{-1} &= \gamma^\mu 
+ \end{align}
+
+Wir betrachten hierzu einen allgemeinen Fall
+
+\begin{align}
+  \label{eq:14}
+  A B A^{-1} &= B \quad |\cdot A \notag \\
+  A B &= BA \Leftrightarrow [A,B] = 0
+\end{align}
+Für die Gleichung (\ref{eq:13}) bedeutet dass \(\gamma^\nu \) auf jeden Fall mit dem Ausdruck \(S(\Lambda)  \gamma^0 S^\dagger(\Lambda) \gamma^0\) vertauscht. Da aber der Ausdruck nur aus unitären Matritzen bzw Matritzen mit der Determinante \(\pm 1\) kann dieser Ausdruck nur eine Einheitsmatrix ergeben.
+
+\begin{align}
+  \label{eq:15}
+  S(\Lambda)  \gamma^0 S^\dagger(\Lambda) \gamma^0 = \mathds 1
+\end{align}
+
+Mit \(S^{-1}(\Lambda)\) von links multipliziert folgt eine wichtige Relation
+
+\begin{align}
+  \label{eq:16}
+  \boxed{ \gamma^0 S^\dagger(\Lambda) \gamma^0 = S^{-1}(\Lambda) }
+\end{align}
+
+Diese Relation in die Gleichung (\ref{eq:8})
+
+\begin{align}
+  \label{eq:17}
+  \boxed{ \overline \psi' =  \overline\psi S^{-1}(\Lambda) }
+\end{align}
+
+Aus der Gleichung (\ref{eq:17}) ist ersichtlich, dass der adjungierte Pauli-Spinor bei einer Lorentz-Transformation sich invers zu dem Dirac-Spinor verhält, für den gilt
+
+\begin{align}
+  \label{eq:18}
+  \psi' = S(\Lambda)\psi
+\end{align}
+
+Diese Eigenschaft wird ausgenutzt um die sogenannte \textit{kovariante Bilinearformen} zu bilden. Die ein definiertes Transformationsverhalten unter Lorentz-Transformation besitzen. Ein Beispiel für eine Bilinearform ist die Warscheinlichkeitsdichte \(\rho(x) = \overline{\psi}(x)\psi(x)\) die sich wie folgt transformiert
+
+\begin{align}
+  \label{eq:19}
+  \rho'(x') = \overline \psi'(x') \mathds 1 \psi'(x') =\overline \psi(x)\underbr{S^{-1}S}_{\mathds 1} \psi(x) = \overline \psi(x)\psi(x) = \rho(x)
+\end{align}
+Also transformiert sich die Wahrscheinlichkeitsdichte wie ein Skalar. Eine weitere Bilinearform ist der Wahrscheinlichtkeitsstrom \(j^\mu = c\overline\psi(x) \gamma^\mu \psi(x) \)
+
+\begin{align}
+  \label{eq:20}
+  j^{'\mu} = c\overline\psi'(x) \gamma^\mu \psi'(x) =  c\overline\psi(x)\underbr{ S^{-1} \gamma^\mu S}_{~(\ref{eq:9})}\psi(x) =c\overline\psi(x) \Lambda^{\mu}_{\hphantom \mu \nu} \gamma^\nu\psi(x) =\Lambda^{\mu}_{\hphantom \mu \nu}\underbr{ c\overline\psi(x) \gamma^\nu\psi(x)}_{j^{\mu}} = \Lambda^{\mu}_{\hphantom \mu \nu}j^{\mu}
+\end{align}
+Damit transformiert sich der Wahrscheinlichtkeitsstrom wie ein Vierervektor.
 
 
 \subsection*{Referenzen}
 \begin{itemize}
-\item Claude Cohen-Tannoudji Quantenmechanik Band 2
-\item Zettili Quanten Mehanics
+\item Schwabl2
 \item Rollnik Quantentheorie 2
+\item Wachter Relativistische Quantenmechanik
 \end{itemize}
 
 \end{document}
