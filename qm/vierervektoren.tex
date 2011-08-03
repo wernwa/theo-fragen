@@ -273,19 +273,24 @@ müssen wir den Zeilenindex der in \eqref{eq:18} kontravariant ist, in eine
 kovariante Form bringen, d.h. wir müssen die Zeilenvektoren in \eqref{eq:18} von
 der kontravarianter Form in die kovariante Form bringen. Dies erreichen wir in
 dem wir die einzelnen Zeilenvektoren mit dem Metriktensor \(g_{\mu \alpha}\)
-multiplizieren. D.h. die erste Komponente der einzelnen Zeilenvektoren
-übernehmen und alle weiteren mit \(-1\) multiplizieren. Dies sieht dann wie
-folgt aus
+multiplizieren. D.h. die erste Komponente der einzelnen Zeilenvektoren übernehmen und alle weiteren mit -1 multiplizieren. Dies sieht dann wie folgt aus
 \begin{equation}
   \label{eq:19}
      g_{\mu\alpha}\Lambda^\alpha_{\hphantom\alpha \nu} =
-     \Lambda_{\mu \nu} =
+ \begin{pmatrix} 1&0&0&0 \\  0&-1&0&0 \\ 0&0&-1&0 \\ 0&0&0&-1  \end{pmatrix}
+ \begin{pmatrix}
+    \gamma&0&0&-\beta\gamma\\
+    0&1&0&0\\
+    0&0&1&0\\
+    -\beta\gamma&0&0&\gamma
+  \end{pmatrix} = 
   \begin{pmatrix}
-    \gamma&0&0&\beta\gamma\\
+    \gamma&0&0&-\beta\gamma\\
     0&-1&0&0\\
     0&0&-1&0\\
-    -\beta\gamma&0&0&-\gamma
+    \beta\gamma&0&0&-\gamma
   \end{pmatrix}
+ = \Lambda_{\mu \nu}
 \end{equation}
 
 Als nächstes müssen wir den Spaltenindex der in \eqref{eq:19} bzw. \eqref{eq:19} kovariant ist, in
@@ -295,13 +300,22 @@ Metriktensor \(g^{\beta\nu}\) d.h. wir übernehmen bei den Spaltenvektoren in
 mit \(-1\). Wir erhalten:
 \begin{equation}
   \label{eq:30}
-   \Lambda_{\mu \beta}\,g^{\beta\nu} =  \Lambda_{\mu}^{\hphantom \mu \nu}=
+   \Lambda_{\mu \beta}\,g^{\beta\nu} =
+  \begin{pmatrix}
+    \gamma&0&0&-\beta\gamma\\
+    0&-1&0&0\\
+    0&0&-1&0\\
+    \beta\gamma&0&0&-\gamma
+  \end{pmatrix}
+\begin{pmatrix} 1&0&0&0 \\  0&-1&0&0 \\ 0&0&-1&0 \\ 0&0&0&-1  \end{pmatrix}
+ = 
   \begin{pmatrix}
     \gamma&0&0&\beta\gamma\\
     0&1&0&0\\
     0&0&1&0\\
     \beta\gamma&0&0&\gamma
   \end{pmatrix}
+=  \Lambda_{\mu}^{\hphantom \mu \nu}
 \end{equation}
 
 Aus \eqref{eq:30} folgt direkt die Umkehrmatrix von \eqref{eq:18} mit
