@@ -49,7 +49,7 @@ das Quadrat der relativistischen Energie im Quadrat gleich ist. Folgender allgem
 
 \begin{align}
   \label{eq:5}
-  H = c (\alpha_x p_x + \alpha_y p_y + \alpha_z p_z) + \beta m^2c^4 = c\sum_{i=1}^3\alpha_i p_i   + \beta m^2c^4
+  H = c (\alpha_x p_x + \alpha_y p_y + \alpha_z p_z) + \beta mc^2 = c\sum_{i=1}^3\alpha_i p_i   + \beta mc^2
 \end{align}
 Die unbekannten Koeffizienten \(\alpha_i,\beta\) können nicht einfach Zahlen sein, da sonst die Gleichung nicht einmal forminvariant gegenüber räumlichen Drehungen ist (D.h. die Form der Gleichung ändert sich je nachdem wie man das Koordinatensystem wählt). \(\alpha_i,\beta\) müssen hermitische Matritzen sein damit \(H\) hermitesch ist. Daraus folgt  \(\alpha_i,\beta\) müssen \(N\times N\) Matrizen sein.
 
@@ -58,8 +58,8 @@ Um die unbekannten Matritzen  \(\alpha_i,\beta\) zu bestimmen gehen wir von der 
 \begin{align}
   \label{eq:6}
   -\hbar^2 \pdiff^2_t \psi(x) &= \underbrace{c^2(\vec p^2 + m^2c^2)}_{H^2}\psi(x)\\
- &\stackrel{!}= \left(  c\sum_{i=1}^3\alpha_i p_i   + \beta m^2c^4 \right)^2\psi(x)\\
-&=[c \sum_{j=1}^3 \alpha_jp_j+\beta mc^2] \cdot [c \sum_{i=1}^3 \alpha_ip_i+\beta mc^2]\psi(p) \\
+ &\stackrel{!}= \left(  c\sum_{i=1}^3\alpha_i p_i   + \beta mc^2 \right)^2\psi(x)\\
+&=[c \sum_{j=1}^3 \alpha_jp_j+\beta mc] \cdot [c \sum_{i=1}^3 \alpha_ip_i+\beta mc]\psi(p) \\
 &=c^2 [ \sum_{j=1}^3 \alpha_jp_j+\beta mc] \cdot [ \sum_{i=1}^3 \alpha_ip_i+\beta mc]\psi(p) \\
 &=c^2 \left( \sum_{j=1}^3 \alpha_jp_j\sum_{i=1}^3 \alpha_ip_i  +   \sum_{j=1}^3 \alpha_jp_j \beta mc  + \beta mc \sum_{i=1}^3 \alpha_ip_i+ \beta^2 m^2c^2\right)\psi(p) \\
 &= c^2\left(\sum_{i,j=1}^3\alpha_i\alpha_j p_ip_j+\sum_{i=1}^3(\alpha_i\beta+\beta\alpha_i)p_i mc +  \beta^2m^2c^2\right)\psi(p)
