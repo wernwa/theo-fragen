@@ -1,0 +1,146 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+
+\begin{document}
+
+\section*{Legendre Transformation für die Innere Energie U}
+
+
+Die innere Energie ist eine Funktion die von folgenden Variablen abhängt
+
+\begin{align}
+  \label{eq:1}
+  U=U(S,V,N)
+\end{align}
+
+Da jedoch die Entropie \(S\) schwer zu messen ist, wäre es von Vorteil eine Funktion zu haben die von der Themperatur \(T\) anstelle von der Entropie \(S\) abhängt.
+
+\begin{align}
+  \label{eq:2}
+  F=F(T,V,N)
+\end{align}
+
+Dies ist mit der \textbf{Legendre-Transformation} möglich. Der einfachheitshalber betrachten wir die Innere Energie nur von Entropie abhängig
+
+\begin{align}
+  \label{eq:3}
+  U = U(S) 
+\end{align}
+
+Bildet man das vollständige Differential der Funktion (\ref{eq:3}) so erhält man
+
+\begin{align}
+  \label{eq:4}
+  \diff U = \pdiff U_S \diff S
+\end{align}
+
+Wir definieren die Ableitung \(\pdiff U_S\equiv T\). Damit sieht die Gleichung (\ref{eq:4}) wie folgt aus
+
+\begin{align}
+  \label{eq:5}
+  \diff U = T \diff S
+\end{align}
+
+Analog verfahren wir mit der Funktion (\ref{eq:2}). Diese hängt ebenfalls aus Einfachheitsgründen nur von der Termperatur \(T\) ab. Wir bilden das totale Differential
+
+\begin{align}
+  \label{eq:6}
+  \diff F = \pdiff F_T \diff T
+\end{align}
+
+Und definieren die Ableitung \(\pdiff F_T\equiv \pm S\). Damit sieht die Gleichung (\ref{eq:6}) wie folgt aus
+
+\begin{align}
+  \label{eq:7}
+  \diff F = \pm S \diff T
+\end{align}
+
+Für die Legendre-Transformation spielt das Vorzeichen von \(F\) keine Rolle und ist je nach physikalischen Bedeutung frei wählbar. Es gilt dass \(dF\le 0\) gelten muss (warum?) und da weder Entropie noch Temperatur negativ werden können muss gelten
+
+\begin{align}
+  \label{eq:8}
+  \diff F = -S\diff T
+\end{align}
+Das totale Differential von \(S\) und \(T\) lautet mit Hilfe der Produktregel
+
+\begin{align}
+  \label{eq:9}
+  \diff (ST) = T\diff S + S\diff T
+\end{align}
+Setzen wir nun die Gleichungen  (\ref{eq:5}) und (\ref{eq:8}) in (\ref{eq:9}) ein
+
+\begin{align}
+  \label{eq:10}
+  \diff (ST) = \diff U - \diff F
+\end{align}
+Umgeformt nach \(\diff F\) 
+
+\begin{align}
+  \label{eq:11}
+  \diff F = \diff U - \diff(ST)
+\end{align}
+
+und nach Integration der Gleichung ergibt sich
+
+\begin{align}
+  \label{eq:12}
+\boxed{  F = U - ST }
+\end{align}
+
+Somit erhalten wir die Helmholtz’sche freie Energie die nun von der Temperatur anstelle von der Entropie abhängt. Die Abhängigkeiten der einzelnen Größen sieht wie folgt aus
+
+\begin{align}
+  \label{eq:13}
+  F(T) = U\Big(S(T)\Big) - S(T)T
+\end{align}
+
+\subsection{Geometrische Bedeutung der Legendre-Transformation}
+
+
+\begin{figure}
+  \centering
+  \input{./legendrepic.pdf_t}  
+  \caption{Legendre geometrische Bedeutung}
+  \label{fig:1}
+\end{figure}
+
+Wir betrachten eine Tangente die die Funktion \(U(S)\) an dem Punkt \(P=\begin{pmatrix}
+  \alpha\\\beta\end{pmatrix}\) berührt. Mit Hilfe der Punktsteigungsformel
+
+\begin{align}
+  \label{eq:14}
+  f(x) = y = m\cdot(x-\alpha) + \beta
+\end{align}
+
+können wir die Funktion der Tangente bestimmen
+
+\begin{align}
+  \label{eq:15}
+  g(S) = \left. \pdiff U_S\right|_\alpha ( S - \alpha) + \beta = T(S - \alpha) +\beta  
+\end{align}
+Um den y-Achsen-Abschnitt der Tangente \(g(S)\) zu bestimmen setzen wir \(S=0\) also folgt
+
+\begin{align}
+  \label{eq:16}
+  g(0) = -T\alpha + \beta \equiv F(T)
+\end{align}
+
+Mit \(\alpha = S(T) \) und \(\beta = U(S(T))\) ergibt sich die uns schon bekannte Form der freien Energie (vergleiche (\ref{eq:12}))
+
+\begin{align}
+  \label{eq:17}
+  F(T) = U\Big(S(T)\Big) - ST
+\end{align}
+
+Zitat wiki: Geometrisch lässt sich der Sachverhalt wie in Abbildung \ref{fig:1} veranschaulichen: Die Kurve (rot) kann, statt die Punktmenge anzugeben, aus der sie besteht, auch durch die Menge aller Tangenten (blau) charakterisiert werden, die sie einhüllen. Genau das passiert bei der Legendre-Transformation. Die Transformierte, \(F(T)\), ordnet der Steigung \(T\) einer jeden Tangente deren Y-Achsenabschnitt zu. Es ist also eine Beschreibung derselben Kurve - nur über einen anderen Parameter, nämlich \(T\) statt \(S\).
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item \url{http://de.wikipedia.org/wiki/Legendre-Transformation}
+\end{itemize}
+
+\end{document}
