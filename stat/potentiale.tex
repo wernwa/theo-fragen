@@ -1,0 +1,138 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Thermodynamische Potentiale}
+
+Wir betrachten homogene Systeme, deren Gleichgewichtslage durch 2 Zustandsvariablen eindeutig festgelegt ist. Es ergeben sich folgende Variablenpaare für die Größen \(S,T,p,V\), wobei Kombinationen zwischen \(S,T\) und \(p,V\) wegen Abhängigkeit voneinander ausgeschlossen ist.
+
+\begin{align}
+  \label{eq:1}
+  U(S,V),\,\, F(T,V),\,\, H(S,p),\,\, G(T,p)
+\end{align}
+
+Die Zustandsgrößen \(U,F,H,G\) sind Thermodynamische Potentiale. Man nennt Zustandsvariablen, als Funktionen deren eine Größe zum thermondynamischen Potential wird ihre \textbf{natürliche Variable} genannt. Im Falle von \(U\) sind \(S\) und \(V\) ihre natürlichen Variablen.
+
+Die Thermodynamischen Potentiale haben folgende Eigenschaften
+
+\begin{itemize}
+\item[1] Sie sind Zustandsgrößen von der Dimension einer Energie
+\item[2] Ihre partiellen Ableitungen nach den natürlichen Variablen liefern wieder einfache Zustandsgrößen
+\item[3] Sie liefern vollständige thermodynamische Informationen über das betrachtete System
+\end{itemize}
+
+Vergleiche die schon aus der Mechanik oder Elektronik bekannten Potentiale wie die Kraft \(\vec F=-\vec \nabla V\) bzw \(\vec E = -\vec \nabla\phi - \pdiff_t \vec A\) oder \(\vec B = \nabla\times \vec A\).
+
+Betrachten wir die Zustandsfunktion \(U = U(S,V)\) und bilden das Vollständige Differential
+
+\begin{align}
+  \label{eq:2}
+  dU = \left(\pdiff U_S \right)_V dS +  \left(\pdiff U_V \right)_S dV
+\end{align}
+
+Vergleiche mit dem vollständigen Differential der inneren Energie aus dem 1.Hauptsatz
+
+\begin{align}
+  \label{eq:3}
+  dU = TdS - pdV
+\end{align}
+so ergibt sich
+
+\begin{align}
+  \label{eq:4}
+  T = \left(\pdiff U_S \right)_V \qquad p = - \left(\pdiff U_V \right)_S
+\end{align}
+
+Damit erfüllt die Innere Energie den zweiten Punkt von den verlangten Eigenschaften für thermodynamische Potentiale. Wobei die anderen Kriterien auch erfüllt sind. D.h. die Innere Energie ist ein thermodynamisches Potential
+
+\begin{align}
+  \label{eq:5}
+  U=U(S,V)
+\end{align}
+
+Mit Hilfe der Legendre-Transformation der Zustandsvariablen kann man vom Potential \(U(S,V)\) zu einem anderen Potential \(F(T,V)\) kommen.
+
+\begin{align}
+  \label{eq:6}
+ F(T,V) = U - TS
+\end{align}
+
+Das thermodynamisches Potential in der Gleichung (\ref{eq:6}) nennt man die helmholtsche freie Energie. Wir bilden das totale Differential
+
+\begin{align}
+  \label{eq:8}
+  dF &= dU - TdS - SdT \notag\\
+&=  \cancel{TdS} - pdV - \cancel{TdS} - SdT \notag\\
+&=-pdV - SdT
+\end{align}
+
+Bildet man das vollständige Differential einer Funktion \(F(T,V)\) so erhält man
+
+\begin{align}
+  \label{eq:7}
+  dF = \left(\pdiff F_T \right)_S dT +  \left(\pdiff F_V \right)_T dV
+\end{align}
+
+Durch vergleich der Koeffizienten sieht man
+
+\begin{align}
+  \label{eq:9}
+  p = - \left(\pdiff F_V \right)_T  \qquad S = - \left(\pdiff F_T \right)_S 
+\end{align}
+
+Also ist die freie Energie ebenfalls ein thermodynamisches Potential.
+
+
+Analog erhält man noch zwei weitere wichtige thermodynamische Potentiale die \textbf{Enthalpie} \(H(S,p)\) 
+
+\begin{align}
+  \label{eq:10}
+  H(S,p) = U + pV
+\end{align}
+
+Aus der sich folgende Zustandsvariablen ableiten lassen
+
+\begin{align}
+  \label{eq:11}
+  T= \left(\pdiff H_S \right)_p  \qquad V = - \left(\pdiff H_p \right)_S 
+\end{align}
+und die \textbf{freie Enthalpie} bzw das \textbf{Gibbs-Potential} \(G(T,p)\)
+
+\begin{align}
+  \label{eq:12}
+  G(T,p) = U - TS + pV
+\end{align}
+
+Aus der sich folgende Zustandsvariablen ableiten lassen
+
+\begin{align}
+  \label{eq:13}
+  S= -\left(\pdiff G_T \right)_p  \qquad V =  \left(\pdiff G_p \right)_T
+\end{align}
+
+Alle vier Potentiale aus Gleichung (\ref{eq:1}) zusammengefasst:
+
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{lll}
+    Name&Funktion&differentielle Form\\
+\hline
+innere Energie&\(U(S,V)=U\)&\(dU = TdS-pdV\)\\
+freie Energie&\(F(T,V)=U-TS\)&\(dF=-SdT-pdV\)\\
+Entalpie & \(H(S,p)=U+PV\)&\(dH = TdS+VdP\)\\
+freie Entalpie & \(G(T,p)=U-TS+pV\)&\(dG = -SdT+Vdp\)
+  \end{tabular}
+\end{table}
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item Fließbach
+\item \url{http://141.20.44.172/ede/06theophys2/060630.pdf}
+\end{itemize}
+
+\end{document}
