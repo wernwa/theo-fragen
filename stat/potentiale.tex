@@ -129,6 +129,48 @@ freie Entalpie & \(G(T,p)=U-TS+pV\)&\(dG = -SdT+Vdp\)
 \end{table}
 
 
+Die thermodynamischen Potentiale lassen sich auf den Fall von mehreren äußeren Parametern \(x= (x_1,...,x_n)\) verallgemeinern. 
+
+\begin{align}
+  \label{eq:14}
+  \diff U = T\diff S - \sum_{i=1}^n X_i \diff{} x_i
+\end{align}
+
+Dies zum Beispiel ist die Verallgemeinerung von der differentiellen Form der inneren Energie (\ref{eq:2}), denn neben den Volumen \(V\) können zum Beispiel Teilchenzahl \(N\) und ein Magnetfeld \(B\) als äußerer Parameter auftreten. In diesem Fall wäre die differentielle Darstellung der inneren Energie
+
+\begin{align}
+  \label{eq:15}
+  \diff U = T\diff S - P\diff V - M\diff B + \mu \diff N
+\end{align}
+
+Durch Legendre-Transformation lassen sich neue thermodynamische Potentiale herleiten. Aus diesem Grund existieren so viele Potentiale wie Kombinationsmöglichkeiten der Zustandsvariablen \(n\) von Systemen.
+
+\subsection*{Maxwellrelationen}
+
+Da man die partiellen Ableitungen bei stetig differentierbaren Funktionen vertauschen kann d.h. \(\pdiff_y \pdiff f_x = \pdiff_x \pdiff f_y \), kann man die so genannten Maxwellrelationen herleiten. Mit Hilfe der Gleichungen (\ref{eq:3}) und (\ref{eq:4}) folgt
+
+ \begin{align}
+  \label{eq:16}
+  \left(\pdiff U_S\right)_V = T \qquad   \left(\pdiff U_V\right)_S = -p
+\end{align}
+
+\begin{align}
+  \label{eq:17}
+  \pdiff_V \underbr{\left(\pdiff U_S\right)}_{T} &= \pdiff_S \underbr{\left(\pdiff U_V\right)}_{-p} \\
+\left(\pdiff T_V\right) &= -\left(\pdiff p_S\right)
+\end{align}
+
+Analog lassen sich weitere Maxwellrelationen aus den uns bekannten Potentialen herleiten. Hier die Zusammenstellung aller möglichen Maxwellrelationen aus den hier vier besprochenen Potentialen
+
+\begin{align}
+  \label{eq:18}
+  -\left(\pdiff T_V\right)_S &= \left(\pdiff p_S\right)_V \qquad \text{ aus }dU \\
+  \left(\pdiff S_V\right)_T &= \left(\pdiff p_T\right)_V \qquad \text{ aus }dF  \\
+ \left(\pdiff T_p\right)_S &= \left(\pdiff V_S\right)_p \qquad \text{ aus }dH \\
+ - \left(\pdiff S_p\right)_T &= \left(\pdiff V_T\right)_p \qquad \text{ aus }dG 
+\end{align}
+
+
 \subsection*{Referenzen}
 \begin{itemize}
 \item Fließbach
