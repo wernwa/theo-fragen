@@ -9,12 +9,26 @@
 
 Wir möchten auf den Zusammenhang zwischen der Zustandssumme und der Freien Energie kommen. Dazu betrachten wir zunächst den dichte Operator für die kanonische Gesamtheit
 
+
 \begin{align}
-  \label{eq:1}
-  \rho = \frac{1}{Z}e^{-\beta E}
+  \label{eq:7}
+  \rho = \sum_n p_n \ket{\psi_n}\bra{\psi_n}
+\end{align}
+Die Wahrscheinlichkeit eines Zustandes \(p_n\) gilt
+
+\begin{align}
+  \label{eq:8}
+  p_n = \frac{1}{Z}e^{-\beta E_n}
 \end{align}
 
-mit \(Z\) der Zustandssumme und \(\beta=\frac{1}{k_B T}\). Man bildet von beiden Seiten der Gleichung (\ref{eq:1}) den Logarithmus
+somit ergibt sich für den Dichteoperator
+
+\begin{align}
+  \label{eq:1}
+  \rho = \sum_n \frac{1}{Z}e^{-\beta E_n} \ket{\psi_n}\bra{\psi_n} = \frac{1}{Z}e^{-\beta H}
+\end{align}
+
+Per definition mit \(H=E\) mit \(Z\) der Zustandssumme und \(\beta=\frac{1}{k_B T}\). Man bildet von beiden Seiten der Gleichung (\ref{eq:1}) den Logarithmus
 
 \begin{align}
   \label{eq:2}
