@@ -1,0 +1,65 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Zustandssumme und Freie Energie}
+
+Wir möchten auf den Zusammenhang zwischen der Zustandssumme und der Freien Energie kommen. Dazu betrachten wir zunächst den dichte Operator für die kanonische Gesamtheit
+
+\begin{align}
+  \label{eq:1}
+  \rho = \frac{1}{Z}e^{-\beta E}
+\end{align}
+
+mit \(Z\) der Zustandssumme und \(\beta=\frac{1}{k_B T}\). Man bildet von beiden Seiten der Gleichung (\ref{eq:1}) den Logarithmus
+
+\begin{align}
+  \label{eq:2}
+  \ln \rho &= \ln\left( \frac{1}{Z}e^{-\beta E} \right) = \ln\frac{1}{Z} + \ln\left( e^{-\beta E}\right) = - \ln Z -\beta E =  - \ln Z - \frac{E}{k_B T} \quad | \cdot k_B T \notag \\
+k_B T \ln \rho &=   - k_B T \ln Z - E
+\end{align}
+
+Mit der Beziehung zwischen der Entropie und dem Dichteoperator
+
+\begin{align}
+  \label{eq:3}
+  S = -k_B \ln\rho
+\end{align}
+
+eingesetzt in die Gleichung (\ref{eq:2}) folgt
+
+\begin{align}
+  \label{eq:4}
+  -TS &=  - k_B T \ln Z - E \notag \\
+\Leftrightarrow E - TS &=  - k_B T \ln Z
+\end{align}
+
+Die definition aus der Legendre-Transformation der Freien Energie lautet
+
+\begin{align}
+  \label{eq:5}
+  F = E - TS
+\end{align}
+
+Dies nun in Gleichung (\ref{eq:4}) eingesetzt ergibt unsere gesuchte Beziehung für die Freie Energie
+
+\begin{align}
+  \label{eq:6}
+\boxed{  F =  - k_B T \ln Z }
+\end{align}
+
+
+
+
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item 
+\end{itemize}
+
+\end{document}
