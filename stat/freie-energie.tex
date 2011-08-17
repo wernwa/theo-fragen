@@ -66,14 +66,71 @@ Dies nun in Gleichung (\ref{eq:4}) eingesetzt ergibt unsere gesuchte Beziehung f
 \end{align}
 
 
+\subsection{alternative Herleitung}
 
+
+
+\begin{align}
+  \label{eq:9}
+  S = - k_B\sum W_n ln W_n
+\end{align}
+
+mit
+
+\begin{align}
+  \label{eq:10}
+  W_n = \frac{1}{Z}e^{-\beta E_n}\qquad \text{ mit } \sum_n W_n = \frac{1}{Z}\sum_ne^{-\beta E_n} = 1
+\end{align}
+
+Daraus folgt die Definition für die Zustandsszumme
+
+\begin{align}
+  \label{eq:11}
+  Z = \sum_n e^{-\beta E_n}
+\end{align}
+Die Definition der Inneren Energie
+
+\begin{align}
+  \label{eq:12}
+  U = \sum_n W_n E_n
+\end{align}
+
+Die Gleichung (\ref{eq:10}) in die Gleichung (\ref{eq:12}) eingesetzt folgt
+
+\begin{align}
+  \label{eq:13}
+  U = \frac{1}{Z}\sum_n E_ne^{-\beta E_n}
+\end{align}
+
+Die Gleichung (\ref{eq:9}) ausgeschrieben lautet
+
+\begin{align}
+  \label{eq:15}
+  S &= -k_B \sum_n \frac{1}{Z}e^{-\beta E_n} \ln(\frac{1}{Z}e^{-\beta E_n}) \notag\\
+&= -k_B \sum_n \frac{1}{Z}e^{-\beta E_n} (-\beta E_n - \ln Z ) \notag\\
+&= k_B \beta \underbr{\sum_n \frac{E_n}{Z}e^{-\beta E_n}}_{\equiv U\,\, (\ref{eq:13})} + k_B \underbr{\sum_n \frac{1}{Z}e^{-\beta E_n}}_{\equiv 1\,\, (\ref{eq:10})} \ln Z  \notag\\
+&= k_B \beta U + k_B \ln Z
+\end{align}
+
+Setzen wir \(\beta=\frac{1}{k_B T}\) in die Gleichung (\ref{eq:15}) ein so ergibt sich
+
+\begin{align}
+  \label{eq:16}
+S &= k_B \frac{1}{k_B T} U + k_B \ln Z \qquad |\cdot T \notag \\
+TS &=  U + k_B T \ln Z \qquad |\cdot (-1) +U \notag \\
+\underbr{U - TS}_{F} &= - k_B T\ln Z 
+\end{align}
+Daraus folgt unsere gesuchte Formel für die freie Energie
+
+\begin{align}
+  \label{eq:17}
+  \boxed{ F= - k_BT\ln Z }
+\end{align}
 
 
 
 
 \subsection*{Referenzen}
-\begin{itemize}
-\item 
-\end{itemize}
+
 
 \end{document}
