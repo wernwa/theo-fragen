@@ -1,0 +1,93 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Zustandsdichte}
+
+Die Zustandsdichte ist definiert 
+
+\begin{align}
+  \label{eq:1}
+  \boxed{ D(\epsilon) = \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k)) }
+\end{align}
+
+Sie gibt die Anzahl der Systemzustäde pro Energieeinheit an. Als praktisch erweist sich eine Zustandsdichte pro Volumen und spin einzuführen
+
+\begin{align}
+  \label{eq:2}
+  \mathcal N(\epsilon) = \frac{1}{2s+1}\frac{1}{V} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+Im folgenden wollen wir die Zustandsdichte für Fermionen in 1, 2 und 3 Dimensionen berechnen.
+
+\subsection*{1D Zustandsdichte}
+
+Für Spin \(\frac{1}{2}\)-Fermionen gilt
+
+\begin{align}
+  \label{eq:3}
+  \mathcal N(\epsilon) = \frac{1}{2V} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+Wir nehmen an dass die Energiezustände dicht bei einander liegen, deswegen können wir die Summe als ein Integral ausdrücken. Im thermodynamischen Limes gilt
+
+\begin{align}
+  \label{eq:4}
+\boxed{  \frac{1}{L^d}\sum_{\vec k} \xrightarrow{L\to \infty} \int \frac{d^d k}{(2\pi)^d} }
+\end{align}
+
+Für 1-Dimension können wir die Formel (\ref{eq:3}) schreiben
+
+\begin{align}
+  \label{eq:5}
+  \mathcal N(\epsilon) = \frac{1}{2}  \int_{-\infty}^{\infty} \frac{d k}{(2\pi)} \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+
+Wir möchten das Integral nach \(\epsilon\) ausdrücken. Die Dispersion eines freien Teilchens lautet
+
+\begin{align}
+  \label{eq:6}
+  \epsilon(\vec k) = \frac{\hbar^2 \vec k^2}{2m} 
+\end{align}
+
+Nach \(\vec k\) umgestellt
+
+\begin{align}
+  \label{eq:7}
+  k = \sqrt{\frac{2m \epsilon}{\hbar^2}}
+\end{align}
+Differenziert nach \(d\epsilon\)
+
+\begin{align}
+  \label{eq:8}
+  \frac{d k}{d\epsilon} = \frac{1}{2} \sqrt{\frac{2m}{\hbar^2  \epsilon}} \qquad \Leftrightarrow \qquad dk = \frac{1}{2} \sqrt{\frac{2m}{\hbar^2  \epsilon}} d\epsilon
+\end{align}
+
+Eingesetzt in Gleichung (\ref{eq:5}) unter Beachtung dass das die Energie \(d\epsilon\) nicht negativ werden kann, folgt die Integration \(2\cdot\int_{0}^\infty\)
+
+\begin{align}
+  \label{eq:9}
+   \mathcal N(\epsilon) &= \int_{0}^{\infty} d\epsilon \frac{1}{2} \sqrt{\frac{2m}{\hbar^2  \epsilon}}  \frac{ 1}{(2\pi)} \delta(\epsilon - \epsilon(\vec k)) \qquad \\
+ &= \frac{1}{4\pi} \sqrt{\frac{2m}{\hbar^2}} \int_{-\infty}^{\infty} d\epsilon \frac{1}{\sqrt{\epsilon}}   \delta(\epsilon - \epsilon(\vec k)) \qquad \\
+ &= \frac{\sqrt{2m}}{4\pi\hbar}  \epsilon^{-\frac{1}{2}}(\vec k)  \qquad \\
+&\sim \epsilon^{-\frac{1}{2}}
+\end{align}
+
+\subsection*{2D Zustandssumme TODO}
+
+
+
+
+
+
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item Claude Cohen-Tannoudji Quantenmechanik Band 2
+\item Zettili Quanten Mehanics
+\item Rollnik Quantentheorie 2
+\end{itemize}
+
+\end{document}
