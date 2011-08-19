@@ -14,21 +14,27 @@ Die Zustandsdichte ist definiert
   \boxed{ D(\epsilon) = \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k)) }
 \end{align}
 
-Sie gibt die Anzahl der Systemzustäde pro Energieeinheit an. Als praktisch erweist sich eine Zustandsdichte pro Volumen und spin einzuführen
+Sie gibt die Anzahl der Systemzustäde pro Energieeinheit an. Als praktisch erweist sich eine Zustandsdichte pro Volumen
 
 \begin{align}
   \label{eq:2}
-  \mathcal N(\epsilon) = \frac{1}{2s+1}\frac{1}{V} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
+  \mathcal N(\epsilon) = \frac{1}{V} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
 \end{align}
-Im folgenden wollen wir die Zustandsdichte für Fermionen in 1, 2 und 3 Dimensionen berechnen.
+Im folgenden wollen wir die Zustandsdichte für spinlose Teilchen in 1, 2 und 3 Dimensionen berechnen. Die Polar- bzw. Kugelkoordianten für \(dk\) lauten in verschiedenen Dimensionen
+
+\begin{align}
+  d&=1:\quad dk = dk \label{eq:10.1} \\
+  d&=2:\quad d^2k = kdkd\phi \label{eq:10.2}\\
+  d&=3:\quad d^3k = k^2dk \sin(\theta)d\theta d\phi \label{eq:10.3}
+\end{align}
 
 \subsection*{1D Zustandsdichte}
 
-Für Spin \(\frac{1}{2}\)-Fermionen gilt
+Für 1 Dimension gilt für die Zustandsdichte
 
 \begin{align}
   \label{eq:3}
-  \mathcal N(\epsilon) = \frac{1}{2V} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
+  \mathcal N(\epsilon) = \frac{1}{V} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
 \end{align}
 Wir nehmen an dass die Energiezustände dicht bei einander liegen, deswegen können wir die Summe als ein Integral ausdrücken. Im thermodynamischen Limes gilt
 
@@ -37,11 +43,11 @@ Wir nehmen an dass die Energiezustände dicht bei einander liegen, deswegen kön
 \boxed{  \frac{1}{L^d}\sum_{\vec k} \xrightarrow{L\to \infty} \int \frac{d^d k}{(2\pi)^d} }
 \end{align}
 
-Für 1-Dimension können wir die Formel (\ref{eq:3}) schreiben
+Für 1-Dimension können wir die Formel (\ref{eq:3}) schreiben (mit Hilfe (\ref{eq:10.3}))
 
 \begin{align}
   \label{eq:5}
-  \mathcal N(\epsilon) = \frac{1}{2}  \int_{-\infty}^{\infty} \frac{d k}{(2\pi)} \delta(\epsilon - \epsilon(\vec k))
+  \mathcal N(\epsilon) =  \int_{-\infty}^{\infty} \frac{d k}{(2\pi)} \delta(\epsilon - \epsilon(\vec k))
 \end{align}
 
 Wir möchten das Integral nach \(\epsilon\) ausdrücken. Die Dispersion eines freien Teilchens lautet
@@ -68,16 +74,94 @@ Eingesetzt in Gleichung (\ref{eq:5}) unter Beachtung dass das die Energie \(d\ep
 
 \begin{align}
   \label{eq:9}
-   \mathcal N(\epsilon) &= \int_{0}^{\infty} d\epsilon \frac{1}{2} \sqrt{\frac{2m}{\hbar^2  \epsilon}}  \frac{ 1}{(2\pi)} \delta(\epsilon - \epsilon(\vec k)) \qquad \\
- &= \frac{1}{4\pi} \sqrt{\frac{2m}{\hbar^2}} \int_{-\infty}^{\infty} d\epsilon \frac{1}{\sqrt{\epsilon}}   \delta(\epsilon - \epsilon(\vec k)) \qquad \\
- &= \frac{\sqrt{2m}}{4\pi\hbar}  \epsilon^{-\frac{1}{2}}(\vec k)  \qquad \\
+   \mathcal N(\epsilon) &= \int_{0}^{\infty} d\epsilon  \sqrt{\frac{2m}{\hbar^2  \epsilon}}  \frac{ 1}{(2\pi)} \delta(\epsilon - \epsilon(\vec k)) \qquad \\
+ &= \frac{1}{2\pi} \sqrt{\frac{2m}{\hbar^2}} \int_{-\infty}^{\infty} d\epsilon \frac{1}{\sqrt{\epsilon}}   \delta(\epsilon - \epsilon(\vec k)) \qquad \\
+ &= \frac{\sqrt{2m}}{2\pi\hbar}  \epsilon^{-\frac{1}{2}}(\vec k)  \qquad \\
 &\sim \epsilon^{-\frac{1}{2}}
 \end{align}
 
-\subsection*{2D Zustandssumme TODO}
+\subsection*{2D Zustandsdichte}
+
+Im 2 Dimensionalen Fall lauten die Gleichung (\ref{eq:2}) folgendermaßen
+
+\begin{align}
+  \label{eq:11}
+  \mathcal N(\epsilon) = \frac{1}{L^2} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+wir ersetzen die Summe durch das Integral laut (\ref{eq:4}) lautet die Gleichung nun
+
+\begin{align}
+  \label{eq:12}
+  \mathcal N(\epsilon) =  \int \frac{d^2 k}{(2\pi)^2}  \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+
+Mit der Relation (\ref{eq:10.2}) für \(dk\) in 2D
+
+\begin{align}
+  \label{eq:13}
+  \mathcal N(\epsilon) &=\frac{1}{(2\pi)^2} \int_0^{2\pi}d\phi \int_0^{\infty} dk \,\, k   \delta(\epsilon - \epsilon(\vec k))  \notag\\
+   &=\frac{1}{2\pi} \int_0^{\infty} dk \,\, k   \delta(\epsilon - \epsilon(\vec k)) \qquad \text{ mit }dk = \frac{1}{2} \sqrt{\frac{2m}{\hbar^2  \epsilon}} d\epsilon \text{ und }  k = \sqrt{\frac{2m \epsilon}{\hbar^2}} \notag\\
+   &=\frac{m}{2\pi\hbar^2 } \int_0^{\infty} d\epsilon \,\,  \delta(\epsilon - \epsilon(\vec k)) \notag\\
+ &=\frac{m}{2\pi\hbar^2 } = \text{const}
+\end{align}
+
+\subsection*{3D Zustandsdichte}
+
+Im 3 Dimensionalen Fall lauten die Gleichung (\ref{eq:2}) folgendermaßen
+
+\begin{align}
+  \label{eq:14}
+  \mathcal N(\epsilon) = \frac{1}{L^3} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+
+wir ersetzen die Summe durch das Integral laut (\ref{eq:4}) lautet die Gleichung nun
+
+\begin{align}
+  \label{eq:15}
+  \mathcal N(\epsilon) =  \int \frac{d^3 k}{(2\pi)^3}  \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+
+Mit der Relation (\ref{eq:10.3}) für \(dk\) in 3D
+
+\begin{align}
+  \label{eq:16}
+  \mathcal N(\epsilon) &=\frac{1}{(2\pi)^3} \underbr{\int_0^{2\pi}d\phi \int_0^{\pi}\sin\theta d\theta }_{4\pi} \int_0^{\infty} dk \,\, k^2   \delta(\epsilon - \epsilon(\vec k))  \notag\\
+&=\frac{2}{(2\pi)^2}\int_0^{\infty} dk \,\, k^2   \delta(\epsilon - \epsilon(\vec k))  \qquad \text{ mit }dk = \frac{1}{2} \sqrt{\frac{2m}{\hbar^2  \epsilon}} d\epsilon \text{ und }  k^2 = \frac{2m \epsilon}{\hbar^2} \notag\\
+&=\frac{2}{(2\pi)^2}\int_0^{\infty} \frac{1}{2} \sqrt{\frac{2m}{\hbar^2  \epsilon}} d\epsilon \,\, \frac{2m \epsilon}{\hbar^2}  \delta(\epsilon - \epsilon(\vec k))  \notag\\
+&=\frac{1}{(2\pi)^2} \left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}}  \int_0^{\infty}  d\epsilon \,\, \sqrt{\epsilon} \,\, \delta(\epsilon - \epsilon(\vec k))  \notag\\
+&=\frac{1}{(2\pi)^2} \left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}} \sqrt{\epsilon(\vec k)}\notag\\
+&\sim \sqrt{\epsilon}
+\end{align}
 
 
+Die Zustandsdichte in 1,2 und 3 Dimensionen zusammengefasst
 
+\begin{equation}
+  \label{eq:10}
+ \boxed{ \begin{aligned}
+       d&=1: \quad \mathcal N(\epsilon) = \frac{\sqrt{2m}}{2\pi\hbar}  \epsilon^{-\frac{1}{2}}(\vec k) \sim \frac{1}{\sqrt{\epsilon}} \\
+d&=2: \quad \mathcal N(\epsilon) = \frac{m}{2\pi\hbar^2 } = \text{const} \\
+d&=3: \quad \mathcal N(\epsilon) = \frac{1}{(2\pi)^2} \left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}} \sqrt{\epsilon(\vec k)}\sim \sqrt{\epsilon}
+  \end{aligned}  }
+\end{equation}
+
+
+Betrachtet man noch den Spin des Teilchens, so lautet die Gleichung (\ref{eq:2})
+
+\begin{align}
+  \label{eq:17}
+  \mathcal N(\epsilon) = (2s+1)\frac{1}{V} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+Damit ändert sich die Zustandsdichte jeweils um den Faktor \(2s+1\). D.h. für Teilchein mit Spin \(\frac{1}{2}\) folgt
+
+\begin{align}
+  \label{eq:19}
+   \boxed{ \begin{aligned}
+       d&=1: \quad \mathcal N(\epsilon) = 2\frac{\sqrt{2m}}{2\pi\hbar}  \epsilon^{-\frac{1}{2}}(\vec k) \sim \frac{1}{\sqrt{\epsilon}} \\
+d&=2: \quad \mathcal N(\epsilon) = \frac{m}{\pi\hbar^2 } = \text{const} \\
+d&=3: \quad \mathcal N(\epsilon) = \frac{1}{2\pi^2} \left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}} \sqrt{\epsilon(\vec k)}\sim \sqrt{\epsilon}
+  \end{aligned}  }
+\end{align}
 
 
 
