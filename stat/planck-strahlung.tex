@@ -1,0 +1,120 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Planck Strahlungsgesetz}
+
+Wir möchten das Planck Strahlungsgesetz aus der Photonen-Zustandsdichte herleiten. Wir betrachen Bosonenteilchen  für die gilt
+
+\begin{align}
+  \label{eq:1}
+  \omega = c |\vec k| \qquad \epsilon = \hbar \omega = \hbar c k
+\end{align}
+
+Die Definition der Zustandsdichte für 3 Dimensionen lautet
+
+\begin{align}
+  \label{eq:2}
+  \mathcal N (\epsilon) = \frac{1}{V}\sum_{\vec k} \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+Machen wir die klassische Ersetzung der Summe durch das Integral so folgt
+
+\begin{align}
+  \label{eq:3}
+  \mathcal N (\epsilon) = \int \frac{d^3k}{(2\pi)^3} \delta(\epsilon - \epsilon(\vec k))
+\end{align}
+Wir nehmen dazu die Kugelkoordinaten \(d^3k = k^2dk \sin\theta d\theta d\phi\) und da die Zustandsdichte nicht von Winkeln abhängt, liefert die Integration \( \int \sin\theta d\theta d\phi=4\pi\). Dies in Gleichung (\ref{eq:3}) eingesetzt ergibt
+
+\begin{align}
+  \label{eq:4}
+   \mathcal N (\epsilon) &= \frac{2}{(2\pi)^2}  \int dk k^2 \delta(\epsilon - \epsilon(\vec k)) \qquad \text{mit }k=\frac{\epsilon}{\hbar c},\quad dk = \frac{1}{\hbar c}d\epsilon \notag\\
+ &= \frac{2}{(2\pi)^2}  \int \frac{1}{\hbar c}d\epsilon \frac{\epsilon^2}{\hbar^2 c^2} \delta(\epsilon - \epsilon(\vec k)) \notag\\
+&= \frac{2}{(2\pi)^2 \hbar^3 c^3}  \int d\epsilon \epsilon^2 \delta(\epsilon - \epsilon(\vec k)) \notag\\
+&= \frac{2 \epsilon^2}{(2\pi)^2 \hbar^3 c^3} 
+\end{align}
+
+Wir müssen noch berücksichtigen dass es 2 Polarisationen für das Licht gibt, deswegen müssen wir das Ergebnis mit Faktor 2 multiplizieren und erhalten somit
+
+\begin{align}
+  \label{eq:5}
+   \mathcal N (\epsilon) &= \frac{ \epsilon^2}{\pi^2 \hbar^3 c^3} 
+\end{align}
+
+Für die weitere Berechnung ist es geschickt die Zustandsdichte in Abhängigkeit der Kreisfrequenz \(\omega\) auszudrücken. Mit Hilfe der Gleichung (\ref{eq:1}) erhalten wir
+
+\begin{align}
+  \label{eq:6}
+   \mathcal N (\omega) &= \frac{ \omega^2}{\pi^2 \hbar c^3} 
+\end{align}
+
+Das Plancksche-Gesetz beschreibt die Energiedichte pro Frequenzintervall. Die Innere Energie lässt sich bestimmen mit
+
+\begin{align}
+  \label{eq:7}
+  U = V\int d\epsilon\,\mathcal N(\epsilon) \epsilon \frac{1}{e^{\beta \epsilon}-1} 
+\end{align}
+Ersetzen wir die Abhängigkeit von \(\epsilon\) durch die Abhängigkeit von \(\omega\) so folgt
+
+\begin{align}
+  \label{eq:8}
+  U =\hbar^2 V\int d\omega\,\mathcal N(\epsilon) \omega \frac{1}{e^{\beta \hbar\omega}-1} \qquad \text{mit }\epsilon =\hbar\omega,\quad d\epsilon = \hbar d\omega 
+\end{align}
+
+Betrachten wir ferner die Innere Energie pro Frequenz-Intervall
+
+\begin{align}
+  \label{eq:9}
+  u(\omega) = \frac{dU}{d\omega} =  \hbar^2 V \mathcal N(\epsilon) \omega \frac{1}{e^{\beta \hbar\omega}-1}
+\end{align}
+Setzen wir noch die Zustandsdichte aus Gleichung (\ref{eq:6}) ein
+
+\begin{align}
+  \label{eq:10}
+   u(\omega) &= \hbar^2 V \frac{ \omega^2}{\pi^2 \hbar c^3}  \omega \frac{1}{e^{\beta \hbar\omega}-1} \notag \\
+ &=  V \frac{\hbar  \omega^3}{\pi^2  c^3} \frac{1}{e^{\beta \hbar\omega}-1} 
+\end{align}
+
+Im wesentlichen stellt die Gleichung (\ref{eq:10}) das schon aus der klassischen Physik bekannte \textbf{plancksche Strahlungsgesetz} dar. In der Literatur wird das plancksche Strahlungsgesetz oft als Energiedichte pro Frequenzintervall und pro Volumen angegeben. Damit ändert sich die Gleichung (\ref{eq:10}) zu
+
+\begin{align}
+  \label{eq:11}
+  \boxed{    u(\omega) = \frac{\hbar  \omega^3}{\pi^2  c^3} \frac{1}{e^{\beta \hbar\omega}-1}   }
+\end{align}
+
+Als weiteres betrachten wir zwei Grenzfälle.
+
+\begin{itemize}
+\item[\(\hbar\omega\ll k_B T\)] Hieraus folgt
+
+
+  \begin{align}
+    \label{eq:12}
+   u(\omega) &=  \frac{\hbar  \omega^3}{\pi^2  c^3} \frac{1}{\underbr{\exp\{\frac{\hbar\omega}{k_B T}}_{\approx 1+\frac{\hbar\omega}{k_B T}+\cdots} \}-1} \notag\\
+&\approx  \frac{\hbar  \omega^3}{\pi^2  c^3} \frac{1}{  1 + \frac{\hbar\omega}{k_B T} -1} \notag\\
+&=  \frac{k_B T \omega^2}{\pi^2  c^3} \notag\\
+  \end{align}
+Die Gleichung (\ref{eq:12}) ist als \textbf{Rayleigh-Jeans-Gesetz} bekannt. Es zeigt die sogenannte Ultraviolett-Katastrophe (UV-Katastrophe), da es für große Frequenzen \(\omega\) divergiert also \(u(\omega\to \infty)= \infty\). Dies würde bedeuten dass unendlich viel Leistung bei einem Schwarz-Körper abgestrahlt würde. Was gegen die Energieerhaltung spricht.
+
+\item[\(\hbar\omega \gg k_B T\)] Hierraus folgt
+
+  \begin{align}
+    \label{eq:13}
+    u(\omega) &=  \frac{\hbar  \omega^3}{\pi^2  c^3} \frac{1}{\underbr{\exp\{\frac{\hbar\omega}{k_B T}}_{\text{groß gegenüber der -1, somit vernachlässige -1}} \}-1} \notag\\
+ &\approx  \frac{\hbar  \omega^3}{\pi^2  c^3} e^{-\frac{\hbar\omega}{k_B T}} \notag\\
+  \end{align}
+Diese Gleichung (\ref{eq:13}) ist unter dem Begriff \textbf{Wiensches Strahlungsgesetz} bekannt. 
+\end{itemize}
+
+Die Funktion \(\frac{x^3}{e^x-1}\) hat bei \(x=2.82\) ihr einziges Maximum. Daraus folgt das Wiensche Verschiebungsgesetz \(\hbar\omega_{\text{max}}  = 2.82 k_B T\) das eine strickte Proportionalität zwischen \(\omega_{\text{max}}\) und \(T\)
+
+
+\subsection*{Referenzen}
+\begin{itemize}
+\item \url{http://t1.physik.tu-dortmund.de/uhrig/teaching/tus_ws0910/tus-ws0910.pdf}
+\item \url{http://www.tkm.uni-karlsruhe.de/~rachel/MV_StatPhys.pdf}
+\end{itemize}
+
+\end{document}
