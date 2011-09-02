@@ -52,11 +52,11 @@ Ersetze \(n\) mit \(n-1\):
 
 \begin{align}
   \label{eq:7}
-  \Rightarrow c_n &= \frac{\alpha}{\sqrt{n}}c_{n-1}\\
-c_1 &=  \frac{\alpha}{\sqrt{1}}c_{0}\\
-c_2 &=  \frac{\alpha}{\sqrt{2}}c_{1} =\frac{\alpha}{\sqrt{2}}\frac{\alpha}{\sqrt{1}}c_{0} \\
-c_3 &=  \frac{\alpha}{\sqrt{3}}c_{2} =  \frac{\alpha}{\sqrt{3}} \frac{\alpha}{\sqrt{2}}\frac{\alpha}{\sqrt{1}}c_{0}\\
-\vdots\\
+  \Rightarrow c_n &= \frac{\alpha}{\sqrt{n}}c_{n-1} \notag\\
+c_1 &=  \frac{\alpha}{\sqrt{1}}c_{0} \notag\\
+c_2 &=  \frac{\alpha}{\sqrt{2}}c_{1} =\frac{\alpha}{\sqrt{2}}\frac{\alpha}{\sqrt{1}}c_{0}  \notag \\
+c_3 &=  \frac{\alpha}{\sqrt{3}}c_{2} =  \frac{\alpha}{\sqrt{3}} \frac{\alpha}{\sqrt{2}}\frac{\alpha}{\sqrt{1}}c_{0}  \notag\\
+\vdots \notag\\
 c_n &=  \frac{\alpha^n}{\sqrt{n!}}c_{0}
 \end{align}
 
@@ -71,8 +71,8 @@ Bestimmen des \(c_0\) durch Normierungsbedinung:
 
 \begin{align}
   \label{eq:9}
-  \langle \alpha | \alpha \rangle  &= \underbrace{\sum_{n=0}^{\infty} \frac{|\alpha|^{2n}}{n!}}_{e^{|\alpha|^2}} |c_0|^2 \underbrace{\langle n|n\rangle}_{=1} \\
-&= e^{|\alpha|^2}|c_0|^2 \stackrel{!}= 1 \\
+  \langle \alpha | \alpha \rangle  &= \underbrace{\sum_{n=0}^{\infty} \frac{|\alpha|^{2n}}{n!}}_{e^{|\alpha|^2}} |c_0|^2 \underbrace{\langle n|n\rangle}_{=1} \notag\\
+&= e^{|\alpha|^2}|c_0|^2 \stackrel{!}= 1 \notag \\
  &\Leftrightarrow c_0 = e^{-\frac{|\alpha|^2}{2}} 
 \end{align}
 
@@ -91,7 +91,7 @@ In Fock-Raum-Schreibweise ergibt sich der kohärente Zustand \(|\alpha\rangle\) 
 Wir wollen zeigen, dass für die kohärente Zustände \(|\alpha\rangle \) minimale Unschärfe für Orts- und Impuls-Operator gilt die mit der Heisenbergschen Unschärferelation verträglich ist. Dazu benötigen wir die Darstellung des  Orts- und Impuls-Operators als Auf- und Absteigeoperatoren:
 
 \begin{align}
-  x &= \sqrt{ \frac{\hbar}{2m\omega}} (a^\dagger+a)\\ \label{eq:11}
+  x &= \sqrt{ \frac{\hbar}{2m\omega}} (a^\dagger+a) \label{eq:11}\\
   p &= i\sqrt{ \frac{\hbar m\omega}{2}} (a^\dagger-a) \label{eq:12}
 \end{align}
 
@@ -105,30 +105,30 @@ Zu berechnen ist die Orts- und Impuls Unschärfe:
 
 \begin{align}
   \label{eq:15}
-  \langle x^2\rangle &= \langle \alpha|x^2|\alpha\rangle \\
-  &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger + a)^2|\alpha\rangle\\
-  &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger)^2 + a^\dagger a+aa^\dagger +a^2|\alpha\rangle \qquad \text{mit } [a,a^\dagger] = 1\\
-   &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger)^2 + a^\dagger a+1+a^\dagger a +a^2|\alpha\rangle\\
-   &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger)^2 + 2 a^\dagger a+1 +a^2|\alpha\rangle\\
-   &= \frac{\hbar}{2m\omega}\left(\langle \alpha|(a^\dagger)^2|\alpha\rangle + 2\langle \alpha| a^\dagger a|\alpha\rangle+ 1 +\langle \alpha| a^2|\alpha\rangle\right)\\
-   &= \frac{\hbar}{2m\omega}\left((\alpha^*)^2 + 2| \alpha|^2 + 1 + \alpha^2\right)\\
-   &= \frac{\hbar}{2m\omega}\left((\alpha^*+\alpha)^2 + 1\right)\\
+  \langle x^2\rangle &= \langle \alpha|x^2|\alpha\rangle \notag\\
+  &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger + a)^2|\alpha\rangle \notag\\
+  &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger)^2 + a^\dagger a+aa^\dagger +a^2|\alpha\rangle \qquad \text{mit } [a,a^\dagger] = 1 \notag\\
+   &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger)^2 + a^\dagger a+1+a^\dagger a +a^2|\alpha\rangle \notag\\
+   &= \frac{\hbar}{2m\omega}\langle \alpha|(a^\dagger)^2 + 2 a^\dagger a+1 +a^2|\alpha\rangle\notag\\
+   &= \frac{\hbar}{2m\omega}\left(\langle \alpha|(a^\dagger)^2|\alpha\rangle + 2\langle \alpha| a^\dagger a|\alpha\rangle+ 1 +\langle \alpha| a^2|\alpha\rangle\right)\notag \\
+   &= \frac{\hbar}{2m\omega}\left((\alpha^*)^2 + 2| \alpha|^2 + 1 + \alpha^2\right) \notag\\
+   &= \frac{\hbar}{2m\omega}\left((\alpha^*+\alpha)^2 + 1\right)
 \end{align}
 
 \begin{align}
   \label{eq:16}
-   \langle x\rangle &= \langle \alpha|x|\alpha\rangle \\
- &= \sqrt{ \frac{\hbar}{2m\omega}}\langle \alpha|(a^\dagger + a)|\alpha\rangle\\
- &= \sqrt{\frac{\hbar}{2m\omega}}(\langle \alpha|a^\dagger|\alpha\rangle +\langle \alpha| a|\alpha\rangle)\\
- &= \sqrt{\frac{\hbar}{2m\omega}}(\alpha^* + \alpha)\\
+   \langle x\rangle &= \langle \alpha|x|\alpha\rangle  \notag\\
+ &= \sqrt{ \frac{\hbar}{2m\omega}}\langle \alpha|(a^\dagger + a)|\alpha\rangle \notag\\
+ &= \sqrt{\frac{\hbar}{2m\omega}}(\langle \alpha|a^\dagger|\alpha\rangle +\langle \alpha| a|\alpha\rangle)\notag \\
+ &= \sqrt{\frac{\hbar}{2m\omega}}(\alpha^* + \alpha)
 \end{align}
 
 Die Erwartungswerte \eqref{eq:15} und \eqref{eq:16} in \eqref{eq:13} einsetzen ergibt:
 
 \begin{align}
   \label{eq:17}
-  \Delta x &= \sqrt{ \langle x^2\rangle -\langle x\rangle^2 }\\
- &=\sqrt{\frac{\hbar}{2m\omega}[\cancel{( \alpha^*+\alpha)^2} + 1 - \cancel{ (\alpha^* + \alpha)^2}  ]}\\
+  \Delta x &= \sqrt{ \langle x^2\rangle -\langle x\rangle^2 }  \notag\\
+ &=\sqrt{\frac{\hbar}{2m\omega}[\cancel{( \alpha^*+\alpha)^2} + 1 - \cancel{ (\alpha^* + \alpha)^2}  ]} \notag\\
  &=\sqrt{\frac{\hbar}{2m\omega}}
 \end{align}
 
@@ -146,5 +146,14 @@ Daraus folgt für Unschärferelation:
   \Delta x\cdot\Delta p = \sqrt{\frac{\hbar}{2m\omega}} \sqrt{\frac{\hbar \omega m}{2}} = \frac{\hbar}{2}
 \end{equation}
 
+
+\subsection{Zusammenfassung; Eigenschaften}
+
+\begin{itemize}
+\item Eigenzustände des Absteigeoperators \(a\) (auch des Vektorpotentials \(\vec A\))
+\item minimale Unschärfe
+\item behalten diese Unschärfe auch unter Zeitentwicklung bei
+\item Im Fokraum \(a\) und \(a^\dagger\) spielen die Rolle von Vernichtungs- bzw. Erzeuge-Operatoren für Teilchen
+\end{itemize}
 
 \end{document}
