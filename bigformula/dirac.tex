@@ -1,0 +1,30 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+Ansatz für den Hamiltonoperator
+\begin{align*}
+H = c\sum_{i=1}^3\alpha_ip_i + \beta mc^2 \quad \text{mit } \quad H^2=E^2=p^2c^2 + m^2c^4
+\end{align*}
+Daraus folgen folgende Eigenschaften für \(\alpha_i\) und \(\beta\) 
+\begin{align*}
+\alpha^2_i=\beta^2=\mathds 1\quad \{\alpha_i,\beta\} = 0\quad \{\alpha_i,\alpha_j\}=2\delta_{ij}
+\end{align*}
+Damit ergibt sich die \textbf{Dirac-Gleichung} in \underline{kanonischer} Form
+\begin{align*}
+c\left( \vec\alpha\cdot \frac{\hbar}{i}\vec \nabla + \beta mc\right)\psi(x) = i\hbar\pdiff_t\psi(x)\quad \alpha_i =\begin{pmatrix}0&\sigma_i\\\sigma_i&0  \end{pmatrix} \quad \beta=\begin{pmatrix}\mathds 1_2&0\\0&\mathds 1_2  \end{pmatrix}
+\end{align*}
+Die Dirac-Gleichung in \underline{kovarianter} Form
+\begin{align*}
+\left( i\gamma^\mu\partial_\mu - \frac{m c}{\hbar} \right)\psi = 0
+\end{align*}
+\begin{align*}
+\gamma^0 = \beta \quad \gamma^i = \beta\alpha_i \quad \{\gamma^i,\gamma^j\}=-2\delta_{ij} \quad \{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu}
+\end{align*}
+
+
+}%end Huge
+
+\end{document}
