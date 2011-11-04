@@ -1,0 +1,27 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+
+\begin{align*}
+\ket{\alpha}\cdot\ket{JM} =  \ket{\alpha}\cdot\sum_{m,q} \braket{jk;mq}{JM} \overbr{\ket{k,q}}^{ T^{(k)}_q }\otimes\ket{jm}\notag 
+\end{align*}
+Normierungsbedingung: \(\braket{JM}{JM} = \sum_{mq}|\braket{jk;mq}{JM} |^2 \stackrel{!}= 1\)
+\begin{align*}
+   T^{(k)}_q  \ket{\alpha;jm} = \sum_{JM}\ket{\alpha; JM} \braket{jk;mq}{JM}
+\end{align*}
+
+\begin{align*}
+   \bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} =   \braket{jk;mq}{jm} \underbr{\braket{\alpha;jm}{\alpha; jm}}_{\text{reduziertes Matrixelement}}
+\end{align*}
+
+\textbf{Wigner-Eckert-Theorem}
+\begin{align*}
+  \boxed{\bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} =  \braket{jk;mq}{jm} \langle \alpha;j || T^{(q)}_k || \alpha; j \rangle }
+\end{align*}
+
+}%end Huge
+
+\end{document}

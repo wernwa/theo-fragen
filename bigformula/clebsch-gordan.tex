@@ -1,0 +1,37 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+\begin{align*}
+ \ket{J,M}&= \sum_{m_1,m_2} 
+   \underbrace{\braket{j_1,j_2;m_1,m_2}{J,M}}_
+   {\text{\textbf{Clebsch-Gordan Koef.}}}
+   \ket{j_1,j_2;m_1,m_2}
+\end{align*}
+Mit  \(|j_1-j_2|\leq J\leq j_1+j_2\) und \( M=m_1+m_2\)\\
+Da Clebsch-Gordan Koef. \underline{\textit{orthogonal}} und \underline{\textit{reell}} folgt
+\begin{align*}
+  \sum_{m_1,m_2}\braket{j_1,j_2;m_1m_2}{J,M}^2= \sum_{J}\sum_{M}\braket{j_1,j_2;m_1m_2}{J,M}^2= 1
+\end{align*}
+\emph{Condon-Shortley Phasenkonvention} \(\braket{j_1,j_2;j_1,(J-j_1)}{J,J}\) \underline{positiv} \(\Rightarrow\) \(\braket{j_1,j_2;j_1,j_2}{J,J}=\braket{j_1,j_2;-j_1,-j_2}{J,-J}=1\) mit \(J=j_1+j_2\)
+
+\begin{equation*}
+  \boxed{
+    \begin{split}
+      &\sqrt{(J\mp M)
+        (J\pm M+1)}\braket{j_1,j_2;m_1,m_2}{J,M\pm 1}\\
+      &\qquad
+      = \sqrt{(j_1\pm m_1)(j_1\mp m_1+1)}
+      \braket{j_1,j_2;,m_1\mp 1,m_2}{J,M}\\
+      &\qquad\qquad
+      +\sqrt{(j_2\pm m_2)(j_2\mp m_2+1)}
+      \braket{j_1,j_2;m_1,m_2\mp 1}{J,M}
+    \end{split}}
+\end{equation*}
+
+
+}%end Huge
+
+\end{document}

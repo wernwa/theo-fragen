@@ -1,0 +1,25 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+Differentieller Wirkungsquerschnitt: \( \frac{d\sigma}{d\Omega} = \frac{ J_{\text{gestr}}r^2 }{J_{\text{ein}}} \equiv |f(\theta,\phi)|^2 \)
+
+\begin{align*}
+  \psi = \phi_{\text{ein}}+ \phi_{\text{gestr}} = A e^{i\vec k_{0}\vec r} + A f(\theta,\phi)\frac{e^{i\vec k\vec r}}{r} 
+\end{align*}
+
+\begin{align*}
+   \psi(\vec r) &\stackrel{\vec r\to \infty}=  Ae^{i\vec k \vec r}  - A \underbr{\left[\frac{\mu}{2\pi\hbar^2}\int_{-\infty}^\infty e^{- i\vec k\vec r' }  V(r') \psi(\vec r') d^3 r'\right]}_{ \equiv  f(\theta,\phi)  } \frac{ e^{i kr }}{r} 
+\end{align*}
+
+Bornsche Näherung 1-Ordnung \(\psi(\vec r')=Ae^{i\vec k\vec r'}\)
+
+\begin{align*}
+  \frac{d\sigma}{d\Omega}= \frac{\mu^2}{4\pi^2\hbar^4} |\langle\phi_{\text{ein}}|  V |\psi\rangle |^2 = \frac{\mu^2}{4\pi^2\hbar^4} \left| \int_{-\infty}^\infty e^{- i\vec k\vec r' }  V(r') \psi(\vec r') d^3 r' \right|^2
+\end{align*}
+
+}%end Huge
+
+\end{document}

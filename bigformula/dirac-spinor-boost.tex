@@ -1,0 +1,44 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+Dirac-Spinor: \( \psi(x) = e^{-\frac{i}{\hbar}p\cdot x}w_r(\vec p) \text{ mit }  r=1,2,3,4 \)\\
+Dirac-Spinor \textbf{im Ruhesystem des Teilchens} \( \psi(x) = e^{-\frac{i}{\hbar}Et  }w_r(0) \)
+Eingesetzt in die Dirac-Gleichung \( \left(\gamma^\mu p_\mu - mc\right)\psi(x) = 0 \) folgt
+
+\begin{align*}
+   \begin{pmatrix}
+    \frac{E}{c} - mc&0&0&0\\
+    0&\frac{E}{c} - mc&0&0\\ 
+    0&0&-\frac{E}{c} - mc&0\\
+    0&0&0&-\frac{E}{c} - mc
+  \end{pmatrix} w_r(0) &=0
+\end{align*}
+
+Vier Lösungen zu je zwei Eigenwerten mit \(E=mc^2\)
+
+\(
+   w_1(0) =
+  \begin{pmatrix}
+    1\\0\\0\\0
+  \end{pmatrix}\quad  
+  w_2(0) =
+  \begin{pmatrix}
+    0\\1\\0\\0
+  \end{pmatrix}\quad  
+ w_3(0) =
+  \begin{pmatrix}
+    0\\0\\1\\0
+  \end{pmatrix}\quad  
+ w_4(0) =
+  \begin{pmatrix}
+    0\\0\\0\\1
+  \end{pmatrix}
+\)
+
+
+}%end Huge
+
+\end{document}
