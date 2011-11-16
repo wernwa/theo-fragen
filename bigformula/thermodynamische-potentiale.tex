@@ -1,0 +1,37 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+\textbf{Thermodynamische Potentiale} (Umwandlung mit Legendre-Trafo)
+}%end Huge
+
+\begin{table}[h]
+\Huge
+  \centering
+  \begin{tabular}{lll}
+    Name&Funktion&differentielle Form\\
+\hline
+innere Energie&\(U(S,V)=U\)&\(dU = TdS-pdV\)\\
+freie Energie&\(F(T,V)=U-TS\)&\(dF=-SdT-pdV\)\\
+Entalpie & \(H(S,p)=U+PV\)&\(dH = TdS+VdP\)\\
+freie Entalpie & \(G(T,p)=U-TS+pV\)&\(dG = -SdT+Vdp\)
+
+  \end{tabular}
+\end{table}
+\vphantom{X}
+{\Huge
+\textbf{Maxwellrelationen} unter Berücksichtigung: \(\pdiff_y \pdiff f_x = \pdiff_x \pdiff f_y \)
+\begin{align*}
+  -\left(\pdiff T_V\right)_S &= \left(\pdiff p_S\right)_V  \text{ aus }dU \quad 
+ \hphantom{-} \left(\pdiff S_V\right)_T = \left(\pdiff p_T\right)_V  \text{ aus }dF \quad \\
+ \left(\pdiff T_p\right)_S &= \left(\pdiff V_S\right)_p  \text{ aus }dH \quad
+ - \left(\pdiff S_p\right)_T = \left(\pdiff V_T\right)_p  \text{ aus }dG \quad
+\end{align*}
+
+}%end Huge
+
+
+
+\end{document}

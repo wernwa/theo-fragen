@@ -1,0 +1,24 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+Zustandsdichte für freie Teilchen mit \(\epsilon(\vec k) = \frac{\hbar^2 \vec k^2}{2m}\)  
+\begin{align*}
+\mathcal N(\epsilon) &= \frac{1}{V} \sum_{\vec k} \delta(\epsilon - \epsilon(\vec k)) \text{ mit }\frac{1}{L^d}\sum_{\vec k} \xrightarrow{L\to \infty} \int \frac{d^d k}{(2\pi)^d}
+\end{align*}
+\begin{align*}
+ \mathcal N(\epsilon) =  \int_{-\infty}^{\infty} \frac{d^d k}{(2\pi)^d} \delta(\epsilon - \epsilon(\vec k))  
+\end{align*}
+
+\begin{align*}
+   \boxed{ \begin{aligned}
+       d&=1: \quad \mathcal N(\epsilon) = 2\frac{\sqrt{2m}}{2\pi\hbar}  \epsilon^{-\frac{1}{2}}(\vec k) \sim \frac{1}{\sqrt{\epsilon}} \\
+d&=2: \quad \mathcal N(\epsilon) = \frac{m}{\pi\hbar^2 } = \text{const} \\
+d&=3: \quad \mathcal N(\epsilon) = \frac{1}{2\pi^2} \left(\frac{2m}{\hbar^2}\right)^{\frac{3}{2}} \sqrt{\epsilon(\vec k)}\sim \sqrt{\epsilon}
+  \end{aligned}  }
+\end{align*}
+}%end Huge
+
+\end{document}
