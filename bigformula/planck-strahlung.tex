@@ -1,0 +1,23 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+Photonen-Zustandsdichte (Dispersionsrel.: \(\epsilon = \hbar \omega = \hbar c k, \omega = c |\vec k|\) )
+\begin{align*}
+\mathcal N (\epsilon) = \frac{1}{V}\sum_{\vec k} \delta(\epsilon - \epsilon(\vec k)) = \int \frac{d^3k}{(2\pi)^3} \delta(\epsilon - \epsilon(\vec k))= \frac{ \epsilon^2}{\pi^2 \hbar^3 c^3} =\frac{ \omega^2}{\pi^2 \hbar c^3} 
+\end{align*}
+Innere Energie \(
+  U = V\int d\epsilon\,\mathcal N(\epsilon) \epsilon \frac{1}{e^{\beta \epsilon}-1} =\hbar^2 V\int d\omega\,\mathcal N(\epsilon) \omega \frac{1}{e^{\beta \hbar\omega}-1}
+\)\\
+Innere Energie pro Frequenzintervall und pro Volumen\\
+ \(\Rightarrow \) \textbf{planksches Strahlungsgesetz}
+\begin{align*}
+  u(\omega) = \frac{1}{V}\frac{dU}{d\omega} =  \hbar^2 \mathcal N(\epsilon) \omega \frac{1}{e^{\beta \hbar\omega}-1} = \frac{\hbar  \omega^3}{\pi^2  c^3} \frac{1}{e^{\beta \hbar\omega}-1} = \underline{\underline{\frac{\hbar  \omega^3}{\pi^2  c^3} \frac{1}{e^{\beta \hbar\omega}-1}}}
+\end{align*}\\\\
+\textit{Rayleigh-Jeans-Gesetz} \((\hbar\omega\ll k_B T) \rightarrow u(\omega) \approx \frac{k_B T \omega^2}{\pi^2  c^3} \) \\
+\textit{Wiensches Strahlungsgesetz} \((\hbar\omega \gg k_B T) \rightarrow u(\omega) \approx  \frac{\hbar  \omega^3}{\pi^2  c^3} e^{-\frac{\hbar\omega}{k_B T}} \) 
+}%end Huge
+
+\end{document}
