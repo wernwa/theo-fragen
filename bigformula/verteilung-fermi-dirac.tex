@@ -1,0 +1,21 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+\textbf{Fermionen} \(\epsilon(\vec k)=\frac{\hbar^2k^2}{2m}\), \(\{\alpha \}=\{n_{\vec k_1},n_{\vec k_2}\dots \},\quad n_{\vec k_i}\in \{0,1\} \)\\
+Mit Teilchenzahl \(N_\alpha = \sum_{\vec k}n_{\vec k}\) und Energie \(E_\alpha= \sum_{\vec k}\epsilon(\vec k) n_{\vec k}\)
+\begin{align*}
+  Z_G = \sum_{\alpha}e^{-\beta(E_\alpha - \mu N_\alpha)}=\prod_{\vec k} \sum_{n_{\vec k=0}}^{1}e^{-\beta(\epsilon(\vec k) -\mu)n_{\vec k}}=\prod_{\vec k}(1 + e^{-\beta(\epsilon(\vec k)-\mu)})
+\end{align*}
+\begin{align*}
+  U=-\left( \pdiff_\beta \ln(Z_G) \right)_{\beta\mu} = \sum_{\vec k}\epsilon(\vec k) \frac{1}{e^{\beta(\epsilon(\vec k)-\mu)}+1} = \sum_{\vec k}\epsilon(\vec k)\underbr{f(\epsilon(\vec k)-\mu)}_{FD-Vert.fn}
+\end{align*}
+\includegraphics[scale=0.57]{./verteilung-fermi-dirac.png}
+\includegraphics[scale=0.55]{./verteilung-fermi-dirac-chemp.png}
+
+
+}%end Huge
+
+\end{document}
