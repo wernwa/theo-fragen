@@ -1,0 +1,138 @@
+\input{../headers/header_script.tex}
+
+
+
+\begin{document}
+
+\section*{Zeitabhängige Störungstheorie}
+
+Wir betrachten einen Hamiltonoperator der aus einem zeitunabhänigen Teil \(H_0\) und einer zeitabhängigen Störung \(V(t)\) besteht.
+
+\begin{align}
+  \label{eq:2}
+  H=H_0+V(t)
+\end{align}
+
+Die Eigenzustände von \(H_0\) sind gegeben durch
+
+\begin{align}
+  \label{eq:1}
+   H_0 |n\rangle = E_n|n\rangle
+\end{align}
+
+Da der gesamte Hamiltonoperator zeitabhängig ist gibt es keine stationäre Zustände. Deswegen betrachten wir die Übergangswahrscheinlichkeiten von einem Zustand \(\ket{n}\) zu einem Zustand \(\ket{m}\). Wir definieren den Zustand \(\ket{\alpha}\) den wir dann nach den Eigenzuständen \(\ket{n}\) des \(H_0\)-Operators entwickeln
+
+\begin{align}
+  \label{eq:5}
+  \ket{\alpha} = \mathds 1 \ket{\alpha} = \sum_n \ket{n}\underbr{\bra{n} \ket{\alpha}}_{c_n} = \sum_n c_n \ket{n}
+\end{align}
+
+Die Zeitenwicklung des Zustands \(\ket{\alpha}\) ist gegeben durch
+
+\begin{align}
+  \label{eq:6}
+  \ket{\alpha,t} &= e^{-\frac{i}{\hbar}Ht}\ket{\alpha} =  e^{-\frac{i}{\hbar}H_0t} e^{-\frac{i}{\hbar}V(t)t}\ket{\alpha} \stackrel{\eqref{eq:5}}= e^{-\frac{i}{\hbar}H_0t} e^{-\frac{i}{\hbar}V(t)t} \sum_n c_n \ket{n} \\
+&=\sum_n c_n  e^{-\frac{i}{\hbar}V(t)t} e^{-\frac{i}{\hbar}H_0t} \ket{n} \\
+&=\sum_n \underbr{c_n  e^{-\frac{i}{\hbar}V(t)t} }_{c_n(t)}e^{-\frac{i}{\hbar}E_nt} \ket{n}
+\end{align}
+
+Damit lassen sich die zeitabhängigen Eigenzustände des gesamten Hamiltonoperators schreiben als
+
+\begin{align}
+  \label{eq:7}
+ \ket{\alpha,t} =\sum_n c_n(t) e^{-\frac{i}{\hbar}E_nt} \ket{n} 
+\end{align}
+
+Aus der Gleichung (\ref{eq:6}) sieht man dass die Zeitabhängigkeit von \(c_n\) nur von \(V(t)\) verursacht wird. Desweiteren lässt sich die Wahrscheinlichkeit den Zustand \(\ket{n}\) zu finden mit \(|c_n(t)|^2\) berechnen.
+
+\subsection*{Wechselwirkungsbild}
+
+In der Zeitabhängigen Störungstheorie ist es zweckmäßig vom Schrödingerbild in Wechselwirkungsbild zu wechseln. Dabei hat das WW-Bild volgende Eigenschaften. Für ein Zustand im WW-Bild gilt
+
+\begin{align}
+  \label{eq:3}
+  |\alpha,t\rangle_I = e^{iH_0t/\hbar}|\alpha,t\rangle_S
+\end{align}
+
+Für ein Operator gilt
+
+\begin{align}
+  \label{eq:4}
+   A_I(t) =  e^{iH_0t/\hbar} A_S e^{-iH_0t/\hbar}
+\end{align}
+
+Wir wollen eine schrödinger-artige Gleichung im WW-Bild herleiten
+
+\begin{align}
+  \label{eq:8}
+ i\hbar \frac{\partial}{\partial t}|\alpha,t_0;t\rangle_I &= i\hbar \frac{\partial}{\partial t}(e^{\frac{i}{\hbar}H_0t}|\alpha,t_0,t\rangle_S) \notag\\
+&= i\hbar\left(\frac{i}{\hbar}H_0 e^{\frac{i}{\hbar}H_0 t}|\alpha,t_i,t\rangle_S +  e^{\frac{i}{\hbar}H_0t}\underbrace{\frac{\partial}{\partial t}|\alpha,t_0,t\rangle_S}_{\frac{1}{i\hbar}(H_0+V)|\alpha,t_0,t\rangle_S} \right) \quad |\text{mit SG:}\quad H|\psi(t)\rangle=i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle  \notag  \\
+&= -H_0 e^{\frac{i}{\hbar}H_0 t}|\alpha,t_i,t\rangle_S + e^{\frac{i}{\hbar}H_0t}(H_0+V)|\alpha,t_0;t\rangle_S \notag \\
+&= e^{\frac{i}{\hbar}H_0t}V\cdot\mathbb 1\cdot|\alpha,t_0;t\rangle_S\notag\\
+&= \underbrace{e^{\frac{i}{\hbar}H_0t}Ve^{-\frac{i}{\hbar}H_0t}}_{V_I}\cdot \underbrace{e^{\frac{i}{\hbar}H_0t}|\alpha,t_0;t\rangle_S}_{|\alpha,t_0;t\rangle_I}
+\end{align}
+
+Damit lautet die schrödinger-artige Gleichung im WW-Bild
+
+\begin{align}
+  \label{eq:9}
+  \boxed{i\hbar \frac{\partial}{\partial t} |\alpha,t_0;t\rangle_I = V_I|\alpha,t_0;t\rangle_I}
+\end{align}
+Man sieht dass diese Gleichung unabhängig von dem stationäre Anteil des Hamiltonoperators \(H_0\) ist.
+
+\subsection*{Lösung der schrödinger-artigen Gleichung}
+
+Um die zeitabhängigen Koeffizienten \(c_n(t)\) zu bestimmen und damit auch die Wahrscheinlichkeit das System in einem bestimmen Zustand n berechnen zu können müssen die schrödinger-artigen Gleichung (\ref{eq:9}) wie folgt umschreiben
+
+\begin{align}
+  \label{eq:10}
+  \bra{n}\cdot|\qquad  i\hbar \frac{\partial}{\partial t}|\alpha,t_0,t\rangle_I &= V_I|\alpha,t_0,t\rangle_I \notag \\
+ i\hbar \frac{\partial}{\partial t}\braket{n}{\alpha,t_0,t}_I &= \bra{n}V_I|\mathds 1|\alpha,t_0,t\rangle_I \notag \\
+i\hbar \frac{\partial}{\partial t}\underbr{\braket{n}{\alpha,t_0,t}_I}_{c_n(t)} &= \sum_m\bra{n}V_I \ket{m}\underbr{\bra{m}\alpha,t_0,t\rangle_I}_{c_m(t)} \notag \\
+i\hbar \frac{\partial}{\partial t}c_n(t) &= \sum_m\bra{n}V_I \ket{m}c_m(t) 
+\end{align}
+
+Sehen uns das Matrixelement \(\bra{n}V_I \ket{m}c_m(t) \) genauer an
+
+\begin{align}
+  \label{eq:11}
+  \bra{n}V_I \ket{m} &=  \underbrace{\langle n | e^{\frac{i}{\hbar}H_0t}}_{\langle n|e^{\frac{i}{\hbar}E_nt}}V(t)\underbrace{e^{-\frac{i}{\hbar}H_0t}|m\rangle}_{e^{-\frac{i}{\hbar}E_mt}|m\rangle } \notag\\
+& = \langle n|V(t)|m\rangle e^{\frac{i}{\hbar}(E_n-E_m)t} \notag \\
+&= V_{nm}(t) e^{i\omega_{nm} t}
+\end{align}
+
+Damit erhalten wir mit der Abkürzung \(\omega_{nm} = - \omega_{mn} = \frac{1}{\hbar}(E_n - E_m)\) ein System gekoppelter Differentialgleichungen das es zu lösen gilt
+
+\begin{align}
+  \label{eq:12}
+  \boxed{i\hbar \frac{\partial}{\partial t}c_n(t) = \sum_m V_{nm}(t) e^{i\omega_{nm}t}c_m(t)}
+\end{align}
+
+In Matrixschreibwese sieht die Gleichung (\ref{eq:12}) folgendermaßen aus
+
+\begin{align}
+  \label{eq:13}
+  i\hbar \begin{pmatrix}\dot c_1\\\dot c_2\\.\\.\\.\end{pmatrix} =
+\begin{pmatrix}
+V_{11}&V_{12}e^{i\omega_{12}t}&.&.&.\\
+V_{21}e^{i\omega_{21}t}&V_{22}&.&.&.\\
+  .&.&.&.&.\\
+  .&.&.&.&.\\
+  .&.&.&.&.
+\end{pmatrix}\cdot\begin{pmatrix}c_1\\c_2\\.\\.\\.\end{pmatrix}
+\end{align}
+
+Die gekoppelte Differentialgleichung (\ref{eq:12}) ist für hinreichend einfache Systeme mit endlich vielen Zuständen eventuell exakt lösbar. Für Systeme die nicht exakt lösbar sind wendet man die Zeitabhängige Störungsrechnung an
+
+\subsection*{Zeitabhängige Störungsrechnung}
+
+Wir führen den Zeitevolutionsoperator \(U(t,t_0)\) ein, der im WW-Bild eine Zeittransformation eines zeitunaghängigen Ket durchführt
+
+\begin{align}
+  \label{eq:14}
+  |\alpha,t_0;t\rangle_I = U_I(t,t_0)|\alpha,t_0;t_0\rangle_I
+\end{align}
+
+
+
+\end{document}
