@@ -122,17 +122,96 @@ V_{21}e^{i\omega_{21}t}&V_{22}&.&.&.\\
 \end{pmatrix}\cdot\begin{pmatrix}c_1\\c_2\\.\\.\\.\end{pmatrix}
 \end{align}
 
-Die gekoppelte Differentialgleichung (\ref{eq:12}) ist für hinreichend einfache Systeme mit endlich vielen Zuständen eventuell exakt lösbar. Für Systeme die nicht exakt lösbar sind wendet man die Zeitabhängige Störungsrechnung an
+Die gekoppelte Differentialgleichung (\ref{eq:12}) ist für hinreichend einfache Systeme mit endlich vielen Zuständen eventuell exakt lösbar. Für Systeme die nicht exakt lösbar sind wendet man die Zeitabhängige Störungsrechnung an.
 
 \subsection*{Zeitabhängige Störungsrechnung}
 
-Wir führen den Zeitevolutionsoperator \(U(t,t_0)\) ein, der im WW-Bild eine Zeittransformation eines zeitunaghängigen Ket durchführt
+Wir führen den Zeitevolutionsoperator \(U(t,t_0)\) ein, der im WW-Bild eine Zeittransformation eines zeitunabhängigen Ket durchführt
 
 \begin{align}
   \label{eq:14}
   |\alpha,t_0;t\rangle_I = U_I(t,t_0)|\alpha,t_0;t_0\rangle_I
 \end{align}
 
+Einsetzen in der Gleichung (\ref{eq:14}) in die Schrödingerartige Gleichung (\ref{eq:9}) ergibt
 
+\begin{align}
+  \label{eq:15}
+   i\hbar \frac{\partial}{\partial t}|\alpha,t_0;t\rangle_I  &= V_I|\alpha,t_0;t\rangle_I \notag\\
+ i\hbar \frac{\partial}{\partial t}  U_I(t,t_0)|\alpha,t_0;t_0\rangle_I &= V_I U_I(t,t_0)|\alpha,t_0;t_0\rangle_I  \notag\\
+|\alpha,t_0;t_0\rangle_I \cdot i\hbar \frac{\partial}{\partial t}  U_I(t,t_0) &= V_I U_I(t,t_0)|\alpha,t_0;t_0\rangle_I \notag\\
+ _I\langle \alpha,t_0;t_0| \cdot\Big|\qquad |\alpha,t_0;t_0\rangle_I \cdot i\hbar \frac{\partial}{\partial t}  U_I(t,t_0) &= V_I U_I(t,t_0)|\alpha,t_0;t_0\rangle_I
+\end{align}
+
+Damit erhalten wir eine DGL die nicht mehr vom Zustand \(|\alpha,t_0;t\rangle_I\) abhängig ist
+
+\begin{align}
+  \label{eq:16}
+  \Rightarrow \boxed{i\hbar  \frac{\partial}{\partial t}U_I(t,t_0) = V_IU(t,t_0)}
+\end{align}
+
+Um diese DGL zu lösen integrieren wir die Gleichung (\ref{eq:16}) auf beiden Seiten von \(t_0\) bis \(t\) nach \(dt\) mit der Anfangbedingung \(U(t_0,t_0)=1\)
+
+\begin{align}
+  \label{eq:17}
+i\hbar  \int_{t_0}^{t}dt' \frac{\partial}{\partial t}U_I(t',t_0) &= \int_{t_0}^{t}dt' V_IU(t',t_0)\notag \\
+i\hbar \left(  U_I(t,t_0) -\underbrace{U_I(t_0,t_0) }_{1} \right)  &= \int_{t_0}^{t}dt' V_IU(t',t_0)
+\end{align}
+
+Damit erhalten wir eine Integralgleichung, die den Vorteil hat, da \(V_I\) klein ist, kann man sie iterativ lösen (damit kleine Glieder vernachlässigt werden können).
+
+\begin{align}
+  \label{eq:18}
+  U_I^{(n)}(t,t_0) = 1 - \frac{i}{\hbar} \int_{t_0}^{t}dt' V_IU^{(n-1)}(t',t_0)
+\end{align}
+
+Damit lauten der Zeitevolutionsoperator in verschiedenen Störungsordnungen
+
+\begin{align}
+  U_I^{(0)}(t,t_0) &= U_I^{(0)}(t_0,t_0) = 1  \label{eq:19.0} \\
+ U_I^{(1)}(t,t_0) &=  1 - \frac{i}{\hbar} \int_{t_0}^{t}dt' V_IU^{(0)}(t',t_0) =  1 - \frac{i}{\hbar} \int_{t_0}^{t}dt' V_I  \label{eq:19.1}\\
+ U_I^{(2)}(t,t_0) &=  1 - \frac{i}{\hbar} \int_{t_0}^{t}dt' V_IU^{(1)}(t',t_0) =  1 - \frac{i}{\hbar} \int_{t_0}^{t}dt' V_I\left(  1 - \frac{i}{\hbar} \int_{t_0}^{t}dt'' V_I \right) \\
+&= 1 - \frac{i}{\hbar} \int_{t_0}^{t}dt' V_I(t')  +  \frac{1}{\hbar^2} \int_{t_0}^{t}dt' V_I(t') \int_{t_0}^{t'}dt'' V_I(t'')  \label{eq:19.2}
+\end{align}
+
+Man erhält die sogenannte \textit{DYSON-Reihe} für \(U_I^{(\infty)}\)
+
+\begin{align}
+  \label{eq:20}
+ \boxed{ U_I(t,t_0) = T \sum_{n=0}^\infty \frac{(-i)^n}{n! \hbar^n}\int_{t_0}^tdtV(t')\cdots\int_{t_0}^{t^n}dt^n V(t^n) = Te^{-\frac{i}{\hbar} \int_{t_0}^t dt' V(t') } }
+\end{align}
+
+Dabei ist \(T\) der Zeitordnungsoperator, der dafür sorgt, dass die späteren Zeiten nach links und die früheren nach recht kommen, d.h. er sortiert von höheren Zeiten zu kleineren Zeiten.
+
+Wir wollen nun die Übergangswahrscheinlichkeit von einem Inertialzustand \(\ket{i}\) zu einem Endzustand \(\ket{n}\) bestimmen. Dazu betrachten wir den Inertialzustand bei \(t=t_0\) mit, den wir dann mit Hilfe des Zeitevolutionsoperators für beliebige Zeiten entwickeln (vergleiche mit Gleichung (\ref{eq:14}))
+
+\begin{align}
+  \label{eq:23}
+  |i,t_0,t\rangle_I = U_I(t,t_0)|i\rangle = \mathbb 1\cdot U_I(t,t_0)|i\rangle = \sum_n |n\rangle \underbr{\langle n| U_I(t,t_0)|i\rangle}_{c_n} = \sum_n c_n(t) |n\rangle
+\end{align}
+
+Nun möchten wir die Übergangskoeffizienten \(c_n(t)\) des Zeitordnungsoperators \(U_I(t,t_0\) bestimmen.
+
+\begin{align}
+  \label{eq:24}
+  c_n(t) = \langle n|U_I(t,t_0)|i\rangle = \langle n | Te^{-\frac{i}{\hbar}\int_{t_0}^tdt'V_I(t')}|i\rangle
+\end{align}
+
+Für \(U_I\) in 2 Ordnung Störungstheorie, siehe Gleichung (\ref{eq:19.2}), lautet \(c_n(t)\)
+
+\begin{align}
+  \label{eq:21}
+   c_n(t) &= \langle n|i\rangle - \frac{i}{\hbar}\langle n |\int_{t_0}^t V_I(t')dt'|i\rangle + (\frac{i}{\hbar})^2\langle n |\int_{t_0}^t dt'\int_{t_0}^{t'} V_I(t')V_I(t'')dt'' |i\rangle \notag \\
+ &= \langle n|i\rangle - \frac{i}{\hbar}\langle n |\int_{t_0}^t V_I(t')dt'|i\rangle + (\frac{i}{\hbar})^2\langle n |\int_{t_0}^t dt'\int_{t_0}^{t'} V_I(t')\cdot\sum_m |m\rangle \langle m|\cdot V_I(t'')dt'' |i\rangle\notag \\
+&= \delta_{ni}+(\frac{-i}{\hbar})\int_{t_0}^t V_{ni}(t')e^{i\omega_{ni}t'}dt' + (\frac{-i}{\hbar})^2\sum_m\int_{t_0}^tdt'\int_{t_0}^{t'} V_{nm}(t')e^{i\omega_{ni}t'} V_{mi}(t'')e^{i\omega_{ni}t''} dt''\notag \\
+&= c_n^{(0)}(t)+c_n^{(1)}(t)+c_n^{(2)}(t)
+\end{align}
+
+Damit erhalten wir eine Übergangswahrscheinlichkeit von Zustand \(\ket{i}\) zu einem beliebigen Zustand \(\ket{n}\) in 2-ter Näherung zeitabhängigen Störungstheorie
+
+\begin{align}
+  \label{eq:22}
+  \boxed{P(i\rightarrow n) = |c^{(0)}_n + c_n^{(1)}(t)+c_n^{(2)}(t)|^2}
+\end{align}
 
 \end{document}
