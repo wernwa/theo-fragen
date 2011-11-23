@@ -214,4 +214,63 @@ Damit erhalten wir eine Übergangswahrscheinlichkeit von Zustand \(\ket{i}\) zu 
   \boxed{P(i\rightarrow n) = |c^{(0)}_n + c_n^{(1)}(t)+c_n^{(2)}(t)|^2}
 \end{align}
 
+\subsection*{Beispiel: Konstante Störung}
+
+Wir betrachten nun eine zeitlich konstante Störung \(V(t)\) für die gilt
+
+\begin{align}
+  \label{eq:19}
+  V(t) =\begin{cases}0& t<0\\ V&t\ge 0    \end{cases}
+\end{align}
+
+Bestimme die Übergangswahrscheinlichkeit für \(n \ne i\) in erster Ordnung der zeitabhängigen Störungsrechnung. Laut Gleichung (\ref{eq:22}) gilt
+
+\begin{align}
+  \label{eq:25}
+  P(i\rightarrow n) = |\underbr{c^{(0)}_n}_{=0} + c_n^{(1)}(t)|^2 = |c_n^{(1)}(t)|^2 = |(\frac{-i}{\hbar})\int_{t_0}^t V_{ni}(t')e^{i\omega_{ni}t'}dt'|^2
+\end{align}
+
+Mit der Bedingung (\ref{eq:19}) \(t_0=0\) und \(V(t)=V\) lautet die Übergangswahrscheinlichkeit (\ref{eq:25})
+
+\begin{align}
+  \label{eq:26}
+  P(i\rightarrow n) = \frac{1}{\hbar^2}| V_{ni} \int_{0}^t e^{i\omega_{ni}t'}dt'|^2
+\end{align}
+
+Wir machen eine Nebenrechnung für das Integral
+
+\begin{align}
+  \label{eq:27}
+  \int_{0}^t e^{i\omega_{ni}t'}dt' &= \left[ \frac{e^{i\omega_{ni} t}}{i\omega_{ni}}  \right]_0^t = \frac{1}{i\omega_{ni}}\left( e^{i\omega_{ni} t}-1 \right) = \frac{1}{i\omega_{ni}}\left( e^{\frac{i\omega_{ni} t}{2}+\frac{i\omega_{ni} t}{2}}-1 \right) =  \frac{1}{i\omega_{ni}}\left( e^{\frac{i\omega_{ni} t}{2}}e^{\frac{i\omega_{ni} t}{2}}-1 \right) \notag \\
+&=  \frac{1}{i\omega_{ni}}\left( e^{\frac{i\omega_{ni} t}{2}}-\frac{1}{e^{\frac{i\omega_{ni} t}{2}}} \right)e^{\frac{i\omega_{ni} t}{2}} = \frac{1}{i\omega_{ni}} \underbr{\left( e^{\frac{i\omega_{ni} t}{2}}-e^{-\frac{i\omega_{ni} t}{2}}\right)}_{2i\sin(\frac{\omega_{ni} t}{2})} e^{\frac{i\omega_{ni} t}{2}} = \frac{2}{\omega_{ni}}\sin(\frac{\omega_{ni} t}{2})e^{\frac{i\omega_{ni} t}{2}}
+\end{align}
+
+Die Nebenrechnung (\ref{eq:27}) in das Integral eingesetzt lautet die Übergangswahrscheinlichkeit nun
+
+\begin{align}
+  \label{eq:28}
+  P(i\rightarrow n) = \frac{1}{\hbar^2} \left| V_{ni}\frac{2}{\omega_{ni}}\sin(\frac{\omega_{ni} t}{2})e^{\frac{i\omega_{ni} t}{2}} \right|^2 = \frac{4}{\hbar^2\omega_{ni}^2}|V_{ni}|^2\sin^2(\frac{\omega_{ni} t}{2})
+\end{align}
+
+\begin{figure}
+  \centering
+  \input{stoerung_pics/f_omega_t1.tex}
+  \caption{bla bla}
+  \label{fig:1}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \input{stoerung_pics/f_omega_t1000.tex}
+  \caption{bla bla}
+  \label{fig:2}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \input{stoerung_pics/f_omega_t3000.tex}
+  \caption{bla bla}
+  \label{fig:3}
+\end{figure}
+
 \end{document}
