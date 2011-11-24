@@ -252,25 +252,106 @@ Die Nebenrechnung (\ref{eq:27}) in das Integral eingesetzt lautet die Übergangs
   P(i\rightarrow n) = \frac{1}{\hbar^2} \left| V_{ni}\frac{2}{\omega_{ni}}\sin(\frac{\omega_{ni} t}{2})e^{\frac{i\omega_{ni} t}{2}} \right|^2 = \frac{4}{\hbar^2\omega_{ni}^2}|V_{ni}|^2\sin^2(\frac{\omega_{ni} t}{2})
 \end{align}
 
-\begin{figure}
+Die Übergangswahrscheinlichkeit kann man wie folgt schreiben
+
+\begin{align}
+  \label{eq:29}
+   P(i\rightarrow n) = |V_{ni}|^2 f(\omega_{ni}) 
+\end{align}
+\begin{figure}[!thb]
+\begin{minipage}{1.0\linewidth}
+  
   \centering
   \input{stoerung_pics/f_omega_t1.tex}
-  \caption{bla bla}
-  \label{fig:1}
+  \input{stoerung_pics/f_omega_t100.tex}
+ \input{stoerung_pics/f_omega_t1000.tex}
+ \caption{Die Funktion  \(f(\omega_{ni}) \) für verschiedene Zeiten \(t=1, t=100, t=1000\).  Man erkennt, dass die Funktion \(f(\omega_{ni})\) für größere Zeiten sich einer \(\delta\)-Funktion nähert. }
+ \label{fig:1}
+
+\end{minipage}
 \end{figure}
 
-\begin{figure}
-  \centering
-  \input{stoerung_pics/f_omega_t1000.tex}
-  \caption{bla bla}
-  \label{fig:2}
-\end{figure}
+Wobei es gilt 
+\begin{align}
+  \label{eq:30}
+  f(\omega_{ni})= \frac{4}{\hbar^2\omega_{ni}^2}\sin^2(\frac{\omega_{ni} t}{2}) \quad \text{ mit } \omega_{ni}=\frac{E_n-E_i}{\hbar}
+\end{align}
 
-\begin{figure}
-  \centering
-  \input{stoerung_pics/f_omega_t3000.tex}
-  \caption{bla bla}
-  \label{fig:3}
-\end{figure}
+Wir wollen wir die Funktion \(f(\omega_{ni}) \) weiter Vereinfachen. Dazu betrachten wir sie für verschiedene \(t\). Siehe dazu Abbildung \ref{fig:1}.
+
+Wie man in den Abbildung deutlich erkennt, nähert sich die Funktion \(f(\omega_{ni})\) für große \(t\) einer \(\delta\)-Funktion. D.h. es gilt
+
+\begin{align}
+  \label{eq:31}
+  f(\omega_{ni}) \stackrel{t \to \infty}= c \delta(\omega_{ni})
+\end{align}
+
+Um die Konstante \(c\) zu bestimmen integrieren wir die Gleichung (\ref{eq:31}) auf beiden Seiten nach \(d\omega\) über das gesamte Intervall
+
+\begin{align}
+  \label{eq:32}
+  \int_{-\infty}^\infty d\omega f(\omega_{ni}) = c \underbr{ \int_{-\infty}^\infty d\omega \delta(\omega_{ni}) }_{=1}
+\end{align}
+
+Das heißt, es gilt folgendes Integral zu berechnen
+
+\begin{align}
+  \label{eq:33}
+  c &= \int_{-\infty}^\infty d\omega f(\omega_{ni}) \qquad \text{ mit } f(\omega_{ni})=\frac{4}{\hbar^2\omega_{ni}^2}\sin^2(\frac{\omega_{ni} t}{2}) \notag\\
+&=\frac{4}{\hbar^2} \int_{-\infty}^\infty d\omega \frac{1}{\omega_{ni}^2}\sin^2(\frac{\omega_{ni} t}{2})
+\end{align}
+
+Zum Berechnen des Integrals ist eine Substitution des Sinus Arguments \(x= \frac{\omega_{ni} t}{2}\)  notwendig. Mit \(\omega = \frac{2x}{t} \) und \(d\omega = \frac{2dx}{t}\) eingesetzt in Gleichung (\ref{eq:33}) folgt
+
+\begin{align}
+  \label{eq:34}
+  c = \frac{4}{\hbar^2} \int_{-\infty}^\infty dx \frac{2}{t} \frac{t^2}{4x^2}\sin^2(x) = \frac{2t}{\hbar^2} \underbr{\int_{-\infty}^\infty dx \frac{\sin^2(x)}{x^2}}_{\pi} = \frac{2t}{\hbar^2} \pi
+\end{align}
+
+Setzen wir \(c\) in die Gleichung (\ref{eq:31}) ein so vereinfacht sich die Funktion \(f(\omega_{ni})\) zu
+
+\begin{align}
+  \label{eq:35}
+  f(\omega_{ni}) \stackrel{t \to \infty}= \frac{2\pi t}{\hbar^2} \delta(\omega_{ni})
+\end{align}
+
+Damit können wir die Übergangswahrscheinlichkeit Gleichung (\ref{eq:29}) für große Zeiten schreiben
+
+\begin{align}
+  \label{eq:36}
+   P(i\rightarrow n) = \frac{2\pi t}{\hbar^2} |V_{ni}|^2  \delta(\omega_{ni}) = \frac{2\pi t}{\hbar^2} |V_{ni}|^2  \delta(\frac{E_n-E_i}{\hbar}) = \frac{2\pi t}{\hbar} |V_{ni}|^2  \delta(E_n-E_i)
+\end{align}
+
+Gerne verwendet man anstelle der Übergangswahrscheinlichkeit die Übergangsrate, die als Übergangswahrscheinlichkeit pro Zeiteinheit definiert ist \(w_{i\to n}= \diff_t P(i\rightarrow n)\). Damit gilt
+
+\begin{align}
+  \label{eq:37}
+\boxed{  w_{i\to n}= |V_{ni}|^2 \frac{2\pi}{\hbar} \delta(E_n-E_i) }
+\end{align}
+
+Diese Gleichung (\ref{eq:37}) wird auch als \textbf{Fermis-Goldene-Regel} bezeichnet.
+\\
+Wie man aus der Gleichung (\ref{eq:36}) unschwer erkennen kann, gibt es nur eine Wahrscheinlichkeit für ein Übergang zwischen zwei Zuständen wenn ihre Energieniveaus gleich sind (wegen der \(\delta\)-Funktion, was der Energieerhaltung entspricht. Zum Beispiel bei der Streuung betrachtet man eine einfallende und gestreute Teilchen-Welle die zwei unterschiedliche Zustände repräsentieren. Jedoch ist die Energie der einfallenden und gestreuten Welle gleich. Oder beim Zerfall eines Neutrons in ein Proton, Elektron und ein Elektron-Antineutrino handelt es sich ebenso um zwei unterschiedliche Zustände, nämlich den Zustand des Neutrons \(\ket{i}\) und dem Zustand von den resultierenden drei Teilchen, die man mit dem Zustand \(\ket{n}\) beschreibt. In beiden Zuständen bleibt die Energie erhalten.
+
+Normalerweise betrachtet man nicht die Übergangswahrscheinlichkeit zwischen zwei bestimmten Energieniveaus, sondern die Übergangswahrscheinlichkeit zwischen allen Zuständen in einem Energieniveau im Intervall \([E,E+dE]\). Das bezeichnet man als die \textit{totale Übergangswahrscheinlichkeit}. Für die gilt (für \(i\ne n\))
+
+\begin{align}
+  \label{eq:38}
+  P\approx \sum_{E_i\approx E_n} P(i\rightarrow n) = \sum_{E_i\approx E_n} |V_{ni}|^2 \frac{2\pi t}{\hbar} \delta(E_n-E_i) =  |V_{ni}|^2 \frac{2\pi t}{\hbar} \underbr{ \sum_{E_i\approx E_n}\delta(E_n-E_i)}_{\rho(E_n) }
+\end{align}
+
+Mit der Zustandsdichte \(\rho\), die die Dichte der Energie-Zustände in einem Intervall \([E,E+dE]\) angibt. Für diese gilt
+
+\begin{align}
+  \label{eq:39}
+  \rho(E_n) = \sum_{E_i\approx E_n}\delta(E_n-E_i) \equiv \int dE \delta(E_n-E_i)
+\end{align}
+
+Aus der Gleichung (\ref{eq:38}) folgt die totale Übergangsrate die eine andere Form der Fermis-Goldene-Regel darstellt
+
+\begin{align}
+  \label{eq:40}
+  \boxed{  w_{i\to \{n\}}= \frac{2\pi }{\hbar} |V_{ni}|^2  \rho(E_n) }
+\end{align}
 
 \end{document}

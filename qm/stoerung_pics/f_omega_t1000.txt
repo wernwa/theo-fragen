@@ -3,7 +3,7 @@ set output "f_omega_t1000.tex"
 set format y "$%g$"
 set format x "$%.2f$"
 set title '$f(\omega)$ für $t=1000$'
-
+set samples 100000
 unset key
 set xtics ('$-4\pi$' -4*pi, '$-3\pi$' -3*pi, '$-2\pi$' -2*pi, "0" 0, '$2\pi$' 2*pi, '$3\pi$' 3*pi, '$4\pi$' 4*pi)
 
