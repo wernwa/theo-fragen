@@ -227,7 +227,7 @@ Bestimme die Übergangswahrscheinlichkeit für \(n \ne i\) in erster Ordnung der
 
 \begin{align}
   \label{eq:25}
-  P(i\rightarrow n) = |\underbr{c^{(0)}_n}_{=0} + c_n^{(1)}(t)|^2 = |c_n^{(1)}(t)|^2 = |(\frac{-i}{\hbar})\int_{t_0}^t V_{ni}(t')e^{i\omega_{ni}t'}dt'|^2
+  P(i\rightarrow n) = |\underbr{c^{(0)}_n}_{=0} + c_n^{(1)}(t)|^2 = |c_n^{(1)}(t)|^2 = \left|(\frac{-i}{\hbar})\langle n |\int_{t_0}^t V_I(t')dt'|i\rangle\right|^2 =   \left|(\frac{-i}{\hbar})\int_{t_0}^t V_{ni}(t')e^{i\omega_{ni}t'}dt'\right|^2
 \end{align}
 
 Mit der Bedingung (\ref{eq:19}) \(t_0=0\) und \(V(t)=V\) lautet die Übergangswahrscheinlichkeit (\ref{eq:25})
@@ -319,7 +319,8 @@ Damit können wir die Übergangswahrscheinlichkeit Gleichung (\ref{eq:29}) für 
 
 \begin{align}
   \label{eq:36}
-   P(i\rightarrow n) = \frac{2\pi t}{\hbar^2} |V_{ni}|^2  \delta(\omega_{ni}) = \frac{2\pi t}{\hbar^2} |V_{ni}|^2  \delta(\frac{E_n-E_i}{\hbar}) = \frac{2\pi t}{\hbar} |V_{ni}|^2  \delta(E_n-E_i)
+   P(i\rightarrow n) =& \frac{4}{\hbar^2\omega_{ni}^2}|V_{ni}|^2\sin^2(\frac{\omega_{ni} t}{2}) \notag\\
+\stackrel{t\to\infty}=& \frac{2\pi t}{\hbar^2} |V_{ni}|^2  \delta(\omega_{ni}) = \frac{2\pi t}{\hbar^2} |V_{ni}|^2  \delta(\frac{E_n-E_i}{\hbar}) = \frac{2\pi t}{\hbar} |V_{ni}|^2  \delta(E_n-E_i)
 \end{align}
 
 Gerne verwendet man anstelle der Übergangswahrscheinlichkeit die Übergangsrate, die als Übergangswahrscheinlichkeit pro Zeiteinheit definiert ist \(w_{i\to n}= \diff_t P(i\rightarrow n)\). Damit gilt
@@ -353,5 +354,37 @@ Aus der Gleichung (\ref{eq:38}) folgt die totale Übergangsrate die eine andere 
   \label{eq:40}
   \boxed{  w_{i\to \{n\}}= \frac{2\pi }{\hbar} |V_{ni}|^2  \rho(E_n) }
 \end{align}
+
+\subsection{Harmonische Störung}
+
+Wir betrachten eine Harmonische Störung mit dem allgemeinen Ansatz
+
+\begin{align}
+  \label{eq:41}
+  V(t) = Ve^{i\omega t} + V^\dagger e^{-i\omega t}
+\end{align}
+
+Zunächst bestimmen wir das Matrixelement \(V_{ni}(t)\)
+
+\begin{align}
+  \label{eq:43}
+   V_{ni}(t) &= \bra{n} V_I \ket{i} = \bra{n}e^{\frac{i}{\hbar}H_0 t}V(t) e^{ -\frac{i}{\hbar}H_0 t } \ket{i} = \underbr{\bra{n}e^{\frac{i}{\hbar}H_0 t}}_{\bra{n}e^{\frac{i}{\hbar}E_n t}} \left(Ve^{i\omega t} + V^\dagger e^{-i\omega t}\right) \underbr{ e^{ -\frac{i}{\hbar}H_0 t } \ket{i}}_{e^{ -\frac{i}{\hbar}E_i t } \ket{i}} \notag \\
+ & = \bra{n}e^{\frac{i}{\hbar}(E_n-E_i) t} \left(Ve^{i\omega t} + V^\dagger e^{-i\omega t}\right) \ket{i} =  e^{i\omega_{ni} t} \left(\bra{n}V\ket{i} e^{i\omega t} +\bra{n} V^\dagger\ket{i} e^{-i\omega t}\right) \notag \\
+ &=  V_{ni} e^{it(\omega_{ni}+\omega) }+ V^\dagger_{ni} e^{it(\omega_{ni}-\omega) }
+\end{align}
+
+Für diese Störung wollen wir nun die Übergangswahrscheinlichkeit und die Übergangsrate in ersten Ordnung der zeitabhängigen Störungstheorie berechnen für ein Übergang \(\ket{i}\to\ket{n}\) wobei \(i\ne n\). Um die Übergangswahrscheinlichkeit von \(\ket{i}\) nach \(\ket{n}\) zu bestimmen setzen wir den Störoperator in die Gleichung (\ref{eq:25}) ein
+
+\begin{align}
+  \label{eq:42}
+ P(i\rightarrow n) &= \left|(\frac{-i}{\hbar})\langle n |\int_{t_0}^t V_I(t')dt'|i\rangle\right|^2 \notag \\
+&= \frac{1}{\hbar^2}\left| \int_{0}^t \bra{n}  V_I(t) \ket{i} dt'\right|^2  \quad \text{mit Gleichung (\ref{eq:43})} \notag\\
+&= \frac{1}{\hbar^2}\left| \int_{0}^t \left( V_{ni} e^{it(\omega_{ni}+\omega) }+ V^\dagger_{ni} e^{it(\omega_{ni}-\omega)} \right)  dt'\right|^2 \notag\\
+&= \frac{1}{\hbar^2}  \Big|V_{ni}\underbrace{\int_{0}^t dt' e^{it(\omega_{ni}+\omega) }}_{  \frac{2}{\omega_{ni}+\omega}\sin(\frac{(\omega_{ni}+\omega) t}{2})e^{\frac{it(\omega_{ni}+\omega)}{2}}  }+ V^\dagger_{ni}\underbrace{ \int_{0}^t dt'  e^{it(\omega_{ni}-\omega)}}_{ \frac{2}{\omega_{ni}-\omega}\sin(\frac{(\omega_{ni}-\omega) t}{2})e^{\frac{it(\omega_{ni}-\omega)}{2}} }\Big|^2 \quad \text{ mit (\ref{eq:27})}\notag\\
+\end{align}
+
+
+
+
 
 \end{document}
