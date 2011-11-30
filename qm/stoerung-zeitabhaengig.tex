@@ -381,10 +381,111 @@ Für diese Störung wollen wir nun die Übergangswahrscheinlichkeit und die Übe
 &= \frac{1}{\hbar^2}\left| \int_{0}^t \bra{n}  V_I(t) \ket{i} dt'\right|^2  \quad \text{mit Gleichung (\ref{eq:43})} \notag\\
 &= \frac{1}{\hbar^2}\left| \int_{0}^t \left( V_{ni} e^{it(\omega_{ni}+\omega) }+ V^\dagger_{ni} e^{it(\omega_{ni}-\omega)} \right)  dt'\right|^2 \notag\\
 &= \frac{1}{\hbar^2}  \Big|V_{ni}\underbrace{\int_{0}^t dt' e^{it(\omega_{ni}+\omega) }}_{  \frac{2}{\omega_{ni}+\omega}\sin(\frac{(\omega_{ni}+\omega) t}{2})e^{\frac{it(\omega_{ni}+\omega)}{2}}  }+ V^\dagger_{ni}\underbrace{ \int_{0}^t dt'  e^{it(\omega_{ni}-\omega)}}_{ \frac{2}{\omega_{ni}-\omega}\sin(\frac{(\omega_{ni}-\omega) t}{2})e^{\frac{it(\omega_{ni}-\omega)}{2}} }\Big|^2 \quad \text{ mit (\ref{eq:27})}\notag\\
+&= \frac{1}{\hbar^2}  \Big|V_{ni} \frac{2}{\omega_{ni}+\omega}\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)e^{\frac{it(\omega_{ni}+\omega)}{2}} + V^\dagger_{ni} \frac{2}{\omega_{ni}-\omega}\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)e^{\frac{it(\omega_{ni}-\omega)}{2} }\Big|^2 \notag\\
 \end{align}
+
+Nun gibt es zwei Vorgehensweisen:
+
+\begin{enumerate}
+\item Man betrachte \(\omega_{ni}\approx - \omega\), dann sieht man, dass es eine Resonanz beim ersten Term gibt. Der zweite Term ist in diesem Fall zu vernachlässigen. Es gibt für \(\omega_{ni}\approx \omega\) eine Resonanz beim zweiten Term und in diesem Falle ist der erste Term zu vernachlässigen.
+\item Berechne den Betragsquadrat aus. Wobei es gilt
+  \begin{align}
+    \label{eq:44}
+    |a+b|^2 = (a+b)^\dagger \cdot(a+b) = (a^\dagger+b^\dagger)\cdot(a+b) = a^\dagger a+a^\dagger b + b^\dagger a + b^\dagger b = |a|^2+|b|^2 + a^\dagger b + b^\dagger a 
+  \end{align}
+\end{enumerate}
+
+Im zweiten Fall erhalten wir aus der Gleichung (\ref{eq:42})
+
+\begin{align}
+  \label{eq:45}
+  P(i\rightarrow n) &= \frac{1}{\hbar^2}  \Big| \underbr{V_{ni} \frac{2}{\omega_{ni}+\omega}\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)e^{\frac{it(\omega_{ni}+\omega)}{2}}}_{a} +\underbr{ V^\dagger_{ni} \frac{2}{\omega_{ni}-\omega}\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)e^{\frac{it(\omega_{ni}-\omega)}{2} }}_{b}\Big|^2 \notag\\
+\end{align}
+
+Nebenrechnung
+\begin{align}
+  \label{eq:46}
+  a^\dagger b &= V_{ni}^\dagger \frac{2}{\omega_{ni}+\omega}\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)e^{\frac{-it(\omega_{ni}+\omega)}{2}}\cdot  V^\dagger_{ni} \frac{2}{\omega_{ni}-\omega}\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)e^{\frac{it(\omega_{ni}-\omega)}{2} } \notag\\
+&=(V_{ni}^\dagger)^2 \frac{4}{\omega_{ni}^2 -\omega^2}\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)e^{-i\omega t}
+\end{align}
+
+\begin{align}
+  \label{eq:47}
+    b^\dagger a &= V_{ni}\frac{2}{\omega_{ni}-\omega}\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)e^{\frac{-it(\omega_{ni}-\omega)}{2}}\cdot  V_{ni} \frac{2}{\omega_{ni}+\omega}\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)e^{\frac{it(\omega_{ni}+\omega)}{2} } \notag\\
+&=V_{ni}^2 \frac{4}{\omega_{ni}^2 -\omega^2}\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)e^{i\omega t}
+\end{align}
+
+\begin{align}
+  \label{eq:48}
+  a^\dagger b + b^\dagger a = \frac{4}{\omega_{ni}^2 -\omega^2}\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)\left[(V_{ni}^\dagger)^2e^{-i\omega t} +   V_{ni}^2 e^{i\omega t}  \right]
+\end{align}
+
+
+
+Mit der Gleichung (\ref{eq:48}) und (\ref{eq:44}) lautet die gesamte Gleichung (\ref{eq:45})
+
+
+\begin{align}
+  \label{eq:49}
+   P(i\rightarrow n) &= \frac{1}{\hbar^2}\Bigg\{  \Big|V_{ni} \frac{2}{\omega_{ni}+\omega}\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)e^{\frac{it(\omega_{ni}+\omega)}{2}}\Big|^2 +  \Big|V^\dagger_{ni} \frac{2}{\omega_{ni}-\omega}\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)e^{\frac{it(\omega_{ni}-\omega)}{2} }\Big|^2 \notag \\
+ & + \frac{4}{\omega_{ni}^2 -\omega^2} \underbr{\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)}_{\omega_{ni}\approx \omega \to 0}  \underbr{\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)}_{\omega_{ni}\approx -\omega \to 0} \left[(V_{ni}^\dagger)^2e^{-i\omega t} +   V_{ni}^2 e^{i\omega t}  \right]  \Bigg\}
+\end{align}
+
+\begin{figure}[!thb]
+  \centering
+  \input{stoerung_pics/harmonische_stoerung.tex}
+  \caption{Plot der Übergangswahrscheinlichkeit über \(\omega_{ni}\)  für ein festes \(t\). Man erhält man zwei Peaks die bei \(\pm \omega\)}
+ \label{fig:2}
+\end{figure}
+
+In der Gleichung (\ref{eq:49}) sieht man dass der dritte Term, der sowieso ein oszillierender Term ist, für beiden Resonanzbedingung \(\omega_{ni}\approx \pm \omega\) verschwindet. Also können wir die Übergangswahrscheinlichkeit näherungsweise schreiben
+
+
+\begin{align}
+  \label{eq:50}
+   P(i\rightarrow n) &=  \frac{1}{\hbar^2}  \Big|V_{ni} \frac{2}{\omega_{ni}+\omega}\sin\left(\frac{(\omega_{ni}+\omega) t}{2}\right)e^{\frac{it(\omega_{ni}+\omega)}{2}}\Big|^2 +  \Big|V^\dagger_{ni} \frac{2}{\omega_{ni}-\omega}\sin\left(\frac{(\omega_{ni}-\omega) t}{2}\right)e^{\frac{it(\omega_{ni}-\omega)}{2} }\Big|^2 \notag\\
+&=  \frac{4}{\hbar^2} \left[  \frac{|V_{ni}|^2}{(\omega_{ni}+\omega)^2}\sin^2\left(\frac{(\omega_{ni}+\omega) t}{2}\right)  +   \frac{|V^\dagger_{ni}|^2}{(\omega_{ni}-\omega)^2}\sin^2\left(\frac{(\omega_{ni}-\omega) t}{2}\right) \right]
+\end{align}
+
+Diese Übergangswahrscheinlichkeit Gleichung (\ref{eq:50}) ist in der Abbildung \ref{fig:2} für ein festes \(t\) geplotet, woraus man bereits zwei Resonanzen bei \(\pm\omega\) ersehen kann.\\
+\\
+Betrachten wir analog zu der konstanten Störung den Limes \(t\to\infty\) so erhalten wir eine Übergangswahrscheinlichkeit
+
+\begin{align}
+  \label{eq:51}
+   P(i\rightarrow n) &= \frac{2\pi t}{\hbar^2}|V_{ni}|^2 \delta(\omega_{ni}+\omega) + \frac{2\pi t}{\hbar^2}|V_{ni}^\dagger|^2 \delta(\omega_{ni}-\omega)
+\end{align}
+
+Beziehungsweise die Delta-Funktionen in Energie ausgedrückt
+
+\begin{align}
+  \label{eq:52}
+     P(i\rightarrow n) &= \frac{2\pi t}{\hbar}|V_{ni}|^2 \delta(E_n - E_i + \hbar\omega ) + \frac{2\pi t}{\hbar}|V_{ni}^\dagger|^2 \delta(E_n - E_i - \hbar\omega)
+\end{align}
+
+Aus der Übergangswahrscheinlichkeit folgt die Übergangsrate
+
+\begin{align}
+  \label{eq:53}
+  w_{i\rightarrow n} &= \frac{2\pi}{\hbar}|V_{ni}|^2 \delta(E_n - E_i + \hbar\omega ) + \frac{2\pi}{\hbar}|V_{ni}^\dagger|^2 \delta(E_n - E_i - \hbar\omega)
+\end{align}
+
+Dabei stellt der erste Term eine stimulierte \textbf{Emission} eines Photons der Energie \(\hbar \omega\) dar und der zweite Term eine \textbf{Absorption} eines Photons der selben Energie \(\hbar\omega\). Die Abbildung \ref{fig:3} verdeutlicht skizzenhaft diese zwei Erscheinungen.
+
+\begin{figure}[!thb]
+  \centering
+  \input{stoerung_pics/Abs_Ems.pdf_t}
+  \caption{Emission und Absorption eines Photons der Energie \(\hbar\omega\)}
+ \label{fig:3}
+\end{figure}
+
+
+
 
 
 
 
 
 \end{document}
+
+% LocalWords:  geplotet

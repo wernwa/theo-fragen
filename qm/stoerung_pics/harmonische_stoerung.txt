@@ -1,0 +1,10 @@
+set terminal latex
+set output "harmonische_stoerung.tex"
+set format y "$%g$"
+set format x "$%.2f$"
+set title '$ \frac{1}{(\omega_{ni}+\omega)^2}\sin^2\left(\frac{(\omega_{ni}+\omega) t}{2}\right)  +   \frac{1}{(\omega_{ni}-\omega)^2}\sin^2\left(\frac{(\omega_{ni}-\omega) t}{2}\right)$ für $t=5$'
+set samples 100000
+unset key
+set xtics ('$-4\pi$' -4*pi, '$-3 \pi$' -3*pi, '$-\omega$' -2*pi, '$-\pi$' -pi, "0" 0, '$\pi$' pi,  '$\omega$' 2*pi, '$3\pi$' 3*pi, '$4\pi$' 4*pi)
+
+plot [-4*pi:4*pi] (1/(x - 2*pi)**2)*sin((x - 2*pi)/2*5)**2 + (1/(x + 2*pi)**2)*sin((x + 2*pi)/2*5)**2
