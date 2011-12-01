@@ -1,5 +1,6 @@
 \input{../headers/header_script.tex}
-
+\usepackage{amsmath}                % brauche ich um dir Formel zu umrahmen.
+\usepackage{amsfonts}
 
 
 \begin{document}
@@ -124,7 +125,7 @@ V_{21}e^{i\omega_{21}t}&V_{22}&.&.&.\\
 
 Die gekoppelte Differentialgleichung (\ref{eq:12}) ist für hinreichend einfache Systeme mit endlich vielen Zuständen eventuell exakt lösbar. Für Systeme die nicht exakt lösbar sind wendet man die Zeitabhängige Störungsrechnung an.
 
-\subsection*{Zeitabhängige Störungsrechnung}
+\section*{Zeitabhängige Störungsrechnung}
 
 Wir führen den Zeitevolutionsoperator \(U(t,t_0)\) ein, der im WW-Bild eine Zeittransformation eines zeitunabhängigen Ket durchführt
 
@@ -479,13 +480,80 @@ Dabei stellt der erste Term eine stimulierte \textbf{Emission} eines Photons der
  \label{fig:3}
 \end{figure}
 
+\section*{Anwendung}
+\subsection*{Wechselwirkung mit klassischen Strahlungsfeld}
 
+Wir betrachten ein Elektron in einem elektromagnetischen Feld. Der Hamilton-Operator des gesamten Systems sieht folgendermaßen aus
 
+\begin{align}
+  \label{eq:54}
+  H = \frac{(\vec p - e\vec A)^2}{2m} + e\phi = \frac{p^2}{2m} - \underbr{\frac{e^2\vec A^2}{2m}}_{\text{Ornung }e^2\text{ sehr klein}} - \frac{e}{2m}( \vec p\cdot \vec A + \vec A \cdot\vec p ) + e\phi
+\end{align}
 
+Allgemein gilt
+
+\begin{align}
+  \label{eq:56}
+  \vec p \cdot\vec A +  \vec A \cdot\vec p = \vec p\vec A + \vec A\vec p + \vec A\vec p - \vec A\vec p = [\vec p,\vec A] + 2\vec A\vec p 
+\end{align}
+
+Nebenrechnung:
+\begin{align}
+  \label{eq:57}
+  [\vec p,\vec A]\psi = \frac{\hbar}{i}[\vec\nabla,\vec A]\psi =  \frac{\hbar}{i}(\vec\nabla(\vec A\psi) - \vec A\vec\nabla(\psi)  ) = \frac{\hbar}{i}(\psi \vec\nabla(\vec A)+ \cancel{\vec A \vec\nabla(\psi)} - \cancel{\vec A\vec\nabla(\psi)  )} = \frac{\hbar}{i}( \vec\nabla(\vec A) )\psi
+\end{align}
+Also lautet die Gleichung (\ref{eq:56})
+
+\begin{align}
+  \label{eq:58}
+   \vec p \cdot\vec A +  \vec A \cdot\vec p  = [\vec p,\vec A] + 2\vec A\vec p =  \underbr{\frac{\hbar}{i}(\vec \nabla\vec A)}_{\text{Coulombeichung: }\vec \nabla \vec A=0}+ 2\vec A \cdot\vec p 
+\end{align}
+
+Damit verkürzt sich der Hamilton-Operator zu
+
+\begin{align}
+  \label{eq:55}
+  \rightarrow  H \approx \underbr{\frac{p^2}{2m} + e\phi}_{H_0} \underbr{- \frac{e}{m} \vec A\cdot \vec p }_{V}
+\end{align}
+
+Zusätzlich ist das Teilchen nicht in an einen Potential gebunden, damit ist \(\phi=0\) und wir erhalten für ein Teilchen im elektromagetischen Feld
+
+\begin{align}
+  \label{eq:59}
+  H = \frac{p^2}{2m} + V\qquad \text{mit } V = - \frac{e}{m} \vec A\cdot \vec p
+\end{align}
+
+Betrachte nun das klassische Vektorpotential als eine ebene Welle
+
+\begin{align}
+  \label{eq:60}
+  \vec A = A'_0 \hat\epsilon \cos(\vec k\cdot \vec x - \omega t) = \underbr{\frac{A'_0}{2}}_{A_0}\hat\epsilon \left( e^{i(\vec k\cdot \vec x - \omega t) }+ e^{- i(\vec k\cdot \vec x - \omega t) }  \right) =  A_0\hat\epsilon e^{i\vec k\cdot \vec x}e^{ - i\omega t }+  A_0\hat\epsilon e^{- i \vec k\cdot \vec x} e^{ + i \omega t } 
+\end{align}
+
+Das Vektorpotential in den Störoperator \(V\) eingesetzt ergibt
+
+\begin{align}
+  \label{eq:61}
+  V(t) = - \frac{e}{m} \vec A\cdot \vec p = \underbr{- \frac{e}{m} A_0 e^{- i \vec k\cdot \vec x} \hat\epsilon\cdot \vec p}_{V} \cdot e^{ + i \omega t } \underbr{- \frac{e}{m}  A_0 e^{i\vec k\cdot \vec x} \hat\epsilon \cdot \vec p }_{V^\dagger} \cdot e^{ - i\omega t }
+\end{align}
+
+Vergleiche mit der harmonischen Störoperator Gleichung (\ref{eq:41}). Somit können wir mit Hilfe der Gleichung (\ref{eq:53}) eine Übergangsrate für Absorption oder Emission ausrechnen. Für die Absorptionsrate gilt zum Beispiel
+
+\begin{align}
+  \label{eq:62}
+   w_{i\rightarrow n} &= \frac{2\pi}{\hbar}|V_{ni}^\dagger|^2 \delta(E_n - E_i - \hbar\omega)
+\end{align}
+
+Mit \(V^\dagger\) aus Gleichung (\ref{eq:61}) erhalten wir
+
+\begin{align}
+  \label{eq:63}
+  w_{i\rightarrow n} &= \frac{2\pi e^2 A_0^2}{\hbar m^2}\Big| \bra{n} e^{i\vec k\cdot \vec x} \hat\epsilon \cdot \vec p \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega)
+\end{align}
 
 
 
 
 \end{document}
 
-% LocalWords:  geplotet
+
