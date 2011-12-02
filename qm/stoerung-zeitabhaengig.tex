@@ -530,7 +530,7 @@ Betrachte nun das klassische Vektorpotential als eine ebene Welle
   \vec A = A'_0 \hat\epsilon \cos(\vec k\cdot \vec x - \omega t) = \underbr{\frac{A'_0}{2}}_{A_0}\hat\epsilon \left( e^{i(\vec k\cdot \vec x - \omega t) }+ e^{- i(\vec k\cdot \vec x - \omega t) }  \right) =  A_0\hat\epsilon e^{i\vec k\cdot \vec x}e^{ - i\omega t }+  A_0\hat\epsilon e^{- i \vec k\cdot \vec x} e^{ + i \omega t } 
 \end{align}
 
-Das Vektorpotential in den Störoperator \(V\) eingesetzt ergibt
+Wobei \(\hat\epsilon\) ein  Einheitsvektor  ist, der die Richtung des Vektorpotentials und somit die Polarisation angibt. Das Vektorpotential in den Störoperator \(V\) eingesetzt ergibt
 
 \begin{align}
   \label{eq:61}
@@ -551,8 +551,50 @@ Mit \(V^\dagger\) aus Gleichung (\ref{eq:61}) erhalten wir
   w_{i\rightarrow n} &= \frac{2\pi e^2 A_0^2}{\hbar m^2}\Big| \bra{n} e^{i\vec k\cdot \vec x} \hat\epsilon \cdot \vec p \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega)
 \end{align}
 
+\subsection*{Absorptionswirkungsquerschnitt}
 
+Wir wollen den Absorptionswirkungsquerschnitt für das Teilchen im Strahlungsfeld berechnen. Der totale Wirkungsquerschnitt lautet
 
+\begin{align}
+  \label{eq:64}
+  \sigma_{\text{abs}} = \frac{\text{Übergangsrate}}{\text{Photonenfluss}} = \frac{\text{Übergangsrate}}{\frac{\text{Anzahl Photonen}}{\text{Fläche}\cdot\text{Zeit}}}
+\end{align}
+
+Die Übergangsrate können wir aus der Gleichung (\ref{eq:63}) entnehmen. Der Photonenfluss ist uns aber unbekannt. Deswegen erweitern wir die Gleichung (\ref{eq:64}) mit \(\hbar\omega\) (Energie eines einzelnen Photons) sodass wir im Nenner ein Energiefluss haben. Die Gleichung (\ref{eq:64}) sieht dann wie folgt aus
+
+\begin{align}
+  \label{eq:65}
+  \sigma_{\text{abs}} = \frac{\text{Übergangsrate}}{\text{Photonenfluss}}\cdot \frac{\hbar\omega}{\hbar\omega}
+\end{align}
+
+Nun wollen wir uns den Nenner genau ansehen
+
+\begin{align}
+  \label{eq:66}
+  \text{Photonenfluss}\cdot\hbar\omega &= \text{Energiefluß} = \frac{\text{Energie}\cdot \text{Lichtgeschwindigkeit}}{\text{Fläche}\cdot\underbr{\text{Zeit}\cdot \text{Lichtgeschwindigkeit}}_{\text{Länge}}} = \frac{\text{Energie}\cdot \text{Lichtgeschwindigkeit}}{\text{Volumen}} \notag \\
+&= \text{Energiedichte} \cdot \text{Lichtgeschwindigkeit}
+\end{align}
+
+Für die Energie eines klassischen Strahlungsfeldes können wir angeben
+
+\begin{align}
+  \label{eq:67}
+  H = \frac{1}{2}\int d^3\vec x \left( \epsilon_0 \vec E^2 + \frac{1}{\mu_0} \vec B^2 \right)
+\end{align}
+
+Die Energiedichte ergibt sich aus der Ableitung nach allen drei Raumrichtungen
+
+\begin{align}
+  \label{eq:68}
+  \text{Energiedichte} = \vec \nabla\cdot H = \frac{1}{2}\left(\epsilon_0 \vec E^2 + \frac{1}{\mu_0} \vec B^2 \right)
+\end{align}
+
+Wir drücken die Energiedichte nur durch das \(E\)-Feld aus mit der Ausnutzung, dass das Energiefeld des Elektrischen Feldes und des Magnetischen Feldes im Strahlungsfeld wegen der Energieerhaltung gleich groß ist. Ersetze \(\vec B^2 = \frac{1}{c}\vec E^2\)
+
+\begin{align}
+  \label{eq:69}
+  \text{Energiedichte} = \vec \nabla\cdot H = \frac{1}{2}\left(\epsilon_0 \vec E^2 + \frac{1}{c\mu_0} \vec E^2  \right) = \epsilon_0 \vec E^2
+\end{align}
 
 \end{document}
 
