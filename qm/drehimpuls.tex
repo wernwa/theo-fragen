@@ -1,0 +1,388 @@
+\documentclass[12pt,a4paper,titlepage,oneside]{article}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{ngerman}
+%\usepackage{bbold}          %Für den Einheitsoperator \mathbb 1
+\usepackage{dsfont}          %Für den Einheitsoperator \mathds 1
+\usepackage[fleqn]{amsmath}  % Sehr wichtiges Paket, mit neuen Umgebungen.
+\usepackage{amsfonts}        % brauche ich für die Mengensymbole
+\usepackage{amssymb}
+%\usepackage{MnSymbol}       % für \rhookswarrow, \lhooksearrow
+\usepackage[makeroom]{cancel}% Variablen durchstreichen.
+%\usepackage{lastpage}       % zeigt die Gesamtseitenzahl an
+%\usepackage[showlabels,sections,floats,textmath,displaymath]{preview}
+%\usepackage{fancyhdr}
+\usepackage{color}	     % Für farbige Bilder.
+%\usepackage{epsfig}
+\usepackage{graphicx}        % um Graphiken einzubinden
+\graphicspath{{zeichnungen/}}% Suchpfad für Graphiken.
+
+\definecolor{darkblue}{rgb}{0,0,.5}
+\usepackage[colorlinks=true,
+        linkcolor=darkblue,
+        citecolor=darkblue,
+        filecolor=darkblue,
+        pagecolor=darkblue,
+        urlcolor=darkblue,
+        bookmarks=true,
+        bookmarksopen=true,
+        bookmarksopenlevel=3,
+        plainpages=false,
+        pdfpagelabels=true]{hyperref}
+
+%-------------------------------------------------------------------------------
+%Bewirkt das die erste Zeile eines neuen Absatzes nicht eingerückt wird.
+%Stattdessen werde die Absätze durch einen vertikalen Abstand voneinander
+%getrennt.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 2pt minus 1pt}
+
+%-------------------------------------------------------------------------------
+%Diff-Makro:
+%Das Diff-Makro stellt einen Differentialoperator da.
+%
+%Benutzung:
+% \diff  ->  d
+% \diff f  ->  df
+% \diff^2 f  ->  d^2 f
+% \diff_x  ->  d/dx
+% \diff^2_x  ->  d^2/dx^2
+% \diff f_x  ->  df/dx
+% \diff^2 f_x  ->  d^2f/dx^2
+% \diff^2{f(x^5)}_x  ->  d^2(f(x^5))/dx^2
+%
+%Ersetzt man \diff durch \pdiff, so wird der partieller
+%Differentialoperator dargestellt.
+%
+\makeatletter
+\def\diff@n^#1{\@ifnextchar{_}{\diff@n@d^#1}{\diff@n@fun^#1}}
+\def\diff@n@d^#1_#2{\frac{\textrm{d}^#1}{\textrm{d}#2^#1}}
+\def\diff@n@fun^#1#2{\@ifnextchar{_}{\diff@n@fun@d^#1#2}{\textrm{d}^#1#2}}
+\def\diff@n@fun@d^#1#2_#3{\frac{\textrm{d}^#1 #2}{\textrm{d}#3^#1}}
+\def\diff@one@d_#1{\frac{\textrm{d}}{\textrm{d}#1}}
+\def\diff@one@fun#1{\@ifnextchar{_}{\diff@one@fun@d #1}{\textrm{d}#1}}
+\def\diff@one@fun@d#1_#2{\frac{\textrm{d}#1}{\textrm{d}#2}}
+\newcommand*{\diff}{\@ifnextchar{^}{\diff@n}
+  {\@ifnextchar{_}{\diff@one@d}{\diff@one@fun}}}
+%
+%Partieller Diff-Operator.
+\def\pdiff@n^#1{\@ifnextchar{_}{\pdiff@n@d^#1}{\pdiff@n@fun^#1}}
+\def\pdiff@n@d^#1_#2{\frac{\partial^#1}{\partial#2^#1}}
+\def\pdiff@n@fun^#1#2{\@ifnextchar{_}{\pdiff@n@fun@d^#1#2}{\partial^#1#2}}
+\def\pdiff@n@fun@d^#1#2_#3{\frac{\partial^#1 #2}{\partial#3^#1}}
+\def\pdiff@one@d_#1{\frac{\partial}{\partial #1}}
+\def\pdiff@one@fun#1{\@ifnextchar{_}{\pdiff@one@fun@d #1}{\partial#1}}
+\def\pdiff@one@fun@d#1_#2{\frac{\partial#1}{\partial#2}}
+\newcommand*{\pdiff}{\@ifnextchar{^}{\pdiff@n}
+  {\@ifnextchar{_}{\pdiff@one@d}{\pdiff@one@fun}}}
+\makeatother
+%
+%Das gleich nur mit etwas andere Syntax. Die Potenz der Differentiation wird erst
+%zum Schluss angegeben. Somit lautet die Syntax:
+%
+% \diff_x^2  ->  d^2/dx^2
+% \diff f_x^2  ->  d^2f/dx^2
+% \diff{f(x^5)}_x^2  ->  d^2(f(x^5))/dx^2
+% Ansonsten wie Oben.
+%
+%Ersetzt man \diff durch \pdiff, so wird der partieller
+%Differentialoperator dargestellt.
+%
+%\makeatletter
+%\def\diff@#1{\@ifnextchar{_}{\diff@fun#1}{\textrm{d} #1}}
+%\def\diff@one_#1{\@ifnextchar{^}{\diff@n{#1}}%
+%  {\frac{\textrm d}{\textrm{d} #1}}}
+%\def\diff@fun#1_#2{\@ifnextchar{^}{\diff@fun@n#1_#2}%
+%  {\frac{\textrm d #1}{\textrm{d} #2}}}
+%\def\diff@n#1^#2{\frac{\textrm d^#2}{\textrm{d}#1^#2}}
+%\def\diff@fun@n#1_#2^#3{\frac{\textrm d^#3 #1}%
+%  {\textrm{d}#2^#3}}
+%\def\diff{\@ifnextchar{_}{\diff@one}{\diff@}}
+%\newcommand*{\diff}{\@ifnextchar{_}{\diff@one}{\diff@}}
+%
+%Partieller Diff-Operator.
+%\def\pdiff@#1{\@ifnextchar{_}{\pdiff@fun#1}{\partial #1}}
+%\def\pdiff@one_#1{\@ifnextchar{^}{\pdiff@n{#1}}%
+%  {\frac{\partial}{\partial #1}}}
+%\def\pdiff@fun#1_#2{\@ifnextchar{^}{\pdiff@fun@n#1_#2}%
+%  {\frac{\partial #1}{\partial #2}}}
+%\def\pdiff@n#1^#2{\frac{\partial^#2}{\partial #1^#2}}
+%\def\pdiff@fun@n#1_#2^#3{\frac{\partial^#3 #1}%
+%  {\partial #2^#3}}
+%\newcommand*{\pdiff}{\@ifnextchar{_}{\pdiff@one}{\pdiff@}}
+%\makeatother
+
+%-------------------------------------------------------------------------------
+%%Nützliche Makros um in der Quantenmechanik Bras, Kets und das Skalarprodukt
+%%zwischen den beiden darzustellen.
+%%Benutzung:
+%% \bra{x}  ->    < x |
+%% \ket{x}  ->    | x >
+%% \braket{x}{y} ->   < x | y >
+
+\newcommand\bra[1]{\left\langle #1 \right|}
+\newcommand\ket[1]{\left| #1 \right\rangle}
+%\newcommand\braket[2]{%
+%  \left\langle #1\vphantom{#2} \right.%
+%  \left|\vphantom{#1#2}\right.%
+%  \left. \vphantom{#1}#2 \right\rangle}%
+\newcommand\braket[2]{%
+  \left\langle \vphantom{#2} #1%
+    \middle|%
+    \vphantom{#1} #2\right\rangle}%
+
+%-------------------------------------------------------------------------------
+%%Aus dem Buch:
+%%Titel:  Latex in Naturwissenschaften und Mathematik
+%%Autor:  Herbert Voß
+%%Verlag: Franzis Verlag, 2006
+%%ISBN:   3772374190, 9783772374197
+%%
+%%Hier werden drei Makros definiert:\mathllap, \mathclap und \mathrlap, welche
+%%analog zu den aus Latex bekannten \rlap und \llap arbeiten, d.h. selbst
+%%keinerlei horizontalen Platz benötigen, aber dennoch zentriert zum aktuellen
+%%Punkt erscheinen.
+
+\newcommand*\mathllap{\mathstrut\mathpalette\mathllapinternal}
+\newcommand*\mathllapinternal[2]{\llap{$\mathsurround=0pt#1{#2}$}}
+\newcommand*\clap[1]{\hbox to 0pt{\hss#1\hss}}
+\newcommand*\mathclap{\mathpalette\mathclapinternal}
+\newcommand*\mathclapinternal[2]{\clap{$\mathsurround=0pt#1{#2}$}}
+\newcommand*\mathrlap{\mathpalette\mathrlapinternal}
+\newcommand*\mathrlapinternal[2]{\rlap{$\mathsurround=0pt#1{#2}$}}
+
+%%Das Gleiche nur mit \def statt \newcommand.
+%\def\mathllap{\mathpalette\mathllapinternal}
+%\def\mathllapinternal#1#2{%
+%  \llap{$\mathsurround=0pt#1{#2}$}% $
+%}
+%\def\clap#1{\hbox to 0pt{\hss#1\hss}}
+%\def\mathclap{\mathpalette\mathclapinternal}
+%\def\mathclapinternal#1#2{%
+%  \clap{$\mathsurround=0pt#1{#2}$}%
+%}
+%\def\mathrlap{\mathpalette\mathrlapinternal}
+%\def\mathrlapinternal#1#2{%
+%  \rlap{$\mathsurround=0pt#1{#2}$}% $
+%}
+
+%-------------------------------------------------------------------------------
+%%Hier werden zwei neue Makros definiert \overbr und \underbr welche analog zu
+%%\overbrace und \underbrace funktionieren jedoch die Gleichung nicht
+%%'zerreißen'. Dies wird ermöglicht durch das \mathclap Makro.
+
+\def\overbr#1^#2{\overbrace{#1}^{\mathclap{#2}}}
+\def\underbr#1_#2{\underbrace{#1}_{\mathclap{#2}}}
+
+%-------------------------------------------------------------------------------
+%---------------------------------End of Preamble-------------------------------
+%-------------------------------------------------------------------------------
+
+\begin{document}
+\section{Addition von Drehimpulsen, Clebsch-Gordan Koeffizienten}
+\label{sec:addit-von-dreh}
+
+Wir betrachte zwei von einander unabhängige Drehimpulse \(\vec J_1\) und \(\vec
+J_2\), die jeweils einen eigenen Hilbertraum mit der Basis \(\{\ket{j_1,m_1}\}\)
+für \(\vec J_1\) und \(\{\ket{j_2,m_2}\}\) für \(\vec J_2\) bilden. Zusammen
+spannen sie einen \((2j_1+1) \times (2j_2+1)\) dimensionalen Hilbertraum
+\(\mathcal H = \mathcal H_1 \otimes \mathcal H_2\) auf, mit der Basis
+\(\{\ket{j_1,m_1} \otimes \ket{j_2,m_2}\} \equiv \{\ket{j_1,j_2;m_1,m_2}\}\).
+Nun wollen wir die einzelne Drehimpulse in eine gemeinsame Basis überführen, so
+dass wir einen Gesamtdrehimpuls \(\vec J=\vec J_1+\vec J_2\) mit der neuen Basis
+\(\{\ket{J,M}\}\) erhalten. Dies erreichen wir, in dem wir die Orthonormalität
+der alten Basis ausnutzen und den Einheitsoperator \(\mathds 1\) vor die neue
+Basis einschieben:
+\begin{align}
+  \label{eq:1}
+  \ket{J,M}&=\underbrace{\left(
+      \sum_{m_1,m_2}\ket{j_1,j_2;m_1,m_2}\bra{j_1,j_2;m_1,m_2}
+    \right)}_{= \mathds 1}
+  \ket{J,M}\notag\\
+   \ket{J,M}&= \sum_{m_1,m_2} 
+   \underbrace{\braket{j_1,j_2;m_1,m_2}{J,M}}_
+   {\text{\textbf{Glebsch-Gordan Koef.}}}
+   \ket{j_1,j_2;m_1,m_2}
+\end{align}
+
+Da sowohl die alte Basis \( \{\ket{j_1,j_2;m_1,m_2}\}\) als auch die neue Basis
+\(\{\ket{J,M}\}\) orthonormiert sind, handelt es sich bei (\ref{eq:1}) um eine
+unitäre Transformation. Zu bemerken ist dass bei dem von uns eingefügten
+Einheitsoperator nur über die Magnetquantenzahlen \(m_1\) und \(m_2\) summiert
+wird. D.h. man hält die Drehimpulsquantenzahlen \(j_1\) und \(j_2\) fest und
+entwickelt nur nach den Magnetquantenzahlen, für die gilt \(m_1 = -j_1,\; -j_1+1,
+\;-j_1+2, \dots j_1\) und \(m_2 = -j_2, \;-j_2+1,\;-j_2+2, \dots j_2\).\\
+Die Koeffizienten \( \braket{j_1,j_2;m_1,m_2}{J,M} \) die die beiden Basen verbinden
+heißen \emph{Clebsch-Gordan Koeffizienten}. D.h. das Problem der Addition zweier
+Drehimpulse reduziert sich auf das Bestimmen der Glebsch-Gordan Koeffizienten.
+
+Für die Erwartungswerte \(J\) in der neuen Basis gilt:
+\begin{equation}
+  \label{eq:8}
+  \boxed{|j_1-j_2|\leq J\leq j_1+j_2}
+\end{equation}
+
+Dies wird durch die Vektoraddition \(\vec J = \vec J_1+\vec J_2\) deutlich.
+
+Den Erwartungswert \(M\) können wir mit Hilfe des \(J_z=J_{z_1}+J_{z_2}\)
+Operators und folgenden Eigenwertgleichungen bestimmen:
+
+\begin{subequations}
+  \begin{align}
+    J_Z\ket{J,M}&= M \ket{J,M} \label{eq:9a}\\
+    J_{z_1}\ket{j_1,j_2;m_1,m_2}&=m_1\ket{j_1,j_2;m_1,m_2} \label{eq:9b}\\
+    J_{z_2}\ket{j_1,j_2;m_1,m_2}&=m_2\ket{j_1,j_2;m_1,m_2} \label{eq:9c}
+  \end{align}
+\end{subequations}
+
+Es gilt:
+\begin{align}
+  \label{eq:10}
+  J_z-J_{z_1}-J_{z_2}&=0\notag\\
+  \bra{j_1,j_2;m_1,m_2} J_z-J_{z_1}-J_{z_2} \ket{J,M} &=0\notag\\
+  \underbrace{\bra{j_1,j_2;m_1,m_2} J_z\ket{J,M}}_{~\eqref{eq:9a}}
+  -\underbrace{\bra{j_1,j_2;m_1,m_2}J_{z_1}\ket{J,M}}_{~\eqref{eq:9b}}\notag\\
+  -\underbrace{\bra{j_1,j_2;m_1,m_2}J_{z_2} \ket{J,M}}_{~\eqref{eq:9c}}&=0\notag\\
+  M\braket{j_1,j_2;m_1,m_2}{J,M}
+  -m_1\braket{j_1,j_2;m_1,m_2}{J,M}\notag\\
+  -m_2\braket{j_1,j_2;m_1,m_2}{J,M}&=0\notag\\
+  (M-m_1-m_2)\braket{j_1,j_2;m_1,m_2}{J,M}&=0
+\end{align}
+
+Aus der Gleichung \eqref{eq:10} folgt das entweder
+\(\braket{j_1,j_2;m_1,m_2}{J,M}=0\) oder\\ 
+\((M-m_1-m_2)=0\) was zur der wichtigen Beziehung führt:
+\begin{equation}
+  \label{eq:9}
+  \boxed{M=m_1+m_2}
+\end{equation}
+
+Dies ist deswegen so wichtig weil dadurch die Entwicklung \eqref{eq:1} nur
+auf die Clebsch-Gordan Koeffizienten beschränkt wird, bei denen die Bedingung
+\eqref{eq:9} zutrifft. Alle anderen sind \underline{Null}. 
+
+Der Erwartungswert für die Gesamtmagnetquantenzahl \(M\) zwischen:
+\begin{equation}
+  \label{eq:11}
+  -j_1-j_2\leq M \leq j_1+j_2=-(j_1+j_2)\leq M \leq j_1+j_2
+  =-J\leq M \leq J
+\end{equation}
+
+
+
+
+\subsection{Eigenschaften der Clebsch-Gordan Koeffizienten}
+\label{sec:eigensch-der-clebsch}
+
+Die Clebsch-Gordan-Koeffizienten sind konventionsgemäß \emph{reell}:
+\begin{equation}
+  \label{eq:2}
+  \braket{j_1,j_2;m_1,m_2}{J,M} \in \mathbb R
+\end{equation}
+D.h. es gilt:
+\begin{equation}
+  \label{eq:3}
+  \braket{j_1,j_2;m_1,m_2}{J,M} = \braket{J,M}{j_1,j_2;m_1,m_2}^*=
+  \braket{J,M}{j_1,j_2;m_1,m_2}
+\end{equation}
+
+Die Clebsch-Gordan-Koeffizienten sind \emph{orthonormiert}:
+\begin{align}
+  \label{eq:4}
+  \braket{J',M'}{J,M}&=\delta_{J',J}\delta_{J',J}\notag\\
+  \bra{J',M'}\underbrace{\left(
+      \sum_{m_1,m_2}\ket{j_1,j_2;m_1m_2}\bra{j_1,j_2;m_1m_2}\right)
+  }_{=\mathds 1}
+  \ket{J,M}&=\delta_{J',J}\delta_{J',J}\notag\\
+  \Rightarrow\sum_{m_1,m_2}\braket{J',M'}{j_1,j_2;m_1m_2}
+  \braket{j_1,j_2;m_1m_2}{J,M}&=\delta_{J',J}\delta_{J',J}
+\end{align}
+
+Aus Gl.~(\ref{eq:3}) und der Gl.~(\ref{eq:4}) erhalten wir eine wichtige Beziehung:
+\begin{equation}
+  \label{eq:5}
+  \sum_{m_1,m_2}\braket{j_1,j_2;m_1m_2}{J',M'}
+  \braket{j_1,j_2;m_1m_2}{J,M}=\delta_{J',J}\delta_{J',J}
+\end{equation}
+
+Bzw. mit \(J'=J\) und \(M'=M\) folgt:
+\begin{equation}
+  \label{eq:6}
+  \boxed{\sum_{m_1,m_2}\braket{j_1,j_2;m_1m_2}{J,M}^2=1}
+\end{equation}
+
+Analog kann man auch folgende Beziehung herleiten:
+\begin{equation}
+  \label{eq:7}
+  \boxed{\sum_{J}\sum_{M}\braket{j_1,j_2;m_1m_2}{J,M}^2=1}
+\end{equation}
+
+\subsection{Bestimmung der Clebsch-Gordan Koeffizienten}
+\label{sec:best-der-clebsch}
+
+Wir wollen nun einige Beziehungen herleiten um die Clebsch-Gordan Koeffizienten
+bestimmen zu können.
+
+Eine wichtige Beziehung können wir direkt aus \eqref{eq:10} übernehmen:
+\begin{equation}
+  \label{eq:12}
+  \boxed{\braket{j_1,j_2;m_1m_2}{J,M}=0 \quad \text{für} \quad m_1+m_2\neq M}
+\end{equation}
+
+Eine weitere Beziehung finden wir aus den Extremalstellen für \(J\) und \(M\)
+d.h. wenn gilt:
+\begin{equation}
+  \label{eq:13}
+  J=j_1+j_2 \quad \text{und} \quad M=J=j_1+j_2=m_1+m_2
+\end{equation}
+
+Setzen wir \eqref{eq:13} in die Gl.~\eqref{eq:1} ein, so erhalten wir:
+\begin{align}
+  \label{eq:14}
+   \ket{J,J}&=\sum_{m_1=j_1}^{j_1}\sum_{m_2=j_2}^{j_2} 
+   \braket{j_1,j_2;m_1,m_2}{J,J}
+   \ket{j_1,j_2;m_1,m_2}\notag\\
+   &= \braket{j_1,j_2;j_1,j_2}{J,J}
+   \ket{j_1,j_2;j_1,j_2}
+\end{align}
+
+Mit der Normierungsbedingung \(\braket{J,J}{J,J}\stackrel{!}=1\) folgt:
+\begin{align}
+  \label{eq:15}
+  &\braket{J,J}{J,J}=1\notag\\
+  &\bra{j_1,j_2;j_1,j_2} \braket{J,J}{j_1,j_2;j_1,j_2}
+  \braket{j_1,j_2;j_1,j_2}{J,J}\ket{j_1,j_2;j_1,j_2}=1\notag\\
+  &\bra{j_1,j_2;j_1,j_2} \braket{j_1,j_2;j_1,j_2}{J,J}
+  \braket{j_1,j_2;j_1,j_2}{J,J}\ket{j_1,j_2;j_1,j_2}=1\notag\\
+  &\braket{j_1,j_2;j_1,j_2}{J,J}^2
+  \underbrace{\braket{j_1,j_2;j_1,j_2}{j_1,j_2;j_1,j_2}}_{=1}=1\notag\\
+  &\braket{j_1,j_2;j_1,j_2}{J,J}^2=1
+\end{align}
+
+Aus \eqref{eq:15} folgt also:
+\begin{equation}
+  \label{eq:16}
+  \braket{j_1,j_2;j_1,j_2}{J,J}=\pm 1
+\end{equation}
+
+Um nun zu bestimmen ob das Ergebnis in \eqref{eq:16} positive oder negative ist
+d.h. ob \(+1\) oder \(-1\), wurde die sog. \emph{Condon-Shortley
+  Phasenkonvention} eingeführt. Sie besagt, dass der Clebsch-Gordan Koeffizient
+von der Form:\\
+\(\braket{j_1,j_2;j_1,(J-j_1)}{J,J}\) \underline{reell} und \underline{positive}
+sein muss. D.h. in unserem Fall \eqref{eq:13} mit \(J=j_1+j_2 \Leftrightarrow
+J-j_1=j_2\) folgt:
+\begin{equation}
+  \label{eq:17}
+  \braket{j_1,j_2;j_1,j_2}{J,J}=\underbr{\braket{j_1,j_2;j_1,(J-j_1)}{J,J}}
+  _{\text{Konvention: \textbf{positve}}}=1
+\end{equation}
+
+D.h.im Spezialfall \eqref{eq:13} ist der Clebsch-Gordan Koeffizient gleich 1. Es
+gilt:
+\begin{equation}
+  \label{eq:18}
+  \boxed{\braket{j_1,j_2;j_1,j_2}{J,J}=1 \quad \text{mit}\quad J=j_1+j_2}
+\end{equation}
+\end{document}

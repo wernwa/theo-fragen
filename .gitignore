@@ -1,0 +1,18 @@
+# Latex generated files #
+###################
+*.aux
+*.log
+*.out
+*.aux
+*.fmt
+_region_*
+*.ini
+auto
+*
+*_t
+
+# Editor cache files #
+###################
+*~
+*#
+*.bak
