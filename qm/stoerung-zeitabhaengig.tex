@@ -589,12 +589,53 @@ Die Energiedichte ergibt sich aus der Ableitung nach allen drei Raumrichtungen
   \text{Energiedichte} = \vec \nabla\cdot H = \frac{1}{2}\left(\epsilon_0 \vec E^2 + \frac{1}{\mu_0} \vec B^2 \right)
 \end{align}
 
-Wir drücken die Energiedichte nur durch das \(E\)-Feld aus mit der Ausnutzung, dass das Energiefeld des Elektrischen Feldes und des Magnetischen Feldes im Strahlungsfeld wegen der Energieerhaltung gleich groß ist. Ersetze \(\vec B^2 = \frac{1}{c}\vec E^2\)
+Wir drücken die Energiedichte nur durch das \(E\)-Feld aus mit der Ausnutzung, dass das Energiefeld des Elektrischen Feldes und des Magnetischen Feldes im Strahlungsfeld wegen der Energieerhaltung gleich groß ist. Ersetze \(\vec B^2 = \frac{1}{c^2}\vec E^2\)
 
 \begin{align}
   \label{eq:69}
-  \text{Energiedichte} = \vec \nabla\cdot H = \frac{1}{2}\left(\epsilon_0 \vec E^2 + \frac{1}{c\mu_0} \vec E^2  \right) = \epsilon_0 \vec E^2
+  \text{Energiedichte} = \vec \nabla\cdot H = \frac{1}{2}\left(\epsilon_0 \vec E^2 + \frac{1}{c^2\mu_0} \vec E^2  \right) = \epsilon_0 \vec E^2
 \end{align}
+
+Das \(\vec E\)-Feld ergibt sich aus der Zeitlichen Ableitung des Vektorpotentials. Mit Hilfe der Gleichung (\ref{eq:60}) ergibt sich für das \(\vec E\)-Feld
+
+\begin{align}
+  \label{eq:70}
+  \vec E = - \pdiff_t \vec A = - A'_0\, \omega\, \hat\epsilon\, \sin(\vec k\cdot \vec x - \omega t) = - 2 A_0\, \omega\, \hat\epsilon\, \sin(\vec k\cdot \vec x - \omega t)
+\end{align}
+
+Bisher haben wir das \(\vec E\) und \(\vec B\)-Feld klassisch betrachtet. Für die Quantenmechanik benötigen wir aber den Erwartungswert. Energiedichte in Gleichung (\ref{eq:69}) ist also definiert als
+
+\begin{align}
+  \label{eq:71}
+  \text{Energiedichte} = \epsilon_0 \langle \vec E^2 \rangle =  \epsilon_0 4 |A_0|^2\, \omega^2\, \underbr{\langle \sin^2(\vec k\cdot \vec x - \omega t)}_{= \frac{1}{2}} \rangle = 2 \epsilon_0 |A_0|^2\, \omega^2
+\end{align}
+
+Die Rechnung für den Erwartungswert \(\langle \sin^2(\vec k\cdot \vec x - \omega t)=\frac{1}{2}\) findet sich ausführlich in dem PDF \url{http://github.com/wernwa/theo-fragen/raw/master/qm/sin^2-erwartungswert.pdf}.\\
+\\
+Damit können wir mit Hilfe Übergangsrate aus Gleichung (\ref{eq:63}) und der Energiedichte aus Gleichung (\ref{eq:71}) den Absorptions-Wirktungsquerschnitt aus Gleichung (\ref{eq:65}) schlussendlich berechnen
+
+\begin{align}
+  \label{eq:72}
+  \sigma_{\text{abs}} &= \frac{\text{Übergangsrate} \cdot\hbar\omega}{\text{Energiedichte}\cdot\text{Lichtgeschwindigkeit} } = \frac{ \frac{2\pi e^2 A_0^2}{\hbar m^2}\Big| \bra{n} e^{i\vec k\cdot \vec x} \hat\epsilon \cdot \vec p \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega) \cdot\hbar\omega }{ 2 \epsilon_0 |A_0|^2\, \omega^2 \cdot c} \notag\\
+&= \frac{2\pi e^2 A_0^2 \hbar\omega }{2 \hbar m^2 \epsilon_0 |A_0|^2\, \omega^2 c}\Big| \bra{n} e^{i\vec k\cdot \vec x} \hat\epsilon \cdot \vec p \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega)  \notag\\
+&= \frac{\pi e^2 }{ m^2 \epsilon_0 \omega c}\Big| \bra{n} e^{i\vec k\cdot \vec x} \hat\epsilon \cdot \vec p \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega)  \notag\\
+\end{align}
+
+In der Literatur wir häufig der Absorptions-Wirktungsquerschnitt mit Hilfe der Feinstrukturkonstante
+
+\begin{align}
+  \label{eq:73}
+  \alpha = \frac{e^2}{4\pi\cdot\epsilon_0\cdot\hbar\cdot c}
+\end{align}
+
+ausgedrückt. Damit sieht die Gleichung (\ref{eq:72}) wie folgt aus
+
+\begin{align}
+  \label{eq:74}
+  \boxed{\sigma_{\text{abs}} = \frac{4 \pi^2 \hbar }{ m^2 \omega} \cdot \alpha \cdot \Big| \bra{n} e^{i\vec k\cdot \vec x} \hat\epsilon \cdot \vec p \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega)}
+\end{align}
+
+
 
 \end{document}
 
