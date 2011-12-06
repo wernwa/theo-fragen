@@ -1,0 +1,323 @@
+\documentclass[12pt,a4paper,titlepage,oneside]{article}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{ngerman}
+\usepackage[ngerman]{babel}
+%\usepackage{bbold}          %Für den Einheitsoperator \mathbb 1
+\usepackage{dsfont}          %Für den Einheitsoperator \mathds 1
+\usepackage[fleqn]{amsmath}  % Sehr wichtiges Paket, mit neuen Umgebungen.
+\usepackage{amsfonts}        % brauche ich für die Mengensymbole
+\usepackage{amssymb}
+%\usepackage{MnSymbol}       % für \rhookswarrow, \lhooksearrow
+\usepackage[makeroom]{cancel}% Variablen durchstreichen.
+%\usepackage{lastpage}       % zeigt die Gesamtseitenzahl an
+%\usepackage[showlabels,sections,floats,textmath,displaymath]{preview}
+%\usepackage{fancyhdr}
+\usepackage{color}	     % Für farbige Bilder.
+%\usepackage{epsfig}
+\usepackage{graphicx}        % um Graphiken einzubinden
+\graphicspath{{zeichnungen/}}% Suchpfad für Graphiken.
+
+\definecolor{darkblue}{rgb}{0,0,.5}
+\usepackage[colorlinks=true,
+        linkcolor=darkblue,
+        citecolor=darkblue,
+        filecolor=darkblue,
+        pagecolor=darkblue,
+        urlcolor=darkblue,
+        bookmarks=true,
+        bookmarksopen=true,
+        bookmarksopenlevel=3,
+        plainpages=false,
+        pdfpagelabels=true]{hyperref}
+
+%-------------------------------------------------------------------------------
+%Bewirkt das die erste Zeile eines neuen Absatzes nicht eingerückt wird.
+%Stattdessen werde die Absätze durch einen vertikalen Abstand voneinander
+%getrennt.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 2pt minus 1pt}
+
+%-------------------------------------------------------------------------------
+%Diff-Makro:
+%Das Diff-Makro stellt einen Differentialoperator da.
+%
+%Benutzung:
+% \diff  ->  d
+% \diff f  ->  df
+% \diff^2 f  ->  d^2 f
+% \diff_x  ->  d/dx
+% \diff^2_x  ->  d^2/dx^2
+% \diff f_x  ->  df/dx
+% \diff^2 f_x  ->  d^2f/dx^2
+% \diff^2{f(x^5)}_x  ->  d^2(f(x^5))/dx^2
+%
+%Ersetzt man \diff durch \pdiff, so wird der partieller
+%Differentialoperator dargestellt.
+%
+\makeatletter
+\def\diff@n^#1{\@ifnextchar{_}{\diff@n@d^#1}{\diff@n@fun^#1}}
+\def\diff@n@d^#1_#2{\frac{\textrm{d}^#1}{\textrm{d}#2^#1}}
+\def\diff@n@fun^#1#2{\@ifnextchar{_}{\diff@n@fun@d^#1#2}{\textrm{d}^#1#2}}
+\def\diff@n@fun@d^#1#2_#3{\frac{\textrm{d}^#1 #2}{\textrm{d}#3^#1}}
+\def\diff@one@d_#1{\frac{\textrm{d}}{\textrm{d}#1}}
+\def\diff@one@fun#1{\@ifnextchar{_}{\diff@one@fun@d #1}{\textrm{d}#1}}
+\def\diff@one@fun@d#1_#2{\frac{\textrm{d}#1}{\textrm{d}#2}}
+\newcommand*{\diff}{\@ifnextchar{^}{\diff@n}
+  {\@ifnextchar{_}{\diff@one@d}{\diff@one@fun}}}
+%
+%Partieller Diff-Operator.
+\def\pdiff@n^#1{\@ifnextchar{_}{\pdiff@n@d^#1}{\pdiff@n@fun^#1}}
+\def\pdiff@n@d^#1_#2{\frac{\partial^#1}{\partial#2^#1}}
+\def\pdiff@n@fun^#1#2{\@ifnextchar{_}{\pdiff@n@fun@d^#1#2}{\partial^#1#2}}
+\def\pdiff@n@fun@d^#1#2_#3{\frac{\partial^#1 #2}{\partial#3^#1}}
+\def\pdiff@one@d_#1{\frac{\partial}{\partial #1}}
+\def\pdiff@one@fun#1{\@ifnextchar{_}{\pdiff@one@fun@d #1}{\partial#1}}
+\def\pdiff@one@fun@d#1_#2{\frac{\partial#1}{\partial#2}}
+\newcommand*{\pdiff}{\@ifnextchar{^}{\pdiff@n}
+  {\@ifnextchar{_}{\pdiff@one@d}{\pdiff@one@fun}}}
+\makeatother
+%
+%Das gleich nur mit etwas andere Syntax. Die Potenz der Differentiation wird erst
+%zum Schluss angegeben. Somit lautet die Syntax:
+%
+% \diff_x^2  ->  d^2/dx^2
+% \diff f_x^2  ->  d^2f/dx^2
+% \diff{f(x^5)}_x^2  ->  d^2(f(x^5))/dx^2
+% Ansonsten wie Oben.
+%
+%Ersetzt man \diff durch \pdiff, so wird der partieller
+%Differentialoperator dargestellt.
+%
+%\makeatletter
+%\def\diff@#1{\@ifnextchar{_}{\diff@fun#1}{\textrm{d} #1}}
+%\def\diff@one_#1{\@ifnextchar{^}{\diff@n{#1}}%
+%  {\frac{\textrm d}{\textrm{d} #1}}}
+%\def\diff@fun#1_#2{\@ifnextchar{^}{\diff@fun@n#1_#2}%
+%  {\frac{\textrm d #1}{\textrm{d} #2}}}
+%\def\diff@n#1^#2{\frac{\textrm d^#2}{\textrm{d}#1^#2}}
+%\def\diff@fun@n#1_#2^#3{\frac{\textrm d^#3 #1}%
+%  {\textrm{d}#2^#3}}
+%\def\diff{\@ifnextchar{_}{\diff@one}{\diff@}}
+%\newcommand*{\diff}{\@ifnextchar{_}{\diff@one}{\diff@}}
+%
+%Partieller Diff-Operator.
+%\def\pdiff@#1{\@ifnextchar{_}{\pdiff@fun#1}{\partial #1}}
+%\def\pdiff@one_#1{\@ifnextchar{^}{\pdiff@n{#1}}%
+%  {\frac{\partial}{\partial #1}}}
+%\def\pdiff@fun#1_#2{\@ifnextchar{^}{\pdiff@fun@n#1_#2}%
+%  {\frac{\partial #1}{\partial #2}}}
+%\def\pdiff@n#1^#2{\frac{\partial^#2}{\partial #1^#2}}
+%\def\pdiff@fun@n#1_#2^#3{\frac{\partial^#3 #1}%
+%  {\partial #2^#3}}
+%\newcommand*{\pdiff}{\@ifnextchar{_}{\pdiff@one}{\pdiff@}}
+%\makeatother
+
+%-------------------------------------------------------------------------------
+%%Nützliche Makros um in der Quantenmechanik Bras, Kets und das Skalarprodukt
+%%zwischen den beiden darzustellen.
+%%Benutzung:
+%% \bra{x}  ->    < x |
+%% \ket{x}  ->    | x >
+%% \braket{x}{y} ->   < x | y >
+
+\newcommand\bra[1]{\left\langle #1 \right|}
+\newcommand\ket[1]{\left| #1 \right\rangle}
+%\newcommand\braket[2]{%
+%  \left\langle #1\vphantom{#2} \right.%
+%  \left|\vphantom{#1#2}\right.%
+%  \left. \vphantom{#1}#2 \right\rangle}%
+\newcommand\braket[2]{%
+  \left\langle \vphantom{#2} #1%
+    \middle|%
+    \vphantom{#1} #2\right\rangle}%
+
+%-------------------------------------------------------------------------------
+%%Aus dem Buch:
+%%Titel:  Latex in Naturwissenschaften und Mathematik
+%%Autor:  Herbert Voß
+%%Verlag: Franzis Verlag, 2006
+%%ISBN:   3772374190, 9783772374197
+%%
+%%Hier werden drei Makros definiert:\mathllap, \mathclap und \mathrlap, welche
+%%analog zu den aus Latex bekannten \rlap und \llap arbeiten, d.h. selbst
+%%keinerlei horizontalen Platz benötigen, aber dennoch zentriert zum aktuellen
+%%Punkt erscheinen.
+
+\newcommand*\mathllap{\mathstrut\mathpalette\mathllapinternal}
+\newcommand*\mathllapinternal[2]{\llap{$\mathsurround=0pt#1{#2}$}}
+\newcommand*\clap[1]{\hbox to 0pt{\hss#1\hss}}
+\newcommand*\mathclap{\mathpalette\mathclapinternal}
+\newcommand*\mathclapinternal[2]{\clap{$\mathsurround=0pt#1{#2}$}}
+\newcommand*\mathrlap{\mathpalette\mathrlapinternal}
+\newcommand*\mathrlapinternal[2]{\rlap{$\mathsurround=0pt#1{#2}$}}
+
+%%Das Gleiche nur mit \def statt \newcommand.
+%\def\mathllap{\mathpalette\mathllapinternal}
+%\def\mathllapinternal#1#2{%
+%  \llap{$\mathsurround=0pt#1{#2}$}% $
+%}
+%\def\clap#1{\hbox to 0pt{\hss#1\hss}}
+%\def\mathclap{\mathpalette\mathclapinternal}
+%\def\mathclapinternal#1#2{%
+%  \clap{$\mathsurround=0pt#1{#2}$}%
+%}
+%\def\mathrlap{\mathpalette\mathrlapinternal}
+%\def\mathrlapinternal#1#2{%
+%  \rlap{$\mathsurround=0pt#1{#2}$}% $
+%}
+
+%-------------------------------------------------------------------------------
+%%Hier werden zwei neue Makros definiert \overbr und \underbr welche analog zu
+%%\overbrace und \underbrace funktionieren jedoch die Gleichung nicht
+%%'zerreißen'. Dies wird ermöglicht durch das \mathclap Makro.
+
+\def\overbr#1^#2{\overbrace{#1}^{\mathclap{#2}}}
+\def\underbr#1_#2{\underbrace{#1}_{\mathclap{#2}}}
+
+%-------------------------------------------------------------------------------
+%---------------------------------End of Preamble-------------------------------
+%-------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\section*{Erwartungswert von \(\sin^2(x)\)}
+\label{sec:erwart-von-sin2x}
+
+Behauptung:
+\begin{align}
+  \label{eq:1}
+  \boxed{\left\langle \sin^2(x) \right\rangle = \frac 1 2}
+\end{align}
+
+Wir wollen nun die Behauptung \eqref{eq:1} überprüfen. Dazu benutzen wir
+folgende Identität:
+\begin{align}
+  \label{eq:2}
+  \sin(x)=\frac 1 {2i}\left(e^{ix}-e^{-ix}\right)
+\end{align}
+
+Damit können wir schreiben:
+ \begin{align}
+   \label{eq:3}
+    \langle \sin^2(x) \rangle 
+    &= \left\langle -\frac 1 4 \left(e^{ix}-e^{-ix}\right)^2\right\rangle
+    = \left\langle -\frac 1 4 \left(e^{2ix}+e^{-2ix}-2\cdot
+        \underbrace{e^{ix}e^{-ix}}_{=1} \right)\right\rangle\notag\\ 
+    &= \left\langle \frac 1 2 -\frac 1 4 \left(e^{2ix}+e^{-2ix}
+      \right)\right\rangle
+    = \left\langle \frac 1 2\right\rangle 
+    - \left\langle\frac 1 4 \left(e^{2ix}+e^{-2ix}
+      \right)\right\rangle\notag\\
+    &= \frac 1 2 
+    - \left\langle\frac 1 4 \left(e^{2ix}+e^{-2ix}
+      \right)\right\rangle
+ \end{align}
+
+Nun wollen wir den Eigenwert des zweiten Terms in der Gl. \eqref{eq:3}
+bestimmen. Für den Erwartungswert eines Operators im Ortsraum gilt allgemein:
+\begin{align}
+  \label{eq:4}
+  \langle O \rangle = \int \psi^* O \psi \diff x
+\end{align}
+
+Betrachte \(\psi\) als ebene Welle mit:
+\begin{align}
+  \label{eq:5}
+  \psi=Ae^{i(kx-\omega t)}
+\end{align}
+
+Mit \eqref{eq:4} und \eqref{eq:5} folgt für den Erwartungswert in Gl.
+~\eqref{eq:2}:
+\begin{align}
+  \label{eq:6}
+   \left\langle\frac 1 4 \left(e^{2ix}+e^{-2ix}\right)\right\rangle 
+    &= \frac 1 4 \int_{-\infty}^\infty A^*e^{-i(kx-\omega t)}
+      \left(e^{2ix}+e^{-2ix}\right) Ae^{i(kx-\omega t)}\diff x \notag\\
+    &= \frac {|A|^2} 4 \int_{-\infty}^\infty
+      \left(e^{2ix}+e^{-2ix}\right)\diff x
+\end{align}
+
+Um nun das Integral in Gl.~\eqref{eq:6} zu berechnen machen wir eine
+Substitution:
+\begin{subequations}
+  \begin{align}
+    z&=e^{2ix} 
+    \quad \Rightarrow z(\infty)=\infty \quad z(-\infty)=0
+    \qquad \text{mit } z \in \mathbb C \label{eq:7a}\\
+    \Leftrightarrow\diff z_x &= 2i e^{2ix} = 2i z
+    \Leftrightarrow \diff x = \frac {\diff z} {2 i z}\label{eq:7b}
+  \end{align}
+\end{subequations}
+
+Mit der Substitution \eqref{eq:7a} und \eqref{eq:7b} erhalten wir für das
+Integral in der Gl.~\eqref{eq:6}:
+\begin{align}
+  \label{eq:7}
+  \int_{-\infty}^\infty
+  \left(e^{2ix}+e^{-2ix}\right)\diff x &=
+  \int_{0}^\infty
+  \left(z+\frac 1 {z} \right) \frac 1 {2iz} \diff z
+  =\frac 1 {2i} \int_{0}^\infty \left(1+\frac 1 {z^2} \right)\diff z
+  \notag\\
+  &=\frac 1 {2i} \int_{0}^\infty \frac {z^2+ 1}{z^2}\diff z
+\end{align}
+
+Da die Variable \(z\) im Gl.~\eqref{eq:7} nur in quadratischer Form
+vorkommt, können wir die Grenzen ersetzen mit \(\int_0^\infty\rightarrow 
+\frac 1 2 \int_{-\infty}^\infty\) und erhalten folgendes Integral:
+\begin{align}
+  \label{eq:8}
+  \frac 1 {4i} \int_{-\infty}^\infty \frac {z^2+ 1}{z^2}\diff z
+\end{align}
+
+Das Integral \eqref{eq:8} lässt sich mit Hilfe des Residuensatzes:
+\begin{align}
+  \label{eq:9}
+  \oint f(z)\diff z = 2\pi i\sum_{k=1}^n\text{Res}(f,z_k)
+\end{align}
+bestimmen.
+Dazu berechnen wir zuerst das Residuuum unser Funktion:
+\begin{align}
+  \label{eq:10}
+  f(z)=\frac {z^2+1} {z^2}
+\end{align}
+
+Für das Residuum einen Funktion \(f(z)\), die in \(z_0\) einen Pol n-ter Ordnung
+hat, gilt:
+\begin{align}
+  \label{eq:11}
+  \text{Res}(f, z_0)=\lim_{z \to z_0}\frac 1 {(n-1)!}\frac{\text d^{n-1}}{\text
+    d z^{n-1}}\Big[(z-z_0)^nf(z)\Big]
+\end{align}
+
+Die Funktion \eqref{eq:10} hat einen Pol 2-ter Ordnung bei \(z_0=0\). D.h es
+gilt laut Gl.~\eqref{eq:11}:
+\begin{align}
+  \label{eq:12}
+   \text{Res}(f, 0)=\lim_{z \to 0}\diff_z z^2\left(\frac{z^2+1}{z^2}\right)
+   =\lim_{z \to 0}\diff_z z^2+1=\lim_{z \to 0}2z=0
+\end{align}
+
+Mit \eqref{eq:9},~\eqref{eq:10} und \eqref{eq:12} folgt für unser Integral
+\eqref{eq:8}:
+\begin{align}
+  \label{eq:13}
+  \frac 1 {4i} \int_{-\infty}^\infty \frac {z^2+ 1}{z^2}\diff z
+  \equiv \frac 1 {4i}\oint f(z)\diff z 
+  = \frac 1 {4i} 2\pi i\,\text{Res}(f,0)
+  =\frac \pi {2}\cdot 0 =0
+\end{align}
+
+Damit gilt für den Erwartungswert in Gl.~\eqref{eq:3}:
+\begin{align}
+  \label{eq:14}
+   \left\langle\frac 1 4 \left(e^{2ix}+e^{-2ix}\right)\right\rangle 
+   \equiv \frac 1 {4i} \int_{-\infty}^\infty \frac {z^2+ 1}{z^2}\diff z
+   = 0
+\end{align}
+
+Somit wäre die Behauptung Gl.~\eqref{eq:1} bestätigt.
+\end{document}
