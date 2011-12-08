@@ -610,7 +610,7 @@ Bisher haben wir das \(\vec E\) und \(\vec B\)-Feld klassisch betrachtet. Für d
   \text{Energiedichte} = \epsilon_0 \langle \vec E^2 \rangle =  \epsilon_0 4 |A_0|^2\, \omega^2\, \underbr{\langle \sin^2(\vec k\cdot \vec x - \omega t)}_{= \frac{1}{2}} \rangle = 2 \epsilon_0 |A_0|^2\, \omega^2
 \end{align}
 
-Die Rechnung für den Erwartungswert \(\langle \sin^2(\vec k\cdot \vec x - \omega t)=\frac{1}{2}\) findet sich ausführlich in dem PDF \url{http://github.com/wernwa/theo-fragen/raw/master/qm/sin^2-erwartungswert.pdf}.\\
+Eine \(sin^2(x)\)-Funktion ist eine periodische Funktion, die um den Wert \(\frac{1}{2}\) oszilliert. D.h. der Mittelwert über die Zeit gemittelt ist \(\frac{1}{2}\). Für den matematik Begeisterten gibt es eine Analytische Lösung mittels des Residuen-Satzen. Die Rechnung für den Erwartungswert \(\langle \sin^2(\vec k\cdot \vec x - \omega t)=\frac{1}{2}\) findet sich ausführlich in dem PDF \url{http://github.com/wernwa/theo-fragen/raw/master/qm/sin^2-erwartungswert.pdf}.\\
 \\
 Damit können wir mit Hilfe Übergangsrate aus Gleichung (\ref{eq:63}) und der Energiedichte aus Gleichung (\ref{eq:71}) den Absorptions-Wirktungsquerschnitt aus Gleichung (\ref{eq:65}) schlussendlich berechnen
 
@@ -635,7 +635,96 @@ ausgedrückt. Damit sieht die Gleichung (\ref{eq:72}) wie folgt aus
   \boxed{\sigma_{\text{abs}} = \frac{4 \pi^2 \hbar }{ m^2 \omega} \cdot \alpha \cdot \Big| \bra{n} e^{i\vec k\cdot \vec x} \hat\epsilon \cdot \vec p \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega)}
 \end{align}
 
+Der Wirkungsquerschnitt \(\sigma_{\text{abs}}\) hat die Einheit einer Fläche \(m^2\). Demnach wird dem Wirkungsquerschnitt eine fiktive Fläche zugeordnet, so dass jeder einfallende Strom der auf diese Fläche trifft, von ihr absorbiert wird.
 
+Um das Matrixelement \(\Big| \bra{n} e^{i\vec k\cdot \vec x} \hat\epsilon \cdot \vec p \ket{i} \Big|^2 \) zumindest näherungsweise zu berechnen, führt man eine sogenante Dipol-Approximation durch.
+
+\subsection*{Elektrische Dipol-Approximation}
+
+Bei einer Dipol-Approximation betrachtet man zum Beispiel ein gebundenes Elektron in einem Atom, der von einer Strahlungsquelle angestrahlt wird. Es gilt
+
+\begin{align}
+  \label{eq:75}
+   e^{i\vec k\cdot \vec x} \approx 1
+\end{align}
+
+Um diese Behauptung zu belegen betrachten wir die Dimesionen von \(\vec k\cdot \vec x\). Betrachte einfallende Strahlung als Niveau-Übergang von Zustand \(\ket{i}\) nach Zustand \(\ket{n}\). Damit folgt für \(|\vec k|\)
+
+\begin{align}
+  \label{eq:76}
+  |\vec k| = \frac{\omega_{ni}}{c} = \frac{E_n - E_i}{c \hbar} < \frac{E_{\text{Ry}}}{\hbar c}
+\end{align}
+
+Zur Errinerung, die Rydberg-Ernergie \(E_{\text{Ry}}\) ist Bindungsenergie für das Elektron in einem Wasserstoffatom im Grundzustand. Für alle weiteren Bindungszustände gilt
+
+\begin{align}
+  \label{eq:77}
+  E_n = -\frac{e^2}{4\pi \epsilon_0 n^2} =  -E_{\text{Ry}}\frac{1}{n^2}
+\end{align}
+
+Da jedes höhere Nievaue mit \(\frac{1}{n^2}\) im Vergleich zu der Rydberg-Energie abfällt ist die Ungleichung \(E_n - E_i < E_{\text{Ry}}\) in Gleichung (\ref{eq:76}) immer gerechtfertigt. Mit der Annahme dass das Photon das Atom durchquert, kann man für \(|\vec x|\approx a_0\) ansetzen, so gilt für Das Produckt \(\vec k\cdot \vec x\)
+
+\begin{align}
+  \label{eq:78}
+  |\vec k|\cdot |\vec x| \approx |\vec k|\cdot a_0 \approx \frac{E_n - E_i}{c \hbar} \cdot a_0 \lesssim \frac{E_{\text{Ry}} a_0}{\hbar c} = \frac{\alpha}{2} \approx \frac{1}{137\cdot 2} \ll 1
+\end{align}
+
+Damit wäre die Behauptung (\ref{eq:75}) gerechtfertigt. Wir können nun die Wirkungsquerschnitt aus Gleichung (\ref{eq:74}) in der Dipol-Approximation schreiben
+
+\begin{align}
+  \label{eq:79}
+  \sigma_{\text{abs}} = \frac{4 \pi^2 \hbar }{ m^2 \omega} \cdot \alpha \cdot \Big| \bra{n} \hat\epsilon \cdot \vec p \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega)
+\end{align}
+
+Um das weiter zu vereinfachen, betrachte die Welle in der \(x\)-Richtung. Damit gilt \(\hat\epsilon \cdot \vec p = p_x \)
+
+\begin{align}
+  \label{eq:80}
+    \sigma_{\text{abs}} = \frac{4 \pi^2 \hbar }{ m^2 \omega} \cdot \alpha \cdot \Big| \bra{n} p_x \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega)
+\end{align}
+
+Wir errinern uns an folgende Kommutator-Relation
+
+\begin{align}
+  \label{eq:81}
+  [x,H_0] = [x,\frac{p^2_x}{2m}] = \frac{1}{2m}[x,p^2_x] = \frac{1}{2m}(p_x\underbr{[x,p_x]}_{i\hbar} + \underbr{[x,p_x]}_{i\hbar}p_x) = \frac{i\hbar}{m}p_x \Leftrightarrow p_x = \frac{m}{i\hbar}[x,H_0]
+\end{align}
+
+Setzen wir nun den Impuls \(p_x\) aus Gleichung (\ref{eq:81}) in die Gleichung (\ref{eq:80}) ein, so erhalten wir
+
+\begin{align}
+  \label{eq:82}
+    \sigma_{\text{abs}} &= \frac{4 \pi^2 \hbar }{ m^2 \omega} \frac{m^2}{\hbar^2} \cdot \alpha \cdot \Big| \bra{n}[x,H_0]  \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega) \notag \\
+&= \frac{4 \pi^2  }{\hbar \omega} \cdot \alpha \cdot \Big| \bra{n} (xH_0-H_0x)  \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega) \notag \\
+&= \frac{4 \pi^2  }{\hbar \omega} \cdot \alpha \cdot \Big| \bra{n}xH_0\ket{i}- \bra{n} H_0x \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega) \notag \\
+&= \frac{4 \pi^2  }{\hbar \omega} \cdot \alpha \cdot \Big|E_i \bra{n}x\ket{i}- E_n \bra{n} x \ket{i} \Big|^2 \delta(E_n - E_i - \hbar\omega) \notag \\
+&= \frac{4 \pi^2  }{\hbar \omega} \cdot \alpha \cdot \Big|\bra{n}x\ket{i}( E_i - E_n) \Big|^2 \delta(E_n - E_i - \hbar\omega) \notag \\
+&= \frac{4 \pi^2  }{\hbar \omega} \cdot \alpha \cdot \Big|( E_i - E_n) \Big|^2 \Big|\bra{n}x\ket{i}\Big|^2 \delta(E_n - E_i - \hbar\omega) \notag \\
+&= \frac{4 \pi^2  }{\hbar \omega} \cdot \alpha \cdot \Big|\underbr{( E_n - E_i)}_{\omega_{ni}\hbar} \Big|^2 \Big|\bra{n}x\ket{i}\Big|^2 \delta(E_n - E_i - \hbar\omega) \notag \\
+\end{align}
+
+Aus dieser Gleichung folgt für die elektrische Dipol-Approximation
+
+\begin{align}
+  \label{eq:83}
+ \boxed{ \sigma_{\text{abs}}  = \frac{4 \pi^2 \hbar }{ \omega} \cdot \alpha \cdot \omega_{ni}^2  \Big|\bra{n}x\ket{i}\Big|^2 \delta(E_n - E_i - \hbar\omega) }
+\end{align}
+
+Zur Erläuterung warum das elektrische Dipolapproximation heist. Die Definition eines physikalischen Dipols besteht aus zwei gegensätzlichen Ladungen und hinreihend kurzen Abstandes \(\vec x\). So gilt für das Dipolmoment
+
+\begin{align}
+  \label{eq:84}
+  \vec d = q\cdot\vec x
+\end{align}
+
+Setzen wir die Feinstrukturkonstante in die Gleichung (\ref{eq:83}) ein
+
+\begin{align}
+  \label{eq:85}
+  \sigma_{\text{abs}}  = \frac{4 \pi^2 }{4\pi \epsilon_0 c \omega} \cdot  \omega_{ni}^2 \cdot\underbr{ e^2\cdot \Big|\bra{n}x\ket{i}\Big|^2}_{|\vec d|^2} \delta(E_n - E_i - \hbar\omega) 
+\end{align}
+
+so sieht man dass die Fläche des Wirkungsquerschnitts \( \sigma_{\text{abs}} \) aus dem Dipolmoment von den Einheiten abhängt. Deswegen nennt man diese Approximation auch die Dipol-Approximation. 
 
 \end{document}
 
