@@ -65,25 +65,25 @@ Damit erhalten wir:
    T^{(k)}_q  \ket{\alpha;jm} = \sum_{JM}\ket{\alpha; JM} \braket{jk;mq}{JM}
 \end{equation}
 
-Multiplizieren wir mit \(\bra{\alpha;jm}\)
+Multiplizieren wir mit \(\bra{\alpha;j'm'}\)
 
 \begin{equation}
   \label{eq:8}
-  \bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} = \sum_{JM} \underbr{\braket{\alpha;jm}{\alpha; JM}}_{\delta_{jJ}\delta_{mM}} \braket{jk;mq}{JM}
+  \bra{\alpha;j'm'} T^{(k)}_q  \ket{\alpha;jm} = \sum_{JM} \underbr{\braket{\alpha;j'm'}{\alpha; JM}}_{\delta_{j'J}\delta_{m'M}} \braket{jk;mq}{JM}
 \end{equation}
 
-Wegen der Orthogonalitätsbegingung bleibt von der Summe nur ein Summand übrig, bei dem gilt \(j=J\) und \(m=M\). Gleichung (\ref{eq:8}) können wir nun schreiben:
+Wegen der Orthogonalitätsbegingung bleibt von der Summe nur ein Summand übrig, bei dem gilt \(j'=J\) und \(m'=M\). Gleichung (\ref{eq:8}) können wir nun schreiben:
 
 \begin{equation}
   \label{eq:9}
-   \bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} = \underbr{\braket{\alpha;jm}{\alpha; jm}}_{\text{reduziertes Matrixelement}}  \braket{jk;mq}{jm}
+   \bra{\alpha;j'm'} T^{(k)}_q  \ket{\alpha;jm} = \underbr{\braket{\alpha;j'm'}{\alpha; j'm'}}_{\text{reduziertes Matrixelement}}  \braket{jk;mq}{j'm'}
 \end{equation}
 
 Dabei ist das reduzierte Matrixelement unabhängig von der Quantenzahl \(m\). Das wird im Anschluss \ref{sec:2} bewiesen. Wir erhalten das Wigner-Eckart-Theorem
 
 \begin{equation}
   \label{eq:15}
-\boxed{\bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} =  \braket{jk;mq}{jm} \langle \alpha;j || T^{(q)}_k || \alpha; j \rangle }
+\boxed{\bra{\alpha;j'm'} T^{(k)}_q  \ket{\alpha;jm} =  \braket{jk;mq}{j'm'} \langle \alpha;j || T^{(q)}_k || \alpha; j' \rangle }
 \end{equation}
 
 
@@ -203,6 +203,7 @@ Aus der Gleichung (\ref{eq:12}) sieht man dass das reduzierte Matrixelement nich
   \label{eq:14}
    \bra{\alpha;jm} T^{(k)}_q  \ket{\alpha;jm} =  \underbr{\braket{\alpha;j}{\alpha; j}}_{\text{reduziertes Matrixelement}}   \braket{jk;mq}{jm}
 \end{equation}
+
 
 
 

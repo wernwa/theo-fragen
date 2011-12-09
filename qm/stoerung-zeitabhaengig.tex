@@ -703,11 +703,11 @@ Setzen wir nun den Impuls \(p_x\) aus Gleichung (\ref{eq:81}) in die Gleichung (
 &= \frac{4 \pi^2  }{\hbar \omega} \cdot \alpha \cdot \Big|\underbr{( E_n - E_i)}_{\omega_{ni}\hbar} \Big|^2 \Big|\bra{n}x\ket{i}\Big|^2 \delta(E_n - E_i - \hbar\omega) \notag \\
 \end{align}
 
-Aus dieser Gleichung folgt für die elektrische Dipol-Approximation
+Aus dieser Gleichung folgt für die elektrische Dipol-Approximation in eine beliebige Richtung
 
 \begin{align}
   \label{eq:83}
- \boxed{ \sigma_{\text{abs}}  = \frac{4 \pi^2 \hbar }{ \omega} \cdot \alpha \cdot \omega_{ni}^2  \Big|\bra{n}x\ket{i}\Big|^2 \delta(E_n - E_i - \hbar\omega) }
+ \boxed{ \sigma_{\text{abs}}  = \frac{4 \pi^2 \hbar }{ \omega} \cdot \alpha \cdot \omega_{ni}^2  \Big|\bra{n}\hat \epsilon \cdot \vec x\ket{i}\Big|^2 \delta(E_n - E_i - \hbar\omega) }
 \end{align}
 
 Zur Erläuterung warum das elektrische Dipolapproximation heist. Die Definition eines physikalischen Dipols besteht aus zwei gegensätzlichen Ladungen und hinreihend kurzen Abstandes \(\vec x\). So gilt für das Dipolmoment
@@ -721,10 +721,81 @@ Setzen wir die Feinstrukturkonstante in die Gleichung (\ref{eq:83}) ein
 
 \begin{align}
   \label{eq:85}
-  \sigma_{\text{abs}}  = \frac{4 \pi^2 }{4\pi \epsilon_0 c \omega} \cdot  \omega_{ni}^2 \cdot\underbr{ e^2\cdot \Big|\bra{n}x\ket{i}\Big|^2}_{|\vec d|^2} \delta(E_n - E_i - \hbar\omega) 
+  \sigma_{\text{abs}}  = \frac{4 \pi^2 }{4\pi \epsilon_0 c \omega} \cdot  \omega_{ni}^2 \cdot\underbr{ e^2\cdot \Big|\bra{n}\hat \epsilon \cdot \vec x\ket{i}\Big|^2}_{|\vec d|^2} \delta(E_n - E_i - \hbar\omega) 
 \end{align}
 
 so sieht man dass die Fläche des Wirkungsquerschnitts \( \sigma_{\text{abs}} \) aus dem Dipolmoment von den Einheiten abhängt. Deswegen nennt man diese Approximation auch die Dipol-Approximation. 
+
+
+\subsection*{Dipol-Auswahlregeln}
+
+Die Matrixelemente \(\bra{n}\hat \epsilon \cdot \vec x\ket{i}\) die man zur Bestimmung des Wirkungsquerschnitts benötigt sind nur dann ungleich Null wenn die Zustände \(\ket{n}\) und \(\ket{i}\) bestimmte Bedingungen erfüllen. Diese Bedingungen bzw. Auswahlregeln wollen wir nun herausfinden.
+
+Wir betrachten das Skalaprodukt \(\hat \epsilon \cdot \vec x\) in dem wir \(\vec x\) in Kugelkoordinaten angeben
+
+\begin{align}
+  \label{eq:86}
+  \hat \epsilon \cdot \vec x = r (\epsilon_x \sin\theta \cos\phi + \epsilon_y \sin\theta \sin\phi + \epsilon_z\cos\theta) \quad \text{mit }r = |\vec x|
+\end{align}
+
+Nun können wir die Gleichung durch Kugelflächenfunktionen ausdrücken. Die ersten von ihnen lauten
+
+\begin{subequations}
+\begin{align}
+  Y^0_0(\theta,\phi) &= \frac{1}{\sqrt{4\pi}} \label{eq:87a} \\
+  Y^1_0(\theta,\phi) &= \sqrt{\frac{3}{4\pi}}\cos\theta \label{eq:87b}\\
+Y^1_{\pm 1}(\theta,\phi) &= \mp \sqrt{\frac{3}{8\pi}}e^{\pm i\phi}\sin\theta \label{eq:87c} 
+\end{align}
+\end{subequations}
+
+Durch geschickte Wahl der Gleichungen (\ref{eq:87b}) und (\ref{eq:87c})  kann man \(\sin\theta\cos\theta\), \(\sin\theta\sin\phi\) und \(\cos\theta\) durch die Kugelflächenfunktionen ausdrücken
+
+\begin{subequations}
+  \begin{align}
+    \sin\theta\cos\theta &= -\sqrt{\frac{2\pi}{3}}(Y^1_1 - Y^1_{-1}) \label{eq:88a}\\
+    \sin\theta\sin\phi &= i \sqrt{\frac{2\pi}{3}}(Y^1_1 + Y^1_{-1})\label{eq:88b}\\
+    \cos\theta &= \sqrt{\frac{4\pi}{3}}Y^1_0
+  \end{align}
+\end{subequations}
+
+Die Gleichung (\ref{eq:86}) kann man nun wie folgt schreiben
+
+\begin{align}
+  \label{eq:88}
+   \hat \epsilon \cdot \vec x = \sqrt{\frac{4\pi}{3}}  r \left(\frac{-\epsilon_x+i\epsilon_y}{\sqrt{2}}Y^1_1  + \frac{\epsilon_x+i\epsilon_y}{\sqrt{2}}Y^1_{-1} + \epsilon_z Y^1_0  \right)
+\end{align}
+
+Nun können wir das Matrixelement \(\bra{n}\hat \epsilon \cdot \vec x\ket{i}\) bestimmen. Wir drücken dabei die Zustände \(\ket{n}\) und \(\ket{i}\) durch Eigenzustände des Wasserstoffatoms aus. Es gilt \(\ket{n} \rightarrow \ket{n'l'm'}\) und \(\ket{i}\rightarrow \ket{nlm}\). Für das Berechnen benötigen wir noch die Ortsdarstellung der Eigenfunktionen \(\braket{\vec x}{nlm} = R_{nl}(\vec x)Y^l_m(\theta,\phi)\) Damit folgt für das Matrixelement
+
+\begin{align}
+  \label{eq:87}
+  \bra{n'l'm'} \hat \epsilon \cdot \vec x \ket{nlm} &= \sqrt{\frac{4\pi}{3}}\int^\infty_0 r^3 R^*_{n'l'}(r) R_{nl}(r)dr  \times \notag\\
+   &\,\,\times \int_0^{2\pi} \int_0^\pi (Y^{l'}_{m'})^*(\theta,\phi) \left(  \frac{-\epsilon_x+i\epsilon_y}{\sqrt{2}}Y^1_1  + \frac{\epsilon_x+i\epsilon_y}{\sqrt{2}}Y^1_{-1} + \epsilon_z Y^1_0   \right) Y^{l}_{m} \sin\theta d\theta d\phi
+\end{align}
+
+Betrachte das Integral mit den Kugelflächenfunktionen
+
+\begin{align}
+  \label{eq:89}
+  &\int_0^{2\pi} \int_0^\pi (Y^{l'}_{m'})^*(\theta,\phi) \left(  \frac{-\epsilon_x+i\epsilon_y}{\sqrt{2}}Y^1_1  + \frac{\epsilon_x+i\epsilon_y}{\sqrt{2}}Y^1_{-1} + \epsilon_z Y^1_0   \right) Y^{l}_{m} \sin\theta d\theta d\phi = \notag \\
+&\,\,= \bra{l'm'}\left(  \frac{-\epsilon_x+i\epsilon_y}{\sqrt{2}}Y^1_1  + \frac{\epsilon_x+i\epsilon_y}{\sqrt{2}}Y^1_{-1} + \epsilon_z Y^1_0   \right)\ket{lm} \notag \\
+&\,\,=  \frac{-\epsilon_x+i\epsilon_y}{\sqrt{2}} \bra{l'm'} Y^1_1\ket{lm}  + \frac{\epsilon_x+i\epsilon_y}{\sqrt{2}}\bra{l'm'} Y^1_{-1}\ket{lm} + \epsilon_z \bra{l'm'} Y^1_0 \ket{lm} \notag \\
+\end{align}
+
+Um diese Matrixelemente zu bestimmen betrachte das allgemeine Matrixelment \(\bra{l'm'} Y^1_{q}\ket{lm}\). \(Y^1_{q}\) ist ein Sphärischer Tensor 1-er Stufe. Deswegen kann man das Matrixelement \(\bra{l'm'} Y^1_{q}\ket{lm}\) mit Hilfe des Wigner-Eckart-Theorems wie folgt ausdrücken
+
+\begin{align}
+  \label{eq:90}
+  \bra{l'm'} Y^1_{q}\ket{lm} = \braket{ l,1;m,q }{l',m'} \langle l' \parallel Y^1_{q} \parallel l \rangle
+\end{align}
+
+Der Clebsch-Gordan-Koeffizient \( \braket{ l,1;m,q }{l',m'} \) in der Gleichung (\ref{eq:90}) ist nur dann ungleich Null wenn folgende Bedingungen erfüllt sind. Vergleiche mit dem allgemeinen  Clebsch-Gordan-Koeffizient \( \braket{ l_1,l_2;m_1,m_2 }{L,M} \), dabei gilt dass \(m_1+m_2=M\), \(|l_1-l_2|\le L \le l_1+l_2\) und \(-j_{1,2}\le m_{1,2} \le j_{1,2}\)
+
+\begin{align}
+  \label{eq:91}
+    q = 1,0,-1
+\end{align}
+
 
 \end{document}
 
