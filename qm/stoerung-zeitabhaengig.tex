@@ -786,15 +786,49 @@ Um diese Matrixelemente zu bestimmen betrachte das allgemeine Matrixelment \(\br
 
 \begin{align}
   \label{eq:90}
-  \bra{l'm'} Y^1_{q}\ket{lm} = \braket{ l,1;m,q }{l',m'} \langle l' \parallel Y^1_{q} \parallel l \rangle
+  \bra{l'm'} Y^1_{q}\ket{lm} = \underbr{\braket{ l,1;m,q }{l',m'}}_{\text{Clebsch-Gordan-Koeffizient}}\overbr{ \langle l' \parallel Y^1_{q} \parallel l \rangle}^{\text{reduziertes Matrixelement}}
 \end{align}
 
-Der Clebsch-Gordan-Koeffizient \( \braket{ l,1;m,q }{l',m'} \) in der Gleichung (\ref{eq:90}) ist nur dann ungleich Null wenn folgende Bedingungen erfüllt sind. Vergleiche mit dem allgemeinen  Clebsch-Gordan-Koeffizient \( \braket{ l_1,l_2;m_1,m_2 }{L,M} \), dabei gilt dass \(m_1+m_2=M\), \(|l_1-l_2|\le L \le l_1+l_2\) und \(-j_{1,2}\le m_{1,2} \le j_{1,2}\)
+Der Clebsch-Gordan-Koeffizient \( \braket{ l,1;m,q }{l',m'} \) in der Gleichung (\ref{eq:90}) ist nur dann ungleich Null wenn folgende Bedingungen erfüllt sind. Vergleiche mit dem allgemeinen  Clebsch-Gordan-Koeffizient \( \braket{ l_1,l_2;m_1,m_2 }{L,M} \), dabei gilt dass \(m_1+m_2=M\), \(|l_1-l_2|\le L \le l_1+l_2\) und \(-j_{1,2}\le m_{1,2} \le j_{1,2}\). Es ergibt sich für \(q\) sich folgende Auswahlregel
 
 \begin{align}
   \label{eq:91}
     q = 1,0,-1
 \end{align}
+
+Mit dem Zusammenhang \(m+q=m'\) und nach \(q\) umgestellt,  kann die Gleichung (\ref{eq:91}) geschrieben werden als
+
+\begin{align}
+  \label{eq:92}
+  q=m'-m \stackrel{~(\ref{eq:91})}= 1,0,-1
+\end{align}
+
+Aus dem weiteren Zusammenhang \(l-1\le l'\le l+1\) ergibt sich
+
+\begin{align}
+  \label{eq:93}
+ \left.
+ \begin{array}{ll}
+  l'=l+1 &\Leftrightarrow l'- l = 1 \\
+  l'=l-1&\Leftrightarrow l'-l=-1 
+  \end{array}
+ \right\} 
+ -1\le l' - l \le 1
+\end{align}
+ 
+Das bedeutet in Worten, dass die Differenz zwischen dem angeregten und dem inertial Zustand einen Drehimpuls-Differenz von \(1\) oder \(-1\) haben muss. Daraus ergibt sich dass das Photon einen Gesamtdrehimpuls von \(1\) hat. Die Differenz \(l'-l=0\) ist wegen den beiden Gleichungen \(l'-l=1\) und \(l'-l=-1\) aus (\ref{eq:93}) verboten. Daraus folgt dass nur die Übergänge möglich sind bei denen der Bahndrehimpuls sich der Drehimpuls um \(\pm 1\) ändert. Zum Beispiel von \(1s\) nach \(2p\). Dagegen ist der Übergang von \(1s\) nach \(2s\) verboten.
+
+
+
+\begin{figure}[!thb]
+  \centering
+  \input{stoerung_pics/Termschema-H_2.pdf_t}
+  \caption{Erlaubte Niveau-Übergänge für die Anregung/Absorption eines \(e^-\) im \(H\)-Atom durch ein Photon }
+ \label{fig:4}
+\end{figure}
+
+Die Abbildung \ref{fig:4} zeigt die erlaubten Niveau-Übergänge für die Anregung/Absorption eines \(e^-\) im \(H\)-Atom durch ein Photon. Da das Photon ein Gesamtdrehimpuls von \(1\) hat muss bei seiner Absorption/Emission der Drehimpuls des gesamten Systems erhalten bleiben. Aus dem Grund muss sich der Drehimpuls des Elektrons um \(\pm 1\) ändern.
+
 
 
 \end{document}
