@@ -1,0 +1,24 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+{\Huge
+Konstante Störung \(V(t)=V\theta(t)\) für \(n\ne i\) in 1-Ordnung
+\begin{align*}
+P(i\rightarrow n) = \frac{1}{\hbar^2}\Big| V_{ni} \int_{0}^t e^{i\omega_{ni}t'}dt'\Big|^2 = \frac{4}{\hbar^2\omega_{ni}^2}|V_{ni}|^2\sin^2\left(\frac{\omega_{ni} t}{2}\right) 
+\end{align*}
+Betrachte \(t\to\infty\) dann \(\frac{\sin^2(\omega)}{\omega^2}\to\delta(\omega)\)
+\begin{align*}
+   P(i\rightarrow n) = \frac{2\pi t}{\hbar} |V_{ni}|^2  \delta(E_n-E_i)
+\end{align*}
+Übergangsrate \(w = \pdiff_t P\) bzw. \textbf{Fermis-Goldene-Relgel}
+\begin{align*}
+  \boxed{  w_{i\to n}= \frac{2\pi}{\hbar} |V_{ni}|^2  \delta(E_n-E_i) }
+\end{align*}
+Übergangsrate in alle mögliche Zustände \(\ket{n}\)
+\begin{align*}
+  \boxed{  w_{i\to \{n\}}= \frac{2\pi }{\hbar} |V_{ni}|^2  \rho(E_n) } \text{ mit } \underbrace{\rho(E_n)}_{\text{Zustandsdichte}} = \sum_{E_i\approx E_n}\delta(E_n-E_i)
+\end{align*}
+}%end Huge
+
+\end{document}

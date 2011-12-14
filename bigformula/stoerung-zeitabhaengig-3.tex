@@ -1,0 +1,21 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+Harmonische Störung \(V(t)=Ve^{i\omega t} + V^\dagger e^{-i\omega t}\)
+\begin{align*}
+   P(&i\rightarrow n) = \left|(\frac{-i}{\hbar})\langle n |\int_{t_0}^t V_I(t')dt'|i\rangle\right|^2 \\
+&=  \frac{4}{\hbar^2} \left[  \frac{|V_{ni}|^2}{(\omega_{ni}+\omega)^2}\sin^2\left(\frac{(\omega_{ni}+\omega) t}{2}\right)  +   \frac{|V^\dagger_{ni}|^2}{(\omega_{ni}-\omega)^2}\sin^2\left(\frac{(\omega_{ni}-\omega) t}{2}\right) \right]\\
+&= \frac{2\pi t}{\hbar^2}|V_{ni}|^2 \delta(\omega_{ni}+\omega) + \frac{2\pi t}{\hbar^2}|V_{ni}^\dagger|^2 \delta(\omega_{ni}-\omega)
+\end{align*}
+\begin{align*}
+\boxed{  w_{i\rightarrow n} = \underbr{\frac{2\pi}{\hbar}|V_{ni}|^2 \delta(E_n - E_i + \hbar\omega )}_{\text{Emission}} + \underbr{\frac{2\pi}{\hbar}|V_{ni}^\dagger|^2 \delta(E_n - E_i - \hbar\omega)}_{\text{Absorption}} }
+\end{align*}
+\begin{center}
+\includegraphics[scale=0.3]{emission_absorption.png}
+\end{center}
+}%end Huge
+
+\end{document}

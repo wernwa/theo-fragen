@@ -1,0 +1,26 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+\begin{align*}
+  H=H_0+V(t)\,\text{ mit EZ } \,\, \ket{\alpha,t} =\sum_n c_n(t) e^{-\frac{i}{\hbar}E_nt} \ket{n} 
+\end{align*}
+ Wahrscheinlichkeit den Zustand \(\ket{n}\) zu finden mit \(|c_n(t)|^2\) berechnen.
+WW-Bild: \(|\alpha,t\rangle_I = e^{iH_0t/\hbar}|\alpha,t\rangle_S\), \(  A_I(t) =  e^{iH_0t/\hbar} A_S e^{-iH_0t/\hbar}\)
+\begin{align*}
+    \boxed{i\hbar \frac{\partial}{\partial t} |\alpha,t_0;t\rangle_I = V_I|\alpha,t_0;t\rangle_I} \quad \boxed{i\hbar \frac{\partial}{\partial t}c_n(t) = \sum_m V_{nm}(t) e^{i\omega_{nm}t}c_m(t)}
+\end{align*}
+\begin{align*}
+  i\hbar  \frac{\partial}{\partial t}U_I(t,t_0) = V_IU(t,t_0) \stackrel{\int}\to  U_I^{(n)}(t,t_0) = 1 - \frac{i}{\hbar} \int_{t_0}^{t}dt' V_IU^{(n-1)}(t',t_0)
+\end{align*}
+\textit{DYSON-Reihe} für \(U_I^{(\infty)}\): \(U_I(t,t_0) =Te^{-\frac{i}{\hbar} \int_{t_0}^t dt' V(t')}\)\\
+Übergangswahrscheinlichkeit von Zustand \(\ket{i}\) zum Zustand \(\ket{n}\):
+\begin{align*}
+  c_n(t) = \langle n|U_I(t,t_0)|i\rangle  \Rightarrow   \boxed{P(i\rightarrow n) = |c^{(0)}_n + c_n^{(1)}(t)+c_n^{(2)}(t)+\dots|^2}
+\end{align*}
+
+}%end Huge
+
+\end{document}
