@@ -1,0 +1,37 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath}                % brauche ich um dir Formel zu umrahmen.
+\usepackage{amsfonts}
+
+
+\begin{document}
+
+\section*{Quantisierung des Strahlungsfeldes}
+
+Wir wollen das Vektorpotential \(\vec A\) als Operator ausdrücken. Dazu betrachten wir die Wellengleichung für eine Elektromagnetische Welle im Vakuum
+
+\begin{align}
+  \label{eq:1}
+  \frac{1}{c^2}\pdiff^2{\vec A}_t - \vec \nabla^2\vec A = 0 \qquad \text{ mit }\square\equiv\frac{1}{c^2}\pdiff^2_t - \vec \nabla^2\quad\to\quad\square\vec A = 0
+\end{align}
+
+Eine Lösung für die Wellengleichung (\ref{eq:1}) wäre z.B. eine \textit{ebene Welle}
+
+\begin{align}
+  \label{eq:2}
+  \vec A(\vec r, t) = A\hat \epsilon e^{i(\vec k\vec r -\omega t)} + A^*\hat \epsilon^* e^{i(\vec k\vec r-\omega t)} 
+\end{align}
+
+Die Vektoren \(\hat \epsilon\) sind die sogenannten Polarisationsvektoren der Welle. Sie stehen senkrecht zur Ausbreitungsrichtung \(\vec k\). Deswegen bleiben nur noch zwei Raumrichtungen in die sie zeigen können übrig. Betrachte z.B. eine linear polarisierte ebene Welle die sich in z-Richtung ausbreitet. Damit lautet der Wellevektor \(\vec k = (0,0,k)^T\). Für den Polarisationsvektor bleiben zwei Möglichkeiten übrig. Entweder zeigt er in x-Richtung mit \(\hat \epsilon=(1,0,0)^T\) oder in y-Richtung \(\hat \epsilon=(0,1,0)^T\).
+
+Wir betrachten ein Strahlungsfeld mit allen möglichen \(\vec k\)-Werten. Das bedeutet eine Überlagerung aller \(\vec k\)-Werte. Dazu müssen wir die Gleichung (\ref{eq:2}) über \(\vec k\) integrieren. Dabei müssen wir noch über zwei Moden \(m=1,2\) Summieren. Diese Stehen für das elektrische und magnetische Feld.
+
+\begin{align}
+  \label{eq:3}
+\vec A(\vec r, t) =\sum_{m=1,2}\int\frac{d^3k}{(2\pi)^3} \left[  \vec A_m (\vec k) \hat \epsilon_m (\vec k) e^{i(\vec k\vec r-\omega t)} + \vec A^*_m (k)\hat\epsilon^*_m(\vec k) e^{i(\vec k\vec r-\omega t)}\right]
+\end{align}
+
+Der Faktor \(\frac{1}{(2\pi)^2}\) rührt von einer Fouriertransformation des Vektorpotentials im Impulsraum \(\vec A(\vec k)\) zu Vektorpotential im Ortsraum \(\vec A(\vec r)\) her.
+
+\end{document}
+
+
