@@ -18,7 +18,7 @@ Eine Lösung für die Wellengleichung (\ref{eq:1}) wäre z.B. eine \textit{ebene
 
 \begin{align}
   \label{eq:2}
-  \vec A(\vec r, t) = A\hat \epsilon e^{i(\vec k\vec r -\omega t)} + A^*\hat \epsilon^* e^{i(\vec k\vec r-\omega t)} 
+  \vec A(\vec r, t) = \alpha\hat \epsilon e^{i(\vec k\vec r -\omega t)} + \alpha^*\hat \epsilon^* e^{-i(\vec k\vec r-\omega t)} 
 \end{align}
 
 Die Vektoren \(\hat \epsilon\) sind die sogenannten Polarisationsvektoren der Welle. Sie stehen senkrecht zur Ausbreitungsrichtung \(\vec k\). Deswegen bleiben nur noch zwei Raumrichtungen in die sie zeigen können übrig. Betrachte z.B. eine linear polarisierte ebene Welle die sich in z-Richtung ausbreitet. Damit lautet der Wellevektor \(\vec k = (0,0,k)^T\). Für den Polarisationsvektor bleiben zwei Möglichkeiten übrig. Entweder zeigt er in x-Richtung mit \(\hat \epsilon=(1,0,0)^T\) oder in y-Richtung \(\hat \epsilon=(0,1,0)^T\).
@@ -27,10 +27,67 @@ Wir betrachten ein Strahlungsfeld mit allen möglichen \(\vec k\)-Werten. Das be
 
 \begin{align}
   \label{eq:3}
-\vec A(\vec r, t) =\sum_{m=1,2}\int\frac{d^3k}{(2\pi)^3} \left[  \vec A_m (\vec k) \hat \epsilon_m (\vec k) e^{i(\vec k\vec r-\omega t)} + \vec A^*_m (k)\hat\epsilon^*_m(\vec k) e^{i(\vec k\vec r-\omega t)}\right]
+\vec A(\vec r, t) =\sum_{m=1,2}\int\frac{d^3k}{(2\pi)^3} \left[  \vec{\mathcal A}_m (\vec k) \hat \epsilon_m (\vec k) e^{i(\vec k\vec r-\omega t)} + \vec{\mathcal A}^*_m (k)\hat\epsilon^*_m(\vec k) e^{-i(\vec k\vec r-\omega t)}\right]
 \end{align}
 
-Der Faktor \(\frac{1}{(2\pi)^2}\) rührt von einer Fouriertransformation des Vektorpotentials im Impulsraum \(\vec A(\vec k)\) zu Vektorpotential im Ortsraum \(\vec A(\vec r)\) her.
+Die Integration entspricht einer Fouriertransformation aus dem Impulsraum in den Ortsraum. Die Vorfaktoren \(\vec{\mathcal A}_m(k)\) sind nichts anderes als die fouriertransformierte Vektorpotential im Impulsraum. Der Faktor \(\frac{1}{(2\pi)^2}\) ist eine Konvention und dient zur Normierung der Fouriertransformation.
+
+Nun möchten wir das Vektorfeld \(\vec A(\vec r, t)\) quantisieren. D.h. \(\vec A(\vec r, t)\) ist nicht mehr eine kontinuierliche Größe, sondern darf nur bestimmte diskrete Werte annehmen. Dazu betrachten wir einen dreidimensionale Kasten mit der Kantenlänge \(L\), der mit stehenden Wellen gefüllt ist. Die Randbedingungen für eine stehende Welle die z.B. in \(x\)-Richtung läuft muss heißen
+
+\begin{align}
+  \label{eq:4}
+  \vec A(x,y,z) = \vec A(x+L,y,z)
+\end{align}
+
+Diese Bedingung an die Gleichung (\ref{eq:3}) angewandt
+
+\begin{align}
+  \label{eq:5}
+  \alpha\hat \epsilon e^{i(k_x x+k_y y+k_z z -\omega t)} + \alpha^*\hat \epsilon^* e^{-i(k_x x+k_y y+k_z z-\omega t)} &\stackrel{!}= \alpha\hat \epsilon e^{i(k_x (x+L)+k_y y+k_z z -\omega t)} + \alpha^*\hat \epsilon^* e^{-i(k_x (x+L)+k_y y+k_z z-\omega t)} \notag\\
+\end{align}
+
+Das Istgleichzeichen ist nur dann erfüllt wenn die realen Anteile der Gleichung den komplexkonjugierten Anteilen gleichen
+
+
+\begin{subequations}
+\begin{align}
+  \alpha\hat \epsilon e^{i(k_x x+k_y y+k_z z -\omega t)} &\stackrel{!}= \alpha\hat \epsilon e^{i(k_x (x+L)+k_y y+k_z z -\omega t)}\label{eq:6a} \\
+\text{und }\alpha^*\hat \epsilon^* e^{-i(k_x x+k_y y+k_z z-\omega t)} &\stackrel{!}=\alpha^*\hat \epsilon^* e^{-i(k_x (x+L)+k_y y+k_z z-\omega t)} \label{eq:6b} \\
+\end{align}
+\end{subequations}
+
+Um eine Bedingung für \(\vec k\) zu bestimmen betrachte die Gleichung (\ref{eq:6a}) 
+
+\begin{align}
+  \label{eq:7}
+   \cancel{\alpha\hat \epsilon} e^{i(k_x x)}\cancel{e^{i(k_y y+k_z z -\omega t)}} &= \cancel{\alpha\hat \epsilon} e^{i(k_x (x+L)}\cancel{e^{i(k_y y+k_z z -\omega t)}} \notag\\
+    \cancel{e^{i(k_x x)}} &=  e^{ik_x (x+L)} = \cancel{e^{ik_x x}}e^{i k_x L}
+\end{align}
+
+Aus der Gleichung (\ref{eq:7}) geht hervor
+
+\begin{align}
+  \label{eq:6}
+  e^{i k_x L} = 1
+\end{align}
+
+Dies ist nur dann erfüllt wenn gilt
+
+\begin{align}
+  \label{eq:8}
+  k_x L = n_x\cdot 2\pi \qquad \text{mit }n_x\in \mathds Z
+\end{align}
+
+Analogen Rechnung lässt sich für eine stehende Welle in \(y\)-Richtung bzw. in \(z\)-Richtung durchführen. D.h. für beliebige Raumrichtung gilt
+
+\begin{align}
+  \label{eq:9}
+  \vec k = \frac{2\pi}{L}
+  \begin{pmatrix}
+    n_x\\n_y\\n_z
+  \end{pmatrix}
+= \frac{2\pi}{L} \vec n
+\end{align}
 
 \end{document}
 
