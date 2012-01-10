@@ -89,6 +89,116 @@ Analogen Rechnung lässt sich für eine stehende Welle in \(y\)-Richtung bzw. in
 = \frac{2\pi}{L} \vec n
 \end{align}
 
+Damit haben wir gezeigt dass, das \(\vec k\) quantisiert ist. Somit lässt sich das Integral als eine Summe schreiben. Damit ändert sich die Gleichung (\ref{eq:3}) zu
+
+\begin{align}
+  \label{eq:10}
+  \vec A(\vec r, t) =\sum_{m=1,2} \sum_{\vec k}  N_{\vec k} \left[  \vec{\mathcal A}_m (\vec k) \hat \epsilon_m (\vec k) e^{i(\vec k\vec r-\omega t)} + \vec{\mathcal A}^*_m (k)\hat\epsilon^*_m(\vec k) e^{-i(\vec k\vec r-\omega t)}\right]
+\end{align}
+
+Dabei ist \(N_{\vec k}\) eine Normierungskonstante. Man wählt für \(N_{\vec k}=\sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}\) damit \(\mathcal A\) einheitenlos wird.  Weiterhin betrachten wir linear polarisierte Wellen mit \(\hat \epsilon_m \in \mathds{R} \), daher ist \(\hat \epsilon_m^* = \hat \epsilon_m \) und wir können es ausklammern. Somit sieht die Gleichung (\ref{eq:10}) wie folgt aus
+
+\begin{align}
+  \label{eq:11}
+    \vec A(\vec r, t) =  \sum_{m=1,2} \sum_{\vec k} \sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}  \hat \epsilon_m  \left[  \vec{\mathcal A}_m (\vec k) (\vec k) e^{i(\vec k\vec r-\omega t)} + \vec{\mathcal A}^*_m (k)(\vec k) e^{-i(\vec k\vec r-\omega t)}\right]
+\end{align}
+
+
+Um den Hamiltonoperator zu bestimmen betrachten wir die klassische Energie eines Strahlungsfeldes, die wie folgt definiert ist
+
+\begin{align}
+  \label{eq:12}
+  E_{\text{klassisch}} = \frac{1}{8\pi} \int d^3r \left( \vec E^2+\vec B^2 \right) = \frac{1}{8\pi} \int d^3r \left( \left( \frac{1}{c} \pdiff{\vec A}_t \right)^2 + \left(\vec \nabla\times\vec A\right)^2 \right)
+\end{align}
+
+Nebenrechnung für das erste Integral mit (\ref{eq:11}) ergibt
+
+\begin{align}
+  \label{eq:13}
+ \int d^3r  \left( \frac{1}{c} \pdiff{\vec A}_t \right)^2 &= \int d^3r  \left( \frac{1}{c} \pdiff_t    \sum_{m=1,2} \sum_{\vec k} \sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}  \hat \epsilon_m(\vec k)  \left[  \vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} + \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right)^2 \notag\\
+&= \int d^3r  \left( \frac{1}{c}  \sum_{m=1,2} \sum_{\vec k} \sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}  \hat \epsilon_m(\vec k)  \left[ -\omega \vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} + \omega \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right)^2 \notag\\
+&=  \frac{2\pi\hbar}{V} \int d^3r  \left( \sum_{m=1,2} \sum_{\vec k} \sqrt{\omega_{\vec k}} \hat \epsilon_m(\vec k)  \left[\vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} - \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right)^2 \notag\\
+&=  \frac{2\pi\hbar}{V} \int d^3r  \sum_{m=1,2} \sum_{\vec k}  \left( \sqrt{\omega_{\vec k}} \hat \epsilon_m(\vec k)  \left[\vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} - \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right) \times   \notag\\
+  &\quad \times \sum_{m'=1,2} \sum_{\vec k'} \left( \sqrt{\omega_{\vec k'}} \hat \epsilon_{m'}(\vec k')  \left[\vec{\mathcal A}_{m'} (\vec k')  e^{i(\vec k'\vec r-\omega t)} - \vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k'\vec r-\omega t)}\right] \right) \notag \\
+%
+&= \frac{2\pi\hbar}{V} \int d^3r  \sum_{m,m'=1,2} \sum_{\vec k,\vec k'}   \sqrt{\omega_{\vec k'}\omega'_{\vec k'}} \hat \epsilon_m(\vec k) \hat \epsilon'_m(\vec k)  \left[ \vec{\mathcal A}_m (\vec k) \vec{\mathcal A}_{m'} (\vec k)e^{i(\vec k\vec r-\omega t)}e^{i(\vec k'\vec r-\omega t)} + \right. \notag\\
+&\quad +  \vec{\mathcal A}^*_m (k) \vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k\vec r-\omega t)}e^{-i(\vec k'\vec r-\omega t)} - \vec{\mathcal A}_{m} (\vec k)  e^{i(\vec k\vec r-\omega t)}\vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k'\vec r-\omega t)} \notag\\
+&\quad\left. - \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\vec{\mathcal A}_{m'} (\vec k')  e^{i(\vec k'\vec r-\omega t)}   \right]\notag\\
+%
+&= \frac{2\pi\hbar}{V} \int d^3r  \sum_{m,m'=1,2} \sum_{\vec k,\vec k'}   \sqrt{\omega_{\vec k'}\omega'_{\vec k'}} \hat \epsilon_m(\vec k) \hat \epsilon'_m(\vec k)  
+\left[ \vec{\mathcal A}_m (\vec k) \vec{\mathcal A}_{m'} (\vec k)e^{i(\vec k+\vec k')\vec r}e^{-2i\omega t} + \right. \notag\\
+&\quad +  \vec{\mathcal A}^*_m (k) \vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k+\vec k')\vec r}e^{2i\omega t} 
+- \left.\vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m'} (k') e^{i(\vec k-\vec k')\vec r} 
+ - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m'} (\vec k') e^{i(\vec k'-\vec k)\vec r}    \right]
+\end{align}
+
+Mit den zwei Relationen
+
+\begin{align}
+  \label{eq:14}
+  \frac{1}{V}\int d^3 r e^{i(\vec k - \vec k'}\vec r = \delta_{\vec k,\vec k'} \quad\text{und }  \frac{1}{V}\int d^3 r e^{i(\vec k +\vec k'}\vec r = \delta_{\vec k, - \vec k'}\quad \text{und } \sum_{m,m'}\hat\epsilon_m(\vec k)\hat\epsilon_{m'}(\vec k') = \sum_{m}
+\end{align}
+Ergibt die erste Nebenrechnung (\ref{eq:13})
+\begin{align}
+  \label{eq:15}
+  \int d^3r  \left( \frac{1}{c} \pdiff{\vec A}_t \right)^2 &=  \frac{2\pi\hbar}{V} \int d^3r  \sum_{m,m'=1,2} \sum_{\vec k,\vec k'}   \sqrt{\omega_{\vec k'}\omega'_{\vec k'}} \hat \epsilon_m(\vec k) \hat \epsilon'_m(\vec k)  
+\left[ \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m'} (\vec k,t)e^{i(\vec k+\vec k')\vec r} + \right. \notag\\
+&\quad +  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m'} (\vec k',t) e^{-i(\vec k+\vec k')\vec r} 
+- \left.\vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m'} (k') e^{i(\vec k-\vec k')\vec r} 
+ - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m'} (\vec k') e^{i(\vec k'-\vec k)\vec r}    \right] \notag\\
+%
+&=  2\pi\hbar \sum_{m,m'=1,2} \sum_{\vec k,\vec k'}   \sqrt{\omega_{\vec k'}\omega'_{\vec k'}} \hat \epsilon_m(\vec k) \hat \epsilon'_m(\vec k)  
+\left[ \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m'} (\vec k,t)\delta_{\vec k,-\vec k'}   + \right. \notag\\
+&\quad\left. +  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m'} (\vec k',t) \delta_{\vec k, - \vec k'} 
+- \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m'} (k')  \delta_{\vec k,\vec k'}
+ - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m'} (\vec k')    \delta_{\vec k,\vec k'}  \right] \notag\\
+%
+&=  2\pi\hbar \sum_{m=1,2} \sum_{\vec k} \omega_{\vec k}  
+\left[ \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)   + 
+  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t)  \right.\notag\\
+&\quad\left. - \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k) 
+ - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right] \notag\\
+\end{align}
+
+
+
+
+Mit Hilfe der Lagrange Indentität \((\vec a\times\vec b)\cdot(\vec c\times\vec d) = (\vec a\cdot\vec c)(\vec b\cdot\vec d) - (\vec b \cdot \vec c)(\vec a\cdot\vec d) \)
+
+\begin{align}
+  \label{eq:17}
+  (\vec \vec \nabla\times\vec \vec A)\cdot(\vec \vec \nabla\times\vec A) = (\vec\nabla^2)(\vec A^2) - (\vec A\vec \nabla)\underbr{(\vec \nabla\vec A)}_{=0\text{ Coulombeichung}}
+\end{align}
+
+Ergibt die Nebenrechung für das zweite Integral von der Gleichung (\ref{eq:12})
+
+\begin{align}
+  \label{eq:16}
+   &\int d^3r  \left(\vec \nabla\times\vec A\right)^2 = \int d^3r  \left( \vec \nabla \vec A \right)^2 \notag\\
+&=  2\pi\hbar \sum_{m=1,2} \sum_{\vec k} \omega_{\vec k}  \left[ - \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)   
+-  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t) 
+- \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k)  
+- \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right] \notag\\
+\end{align}
+
+
+Die zwei Nebenreichnungen (\ref{eq:14}) und (\ref{eq:16}) in (\ref{eq:12}) eingesetzt ergibt
+
+\begin{align}
+  \label{eq:18}
+   H&=E_{\text{klassisch}} = \frac{1}{8\pi} \int d^3r \left( \left( \frac{1}{c} \pdiff{\vec A}_t \right)^2 + \left(\vec \nabla\times\vec A\right)^2 \right) = \notag\\
+&=  \frac{1}{8\pi} 2\pi\hbar \sum_{m=1,2} \sum_{\vec k} \omega_{\vec k}  
+\left[ \cancel{\vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)}   + 
+  \cancel{\vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t)}  
+ - \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k) 
+ - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right. \notag\\
+&\qquad\left. \cancel{ - \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)}  
+\cancel{-  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t)}
+- \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k)  
+- \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right]
+\end{align}
+
+
 \end{document}
 
 
