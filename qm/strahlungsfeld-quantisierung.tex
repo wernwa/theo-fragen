@@ -89,6 +89,16 @@ Analogen Rechnung lässt sich für eine stehende Welle in \(y\)-Richtung bzw. in
 = \frac{2\pi}{L} \vec n
 \end{align}
 
+
+Betrachten wir zwei benachbarte Zustände mit \(\vec k_n = \frac{2\pi}{L}\vec n\) und \(\vec k_{n+1} = \frac{2\pi}{L}(\vec n+1) \) für die Differenz der beiden ergibt sich
+
+\begin{align}
+  \label{eq:30}
+  \Delta k = k_{n+1} - k_n = \frac{2\pi}{L}(\vec n +1 - \vec n) = \frac{2\pi}{L} 
+\end{align}
+
+Für ein unendlich große Länge \(L\) wird \(\Delta k\) zu \(dk\) bzw in 3 Dimensionen \(\left(\frac{2\pi}{L}\right)^3 = d^3k\).\\
+
 Damit haben wir gezeigt dass, das \(\vec k\) quantisiert ist. Somit lässt sich das Integral als eine Summe schreiben. Damit ändert sich die Gleichung (\ref{eq:3}) zu
 
 \begin{align}
@@ -100,7 +110,7 @@ Dabei ist \(N_{\vec k}\) eine Normierungskonstante. Man wählt für \(N_{\vec k}
 
 \begin{align}
   \label{eq:11}
-    \vec A(\vec r, t) =  \sum_{m=1,2} \sum_{\vec k} \sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}  \hat \epsilon_m  \left[  \vec{\mathcal A}_m (\vec k) (\vec k) e^{i(\vec k\vec r-\omega t)} + \vec{\mathcal A}^*_m (k)(\vec k) e^{-i(\vec k\vec r-\omega t)}\right]
+    \vec A(\vec r, t) =  \sum_{m=1,2} \sum_{\vec k} \sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}  \hat \epsilon_m  \left[  \vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} + \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right]
 \end{align}
 
 
@@ -116,48 +126,48 @@ Nebenrechnung für das erste Integral mit (\ref{eq:11}) ergibt
 \begin{align}
   \label{eq:13}
  \int d^3r  \left( \frac{1}{c} \pdiff{\vec A}_t \right)^2 &= \int d^3r  \left( \frac{1}{c} \pdiff_t    \sum_{m=1,2} \sum_{\vec k} \sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}  \hat \epsilon_m(\vec k)  \left[  \vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} + \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right)^2 \notag\\
-&= \int d^3r  \left( \frac{1}{c}  \sum_{m=1,2} \sum_{\vec k} \sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}  \hat \epsilon_m(\vec k)  \left[ -\omega \vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} + \omega \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right)^2 \notag\\
-&=  \frac{2\pi\hbar}{V} \int d^3r  \left( \sum_{m=1,2} \sum_{\vec k} \sqrt{\omega_{\vec k}} \hat \epsilon_m(\vec k)  \left[\vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} - \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right)^2 \notag\\
-&=  \frac{2\pi\hbar}{V} \int d^3r  \sum_{m=1,2} \sum_{\vec k}  \left( \sqrt{\omega_{\vec k}} \hat \epsilon_m(\vec k)  \left[\vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} - \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right) \times   \notag\\
-  &\quad \times \sum_{m'=1,2} \sum_{\vec k'} \left( \sqrt{\omega_{\vec k'}} \hat \epsilon_{m'}(\vec k')  \left[\vec{\mathcal A}_{m'} (\vec k')  e^{i(\vec k'\vec r-\omega t)} - \vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k'\vec r-\omega t)}\right] \right) \notag \\
+&= \int d^3r  \left( \frac{1}{c}  \sum_{m=1,2} \sum_{\vec k} \sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}  \hat \epsilon_m(\vec k)  \left[ -i\omega \vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} + i\omega \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right)^2 \notag\\
+&=  \frac{2\pi\hbar}{V} \int d^3r  \left( \sum_{m=1,2} \sum_{\vec k} (-i)\sqrt{\omega_{\vec k}} \hat \epsilon_m(\vec k)  \left[\vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} - \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right)^2 \notag\\
+&=  \frac{2\pi\hbar}{V} \int d^3r  \sum_{m=1,2} \sum_{\vec k}  \left((-i) \sqrt{\omega_{\vec k}} \hat \epsilon_m(\vec k)  \left[\vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} - \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right] \right) \times   \notag\\
+  &\quad \times \sum_{m'=1,2} \sum_{\vec k'} \left((-i) \sqrt{\omega_{\vec k'}} \hat \epsilon_{m'}(\vec k')  \left[\vec{\mathcal A}_{m'} (\vec k')  e^{i(\vec k'\vec r-\omega t)} - \vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k'\vec r-\omega t)}\right] \right) \notag \\
 %
-&= \frac{2\pi\hbar}{V} \int d^3r  \sum_{m,m'=1,2} \sum_{\vec k,\vec k'}   \sqrt{\omega_{\vec k'}\omega'_{\vec k'}} \hat \epsilon_m(\vec k) \hat \epsilon'_m(\vec k)  \left[ \vec{\mathcal A}_m (\vec k) \vec{\mathcal A}_{m'} (\vec k)e^{i(\vec k\vec r-\omega t)}e^{i(\vec k'\vec r-\omega t)} + \right. \notag\\
-&\quad +  \vec{\mathcal A}^*_m (k) \vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k\vec r-\omega t)}e^{-i(\vec k'\vec r-\omega t)} - \vec{\mathcal A}_{m} (\vec k)  e^{i(\vec k\vec r-\omega t)}\vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k'\vec r-\omega t)} \notag\\
-&\quad\left. - \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\vec{\mathcal A}_{m'} (\vec k')  e^{i(\vec k'\vec r-\omega t)}   \right]\notag\\
+&= \frac{2\pi\hbar}{V} \int d^3r  \sum_{m,m'=1,2} \sum_{\vec k,\vec k'}   \sqrt{\omega_{\vec k'}\omega'_{\vec k'}} \hat \epsilon_m(\vec k) \hat \epsilon'_m(\vec k)  \left[ - \vec{\mathcal A}_m (\vec k) \vec{\mathcal A}_{m'} (\vec k)e^{i(\vec k\vec r-\omega t)}e^{i(\vec k'\vec r-\omega t)} - \right. \notag\\
+&\quad -  \vec{\mathcal A}^*_m (k) \vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k\vec r-\omega t)}e^{-i(\vec k'\vec r-\omega t)} + \vec{\mathcal A}_{m} (\vec k)  e^{i(\vec k\vec r-\omega t)}\vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k'\vec r-\omega t)} \notag\\
+&\quad\left. + \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\vec{\mathcal A}_{m'} (\vec k')  e^{i(\vec k'\vec r-\omega t)}   \right]\notag\\
 %
 &= \frac{2\pi\hbar}{V} \int d^3r  \sum_{m,m'=1,2} \sum_{\vec k,\vec k'}   \sqrt{\omega_{\vec k'}\omega'_{\vec k'}} \hat \epsilon_m(\vec k) \hat \epsilon'_m(\vec k)  
-\left[ \vec{\mathcal A}_m (\vec k) \vec{\mathcal A}_{m'} (\vec k)e^{i(\vec k+\vec k')\vec r}e^{-2i\omega t} + \right. \notag\\
-&\quad +  \vec{\mathcal A}^*_m (k) \vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k+\vec k')\vec r}e^{2i\omega t} 
-- \left.\vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m'} (k') e^{i(\vec k-\vec k')\vec r} 
- - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m'} (\vec k') e^{i(\vec k'-\vec k)\vec r}    \right]
+\left[ - \vec{\mathcal A}_m (\vec k) \vec{\mathcal A}_{m'} (\vec k)e^{i(\vec k+\vec k')\vec r}e^{-2i\omega t}  \right. \notag\\
+&\quad -  \vec{\mathcal A}^*_m (k) \vec{\mathcal A}^*_{m'} (k') e^{-i(\vec k+\vec k')\vec r}e^{2i\omega t} 
++ \left.\vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m'} (k') e^{i(\vec k-\vec k')\vec r} 
+ + \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m'} (\vec k') e^{i(\vec k'-\vec k)\vec r}    \right]
 \end{align}
 
 Mit den zwei Relationen
 
 \begin{align}
   \label{eq:14}
-  \frac{1}{V}\int d^3 r e^{i(\vec k - \vec k'}\vec r = \delta_{\vec k,\vec k'} \quad\text{und }  \frac{1}{V}\int d^3 r e^{i(\vec k +\vec k'}\vec r = \delta_{\vec k, - \vec k'}\quad \text{und } \sum_{m,m'}\hat\epsilon_m(\vec k)\hat\epsilon_{m'}(\vec k') = \sum_{m}
+  \frac{1}{V}\int d^3 r e^{i(\vec k - \vec k')}\vec r = \delta_{\vec k,\vec k'} \quad\text{und }  \frac{1}{V}\int d^3 r e^{i(\vec k +\vec k'}\vec r = \delta_{\vec k, - \vec k'}\quad \text{und } \sum_{m,m'}\hat\epsilon_m(\vec k)\hat\epsilon_{m'}(\vec k') = \sum_{m}
 \end{align}
 Ergibt die erste Nebenrechnung (\ref{eq:13})
 \begin{align}
   \label{eq:15}
   \int d^3r  \left( \frac{1}{c} \pdiff{\vec A}_t \right)^2 &=  \frac{2\pi\hbar}{V} \int d^3r  \sum_{m,m'=1,2} \sum_{\vec k,\vec k'}   \sqrt{\omega_{\vec k'}\omega'_{\vec k'}} \hat \epsilon_m(\vec k) \hat \epsilon'_m(\vec k)  
-\left[ \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m'} (\vec k,t)e^{i(\vec k+\vec k')\vec r} + \right. \notag\\
-&\quad +  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m'} (\vec k',t) e^{-i(\vec k+\vec k')\vec r} 
-- \left.\vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m'} (k') e^{i(\vec k-\vec k')\vec r} 
- - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m'} (\vec k') e^{i(\vec k'-\vec k)\vec r}    \right] \notag\\
+\left[ -\vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m'} (\vec k,t)e^{i(\vec k+\vec k')\vec r}  \right. \notag\\
+&\quad - \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m'} (\vec k',t) e^{-i(\vec k+\vec k')\vec r} 
++ \left.\vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m'} (k') e^{i(\vec k-\vec k')\vec r} 
+ + \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m'} (\vec k') e^{i(\vec k'-\vec k)\vec r}    \right] \notag\\
 %
 &=  2\pi\hbar \sum_{m,m'=1,2} \sum_{\vec k,\vec k'}   \sqrt{\omega_{\vec k'}\omega'_{\vec k'}} \hat \epsilon_m(\vec k) \hat \epsilon'_m(\vec k)  
-\left[ \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m'} (\vec k,t)\delta_{\vec k,-\vec k'}   + \right. \notag\\
-&\quad\left. +  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m'} (\vec k',t) \delta_{\vec k, - \vec k'} 
-- \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m'} (k')  \delta_{\vec k,\vec k'}
- - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m'} (\vec k')    \delta_{\vec k,\vec k'}  \right] \notag\\
+\left[- \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m'} (\vec k,t)\delta_{\vec k,-\vec k'}    \right. \notag\\
+&\quad\left. - \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m'} (\vec k',t) \delta_{\vec k, - \vec k'} 
++ \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m'} (k')  \delta_{\vec k,\vec k'}
+ + \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m'} (\vec k')    \delta_{\vec k,\vec k'}  \right] \notag\\
 %
 &=  2\pi\hbar \sum_{m=1,2} \sum_{\vec k} \omega_{\vec k}  
-\left[ \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)   + 
+\left[ - \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t) -
   \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t)  \right.\notag\\
-&\quad\left. - \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k) 
- - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right] \notag\\
+&\quad\left. + \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k) 
+ + \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right] \notag\\
 \end{align}
 
 
@@ -175,10 +185,10 @@ Ergibt die Nebenrechung für das zweite Integral von der Gleichung (\ref{eq:12})
 \begin{align}
   \label{eq:16}
    &\int d^3r  \left(\vec \nabla\times\vec A\right)^2 = \int d^3r  \left( \vec \nabla \vec A \right)^2 \notag\\
-&=  2\pi\hbar \sum_{m=1,2} \sum_{\vec k} \omega_{\vec k}  \left[ - \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)   
--  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t) 
-- \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k)  
-- \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right] \notag\\
+&=  2\pi\hbar \sum_{m=1,2} \sum_{\vec k} \omega_{\vec k}  \left[ \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)   
++  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t) 
++ \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k)  
++ \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right] \notag\\
 \end{align}
 
 
@@ -186,18 +196,106 @@ Die zwei Nebenreichnungen (\ref{eq:14}) und (\ref{eq:16}) in (\ref{eq:12}) einge
 
 \begin{align}
   \label{eq:18}
-   H&=E_{\text{klassisch}} = \frac{1}{8\pi} \int d^3r \left( \left( \frac{1}{c} \pdiff{\vec A}_t \right)^2 + \left(\vec \nabla\times\vec A\right)^2 \right) = \notag\\
+   E_{\text{klassisch}} &= \frac{1}{8\pi} \int d^3r \left( \left( \frac{1}{c} \pdiff{\vec A}_t \right)^2 + \left(\vec \nabla\times\vec A\right)^2 \right) = \notag\\
 &=  \frac{1}{8\pi} 2\pi\hbar \sum_{m=1,2} \sum_{\vec k} \omega_{\vec k}  
-\left[ \cancel{\vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)}   + 
-  \cancel{\vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t)}  
- - \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k) 
- - \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right. \notag\\
-&\qquad\left. \cancel{ - \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)}  
-\cancel{-  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t)}
-- \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k)  
-- \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right]
+\left[- \cancel{\vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)}  
+ - \cancel{\vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t)}  
+ + \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k) 
+ + \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right. \notag\\
+&\qquad\left. \cancel{  \vec{\mathcal A}_m (\vec k,t) \vec{\mathcal A}_{m} (- \vec k,t)}  
++ \cancel{  \vec{\mathcal A}^*_m (\vec k,t) \vec{\mathcal A}^*_{m} (- \vec k,t)}
++ \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k)  
++ \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)  \right]
 \end{align}
 
+Nach Kürzungen ergibt sich aus der Gleichung (\ref{eq:18}) einen Hamiltonoperator der dem Harmonischen Oszillator aus der Quantenmechanik ähnlich ist
+
+\begin{align}
+  \label{eq:19}
+   E_{\text{klassisch}} = \frac{1}{2} \sum_{m=1,2} \sum_{\vec k} \hbar \omega_{\vec k} \left[ 
+ \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k)  
++ \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)
+\right]
+\end{align}
+
+Zur vergleich erinnern wir uns an den Hamiltonoperator für den gequantelten harmonischen Oszillator
+
+\begin{align}
+  \label{eq:20}
+  H = \hbar\omega(a^\dagger a+\frac{1}{2})  = \frac{\hbar \omega}{2}(a^\dagger a + a a^\dagger)
+\end{align}
+
+Durch Vergleich von (\ref{eq:19}) und (\ref{eq:20}) können wir sagen dass jede Mode \(\vec k,m\) des elektromagnetischen Feldes sich wie ein harmonischer Oszillator verhält. Das bedeutet, dass das e.m. Feld durch eine unendliche Zahl von Harmonischen Oszillatoren beschrieben wird. D.h. wir können das e.m Feld quansieren, indem wir die klassische Größen \(\vec{\mathcal A}_{m}\) durch die entsprechenden quantenmechanische Operatoren ersetzen
+
+\begin{align}
+  \label{eq:21}
+  \vec{\mathcal A}_{m}(\vec k) \rightarrow a_m(\vec k) \qquad \vec{ \mathcal A}_{m}^*(\vec k) \rightarrow a_m^\dagger(\vec k) 
+\end{align}
+
+Damit erhalten wir ein Hamiltonoperator für das quantisierte Strahlungsfeld
+
+\begin{align}
+  \label{eq:22}
+ \boxed{  H = \frac{1}{2} \sum_{m=1,2} \sum_{\vec k} \hbar \omega_{\vec k} \left[ a^\dagger_m(\vec k) a_m(\vec k) + a_m(\vec k) a^\dagger_m(\vec k) \right] =   \sum_{m=1,2} \sum_{\vec k} \hbar \omega_{\vec k} \left[  a^\dagger_m(\vec k) a_m(\vec k) + \frac{1}{2}\right] }
+\end{align}
+
+Für die Erzeugungs- und Vernichtungs-Operatoren gilt folgende Vertauschungsrelation
+
+\begin{align}
+  \label{eq:23}
+  [ a_m(\vec k), a^\dagger_{m'}(\vec k') ] = \delta_{mm'}\delta_{\vec k\vec k'}
+\end{align}
+
+D.h. der Erzeugungsoperator \(a^\dagger_{m'}(\vec k')\) ein Photon zur Mode \(\vec k,m\) erzeugt und der Vernichtungsoperator \(a_m(\vec k)\) ein Photon vernichtet. Auf das Vakuum angewendeter Erzeugungsoperator
+
+\begin{align}
+  \label{eq:24}
+  a^\dagger_{m}(\vec k) \ket{0} = \ket{1_{\vec k,m}}
+\end{align}
+
+Anwendung zweier verschiedener Erzeugungsoperatoren liefert einen Zwei-Photonen Zustand
+
+\begin{align}
+  \label{eq:25}
+   a^\dagger_{m}(\vec k)  a^\dagger_{m'}(\vec k') \ket{0} = \ket{1_{\vec k,m},1_{\vec k',m'}}
+\end{align}
+
+Zwei Photonen in gleichen Moden erzeugt zwei Photonen-Zustand im gleichen Zustand \(\vec k,m\)
+
+\begin{align}
+  \label{eq:26}
+    a^\dagger_{m}(\vec k) a^\dagger_{m}(\vec k) \ket{0} = \sqrt{2} \ket{2_{\vec k,m}}
+\end{align}
+
+Vergleiche dazu die Relationen aus dem quantenmechanischen harmonischen Oszillator
+
+\begin{align}
+  \label{eq:27}
+  a\ket{n} = \sqrt{n}\ket{n-1} \qquad  a^\dagger \ket{n} = \sqrt{n+1}\ket{n+1}
+\end{align}
+
+\subsection*{Nullpunksenergie}
+Es ist noch zu bemerken wenn man den Erwarunswert des Hamiltonoperators für den Vakuumzustand berechnen eine undendlich hohe Energie herauskommt, denn es gilt
+
+\begin{align}
+  \label{eq:28}
+  \bra{0} H \ket{0} &= \bra{0}\sum_{m=1,2\, \vec k} \hbar \omega_{\vec k} \left[  a^\dagger_m(\vec k) a_m(\vec k) + \frac{1}{2}\right]\ket{0} = \sum_{m=1,2\, \vec k}\left[\hbar \omega_{\vec k}  \underbr{\bra{0}  a^\dagger_m(\vec k) a_m(\vec k)\ket{0}}_{=0} + \frac{\hbar \omega_{\vec k}}{2} \underbr{\braket{0}{0}}_{=1} \right]\notag \\
+&= \sum_{m=1,2\, \vec k}\frac{\hbar \omega_{\vec k}}{2} \rightarrow \infty
+\end{align}
+
+Die Lösung für das Dilema ist:
+
+\begin{itemize}
+\item  Es wird nicht die Gesamtenergie gemessen, sondern nur die Energiedifferenzen. D.h. die unendlichgroße Energie des Vakuums spielt daher keine große Rolle.
+\item Die Vakuumsenergie hängt von den Randbedingungen ab und variiert je nach geometrischen Gegebenheiten. Siehe z.B. \textit{Casimir-Effekt}
+\end{itemize}
+
+Daher lässt man bei den praktischen Berechnungen das \(\frac{1}{2}\) weg. Damit reduziert sich der Hamiltonperator aus (\ref{eq:22}) auf
+
+\begin{align}
+  \label{eq:29}
+\boxed{   H = \sum_{m=1,2\,\vec k}  \hbar \omega_{\vec k} a^\dagger_m(\vec k) a_m(\vec k)  }
+\end{align}
 
 \end{document}
 
