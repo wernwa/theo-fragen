@@ -18,11 +18,18 @@ Schrödinger Gleichung in Kugelkoordinaten
     \left[-\frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r + \frac{L^2}{2\mu r^2}  + V(r) \right]\psi(\vec r) = E_r\psi(\vec r) 
 \end{align}
 
-Mit dem Produktansatz
+Mit der Lösung für ein Zentralsymmetrisches System genügt der Produktansatz von der Radialfunktion mit der Kugelflächenfunktion
 
 \begin{align}
   \label{eq:3}
-  \psi(\vec r) = R(r)\cdot Y(\phi,\theta) 
+  \psi_{lm}(\vec r) = R_{l}(r)\cdot Y_{lm}(\phi,\theta) 
+\end{align}
+
+bzw. die Partialwellenzerlegung, oder Superposition aller Lösungen würde lauten
+
+\begin{align}
+  \label{eq:4}
+  \psi_{lm}(\vec r) = \sum_l\sum_m C_{lm} R_{l}(r)\cdot Y_{lm}(\phi,\theta) 
 \end{align}
 
 
