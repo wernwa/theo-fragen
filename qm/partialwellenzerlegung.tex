@@ -7,31 +7,165 @@
 
 \section*{Partialwellenzerlegung}
 
-
-Schrödinger Gleichung in Kugelkoordinaten
-
-
-
+Bei der Partialwellenzerlegung nutzt man die Tatsache aus, dass der Gesamtdrehimpuls vor der Kollision der Teilchen miteinander und nach der Kollision erhalten bleibt. Es wird ein sphärisch symmetrisches Potential betrachtet. Die Einfallende Welle bewegt sich in die z-Richtung. Wie uns schon aus der Streutheorie bekannt ist besteht die Lösung (Zustandsfunktion) aus einer einlaufenden Ebenen-Welle und einer auslaufenden Kugel-Welle. 
 
 \begin{align}
-  \label{eq:2}
-    \left[-\frac{\hbar^2}{2\mu}\frac{1}{r}\frac{d^2}{dr^2}r + \frac{L^2}{2\mu r^2}  + V(r) \right]\psi(\vec r) = E_r\psi(\vec r) 
+  \label{eq:1}
+  \psi(r) = e^{ikr\cos\theta} + f(\theta)\frac{e^{i k r}}{r}
 \end{align}
 
-Mit der Lösung für ein Zentralsymmetrisches System genügt der Produktansatz von der Radialfunktion mit der Kugelflächenfunktion
-
-\begin{align}
-  \label{eq:3}
-  \psi_{lm}(\vec r) = R_{l}(r)\cdot Y_{lm}(\phi,\theta) 
-\end{align}
-
-bzw. die Partialwellenzerlegung, oder Superposition aller Lösungen würde lauten
+Die allgemeine Lösung für ein zentralsymmetrisches Problem ist die Überlagerung aller Radialfunktionen mit der Kugelflächenfunktionen (siehe Wasserstoffatom)
 
 \begin{align}
   \label{eq:4}
-  \psi_{lm}(\vec r) = \sum_l\sum_m C_{lm} R_{l}(r)\cdot Y_{lm}(\phi,\theta) 
+  \psi(r) = \sum_l\sum_m C_{lm} R_{kl}(r)\cdot Y_{lm}(\phi,\theta) 
 \end{align}
 
+Man geht davon aus dass das Target eine Kugel ist. Dadurch ist das Problem Rotationsinvariant bezüglich dem Winkel \(\phi\). Das heist, egal von welcher Seite man die Kugel betrachtet, man sieht immer die gleiche Streufläche. Deswegen muss die Quantenzahl \(m\) gleich Null sein. Dadurch vereinfacht sich die Gleichung (\ref{eq:4}) zu
+
+\begin{align}
+  \label{eq:5}
+    \psi(r) = \sum_l a_{l} R_{kl}(r)\cdot Y_{l0}(\theta) = \sum_l a_{l} R_{lk}(r)\cdot P_{l}(\cos\theta)
+\end{align}
+
+Wobei \(P_{l}(\cos\theta)\) die Legendre-Polynome sind
+
+\begin{align}
+  \label{eq:6}
+  P_{l}(\cos\theta) \equiv P_{l}^0(\cos\theta) = \frac{(-1)^l}{2^l l!}\frac{d^l}{d \cos\theta^l}sin^{2l}\theta
+\end{align}
+
+Es gilt die beiden Gleichungen (\ref{eq:1}) und (\ref{eq:5}) so anzupassen, dass man durch ein Vergleich die Streuamplitude \(f(\theta)\) bestimmen kann und damit auch den Wirkungsquerschnitt. Dies gelingt wenn man beide Gleichungen in Form von sich überlagernden Kugelwellen darstellt. 
+
+In der Gleichung (\ref{eq:1}) müssen wir dazu den ersten Term, was eine ebene Welle darstellt, in Kugelwellen umformen. Jede ebene Welle lässt sich als Linearkombination der sphärischen Besselfunktionen \(j_l(kr)\) und Legendre-Polynomen \(P_l(\cos\theta)\) darstellen
+
+\begin{align}
+  \label{eq:2}
+  e^{ikr\cos\theta} = \sum_{l}i^l(2l+1)j_l(kr)P_l(\cos\theta)
+\end{align}
+
+Da der Detektor in der Regel sehr weit weg vom Target sich befindet, wollen als nächstes eine Grenzwertberachtung für \(r\to\infty\) machen. Die Sphärischen  Besselfunktionen \(j_l(kr)\) sind definiert als
+
+\begin{align}
+  \label{eq:3}
+  j_l(x) = (-x)^l\left( \frac{1}{x}\frac{d}{dx}\right)^l \frac{\sin x}{x}
+\end{align}
+
+Nach der ersten Ableitung des Ausdrucks \(\frac{\sin x}{x}\) sieht die Gleichung folgendermaßen aus
+
+\begin{align}
+  \label{eq:7}
+  j_l(x) = (-x)^l \frac{1}{x^l} \left(\frac{d}{dx}\right)^{l-1}\left(\frac{\cos x}{x} - \frac{\sin x}{x^2} \right)
+\end{align}
+
+Wegen \(x=kr\) geht der hintere Term \(\frac{\sin x}{x^2}\) schneller gegen Null und wird somit vernachlässigt. Damit können wir näherungsweise schreiben
+
+\begin{align}
+  \label{eq:8}
+  j_l(x) \approx (-x)^l \frac{1}{x^l} \left(\frac{d}{dx}\right)^{l-1} \frac{\cos x}{x} 
+\end{align}
+
+Da die Ableitung (Produktregel) von \(\frac{1}{x}\) vernachlässigt wird kann man \(\frac{1}{x}\) vor die Ableitung ziehen. Die Gleichung (\ref{eq:3}) reduziert sich auf
+
+\begin{align}
+  \label{eq:9}
+    j_l(x) \approx (-x)^l\frac{1}{x^{l+1}}\left( \frac{d}{dx}\right)^l \sin x
+\end{align}
+
+Die \(l\)-fache Ableitung bewirkt nur dass sich das Vorzeichen ändert aus dem \(\sin\) ein \(\cos\) wird bwz. andersherum und deswegen kann man schreiben
+
+\begin{align}
+  \label{eq:10}
+  \left( \frac{d}{dx}\right)^l \sin x = (-1)^l\sin\left(x - l\frac{\pi}{2}\right)
+\end{align}
+
+Gleichung (\ref{eq:10}) in (\ref{eq:9}) eingesetzt ergibt
+
+\begin{align}
+  \label{eq:11}
+   j_l(x) &\approx (-x)^l\frac{1}{x^{l+1}} (-1)^l\sin\left(x - l\frac{\pi}{2}\right) \notag \\
+&= \cancel{(-1)^l \frac{x^l}{x^l}(-1)^l}\frac{1}{x}\sin\left(x - l\frac{\pi}{2}\right)\notag \\
+\end{align}
+
+Damit lautet die sphärische Besselfunktion im Limes \(r\to\infty\)
+
+\begin{align}
+  \label{eq:12}
+   j_l(x) = \frac{1}{x}\sin\left(x - l\frac{\pi}{2}\right)
+\end{align}
+
+Damit können wir die Zustandsfunktion Gleichung (\ref{eq:1}) mit Hilfe der Ebenen Welle Gleichung (\ref{eq:2}) und der Approximation für \(r\to\infty\)(\ref{eq:12}) schreiben
+
+\begin{align}
+  \label{eq:13}
+  \psi(r) &= \sum_{l}i^l(2l+1)j_l(kr)P_l(\cos\theta) + f(\theta)\frac{e^{i k r}}{r}\notag \\
+&= \sum_{l}i^l(2l+1) \frac{1}{kr}\sin\left(kr - l\frac{\pi}{2}\right)P_l(\cos\theta) + f(\theta)\frac{e^{i k r}}{r}
+\end{align}
+
+Für den Ausdruck \(\sin\left(kr - l\frac{\pi}{2}\right) \) in Gleichung (\ref{eq:13}) gilt
+
+\begin{align}
+  \label{eq:14}
+  \sin\left(kr - l\frac{\pi}{2}\right) = \frac{1}{2i}[ e^{ikr}\underbr{\left( e^{-i\frac{\pi}{2}}\right)^l}_{-i^l} - e^{-ikr}\underbr{\left(e^{i\frac{\pi}{2}}\right)^l}_{i^l}] = \frac{1}{2i}[ (-i)^l e^{ikr} - i^l e^{-ikr} ]
+\end{align}
+
+Eingesetzt in Gleichung (\ref{eq:13}) und ausmultipliziert ergibt
+
+\begin{align}
+  \label{eq:15}
+ \psi(r) &= \sum_{l}i^l(2l+1) \frac{1}{kr}  \frac{1}{2i}[ (-i)^l e^{ikr} - i^l e^{-ikr} ] P_l(\cos\theta) + f(\theta)\frac{e^{i k r}}{r} \notag \\
+&=  \sum_{l}i^l(2l+1) \frac{1}{kr}  \frac{1}{2i} (-i)^l e^{ikr}P_l(\cos\theta) - \sum_{l}i^l(2l+1)\frac{1}{kr}  \frac{1}{2i} i^l e^{-ikr}  P_l(\cos\theta) + f(\theta)\frac{e^{i k r}}{r} \notag \\
+&= \frac{e^{i k r}}{r}\left[f(\theta) +  \frac{1}{2ik} \sum_{l}i^l(-i)^l(2l+1) P_l(\cos\theta)\right]  -  \frac{e^{-ikr}}{2ikr} \sum_{l}i^{2l}(2l+1) P_l(\cos\theta)
+\end{align}
+
+Somit können wir die Gleichung (\ref{eq:1}) als einlaufende und auslaufende (gestreute) Kugelwelle darstellen
+
+\begin{align}
+  \label{eq:16}
+  \boxed{ \psi(r) =  -  \frac{e^{-ikr}}{2ikr} \sum_{l}i^{2l}(2l+1) P_l(\cos\theta) +  \frac{e^{i k r}}{r}\left[f(\theta) +  \frac{1}{2ik} \sum_{l}i^l(-i)^l(2l+1) P_l(\cos\theta)\right] }
+\end{align}
+
+Um die Streuamplitude \(f(\theta)\) bestimmen zu können, brauchen noch eine weitere Bedingung für \(\psi\), die wir aus der Gleichung (\ref{eq:5}) gewinnen können
+
+\begin{align}
+  \label{eq:17}
+   \psi(r) = \sum_l a_{l} R_{kl}(r)\cdot P_{l}(\cos\theta)
+\end{align}
+
+Die Gleichung (\ref{eq:17}) ist die Lösung für die Schrödingergleichung in einem zentralsymmetrischen Potential. Dabei muss die Radialfunktion \( R_{kl}(r)\) folgender DGL genügen
+
+\begin{align}
+  \label{eq:18}
+  \left[ \diff^2_r + k^2 - \frac{l(l+1)}{r^2} \right](rR_{kl}(r)) = \frac{2m}{\hbar^2} V(r)(rR_{kl}(r))
+\end{align}
+
+Wir nehmen an dass das Potential \(V(r)\) für \(r\to\infty\) verschwindet. Ebenso wird der Term \(\frac{1}{r^2}\) für große \(r\) stark unterdrückt. Damit reduziert sich die Gleichung (\ref{eq:18}) zu
+
+\begin{align}
+  \label{eq:19}
+   \left[ \diff^2_r + k^2 \right](rR_{kl}(r)) = 0
+\end{align}
+
+Die allgemeine Lösung für die Gleichung (\ref{eq:19}) ist eine Linearkombination aus den sphärischen Bessel- und Neumanfunktionen.
+
+\begin{align}
+  \label{eq:20}
+  R_{kl}(r) = A_l j_l(kr) + B_l n_l(kr) 
+\end{align}
+
+Für die Bessel- und Neumannfunktionen gilt
+
+\begin{align}
+    \text{Bessel: } j_l(x) &= (-x)^l\left(\frac{1}{x} \diff_x \right)^l \frac{\sin x}{x} \label{eq:21}\\
+  \text{Neumann: } n_l(x) &= - (-x)^l\left(\frac{1}{x} \diff_x \right)^l \frac{\cos x}{x} \label{eq:22}
+\end{align}
+
+Wir betrachten wieder den Limes für \(r\to\infty\). Wie in der Gleichung (\ref{eq:12}) gezeigt wurde lässt sich die Besselfunktion schreiben als \(\sin(kr-\frac{l\pi}{2})/kr \). Analoge Rechnung kann man für die Neumannfunktion durchführen, so dass man erhält
+
+\begin{align}
+j_l(x) &= \frac{1}{x}\sin\left(x - l\frac{\pi}{2}\right) \quad \text{ für }r\to\infty  \label{eq:23} \\
+n_l(x) &= - \frac{1}{x}\cos\left(x - l\frac{\pi}{2}\right)\quad \text{ für }r\to\infty \label{eq:24}
+\end{align}
 
 
 \end{document}
