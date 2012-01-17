@@ -201,6 +201,76 @@ Das eingesetzt in die Gleichung (\ref{eq:26}) ergibt
 &=C \sin(x+\delta)
 \end{align}
 
+Damit können wir die Gleichung (\ref{eq:25}) als eine Sinus-Funktion ausdrücken
+
+\begin{align}
+  \label{eq:30}
+  R_{kl}(r) = \frac{C_l}{kr}  \sin\left(kr-l\frac{\pi}{2} + \delta_l\right)
+\end{align}
+
+Dabei wird \(\delta_l\) als die \textbf{Streuphase} bezeichnet. Für die gilt
+
+\begin{align}
+  \label{eq:31}
+  \delta_l = - \phi = - \arctan \frac{B_l}{A_l}
+\end{align}
+
+Die Streuphase \(\delta_l\) beschreibt einen reellen Winkel der zwischen \(-\frac{\pi}{2}\) und \(\frac{\pi}{2}\) liegt. Für ein Streupotential \(V=0\) verschwindet auch die Streuphase \(\delta_l\), d.h. \(\delta_l=0\).
+
+Andererseits, wenn die Streuphase \(\delta_l\) vom Streupotential \(V\) abhängt, muss der Wirkungsquerschnitt \(\sigma\) ebenfalls von der Streuphase abhängen. Dies wollen wir nun herleiten. Dazu setzten wir die Radialfunktion (\ref{eq:30}) in Gleichung (\ref{eq:17})
+
+\begin{align}
+  \label{eq:32}
+  \psi(r) = \sum_l \underbr{a_{l}C_l}_{b_l} \frac{1}{kr}  \sin\left(kr-l\frac{\pi}{2} + \delta_l\right)  \cdot P_{l}(\cos\theta)
+\end{align}
+
+In Gleichung (\ref{eq:32}) handelt es sich um eine 'gestörte' ebene Welle, die sich von der ungestörten ebenen Welle nur durch eine Phase \(\delta_l\) unterscheidet. Das sieht man daran dass für \(\delta_l=0\) die Gleichung (\ref{eq:30}) sich auf eine Besselfunktion (\ref{eq:23})  reduziert. Somit beschreibt die Gleichung (\ref{eq:32}) nur die einlaufende ebene Welle (vergleiche mit Gleichung (\ref{eq:13}).
+
+Um die Konstante \(b_l\) zu bestimmen, schreiben die Sinus-Funktion als Exponentialfunktionen aus. Dazu nutzen wir die schon bekannte Relation (\ref{eq:14}) aus
+
+\begin{align}
+  \label{eq:33}
+   \psi(r) &= \sum_l b_l \frac{1}{kr} \frac{1}{2i}[ (-i)^l e^{ikr+i\delta_l} - i^l e^{-ikr-i\delta_l} ]   \cdot P_{l}(\cos\theta) \notag\\
+&= \sum_l b_l \frac{1}{kr} \frac{1}{2i} (-i)^l e^{ikr}e^{i\delta_l}P_{l}(\cos\theta) - \sum_l b_l \frac{1}{kr} \frac{1}{2i} i^l e^{-ikr}e^{-i\delta_l}    P_{l}(\cos\theta) 
+\end{align}
+
+Damit haben wir diese Gleichung in eine vergleichbare Form gebracht wie Gleichung (\ref{eq:16})
+
+\begin{align}
+  \label{eq:34}
+ \boxed{ \psi(r) = -  \frac{e^{-ikr}}{r} \frac{1}{2ik}\sum_l b_l  i^l e^{-i\delta_l}    P_{l}(\cos\theta) + \frac{e^{ikr}}{r} \frac{1}{2ik} \sum_l b_l (-i)^l e^{i\delta_l}P_{l}(\cos\theta) }
+\end{align}
+
+Der Koeffizientenvergleich der beiden Gleichungen (\ref{eq:16}) und (\ref{eq:34}) zu dem Koeffizienten der einlaufenden Welle \(-  \frac{e^{-ikr}}{r}\) liefert folgende Bedingung
+
+\begin{align}
+  \label{eq:35}
+   b_l  i^l e^{-i\delta_l} &\stackrel{!}=  i^{2l}(2l+1)\notag\\
+\Leftrightarrow b_l &= i^{l}(2l+1)e^{i\delta_l}
+\end{align}
+
+Der Koeffizientenvergleich zu dem Koeffizienten der auslaufenden Welle  \( \frac{e^{ikr}}{r}\) liefert
+
+\begin{align}
+  \label{eq:36}
+\frac{1}{2ik} \sum_l b_l (-i)^l e^{i\delta_l}P_{l}(\cos\theta)  = \left[f(\theta) +  \frac{1}{2ik} \sum_{l}i^l(-i)^l(2l+1) P_l(\cos\theta)\right]
+\end{align}
+
+Setzen wir \(b_l\) aus Gleichung (\ref{eq:35}) in (\ref{eq:36}) ein und stellen nach der Streuamplitude um
+
+\begin{align}
+  \label{eq:37}
+  &\frac{1}{2ik} \sum_l \cancel{i^{l}}(2l+1)e^{i\delta_l}\cancel{ (-i)^l} e^{i\delta_l}P_{l}(\cos\theta)  = f(\theta) +  \frac{1}{2ik} \sum_{l}\cancel{i^l(-i)^l}(2l+1) P_l(\cos\theta) \notag\\
+\Leftrightarrow f(\theta) &= \frac{1}{2ik} \sum_l (2l+1) e^{2i\delta_l}P_{l}(\cos\theta) -  \frac{1}{2ik} \sum_{l}(2l+1) P_l(\cos\theta) \notag\\
+&= \frac{1}{2ik} \sum_l  (2l+1)P_{l}(\cos\theta)(e^{2i\delta_l}-1)
+\end{align}
+
+Mit der Relation \((e^{2i\delta_l}-1)/2i = (e^{2i\delta_l}-e^{i\delta_l}e^{-i\delta_l})/2i =e^{i\delta_l} (e^{i\delta_l}-e^{-i\delta_l})/2i= e^{i\delta_l}\sin\delta_l\) erhalten wir für die Streuamplitude als Endergebnis
+
+\begin{align}
+  \label{eq:38}
+  \boxed{f(\theta) = \sum_l f_l(\theta) = \sum_l \frac{1}{k} (2l+1)e^{i\delta_l}\sin\delta_l P_{l}(\cos\theta) }
+\end{align}
 
 
 \end{document}
