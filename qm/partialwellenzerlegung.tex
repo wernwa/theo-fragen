@@ -167,5 +167,40 @@ j_l(x) &= \frac{1}{x}\sin\left(x - l\frac{\pi}{2}\right) \quad \text{ für }r\to
 n_l(x) &= - \frac{1}{x}\cos\left(x - l\frac{\pi}{2}\right)\quad \text{ für }r\to\infty \label{eq:24}
 \end{align}
 
+Mit diesen beiden Funktionen (\ref{eq:23}) und (\ref{eq:24}) sieht die Gleichung (\ref{eq:20}) wie folgt aus
+
+\begin{align}
+  \label{eq:25}
+   R_{kl}(r) = A_l \frac{1}{kr}\sin\left(kr - l\frac{\pi}{2}\right) - B_l  \frac{1}{kr}\cos\left(kr - l\frac{\pi}{2}\right)
+\end{align}
+
+Da die Radialfunktion für r gegen Null verschwinden muss, repräsentiert der Kosinus-Term keine physikalisch akzeptable Lösung. Daher müssen wir versuchen die Gleichung (\ref{eq:25}) nur durch ein Sinus-Term darzustellen. Dazu betrachten wir folgende Nebenrechnung
+
+\begin{align}
+  \label{eq:26}
+  A\sin x - B\cos x &= \frac{A}{2i}(e^{ix}-e^{-ix}) - \frac{B}{2}(e^{ix}+e^{-ix}) \notag\\
+&=\frac{A}{2i}e^{ix} - \frac{A}{2i}e^{-ix} - \frac{B}{2}e^{ix} - \frac{B}{2}e^{-ix} \notag\\
+&=\left( \frac{A}{2i} - \frac{B}{2} \right) e^{ix}- \left( \frac{A}{2i} + \frac{B}{2} \right) e^{-ix}\notag\\
+&= \frac{1}{2i} \left[( A - iB) e^{ix}- ( A + iB) e^{-ix}\right]
+\end{align}
+
+\(A+iB\) und \(A-iB\) sind zwei komplexe Zahlen, die man in die eulerische Darstellung bringen kann. Es gilt
+
+\begin{align}
+  A+iB &= \sqrt{A^2+B^2}e^{i\phi} \quad \text{ mit }\phi=\arctan \frac{B}{A}  \label{eq:27} \\
+  A-iB &= \sqrt{A^2+B^2}\underbr{e^{i2\pi}}_{=1}e^{-i\phi}  \label{eq:28} \\
+\end{align}
+
+Das eingesetzt in die Gleichung (\ref{eq:26}) ergibt
+
+\begin{align}
+  \label{eq:29}
+   A\sin x - B\cos x &= \frac{1}{2i} \left[ \sqrt{A^2+B^2}e^{-i\phi}e^{ix}- \sqrt{A^2+B^2}e^{i\phi} e^{-ix}\right]\notag\\
+&=\frac{\sqrt{A^2+B^2}}{2i} \left[ e^{-i\phi}e^{ix}- e^{i\phi} e^{-ix}\right] \quad\text{mit }\delta = -\phi\notag\\
+&=\underbr{A^2+B^2}_{C}\frac{1}{2i} \left[ e^{ix+i\delta}- e^{-ix-i\delta}\right] \notag\\
+&=C \sin(x+\delta)
+\end{align}
+
+
 
 \end{document}
