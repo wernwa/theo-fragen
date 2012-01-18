@@ -217,14 +217,16 @@ Dabei wird \(\delta_l\) als die \textbf{Streuphase} bezeichnet. Für die gilt
 
 Die Streuphase \(\delta_l\) beschreibt einen reellen Winkel der zwischen \(-\frac{\pi}{2}\) und \(\frac{\pi}{2}\) liegt. Für ein Streupotential \(V=0\) verschwindet auch die Streuphase \(\delta_l\), d.h. \(\delta_l=0\).
 
-Andererseits, wenn die Streuphase \(\delta_l\) vom Streupotential \(V\) abhängt, muss der Wirkungsquerschnitt \(\sigma\) ebenfalls von der Streuphase abhängen. Dies wollen wir nun herleiten. Dazu setzten wir die Radialfunktion (\ref{eq:30}) in Gleichung (\ref{eq:17})
+Andererseits, wenn die Streuphase \(\delta_l\) vom Streupotential \(V\) abhängt, muss die Streuamplitude \(f(\theta)\) ebenfalls von der Streuphase abhängen. Dies wollen wir nun herleiten. Dazu setzten wir die Radialfunktion (\ref{eq:30}) in Gleichung (\ref{eq:17})
 
 \begin{align}
   \label{eq:32}
   \psi(r) = \sum_l \underbr{a_{l}C_l}_{b_l} \frac{1}{kr}  \sin\left(kr-l\frac{\pi}{2} + \delta_l\right)  \cdot P_{l}(\cos\theta)
 \end{align}
 
-In Gleichung (\ref{eq:32}) handelt es sich um eine 'gestörte' ebene Welle, die sich von der ungestörten ebenen Welle nur durch eine Phase \(\delta_l\) unterscheidet. Das sieht man daran dass für \(\delta_l=0\) die Gleichung (\ref{eq:30}) sich auf eine Besselfunktion (\ref{eq:23})  reduziert. Somit beschreibt die Gleichung (\ref{eq:32}) nur die einlaufende ebene Welle (vergleiche mit Gleichung (\ref{eq:13}).
+In Gleichung (\ref{eq:32}) handelt es sich um eine 'gestörte' ebene Welle, die sich von der ungestörten ebenen Welle nur durch eine Phase \(\delta_l\) unterscheidet. Das sieht man daran dass für \(\delta_l=0\) die Gleichung (\ref{eq:30}) sich auf eine Besselfunktion (\ref{eq:23})  reduziert. Somit beschreibt die Gleichung (\ref{eq:32}) nur die einlaufende ebene Welle (vergleiche mit Gleichung (\ref{eq:13})).
+
+Die Streuphase \(\delta_l\) gibt außerdem Auskunft über das Potential. Ist diese positiv so wird der \(\sin\) in der Gleichung (\ref{eq:33}) nach links verschoben und damit auch die Zustandsfunktion also quasi in das Potential hineingezogen. D.h es handelt sich um ein anziehendes Potential. Ist sie negativ so wird die Zustandsfunktion nach rechts verschoben, also handelt es ich um ein abstoßendes Potential.
 
 Um die Konstante \(b_l\) zu bestimmen, schreiben die Sinus-Funktion als Exponentialfunktionen aus. Dazu nutzen wir die schon bekannte Relation (\ref{eq:14}) aus
 
@@ -265,12 +267,111 @@ Setzen wir \(b_l\) aus Gleichung (\ref{eq:35}) in (\ref{eq:36}) ein und stellen 
 &= \frac{1}{2ik} \sum_l  (2l+1)P_{l}(\cos\theta)(e^{2i\delta_l}-1)
 \end{align}
 
-Mit der Relation \((e^{2i\delta_l}-1)/2i = (e^{2i\delta_l}-e^{i\delta_l}e^{-i\delta_l})/2i =e^{i\delta_l} (e^{i\delta_l}-e^{-i\delta_l})/2i= e^{i\delta_l}\sin\delta_l\) erhalten wir für die Streuamplitude als Endergebnis
+Mit der Relation \((e^{2i\delta_l}-1)/2i = (e^{2i\delta_l}-e^{i\delta_l}e^{-i\delta_l})/2i =e^{i\delta_l} (e^{i\delta_l}-e^{-i\delta_l})/2i= e^{i\delta_l}\sin\delta_l\) erhalten wir für die Streuamplitude
 
 \begin{align}
   \label{eq:38}
   \boxed{f(\theta) = \sum_l f_l(\theta) = \sum_l \frac{1}{k} (2l+1)e^{i\delta_l}\sin\delta_l P_{l}(\cos\theta) }
 \end{align}
 
+Wie wir bereits aus der Streutheorie wissen, enthält die Streuamplitude das gesamte Wissen über den Streuprozess. So ist es möglich daraus den differentiellen Wirkungsquerschnitt zu bestimmen.
+
+\begin{align}
+  \label{eq:39}
+  \frac{d\sigma}{d\Omega} = |f(\theta)|^2 = \frac{1}{k^2}\sum_{l=0}\sum_{l'=0}(2l+1)(2l'+l)e^{i(\delta_l - \delta_{l'})}\sin\delta_l\sin\delta_{l'} P_l(\cos\theta)P_{l'}(\cos\theta)
+\end{align}
+
+Wie man sieht kommt es beim Differentiellen Wirkungsquerschnitt zu Mischtermen mit verschiedenen \(l\)'s was zu Interferenzmustern zwischen den unterschiedlichen Partial-Wellen führt. Deswegen kann der Ausdruck sehr lang und kompliziert werden. Der totale Wirkungsquerschnitt nimmt dagegen eine einfachere Form an.
+
+Durch das Integrieren nach dem Raumwinkel \(d\Omega\) kann man totalen Wirkungsquerschnitt gewinnen
+
+\begin{align}
+  \label{eq:40}
+  \sigma &= \int \diff{\sigma}_\Omega d\Omega = \underbr{\int_0^{2\pi}d\phi}_{=2\pi} \int_0^{\pi}\sin\theta d\theta |f(\theta)|^2 \notag\\
+ &= 2\pi  \int_0^{\pi}\sin\theta d\theta \frac{1}{k^2}\sum_{l=0}\sum_{l'=0}(2l+1)(2l'+l)e^{i(\delta_l - \delta_{l'})}\sin\delta_l\sin\delta_{l'} P_l(\cos\theta)P_{l'}(\cos\theta) \notag\\
+ &= 2\pi  \frac{1}{k^2}\sum_{l=0}\sum_{l'=0}(2l+1)(2l'+l)e^{i(\delta_l - \delta_{l'})}\sin\delta_l\sin\delta_{l'} \int_0^{\pi}\sin\theta d\theta P_l(\cos\theta)P_{l'}(\cos\theta) \notag\\
+\end{align}
+
+Die Legendre-Polynome erfüllen folgende Orthogonalitätsrelation
+
+\begin{align}
+  \label{eq:41}
+  \int_0^{\pi}\sin\theta d\theta P_l(\cos\theta)P_{l'}(\cos\theta) = \delta_{ll'}\frac{2}{2l+1}
+\end{align}
+
+Diese in die Gleichung (\ref{eq:40}) eingesetzt ergibt für den totalen Wirkungsquerschnitt weiterhin
+
+\begin{align}
+  \label{eq:42}
+  \sigma &= 2\pi  \frac{1}{k^2}\sum_{l=0}\sum_{l'=0}(2l+1)(2l'+l)e^{i(\delta_l - \delta_{l'})}\sin\delta_l\sin\delta_{l'}  \frac{2}{2l+1} \delta_{ll'}
+\end{align}
+
+Da nur die Lösung \(l=l'\) ungleich Null ist (wegen Kroneker-Delta \(\delta_{ll'} \)) vereinfacht sich die Gleichung (\ref{eq:42}) auf
+
+\begin{align}
+  \label{eq:43}
+   \boxed{ \sigma = \sum_l\sigma_l = \sum_{l=0}    \frac{4 \pi}{k^2} (2l+1)\sin^2\delta_l }
+\end{align}
+
+\(\sigma_l\) nennt man auch den partielle Wirkungsquerschnitt, der der Streuung von Teilchen in verschiedenen Drehimpulszuständen entspricht. Somit trägt jede Partialwelle zum totalen Wirkungsquerschnitt bei.
+
+\subsection*{Streuung an einer harten Kugel}
+
+Wir betrachten Streuung an einer harten Kugel mit dem Radius \(r_0\). Für das Potential gilt
+
+\begin{align}
+  \label{eq:44}
+  V(r) =
+  \begin{cases}
+    \infty&r<r_0\\
+    0&r\ge r_0
+  \end{cases}
+\end{align}
+
+Laut Gleichung (\ref{eq:31}) gilt für die Radialfunktion
+
+\begin{align}
+  \label{eq:45}
+   R_{kl}(r) = \frac{C_l}{kr}  \sin\left(kr-l\frac{\pi}{2} + \delta_l\right)
+\end{align}
+
+Mit der Beziehung \(\sin(x+y)=\sin x\cos y + \cos x \sin y\) lässt sich die Gleichung (\ref{eq:45}) schreiben
+
+\begin{align}
+  \label{eq:46}
+  R_{kl}(r) =  C_l \left[\underbr{\frac{\sin\left(kr-l\frac{\pi}{2}\right)}{kr}}_{j_l(kr) \text{ siehe }\eqref{eq:23}}\cos(\delta_l) + \underbr{\frac{\cos\left(kr-l\frac{\pi}{2}\right)}{kr}}_{-n_l(kr) \text{ siehe } \eqref{eq:24}}\sin(\delta_l)\right] =C_l [j_l(kr)\cos(\delta_l) -n_l(kr) \sin(\delta_l) ]
+\end{align}
+
+Desweiteren gilt für eine harte Kugel dass die Radialfunktion an der Stelle \(r_0\) verschwinden muss, weil das Potential an der Stelle unendlich ist. D.h es muss folgende Beziehung gelten
+
+\begin{align}
+  \label{eq:47}
+   &R_{kl}(r_0) =C_l [j_l(kr_0)\cos(\delta_l) -n_l(kr_0) \sin(\delta_l) ] \stackrel{!}= 0 \notag\\
+\Leftrightarrow &j_l(kr_0)\cos(\delta_l) = n_l(kr_0) \sin(\delta_l) \notag\\
+\Leftrightarrow &\frac{ j_l(kr_0) }{n_l(kr_0)} = \frac{\sin(\delta_l)}{\cos(\delta_l)} \notag\\
+\end{align}
+
+Damit erhalten wir folgende Relation für die Streuamplitude
+
+\begin{align}
+  \label{eq:48}
+  \tan\delta_l = \frac{ j_l(kr_0) }{n_l(kr_0)}
+\end{align}
+
+Für ein relativ langsames Teilchen nur die Drehimpulskomponenten für \(l=0\) tragen größtenteils zur Streuung bei. Also für \(l=0\) die Bessel- und Neuman-Funktionen in die Gleichung (\ref{eq:48}) eingesetzt ergibt
+
+\begin{align}
+  \label{eq:49}
+  \tan\delta_0 = \frac{ j_0(kr_0) }{n_0(kr_0)} = \frac{ \sin(kr_0) }{-\cos(kr_0)} = -\tan(kr_0)
+\end{align}
+
+Wegen \(-\tan(x) = \frac{-\sin(x)}{\cos(x)} =\frac{\sin(-x)}{\cos(-x)} = \tan(-x) \) kann man die Argumente der Tangenz-Ausdrücke gleichsetzen
+
+\begin{align}
+  \label{eq:50}
+  \boxed{ \rightarrow \delta_0 = - kr_0 }
+\end{align}
+
+Wir erhalten also eine negative Streuamplitude. D.h. also dass das Potential abstoßend sein muss. Was zu einer harten Kugel passend ist.
 
 \end{document}
