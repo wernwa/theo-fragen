@@ -1,0 +1,50 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Ising Modell}
+
+Das Ising Modell ist ein wichtiges Modell der Statistischen Physik, was die Phänomäne des Magnetismus insbesondere Ferromagnetismus beschreiben soll. Damit werden auch Phasenübergänge untersucht, d.h. ob es eine bestimmte kritische Temperatur gibt bei dem ein Phasenübergang in einem Material stattfindet. Mit dem Ising Modell ist es möglich analytisch ein und zwei dimensionale Probleme exakt beschreiben. Für dreidimensionale Probleme werden nummerische approximationen verwendet. Das Ising Modell gilt als das einzige halbwegs realistische Modell für ein Viel-Teilchen-System mit dem man Phasenübergänge mathematisch behandeln kann.
+
+Bei vielen meisten Problemuntersuchungen wird immer die gleiche Vorgehensweise verwendet. Man bestimmt die Zustandssumme eines Systems von der aus ist es möglich weitere termondynamische Größen zu bestimmen. Um die Zustandssumme bestimmen zu können benötigt muss man die Gesamtenergie des Systems wissen.
+
+\subsection*{Herleitung der Hamiltonfunktion}
+
+Wir betrachten ein System aus vielen Teilchen, die in einer Dimension nebeneinander angeordnet sind mit jeweils einem positiven bzw. einem negativen Spin besitzen (siehe Abbildung \ref{fig:1}). Beim Ising Modell wird nur die Spin-Wechselwirkung von benachbarten Teilchen betrachtet.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{./ising-pics/ising01.png}
+  \caption{1-D Ising-Modell-Kette (Quelle: W. Nolting - Grundkurs Theo-
+retische Physik: Band 6)
+}
+  \label{fig:1}
+\end{figure}
+
+
+Die Hamiltonfunktion dieses Systems lautet
+
+\begin{align}
+  \label{eq:1}
+  H = -\sum_{ij}J_{ij}S_iS_j - \vec \mu \vec B \sum_i S_i
+\end{align}
+
+Dabei ist \(J_{ij} \) eine Wechselwirkungskonstante die die magnetische Wechselwirkung zwischen den Teilchen \(i\) und \(j\) beschreibt. \(S_i=\pm 1\) ist dazu da um das Vorzeichen des Spins darzustellen. \(\vec mu\) ist dabei das Magnetische Moment und \(\vec B\) die magnetische Flussdichte. 
+
+Wir betrachten das Magnetfeld in z-Richtung, d.h. \(\vec B = (0,0,B_0)^T\), weiterhin gilt im Ising-Modell nur die Wechselwirkung zwischen benachbarten Teilchen \(j=i+1\), vereinfacht sich die Gleichung (\ref{eq:1}) insgesamt zu
+
+\begin{align}
+  \label{eq:2}
+  H = -\sum_{i}^{N-1}J_{i}S_iS_{i+1} - \mu B_0 \sum_i S_i
+\end{align}
+
+\subsection*{1-D Ising-Modell ohne äußeres Magnetfeld ($B_0=0$)}
+
+
+
+
+\end{document}
