@@ -44,6 +44,57 @@ Wir betrachten das Magnetfeld in z-Richtung, d.h. \(\vec B = (0,0,B_0)^T\), weit
 
 \subsection*{1-D Ising-Modell ohne äußeres Magnetfeld ($B_0=0$)}
 
+In diesem Abschnitt wollen wir untersuchen ob es bei einer kritischen Temperatur \(T_C\) zu einem Phasenübergang kommt. D.h. ob sich eine spontane Magnetisiertung einstellt. Dies war der ursprüngliche Plan von Ernst Ising, als dieses Modell erarbeitet hat.
+
+Wir bestimmen zunächst die kanonische Zustandssumme, die allgemein lautet
+
+\begin{align}
+  \label{eq:3}
+  Z = \sum_{\{\alpha\}} e^{-\beta E_\alpha} \text{ mit }\beta = \frac{1}{k_B T}
+\end{align}
+
+Setzen wir nun den Hamiltonoperator aus Gleichung (\ref{eq:2}) mit \(B_0=0\) in die Zustandssumme (\ref{eq:3}) ein, so lautet die von Teilchenzahl abhängige Zustandssumme
+
+\begin{align}
+  \label{eq:4}
+    Z_N &= \sum_{S_1=\pm 1}\cdot\sum_{S_2=\pm 1}\cdots\sum_{S_N=\pm 1}  e^{\beta \sum_{i}^{N-1}J_{i}S_iS_{i+1}} \notag\\
+&= \sum_{S_1=\pm 1}\cdot\sum_{S_2=\pm 1} e^{\beta J_{1}S_{1}S_2}\sum_{S_3=\pm 1}e^{\beta J_{2} S_2 S_3} \cdots\sum_{S_N=\pm 1}  e^{\beta J_{N-1}S_{N-1}S_{N}} \notag\\
+&= \sum_{S_1=\pm 1}\prod_{i=2}^N\left( \sum_{S_i=\pm 1} e^{\beta J_{i-1}S_{i-1}S_i}\right) \notag\\
+&= \sum_{S_1=\pm 1}\prod_{i=2}^N\left( e^{ + \beta J_{i-1}S_{i-1}}+ e^{ - \beta J_{i-1}S_{i-1}} \right)\notag\\
+&= \sum_{S_1=\pm 1}\prod_{i=2}^N2\cosh( \beta J_{i-1}S_{i-1})
+\end{align}
+
+
+Nun möchten wir die erste Summe \(\sum_{S_1=\pm 1}\) berechnen. Das ist die Summe für das erste Teilchen das ohne Partner, d.h. ohne Wechselwirkung mit der Wechselwirkungskonstenen \(J_0=0\) und aus dem Grund müsste Die Exponentialfunktion lauten \(e^0\) und die Summe \(\sum_{S_1}e^0 = 2\). Rein mathematisch können wir aus der Gleichung (\ref{eq:4}) ein Produkt ausklammern
+
+\begin{align}
+  \label{eq:6}
+   Z_N &=\sum_{S_1=\pm 1}\left( 2\cosh(\beta J_1 S_1) \prod_{i=3}^N2\cosh( \beta J_{i-1}S_{i-1}) \right) \notag\\
+&=2\cosh(\beta J_1 1)\prod_{i=3}^N2\cosh( \beta J_{i-1}S_{i-1}) + 2\cosh(\beta J_1 (-1))\prod_{i=3}^N2\cosh( \beta J_{i-1}S_{i-1})
+\end{align}
+
+Mit der Relation  \(\cosh(\pm x) = \cosh(x) \) können wir die zwei Terme wieder zusammenfassen
+
+\begin{align}
+  \label{eq:7}
+   Z_N &=2\cdot  2\cosh(\beta J_1)\prod_{i=3}^N2\cosh( \beta J_{i-1}S_{i-1})  \notag\\
+&=2\cdot\prod_{i=2}^N2\cosh( \beta J_{i-1}S_{i-1})
+\end{align}
+
+Um die Gleichung (\ref{eq:7}) weiter zu vereinfachen, betrachten wir eine isotrope Wechselwirkung zwischen den Spins, d.h es gilt \(J_1=J_2=\dots=J_j=J\) mit \(j=2...N\). Desweiteren gilt \(\cosh(\beta J S_i ) = \cosh(\pm \beta J) =  \cosh(\beta J) \). Mit diesen Vereinfachungen lautet die Gleichung (\ref{eq:7})
+
+\begin{align}
+  \label{eq:5}
+   Z_N =2\cdot \prod_{i=2}^N2\cosh( \beta J ) = 2\cdot \prod_{i=1}^{N-1}2\cosh( \beta J ) = 2\cdot 2^{N-1}\cosh^{N-1}( \beta J ) 
+\end{align}
+
+Aus Gleichung (\ref{eq:5}) erhalten wir schlussendlich eine Zustandssumme für ein 1-Dim. Ising-Modell ohne äußeres Magnetfeld
+
+\begin{align}
+  \label{eq:8}
+  \boxed{Z_N = 2^{N}\cosh^{N-1}( \beta J )  }
+\end{align}
+
 
 
 
