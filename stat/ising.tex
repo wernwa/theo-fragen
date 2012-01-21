@@ -78,7 +78,8 @@ Mit der Relation  \(\cosh(\pm x) = \cosh(x) \) können wir die zwei Terme wieder
 \begin{align}
   \label{eq:7}
    Z_N &=2\cdot  2\cosh(\beta J_1)\prod_{i=3}^N2\cosh( \beta J_{i-1}S_{i-1})  \notag\\
-&=2\cdot\prod_{i=2}^N2\cosh( \beta J_{i-1}S_{i-1})
+&=2\cdot\prod_{i=2}^N2\cosh( \beta J_{i-1}S_{i-1}) = 2\cdot\prod_{i=2}^N2\cosh(\pm \beta J_{i-1}) \notag\\
+&=  2\cdot\prod_{i=2}^N2\cosh(\beta J_{i-1})
 \end{align}
 
 Um die Gleichung (\ref{eq:7}) weiter zu vereinfachen, betrachten wir eine isotrope Wechselwirkung zwischen den Spins, d.h es gilt \(J_1=J_2=\dots=J_j=J\) mit \(j=2...N\). Desweiteren gilt \(\cosh(\beta J S_i ) = \cosh(\pm \beta J) =  \cosh(\beta J) \). Mit diesen Vereinfachungen lautet die Gleichung (\ref{eq:7})
@@ -95,7 +96,80 @@ Aus Gleichung (\ref{eq:5}) erhalten wir schlussendlich eine Zustandssumme für e
   \boxed{Z_N = 2^{N}\cosh^{N-1}( \beta J )  }
 \end{align}
 
+\subsubsection*{Manetisierung}
 
+Um die Magnetisierung bestimmen zu können, müssen wir den Erwartungswert, bzw. den Mittelwert von Spineinstellung \(\langle S_i\rangle =\langle S\rangle \) bestimmen, da er laut der Beziehung
 
+\begin{align}
+  \label{eq:9}
+  M_S(T) = \mu \langle S\rangle
+\end{align}
+
+Direkt proportional zu der Magnetisierung ist. Es ist geschickt den Mittelwert bzw. den Erwartungswert der Spineinstellung \(S_i\) nicht direkt zu bestimmen sondern über die Spin-Spin-korrelation-Funktion
+
+\begin{align}
+  \label{eq:10}
+  g_{i,i+j} = \langle S_i,S_{i+j}\rangle - \langle S_i\rangle\langle S_{i+j}\rangle
+\end{align}
+
+Den es gilt für weit auseinander liegende Spins, dass diese unkorreliert sind, d.h \(j\to\infty\) geht \(g_{i,i+j}\to 0\)
+
+\begin{align}
+  \label{eq:11}
+   \lim_{j\to\infty} g_{i,i+j} = \lim_{j\to\infty}\left( \langle S_iS_{i+j}\rangle - \langle S_i\rangle\langle S_{i+j}\rangle\right) = 0 \notag\\
+\Leftrightarrow \langle S_iS_{i+j}\rangle = \langle S_i\rangle\langle S_{i+j}\rangle = \langle S \rangle^2
+\end{align}
+
+Für den Erwartungswert \(\langle S_iS_{i+j}\rangle\) gilt allgemein
+
+\begin{align}
+  \label{eq:12}
+  \langle S_iS_{i+j}\rangle &= \frac{1}{Z_N} \sum_{\{\alpha\}} S_i S_{i+j}  e^{\beta \sum_i^{N-1}J_iS_i S_{i+j} } \notag\\
+&= \frac{1}{Z_N} \sum_{\{\alpha\}} S_i \cdot 1\cdot S_{i+j}  e^{\beta \sum_i^{N-1}J_iS_i S_{i+j} } \notag\\
+&= \frac{1}{Z_N} \sum_{\{\alpha\}} (S_i\underbr{S_{i+1})(S_{i+1}}_{=1}\underbr{S_{i+2})(S_{i+2}}_{=1}\underbr{S_{i+3})}_{=1}\cdots\underbr{(S_{i+j-1}}_{=1} S_{i+j})  e^{\beta \sum_i^{N-1}J_iS_i S_{i+j} } 
+\end{align}
+
+Den Erwartungwert können wir durch ableiten der Zustandsumme nach \(\beta J_i\) gewinnen. Um die Wechselwirkung zwischen Spin \(i\) und Spin \(j\) zu bekommen, muss man alle Ableitungen zwischen dem \(i\)-ten und dem \((i+j-1)\)-ten Spin auf die Zustandsumme anwenden.
+
+\begin{align}
+  \label{eq:13}
+  \langle S_iS_{i+j}\rangle &=  \frac{1}{Z_N} \pdiff_{(\beta J_i)}\pdiff_{(\beta J_{i+1})}\cdots \pdiff_{(\beta J_{i+j-1})} Z_N \notag\\
+&\stackrel{~(\ref{eq:7})}=  \frac{1}{Z_N} \pdiff_{(\beta J_i)}\pdiff_{(\beta J_{i+1})}\cdots \pdiff_{(\beta J_{i+j-1})} \left(2\cdot\prod_{i=2}^N2\cosh( \beta J_{i-1})\right)  \notag\\
+&=\cancel{\frac{\cosh(\beta J_{1})\cdots \cosh(\beta J_{i-1})}{ \cosh(\beta J_{1})\cdots \cosh(\beta J_{i-1})} } \times\notag \\
+&\qquad\times \frac{ \sinh(\beta J_{i})\cdots\sinh(\beta J_{i+j-1})}{\cosh(\beta J_{i})\cdots\cosh(\beta J_{i+j-1})}\notag \\
+&\qquad \times \cancel{ \frac{  \cosh(\beta J_{i+j}) \cdots \cosh(\beta J_{N})  }{   \cosh(\beta J_{i+j}) \cdots \cosh(\beta J_{N}) }} \notag\\
+%
+&=\prod_{k=i}^{i+j-1} \tanh(\beta J_{k}) = \prod_{k=1}^{j} \tanh(\beta J_{k})
+\end{align}
+
+Wegen Isotroper Wechselwirkung können wir das Produkt aus Gleichung (\ref{eq:13}) als Potenz schreiben
+
+\begin{align}
+  \label{eq:14}
+   \langle S_iS_{i+j}\rangle =  \tanh^j(\beta J)
+\end{align}
+
+Laut Gleichung (\ref{eq:10}) für \(j\to\infty\) gilt
+
+\begin{align}
+  \label{eq:15}
+\langle S \rangle^2 =  \langle S_i\rangle\langle S_{i+j}\rangle = \lim_{j\to\infty} \tanh^j(\beta J)
+\end{align}
+
+Betrachten wir die Magnetisierung aus Gleichung (\ref{eq:9}), so können wir schreiben
+
+\begin{align}
+  \label{eq:16}
+  M(T) = \mu \lim_{j\to\infty} \tanh^{j/2}(\beta J)
+\end{align}
+
+\begin{itemize}
+\item Die Magnetisierung für \(T>0\) ist immer Null, da \(\lim_{y\to\infty}\tanh^y(x)=0\)
+\item Die Magnetisierung für \(T=0\) ist gleich \(\mu\) da \(\lim_{y\to\infty}\tanh^y(\infty)=1^\infty=1\)
+\end{itemize}
+
+Somit stellt sich \textit{keine spontane Magnetisierung} für endliche Temperaturen ein.\\
+
+Der Erwartungswert aus Gleichung (\ref{eq:15}) ist Null für \(\beta J=\frac{1}{k_BT} J \ne \infty \) , d.h. für jede Temperatur \(T\ne 0\). Daraus folgt dass der gemittelte Spinzustand \(\langle S \rangle\)  auch Null ist. Was zu erwarten ist, da bei endlichen Temperaturen die Spinzustände zufällig chaotisch zwischen \(+ 1\) und \(-1\) verteilt sind. Somit muss der statistische Mittelwert bei Null liegen.
 
 \end{document}
