@@ -172,4 +172,182 @@ Somit stellt sich \textit{keine spontane Magnetisierung} für endliche Temperatu
 
 Der Erwartungswert aus Gleichung (\ref{eq:15}) ist Null für \(\beta J=\frac{1}{k_BT} J \ne \infty \) , d.h. für jede Temperatur \(T\ne 0\). Daraus folgt dass der gemittelte Spinzustand \(\langle S \rangle\)  auch Null ist. Was zu erwarten ist, da bei endlichen Temperaturen die Spinzustände zufällig chaotisch zwischen \(+ 1\) und \(-1\) verteilt sind. Somit muss der statistische Mittelwert bei Null liegen.
 
+
+\subsection*{1D-Ising-Modell mit Magnetfeld $B_0\ne 0$}
+
+Nun wollen wir die Zustandssumme für das 1D-Ising-Modell berechnen. Dazu benutzen wir die sogenannte Transfer-Matrix-Methode. Als Randbedingung gilt auch weiterhin dass jedes Spin nur mit seinem Nachbarn wechselwirken kann und die Wechselwirkung ist jetzt von beginn an isotrop, das bedeutet \(J_i = J\). Hinzu kommt dass die Kette geschlossen wird, d.h. Das letzte Element ist nun benachbart mit dem ersten Element
+
+\begin{align}
+  \label{eq:17}
+  S_{N+1} = S_1
+\end{align}
+
+Die Vollständige Hamiltonfunktion aus Gleichung (\ref{eq:2}) lautet
+
+\begin{align}
+  \label{eq:18}
+    H = - J \sum_{i}^{N-1} S_iS_{i+1} - \mu B_0 \sum_i S_i
+\end{align}
+
+Die allgemeine Zustandssumme lautet
+
+\begin{align}
+  \label{eq:19}
+  Z_N &= \sum_{\{S\}} e^{\beta J \sum_{i}^{N-1} S_iS_{i+1} + \beta \mu B_0 \sum_i S_i }  \notag\\
+&=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0 S_1) + (\beta J S_2 S_{3} + \beta \mu B_0 S_2) +\dots+ (\beta J S_N S_{N+1} + \beta \mu B_0 S_N) } 
+\end{align}
+
+Mit der Randbedinung aus Gleichung (\ref{eq:17}) ersetzen wir \(S_{N+1}\) durch \(S_1\) und erhalten
+
+\begin{align}
+  \label{eq:20}
+   Z_N &=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0 S_1) + (\beta J S_2 S_{3} + \beta \mu B_0 S_2) +\dots+ (\beta J S_N S_1 + \beta \mu B_0 S_N) } \notag\\
+&=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0\frac{1}{2}(S_1+S_1)) + (\beta J S_2 S_{3} + \beta \mu B_0 \frac{1}{2}(S_2+S_2)) +\dots+ (\beta J S_N S_1 + \beta \mu B_0 \frac{1}{2}(S_N+S_N)) } \notag\\
+&=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0\frac{1}{2}(S_1+S_2)) + (\beta J S_2 S_{3} + \beta \mu B_0 \frac{1}{2}(S_2+S_3)) +\dots+ (\beta J S_N S_1 + \beta \mu B_0 \frac{1}{2}(S_N+S_1)) } \notag\\
+&=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0\frac{1}{2}(S_1+S_2))}e^{(\beta J S_2 S_{3} + \beta \mu B_0 \frac{1}{2}(S_2+S_3))}\cdots e^{(\beta J S_N S_1 + \beta \mu B_0 \frac{1}{2}(S_N+S_1)) } \notag\\
+\end{align}
+
+Nun definieren wir die sogenannte Transfer-Funktoin \(T_{i,i+1}\)
+
+\begin{align}
+  \label{eq:21}
+  T_{i,i+1}= e^{(\beta J S_i S_{i+1} + \beta \mu B_0\frac{1}{2}(S_i+S_{i+1}))}
+\end{align}
+
+Damit lautet die Gleichung (\ref{eq:20})
+
+\begin{align}
+  \label{eq:22}
+   Z_N &=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} T_{1,2}\cdot T_{2,3}\cdots T_{N,1}
+\end{align}
+
+Die Transfer-Funktion \(T_{i,i+1}\) kann man als eine \(2\times 2\)-Matrix schreiben, da es 4 verschiedene Kombinationen bei 2 interaggierenden Spins an Spinzuständen gibt
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{ccc}
+    i&i+1&\( e^{(\beta J S_i S_{i+1} + \beta \mu B_0\frac{1}{2}(S_i+S_{i+1}))} \) \\
+\hline
+\hline
+    \(\uparrow\)&\(\uparrow\)& \( e^{\beta J  + \beta \mu B_0 } \)  \\
+\hline
+    \(\uparrow\)&\(\downarrow\)& \( e^{-\beta J } \)   \\
+\hline
+    \(\downarrow\)&\(\uparrow\)& \( e^{-\beta J } \)  \\
+\hline
+    \(\downarrow\)&\(\downarrow\)& \( e^{\beta J  - \beta \mu B_0 } \)
+  \end{tabular}
+  \caption{Mögliche Spin-Kombinationen}
+  \label{tab:1}
+\end{table}
+
+Damit lässt sich die Transfer-Matrix schreiben als
+
+\begin{align}
+  \label{eq:23}
+\hat T =
+\begin{pmatrix}
+   \uparrow \uparrow&  \uparrow\downarrow \\
+   \downarrow\uparrow& \downarrow\downarrow
+\end{pmatrix} = 
+\begin{pmatrix}
+  e^{\beta J  + \beta \mu B_0 }&e^{-\beta J }\\
+ e^{-\beta J }&e^{\beta J  - \beta \mu B_0 }
+\end{pmatrix}
+\end{align}
+
+Mit den zugehörigen Spinzuständen
+
+\begin{align}
+  \label{eq:24}
+  \ket{S_i} = \ket{\uparrow} \equiv
+  \begin{pmatrix}
+    1\\0
+  \end{pmatrix}
+\qquad
+  \ket{S_i} = \ket{\downarrow} \equiv
+  \begin{pmatrix}
+    0\\1
+  \end{pmatrix}
+\end{align}
+
+Mit Hilfe der Transfer-Matrix können wir die Transfer-Funktion schreiben
+
+\begin{align}
+  \label{eq:25}
+  T_{i,i+1} =  \bra{S_i} \hat T \ket{S_{i+1}}
+\end{align}
+
+Setzen wir nun die Definition (\ref{eq:25}) in die Zustandsfunktion aus Gleichung (\ref{eq:22}) ein
+
+\begin{align}
+  \label{eq:26}
+  Z_N &=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} T_{1,2}\cdot T_{2,3}\cdots T_{N,1} \notag \\
+&=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1}\bra{S_1} \hat T \underbr{\ket{S_{2}} \bra{S_2}}_{\mathds 1_2} \hat T \underbr{\ket{S_{3}} \hphantom{\bra{S_3}} }_{\mathds 1_2}\cdots\underbr{\hphantom{\bra{S_N} } \bra{S_N}}_{\mathds 1_2} \hat T \ket{S_{1}}
+\end{align}
+
+Aufgrund der Vollständigkeits-Relation \(\sum_{S_i}\ket{S_i}\bra{S_i}=\mathds 1_2 \) kann die Zustandssumme (\ref{eq:26}) weiter vereinfacht werden
+
+\begin{align}
+  \label{eq:27}
+  Z_N &=\sum_{S_1=\pm 1} \bra{S_1} \hat T^N \ket{S_1} =  \bra{\uparrow} \hat T^N \ket{\uparrow} +  \bra{\downarrow} \hat T^N \ket{\downarrow} = \text{Tr}\left( \hat T^N \right)
+\end{align}
+
+Da die Spur unabhängig von der gewählten Basis ist, können wir die Matrix \(\hat T\) diagonalisieren um weitere Erkenntnisse zu gewinnen. Die Zustandssumme ist dann die Summe der Diagonalelemente bzw. der Eigenwerte der Matrix
+
+\begin{align}
+  \label{eq:28}
+  Z_N &= \text{Tr}\left( \hat T^N \right) = 
+\text{Tr}\left(
+  \begin{pmatrix}
+    \lambda_1&0\\
+0&\lambda_2
+  \end{pmatrix}^N
+\right)=
+\lambda_1^N +  \lambda_2^N
+\end{align}
+
+Die Eigenwerte \(\lambda_i\) der Matrix werden durch die Bedingung \(det|\hat T - \lambda\cdot\mathds 1_2|\stackrel{!}=0\) berechnet
+
+\begin{align}
+  \label{eq:29}
+\left(  e^{\beta J  + \beta \mu B_0 } -\lambda  \right) \left( e^{\beta J  - \beta \mu B_0 } -\lambda  \right) - e^{-2\beta J}\stackrel{!}=0 \notag\\
+\Leftrightarrow e^{2\beta J} - \lambda e^{\beta J  + \beta \mu B_0 } - \lambda e^{\beta J  - \beta \mu B_0 } + \lambda^2 - e^{-2\beta J} =0 \notag\\
+\Leftrightarrow \lambda^2 - \lambda (\underbr{e^{\beta J  + \beta \mu B_0 } + \lambda e^{\beta J  - \beta \mu B_0 }}_{e^{\beta J}2\cosh(\beta \mu B_0 ) }) + \underbr{ e^{2\beta J} - e^{-2\beta J}}_{2\sinh(2\beta J)} =0 \notag\\
+\Leftrightarrow \lambda^2 - \lambda 2 e^{\beta J}\cosh(\beta \mu B_0 )  + 2\sinh(2\beta J) =0 \notag\\
+\end{align}
+
+Mit Hilfe der Mitternachtsformel folgt
+
+\begin{align}
+  \label{eq:30}
+  \lambda_{1,2} &= \frac{ e^{\beta J}2\cosh(\beta \mu B_0)\pm \sqrt{e^{2\beta J}4\cosh^2(\beta \mu B_0) - 4\cdot 2\sinh(2\beta J)  } }{2} \notag\\
+&=  e^{\beta J}\cosh(\beta \mu B_0)\pm \sqrt{e^{2\beta J}\cosh^2(\beta \mu B_0) - e^{2\beta J} + e^{-2\beta J}   }  \notag\\
+&=  e^{\beta J}\left[\cosh(\beta \mu B_0)\pm \sqrt{\underbr{\cosh^2(\beta \mu B_0) - 1}_{\sinh^2(\beta \mu B_0)} + e^{-4\beta J}   } \right] 
+\end{align}
+
+Somit erhalten wir zwei Eigenwerte
+
+\begin{align}
+  \label{eq:31}
+ \lambda_{1,2}  =  e^{\beta J}\left[\cosh(\beta \mu B_0)\pm \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } \right]
+\end{align}
+
+Betrachten wir zusätzlich den Limes der Zustandssumme für \(N\to\infty\), dann können wir sagen dass nur der erste Eigenwert \(\lambda_1\) der der größere Eigenwert ist, gegenüber dem kleineren \(\lambda_2\) dominiert. Denn es gilt
+
+\begin{align}
+  \label{eq:32}
+  Z_N = \lambda_1^N + \lambda_2^N = \lambda_1^N\left( 1 + \frac{\lambda_2^N}{\lambda_1^N}  \right) \stackrel{N\to\infty} = \lambda_1^N = e^{\beta J N}\left[\cosh(\beta \mu B_0)+ \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } \right]^N
+\end{align}
+
+Betrachte die Gleichung (\ref{eq:32}) ohne Magnetfeld \(B_0=0\) so ergibt das
+
+\begin{align}
+  \label{eq:33}
+  Z_N(T,B_0=0) = e^{\beta J N}\left[1+ \sqrt{ e^{-4\beta J}   } \right]^N = e^{\beta J N}+ e^{-\beta J N} =2^N\cosh^N(\beta J)
+\end{align}
+
+Somit erhalten wir die selbe Zustandssumme im termodynamischen Limes ohne Magnetfeld wie Gleichung (\ref{eq:8}).
+
+
 \end{document}
