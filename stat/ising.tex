@@ -197,7 +197,7 @@ Die allgemeine Zustandssumme lautet
 &=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0 S_1) + (\beta J S_2 S_{3} + \beta \mu B_0 S_2) +\dots+ (\beta J S_N S_{N+1} + \beta \mu B_0 S_N) } 
 \end{align}
 
-Mit der Randbedinung aus Gleichung (\ref{eq:17}) ersetzen wir \(S_{N+1}\) durch \(S_1\) und erhalten
+Wir formen die Zustandssumme noch etwas um, damit man ein physikalisches Verhalten bezüglich des Magnetfeldes  zwischen den Spins identifizieren kann (siehe Tabelle \ref{tab:1}).  Mit der Randbedinung aus Gleichung (\ref{eq:17}) ersetzen wir \(S_{N+1}\) durch \(S_1\) und erhalten
 
 \begin{align}
   \label{eq:20}
@@ -207,7 +207,7 @@ Mit der Randbedinung aus Gleichung (\ref{eq:17}) ersetzen wir \(S_{N+1}\) durch 
 &=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0\frac{1}{2}(S_1+S_2))}e^{(\beta J S_2 S_{3} + \beta \mu B_0 \frac{1}{2}(S_2+S_3))}\cdots e^{(\beta J S_N S_1 + \beta \mu B_0 \frac{1}{2}(S_N+S_1)) } \notag\\
 \end{align}
 
-Nun definieren wir die sogenannte Transfer-Funktoin \(T_{i,i+1}\)
+Man sieht wenn die Spins antiparallel sind, z.B. \(S_1=+1\) und \(S_2=-1\) dann verschwindet das Magnetfeld im Exponenten. Wenn die Beide positiv sind, dann erhält man auch ein positives Magnetfeld und entsprechend erhält man ein negatives Magnetfeld wenn beide Spins negativ sind.  Nun definieren wir die sogenannte Transfer-Funktoin \(T_{i,i+1}\)
 
 \begin{align}
   \label{eq:21}
@@ -337,17 +337,59 @@ Betrachten wir zusätzlich den Limes der Zustandssumme für \(N\to\infty\), dann
 
 \begin{align}
   \label{eq:32}
-  Z_N = \lambda_1^N + \lambda_2^N = \lambda_1^N\left( 1 + \frac{\lambda_2^N}{\lambda_1^N}  \right) \stackrel{N\to\infty} = \lambda_1^N = e^{\beta J N}\left[\cosh(\beta \mu B_0)+ \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } \right]^N
+ \boxed{ Z_N = \lambda_1^N + \lambda_2^N = \lambda_1^N\left( 1 + \frac{\lambda_2^N}{\lambda_1^N}  \right) \stackrel{N\to\infty} = \lambda_1^N = e^{\beta J N}\left[\cosh(\beta \mu B_0)+ \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } \right]^N  }
 \end{align}
 
-Betrachte die Gleichung (\ref{eq:32}) ohne Magnetfeld \(B_0=0\) so ergibt das
+Wir wollen überprüfen ob wir aus Gleichung (\ref{eq:32}) die gleiche Zustandssumme bekommen wie in Gleichung (\ref{eq:8}) wenn wir das Magnetfeld \(B_0=0\) setzen. 
 
 \begin{align}
   \label{eq:33}
   Z_N(T,B_0=0) = e^{\beta J N}\left[1+ \sqrt{ e^{-4\beta J}   } \right]^N = e^{\beta J N}+ e^{-\beta J N} =2^N\cosh^N(\beta J)
 \end{align}
 
-Somit erhalten wir die selbe Zustandssumme im termodynamischen Limes ohne Magnetfeld wie Gleichung (\ref{eq:8}).
+Wie man sieht erhalten wir die selbe Zustandssumme im termodynamischen Limes \(N\to\infty\)  ohne Magnetfeld wie Gleichung (\ref{eq:8}).
+
+\subsubsection*{Magnetisierung}
+
+Der Erwartungswert der Magnetisierung lässt sich aus der Zustandsumme bestimmen. Es gilt
+
+\begin{align}
+  \label{eq:34}
+  M(T,B_0,N) &= \frac{1}{Z_N}  \sum_{\{S\}} (\textcolor{blue}{\mu \sum_i^N S_i} )  e^{\beta J \sum_{i}^{N-1} S_iS_{i+1} + \beta B_0 \textcolor{blue}{\mu \sum_i^N S_i} } \notag \\
+&=  \frac{1}{Z_N} \frac{\partial Z_N}{\partial (\beta B_0)} =  \frac{\partial}{\partial (\beta B_0)}\ln(Z_N) = \frac{\partial}{\partial (\beta B_0)}\ln(\lambda_1^N) = N \frac{\partial}{\partial (\beta B_0)}\ln(\lambda_1) \notag\\
+&= N \frac{1}{\lambda_1} \frac{\partial \lambda_1}{\partial (\beta B_0)}
+\end{align}
+
+Mit \(\lambda_1\) aus Gleichung (\ref{eq:31}) folgt
+
+\begin{align}
+  \label{eq:35}
+  M(T,B_0,N) &= N\frac{ \pdiff_{(\beta B_0)}\left( \cancel{e^{\beta J}}\left[\cosh(\beta \mu B_0) + \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } \right] \right) } 
+{\cancel{e^{\beta J}}\left[\cosh(\beta \mu B_0) + \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } \right] } \notag\\
+&= N \frac{ \mu \sinh(\beta \mu B_0) + \frac{2\mu\sinh(\beta \mu B_0)\cosh(\beta \mu B_0) }{2 \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}  } 
+{\cosh(\beta \mu B_0) + \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }  } \notag\\
+&=\frac{ N \mu \sinh(\beta \mu B_0)}{ \cosh(\beta \mu B_0) + \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }  } \left( 1  + \frac{\cosh(\beta \mu B_0) }{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}  \right) \notag\\
+&=\frac{ N \mu \sinh(\beta \mu B_0)}{ \cancel{\cosh(\beta \mu B_0) + \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } } } \left( \frac{\cancel{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }+\cosh(\beta \mu B_0)} }{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}   \right) \notag\\
+&=\frac{ N \mu \sinh(\beta \mu B_0)}{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}
+\end{align}
+
+In Abbildung \ref{fig:2} haben wir die Magnetisierung aus Gleichung (\ref{eq:35}) iin Abhängigkeit von \(B_0\) für zwei verschiedene Termperaturen aufgetragen. Man sieht dass beide Kurven durch den Ursprung gehen, d.h. für \(B_0=0\) gibt es keine spontane Magnetisierung, außer für \(T=0\). 
+
+Für \(B_0\ne 0\) richten sich die einzelnen Spins in Richtung des Magnetfeldes, das bedeutet es handelt sich hier um Paramagnetismus. Desweiteren sieht man, dass sich für große \(B_0\) die Magnetisierung asymtotisch einem festen Wert \(N\mu\)  nähert. Das sieht man aus der Limesbetrachtung der Gleichung (\ref{eq:35})
+
+\begin{align}
+  \label{eq:36}
+  M(T,B_0,N) = \lim_{B_0\to\infty} \frac{ N \mu \sinh(\beta \mu B_0)}{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }} = \frac{ N \mu \sinh(\beta \mu B_0)}{\sinh(\beta \mu B_0)} = N\mu
+\end{align}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{./ising-pics/ising02.png}
+  \caption{Magnetisierung in Abhängigkeit der Magnetfelddichte $B_0$ für verschiedene Termperaturen (Quelle: W. Nolting - Grundkurs Theo-
+retische Physik: Band 6)
+}
+  \label{fig:2}
+\end{figure}
 
 
 \end{document}
