@@ -369,13 +369,26 @@ Mit \(\lambda_1\) aus Gleichung (\ref{eq:31}) folgt
 &= N \frac{ \mu \sinh(\beta \mu B_0) + \frac{2\mu\sinh(\beta \mu B_0)\cosh(\beta \mu B_0) }{2 \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}  } 
 {\cosh(\beta \mu B_0) + \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }  } \notag\\
 &=\frac{ N \mu \sinh(\beta \mu B_0)}{ \cosh(\beta \mu B_0) + \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }  } \left( 1  + \frac{\cosh(\beta \mu B_0) }{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}  \right) \notag\\
-&=\frac{ N \mu \sinh(\beta \mu B_0)}{ \cancel{\cosh(\beta \mu B_0) + \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } } } \left( \frac{\cancel{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }+\cosh(\beta \mu B_0)} }{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}   \right) \notag\\
-&=\frac{ N \mu \sinh(\beta \mu B_0)}{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}
+&=\frac{ N \mu \sinh(\beta \mu B_0)}{ \cancel{\cosh(\beta \mu B_0) + \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } } } \left( \frac{\cancel{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }+\cosh(\beta \mu B_0)} }{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}   \right)
 \end{align}
 
-In Abbildung \ref{fig:2} haben wir die Magnetisierung aus Gleichung (\ref{eq:35}) iin Abhängigkeit von \(B_0\) für zwei verschiedene Termperaturen aufgetragen. Man sieht dass beide Kurven durch den Ursprung gehen, d.h. für \(B_0=0\) gibt es keine spontane Magnetisierung, außer für \(T=0\). 
+Somit erhalten wir die Magnetisierung diesmal mit Magnetfeld
 
-Für \(B_0\ne 0\) richten sich die einzelnen Spins in Richtung des Magnetfeldes, das bedeutet es handelt sich hier um Paramagnetismus. Desweiteren sieht man, dass sich für große \(B_0\) die Magnetisierung asymtotisch einem festen Wert \(N\mu\)  nähert. Das sieht man aus der Limesbetrachtung der Gleichung (\ref{eq:35})
+\begin{align}
+  \label{eq:37}
+ \boxed{ M(T,B_0,N)  =\frac{ N \mu \sinh(\beta \mu B_0)}{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }} }
+\end{align}
+
+Alternativ lässt sich die Magnetisierung auch mit Hilfe der freien Energie \(F(T,B_0,N)\) bestimmen. Es gilt
+
+\begin{align}
+  \label{eq:41}
+  M(T,B_0,N) = - \frac{\partial F(T,B_0,N)}{\partial B_0}\qquad \text{mit } F(T,B_0,N) = - k_B T \ln Z_N
+\end{align}
+
+In Abbildung \ref{fig:2} haben wir die Magnetisierung aus Gleichung (\ref{eq:37}) in Abhängigkeit von \(B_0\) für zwei verschiedene Termperaturen aufgetragen. Man sieht dass beide Kurven durch den Ursprung gehen, d.h. für \(B_0=0\) gibt es keine spontane Magnetisierung, außer für \(T=0\). 
+
+Für \(B_0\ne 0\) richten sich die einzelnen Spins in Richtung des Magnetfeldes, das bedeutet es handelt sich hier um Paramagnetismus. Desweiteren sieht man, dass sich für große \(B_0\) die Magnetisierung asymptotisch einem festen Wert \(N\mu\)  nähert. Das sieht man aus der Limesbetrachtung der Gleichung (\ref{eq:37})
 
 \begin{align}
   \label{eq:36}
@@ -385,11 +398,49 @@ Für \(B_0\ne 0\) richten sich die einzelnen Spins in Richtung des Magnetfeldes,
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{./ising-pics/ising02.png}
-  \caption{Magnetisierung in Abhängigkeit der Magnetfelddichte $B_0$ für verschiedene Termperaturen (Quelle: W. Nolting - Grundkurs Theo-
+  \caption{Magnetisierung in Abhängigkeit der Magnetfelddichte $B_0$ für verschiedene Temperaturen (Quelle: W. Nolting - Grundkurs Theo-
 retische Physik: Band 6)
 }
   \label{fig:2}
 \end{figure}
+
+\subsubsection*{Suszeptibilität $\chi_T(B_0)$}
+
+Mit Hilfe der Magnetisierung in Gleichung (\ref{eq:37}) können wir die Suszeptibilität bestimmen. Die Suszeptibilität ist ein Maß für die Magnetisierbarkeit von Materialien in einem externen Magnetfeld. Sie ist folgendermaßen definiert
+
+\begin{align}
+  \label{eq:38}
+  \chi_T = \left. \frac{\partial M(T,B_0,N)}{\partial H}\right|_{H=0} = \left. \frac{\mu_0 \partial M(T,B_0,N)}{\partial B_0}\right|_{B_0=0}
+\end{align}
+
+Mit der Gleichung (\ref{eq:37}) folgt
+
+\begin{align}
+  \label{eq:39}
+  \chi_T &= \left. \mu_0 \pdiff_{B_0}  \frac{ N \mu \sinh(\beta \mu B_0)}{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}  \right|_{B_0=0} \notag\\
+&= \left. \mu_0 \frac{ N \mu^2 \beta \cosh(\beta \mu B_0)}{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }}  \right|_{B_0=0} -  \left. \mu_0 \frac{ N \mu \overbr{\sinh(\beta \mu^2 B_0)}^{=0 \text{ für }B_0=0}2\sinh(\beta \mu B_0)\cosh(\beta \mu B_0)\beta }{2(\sinh^2(\beta \mu B_0) + e^{-4\beta J}   )^{3/2}}  \right|_{B_0=0}  \notag\\
+&=  \mu_0 \frac{ N \mu^2 \beta }{e^{-2\beta J}  } 
+\end{align}
+
+Somit erhalten wir für die Suszeptibilität
+
+\begin{align}
+  \label{eq:40}
+ \chi_T = \frac{ \mu_0 \mu^2 N }{k_B T}e^{ \frac{2J}{k_B T}}
+\end{align}
+
+Aus der Gleichung (\ref{eq:40}) sieht man, dass für \(T\to 0\) der Term \(\frac{1}{T}\) gegen \(\infty\) geht, heißt dass die Suszeptibilität den höchst möglichen Wert erreicht, was auf einen Phasenübergang bei \(T=0\) hindeutet. Aus der Abbildung \ref{fig:3} ersieht man, dass die inverse Suszeptibilität für höhere Temperaturen sich einer Geradengleichung annähert. Dies besagt auch das allseits beliebte Curie-Gesetzt \(\chi=\frac{C}{T}\) bzw. \(\frac{1}{\chi}=\frac{1}{C}T\) mit \(C\) der Curie-Konstante.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{./ising-pics/ising03.png}
+  \caption{Kehrwert der Suszeptibilität in Abhängigkeit der Termperatur für \(B_0=0\)  (Quelle: W. Nolting - Grundkurs Theo-
+retische Physik: Band 6)
+}
+  \label{fig:3}
+\end{figure}
+
+
 
 
 \end{document}
