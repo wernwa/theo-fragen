@@ -1,0 +1,28 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+1-D Ising-Modell \underline{ohne} Magnetfeld \( \boxed{ H = -\sum_{ij}J_{ij}S_iS_j }  \)\\
+  \(
+    Z_N =  2^{N}\cosh^{N-1}( \beta J )\qquad M(T) = \mu \lim_{j\to\infty} \tanh^{j/2}(\beta J) 
+  \)\\
+1-D Ising-Modell \underline{mit} Magnetfeld \( \boxed{ H = -\sum_{ij}J_{ij}S_iS_j - \vec \mu \vec B \sum_i S_i} \)\\
+\(
+  Z_N \stackrel{N\to\infty} = \lambda_1^N = e^{\beta J N}\left[\cosh(\beta \mu B_0)+ \sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   } \right]^N
+\)\\
+\(
+  M =- \pdiff F_{B_0}= \frac{ N \mu \sinh(\beta \mu B_0)}{\sqrt{\sinh^2(\beta \mu B_0) + e^{-4\beta J}   }} \quad
+  \chi_T = \left. \frac{\mu_0\partial M}{\partial B_0}\right|_{B_0=0} = \frac{ \mu_0 \mu^2 N e^{ \frac{2J}{k_B T}} }{k_B}\frac{1}{T}
+\)
+{
+\centering
+\includegraphics[scale=0.6]{../stat/ising-pics/ising01.png}
+\includegraphics[scale=0.3]{../stat/ising-pics/ising02.png}
+\includegraphics[scale=0.3]{../stat/ising-pics/ising03.png}
+}
+
+}%end Huge
+
+\end{document}

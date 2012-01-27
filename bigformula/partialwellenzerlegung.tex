@@ -1,0 +1,35 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+
+{\Huge
+\textbf{Partialwellenzerlegung} (Drehimpulserhaltung) \(\psi(r) = \phi_{\text{ein}} + \phi_{\text{gestr}} \)\\
+\(
+  \boxed{\psi(r) = e^{ikr\cos\theta} + f(\theta)\frac{e^{i k r}}{r}} = \sum_{l}i^l(2l+1)j_l(kr)P_l(\cos\theta) + f(\theta)\frac{e^{i k r}}{r}
+\)\\
+\\
+\(
+  \underbr{j_l(x) \stackrel{r\to\infty}= \frac{1}{x}\sin\left(x - l\frac{\pi}{2}\right) }_{\text{Bessel-Funktion}} \quad  \quad
+\underbr{n_l(x) \stackrel{r\to\infty}=  - \frac{1}{x}\cos\left(x - l\frac{\pi}{2}\right)}_{\text{Neumann-Funktion}} 
+\)\\
+\\
+\(
+   \psi(r) \stackrel{m=0}= \sum_l a_{l} R_{kl}(r)\cdot Y_{l0}(\theta) = \sum_l a_{l} R_{lk}(r)\cdot P_{l}(\cos\theta)
+\)\\
+\\
+\(
+  \left[ \diff^2_r + k^2 \right](rR_{kl}) = 0 \rightarrow R_{kl} = A_l j_l + B_l n_l= \frac{C_l}{kr}  \sin\left(kr-l\frac{\pi}{2} + \delta_l\right) 
+\)\\
+\\
+\(
+ \boxed{ f(\theta) = \sum_l f_l(\theta) = \sum_l \frac{1}{k} (2l+1)e^{i\delta_l}\sin\delta_l P_{l}(\cos\theta) }
+\)\\
+\\
+\(
+  \sigma = \int \diff{\sigma}_\Omega d\Omega = \int |f(\theta)| d\Omega  = \sum_l\sigma_l = \sum_{l=0}    \frac{4 \pi}{k^2} (2l+1)\sin^2\delta_l 
+\)
+
+}%end Huge
+
+\end{document}

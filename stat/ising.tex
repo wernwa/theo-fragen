@@ -293,11 +293,25 @@ Aufgrund der Vollständigkeits-Relation \(\sum_{S_i}\ket{S_i}\bra{S_i}=\mathds 1
   Z_N &=\sum_{S_1=\pm 1} \bra{S_1} \hat T^N \ket{S_1} =  \bra{\uparrow} \hat T^N \ket{\uparrow} +  \bra{\downarrow} \hat T^N \ket{\downarrow} = \text{Tr}\left( \hat T^N \right)
 \end{align}
 
-Da die Spur unabhängig von der gewählten Basis ist, können wir die Matrix \(\hat T\) diagonalisieren um weitere Erkenntnisse zu gewinnen. Die Zustandssumme ist dann die Summe der Diagonalelemente bzw. der Eigenwerte der Matrix
+Um \(\hat T^N\) berechnen zu können, ist es zweckmäßig \(\hat T\) zuerst zu diagonalisieren. Denn es gilt 
+
+\begin{align}
+  \label{eq:42}
+  \begin{pmatrix}
+    \lambda_1&0\\
+    0& \lambda_2\\
+  \end{pmatrix}^N =
+  \begin{pmatrix}
+     \lambda_1^N&0\\
+    0& \lambda_2^N\\
+  \end{pmatrix}
+\end{align}
+
+Da die Spur unabhängig von der gewählten Basis ist, können wir die Matrix \(\hat T\) in diagonal-Form \(\hat T'\)  bringen. Die Zustandssumme ist dann die Summe der Diagonalelemente bzw. der Eigenwerte der Matrix
 
 \begin{align}
   \label{eq:28}
-  Z_N &= \text{Tr}\left( \hat T^N \right) = 
+  Z_N &= \text{Tr}\left( \hat T'^{N} \right) = 
 \text{Tr}\left(
   \begin{pmatrix}
     \lambda_1&0\\
@@ -431,7 +445,7 @@ Somit erhalten wir für die Suszeptibilität
 
 Aus der Gleichung (\ref{eq:40}) sieht man, dass für \(T\to 0\) der Term \(\frac{1}{T}\) gegen \(\infty\) geht, heißt dass die Suszeptibilität den höchst möglichen Wert erreicht, was auf einen Phasenübergang bei \(T=0\) hindeutet. Aus der Abbildung \ref{fig:3} ersieht man, dass die inverse Suszeptibilität für höhere Temperaturen sich einer Geradengleichung annähert. Dies besagt auch das allseits beliebte Curie-Gesetzt \(\chi=\frac{C}{T}\) bzw. \(\frac{1}{\chi}=\frac{1}{C}T\) mit \(C\) der Curie-Konstante.
 
-\begin{figure}
+\begin{figure}[t]
   \centering
   \includegraphics[scale=0.5]{./ising-pics/ising03.png}
   \caption{Kehrwert der Suszeptibilität in Abhängigkeit der Termperatur für \(B_0=0\)  (Quelle: W. Nolting - Grundkurs Theo-

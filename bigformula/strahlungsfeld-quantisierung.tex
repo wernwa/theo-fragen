@@ -1,0 +1,21 @@
+\input{../headers/header_landscape.tex}
+
+
+\begin{document}
+{\Huge
+\(\vec A(x,y,z) = \vec A(x+L,y,z) \rightarrow \vec k = \frac{2\pi}{L}
+  (n_x,n_y,n_z)^T
+= \frac{2\pi}{L} \vec n \)\\
+\( \boxed{\vec A(\vec r, t) =  \sum_{m=1,2} \sum_{\vec k} \sqrt{\frac{2\pi\hbar c^2}{\omega_{\vec k}V}}  \hat \epsilon_m  \left[  \vec{\mathcal A}_m (\vec k)  e^{i(\vec k\vec r-\omega t)} + \vec{\mathcal A}^*_m (k) e^{-i(\vec k\vec r-\omega t)}\right]}\)\\
+\( E_{\text{klassisch}} = \frac{1}{8\pi} \int d^3r \left( \vec E^2+\vec B^2 \right) = \frac{1}{8\pi} \int d^3r \left( \left( \frac{1}{c} \pdiff{\vec A}_t \right)^2 + \left(\vec \nabla\times\vec A\right)^2 \right)\)\\
+\( E_{\text{klassisch}} = \frac{1}{2} \sum_{m=1,2} \sum_{\vec k} \hbar \omega_{\vec k} \left[ 
+ \vec{\mathcal A}_{m} (\vec k)  \vec{\mathcal A}^*_{m} (\vec k)  
++ \vec{\mathcal A}^*_m (k) \vec{\mathcal A}_{m} (\vec k)\right]  \)\\
+\\
+\( H = \frac{1}{2} \sum_{m=1,2} \sum_{\vec k} \hbar \omega_{\vec k} \left[ a^\dagger_m(\vec k) a_m(\vec k) + a_m(\vec k) a^\dagger_m(\vec k) \right]\)\\
+Mit den Relationen\\
+\( a^\dagger_{m} \ket{0} = \ket{1_{\vec k,m}} \quad a^\dagger_{m}  a^\dagger_{m'} \ket{0} = \ket{1_{\vec k,m},1_{\vec k',m'}} \quad  a^\dagger_{m} a^\dagger_{m} \ket{0} = \sqrt{2} \ket{2_{\vec k,m}}\)\\
+\textbf{quantisiertes Strahlungsfeld}: \( \boxed{H = \sum_{m=1,2\,\vec k}  \hbar \omega_{\vec k} a^\dagger_m(\vec k) a_m(\vec k)} \)
+}%end Huge
+
+\end{document}
