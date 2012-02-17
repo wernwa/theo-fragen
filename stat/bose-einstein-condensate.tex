@@ -1,0 +1,122 @@
+\input{../headers/header_script.tex}
+\usepackage{amsmath} 
+
+
+
+\begin{document}
+
+\section*{Bose-Einstein-Kondensation (BEC)}
+
+Unter Bose-Einstein-Kondensation versteht man dass sich Teilchen eines idealen Bosegases mit der Dispersionsrelation \(\epsilon = \frac{\hbar^2 k^2}{2m}\) unterhalb einer bestimmten kritischen Temperatur \(T_C\) in dem niedrigsten Energiezustand versammeln. Dies ist ein rein quantenmechanischer Effekt da für eine Kondensation im klassischen Sinne die Teilchen miteinander wechselwirken können müssen z.B. Gitter aufbauen können, was bei einem idealen Gas nicht der Fall ist.
+
+Wir möchten nun die kritische Temperatur \(T_C\) bestimmen. Dazu nutzen wir die Tatsache aus dass die Teilchenzahl bei jeder Temperatur erhalten bleiben muss. Die Anzahl der Teilchen lässt sich nach folgender Formel bestimmen
+
+\begin{align}
+  \label{eq:1}
+  N(T,V,\mu) = V\int d\epsilon \mathcal N(\epsilon) n(\epsilon-\mu)
+\end{align}
+
+Wobei \( n(\epsilon-\mu) \) die Bose-Einstein Verteilungsfunktion ist und \(\mathcal N(\epsilon)\) ist die Zustandsdichte. Die Zustandsdichte für ein Gas im 3-dimensionalen Raum.
+
+\begin{align}
+  \label{eq:2}
+  \mathcal N(\epsilon) = \frac{1}{4\pi^2}\left( \frac{2m}{\hbar^2}  \right)^{\frac{3}{2}}\sqrt{\epsilon}
+\end{align}
+
+Die Bose-Einstein-Verteilungsfunktion die da lautet
+
+\begin{align}
+  \label{eq:3}
+  n(\epsilon-\mu) = \frac{1}{\exp\left(\frac{\epsilon-\mu}{k_B T}\right)-1}
+\end{align}
+
+gibt die Anzahl der Teilchen in einem Zustand mit der Energie \(\epsilon = \frac{\hbar^2 k^2}{2m}\) an. Betrachtet man den Exponenten in der Gleichung (\ref{eq:3}) so stellt man fest, dass das chemische Potential \(\mu\) immer kleiner seien muss als \(\epsilon\), wenn das nicht der Fall ist würde sich eine negative Teilchenzahl ergeben. D.h. es muss gelten
+
+\begin{align}
+  \label{eq:4}
+  \mu \le \epsilon
+\end{align}
+
+Da die kleinst mögliche Energie \(\epsilon(k=0) = 0\) mit dem Impuls \(k=0\) ist, gilt für die Gleichung (\ref{eq:4})
+
+\begin{align}
+  \label{eq:5}
+  \mu \le 0
+\end{align}
+
+Dies ist eine wichtige Bedingung für das chemische Potential, dass die Energie beschreibt das man aufwenden muss um ein zusätzliches Teilchen dem System hinzuzufügen. 
+
+Betrachtet man weiterhin Gleichung (\ref{eq:3}) für sehr tiefe Termperaturen \(T\to 0\) stellt man fest, dass \(n(\epsilon-\mu)\to 0\) ebenfalls gegen Null geht. Was dazu führt dass die Anzahl der Teilchen in Gleichung (\ref{eq:1}) ebenfalls gegen Null gehen lässt was mit der Teilchenzahl-Erhaltung im Widerspruch steht. Deswegen Teilt man die Gleichung (\ref{eq:1}) in zwei Summanden wie folgt auf
+
+\begin{align}
+  \label{eq:6}
+   N(T,V,\mu) = N_0 + N_T = N_0 +  V\int d\epsilon \mathcal N(\epsilon) n(\epsilon-\mu)
+\end{align}
+
+Dabei repräsentiert \(N_0\) die Anzahl der Teilchen im Grundzustand \(\epsilon(k=0)\) und der zweite Summand \(N_T\) die Teilchen in allen anderen möglichen Zuständen. \(N_0\) ist für hohe Termperaturen zu vernachlässigen, da man davon ausgeht, dass die meisten Teilchen nicht im Grundzustand sind, für \(N\to\infty\) gilt \(\frac{N_0}{N} \to 0\). Die Quintessenz bei BEC ist, dass bei sinkender Temperatur das chemische Potential im zweiten Summanden dafür sorgt dass die Teilchenanzahl bis zu einer kritischen Temperatur \(T_C\)erhalten bleibt. Ist die Bedingung in Gleichung (\ref{eq:5}) erreicht, kann das chemische Potential nicht mehr für Teilchenerhalt sorgen. D.h. damit die Teilchen dennoch erhalten bleiben, müssen sie sich im ersten Summanden \(N_0\) versammeln und somit den gleichen quantenmechanischen energetischen Zustand \(\epsilon_0 = 0\) einnehmen. Was man als Bose-Einstein-Kondensation bezeichnet. Kurz vor der kritischen Temperatur muss gelten \(N_0\) immer noch Null und \(\mu\) fast Null. Damit können wir die Gleichung (\ref{eq:6}) vereinfachen zu
+
+\begin{align}
+  \label{eq:7}
+  N(T_C,V,\mu=0) = V\int d\epsilon \mathcal N(\epsilon) n(\epsilon)
+\end{align}
+
+Mit den Gleichungen (\ref{eq:2}) und (\ref{eq:3}) ergibt sich
+
+\begin{align}
+  \label{eq:8}
+   N(T_C,V,\mu=0) = \frac{1}{4\pi^2}\left( \frac{2m}{\hbar^2}  \right)^{\frac{3}{2}} V \int_0^\infty d\epsilon  \frac{\sqrt{\epsilon}}{\exp\left(\frac{\epsilon}{k_B T_C}\right)-1}
+\end{align}
+
+Mit der Substitution \(u=\frac{\epsilon}{k_B T_C}\) und \(\frac{du}{d\epsilon}=\frac{1}{k_B T_C} \rightarrow d\epsilon=k_B T_C du\) eingesetzt in Gleichung (\ref{eq:8})
+
+\begin{align}
+  \label{eq:9}
+    N(T_C,V,\mu=0) &= \frac{1}{4\pi^2}\left( \frac{2m}{\hbar^2}  \right)^{\frac{3}{2}} V \int_0^\infty k_B T_C du  \frac{\sqrt{u k_B T_C}}{e^{u}-1} \notag\\
+&=\frac{1}{4\pi^2}\left( \frac{2m k_B T_C}{\hbar^2}  \right)^{\frac{3}{2}} V  \int_0^\infty du  \frac{\sqrt{u}}{e^{u}-1} \notag\\
+\end{align}
+
+Das Integral lässt sich mit Hilfe der \(\zeta\)-Funktion bestimmen, es gilt
+
+\begin{align}
+  \label{eq:10}
+  \zeta(s) = \frac{1}{\Gamma(s)} \int_0^\infty \frac{u^{s-1}}{e^u-1}du
+\end{align}
+
+Somit lautet die Gleichung (\ref{eq:9})
+
+\begin{align}
+  \label{eq:11}
+   N(T_C,V,\mu=0) &= \frac{1}{4\pi^2}\left( \frac{2m k_B T_C}{\hbar^2}  \right)^{\frac{3}{2}} V \zeta(\frac{3}{2})\Gamma(\frac{3}{2})   \notag\\
+\end{align}
+
+Um die kritische Temperatur bei der die Kondensation beginnt zu bestimmten stellen wir die Gleichung (\ref{eq:11}) nach \(T_C\) um und setzen \(\Gamma(\frac{3}{2}) = \frac{\sqrt{\pi}}{2}\) ein
+
+\begin{align}
+  \label{eq:12}
+  T_C = \frac{\hbar^2}{2m k_B}\left( \frac{N4\pi^2}{V\zeta(\frac{3}{2})\Gamma(\frac{3}{2})  } \right)^{\frac{2}{3}} = \frac{ 2\pi \hbar^2}{m k_B }\left( \frac{N}{V\zeta(\frac{3}{2})  } \right)^{\frac{2}{3}}
+\end{align}
+
+Damit lässt sich die kritische Temperatur mit der folgenden Gleichung bestimmen
+
+\begin{align}
+  \label{eq:13}
+  \boxed{ T_C = \frac{ 2\pi \hbar^2}{m k_B }\frac{1}{\zeta(\frac{3}{2})^{\frac{3}{2}}} \left( \frac{N}{V} \right)^{\frac{2}{3}} }
+\end{align}
+
+Für das Verhältnis zwischen Teilchen im Grundzustand und den Gesamtanzahl der Teilchen gilt
+
+\begin{align}
+  \label{eq:14}
+  \frac{N_0}{N} \stackrel{~(\ref{eq:6})}= \frac{N-N_T} N = 1-\frac {N_T} N 
+\end{align}
+
+Im Falle \(T<T_C\) sammeln sich die meisten Teilchen im Grundzustand \(N_0\) so dass gilt \(N\approx N_0\) und somit erhalten wir folgendes Verhältnis
+
+\begin{align}
+  \label{eq:15}
+ \frac{N_0}{N} = 1 - \left( \frac{T}{T_C}\right)^{\frac{3}{2}} \qquad \text{für } T<T_C
+\end{align}
+
+%und \( \zeta(\frac{3}{2}) \approx 2,61\)
+
+\end{document}
