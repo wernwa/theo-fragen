@@ -100,8 +100,12 @@ Damit lässt sich die kritische Temperatur mit der folgenden Gleichung bestimmen
 
 \begin{align}
   \label{eq:13}
-  \boxed{ T_C = \frac{ 2\pi \hbar^2}{m k_B }\frac{1}{\zeta(\frac{3}{2})^{\frac{3}{2}}} \left( \frac{N}{V} \right)^{\frac{2}{3}} }
+  \boxed{ T_C = \frac{ 2\pi \hbar^2}{m k_B }\frac{1}{\zeta(\frac{3}{2})^{\frac{3}{2}}} \left( \frac{N}{V} \right)^{\frac{2}{3}} 
+= \frac{ h^2}{2\pi m k_B }\frac{1}{\zeta(\frac{3}{2})^{\frac{3}{2}}} \left( \frac{N}{V} \right)^{\frac{2}{3}} }
 \end{align}
+
+Es lässt sich weiterhin  \( \zeta(\frac{3}{2}) \approx 2,61\) ungefähr angeben.
+
 
 Für das Verhältnis zwischen Teilchen im Grundzustand und den Gesamtanzahl der Teilchen gilt
 
@@ -117,6 +121,67 @@ Im Falle \(T<T_C\) sammeln sich die meisten Teilchen im Grundzustand \(N_0\) so 
  \frac{N_0}{N} = 1 - \left( \frac{T}{T_C}\right)^{\frac{3}{2}} \qquad \text{für } T<T_C
 \end{align}
 
-%und \( \zeta(\frac{3}{2}) \approx 2,61\)
+
+\subsection*{Fänomenologische Herleitung}
+
+Betrachte die De-Brouglie-Beziehung zwischen Welle und Impuls
+
+\begin{align}
+  \label{eq:16}
+  \lambda = \frac{h}{p}
+\end{align}
+
+Für den Impuls eines Teilchen in einem Gas kann die Kinetische Energie wie folgt angenommen werden
+
+\begin{align}
+  \label{eq:17}
+  E=\frac{p^2}{2m} \Leftrightarrow p = \sqrt{2mE}
+\end{align}
+
+Die Energie \(E\) in Gleichung (\ref{eq:17}) ersetzt man nun mit der thermischen Energie, damit eine Abhängigkeit von der Temperatur in die Beziehung aufgenommen wird. Am einfachsten ist der Ansatz \(E\equiv U=\frac{f}{2}k_B T=\frac{3}{2}k_B T\) welches eine brauchbare Näherung liefert. Die thermische Wellenlänge lautet somit aus Gleichung (\ref{eq:16})
+
+\begin{align}
+  \label{eq:18}
+  \lambda_{\text{th}} = \frac{h}{\sqrt{3mk_B T}}
+\end{align}
+
+Eine genauere Approximation für die thermische Wellenlänge gibt uns dagegen die Zustandsumme eines ideales Gases. Dabei kommt in der Rechnung eine Energie \(E\equiv U=\pi k_B T \) heraus. Für die thermische Wellenlänge wird deswegen im weiteren folgende Gleichung verwendet
+
+\begin{align}
+  \label{eq:19}
+  \lambda_{\text{th}} = \frac{h}{\sqrt{2\pi mk_B T}}
+\end{align}
+
+Uns interessiert die kritische Temperatur. Die Gleichung (\ref{eq:19}) nach \(T\) umgestellt lautet dann
+
+\begin{align}
+  \label{eq:20}
+  T = \frac{h^2}{2\pi mk_B \lambda^2_{\text{th}}}
+\end{align}
+
+Die einzige noch uns unbekannte Größe in der Gleichung (\ref{eq:20}) ist die thermische Wellenlänge\(\lambda_{\text{th}}\) bei welcher quantenmechanische Effekte auftreten sollen. Sinnvoller weise nimmt man eine Wellenlänge an die mindestens so groß ist wie der Abstand zum nächsten Atom, weil dann eine Überlappung der Wellen-Teilchen erst stattfinden kann. Die Bedingung sollte also lauten
+
+\begin{align}
+  \label{eq:21}
+  \lambda_{\text{th}} \gtrsim d
+\end{align}
+
+Man überlegt sich den Abstand \(d\) folgendermaßen. In einem Würfel das \(N\)-Teilchen beinhaltet, muss eine Würfelkante \(^3\sqrt{N}\) Teilchen haben. Das gleiche gilt für die Würfelstrecke eines Volumens, nämlich \(^3\sqrt{V}\). Das Verhältnis zwischen Kantenlänge und Teilchen auf ihr gibt uns den Abstand zwischen den Teilchen
+
+\begin{align}
+  \label{eq:22}
+  d = \left( \frac{V}{N}\right)^{1/3}
+\end{align}
+
+Diese Beziehung in Gleichung (\ref{eq:20}) eingesetzt ergibt 
+
+\begin{align}
+  \label{eq:23}
+  T_C = \frac{h^2}{2\pi mk_B} \left( \frac{N}{V}\right)^{2/3}
+\end{align}
+
+Vergleicht man nun mit Gleichung (\ref{eq:13}) muss man feststellen, dass die Approximation in (\ref{eq:23}) um den Faktor \(\frac{1}{\zeta(\frac{3}{2})^{\frac{3}{2}}}\approx 0,237 \) abweicht.
+
+
 
 \end{document}
