@@ -1,0 +1,15 @@
+\begin{picture}(0,0)%
+\includegraphics{bose-einstein-condensate_pics/bec-N-T.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFontNFSS\undefined%
+\gdef\SetFigFontNFSS#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(5541,3235)(1515,-3913)
+\put(4651,-1261){\makebox(0,0)[lb]{\smash{{\SetFigFontNFSS{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\frac{N_0}{N}=1-\left(\frac{T}{T_C}\right)^{3/2}$}%
+}}}}
+\end{picture}%

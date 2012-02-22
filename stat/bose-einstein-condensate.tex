@@ -121,6 +121,19 @@ Im Falle \(T<T_C\) sammeln sich die meisten Teilchen im Grundzustand \(N_0\) so 
  \frac{N_0}{N} = 1 - \left( \frac{T}{T_C}\right)^{\frac{3}{2}} \qquad \text{für } T<T_C
 \end{align}
 
+Die Gleichung (\ref{eq:15}) ist in Abbildung \ref{fig:1} dargestellt. Man sieht dass bei \(\frac{T}{T_C}=1\) es zu eine Knick kommt. Dieses Verhalten ist typisch für einen Phasenübergang. Das gleiche beobachtet man auch z.B. bei spezifischer Wärmekapazität. 
+
+\begin{figure}
+  \centering
+  \input{bose-einstein-condensate_pics/bec-N-T.pdf_t}
+  \caption{Der Plot beschreibt das Verhältnis  der kondensierten Teilchen mit dem Impuls \(k=0\) zu Gesamtteilchenzahl in Abhängigkeit der Temperatur. Man sieht dass bei \(T=0\) alle Teilchen in ihrem Grundzustand sind.}
+  \label{fig:1}
+\end{figure}
+
+
+
+
+
 
 \subsection*{Phänomenologische Herleitung}
 
@@ -182,6 +195,7 @@ Diese Beziehung in Gleichung (\ref{eq:20}) eingesetzt ergibt
 
 Vergleicht man nun mit Gleichung (\ref{eq:13}) muss man feststellen, dass die Approximation in (\ref{eq:23}) um den Faktor \(\frac{1}{\zeta(\frac{3}{2})^{\frac{3}{2}}}\approx 0,237 \) abweicht.
 
+Aus Gleichung (\ref{eq:19}) sieht man dass bei hohen Temperaturen \(T\gg T_C\) die Wellenlänge der Teilchen sehr kurz ist. Somit sind die Teilchen sehr scharf lokalisierbar. Wird die Temperatur unter der kritischen Temperatur \(T_C\) immer weiter abgesenkt, fangen die Wellenfunktionen der einzelnen Teilchen sich zu überlagern, bis sie zum Schluss bei \(\lambda_{\text{th}} \gtrsim d\) nur noch eine einzige Wellenfunktion bilden und somit alle in dem gleichen Grundzustand \(N_0\) sind. Dazu muss man sagen, dass der Zustand sich nicht im Ortsraum sondern im Impulsraum befindet und die Teilchen sehr wohl einen mittleren Ortsabstand voneinander haben. Jedoch da sie sich alle in gleichen Zustand befinden ist es so als wären sie eine große Einheit. D.h. bestrahlt man ein Teilchen mit Laserlicht, ist es so als ob man alle anderen Teilchen mitbestrahlt. Man sagt dazu auch dass die Teilchen eine Identitätskrise haben.
 
 
 \end{document}
