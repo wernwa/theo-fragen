@@ -35,23 +35,23 @@ Die Energie für ein Teilchen in seinem Ruhesystem IS' ist \(E=mc^2\) (mit \(m\)
    p'_\mu p^{'\mu} = m^2c^2
 \end{equation}
 
-Setzt man nun die beiden Gleichungen (\ref{eq:3}) und (\ref{eq:4}) gleich (Erhaltung der Länge des Impulses in allen Inertialsystemen) IS=IS'  und stellt sie nach \(E\) um somit folgt
+Setzt man nun die beiden Gleichungen (\ref{eq:3}) und (\ref{eq:5}) gleich (Erhaltung der Länge des Impulses in allen Inertialsystemen) IS=IS'  und stellt sie nach \(E\) um somit folgt
 \begin{align}
-  \label{eq:4}
-  \left( \frac{E}{c}\right)^2 -\vec p^2  = m^2c^2 \notag \\
-\Leftrightarrow E = \pm \sqrt{\vec p^2c^2 + m^2c^4}
+  \left( \frac{E}{c}\right)^2 -\vec p^2  = m^2c^2    \label{eq:4.1} \\
+\Leftrightarrow E = \pm \sqrt{\vec p^2c^2 + m^2c^4}  \label{eq:4.2}
 \end{align}
 
-Die negative Energien in Gleichung (\ref{eq:4}) führt zu der Annahme von Antiteilchen.
+Die negative Energien in Gleichung (\ref{eq:4.2}) führt zu der Annahme von Antiteilchen.
 
-Zurück zu Gleichung (\ref{eq:5}) dem Teilchen in seinem Ruhesystem. Eine Umformung und einsetzen des Korrespondenzprinzips für den Impuls (\ref{eq:2}) liefert
+Setzen wir das Korrespondenzprinzip für die Energie \(E \to i\hbar\pdiff_t \) und den Impuls \(p \to -i\hbar \vec\nabla\) in die Gleichung \eqref{eq:4.1} ein und erhalten
 
 \begin{align}
   \label{eq:6}
-   p'_\mu p^{'\mu} - m^2c^2 &= 0 \notag \\
-(i\hbar)^2\partial_\mu\partial^\mu -  m^2c^2 &= 0  \notag \\
--\hbar^2\left[\partial_\mu\partial^\mu + \left(\frac{mc}{\hbar}\right)^2  \right] &= 0 \notag \\
-\partial_\mu\partial^\mu + \left(\frac{mc}{\hbar}\right)^2  &= 0
+   &\left( \frac{E}{c}\right)^2 -\vec p^2  = m^2c^2 \notag \\
+&\left( \frac{ i\hbar }{c}\pdiff_t\right)^2 -(-i\hbar \vec\nabla)^2  = m^2c^2 \notag \\
+&- \frac{\hbar^2 }{c^2}\pdiff^2_{t} + \hbar^2 \vec\nabla^2  = m^2c^2  \qquad | :-\hbar^2 \notag \\
+&\frac{1 }{c^2}\pdiff^2_{t} - \vec\nabla^2  = - \frac{m^2c^2}{\hbar^2} \notag \\
+\Leftrightarrow &\frac{1 }{c^2}\pdiff^2_{t} - \vec\nabla^2 + \frac{m^2c^2}{\hbar^2} = 0
 \end{align}
 
 Führen wir den \textbf{d'Alembert-Operator} ein \(\square \equiv \partial_\mu\partial^\mu = \frac{1}{c^2}\pdiff^2_t - \triangle \) und multiplizieren wir die Gleichung (\ref{eq:6}) mit der Wellenfunktion \(\psi\) von rechts, so ergibt das die \textbf{Klein-Gordon-Gleichung}
@@ -97,7 +97,7 @@ Durch ziehen der Wurzel auf beiden Seiten erhält man
   E =\pm \sqrt{ p^2c^2  + m^2c^4 }
 \end{equation}
 
-Die selbe Energie wie Gleichung (\ref{eq:4}). Lösungen der negativer Energie des Energiespektrums ist nach unten nicht beschränkt. Formal liegt das darin begründet, dass die Klein-Gordon-Gleichung eine DGL 2-Ordnung nach der Zeit ist. Es stellt sich also das Problem der Intepretation der negativen Energie. Was später mit Antiteilchen begründet wird.
+Die selbe Energie wie Gleichung (\ref{eq:4.2}). Lösungen der negativer Energie des Energiespektrums ist nach unten nicht beschränkt. Formal liegt das darin begründet, dass die Klein-Gordon-Gleichung eine DGL 2-Ordnung nach der Zeit ist. Es stellt sich also das Problem der Intepretation der negativen Energie. Was später mit Antiteilchen begründet wird.
 
 Das \textbf{zweite Problem} der Klein-Gordon-Gleichung ist dass sie negative Wahrscheinlichkeitsdichten hervorbringt. Dies wollen wir nun näher untersuchen.
 
