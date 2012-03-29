@@ -7,9 +7,9 @@
 
 \section*{Ising Modell}
 
-Das Ising Modell ist ein wichtiges Modell der Statistischen Physik, was die Phänomäne des Magnetismus insbesondere Ferromagnetismus beschreiben soll. Damit werden auch Phasenübergänge untersucht, d.h. ob es eine bestimmte kritische Temperatur gibt bei dem ein Phasenübergang in einem Material stattfindet. Mit dem Ising Modell ist es möglich analytisch ein und zwei dimensionale Probleme exakt beschreiben. Für dreidimensionale Probleme werden nummerische approximationen verwendet. Das Ising Modell gilt als das einzige halbwegs realistische Modell für ein Viel-Teilchen-System mit dem man Phasenübergänge mathematisch behandeln kann.
-
-Bei vielen meisten Problemuntersuchungen wird immer die gleiche Vorgehensweise verwendet. Man bestimmt die Zustandssumme eines Systems von der aus ist es möglich weitere termondynamische Größen zu bestimmen. Um die Zustandssumme bestimmen zu können benötigt muss man die Gesamtenergie des Systems wissen.
+Das Ising Modell ist ein wichtiges Modell der Statistischen Physik, was die Phänomäne des Magnetismus insbesondere Ferromagnetismus beschreiben soll. Damit werden auch Phasenübergänge untersucht, d.h. ob es eine bestimmte kritische Temperatur gibt bei dem ein Phasenübergang in einem Material stattfindet. Mit dem Ising Modell ist es möglich analytisch ein und zwei dimensionale Probleme exakt zu beschreiben. Für dreidimensionale Probleme werden nummerische approximationen verwendet. Das Ising Modell gilt als das einzige halbwegs realistische Modell für ein Viel-Teilchen-System mit dem man Phasenübergänge mathematisch behandeln kann.\\
+\\
+Bei den meisten Problemuntersuchungen wird immer die gleiche Vorgehensweise verwendet. Man bestimmt die Zustandssumme eines Systems mit deren Hilfe es möglich ist weitere termondynamische Größen zu bestimmen. Um die Zustandssumme bestimmen zu können muss zunächst die Gleichung für  die Gesamtenergie des gesuchten System (d.h. den Hamilton-Operator) bestimmt werden.
 
 \subsection*{Herleitung der Hamiltonfunktion}
 
@@ -50,7 +50,7 @@ Wir bestimmen zunächst die kanonische Zustandssumme, die allgemein lautet
 
 \begin{align}
   \label{eq:3}
-  Z = \sum_{\{\alpha\}} e^{-\beta E_\alpha} \text{ mit }\beta = \frac{1}{k_B T}
+  Z = \sum_{\{\alpha\}} e^{-\beta E_\alpha} \qquad \text{ mit }\beta = \frac{1}{k_B T}
 \end{align}
 
 Setzen wir nun den Hamiltonoperator aus Gleichung (\ref{eq:2}) mit \(B_0=0\) in die Zustandssumme (\ref{eq:3}) ein, so lautet die von Teilchenzahl abhängige Zustandssumme
@@ -204,7 +204,7 @@ Wir formen die Zustandssumme noch etwas um, damit man ein physikalisches Verhalt
    Z_N &=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0 S_1) + (\beta J S_2 S_{3} + \beta \mu B_0 S_2) +\dots+ (\beta J S_N S_1 + \beta \mu B_0 S_N) } \notag\\
 &=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0\frac{1}{2}(S_1+S_1)) + (\beta J S_2 S_{3} + \beta \mu B_0 \frac{1}{2}(S_2+S_2)) +\dots+ (\beta J S_N S_1 + \beta \mu B_0 \frac{1}{2}(S_N+S_N)) } \notag\\
 &=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0\frac{1}{2}(S_1+S_2)) + (\beta J S_2 S_{3} + \beta \mu B_0 \frac{1}{2}(S_2+S_3)) +\dots+ (\beta J S_N S_1 + \beta \mu B_0 \frac{1}{2}(S_N+S_1)) } \notag\\
-&=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{(\beta J S_1 S_{2} + \beta \mu B_0\frac{1}{2}(S_1+S_2))}e^{(\beta J S_2 S_{3} + \beta \mu B_0 \frac{1}{2}(S_2+S_3))}\cdots e^{(\beta J S_N S_1 + \beta \mu B_0 \frac{1}{2}(S_N+S_1)) } \notag\\
+&=\sum_{S_1=\pm 1}\sum_{S_2=\pm 1}\cdots \sum_{S_N=\pm 1} e^{\beta J S_1 S_{2} + \beta \mu B_0\frac{1}{2}(S_1+S_2)}\cdot e^{\beta J S_2 S_{3} + \beta \mu B_0 \frac{1}{2}(S_2+S_3)}\cdots e^{\beta J S_N S_1 + \beta \mu B_0 \frac{1}{2}(S_N+S_1) } \notag\\
 \end{align}
 
 Man sieht wenn die Spins antiparallel sind, z.B. \(S_1=+1\) und \(S_2=-1\) dann verschwindet das Magnetfeld im Exponenten. Wenn die Beide positiv sind, dann erhält man auch ein positives Magnetfeld und entsprechend erhält man ein negatives Magnetfeld wenn beide Spins negativ sind.  Nun definieren wir die sogenannte Transfer-Funktoin \(T_{i,i+1}\)
